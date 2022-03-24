@@ -1,0 +1,158 @@
+#style-switcher {
+    display: none;
+    position: fixed;
+    left: -203px;
+    top: 90px;
+    -webkit-border-bottom-right-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    border-bottom-right-radius: 5px;
+    width: 203px;
+    background: rgba(0,0,0,.2);
+}
+
+    /* Trigger */
+    #style-switcher-trigger {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-topright: 5px;
+        -moz-border-radius-bottomright: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        width: 240px;
+        height: 40px;
+        line-height: 40px;
+        text-indent: 10px;
+        color: #fff;
+        text-transform: uppercase;
+        background: url(./images/switcher.png) 100% -214px no-repeat;
+    }
+
+    #style-switcher-trigger.switcher-opened {
+        background-position: 100% -173px;
+    }
+
+    /* Content area */
+    #style-switcher-content {
+        display: inline-block;
+        margin: 3px 0;
+        -webkit-border-bottom-right-radius: 5px;
+        -moz-border-radius-bottomright: 5px;
+        border-bottom-right-radius: 5px;
+        width: 180px;
+        padding: 50px 10px 10px;
+        font-size: 11px;
+        background: #f0f0f0;
+    }
+
+        /* Content common elements */
+        #style-switcher-content h3 {
+            font: bold 12px Arial;
+            color: #333!Important;
+        }
+
+        /* Section */
+        .style-switcher-section {
+            display: inline-block;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+            /* Switcher element - Skin type, Container type etc. */
+            .switcher-element {
+                width: 180px;
+                height: 42px;
+            }
+
+                .switcher-element a {
+                    float: left;
+                    display: block;
+                    width: 90px;
+                    padding-top: 6px;
+                    height: 37px;
+                    line-height: 36px;
+                    text-align: center;
+                    color: #fff;
+                    background: url(./images/switcher.png) no-repeat;
+                }
+
+                /* First link in element */
+                .switcher-element a.first-link-element {
+                    background-position: 0 -86px;
+                }
+
+                .switcher-element a.first-link-element:hover {
+                    background-position: 0 -129px;
+                }
+
+                .switcher-element a.first-link-element.active {
+                    background-position: 0 0;
+                }
+
+                .switcher-element a.first-link-element.active:hover {
+                    background-position: 0 -43px;
+                }
+
+                /* Second link in element */
+                .switcher-element a.last-link-element {
+                    background-position: -90px -86px;
+                }
+
+                .switcher-element a.last-link-element:hover {
+                    background-position: -90px -129px;
+                }
+
+                .switcher-element a.last-link-element.active {
+                    background-position: -90px 0;
+                }
+
+                .switcher-element a.last-link-element.active:hover {
+                    background-position: -90px -43px;
+                }
+
+            /* Patten textures */
+            .sss-pattern-texture a {
+                float: left;
+                display: block;
+                margin: 0 6px 6px 0;
+                border-radius: 3px;
+                width: 25px;
+                height: 20px;
+                text-indent: -9999px;
+                background-color: #fff;
+                box-shadow: 0 0 1px #555;
+            }
+
+            .sss-pattern-texture a.active {
+                background-color: #B2D840;
+            }
+
+            .sss-pattern-texture a:hover {
+                box-shadow: 0 0 3px #555;
+            }
+
+        /* Buttons - Apply and Reset */
+        .style-switcher-buttons a {
+            display: block;
+            width: 100%;
+            height: 30px;
+            border-radius: 5px;
+            line-height: 30px;
+            text-align: center;
+            font-weight: bold;
+            color: #fff!Important;
+            text-shadow: 0 -1px 0 rgba(0,0,0,.3);
+            background: url(./images/switcher.png);
+        }
+
+        a#style-switcher-reset {
+            background-position: 0 -255px;
+        }
+
+        a#style-switcher-reset:hover {
+            background-position: 0 -286px;
+        }
+

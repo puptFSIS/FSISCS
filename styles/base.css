@@ -1,0 +1,29 @@
+@import "../scripts/libs/prettyphoto/css/prettyPhoto.css";
+@import "../scripts/libs/video-js/video-js.css";
+@import "../scripts/libs/tipsy/tipsy.css";
+
+@import "./style.css";
+@import "./user-styles.css";
+
+
+/* Some demo data (You can remove it.) -------------------------------------- */
+.grid-outline div {
+    background: #fff;
+    text-indent: 20px;
+    padding: 5px 0;
+    outline: 1px solid #333;
+}
+
+.grid-outline div div {
+    background: #333;
+}
+
+.dark-skin .grid-outline div {
+    background: #333;
+    outline: 1px solid #000;
+}
+
+.dark-skin .grid-outline div div {
+    background: #222;
+}
+

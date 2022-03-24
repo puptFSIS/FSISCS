@@ -1,0 +1,36 @@
+/* Template customization
+
+----------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+/* Background pattern ------------------------------------------------------- */
+
+#body-texture {
+
+    /*background: url(../images/textures/2.png);*/
+
+}
+
+
+
+
+
+/* Please write your own styles and rewrite default template styles below */
+
+#take_picture, #picture_seminar {
+	display: none;
+}
+@media only screen and (min-width: 150px) and (max-width: 600px),(max-width: 480px) {
+	#take_picture {
+		display: block;
+	}
+}
+div#content p#jsnotice,
+section#footer-right {
+	display: none;
+}

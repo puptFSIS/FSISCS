@@ -1,0 +1,273 @@
+<html>
+<head>
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="VI60_DTCScriptingPlatform" content="Server (ASP)">
+<meta name="GENERATOR" content="Microsoft FrontPage 6.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>The PUPWebSite page you are requesting does not exist</title>
+<link rel="stylesheet" type="text/css" href="../styles/default.css">
+<script language="JavaScript" src="../scripts/panel.js"></script>
+</head>
+<body>
+   
+<table class="h" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="60%" background="templates/hbg1.jpg">
+    <img border="0" src="templates/h1.gif" width="278" height="19"></td>
+    <td width="50%" background="templates/hbg2.jpg">
+    <img border="0" src="templates/h2.jpg" width="67" height="19"></td>
+  </tr>
+</table>
+
+<table class="h" cellspacing="0" cellpadding="0" bgcolor="#990000" background="templates/hbg3.jpg">
+  <tr>
+    <td width="50%">
+    <img border="0" src="hpix/hhelp.gif" alt="PUPWebSite Help and Support" width="416" height="68"></td>
+    <td width="100%" valign="top" class="dt">
+    <p align="right"><script language="javascript">todayis("#ffffff")</script></td>
+  </tr>
+</table>
+
+<table class="h" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="100%" bgcolor="#FFFFFF">
+    <img border="0" src="templates/px.gif" width="1" height="1"></td>
+  </tr>
+  <tr>
+    <td width="100%" bgcolor="#BDC0D5">
+    <img border="0" src="templates/px.gif" width="1" height="1"></td>
+  </tr>
+</table>
+
+<table border="0" cellspacing="0" width="100%" cellpadding="0">
+ <tr>
+   <td background="templates/pnbg.jpg" width="179" rowspan="2" class="pnl">
+   <img border="0" src="templates/pn1.jpg" width="179" height="24"><div align="center">
+     <center>
+     <table border="0" cellspacing="0" class="pn">
+      <tr>
+        <td width="100%" class="pnh"><b>getting started</b></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../profile.html">About the University</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../profile/campuses.asp.html">Campuses &amp; Branches</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../profile/departments.asp.html">Departments &amp; Offices</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../admissions/pupcet.asp.html">Entrance Tests</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../profile/contactnumbers.asp.html">Contact Numbers</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../ovprd/ictc/wsdindex.html">PUP ICT Center</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnh"><b><br>
+        students</b></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../students/handbook.asp.html">Student Handbook</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../admissions/enrollment.asp.html">Enrollment</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnh"><b><br>
+        information</b></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../admissions.html">Admissions</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../academic.html">Academic Programs</a></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnsp">
+        <img border="0" src="templates/pnln.gif" width="166" height="2"></td>
+      </tr>
+      <tr>
+        <td width="100%" class="pnop" onmouseover=changeColors(this) onmouseout=restoreColors(this) onmouseup=NavMUp(this)>
+        &nbsp;<a href="../Academic/Colleges.asp.html">Colleges</a></td>
+      </tr>
+     </table>
+     </center>
+   </div>
+   <p>&nbsp;</td>
+   <td width="1" rowspan="2" class="split">
+   <img border="0" src="templates/px.gif" width="1" height="1"></td>
+   <td width="100%" class="content"><table border="0" cellpadding="0" cellspacing="0" width="100%" height="6" style="border-collapse: collapse" bordercolor="#111111">
+    <tr>
+      <td width="100%" class="hd">
+      <img border="0" src="templates/pnh1.jpg" width="6" height="6"></td>
+    </tr>
+   </table>
+<!-- Start: Xentrius MenuBar //-->
+<script language="JavaScript" src="../scripts/toolbar.js"></script>
+<script language="JavaScript" src="../scripts/local.js"></script>
+<!-- Start: ToolBar for down-level browsers-->
+<span id="TBDownLevelDiv">
+   
+<table border="0" cellspacing="0" width="100%" cellpadding="5">
+    <tr>
+      <td class="mnu" width="100%" bgcolor=#F3F3F6 nowrap>
+      <a class="nav" href="../profile.html">profile</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="nav" href="../academic.html">academic</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="nav" href="../students.html">students</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="nav" href="../ovprd.html">research</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="nav" href="../alumni.html">alumni</a>&nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="nav" href="../help.html">help</a></td>
+    </tr>
+</table></span>
+<!-- End: ToolBar For down-level browsers-->
+<script language="JavaScript">
+	<!--// Hide from old web browsers
+
+	var ToolBar_Supported = ToolBar_Supported;
+	if (ToolBar_Supported != null && ToolBar_Supported == true)
+	{
+		TBDownLevelDiv.style.display ='none';
+		drawToolbar();
+	}
+
+	//-->
+   </script>
+<!-- End: Xentrius MenuBar //-->
+   <table border="0" cellspacing="0" width="100%" cellpadding="5">
+    <tr>
+      <td width="100%" class="content">
+            <h1>The PUPWebSite page you are requesting does not exist</h1>
+            <hr>
+            <p>
+            <b>Why did this page appear?<br>
+            </b>The page you are visiting might currently be under technical 
+            maintenance,&nbsp; have been removed, or is temporarily unavailable.</p>
+            <hr>
+            <p><b>What to do?<br>
+            </b>As an option, you may want to:</p>
+            <ol>
+              <li><b><a onmouseover="self.status='Refresh current page';return true" onmouseout="self.status='';return true" href="javascript:history.go();">Refresh</a></b>
+            this page;</li>
+              <li>Go <b><a href="javascript:history.go(-1)">Back</a></b> 
+              to the page you came from; or</li>
+              <li>Visit any of the links provided in this page.</li>
+            </ol>
+            <p>&nbsp;</p>
+            <p>&nbsp;</td>
+    </tr>
+    </table>
+   </td>
+   <td width="1" rowspan="2" class="split">
+   <img border="0" src="templates/px.gif" width="1" height="1"></td>
+   <td width="150" class="Rpanel">
+   <form method="GET" action="/sitesearch.asp">
+   <table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr>
+      <td>
+      <p align="right">
+   <img border="0" src="templates/pnh2.jpg" width="149" height="6"><b><br>
+   </b><a class="nav" href="javascript:history.go(-1)">back</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+   <a class="nav" href="../wsdindex.html">home</a> &nbsp;</td>
+    </tr>
+    <tr>
+      <td><hr class="sd">
+      </td>
+    </tr>
+    <tr>
+      <td><b>&nbsp;search<br>
+   </b>&nbsp;<input maxLength="255" size="15" name="search" tabindex="1" class="txt"> <input type="submit" value="go" name="submit" class="btngo"><input type="hidden" name="mode" value="allwords"><br>
+     &nbsp;<a href="../sitesearch.asp.html" class="microlink">advanced search</a></td>
+    </tr>
+   </table>
+   </form>
+     <hr class="sd">
+     &nbsp;
+</td>
+ </tr>
+ <tr>
+   <td width="137%" bgcolor="#F3F3F6" class="nav">
+   <p align="right"><a class="nav" href="wsdindex.html#top">top</a> &nbsp;</td>
+   <td width="150" class="nav">
+   <p align="right"><a class="nav" href="javascript:history.go(-1)">back</a>&nbsp;&nbsp;&nbsp;&nbsp; 
+   <a class="nav" href="../wsdindex.html">home</a> &nbsp;</td>
+ </tr>
+</table>
+
+<table border="0" cellspacing="0" width="100%" cellpadding="0" background="templates/ftbg.jpg">
+ <tr>
+   <td width="179">
+   <p align="center">
+   <img border="0" src="templates/ft1.jpg" width="179" height="7"><img border="0" src="templates/px.gif" width="1" height="1"><br>
+   <b><a href="../help/feedback.asp.html">contact us</a></b></td>
+   <td width="150%" class="ft" nowrap>
+   <img border="0" src="templates/ft1.jpg"><br>
+&nbsp; © 1998-2012 Polytechnic University of the Philippines<br>
+&nbsp; Modified:
+   05.08.2010 • 
+   <a href="../xentrius.html">PUPWebSite Xentrius</a> •
+   <a class="footer" href="../help/oldfiles/terms.asp.html">Terms of Use</a> • 
+   <a href="../help/oldfiles/privacy.asp.html">Privacy Statement</a></td>
+ </tr>
+ </table>
+<script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
+</script>
+<script type="text/javascript">
+_uacct = "UA-1138569-1";
+urchinTracker();
+</script>
+</body></html>

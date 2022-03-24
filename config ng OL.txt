@@ -1,0 +1,16 @@
+<?php
+	$test = 1;
+	if($test==1) {
+		$host="puptaguigeduph.ipagemysql.com"; 
+		$username="bsit2014"; 
+		$password="bsit2014"; 
+		mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+		mysql_select_db("db_puptaguig2")or die("cannot select DB");
+	} else {
+		$host="localhost"; 
+		$username="root"; 
+		$password=""; 
+		mysql_connect("$host", "$username", "$password")or die("cannot connect"); 
+		mysql_select_db("db_puptaguig")or die("cannot select DB");
+	}
+?>

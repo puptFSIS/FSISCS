@@ -285,9 +285,6 @@ width: 300px;
     <a data-target='#myModal' data-toggle='modal' href='#myModal'>Send to Receipients</a>
     </li>
 
-    <li>
-    <a data-target='#myModal' data-toggle='modal' href='#myModal'>Send to other</a>
-    </li>
 </details>
 
 

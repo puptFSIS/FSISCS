@@ -531,8 +531,8 @@ else if ($status == "pending")
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
-							<p id="modal_fcode_id'.$counter.'" class="fcode_p_Tag"></p>
-							<input id="modal_comment_id'.$counter.'" class="comment_p_Tag" value="No Comment">'.$newresult['hap_comments'].'</input>
+							<p id="modal_loadtype_id'.$counter.'" class="loadtype_p_Tag"></p>
+							<p id="modal_comment_id'.$counter.'" class="comment_p_Tag"  >'.$newresult['hap_comments'].'</p>
 
 						</div>
 						
@@ -598,8 +598,8 @@ else if($status == "disapproved")
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
-							<p id="modal_fcode_id'.$counter.'" class="fcode_p_Tag"></p>
-							<p id="modal_comment_id'.$counter.'" class="comment_p_Tag">'.$newresult['hap_comments'].'</p>
+							<p id="modal_loadtype_id'.$counter.'" class="loadtype_p_Tag"></p>
+							<p id="modal_comment_id'.$counter.'" class="comment_p_Tag"  >'.$newresult['hap_comments'].'</p>
 
 
 						</div>
@@ -668,9 +668,11 @@ else if($status == "deleted")
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
-							<p id="modal_fcode_id'.$counter.'" class="fcode_p_Tag"></p>
+							<p id="modal_loadtype_id'.$counter.'" class="loadtype_p_Tag"></p>
 							<p id="modal_comment_id'.$counter.'" class="comment_p_Tag" >'.$newresult['hap_comments'].'</p>
 
+
+							
 
 
 						</div>
@@ -1029,7 +1031,7 @@ function open_dtr_modal(counter)
 			let year = year_id[counter];
 			let loadtype = regpartime_id[counter];
 			let fullname = first.concat(" ",mid," ",last);
-			let loadtype_month_year = loadtype.concat(" ",month," ",year);
+			let loadtype_month_year = loadtype.concat(" - ",month," ",year);
 			let comment = hidden_comment_id[counter];
 
 		    modal_div[counter].style.display = "block";
@@ -1037,7 +1039,7 @@ function open_dtr_modal(counter)
 			// modal_fcode_id_var.innerText = fcode_id[counter];
 			modal_fullname_id_var.innerText = fullname;
 			modal_regpartime_id_var.innerText = loadtype_month_year;
-			modal_date_id_var.innerText = month_year;
+			// modal_date_id_var.innerText = month_year;
 			
 			
 

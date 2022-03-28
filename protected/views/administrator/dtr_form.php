@@ -6,9 +6,11 @@
 		.dtr_form
 		{
 			
-			width: 550px;
-			height: 1400px;
+			width: 560px;
+			height: 1200px;
 			background-color: white;
+			border: 1px solid black;
+			border-radius: 10px;
 
 
 		}
@@ -85,7 +87,7 @@
 			width: 110px;
 			position: relative;
 			bottom:45px;
-			left:115px; 
+			left:115px;
 			margin: 0 auto;
 			margin-left: 100px;
 			height: 35px;
@@ -400,21 +402,25 @@
 		.footer_text
 		{
 			position: relative;
-			bottom: 270px;
+			bottom: 400px;
 			text-align: center;
 		}
 		.footer_username
 		{
 			width: 500px;
 			position: relative;
-			bottom: 270px;
+			bottom: 395px;
 			margin: 0 auto;
 			height: 35px;
 			border:none;
 			text-align: center;
 			border-bottom: 1px solid #000000;
+			/*outline: none;*/
+
 			border-radius: 0;
 			background: #d7cfcf;
+			background: #ffffff;
+
 			color: black;
 			font-weight: bold;
 			transition: transform .04s;
@@ -431,7 +437,7 @@
 		{
 			width: 500px;
 			position: relative;
-			bottom: 270px;
+			bottom: 370px;
 			margin: 0 auto;
 			text-align: center;
 
@@ -442,14 +448,16 @@
 		{
 			width: 500px;
 			position: relative;
-			bottom: 220px;
+			bottom: 350px;
 			margin: 0 auto;
 			height: 35px;
 			border:none;
 			text-align: center;
 			border-bottom: 1px solid #000000;
 			border-radius: 0;
-			background: #d7cfcf;
+			/*background: #d7cfcf;*/
+			background: #ffffff;
+
 			color: black;
 			font-weight: bold;
 			transition: transform .04s;
@@ -465,7 +473,7 @@
 		{
 			width: 500px;
 			position: relative;
-			bottom: 220px;
+			bottom: 340px;
 			margin: 0 auto;
 			text-align: center;
 			
@@ -494,8 +502,7 @@
 
 	</style>
 
-	<?php 
-	include("config.php"); include("getPersonalInformation.php");
+	<?php include("config.php"); include("getPersonalInformation.php");
 		$array_month =array('January','February','March','April','May','June','July','August','September','October','November','December');
 		if(isset($_POST['submit'])) 
 		{
@@ -512,7 +519,6 @@
 			$new_fn= $_POST['DTR_NAME2'];
 			$new_mn= $_POST['DTR_NAME3'];
 			$date = date('Y-m-d H:i:s');
-
 			$insert = mysqli_query($conn,"INSERT INTO `tbl_dtr`(`id`,`FCode`, `surname`,`firstname`,`middlename`,`regpartime`,`month`,`year`,`days_count`,`reg_days_hrs`,`saturdays`,`ntd_by_offhour`,`in_charge`,`modified_date`) VALUES ('','$fcode','$new_sur','$new_fn','$new_mn','$RegPartTemp','$new_month','$year','$new_count','$reg_days_hrs','$saturdays','$ntd_by','$in_charge','$date')");
 				if(!$insert)
 				    {
@@ -583,18 +589,7 @@
 					    <option style="background-color: white" value="10">October</option>
 					    <option style="background-color: white" value="11">November</option>
 					    <option style="background-color: white" value="12">December</option>
-					    <!-- <option value="JANUARY">JANUARY</option>
-					    <option value="FEBRUARY">FEBRUARY</option>
-					    <option value="MARCH">MARCH</option>
-					    <option value="APRIL">APRIL</option>
-					    <option value="MAY">MAY</option>
-					    <option value="JUNE">JUNE</option>
-					    <option value="JULY">JULY</option>
-					    <option value="AUGUST">AUGUST</option>
-					    <option value="SEPTEMBER">SEPTEMBER</option>
-					    <option value="OCTOBER">OCTOBER</option>
-					    <option value="NOVEMBER">NOVEMBER</option>
-					    <option value="DECEMBER">DECEMBER</option> -->
+					  
 				</select>
 
 				<select class="year_dropdown" id="year_dropdown_id" name="dtr3" onchange="getYear(this)" >

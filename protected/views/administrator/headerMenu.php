@@ -1,3 +1,6 @@
+<header id=page-title>
+
+
 <section id='menu_strip'>
 <a data-category=design href='http://www.puptaguig.org'>Home</a>
 <a data-category=design href="index.php?r=administrator/profile">Profile</a>
@@ -10,3 +13,5 @@
 <a data-category=design href="index.php?r=administrator/other">Other</a>
 <a data-category=design href="index.php?r=administrator/logout">Log out</a>
 </section>
+
+</header>

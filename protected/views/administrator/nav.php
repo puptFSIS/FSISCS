@@ -3,7 +3,7 @@
 
 <!-- End - Title and summary -->
 <!-- Title right side -->
-<section id="menu_strip">
+<section id="menu_strip" class='title-right portfolio-filter'>
 <a class=current-cat data-category=all href='index.php?r=administrator'>Home</a>
 <a data-category=design href="index.php?r=administrator/profile">Profile</a>
 <a data-category=design href="index.php?r=administrator/faculty">Faculty</a>

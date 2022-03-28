@@ -50,7 +50,7 @@ if(isset($_SESSION['user'])) {
 <section class=container-block id=page-body>
 <div class=container-inner>
 <!-- Page title -->
-<?php include("nav.php");?>
+<?php include("headerMenu.php");?>
 
 <!-- End - Page title -->
 <!-- Page body content -->
@@ -471,8 +471,8 @@ include('config.php');
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
-<script src='assets/jquery-3.6.0.min.js'></script>
-<script src='assets/sweetalert2.all.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>

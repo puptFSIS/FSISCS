@@ -197,7 +197,7 @@ if(isset($_SESSION['user'])) {
     echo "<h2 class=underlined-header>List of Daily Time Record</h2>";
     include("HAP_Dtr_Table.php");
     }
-    if($preview_value===34)
+    if($preview_value===3)
     {
     echo "<h2 class=underlined-header>List of Approved Daily Time Record</h2>";
     include("HAP_Secretary_table.php");

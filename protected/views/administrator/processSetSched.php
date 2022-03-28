@@ -56,6 +56,7 @@
 
 <?php
 	session_start();
+	$base = Yii::app()->getBaseUrl();
 	$EmpID = $_SESSION['CEmpID']; 
 	include("config.php");
 
@@ -179,8 +180,8 @@ if($check == 'pass'){
 					}
 				} else {
 					echo"
-					<script src='http://localhost/FSIS/assets/jquery-3.6.0.min.js'></script>
-					<script src='http://localhost/FSIS/assets/sweetalert2.all.min.js'></script>
+					<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+					<script src='".$base."assets/sweetalert2.all.min.js'></script>
 					<script>
 
 						Swal.fire({
@@ -238,8 +239,8 @@ if($check == 'pass'){
 				}
 			} else {
 				echo"
-				<script src='http://localhost/FSIS/assets/jquery-3.6.0.min.js'></script>
-				<script src='http://localhost/FSIS/assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."assets/sweetalert2.all.min.js'></script>
 				<script>
 
 				Swal.fire({
@@ -299,8 +300,8 @@ if($check == 'pass'){
 	else
 		{
 				echo"
-				<script src='http://localhost/FSIS/assets/jquery-3.6.0.min.js'></script>
-				<script src='http://localhost/FSIS/assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."FSIS/assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."FSIS/assets/sweetalert2.all.min.js'></script>
 				<script>
 
 				Swal.fire({
@@ -359,8 +360,8 @@ if($check == 'pass'){
 		}
 		} else {
 		echo"
-				<script src='assets/jquery-3.6.0.min.js'></script>
-				<script src='assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."assets/sweetalert2.all.min.js'></script>
 				<script>
 				
 				Swal.fire({

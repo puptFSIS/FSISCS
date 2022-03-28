@@ -77,10 +77,12 @@ background-repeat:repeat;
 <!-- End - Page subheader -->
 <!-- Page body -->
 <section class=container-block id=page-body>
+
 <div class=container-inner>
 <!-- Page title -->
 <?php include("nav.php");?>
 <!-- End - Page title -->
+
 <!-- Page body content -->
 <section id=page-body-content>
 <div id=page-body-content-inner>

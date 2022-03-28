@@ -107,7 +107,7 @@ if(isset($_SESSION['user'])) {
 <div class=container-inner>
 <!-- Page title -->
 <header id=page-title>
-<?php include("nav.php");?>
+<?php include("headerMenu.php");?>
     </header>
 <!-- End - Page title -->
 <!-- Page body content -->

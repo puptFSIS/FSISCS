@@ -109,7 +109,7 @@ display:none;
 <!-- End - Page subheader -->
 <!-- Page body -->
 <section class=container-block id=page-body>
-<?php include("nav.php");?>
+<?php include("headerMenu.php");?>
 <div class=container-inner>
 <!-- Page title -->
 <!-- End - Page title -->

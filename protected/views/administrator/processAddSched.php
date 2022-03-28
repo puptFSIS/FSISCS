@@ -60,6 +60,7 @@
 <h2 class=underlined-header style="margin-left:-65px;">  <?php echo $_GET['scode'];?></h2>
 <?php
 	session_start();
+	$base = Yii::app()->getBaseUrl();
 	$prof = $_GET['prof'];
 	$EmpID = $_SESSION['CEmpID']; 
 	include("config.php");
@@ -141,8 +142,8 @@ if ($ping <= 0) {
 					}
 				} else {
 					echo"
-					<script src='assets/jquery-3.6.0.min.js'></script>
-					<script src='assets/sweetalert2.all.min.js'></script>
+					<script src='".$base."'assets/jquery-3.6.0.min.js'></script>
+					<script src='".$base."'assets/sweetalert2.all.min.js'></script>
 					<script>
 
 						Swal.fire({
@@ -200,8 +201,8 @@ if ($ping <= 0) {
 				}
 			} else {
 				echo"
-				<script src='assets/jquery-3.6.0.min.js'></script>
-				<script src='assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."assets/sweetalert2.all.min.js'></script>
 				<script>
 
 				Swal.fire({
@@ -259,8 +260,8 @@ if ($ping <= 0) {
 			}
 		} else {
 				echo"
-				<script src='assets/jquery-3.6.0.min.js'></script>
-				<script src='assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."assets/sweetalert2.all.min.js'></script>
 				<script>
 				
 				Swal.fire({
@@ -319,8 +320,8 @@ if ($ping <= 0) {
 		}
 	} else {
 		echo"
-				<script src='assets/jquery-3.6.0.min.js'></script>
-				<script src='assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."assets/sweetalert2.all.min.js'></script>
 				<script>
 				
 				Swal.fire({
@@ -383,8 +384,8 @@ if ($ping <= 0) {
 	}
 } else {
 	echo"
-				<script src='assets/jquery-3.6.0.min.js'></script>
-				<script src='assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."assets/sweetalert2.all.min.js'></script>
 				<script>
 
 				Swal.fire({

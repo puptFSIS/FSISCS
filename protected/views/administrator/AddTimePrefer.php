@@ -50,7 +50,7 @@ if(isset($_SESSION['user'])) {
 <section class=container-block id=page-body>
 <div class=container-inner>
 <!-- Page title -->
-<?php include("nav.php");?>
+<?php include("headerMenu.php");?>
 
 <!-- End - Page title -->
 <!-- Page body content -->
@@ -291,62 +291,65 @@ include('config.php');
 </p>
 
 <p style="margin-bottom: 12px;">Whole Day:
-<input id ="WD" type="checkbox" name="WholeDay" style="margin-left: 30px;">
+<input id ="WD" type="checkbox" name="WholeDay" style="margin-left: 30px;" onclick="yesnoCheck(this)">
 </p>
 
-<p style="margin-bottom: 9px;margin-top: 15px;">*Time Start:
-<select id="Stime"name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$start = "";
-		
-		if($start <> "")
-		{
-			echo '<option value="'. $start .'">'. to12Hr($start) .'</option>';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
+<div id="ifYes" style="display: block;">
+	<p style="margin-bottom: 9px;margin-top: 15px;">*Time Start:
+	<select id="Stime"name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+		<?php
+			$start = "";
+			
+			if($start <> "")
+			{
+				echo '<option value="'. $start .'">'. to12Hr($start) .'</option>';
+			}
+			else
+			{
+				echo'
+					<option value="'. $blank .'"></option>
+				';
+			}
 
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
+			for($ctime=700;$ctime<=2200;) {
+				echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
+				if($ctime%100==0) {
+					$ctime = $ctime + 30;
+				} else {
+					$ctime = $ctime + 70;
+				}
 			}
-		}
-	?>
-</select>
-</p>
-<p style="margin-bottom: 9px;">*Time End:
-<select id ="Etime" name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$end = "";
-		
-		if($end <> "")
-		{
-			echo '<option value="'. $end .'">'. to12Hr($end) .'</option>';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
+		?>
+	</select>
+	</p>
+	<p style="margin-bottom: 9px;">*Time End:
+	<select id ="Etime" name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+		<?php
+			$end = "";
+			
+			if($end <> "")
+			{
+				echo '<option value="'. $end .'">'. to12Hr($end) .'</option>';
 			}
-		}
-	?>
-</select>
-</p>
+			else
+			{
+				echo'
+					<option value="'. $blank .'"></option>
+				';
+			}
+			for($ctime=700;$ctime<=2200;) {
+				echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
+				if($ctime%100==0) {
+					$ctime = $ctime + 30;
+				} else {
+					$ctime = $ctime + 70;
+				}
+			}
+		?>
+	</select>
+	</p>
+</div>
+
 <p style="margin-bottom: 9px;">*Prof. Name:
 <select name="profName" style="width: 470px; margin-top: -28px; margin-left: 15%;">
 	<?php
@@ -468,18 +471,24 @@ include('config.php');
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
-<script src='assets/jquery-3.6.0.min.js'></script>
-<script src='assets/sweetalert2.all.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>
-	$('#WD').click(function() {
-    	$('select:#Stime,#Etime').attr('disabled',(this.checked))
-	});
-	if ($('#WD').prop('checked')) {
-			$('#Stime').attr('disabled', 'disabled');
-			$('#Etime').attr('disabled', 'disabled');
+	function yesnoCheck(that) {
+		if ($('#WD').prop('checked')) {
+			
+			document.getElementById("ifYes").style.display = "none";
+		} else {
+			document.getElementById("ifYes").style.display = "block";
+		}
 	}
+
+	// $('#WD').click(function() {
+ //    	$('select:#Stime,#Etime').attr('disabled',(this.checked))
+	// });
+	
 
 	flashdata = $('.flash-data').data('flashdata')
 	if(flashdata==0){

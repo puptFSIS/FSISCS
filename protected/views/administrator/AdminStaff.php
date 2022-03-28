@@ -111,7 +111,7 @@ if(isset($_SESSION['user'])) {
 
 <!-- End - Title and summary -->
 <!-- Title right side -->
-<?php include("nav.php");?>
+<?php include("headerMenu.php");?>
 <!-- End - Title right side -->
 
 <!-- End - Page title -->

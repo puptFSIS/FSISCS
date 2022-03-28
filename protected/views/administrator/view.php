@@ -166,7 +166,7 @@ if($_SESSION['user']==1) {
 <section class=container-block id=page-body>
 <div class=container-inner>
 <!-- Page title -->
-<?php include("nav.php");?>
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <?php if (isset($_GET['mes'])) : ?>

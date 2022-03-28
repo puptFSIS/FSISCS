@@ -122,6 +122,7 @@ background-repeat:repeat;
 	{
 		$roomName2 = "";
 	}
+	$base = Yii::app()->getBaseUrl();
 	$day = $_POST['sday'];
 	$timeS = $_POST['timeS'];
 	$timeE = $_POST['timeE'];

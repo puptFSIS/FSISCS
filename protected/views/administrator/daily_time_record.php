@@ -166,26 +166,7 @@ if(isset($_SESSION['user'])) {
 <div class=container-inner>
 <!-- Page title -->
 <?php include("headerMenu.php");?> 
-<header id=page-title>
-<!-- Title and summary -->
 
-<!-- End - Title and summary -->
-<!-- Title right side -->
-<section id="menu_strip">
-<a data-category=all href='index.php?r=administrator'>Home</a>
-<a data-category=design href="index.php?r=administrator/profile">Profile</a>
-<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
-<a class=current-cat data-category=design href="index.php?r=administrator/daily_time_record">DTR</a>
-<a data-category=design href="index.php?r=administrator/reports">Reports</a>
-<a data-category=design href="index.php?r=administrator/forms">Forms</a>
-<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
-<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
-<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
-<a data-category=design href="index.php?r=administrator/other">Other</a>
-<a data-category=design href="index.php?r=administrator/logout">Log out</a>
-</section>
-<!-- End - Title right side -->
-</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -223,8 +204,7 @@ if(isset($_SESSION['user'])) {
     }
     if($preview_value===3)
     {
-    echo "<h2 class=underlined-header>List of Approved Daily Time Record</h2>";
-    include("HAP_Secretary_table.php");
+   
     echo "<h2 class=underlined-header>End of the month form</h2>";
     // include("HAP_Secretary_table.php"); luma
     include("EOTM_form.php"); // bago

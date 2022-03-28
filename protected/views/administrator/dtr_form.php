@@ -85,7 +85,7 @@
 			width: 110px;
 			position: relative;
 			bottom:45px;
-			left:115px;
+			left:115px; 
 			margin: 0 auto;
 			margin-left: 100px;
 			height: 35px;

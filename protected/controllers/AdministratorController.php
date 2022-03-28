@@ -2850,6 +2850,12 @@ class AdministratorController extends Controller
 
 	public function actionDtrTable() // dtr
 	{
+		if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	        $this->CheckEmpID($_SESSION['CEmpID']);
+	    } 
+		$var = Yii::app()->session['fetch_use_id'];
 		$preview_value = 1;
 		$this->render('daily_time_record',array('preview_value' => $preview_value));
 	}
@@ -2948,6 +2954,12 @@ class AdministratorController extends Controller
 
 	public function actionHAP_Secretary_table() // dtr
 	{
+		if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	        $this->CheckEmpID($_SESSION['CEmpID']);
+	    } 
+		$var = Yii::app()->session['fetch_use_id'];
 		$preview_value = 3; // 3 for maam tess receiving list of approved DTRs
 		$this->render('daily_time_record',array('preview_value' => $preview_value));
 		// $this->render('docusample');
@@ -2956,6 +2968,12 @@ class AdministratorController extends Controller
 
 	public function actionHAPDtrTable() // dtr
 	{
+		if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	        $this->CheckEmpID($_SESSION['CEmpID']);
+	    } 
+		$var = Yii::app()->session['fetch_use_id'];
 		$preview_value = 2; // 2 for checking DTRs
 		$this->render('daily_time_record',array('preview_value' => $preview_value));
 	}

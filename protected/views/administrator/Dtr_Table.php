@@ -19,7 +19,7 @@
 </style>
 <div> 
 <!-- Video - HTML5 -->
-<p style="font-style: italic;">
+<p style="font-style: italic;"> 
 On the action column, you must click 2 pdf buttons in order to print it as pdf
 </p>
 <p>

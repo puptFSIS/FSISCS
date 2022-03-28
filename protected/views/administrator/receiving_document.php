@@ -11,6 +11,7 @@ class PDF extends FPDF
     // Page header
     function Header()
     {
+        // $this->AddPage('P','A4',0);
         // Logo
         $pup_logo = "assets/logo_1inch.PNG";
         $this->Image($pup_logo,10,6,30);
@@ -218,6 +219,7 @@ class PDF extends FPDF
         {
             $monthcounter = 0;
             $this->AddPage();
+            $this->Header();
             $this->date();
             $this->directorHR($temporary_list[$q]);
             
@@ -321,7 +323,6 @@ class PDF extends FPDF
 
 $pdf = new PDF('P','mm','legal');
 $pdf->SetFont('Times','B','10');
-$pdf->header();
 $pdf->loadtype_knower();
 $pdf->Output();
 ?>

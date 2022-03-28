@@ -57,6 +57,7 @@ $EmpID = $_SESSION['CEmpID'];
 include("config.php");
 $request_id = $_GET['request_id'];
 $schedID = $_GET['schedID'];
+$base = Yii::app()->getBaseUrl();
 
 $sql1 = "SELECT * FROM tbl_requestschedule WHERE request_id= '$request_id' and schedID= '$schedID' and status='Pending'";
 $result1 = mysqli_query($conn,$sql1);   
@@ -127,8 +128,8 @@ if ($valid1 <= 0) {
             }
         } else {
             echo"
-                    <script src='assets/jquery-3.6.0.min.js'></script>
-                    <script src='assets/sweetalert2.all.min.js'></script>
+                    <script src='".$base."assets/jquery-3.6.0.min.js'></script>
+                    <script src='".$base."assets/sweetalert2.all.min.js'></script>
                     <script>
 
                         Swal.fire({
@@ -194,8 +195,8 @@ if ($valid1 <= 0) {
 
 } else {
     echo"
-                <script src='assets/jquery-3.6.0.min.js'></script>
-                <script src='assets/sweetalert2.all.min.js'></script>
+                <script src='".$base."assets/jquery-3.6.0.min.js'></script>
+                <script src='".$base."assets/sweetalert2.all.min.js'></script>
                 <script>
                 
                 Swal.fire({

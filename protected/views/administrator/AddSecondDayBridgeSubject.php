@@ -112,7 +112,7 @@ $BridgeSubjectID = $_GET['BridgeSubjectID'];
 <section class=container-block id=page-body>
 <div class=container-inner>
 <!-- Page title -->
-<?php include("nav.php");?>
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>

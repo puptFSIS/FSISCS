@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$EmpID = $_SESSION['CEmpID']; 
+	$base = Yii::app()->getBaseUrl();
 	include("config.php");
 	if(isset($_POST['sday2']))
 	{

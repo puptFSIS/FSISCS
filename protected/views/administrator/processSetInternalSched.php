@@ -105,7 +105,8 @@
 	$units = $_GET['units'];
 	$lec = $_GET['lec'];
 	$lab = $_GET['lab'];
-
+	$base = Yii::app()->getBaseUrl();
+	
 	$check = checkFirstParameters($day, $timeS, $timeE, $roomName, $profName);
 	if($check == 'pass'){
 		$valid1 = checkRoomSched($day, $timeS, $timeE, $sem, $sy, $roomName, $schedID1, $schedID2);
@@ -177,8 +178,8 @@
 					}
 				} else {
 					echo"
-					<script src='http://localhost/FSIS/assets/jquery-3.6.0.min.js'></script>
-					<script src='http://localhost/FSIS/assets/sweetalert2.all.min.js'></script>
+					<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+					<script src='".$base."assets/sweetalert2.all.min.js'></script>
 					<script>
 
 						Swal.fire({
@@ -238,8 +239,8 @@
 				}
 			} else {
 				echo"
-				<script src='http://localhost/FSIS/assets/jquery-3.6.0.min.js'></script>
-				<script src='http://localhost/FSIS/assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."assets/sweetalert2.all.min.js'></script>
 				<script>
 
 				Swal.fire({
@@ -301,8 +302,8 @@
 	else
 		{
 				echo"
-				<script src='http://localhost/FSIS/assets/jquery-3.6.0.min.js'></script>
-				<script src='http://localhost/FSIS/assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."assets/sweetalert2.all.min.js'></script>
 				<script>
 
 				Swal.fire({

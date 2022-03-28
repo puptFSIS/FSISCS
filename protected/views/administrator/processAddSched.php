@@ -142,8 +142,8 @@ if ($ping <= 0) {
 					}
 				} else {
 					echo"
-					<script src=".$base."'assets/jquery-3.6.0.min.js'></script>
-					<script src=".$base."'assets/sweetalert2.all.min.js'></script>
+					<script src='".$base."'assets/jquery-3.6.0.min.js'></script>
+					<script src='".$base."'assets/sweetalert2.all.min.js'></script>
 					<script>
 
 						Swal.fire({

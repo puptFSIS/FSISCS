@@ -349,7 +349,7 @@ class AdministratorController extends Controller
 	public function actionView()
 	{
 		$facInfo = TblPersonalinformation::model()->GetFacultyInfo($_GET['EmpID']);
-		$employmentStats = array('Full-time', 'Part-time','Temporary','Faculty Designee');
+		$employmentStats = array('Full-time', 'Part-time','Temporary');
 		$status = Yii::app()->db->createCommand('SELECT enu_employmentStat FROM tbl_evaluationfaculty WHERE FCode = :fcode')
 		->bindValue(':fcode',$_GET['FCode'])
 		->queryRow();

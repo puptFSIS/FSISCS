@@ -3765,3 +3765,81 @@ REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (211)
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (211)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2964)
+2022/03/29 08:10:09 [error] [exception.CException] CException: AdministratorController cannot find the requested view "regular_DTR_single". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2917): CController->render('regular_DTR_sin...', Array)
+#2 [internal function]: AdministratorController->actionHap_checkDtr('48', 'PART-TIME', 'January', '2019', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#3 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#10 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=48&val2=PART-TIME&val3=January&val4=2019&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/03/29 08:15:26 [error] [php] fopen(assets/Instructions.PNG): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\fpdf.php:1247)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(1247): fopen()
+#1 C:\xampp\htdocs\FSISCS\fpdf.php(885): FPDF->_parsepng()
+#2 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(530): FPDF->Image()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2917): AdministratorController->render()
+#8 unknown(0): AdministratorController->actionHap_checkDtr()
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#10 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#13 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#15 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#16 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#17 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=48&val2=PART-TIME&val3=January&val4=2019&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+in C:\xampp\htdocs\FSISCS\fpdf.php (1247)
+in C:\xampp\htdocs\FSISCS\fpdf.php (885)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php (530)
+2022/03/29 08:17:34 [error] [exception.CException] CException: AdministratorController cannot find the requested view "Regular_DTR". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2911): CController->render('Regular_DTR', Array)
+#2 [internal function]: AdministratorController->actionRegular_DTRgoto('48', 'PART-TIME', 'January', '2019', 'FA0797MN2008', '51', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#3 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#10 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=48&val2=PART-TIME&val3=January&val4=2019&val5=FA0797MN2008&val6=51&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/03/29 08:24:03 [error] [exception.CException] CException: AdministratorController cannot find the requested view "Regular_DTR". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2911): CController->render('Regular_DTR', Array)
+#2 [internal function]: AdministratorController->actionRegular_DTRgoto('48', 'PART-TIME', 'January', '2019', 'FA0797MN2008', '51', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#3 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#10 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=48&val2=PART-TIME&val3=January&val4=2019&val5=FA0797MN2008&val6=51&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---

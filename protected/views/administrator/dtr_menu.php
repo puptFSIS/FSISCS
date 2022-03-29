@@ -369,6 +369,11 @@ a:hover {
   /*display: none;*/
 }
 
+
+li
+{
+  font-size: 15px;
+}
 </style>
 
 <?php 
@@ -402,24 +407,28 @@ a:hover {
 if($preview_value===0)
 {
 
-
-echo '<a href="index.php?r=administrator/DtrTable"><button class="genBtn">GENERATE DTR</button> </a>';
-echo '<br><br>';
+echo '<ul>';
+echo '<li><a href="index.php?r=administrator/DtrTable">Generate DTR</a></li>';
+echo '</ul>';
 
 }
 ?>
-<!--<button class="genBtn" id="regular_dtr_btn">GENERATE DTR</button> -->
-<br><br>
-<!-- button for haps account -->
 <?php 
   include("getRole.php");
   if($role === "HAP")
   {
-    echo "<a href='index.php?r=administrator/HAPDtrTable'><button class='hap_btn_class' id='hap_btn_id'>hap sec inbox</button></a>";
+    echo '<ul>';
+    echo "<li><a href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
+    echo "<li><a href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
+    echo '</ul>';
+
   }
   else if($role === "HAP Secretary")
   {
-    echo "<a href='index.php?r=administrator/HAP_Secretary_table'><button class='hap_btn_class' id='hap_btn_id'>hap secretary</button></a>";
+    echo '<ul>';
+    echo "<li><a href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
+    echo "<li><a href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
+    echo '</ul>';
     
   }
  ?>

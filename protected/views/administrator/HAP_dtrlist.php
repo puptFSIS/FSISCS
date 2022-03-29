@@ -1,5 +1,7 @@
 
 <style>
+
+
 	.newbtn-s{
 	-webkit-appearance: button;
 	   -moz-appearance: button;
@@ -447,12 +449,12 @@ if($status == "pending")
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_pending">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
-							<p id="modal_fcode_id'.$counter.'" class="fcode_p_Tag"></p>
+							<p id="modal_date_id'.$counter.'" class="fcode_p_Tag"></p>
 							<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="radio" class"radio'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1">
+									<input type="checkbox" class"'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1">
 									<label for="approve" class="approve">  APPROVE</label>
-									<input type="radio" class"radio'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="2 ">
+									<input type="checkbox" class"'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="2 ">
 									<label for="disapprove" class="disapprove">  DISAPPROVE</label>
 
 
@@ -514,14 +516,13 @@ else if($status == "approved")
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
-							<p id="modal_fcode_id'.$counter.'" class="fcode_p_Tag"></p>
+							<p id="modal_date_id'.$counter.'" class="fcode_p_Tag"></p>
 						</div>
 						<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="radio" class"radio'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="2 ">
+									<input type="checkbox" class"radio'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="2 ">
 									<label for="approve" class="disapprove"> DISAPPROVE RECORD</label>
-									<input type="hidden" class"radio'.$counter.'" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
-									<label for="disapprove" hidden> &times</label>
+									
 
 									<br>
 
@@ -585,14 +586,13 @@ else if($status == "disapproved")
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_disapproved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
-							<p id="modal_fcode_id'.$counter.'" class="fcode_p_Tag"></p>
+							<p id="modal_date_id'.$counter.'" class="fcode_p_Tag"></p>
 						</div>
 						<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="radio" class"radio'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1 ">
+									<input type="checkbox" class"'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1 ">
 									<label for="approve" class="approve"> APPROVE RECORD</label>
-									<input type="hidden" class"radio'.$counter.'" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
-									<label for="disapprove" hidden> &times</label>
+									
 
 									<br>
 
@@ -638,6 +638,10 @@ var surname = [];
 var firstname = [];
 var middlename = [];
 
+
+$(document).on('click', 'input[type="checkbox"]', function() {      
+    $('input[type="checkbox"]').not(this).prop('checked', false);      
+});
 function check_dtr(counter)
 {
 	var tr_row = $("#tr_id_"+counter).html();
@@ -655,7 +659,7 @@ function post_approval(counter)
 	if (document.getElementById("approve_box_id"+counter).checked) {
 		var approval = document.getElementById("approve_box_id"+counter).value;
 	}
-	else
+	else 
 	{
 		var approval = document.getElementById("disapprove_box_id"+counter).value;
 
@@ -737,16 +741,20 @@ function open_dtr_modal(counter)
 
 	//to
 	var modal_id_var = document.getElementById("modal_id_id"+counter);
-	var modal_fcode_id_var = document.getElementById("modal_fcode_id"+counter);
+	var modal_date_id_var = document.getElementById("modal_date_id"+counter);
 	var modal_fullname_id_var = document.getElementById("modal_name_id"+counter);
 	var modal_regpartime_id_var = document.getElementById("modal_regpartime_id"+counter);
 	var modal_month_id_var = document.getElementById("modal_month_id"+counter);
-	var modal_date_id_var = document.getElementById("modal_date_id"+counter);
+	// var modal_date_id_var = document.getElementById("modal_date_id"+counter);
 
 
 	// modal_div declaration
 	modal_div[counter] = document.getElementById("modal_for_check_id"+counter);
 	
+	//unchecking checkboxes
+	$("#approve_box_id"+counter).prop('checked', false);
+
+
 	if (modal_div[counter].style.display === "none") 
 	{ 
 
@@ -755,16 +763,20 @@ function open_dtr_modal(counter)
 			let last = lastname_id[counter];
 			let month = month_id[counter];
 			let year = year_id[counter];
+			let loadtype = regpartime_id[counter];
+			
 			let fullname = first.concat(" ",mid," ",last);
+			let loadtype_month_year = loadtype.concat(" - ",month," ",year);
+
 			let month_year = month.concat(" ",year);
 
 		    modal_div[counter].style.display = "block";
 			modal_id_var.innerText = faculty_id[counter];
-			modal_fcode_id_var.innerText = fcode_id[counter];
+			modal_date_id_var.innerText = loadtype_month_year;
 			modal_fullname_id_var.innerText = fullname;
 			modal_regpartime_id_var.innerText = regpartime_id[counter];
 			// modal_month_id_var.innerText = month_id[counter];
-			modal_date_id_var.innerText = month_year;
+			modal_date_id_var.innerText = fullname;
 
 			counter_temp.push(counter);
 			string_counter_temp = counter_temp.toString();
@@ -789,6 +801,9 @@ function open_dtr_modal(counter)
 	    console.log(counter,counter_temp,string_counter_temp,int_counter_temp);
 	
 }
+
+
+
 
 function close_dtr_modal(counter)
 {

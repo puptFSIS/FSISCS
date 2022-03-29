@@ -1,4 +1,8 @@
 <?php
+if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+    } 
 if(isset($_SESSION['user'])) {
     if($_SESSION['user']==1) {
     } else if($_SESSION['user']==0) {
@@ -162,6 +166,7 @@ if(isset($_SESSION['user'])) {
 <div class=container-inner>
 <!-- Page title -->
 <?php include("headerMenu.php");?> 
+
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -199,8 +204,10 @@ if(isset($_SESSION['user'])) {
     }
     if($preview_value===3)
     {
-    echo "<h2 class=underlined-header>List of Approved Daily Time Record</h2>";
-    include("HAP_Secretary_table.php");
+   
+    echo "<h2 class=underlined-header>End of the month form</h2>";
+    // include("HAP_Secretary_table.php"); luma
+    include("EOTM_form.php"); // bago
     }
  ?>
 

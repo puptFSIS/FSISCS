@@ -3745,3 +3745,23 @@ Stack trace:
 #19 {main}
 REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=30
 ---
+2022/03/29 00:57:47 [error] [php] include(EOTM_form.php): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php:211)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(211): include()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2964): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (211)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (211)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2964)

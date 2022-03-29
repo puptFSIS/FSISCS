@@ -19,15 +19,15 @@
 </style>
 <div> 
 <!-- Video - HTML5 -->
-<p style="font-style: italic;"> 
-On the action column, you must click 2 pdf buttons in order to print it as pdf
+<p style="font-style: italic;">
+<!-- On the action column, you must click 2 pdf buttons in order to print it as pdf -->
 </p>
 <p>
-SORT BY: 
-<a href="index.php?r=administrator/DtrTable&sort=id"><input type="button" value="ID" /></a>
+SHOW: 
+<!-- <a href="index.php?r=administrator/DtrTable&sort=id"><input type="button" value="ID" /></a>
 <a href="index.php?r=administrator/DtrTable&sort=loadtype"><input type="button" value="Load Type" /></a>
 <a href="index.php?r=administrator/DtrTable&sort=month"><input type="button" value="Month" /></a>
-<a href="index.php?r=administrator/DtrTable&sort=year"><input type="button" value="Year" /></a>
+<a href="index.php?r=administrator/DtrTable&sort=year"><input type="button" value="Year" /></a> -->
 <a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="pending" /></a>
 <a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="disapproved"/></a>
 <a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="approved"/></a>

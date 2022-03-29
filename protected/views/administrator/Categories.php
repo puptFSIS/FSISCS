@@ -9,6 +9,7 @@ if(isset($_SESSION['user'])) {
 	}
 } else {
 	header("location:index.php?r=site/");
+    
 }
 ?>
 <!DOCTYPE html>

@@ -3,7 +3,7 @@
 
 <!-- End - Title and summary -->
 <!-- Title right side -->
-<section id="menu_strip">
+<section class='title-right portfolio-filter'>
 <a class=home data-category=design href='http://www.puptaguig.org'>Home</a>
 
 <a class=current-cat data-category=all href="index.php?r=faculty/">Profile</a>

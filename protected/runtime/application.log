@@ -3865,3 +3865,99 @@ Stack trace:
 REQUEST_URI=/FSISCS/index.php?r=faculty/IPCR
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=faculty/IPCRfaculty
 ---
+2022/03/30 09:36:02 [error] [php] mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given (C:\xampp\htdocs\FSISCS\protected\views\administrator\deleteSched.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\deleteSched.php(33): mysqli_fetch_array()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(983): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actiondeleteSched()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/deleteSched&schedID=10266&prof=FA0001TG2021&CurrID=5&courseID=19&cyear=1&scode=COMP%2020033&sy=2021-2022&sec=1&sem=2&title=Computer%20Programming%202&units=3&lec=0.00&lab=0.00&CurrID=5
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\deleteSched.php (33)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (983)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:51:29 [error] [php] mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given (C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php:627)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php(627): mysqli_fetch_array()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php(88): CheckLoad()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1634): AdministratorController->render()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessAddSched()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processAddSched&prof=&currID=5&courseID=19&cyear=1&scode=COMP%2020033&sem=2&sy=2021-2022&sec=1&title=Computer%20Programming%202&units=3&lec=0.00&lab=0.00
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php (627)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php (88)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1634)
+2022/03/30 09:55:17 [error] [exception.Error] Error: Call to undefined function FacultyLoad() in C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php:132
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('processAddSched', NULL, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1634): CController->render('processAddSched')
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessAddSched()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('processAddSched')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/p...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/processAddSched&prof=&currID=5&courseID=19&cyear=1&scode=COMP%2020033&sem=2%20%20&sy=2021-2022&sec=1&title=Computer%20Programming%202&units=3&lec=0.00&lab=0.00
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/AddSched&prof=&day=M&timeS=1400&timeE=1800&roomName=TGA202&profName=FA0001TG2021&CurrID=5&courseID=19&cyear=1&scode=COMP%2020033&sem=2%20%20&sy=2021-2022&sec=1&title=Computer%20Programming%202&units=3&lec=0.00&lab=0.00
+---
+2022/03/30 13:10:43 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 13:10:43 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 13:10:43 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 13:10:43 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)

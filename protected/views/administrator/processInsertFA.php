@@ -58,7 +58,7 @@ if($Fcode==null || $sname==null || $fname==null || $mname==null || $pass==null |
 					
 				}
 			}
-			$sql="INSERT INTO tbl_personalinformation (surname, firstname, middlename, nameExtension, birthdate, bday, bmonth, byear, EmpID, userID, password, isAdmin, status, civilStatus) VALUES ('$sname','$fname','$mname','$next', '1950-01-01', '01', '01', '1950', '$EmpID', '$EmpID','$epass','$isAdmin','active','Single')";
+			$sql="INSERT INTO tbl_personalinformation (FCode, surname, firstname, middlename, nameExtension, birthdate, bday, bmonth, byear, EmpID, userID, password, isAdmin, status, civilStatus) VALUES ('$Fcode','$sname','$fname','$mname','$next', '1950-01-01', '01', '01', '1950', '$EmpID', '$EmpID','$epass','$isAdmin','active','Single')";
 			$result=mysqli_query($conn,$sql);	
 
 			

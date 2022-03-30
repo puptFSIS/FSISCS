@@ -55,11 +55,28 @@
 			margin: 0;
 			background-color: #ffffff;
 		}
+
+		.header_style
+		{
+			 position: sticky;
+			 width: 90px; 
+			 height:90px; 
+			 margin-top: -20px;
+			 margin-left: 20px;
+		}
+
+		.header_text
+		{
+			margin-left: 150px;
+			font-size: 10px;
+		}
+
 	</style>
 
 </head>
 
 <body>
+	
 	<form method="POST">
 		<?php 
 
@@ -105,15 +122,14 @@
            $monthcounter = 0;
            if($temporary_list[$q] == "REGULAR")
            {
+           	// DITO EEDIT YUNG HEADER HA
            		echo'
-	            <div class="page">
-	            	<div class="header">
-						<img src="assets/EOTM_header.PNG" width="" height="">
-					</div>
-
-
-
+	            
+           			
 					<div class="body">
+
+						<p class="header_text">Republic of the Philippines</p>
+						<img src="assets/puplogo.png" class="header_style">
 						<input class="date no_box" type="" name="" value="'.$date.'">
 						<input class="hrmd no_box" type="" name="" value="'.$hrmd.'">
 			 			<p>Director

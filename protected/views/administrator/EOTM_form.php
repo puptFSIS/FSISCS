@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<<<<<<< HEAD
+
     <title></title>
     <style>
         
@@ -109,7 +109,7 @@
             background-color: #ffffff;
         }
     </style>
-=======
+
 	<title></title>
 	<style>
 		
@@ -181,17 +181,12 @@
 		}
 
 	</style>
->>>>>>> a1f6db656ac04e7733630b9f629e9f71705cabfa
+
 
 </head>
 
 <body>
-<<<<<<< HEAD
-=======
-	
-	<form method="POST">
-		<?php 
->>>>>>> a1f6db656ac04e7733630b9f629e9f71705cabfa
+
 
     <form method="POST">
         <?php 
@@ -239,49 +234,17 @@
         for($q = 0; $q<$count;$q++)
         {
            $monthcounter = 0;
-
-
            if($temporary_list[$q] == "REGULAR")
            {
-<<<<<<< HEAD
-           		
-                echo'
-                <div class="page">
-                    <div class="header">
-                        <img src="assets/EOTM_header.PNG" width="" height="">
-                    </div>
-
-
-
-                    <div class="body">
-                        <input class="date no_box" type="" name="" value="'.$date.'">
-                        <input class="hrmd no_box" type="" name="" value="'.$hrmd.'">
-                        <p>Director
-                        <br>
-                        Human Resources Management Department 
-                        <br>
-                        <br>
-                        Dear Atty. Saraum:
-                        </p> 
-
-                    	<div class="text_container_div">
-                        	
-                            
-
-                            <div id="text_div_id" class="text_div_class" contenteditable="true">
-                            	This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of MARCH and APRIL 2021: 
-                            </div>
-                    	</div>
-
-=======
-           	// DITO EEDIT YUNG HEADER HA
            		echo'
-	            
-           			
-					<div class="body">
+	            <div class="page">
+	            	<div class="header">
+						<img src="assets/EOTM_header.PNG" width="" height="">
+					</div>
 
-						<p class="header_text">Republic of the Philippines</p>
-						<img src="assets/puplogo.png" class="header_style">
+
+
+					<div class="body">
 						<input class="date no_box" type="" name="" value="'.$date.'">
 						<input class="hrmd no_box" type="" name="" value="'.$hrmd.'">
 			 			<p>Director
@@ -291,229 +254,194 @@
 						<br>
 						Dear Atty. Saraum:
 						</p> 
->>>>>>> a1f6db656ac04e7733630b9f629e9f71705cabfa
 
-                            <div class="list">list</div>
-                        	
-                        	<div class="before_footer">
-                        		<p>
-	                                Thank you very much 
-	                                <br>
-	                                <br>
-	                                Sincerely yours, 
-                             	</p>
-                        	</div>
-                        	
+						
+			 				<input class="body_text" type="" name="" value="This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of MARCH and APRIL 2021: ">
 
-                            
-                
-                    </div>
+
+			 				<textarea></textarea>
+
+			 				<div class="list">list</div>
+						
+
+			 				
+				
+					</div>
 
 
 
-                    <div class="footer">
-                        <img src="assets/EOTM_footer.PNG" width="" height="">
-                    </div>
-                </div>
-                <br><br>
+					<div class="footer">
+						<img src="assets/EOTM_footer.PNG" width="" height="">
+					</div>
+				</div>
+				<br><br>
 
 
 
-                ';
-                $counter++;
+				';
+
 
            }
 
            if($temporary_list[$q] == "PART TIME")
            {
-                echo'
-                <div class="page">
-                    <div class="header">
-                        <img src="assets/EOTM_header.PNG" width="" height="">
-                    </div>
+           		echo'
+	            <div class="page">
+	            	<div class="header">
+						<img src="assets/EOTM_header.PNG" width="" height="">
+					</div>
 
 
 
-                    <div class="body">
-                        <input class="date no_box" type="" name="" value="'.$date.'">
-                        <input class="hrmd no_box" type="" name="" value="'.$hrmd.'">
-                        <p>Director
-                        <br>
-                        Human Resources Management Department 
-                        <br>
-                        <br>
-                        Dear Atty. Saraum:
-                        </p> 
+					<div class="body">
+						<input class="date no_box" type="" name="" value="'.$date.'">
+						<input class="hrmd no_box" type="" name="" value="'.$hrmd.'">
+			 			<p>Director
+			 			<br>
+						Human Resources Management Department 
+						<br>
+						<br>
+						Dear Atty. Saraum:
+						</p> 
 
-                        
-                            <div class="text_container_div">
-                        	
-                            
+						
+			 				<input class="body_text" type="" name="" value="This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of MARCH and APRIL 2021: ">
+						
+			 				<div class="list">list</div>
+						
 
-                            <div id="text_div_id" class="text_div_class" contenteditable="true">
-                            	This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of MARCH and APRIL 2021: 
-                            </div>
-                    	</div>
-                        
-                            <div class="list">list</div>
-                        
-
-                            <div class="before_footer">
-                        		<p>
-	                                Thank you very much 
-	                                <br>
-	                                <br>
-	                                Sincerely yours, 
-                             	</p>
-                        	</div>
-                        
-                        
-                    </div>
+			 				<p>
+							 	Thank you very much 
+							 	<br>
+							 	<br>
+							 	Sincerely yours, 
+							 </p>
+			 			
+						
+					</div>
 
 
 
-                    <div class="footer">
-                        <img src="assets/EOTM_footer.PNG" width="" height="">
-                    </div>
-                </div>
-                <br><br>
-                
+					<div class="footer">
+						<img src="assets/EOTM_footer.PNG" width="" height="">
+					</div>
+				</div>
+				<br><br>
+				
 
 
-                ';
+				';
 
            }
 
            if($temporary_list[$q] == "TS")
            {
-                echo'
-                <div class="page">
-                    <div class="header">
-                        <img src="assets/EOTM_header.PNG" width="" height="">
-                    </div>
+           		echo'
+	            <div class="page">
+	            	<div class="header">
+						<img src="assets/EOTM_header.PNG" width="" height="">
+					</div>
 
 
 
-                    <div class="body">
-                        <input class="date no_box" type="" name="" value="'.$date.'">
-                        <input class="hrmd no_box" type="" name="" value="'.$hrmd.'">
-                        <p>Director
-                        <br>
-                        Human Resources Management Department 
-                        <br>
-                        <br>
-                        Dear Atty. Saraum:
-                        </p> 
+					<div class="body">
+						<input class="date no_box" type="" name="" value="'.$date.'">
+						<input class="hrmd no_box" type="" name="" value="'.$hrmd.'">
+			 			<p>Director
+			 			<br>
+						Human Resources Management Department 
+						<br>
+						<br>
+						Dear Atty. Saraum:
+						</p> 
 
-                        
-                            <div class="text_container_div">
-                        	
-                            
+						
+			 				<input class="body_text" type="" name="" value="This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of MARCH and APRIL, 2021: ">
+						
+			 				<div class="list">list</div>
+						
 
-                            <div id="text_div_id" class="text_div_class" contenteditable="true">
-                            	This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of MARCH and APRIL 2021: 
-                            </div>
-                    	</div>
-                        
-                            <div class="list">list</div>
-                        
-
-                            <div class="before_footer">
-                        		<p>
-	                                Thank you very much 
-	                                <br>
-	                                <br>
-	                                Sincerely yours, 
-                             	</p>
-                        	</div>
-                        
-                        
-                    </div>
+			 				<p>
+							 	Thank you very much 
+							 	<br>
+							 	<br>
+							 	Sincerely yours, 
+							 </p>
+			 			
+						
+					</div>
 
 
 
-                    <div class="footer">
-                        <img src="assets/EOTM_footer.PNG" width="" height="">
-                    </div>
-                </div>
-                <br><br>
-            
+					<div class="footer">
+						<img src="assets/EOTM_footer.PNG" width="" height="">
+					</div>
+				</div>
+				<br><br>
+			
 
 
-                ';
-                $counter++;
-
+				';
 
            }
 
            if($temporary_list[$q] == "OT")
            {
-                echo'
-                <div class="page">
-                    <div class="header">
-                        <img src="assets/EOTM_header.PNG" width="" height="">
-                    </div>
+           		echo'
+	            <div class="page">
+	            	<div class="header">
+						<img src="assets/EOTM_header.PNG" width="" height="">
+					</div>
 
 
 
-                    <div class="body">
-                        <input class="date no_box" type="" name="" value="'.$date.'">
-                        <input class="hrmd no_box" type="" name="" value="'.$hrmd.'">
-                        <p>Director
-                        <br>
-                        Human Resources Management Department 
-                        <br>
-                        <br>
-                        Dear Atty. Saraum:
-                        </p> 
+					<div class="body">
+						<input class="date no_box" type="" name="" value="'.$date.'">
+						<input class="hrmd no_box" type="" name="" value="'.$hrmd.'">
+			 			<p>Director
+			 			<br>
+						Human Resources Management Department 
+						<br>
+						<br>
+						Dear Atty. Saraum:
+						</p> 
 
-                        
-                            <div class="text_container_div">
-                        	
-                            
+						
+			 				<input class="body_text" type="" name="" value=This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following ADMINISTRATIVE PERSONNEL  of PUP TAGUIG for the month of APRIL 1-30, 2021: >
+						
+			 				<div class="list">list</div>
+						
 
-                            <div id="text_div_id" class="text_div_class" contenteditable="true">
-                            	This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of MARCH and APRIL 2021: 
-                            </div>
-                    	</div>
-                        
-                            <div class="list">list</div>
-                        
-
-                            <div class="before_footer">
-                        		<p>
-	                                Thank you very much 
-	                                <br>
-	                                <br>
-	                                Sincerely yours, 
-                             	</p>
-                        	</div>
-                        
-                    </div>
+			 				<p>
+							 	Thank you very much 
+							 	<br>
+							 	<br>
+							 	Sincerely yours, 
+							 </p>
+			 			
+					</div>
 
 
 
-                    <div class="footer">
-                        <img src="assets/EOTM_footer.PNG" width="" height="">
-                    </div>
-                </div>
-                <br><br>
+					<div class="footer">
+						<img src="assets/EOTM_footer.PNG" width="" height="">
+					</div>
+				</div>
+				<br><br>
 
-                
+				
 
 
-                ';
+				';
 
-                $counter++;
 
 
            }
             
-            $monthcounter++;
+			$monthcounter++;
             
             
         }
-
 
 
          ?>

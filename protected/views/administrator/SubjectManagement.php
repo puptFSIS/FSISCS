@@ -162,6 +162,7 @@ width: 300px;
 <tr>
 <th style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"><h5>Subject Code</h5></th>
 <th style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"><h5>Subject Title</h5></th>
+<th style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"><h5>Curriculum Year</h5></th>
 <th style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"><h5>Action</h5></th>
 </tr>
 </thead>
@@ -193,6 +194,7 @@ width: 300px;
 						<tr>
 						<td style="text-align: center;">'. $scode .'</td>
 						<td style="text-align: center;">'. $stitle .'</td>
+                        <td style="text-align: center;">'. $currYear .'</td>
 						<td style="text-align: center;">
                         
                         <a href="index.php?r=administrator/EditSubject&SubjCode='.$scode.'&SubTits='.$stitle.'&units='.$units.'&lec='.$lec.'&lab='.$lab.'&cat='.$cat.'&currYear='.$currYear.'" class="btn btn-mini">

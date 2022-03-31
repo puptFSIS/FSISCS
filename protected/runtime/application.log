@@ -3765,6 +3765,7 @@ REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (211)
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (211)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2964)
+<<<<<<< Updated upstream
 2022/03/29 08:10:09 [error] [exception.CException] CException: AdministratorController cannot find the requested view "regular_DTR_single". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
 Stack trace:
 #0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
@@ -3843,3 +3844,249 @@ Stack trace:
 REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=48&val2=PART-TIME&val3=January&val4=2019&val5=FA0797MN2008&val6=51&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
 HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
 ---
+<<<<<<< HEAD
+2022/03/30 19:01:18 [error] [exception.ParseError] ParseError: syntax error, unexpected 'endfor' (T_ENDFOR), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:170
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2964): CController->render('daily_time_reco...', Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('HAP_Secretary_t...')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/H...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/daily_time_record
+---
+2022/03/30 19:02:05 [error] [exception.ParseError] ParseError: syntax error, unexpected 'endfor' (T_ENDFOR), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:170
+=======
+2022/03/30 08:34:07 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "IPCR". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('IPCR')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCR')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('faculty/IPCR')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCR
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=faculty/IPCRfaculty
+---
+2022/03/30 08:35:59 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "IPCR". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('IPCR')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCR')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('faculty/IPCR')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCR
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=faculty/IPCRfaculty
+---
+2022/03/30 09:36:02 [error] [php] mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given (C:\xampp\htdocs\FSISCS\protected\views\administrator\deleteSched.php:33)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\deleteSched.php(33): mysqli_fetch_array()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(983): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actiondeleteSched()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/deleteSched&schedID=10266&prof=FA0001TG2021&CurrID=5&courseID=19&cyear=1&scode=COMP%2020033&sy=2021-2022&sec=1&sem=2&title=Computer%20Programming%202&units=3&lec=0.00&lab=0.00&CurrID=5
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\deleteSched.php (33)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (983)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:49:13 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 09:51:29 [error] [php] mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given (C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php:627)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php(627): mysqli_fetch_array()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php(88): CheckLoad()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1634): AdministratorController->render()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessAddSched()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processAddSched&prof=&currID=5&courseID=19&cyear=1&scode=COMP%2020033&sem=2&sy=2021-2022&sec=1&title=Computer%20Programming%202&units=3&lec=0.00&lab=0.00
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php (627)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php (88)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1634)
+2022/03/30 09:55:17 [error] [exception.Error] Error: Call to undefined function FacultyLoad() in C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddSched.php:132
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('processAddSched', NULL, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1634): CController->render('processAddSched')
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessAddSched()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('processAddSched')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/p...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/processAddSched&prof=&currID=5&courseID=19&cyear=1&scode=COMP%2020033&sem=2%20%20&sy=2021-2022&sec=1&title=Computer%20Programming%202&units=3&lec=0.00&lab=0.00
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/AddSched&prof=&day=M&timeS=1400&timeE=1800&roomName=TGA202&profName=FA0001TG2021&CurrID=5&courseID=19&cyear=1&scode=COMP%2020033&sem=2%20%20&sy=2021-2022&sec=1&title=Computer%20Programming%202&units=3&lec=0.00&lab=0.00
+---
+2022/03/30 13:10:43 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 13:10:43 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 13:10:43 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/03/30 13:10:43 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+=======
+2022/03/29 08:30:58 [error] [exception.ParseError] ParseError: syntax error, unexpected '<' in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:117
+>>>>>>> a1f6db656ac04e7733630b9f629e9f71705cabfa
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2964): CController->render('daily_time_reco...', Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('HAP_Secretary_t...')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/H...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+<<<<<<< HEAD
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/daily_time_record
+---
+2022/03/30 19:02:07 [error] [exception.ParseError] ParseError: syntax error, unexpected 'endfor' (T_ENDFOR), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:170
+=======
+REQUEST_URI=/FSISCS/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/03/29 08:31:49 [error] [exception.ParseError] ParseError: syntax error, unexpected '<' in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:117
+>>>>>>> a1f6db656ac04e7733630b9f629e9f71705cabfa
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2964): CController->render('daily_time_reco...', Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('HAP_Secretary_t...')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/H...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+<<<<<<< HEAD
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/daily_time_record
+---
+2022/03/30 19:02:09 [error] [exception.ParseError] ParseError: syntax error, unexpected 'endfor' (T_ENDFOR), expecting elseif (T_ELSEIF) or else (T_ELSE) or endif (T_ENDIF) in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:170
+=======
+REQUEST_URI=/FSISCS/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/03/29 08:45:13 [error] [exception.ParseError] ParseError: syntax error, unexpected '<', expecting end of file in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:76
+>>>>>>> a1f6db656ac04e7733630b9f629e9f71705cabfa
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2964): CController->render('daily_time_reco...', Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('HAP_Secretary_t...')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/H...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+<<<<<<< HEAD
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/daily_time_record
+---
+2022/03/30 19:06:54 [error] [exception.ParseError] ParseError: syntax error, unexpected '<' in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:119
+=======
+REQUEST_URI=/FSISCS/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/03/29 08:45:23 [error] [exception.ParseError] ParseError: syntax error, unexpected '<', expecting end of file in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:76
+>>>>>>> a1f6db656ac04e7733630b9f629e9f71705cabfa
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2964): CController->render('daily_time_reco...', Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('HAP_Secretary_t...')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/H...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+<<<<<<< HEAD
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/daily_time_record
+---
+=======
+REQUEST_URI=/FSISCS/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+>>>>>>> Stashed changes
+>>>>>>> a1f6db656ac04e7733630b9f629e9f71705cabfa

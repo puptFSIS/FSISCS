@@ -17,7 +17,7 @@
 
 
 	if($result3){
-		header("Location: index.php?r=administrator/CurriculumList");
+		header("Location: index.php?r=administrator/CurriculumList&mes=3");
 	}
 	mysqli_close($conn);
 

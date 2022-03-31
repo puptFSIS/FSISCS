@@ -480,6 +480,7 @@ include('config.php');
 		if ($('#WD').prop('checked')) {
 			
 			document.getElementById("ifYes").style.display = "none";
+			$('select:#Stime,#Etime').attr('disabled',(this.checked))
 		} else {
 			document.getElementById("ifYes").style.display = "block";
 		}

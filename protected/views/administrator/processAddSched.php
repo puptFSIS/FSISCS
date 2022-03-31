@@ -85,8 +85,8 @@
 	$valid3 = "";
 
 
-$ping = CheckLoad($profName, $sy, $units, $sem);
-if ($ping <= 0) {
+// $ping = CheckLoad($profName, $sy, $units, $sem);
+// if ($ping <= 0) {
 	$check = checkFirstParameters($day, $timeS, $timeE, $roomName, $profName);
 	if ($check == 'pass') {
 		if ($profName == "") {
@@ -119,8 +119,8 @@ if ($ping <= 0) {
 							header("Location: index.php?r=administrator/SchedulingPage&currID=$currID&courseID=$courseID&sem=$sem&sy=$sy&sec=$sec&mes=2");
 							mysqli_close($conn);
 						} else {
-							$load_type = FacultyLoad($profName,$sy,$units, $sem);
-							$sql="UPDATE tbl_schedule SET sday='$day', sroom='$roomName', stimeS = '$timeS', stimeE = '$timeE', sprof = '$profName', load_type = NULL where currID='$currID' and courseID = '$courseID' and cyear = '$cyear' and scode = '$scode' and sem = '$sem' and schoolYear = '$sy' and csection = '$sec' and Sched_type = 'OFFICIAL'";
+							// $load_type = FacultyLoad($profName,$sy,$units, $sem);
+							$sql="UPDATE tbl_schedule SET sday='$day', sroom='$roomName', stimeS = '$timeS', stimeE = '$timeE', sprof = '$profName' where currID='$currID' and courseID = '$courseID' and cyear = '$cyear' and scode = '$scode' and sem = '$sem' and schoolYear = '$sy' and csection = '$sec' and Sched_type = 'OFFICIAL'";
 							$result=mysqli_query($conn,$sql);
 							header("Location: index.php?r=administrator/SchedulingPage&currID=$currID&courseID=$courseID&sem=$sem&sy=$sy&sec=$sec&mes=2");
 							mysqli_close($conn);
@@ -129,11 +129,11 @@ if ($ping <= 0) {
 					}
 					else
 					{	
-						$load_type = FacultyLoad($profName,$sy,$units, $sem);
+						// $load_type = FacultyLoad($profName,$sy,$units, $sem);
 						// echo $load_type;
-						$sql = "INSERT INTO tbl_schedule VALUES ('','$currID','$courseID','$sec','$cyear','$scode','$title','$units','$lec','$lab','$day','$timeS','$timeE','$roomName','$profName','$sem','$sy','','','','',".$load_type.",'OFFICIAL')";
-						$result = mysqli_query($conn,$sql);
-						echo $sql;
+						$sql = "INSERT INTO tbl_schedule VALUES ('','$currID','$courseID','$sec','$cyear','$scode','$title','$units','$lec','$lab','$day','$timeS','$timeE','$roomName','$profName','$sem','$sy','','','','',NULL,'OFFICIAL')";
+						// $result = mysqli_query($conn,$sql);
+						// echo $sql;
 						if($result)
 						{
 						header("Location: index.php?r=administrator/SchedulingPage&currID=$currID&courseID=$courseID&sem=$sem&sy=$sy&sec=$sec&mes=1");
@@ -142,8 +142,8 @@ if ($ping <= 0) {
 					}
 				} else {
 					echo"
-					<script src='".$base."'assets/jquery-3.6.0.min.js'></script>
-					<script src='".$base."'assets/sweetalert2.all.min.js'></script>
+					<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+					<script src='".$base."assets/sweetalert2.all.min.js'></script>
 					<script>
 
 						Swal.fire({
@@ -382,80 +382,80 @@ if ($ping <= 0) {
 
 		header("location:index.php?r=administrator/AddSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=1");
 	}
-} else {
-	echo"
-				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
-				<script src='".$base."assets/sweetalert2.all.min.js'></script>
-				<script>
+// } else {
+// 	echo"
+// 				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+// 				<script src='".$base."assets/sweetalert2.all.min.js'></script>
+// 				<script>
 
-				Swal.fire({
-					icon:'error',
-					title:'Ooops!',
-					text:'Faculty Load is Full!',
-					timer: '2000'
-				})
-				</script>";
+// 				Swal.fire({
+// 					icon:'error',
+// 					title:'Ooops!',
+// 					text:'Faculty Load is Full!',
+// 					timer: '2000'
+// 				})
+// 				</script>";
 		
-				echo'
+// 				echo'
 										
-							<table class="table table-bordered table-hover responsive-utilities" style="margin-left:-65px">
-							  <tbody>
-							  <tr>
-								<td class="table-narrow" colspan = "4">
-								<h4><strong>Faculty Load: '.getName($profName).'</strong><br /></h4>
-								<h4><strong>Status: '.getStatus($profName).'</strong></h4>
-								</td>
-							</tr>
-								<tr>
-									<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">CODE:</td>
-									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">TITLE</td>
-									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">LEC</td>
-									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">LAB</td>
-									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">UNITS</td>
-								</tr>
-							';
-			$sql = "SELECT * FROM tbl_schedule WHERE sprof = '$profName' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
+// 							<table class="table table-bordered table-hover responsive-utilities" style="margin-left:-65px">
+// 							  <tbody>
+// 							  <tr>
+// 								<td class="table-narrow" colspan = "4">
+// 								<h4><strong>Faculty Load: '.getName($profName).'</strong><br /></h4>
+// 								<h4><strong>Status: '.getStatus($profName).'</strong></h4>
+// 								</td>
+// 							</tr>
+// 								<tr>
+// 									<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">CODE:</td>
+// 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">TITLE</td>
+// 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">LEC</td>
+// 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">LAB</td>
+// 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">UNITS</td>
+// 								</tr>
+// 							';
+// 			$sql = "SELECT * FROM tbl_schedule WHERE sprof = '$profName' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
 			
-			$result = mysqli_query($conn,$sql);
-			while ($row = mysqli_fetch_array($result)) {
-					echo'
-											<tr>	
-												<td style="text-align: center;">'. $row['scode'] .'</td>
-												<td style="text-align: left;">'. $row['stitle']. '</td>			
-												<td style="text-align: center;">'. $row['lec'] .'</td>
-												<td style="text-align: center;">'. $row['lab'].'</td>
-												<td style="text-align: center;">'. $row['units'].'</td>
-											</tr>';	
+// 			$result = mysqli_query($conn,$sql);
+// 			while ($row = mysqli_fetch_array($result)) {
+// 					echo'
+// 											<tr>	
+// 												<td style="text-align: center;">'. $row['scode'] .'</td>
+// 												<td style="text-align: left;">'. $row['stitle']. '</td>			
+// 												<td style="text-align: center;">'. $row['lec'] .'</td>
+// 												<td style="text-align: center;">'. $row['lab'].'</td>
+// 												<td style="text-align: center;">'. $row['units'].'</td>
+// 											</tr>';	
 
-				}
-			$sql2 = "SELECT * FROM tbl_facultycurrentload WHERE FCode = '$profName' && schoolYear = '$sy' && sem = '$sem'";
-			$result2 = mysqli_query($conn,$sql2);
-			$row2 = mysqli_fetch_array($result2);
-			$regular = $row2['Regular_Load'];
-			$part = $row2['PartTime_Load'];
-			$ts = $row2['TeachingSub_Load'];
+// 				}
+// 			$sql2 = "SELECT * FROM tbl_facultycurrentload WHERE FCode = '$profName' && schoolYear = '$sy' && sem = '$sem'";
+// 			$result2 = mysqli_query($conn,$sql2);
+// 			$row2 = mysqli_fetch_array($result2);
+// 			$regular = $row2['Regular_Load'];
+// 			$part = $row2['PartTime_Load'];
+// 			$ts = $row2['TeachingSub_Load'];
 			
-									echo'
+// 									echo'
 									
-									</tbody>
-									</table>
-							<table class="table table-bordered table-hover responsive-utilities" style="margin-left:-65px">
-							<tbody>
-								<tr>
-									<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">REGULAR LOAD</td>
-									<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">PART TIME LOAD</td>
-									<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">TEACHING SUBSTITUTION</td>
-								</tr>
+// 									</tbody>
+// 									</table>
+// 							<table class="table table-bordered table-hover responsive-utilities" style="margin-left:-65px">
+// 							<tbody>
+// 								<tr>
+// 									<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">REGULAR LOAD</td>
+// 									<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">PART TIME LOAD</td>
+// 									<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">TEACHING SUBSTITUTION</td>
+// 								</tr>
 
-								<tr>
-									<td style="text-align: center;">'.$regular.' Unit/s</td>
-									<td style="text-align: center;">'.$part.' Unit/s</td>
-									<td style="text-align: center;">'.$ts.' Unit/s</td>
-								</tr>
-							</tbody>
-							</table>
-							<a href="index.php?r=administrator/AddSched&prof='.$prof.'&day='.$day.'&timeS='.$timeS.'&timeE='.$timeE.'&roomName='.$roomName.'&profName='.$profName.'&CurrID='. $currID .'&courseID='. $courseID .'&cyear='. $cyear .'&scode='. $scode .'&sem='. $sem .' &sy='. $sy .'&sec='. $sec .'&title='.$title.'&units='.$units.'&lec='.$lec.'&lab='.$lab.'" class="btn btn-mini btn-primary btn-block" style="width:45px text-decoration:none; color:white; margin-left:-65px;">BACK</a>';
-			}
+// 								<tr>
+// 									<td style="text-align: center;">'.$regular.' Unit/s</td>
+// 									<td style="text-align: center;">'.$part.' Unit/s</td>
+// 									<td style="text-align: center;">'.$ts.' Unit/s</td>
+// 								</tr>
+// 							</tbody>
+// 							</table>
+// 							<a href="index.php?r=administrator/AddSched&prof='.$prof.'&day='.$day.'&timeS='.$timeS.'&timeE='.$timeE.'&roomName='.$roomName.'&profName='.$profName.'&CurrID='. $currID .'&courseID='. $courseID .'&cyear='. $cyear .'&scode='. $scode .'&sem='. $sem .' &sy='. $sy .'&sec='. $sec .'&title='.$title.'&units='.$units.'&lec='.$lec.'&lab='.$lab.'" class="btn btn-mini btn-primary btn-block" style="width:45px text-decoration:none; color:white; margin-left:-65px;">BACK</a>';
+// 			}
 
 	function getName($fcode)
 	{
@@ -619,169 +619,169 @@ if ($ping <= 0) {
 		return $count;
 	}
 						//	  2020		5     2
-	function CheckLoad($fcode, $sy, $units, $sem){
-		include("config.php");
-		$check="";
-		$sql = "SELECT * FROM tbl_facultycurrentload WHERE FCode='".$fcode."' and schoolYear ='".$sy."' and sem = ".$sem."";
-		$result = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_array($result);
-		$count = mysqli_num_rows($result);
-		$regular = $row['Regular_Load'];
-		$partTime = $row['PartTime_Load'];
-		$tsLoad = $row['TeachingSub_Load'];
+	// function CheckLoad($fcode, $sy, $units, $sem){
+	// 	include("config.php");
+	// 	$check="";
+	// 	$sql = "SELECT * FROM tbl_facultycurrentload WHERE FCode='".$fcode."' and schoolYear ='".$sy."' and sem = ".$sem."";
+	// 	$result = mysqli_query($conn, $sql);
+	// 	$row = mysqli_fetch_array($result);
+	// 	$count = mysqli_num_rows($result);
+	// 	$regular = $row['Regular_Load'];
+	// 	$partTime = $row['PartTime_Load'];
+	// 	$tsLoad = $row['TeachingSub_Load'];
 
-		if($count > 0){
-			$sqleval = "SELECT Regular_Load, PartTime_Load, TeachingSub_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
-			$result = mysqli_query($conn, $sqleval);
-			$row = mysqli_fetch_array($result);
-			$reg = $row['Regular_Load']; //15 units
-			$part = $row['PartTime_Load']; //12 units
-			$ts = $row['TeachingSub_Load']; //12 units
-			$sum = 0;
+	// 	if($count > 0){
+	// 		$sqleval = "SELECT Regular_Load, PartTime_Load, TeachingSub_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
+	// 		$result = mysqli_query($conn, $sqleval);
+	// 		$row = mysqli_fetch_array($result);
+	// 		$reg = $row['Regular_Load']; //15 units
+	// 		$part = $row['PartTime_Load']; //12 units
+	// 		$ts = $row['TeachingSub_Load']; //12 units
+	// 		$sum = 0;
 
 
-			if ($reg == 0) { //for part time faculty
-				$sum = $partTime + $units;
-				if ($sum <= $part) {
-					$check = 0;
-				} else {
-					$sum = 0;
-					$sum = $tsLoad + $units;
-					if ($sum <= $ts) {
-						$check = 0;
-					} else {
-						$check = 1;
-					}
-				}
-			} else if($reg == 9){ //for faculty designee
-				$sum = $regular + $units;
-				if ($sum <= $reg) {
-					$check = 0;
-				} else {
-					$sum = 0;
-					$sum = $tsLoad + $units;
-					if ($sum <= $ts) {
-						$check = 0;
-					} else {
-						$check = 1;
-					}
-				}
-			} else {	// for regular faculty
-				$sum = $regular + $units;
-				if ($sum <= $reg) {
-					$check = 0;
-				} else {
-					$sum = 0;
-					$sum = $partTime + $units;
-					if ($sum <= $part) {
-						$check = 0;
-					} else {
-						$sum = 0;
-						$sum = $tsLoad + $units;
-						if ($sum <= $ts) {
-							$check = 0;
-						} else {
-							$check = 1;
-						}
-					}
-				}
-			}
-		} else {
-			$check = 0;
-		}
+	// 		if ($reg == 0) { //for part time faculty
+	// 			$sum = $partTime + $units;
+	// 			if ($sum <= $part) {
+	// 				$check = 0;
+	// 			} else {
+	// 				$sum = 0;
+	// 				$sum = $tsLoad + $units;
+	// 				if ($sum <= $ts) {
+	// 					$check = 0;
+	// 				} else {
+	// 					$check = 1;
+	// 				}
+	// 			}
+	// 		} else if($reg == 9){ //for faculty designee
+	// 			$sum = $regular + $units;
+	// 			if ($sum <= $reg) {
+	// 				$check = 0;
+	// 			} else {
+	// 				$sum = 0;
+	// 				$sum = $tsLoad + $units;
+	// 				if ($sum <= $ts) {
+	// 					$check = 0;
+	// 				} else {
+	// 					$check = 1;
+	// 				}
+	// 			}
+	// 		} else {	// for regular faculty
+	// 			$sum = $regular + $units;
+	// 			if ($sum <= $reg) {
+	// 				$check = 0;
+	// 			} else {
+	// 				$sum = 0;
+	// 				$sum = $partTime + $units;
+	// 				if ($sum <= $part) {
+	// 					$check = 0;
+	// 				} else {
+	// 					$sum = 0;
+	// 					$sum = $tsLoad + $units;
+	// 					if ($sum <= $ts) {
+	// 						$check = 0;
+	// 					} else {
+	// 						$check = 1;
+	// 					}
+	// 				}
+	// 			}
+	// 		}
+	// 	} else {
+	// 		$check = 0;
+	// 	}
 
-		return $check;
-	}
+	// 	return $check;
+	// }
 
-	function FacultyLoad($fcode, $sy, $units, $sem){
-		include("config.php");
-		$load_type="";
-		$sql1 = "SELECT * FROM tbl_facultycurrentload WHERE FCode='".$fcode."' and schoolYear ='".$sy."' and sem = ".$sem."";
-		$result1 = mysqli_query($conn, $sql1);
-		$row1 = mysqli_fetch_array($result1);
-		$count = mysqli_num_rows($result1);
-		$regular = $row1['Regular_Load'];
-		$partTime = $row1['PartTime_Load'];
-		$tsLoad = $row1['TeachingSub_Load'];
+	// function FacultyLoad($fcode, $sy, $units, $sem){
+	// 	include("config.php");
+	// 	$load_type="";
+	// 	$sql1 = "SELECT * FROM tbl_facultycurrentload WHERE FCode='".$fcode."' and schoolYear ='".$sy."' and sem = ".$sem."";
+	// 	$result1 = mysqli_query($conn, $sql1);
+	// 	$row1 = mysqli_fetch_array($result1);
+	// 	$count = mysqli_num_rows($result1);
+	// 	$regular = $row1['Regular_Load'];
+	// 	$partTime = $row1['PartTime_Load'];
+	// 	$tsLoad = $row1['TeachingSub_Load'];
 
-		if($count<=0){
-			$sqleval = "SELECT Regular_Load, PartTime_Load, TeachingSub_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
-			$result = mysqli_query($conn, $sqleval);
-			$row = mysqli_fetch_array($result);
-			$reg = $row['Regular_Load'];
-			$part = $row['PartTime_Load'];
+	// 	if($count<=0){
+	// 		$sqleval = "SELECT Regular_Load, PartTime_Load, TeachingSub_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
+	// 		$result = mysqli_query($conn, $sqleval);
+	// 		$row = mysqli_fetch_array($result);
+	// 		$reg = $row['Regular_Load'];
+	// 		$part = $row['PartTime_Load'];
 
-			$sqlfac = "INSERT INTO tbl_facultycurrentload VALUES('','".$fcode."',0,0,0,".$sem.",'".$sy."')";
-			mysqli_query($conn,$sqlfac);
+	// 		$sqlfac = "INSERT INTO tbl_facultycurrentload VALUES('','".$fcode."',0,0,0,".$sem.",'".$sy."')";
+	// 		mysqli_query($conn,$sqlfac);
 			
 			
-			if($reg == 0){
-				$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$units."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-				$load_type = 0;
-			} else {
-				$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$units."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-				$load_type = 1;
-			}
-			mysqli_query($conn,$sqlup);
-		} else {
-			$sqleval = "SELECT Regular_Load, PartTime_Load, TeachingSub_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
-			$result = mysqli_query($conn, $sqleval);
-			$row = mysqli_fetch_array($result);
-			$reg = $row['Regular_Load'];
-			$part = $row['PartTime_Load'];
-			$ts = $row['TeachingSub_Load'];
+	// 		if($reg == 0){
+	// 			$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$units."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 			$load_type = 0;
+	// 		} else {
+	// 			$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$units."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 			$load_type = 1;
+	// 		}
+	// 		mysqli_query($conn,$sqlup);
+	// 	} else {
+	// 		$sqleval = "SELECT Regular_Load, PartTime_Load, TeachingSub_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
+	// 		$result = mysqli_query($conn, $sqleval);
+	// 		$row = mysqli_fetch_array($result);
+	// 		$reg = $row['Regular_Load'];
+	// 		$part = $row['PartTime_Load'];
+	// 		$ts = $row['TeachingSub_Load'];
 			
-			if($reg == 0){
-				$sum = $partTime + $units;
-				if ($sum >= $part) {
-					$sum = 0;
-					$sum = $tsLoad + $units;
-					$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = ".$sum." WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-					$load_type = 2;
-				} else {
-					$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = ".$sum." WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-					$load_type = 0;
-				}
-			} else if($reg == 9){
+	// 		if($reg == 0){
+	// 			$sum = $partTime + $units;
+	// 			if ($sum >= $part) {
+	// 				$sum = 0;
+	// 				$sum = $tsLoad + $units;
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = ".$sum." WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 				$load_type = 2;
+	// 			} else {
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = ".$sum." WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 				$load_type = 0;
+	// 			}
+	// 		} else if($reg == 9){
 
-				$sum = $regular + $units;
-				if ($sum >= $reg) {
-					$sum = 0;
-					$sum = $tsLoad + $units;
-					$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = ".$sum." WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-					$load_type = 2;
-				} else {
-					$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-					$load_type = 1;
-				}
+	// 			$sum = $regular + $units;
+	// 			if ($sum >= $reg) {
+	// 				$sum = 0;
+	// 				$sum = $tsLoad + $units;
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = ".$sum." WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 				$load_type = 2;
+	// 			} else {
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 				$load_type = 1;
+	// 			}
 
-			} else {
-				$sum = $regular + $units;
-				if ($sum >= $reg) {
-					$sum = 0;
-					$sum = $partTime + $units;
-					if ($sum >= $part) {
-						$sum = 0;
-						$sum = $tsLoad + $units;
-						$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-						$load_type = 2;
-					} else {
-						$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-						$load_type = 0;
-					}
+	// 		} else {
+	// 			$sum = $regular + $units;
+	// 			if ($sum >= $reg) {
+	// 				$sum = 0;
+	// 				$sum = $partTime + $units;
+	// 				if ($sum >= $part) {
+	// 					$sum = 0;
+	// 					$sum = $tsLoad + $units;
+	// 					$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 					$load_type = 2;
+	// 				} else {
+	// 					$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 					$load_type = 0;
+	// 				}
 					
-				} else {
-					$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-					$load_type = 1;
-				}
+	// 			} else {
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 				$load_type = 1;
+	// 			}
 				
 				
-			}
-			mysqli_query($conn,$sqlup);
-		}
+	// 		}
+	// 		mysqli_query($conn,$sqlup);
+	// 	}
 
-		return $load_type;
-	}
+	// 	return $load_type;
+	// }
 
 	function checkPrefProfSched($day, $timeS, $timeE, $sy, $profName, $sem){
 		include("config.php");

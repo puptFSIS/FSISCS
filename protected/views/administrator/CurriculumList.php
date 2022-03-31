@@ -134,6 +134,10 @@ if(isset($_SESSION['user'])) {
 	<?php if ($_GET['mes']==2): ?>
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
 	<?php endif;?>
+
+	<?php if ($_GET['mes']==3): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
 <?php endif;?>
 
 
@@ -377,10 +381,9 @@ if(isset($_SESSION['user'])) {
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
-<script src='assets/jquery-3.6.0.min.js'></script>
-<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
-<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/bootstrap.min.js"></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script src='assets/sweetalert2.all.min.js'></script>
@@ -407,6 +410,14 @@ if(isset($_SESSION['user'])) {
 			icon:'error',
 			title:'Error',
 			text:'Existing School Year'
+		})
+	}
+
+	if(flashdata==3){
+		Swal.fire({
+			icon:'success',
+			title:'Success!',
+			text:'Curriculum ID was Deleted!'
 		})
 	}
 </script>

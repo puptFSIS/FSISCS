@@ -247,7 +247,7 @@ background-repeat:repeat;
 
 <!-- Page title -->
 
-<?php include("nav.php");?>
+<?php include("headerMenu.php");?>
 
 <!-- End - Page title -->
 

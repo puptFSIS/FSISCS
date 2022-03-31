@@ -1377,7 +1377,7 @@ class FacultyController extends Controller
 
 ///////////////////////////////////////////////
 
-public function actionmodal()
+	public function actionmodal()
 	{
 		$this->render('modal');
 	}

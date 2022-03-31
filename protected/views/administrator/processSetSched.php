@@ -156,7 +156,7 @@ if($check == 'pass'){
 									header("Location: index.php?r=administrator/SchedulingPage&currID=$currID&courseID=$courseID&sem=$sem&sy=$sy&sec=$sec&mes=2");
 									mysqli_close($conn);
 								} else {
-									$sql="UPDATE tbl_schedule SET sday='$day', stimeS='$timeS', stimeE='$timeE', sroom='$roomName', sprof='$profName', sday2 = '".$day2."', stimeS2 = '$timeS2', stimeE2 = '$timeE2', sroom2 = '$room2', load_type = NULL where schedID=".$schedID."";
+									$sql="UPDATE tbl_schedule SET sday='$day', stimeS='$timeS', stimeE='$timeE', sroom='$roomName', sprof='$profName', sday2 = '".$day2."', stimeS2 = '".$timeS2."', stimeE2 = '".$timeE2.", sroom2 = '".$room2."', load_type = NULL where schedID=".$schedID."";
 									echo $sql;
 									$result=mysqli_query($conn,$sql);
 									header("Location: index.php?r=administrator/SchedulingPage&currID=$currID&courseID=$courseID&sem=$sem&sy=$sy&sec=$sec&mes=2");
@@ -168,7 +168,7 @@ if($check == 'pass'){
 						}
 						else
 						{
-							$sql = "INSERT INTO tbl_schedule VALUES ('','$currID','$courseID','$sec','$cyear','$scode','$title','$units','$lec','$lab','$day','$timeS','$timeE','$roomName','$profName','$sem','$sy','','','','','0')";
+							$sql = "INSERT INTO tbl_schedule VALUES ('','$currID','$courseID','$sec','$cyear','$scode','$title','$units','$lec','$lab','$day','$timeS','$timeE','$roomName','$profName','$sem','$sy','','','','',NULL)";
 							$result = mysqli_query($conn,$sql);	
 							echo $sql;
 							if($result)
@@ -300,8 +300,8 @@ if($check == 'pass'){
 	else
 		{
 				echo"
-				<script src='".$base."FSIS/assets/jquery-3.6.0.min.js'></script>
-				<script src='".$base."FSIS/assets/sweetalert2.all.min.js'></script>
+				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
+				<script src='".$base."assets/sweetalert2.all.min.js'></script>
 				<script>
 
 				Swal.fire({

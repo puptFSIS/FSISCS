@@ -122,14 +122,63 @@
 			text-transform: uppercase;
 			box-shadow: 2px 2px 5px #9a9393;
 			border-radius: 50px 50px 50px;
-			width: 100px;
+			width: 105px;
+			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
+		
 		}
+		#month_input:hover
+		{
+			background-color: #c59828;
+			-ms-transform: scale(.5); /* IE 9 */
+  			-webkit-transform: scale(1.5); /* Safari 3-8 */
+  			transform: scale(1.10);
 		}
 
 		#hr_name
 		{
+			background-color: #e2d9d9;
+			transition: transform .04s;
+			color: black;
+			text-transform: uppercase;
+			box-shadow: 2px 2px 5px #9a9393;
+			border-radius: 50px 50px 50px;
+			width: 300px;
+			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
 			margin-top: 10px;
 			margin-left: 30px;
+		}
+
+		#hr_name:hover
+		{
+			background-color: #c59828;
+			-ms-transform: scale(.5); /* IE 9 */
+  			-webkit-transform: scale(1.5); /* Safari 3-8 */
+  			transform: scale(1.05);
+		}
+
+		#director
+		{
+			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
+			margin-top: -10px;
+			margin-left: 35px;
+		}
+
+		#human_resource
+		{
+			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
+			margin-top: -22px;
+			margin-left: 35px;
+		}
+
+		#dear
+		{
+			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
+			margin-left: 35px;
 		}
 
 	</style>
@@ -199,13 +248,13 @@
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
 						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
-			 			<p>Director
-			 			<br>
-						Human Resources Management Department 
+						<br>
+			 			<p id="director">Director</p>
+						<p id="human_resource">Human Resources Management Department</p> 
 						<br>
 						<br>
-						Dear Atty. Saraum:
-						</p> 
+						<p id="dear">Dear Atty. Saraum:</p>
+					</p> 
 
 						
 			 				<input class type="" name="" value="'.$regular_text.'">

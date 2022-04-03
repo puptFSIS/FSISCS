@@ -3010,6 +3010,54 @@ class AdministratorController extends Controller
 		$this->render('Part_Time_DTR');
 	}
 
+	public function actionDtrSendEmail()
+	{
+		$subject = $_POST['subject'];
+		$message = $_POST['message'];
+		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsis.puptaguigcs.net/FSISCS</a> to visit our website.';
+
+
+		$receipients = TblEvaltest::model()->findAll();	//Uncomment this for testing the email
+		// $recipients = TblEvaluationfaculty::model()->EmailFaculty(); //Uncomment this for production
+		if(!empty($receipients)) {
+			foreach ($receipients as $row) {
+				$mail = new YiiMailer;
+
+				// $mail->isSMTP();   // Uncomment this line on testing server                                  
+				$mail->Host = 'ssl://smtp.googlemail.com';  
+				$mail->SMTPAuth = true;                           
+				$mail->Username = 'puptfsis2022@gmail.com';                
+				$mail->Password = '@PUPTfsis2022';                          
+				$mail->SMTPSecure = 'ssl';                            
+				$mail->Port = 465;                                
+
+				$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
+
+				
+				$mail->AddAddress($row['email'], $row['firstname']);  
+				// $mail->AddAddress("fernannagrampa@gmmail.com", "fernan");     
+
+				
+
+				$mail->isHTML(true);                                  
+
+				$mail->Subject = $subject;
+				$mail->Body    = $message;
+				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+
+				if(!$mail->send()) {
+					header("location: index.php?r=administrator/other&mes=2");
+				} else {
+					header("location: index.php?r=administrator/other&mes=1");
+				}
+			}
+		} else {
+				header("location: index.php?r=administrator/other&mes=3");
+		}
+		
+		
+		// $this->render('sendEmail');
+	}
 
 	public function actionTemporary_Substitution_DTR() // dtr
 	{

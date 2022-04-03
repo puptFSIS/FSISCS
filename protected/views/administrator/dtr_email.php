@@ -181,7 +181,7 @@ $subject_value = "this is the subject text";
 
 <h2 class="underlined-header">Reminder Through Email</h2>
 <p>Message will be sent to the emails of all active faculty &amp; staff.</p>
-<form id="annc" name="annc" action="index.php?r=administrator/sendEmail" method="post">
+<form id="annc" name="annc" action="index.php?r=administrator/DtrSendEmail" method="post">
 <p style="margin-bottom: 9px;">SUBJECT:<input name="subject" type=text style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder="'.$subject_value.'"></p>
 <br>
 <p style="margin-bottom: 9px;">MESSAGE:<textarea name="message" style="width: 470px; margin-top: -28px; margin-left: 15%;" rows="10" placeholder="Message"></textarea></p>

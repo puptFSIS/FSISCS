@@ -259,7 +259,8 @@
 			 				<input class="body_text" type="" name="" value="This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of MARCH and APRIL 2021: ">
 
 
-			 				<textarea></textarea>
+			 				<div>
+			 				</div>
 
 			 				<div class="list">list</div>
 						

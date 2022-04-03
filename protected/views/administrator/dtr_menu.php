@@ -366,6 +366,7 @@ a:hover {
 
 .dtr_id_class
 {
+
   /*display: none;*/
 }
 
@@ -408,7 +409,6 @@ if($preview_value===0)
 {
 
 echo '<ul>';
-echo '<li><a href="index.php?r=administrator/DtrTable">Generate DTR</a></li>';
 echo '</ul>';
 
 }
@@ -418,8 +418,13 @@ echo '</ul>';
   if($role === "HAP")
   {
     echo '<ul>';
+    echo "<li><a href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
+echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
+    
     echo "<li><a href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
     echo "<li><a href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
+    echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
+
     echo '</ul>';
 
   }
@@ -428,6 +433,7 @@ echo '</ul>';
     echo '<ul>';
     echo "<li><a href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
     echo "<li><a href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
+    echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
     echo '</ul>';
     
   }

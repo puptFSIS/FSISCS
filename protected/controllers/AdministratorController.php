@@ -2965,6 +2965,33 @@ class AdministratorController extends Controller
 		// $this->render('docusample');
 	}
 
+	public function actionDtr_Email()
+	{
+		// if(!isset($_SESSION)) 
+	 //    { 
+	 //        session_start(); 
+	 //        $this->CheckEmpID($_SESSION['CEmpID']);
+	 //    } 
+
+	    $preview_value = 3; // 3 for maam tess receiving list of approved DTRs
+		$this->render('dtr_email',array('preview_value' => $preview_value));
+
+	}
+
+	public function actionDtr_Form()
+	{
+		if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	        $this->CheckEmpID($_SESSION['CEmpID']);
+	    } 
+
+	    $preview_value = 3; // 3 for maam tess receiving list of approved DTRs
+		$this->render('dtr_form');
+
+	}
+
+
 
 	public function actionHAPDtrTable() // dtr
 	{

@@ -17,6 +17,10 @@
 	color: red;
 }
 </style>
+
+
+
+
 <div> 
 <!-- Video - HTML5 -->
 <p style="font-style: italic;">
@@ -66,6 +70,8 @@ SHOW:
 
 <?php 
 include("dtrlist.php"); 
+
+
 ?>
 <tfoot>
 <tr>
@@ -75,5 +81,6 @@ include("dtrlist.php");
 </tbody>
 </table>
 </div>
+
 </div>
 </html>

@@ -151,154 +151,144 @@ if(isset($_SESSION['user'])) {
 <meta charset="UTF-8"></head>
 <body class='page-media page-sidebar-right'>
 <!-- JS notice - will be displayed if javascript is disabled -->
-<p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
-<!-- End - JS notice -->
-<!-- Page header -->
-<div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
+    <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
+    <!-- End - JS notice -->
+    <!-- Page header -->
+    <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
-<!-- End - Page header -->
+    <!-- End - Page header -->
 
-<!-- Page subheader -->
+    <!-- Page subheader -->
 
-<!-- End - Page subheader -->
-<!-- Page body -->
-<section class=container-block id=page-body>
-<div class=container-inner>
-<!-- Page title -->
-<?php include("headerMenu.php");?> 
+    <!-- End - Page subheader -->
+    <!-- Page body -->
+        <section class=container-block id=page-body>
+        <div class=container-inner>
+        <!-- Page title -->
+        <?php include("headerMenu.php");?> 
 
-<!-- End - Page title -->
-<!-- Page body content -->
-<section id=page-body-content>
-<div id=page-body-content-inner>
-<!-- Page content -->
-<div id=page-content>
-<!-- Video - HTML5 -->
-<section>
-
-
-<?php 
-    
-    include("getPersonalInformation.php");
-
-    
-    // if($preview_value === 1)
-    // {
-    //     include("dtr_months.php");
-    //     
-    // }
-    if($preview_value === 0)
-    {
-    echo "<h2 class=underlined-header>Daily Time Record</h2>";
-    include("dtr_form.php");
-    }
-    if($preview_value===1)
-    {
-    echo "<h2 class=underlined-header>List of Daily Time Record</h2>";
-    include("Dtr_Table.php");
-    }
-    if($preview_value===2)
-    {
-    echo "<h2 class=underlined-header>List of Daily Time Record</h2>";
-    include("HAP_Dtr_Table.php");
-    }
-    if($preview_value===3)
-    {
-   
-    echo "<h2 class=underlined-header>End of the month form</h2>";
-    // include("HAP_Secretary_table.php"); luma
-    include("EOTM_form.php"); // bago
-    }
- ?>
+        <!-- End - Page title -->
+        <!-- Page body content -->
+        <section id=page-body-content>
+        <div id=page-body-content-inner>
+        <!-- Page content -->
+        <div id=page-content>
+        <!-- Video - HTML5 -->
+        <section>
 
 
-</section>
-<!-- End - Showcase gallery -->
-</div>
-<!-- End - Page content -->
-<!-- Page sidebar -->
-<aside class=page-sidebar>
-<section class='widget-container widget-categories'>
-<?php
-if($preview_value===0)
-{
-echo '<h2 class=widget-heading>Generate Daily Time Reports</h2>';
-}
-if($preview_value===1)
-{
-echo '<h2 class=widget-heading></h2>';
-}
-?>
-<div class=widget-content>
-<ul class='widget-list categories-list'>
+        <?php 
+            
+            include("getPersonalInformation.php");
 
-<?php 
-include("getPersonalInformation.php");
-include("getRole.php");
-include("dtr_menu.php");
-// $name_holder = "Alagon";
-// if($surname === $name_holder)
-// {
-//     include("dtr_menu.php");
-//     include("hap_additional_option.php");
-// }
-// else 
-// {
-//     include("dtr_menu.php");
-// }
+            
+            // if($preview_value === 1)
+            // {
+            //     include("dtr_months.php");
+            //     
+            // }
+            if($preview_value === 0)
+            {
+            echo "<h2 class=underlined-header>Daily Time Record</h2>";
+            include("dtr_form.php");
+            }
+            if($preview_value===1)
+            {
+            echo "<h2 class=underlined-header>List of Daily Time Record</h2>";
+            include("Dtr_Table.php");
+            }
+            if($preview_value===2)
+            {
+            echo "<h2 class=underlined-header>List of Daily Time Record</h2>";
+            include("HAP_Dtr_Table.php");
+            }
+            if($preview_value===3)
+            {
+           
+            echo "<h2 class=underlined-header>End of the month form</h2>";
+            // include("HAP_Secretary_table.php"); luma
+            include("EOTM_form.php"); // bago
+            }
+         ?>
 
-?>
+
+        </section>
+        <!-- End - Showcase gallery -->
+        </div>
+        <!-- End - Page content -->
+        <!-- Page sidebar -->
+        <aside class=page-sidebar>
+        <section class='widget-container widget-categories'>
+        <?php
+        if($preview_value===0)
+        {
+        echo '<h2 class=widget-heading>Generate Daily Time Reports</h2>';
+        }
+        if($preview_value===1)
+        {
+        echo '<h2 class=widget-heading></h2>';
+        }
+        ?>
+        <div class=widget-content>
+        <ul class='widget-list categories-list'>
+
+        <?php 
+        include("getPersonalInformation.php");
+        include("getRole.php");
+        include("dtr_menu.php");
+
+        ?>
 
 
 
-</ul>
-</div>
-</section>
-</aside>
-<!-- End - Page sidebar -->
-</div>
-</section>
-<!-- End - Page body content -->
-</div>
-</section>
-<!-- End - Page body -->
+        </ul>
+        </div>
+        </section>
+        </aside>
+        <!-- End - Page sidebar -->
+        </div>
+        </section>
+        <!-- End - Page body content -->
+        </div>
+        </section>
+        <!-- End - Page body -->
 
-<!-- Page footer -->
-<footer id=page-footer>
-<div class=container-aligner>
-<!-- Footer left -->
-<section id=footer-left>
-� Copyright 2011 <a href="#" title="Dbooom Themes">vCore Team | PUP Taguig</a> - All Rights Reserved.
-</section>
-<!-- End - Footer left -->
-<!-- Footer right -->
-<section id=footer-right>
-<ul class=footer-navigation>
-<li>
-<a href='http://www.puptaguig.org' title=Home>Home</a>
-</li>
-<li>
-<a href='index.php?r=site/about' title=About>About</a>
-</li>
-<li>
-<a href='index.php?r=site/contact' title=Contacts>Contacts</a>
-</li>
-</ul>
-</section>
-<!-- End - Footer right -->
-</div>
-</footer>
-<!-- End - Page footer -->
-<!-- Theme backgrounds -->
-<div id=theme-backgrounds>
+        <!-- Page footer -->
+    <footer id=page-footer>
+    <div class=container-aligner>
+    <!-- Footer left -->
+    <section id=footer-left>
+    � Copyright 2011 <a href="#" title="Dbooom Themes">vCore Team | PUP Taguig</a> - All Rights Reserved.
+    </section>
+    <!-- End - Footer left -->
+    <!-- Footer right -->
+    <section id=footer-right>
+    <ul class=footer-navigation>
+    <li>
+    <a href='http://www.puptaguig.org' title=Home>Home</a>
+    </li>
+    <li>
+    <a href='index.php?r=site/about' title=About>About</a>
+    </li>
+    <li>
+    <a href='index.php?r=site/contact' title=Contacts>Contacts</a>
+    </li>
+    </ul>
+    </section>
+    <!-- End - Footer right -->
+    </div>
+    </footer>
+    <!-- End - Page footer -->
+    <!-- Theme backgrounds -->
+    <div id=theme-backgrounds>
 
-<img alt='Asset 4' data-color='#D64333' src='assets/backgrounds/4.jpg.pagespeed.ce.AV4Gchw-qN.jpg' width=1600 height=1064 />
+    <img alt='Asset 4' data-color='#D64333' src='assets/backgrounds/4.jpg.pagespeed.ce.AV4Gchw-qN.jpg' width=1600 height=1064 />
 
-</div>
-<!-- End - Theme backgrounds -->
-<link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
+    </div>
+    <!-- End - Theme backgrounds -->
+    <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
-<!-- Scripts -->
-<script id=js-dispatcher src='scripts/scripts.js'></script>
+    <!-- Scripts -->
+    <script id=js-dispatcher src='scripts/scripts.js'></script>
 </body>
 </html>

@@ -169,6 +169,7 @@
 			bottom: 170px;
 			left: 45px;
 			font-style: italic;
+			border-radius: 20px;
 		}
 		.month_input_class
 		{
@@ -177,6 +178,7 @@
 			bottom: 85px;
 			left: 145px;
 			height: 7px;
+
 		}
 
 		
@@ -280,7 +282,7 @@
 			bottom: 220px;	
 			border:none;
 			border-bottom: 1px solid #000000;
-			border-radius: 0;
+			border-radius: 13.5px;
 			font-weight: bold;
 			text-align: center;
 			color: black;
@@ -308,10 +310,10 @@
 			text-align: center;
 			border:none;
 			border-bottom: 1px solid #000000;
-			border-radius: 0;
 			background: #d7cfcf;
 			font-weight: bold;
 			color: black;
+			border-radius: 13.5px;
 			transition: transform .04s;
 		}
 
@@ -416,8 +418,6 @@
 			text-align: center;
 			border-bottom: 1px solid #000000;
 			/*outline: none;*/
-
-			border-radius: 0;
 			background: #d7cfcf;
 			background: #ffffff;
 
@@ -454,7 +454,6 @@
 			border:none;
 			text-align: center;
 			border-bottom: 1px solid #000000;
-			border-radius: 0;
 			/*background: #d7cfcf;*/
 			background: #ffffff;
 

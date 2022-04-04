@@ -4765,3 +4765,141 @@ Stack trace:
 REQUEST_URI=/fsiscs/index.php?r=administrator/Dtr_Email
 HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
 ---
+2022/04/04 12:28:00 [error] [exception.Error] Error: Call to undefined method YiiMailer::errors() in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1903
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmail()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('sendEmail')
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/s...')
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/sendEmail
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/messages
+---
+2022/04/04 12:48:19 [error] [exception.Error] Error: Call to undefined method YiiMailer::ErrorInfo() in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1906
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmail()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('sendEmail')
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/s...')
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#8 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/sendEmail
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/messages
+---
+2022/04/04 12:53:45 [error] [application.controllers.SiteController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:53:45 [error] [application.controllers.SiteController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:55:00 [error] [application.controllers.AdministratorController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:55:00 [error] [application.controllers.AdministratorController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:55:20 [error] [application.controllers.AdministratorController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:55:20 [error] [application.controllers.AdministratorController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:55:34 [error] [php] Undefined index: subject (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1870)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmail()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/sendEmail
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1870)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:57:20 [error] [exception.ParseError] ParseError: syntax error, unexpected 'public' (T_PUBLIC), expecting end of file in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1919
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(276): CWebApplication->createController('sendEmail/')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/s...')
+#2 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/sendEmail
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/messages
+---
+2022/04/04 12:59:38 [error] [php] Object of class YiiMailer could not be converted to string (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1883)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmail()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/sendEmail
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1883)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:02:19 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:02:21 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:13:15 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:13:17 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:16:02 [error] [exception.ParseError] ParseError: syntax error, unexpected 'if' (T_IF) in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1905
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(276): CWebApplication->createController('sendEmail/')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/s...')
+#2 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/sendEmail
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/messages
+---
+2022/04/04 13:16:15 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:16:19 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:38:11 [error] [php] Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\FSISCS\PHPMailer-master\src\SMTP.php:290) (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1913)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1913): header()
+#1 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmail()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/sendEmail
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1913)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:39:18 [error] [php] Cannot modify header information - headers already sent by (output started at C:\xampp\htdocs\FSISCS\PHPMailer-master\src\SMTP.php:290) (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1913)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1913): header()
+#1 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmail()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/sendEmail
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1913)
+in C:\xampp\htdocs\FSISCS\index.php (13)

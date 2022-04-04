@@ -71,6 +71,18 @@ return array(
 					'class'=>'CFileLogRoute',
 					'levels'=>'error, warning',
 				),
+
+				array(
+
+					'class'=>'CFileLogRoute',
+
+					'levels'=>'error',
+
+					'categories'=>array('application.controllers.AdministratorController'),
+
+					'logFile'=>'mailError.log',
+
+				),
 				// uncomment the following to show log messages on web pages
 				/*
 				array(

@@ -1871,15 +1871,18 @@ class AdministratorController extends Controller
 		$message = $_POST['message'];
 		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsis.puptaguigcs.net/FSISCS</a> to visit our website.';
 
-
+		
 		$receipients = TblEvaltest::model()->findAll();	//Uncomment this for testing the email
-		// $recipients = TblEvaluationfaculty::model()->EmailFaculty(); //Uncomment this for production
+
+		// // $recipients = TblEvaluationfaculty::model()->EmailFaculty(); //Uncomment this for production
 		if(!empty($receipients)) {
 			foreach ($receipients as $row) {
+
 				$mail = new YiiMailer;
 
-				// $mail->isSMTP();   // Uncomment this line on testing server                                  
-				$mail->Host = 'ssl://smtp.googlemail.com';  
+				// $mail->isSMTP();   // Uncomment this line on testing server 
+				$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.gmail.com";  
 				$mail->SMTPAuth = true;                           
 				$mail->Username = 'puptfsis2022@gmail.com';                
 				$mail->Password = '@PUPTfsis2022';                          
@@ -1897,15 +1900,27 @@ class AdministratorController extends Controller
 				$mail->Subject = $subject;
 				$mail->Body    = $message;
 				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+				
+				
 
 				if(!$mail->send()) {
-					header("location: index.php?r=administrator/other&mes=2");
+				 	// header("location: index.php?r=administrator/other&mes=2");
+				 	echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+				 	// Yii::log("Mailer Error: " . $mail->ErrorInfo,'error','application.controllers.AdministratorController');
+				 	// echo $mail->ErrorInfo;
+				 	// echo "<br>";
 				} else {
-					header("location: index.php?r=administrator/other&mes=1");
+					// echo "sent";
+					// header("location: index.php?r=administrator/other&mes=1");
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 				}
+				// echo $mail->ErrorInfo;
 			}
+
+
 		} else {
-				header("location: index.php?r=administrator/other&mes=3");
+				// header("location: index.php?r=administrator/other&mes=3");
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=3')</script>";
 		}
 		
 		
@@ -2468,16 +2483,18 @@ class AdministratorController extends Controller
 		// echo "<pre>";
 		$i = 0;
 
+
 		foreach ($emails as $row) {
 			$mail = new YiiMailer;
 
 			// $mail->isSMTP();   // Uncomment this line on testing server                                  
-			$mail->Host = 'ssl://smtp.googlemail.com';  
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.gmail.com";  
 			$mail->SMTPAuth = true;                           
 			$mail->Username = 'puptfsis2022@gmail.com';                
 			$mail->Password = '@PUPTfsis2022';                          
 			$mail->SMTPSecure = 'ssl';                            
-			$mail->Port = 465;                                
+			$mail->Port = 465;                                 
 
 			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 
@@ -2493,9 +2510,11 @@ class AdministratorController extends Controller
 			$i++;
 
 			if(!$mail->send()) {
-				header("location: index.php?r=administrator/other&mes=2");
+				// header("location: index.php?r=administrator/other&mes=2");
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
 			} else {
-				header("location: index.php?r=administrator/other&mes=1");
+				// header("location: index.php?r=administrator/other&mes=1");
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 			}
 		}
     }
@@ -3016,7 +3035,6 @@ class AdministratorController extends Controller
 		$message = $_POST['message'];
 		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsis.puptaguigcs.net/FSISCS</a> to visit our website.';
 
-
 		$receipients = TblEvaltest::model()->findAll();	//Uncomment this for testing the email
 		// $recipients = TblEvaluationfaculty::model()->EmailFaculty(); //Uncomment this for production
 		if(!empty($receipients)) {
@@ -3024,7 +3042,8 @@ class AdministratorController extends Controller
 				$mail = new YiiMailer;
 
 				// $mail->isSMTP();   // Uncomment this line on testing server                                  
-				$mail->Host = 'ssl://smtp.googlemail.com';  
+				$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.gmail.com";  
 				$mail->SMTPAuth = true;                           
 				$mail->Username = 'puptfsis2022@gmail.com';                
 				$mail->Password = '@PUPTfsis2022';                          
@@ -3046,13 +3065,13 @@ class AdministratorController extends Controller
 				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
 
 				if(!$mail->send()) {
-					header("location: index.php?r=administrator/other&mes=2");
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
 				} else {
-					header("location: index.php?r=administrator/other&mes=1");
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 				}
 			}
 		} else {
-				header("location: index.php?r=administrator/other&mes=3");
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
 		}
 		
 		

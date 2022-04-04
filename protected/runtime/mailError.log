@@ -1,0 +1,30 @@
+2022/04/04 12:55:00 [error] [application.controllers.AdministratorController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:55:00 [error] [application.controllers.AdministratorController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:55:20 [error] [application.controllers.AdministratorController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 12:55:20 [error] [application.controllers.AdministratorController] Mailer Error: 
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1901)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:02:19 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:02:21 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:13:15 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:13:17 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:16:15 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/04 13:16:19 [error] [application.controllers.AdministratorController] Mailer Error: SMTP Connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1907)
+in C:\xampp\htdocs\FSISCS\index.php (13)

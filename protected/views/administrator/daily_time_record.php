@@ -209,6 +209,11 @@ if(isset($_SESSION['user'])) {
             // include("HAP_Secretary_table.php"); luma
             include("EOTM_form.php"); // bago
             }
+            if($preview_value===4)
+            {
+            echo "<h2 class=underlined-header>Reminder</h2>";
+            // include("HAP_Dtr_Table.php");
+            }
          ?>
 
 
@@ -222,11 +227,11 @@ if(isset($_SESSION['user'])) {
         <?php
         if($preview_value===0)
         {
-        echo '<h2 class=widget-heading>Generate Daily Time Reports</h2>';
+        // echo '<h2 class=widget-heading>Generate Daily Time Reports</h2>';
         }
         if($preview_value===1)
         {
-        echo '<h2 class=widget-heading></h2>';
+        // echo '<h2 class=widget-heading></h2>';
         }
         ?>
         <div class=widget-content>

@@ -2973,7 +2973,7 @@ class AdministratorController extends Controller
 	 //        $this->CheckEmpID($_SESSION['CEmpID']);
 	 //    } 
 
-	    $preview_value = 3; // 3 for maam tess receiving list of approved DTRs
+	    $preview_value = 4; // 3 for maam tess receiving list of approved DTRs
 		$this->render('dtr_email',array('preview_value' => $preview_value));
 
 	}

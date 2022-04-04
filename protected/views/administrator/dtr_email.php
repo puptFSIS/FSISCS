@@ -173,9 +173,11 @@ if(isset($_SESSION['user'])) {
 <!-- Video - HTML5 -->
 <section>
 
-<?php 
+<!-- <?php 
 $subject_value = "this is the subject text";
  echo'
+
+
 
 
 
@@ -190,6 +192,23 @@ $subject_value = "this is the subject text";
 
 ';
 ?>
+ -->
+<?php 
+    echo "<p>creat dtr now</p>";
+
+
+    date_default_timezone_set('Asia/Manila');
+
+
+$date_today = date("y-m-d");
+$day_today = date("d");
+// $a_date = "2009-11-23";
+echo "number of days: ",date("t", strtotime($date_today));
+
+
+ ?>
+
+
 
 </section>
 <!-- End - Video -HTML5 -->
@@ -201,7 +220,7 @@ $subject_value = "this is the subject text";
 <!-- Page sidebar -->
 <aside class=page-sidebar>
 <section class='widget-container widget-categories'>
-<h2 class=widget-heading>DAILY TIME RECORD</h2>
+<h2 class=widget-heading></h2>
 <div class=widget-content>
 <ul class='widget-list categories-list'>
 <?php include("dtr_menu.php");?>

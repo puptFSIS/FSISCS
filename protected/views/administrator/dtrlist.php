@@ -426,7 +426,6 @@ if($status == "empty")
 }
 
 
-
 ///////////////////////// APPROVED ///////////////
 else if ($status == "approved")
 {
@@ -715,6 +714,7 @@ else if($status == "deleted")
 
 //<a href="index.php?r=administrator/Regular_DTR&var='.$newresult['FCode'].'&var2='.$newresult['month'].'&var3='.$newresult['year'].'&var4='.$newresult['regpartime'].'" class="btn-s" title="PRINT PDF" style="width: 12px; height: 20px; background-color:white;"><img src="images/icons/post-dark.png"></a> <a class="btn-s" title="DELETE" style="width: 12px; height: 20px;"><img src="images/icons/x-white.png"></a>
 ?>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script>
 var count = 0;

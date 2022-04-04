@@ -35,7 +35,7 @@
 	.dtr_type_id:hover
 		{
 			position: relative;
-			background-color: #c59828;
+			background-color: #e4b235;
 			-ms-transform: scale(.5);  IE 9 
   			-webkit-transform: scale(1.5); 
   			transform: scale(1.110);
@@ -76,7 +76,7 @@
 		}
 		.user_name_sur:hover
 		{
-			background-color: #c59828;
+			background-color: #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.12);
@@ -103,7 +103,7 @@
 		}
 		.user_name_fn:hover
 		{
-			background-color: #c59828;
+			background-color: #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.12);
@@ -130,7 +130,7 @@
 		}
 		.user_name_mn:hover
 		{
-			background-color: #c59828;
+			background-color: #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.08);
@@ -225,7 +225,7 @@
 
 		.official_hours_input_class:hover
 		{
-			background-color: #c59828;
+			background-color: #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.115);
@@ -241,7 +241,7 @@
 		}
 		.arrival_and_departure_input_class:hover
 		{
-			background-color: #c59828;
+			background-color: #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.115);
@@ -291,7 +291,7 @@
 		.month_dropdown:hover
 		{
 	
-			background-color: #cf682f;
+			background-color: #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.115); 
@@ -317,7 +317,7 @@
 
 		.year_dropdown:hover
 		{
-			background-color: #cf682f;
+			background-color: #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.115);
@@ -428,7 +428,7 @@
 		}
 		.footer_username:hover
 		{
-			background-color: #cf682f;
+			background-color: #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.05);
@@ -464,7 +464,7 @@
 		}
 		.footer_incharge:hover
 		{
-			background-color: #cf682f;
+			background-color: #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.05);

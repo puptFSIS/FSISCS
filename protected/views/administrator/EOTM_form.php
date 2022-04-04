@@ -136,7 +136,7 @@
 
 		.pup_logo
 		{
-			 position: sticky;
+			  position: sticky;
 			 width: 90px; 
 			 height:90px; 
 			 margin-top: -107px;
@@ -207,7 +207,7 @@
 		}
 		#month_input:hover
 		{
-			background-color: #c59828;
+			background-color:  #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.10);
@@ -230,7 +230,7 @@
 
 		#hr_name:hover
 		{
-			background-color: #c59828;
+			background-color:  #e4b235;
 			-ms-transform: scale(.5); /* IE 9 */
   			-webkit-transform: scale(1.5); /* Safari 3-8 */
   			transform: scale(1.05);
@@ -238,10 +238,29 @@
 
 		#director
 		{
+			background-color: #e2d9d9;
 			font-weight: bold;
 			font-family: "Times New Roman", Times, serif;
 			margin-top: -10px;
-			margin-left: 35px;
+			margin-left: 30px;
+			margin-bottom: 10px;
+			width: 105px;
+			font-size: 10px;
+			text-transform: capitalize;
+			height: 17px;
+			box-shadow: 2px 2px 5px #9a9393;
+			border-radius: 50px 50px 50px;
+			padding-left: 10px;
+			padding-top: 3px;
+			font-size: 11px;
+		}
+
+		#director:hover
+		{
+			background-color: #e4b235;
+			-ms-transform: scale(.5); /* IE 9 */
+  			-webkit-transform: scale(1.5); /* Safari 3-8 */
+  			transform: scale(1.05);
 		}
 
 		#human_resource
@@ -249,7 +268,25 @@
 			font-weight: bold;
 			font-family: "Times New Roman", Times, serif;
 			margin-top: -22px;
-			margin-left: 35px;
+			margin-left: 30px;
+			width: 289px;
+			background-color: #e2d9d9;
+			height: 21.5px;
+			box-shadow: 2px 2px 5px #9a9393;
+			border-radius: 50px 50px 50px;
+			padding-left: 10px;
+			padding-top: 3px;
+			font-size: 11px;
+			text-transform: capitalize;
+		}
+
+		#human_resource:hover
+		{
+			background-color: #e4b235;
+			-ms-transform: scale(.5); /* IE 9 */
+  			-webkit-transform: scale(1.5); /* Safari 3-8 */
+  			transform: scale(1.02);
+  			font-size: 8px;
 		}
 
 		#dear
@@ -277,7 +314,27 @@
 			border: none;
 		}
 
+		.holder div.icon
+		{
+			cursor: pointer;
 
+		}
+
+		[contenteditable]:focus
+		{
+
+			outline: 0px solid transparent;
+		}
+
+		[placeholder]:empty:before{
+			content: attr(placeholder);
+			color: #696969;
+			font-family: "Times New Roman", Times, serif;
+			cursor: text;
+			font-size: 10px;
+			padding-left: 2px;
+
+		}
 
 	</style>
 
@@ -351,10 +408,9 @@
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
 						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="director" contentEditable>Director</div>
+			 			<p id="director" contenteditable="true" placeholder="ENTER POSITION..."></p>
 						<br>
-
-						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
+						<p id="human_resource" contenteditable="true" placeholder="ENTER NAME OF DEPARTMENT..."></p> 
 						<br>
 						<br>
 						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
@@ -397,7 +453,7 @@
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
 						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="director" contentEditable>Director</div>
+			 			<div id="director" contentEditable placeholder="POSITION"></div>
 						<br>
 
 						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
@@ -442,7 +498,7 @@
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
 						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="director" contentEditable>Director</div>
+			 			<div id="director" contentEditable placeholder="POSITION"></div>
 						<br>
 
 						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
@@ -486,7 +542,7 @@
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
 						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="director" contentEditable>Director</div>
+			 			<div id="director" contentEditable placeholder="POSITION"></div>
 						<br>
 
 						<div id="human_resource" contentEditable>Human Resources Management Department</div> 

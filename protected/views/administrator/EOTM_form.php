@@ -336,6 +336,20 @@
 
 		}
 
+		#text_area-position
+		{
+			position: absolute;
+			margin-top: 200px;
+			padding: 20px;
+			border: solid black;
+			width: 289px;
+			background-color: #e2d9d9;
+			height: 21.5px;
+			box-shadow: 2px 2px 5px #9a9393;
+			border-radius: 50px 50px 50px;
+			padding-left: 10px;
+			padding-top: 3px;
+		}
 	</style>
 
 
@@ -413,6 +427,7 @@
 						<p id="human_resource" contenteditable="true" placeholder="ENTER NAME OF DEPARTMENT..."></p> 
 						<br>
 						<br>
+						<p id="text_area-position"> </p>
 						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
 						<br>
 						<div class="body_text" contentEditable>
@@ -459,6 +474,7 @@
 						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
 						<br>
 						<br>
+						<p id="text_area-position" text="" placeholder="Enter text..."></p>
 						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
 						<br>
 						<div class="body_text" contentEditable>

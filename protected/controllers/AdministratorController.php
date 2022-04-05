@@ -2936,9 +2936,9 @@ class AdministratorController extends Controller
 		$this->render('regular_DTR_single',array('firstid' => $val1,'firstreg' => $val2,'firstmon' => $val3,'firstyear' => $val4,'firstfcode' => $val5,'firstsurname' => $val6,'firstfirstname' => $val7,'firstmiddlename' => $val8));
 	}
 
-	public function actionHap_generate_rd($val1) // dtr
+	public function actionHap_generate_rd() // dtr
 	{
-		$this->render('receiving_document',array('counterr' => $val1));
+		$this->render('receiving_document');
 	}
 
 	public function actionHap_post()  // dtr

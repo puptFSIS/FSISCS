@@ -550,7 +550,7 @@
 </head>
 <body>
 	<form method="POST">
-		<div class="dtr_form">
+		<div class="dtr_form" >
 			<div class="header">
 				<!-- <input class="dtr_type_id" type="text" name="DTR-TYPE_NAME" value="DTR-TYPE"> -->
 					<td><input id="count_day" class="onetothirtyone_input" type="hidden" name="count_day"></td>
@@ -675,8 +675,26 @@
 		</div>
 		<input id=submitbtn type="submit" name="submit" value="Submit" disabled>
 		</form>
+	
+
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script>
+		 window.onload = function() {
+            var today = new Date();   
+            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+            var month = today.getMonth()+1
+            var year = today.getFullYear();
+            var day = today.getDate();
+            var getDaysInMonth = function(month,year) {
+             return new Date(year, month, 0).getDate()
+            };
+
+            if(getDaysInMonth(month,year) === day)
+            {
+                alert(" Today is "+date+" Generate and print your DTR now ");
+
+            }
+        };
 
 		//const date_test = document.getElementById("date_test_id");
 		//const last_cell = document.getElementById("last_cell_id");

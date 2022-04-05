@@ -243,7 +243,6 @@ class PDF extends FPDF
     $month_array = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     $id=[];
     $counterforitems = 0;
-    // $sql="SELECT * FROM tbl_dtr where status != 1 and hap_approval_status = 1 and regpartime ='".$loadtype."'";
     for($mon = 0;$mon<$month_date;$mon++)
     {
     $newmonth = $month_array[$mon];

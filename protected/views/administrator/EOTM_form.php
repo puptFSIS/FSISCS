@@ -348,8 +348,13 @@
            $monthcounter = 0;
            if($temporary_list[$q] == "REGULAR")
            {
+
            		$sql="SELECT DISTINCT * FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
     			$result=mysqli_query($conn,$sql);
+
+           		$sql="SELECT DISTINCT FCode FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
+    			$result_distinct=mysqli_query($conn,$sql);
+
     			
            		echo'
 	            <div class="page">
@@ -576,15 +581,35 @@
         }
 
 
-         ?>
+        ?>
 
 
     </form>
 
-
+    <button class="generate_btn_class" onclick="call_print()">generate receiving document</button>'
 </body>
+
 <script>
 	const mickey = document.querySelector('#firstname').textContent;
+	function call_print()
+	{
+
+		// id1 = $("#hap_sec_id"+counter).html();
+		// firstname1= $("#hap_sec_id_fn"+counter).html();
+		// surname1 = $("#hap_sec_id_sn"+counter).html();
+		// middlename1= $("#hap_sec_id_mn"+counter).html();
+		// reg1= $("#hap_sec_id_type"+counter).html();
+		// mon1= $("#hap_sec_id_month"+counter).html();
+		// year1= $("#hap_sec_id_year"+counter).html();
+		// hr_name = document.getElementById("hr_name_id");
+		// newcounter = counter;
+	
+
+			
+	window.open("index.php?r=/administrator/Hap_generate_rd");
+				     
+				
+	}
 </script>
 </html>
 

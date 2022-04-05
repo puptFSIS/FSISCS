@@ -192,124 +192,71 @@
 
 		#month_input
 		{
-			background-color: #f0f0f0;
+			background-color: #e2d9d9;
 			margin-top: -7px;
 			margin-left: 30px;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
 			transition: transform .04s;
 			color: black;
-			text-transform: capitalize;
-			width: 103px;
-			height: 15px;
-			text-align: left;
+			text-transform: uppercase;
+			box-shadow: 2px 2px 5px #9a9393;
+			border-radius: 50px 50px 50px;
+			width: 105px;
 			font-weight: bold;
-			font-size: 12px;
 			font-family: "Times New Roman", Times, serif;
-
+		
 		}
-
 		#month_input:hover
 		{
-			background-color: #dadada;
+			background-color: #c59828;
+			-ms-transform: scale(.5); /* IE 9 */
+  			-webkit-transform: scale(1.5); /* Safari 3-8 */
+  			transform: scale(1.10);
 		}
-		
-		#name_of_sender
+
+		#hr_name
 		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
+			background-color: #e2d9d9;
 			transition: transform .04s;
 			color: black;
-			text-transform: capitalize;
-			width: 280px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
+			text-transform: uppercase;
+			box-shadow: 2px 2px 5px #9a9393;
+			border-radius: 50px 50px 50px;
+			width: 300px;
 			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
 			margin-top: 10px;
 			margin-left: 30px;
-			margin-bottom: 3px;
 		}
 
-		#name_of_sender:hover
+		#hr_name:hover
 		{
-			background-color: #dadada;
+			background-color: #c59828;
+			-ms-transform: scale(.5); /* IE 9 */
+  			-webkit-transform: scale(1.5); /* Safari 3-8 */
+  			transform: scale(1.05);
 		}
-		
 
-		#position_of_sender
+		#director
 		{
-
-			height: 15px;
-			width: 103px;
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
 			font-weight: bold;
 			font-family: "Times New Roman", Times, serif;
-			text-align: left;
-			font-size: 12px;
-			margin-left: 30px;
-			margin-bottom: 25px;
-
+			margin-top: -10px;
+			margin-left: 35px;
 		}
 
-		#position_of_sender:hover
+		#human_resource
 		{
-			background-color: #dadada;
-		}
-
-		#department_name
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 280px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
 			font-weight: bold;
-			margin-bottom: 55px;
+			font-family: "Times New Roman", Times, serif;
 			margin-top: -22px;
-			margin-left: 30px;
-		}
-
-		#department_name:hover
-		{
-			background-color: #dadada;
+			margin-left: 35px;
 		}
 
 		#dear
 		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 125px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
 			font-weight: bold;
-			margin-bottom: 18px;
-			margin-top: -22px;
-			margin-left: 30px;
-		}
-
-		#dear:hover
-		{
-			background-color: #dadada;
+			font-family: "Times New Roman", Times, serif;
+			margin-left: 35px;
 		}
 
 		.body_text
@@ -321,13 +268,20 @@
 			border: none;
 		}
 
-		.list
+		.listOfFacultyMembers
 
 		{
 			font-weight: bold;
 			font-family: "Times New Roman", Times, serif;
 			margin-left: 35px;
 			border: none;
+			height: 100px;
+			overflow-y: scroll;
+		}
+
+		.list_items
+		{
+
 		}
 
 
@@ -353,20 +307,12 @@
         $newmonth = $month_array[$newmonth_date-1];
         $date = $newmonth.' '.$year_date;
         $hrmd = "Atty. MICHELLE KRISTINE D. SARAUM";
-        
-        $regular_text ="This is to endorse the Daily Time Record REGULAR of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE";
-        $part_text = "This is to endorse the Daily Time Record PART TIME of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE";
-        $ts_text = "This is to endorse the Daily Time Record TS of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE ";
-        $ot_text = "This is to endorse the Daily Time Record TS of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE ";
-
-
-
 
         $counterforitems = 0;
         $counter = 0;
         $newresult_array  = [];  
         $temporary_list = ["REGULAR","PART-TIME","TS","OT"];
-        $sql="SELECT * FROM tbl_dtr where status != 1 and hap_approval_status = 1";
+        $sql="SELECT DISTINCT * FROM tbl_dtr where status != 1 and hap_approval_status = 1";
         $result=mysqli_query($conn,$sql);
 
         
@@ -379,15 +325,32 @@
         }
 
 
-        	
+        foreach($result as $newresult)
+			{
+			    $id[] = $newresult['id'];
+			    $sn[] = $newresult['surname'];
+			    $fn[] = $newresult['firstname'];
+			    $mn[] = $newresult['middlename'];
+			    $regpartime[] = $newresult['regpartime'];
+			    $month[] = $newresult['month'];
+			    $year[] = $newresult['year'];
+			    $counterforitems++;
+			}
+			$y = 5;
+    		$number_of_items = $counterforitems;	
 
         $count = count($temporary_list);
         
         for($q = 0; $q<$count;$q++)
         {
+        	
+
            $monthcounter = 0;
            if($temporary_list[$q] == "REGULAR")
            {
+           		$sql="SELECT DISTINCT * FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
+    			$result=mysqli_query($conn,$sql);
+    			
            		echo'
 	            <div class="page">
 	            	<div class="body">
@@ -402,21 +365,65 @@
 						<p id="long_line">___________________________________________________________________________________</p>
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
-			 			<input id="position_of_sender" type="" value="Director">
-						<input id="department_name" type="" value="Human Resource Management Department">
-						<input id="dear" type="" value="Dear Atty. Sarum:">
+						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
+						<br>
+			 			<div id="director" contentEditable>Director</div>
+						<br>
+
+						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
+						<br>
+						<br>
+						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
 						<br>
 						<div class="body_text" contentEditable>
-			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
-			 				</div>
+			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE: 
+			 			</div>
+
+			 			
+
+			 			
 					</div>
+					<div class="listOfFacultyMembers" contentEditable>
+					 				<ul>
 
-			 		
+					';
+					foreach($result as $newresult)
+					{}
+					for ($x = 0; $x <= $number_of_items; $x++)
+    				{				
+    					if ($x >= 1 && $x <= $number_of_items)
+			            {
+			                $y = $y + 5;
+			            }
+			            if(array_key_exists($x,$id))
+			            {
+				            $new_x = $x+1;
+				            $x_dot = $new_x." ".".";
+				            $name = $sn[$x].', '.$fn[$x].' '.$mn[$x];
+				            $date = $month[$x].' '.$year[$x];
+				            $name_temp = ["fernan","enan","mary","grace"];
+				            $ctr = 0;
 
+
+				            
+				            	echo '
+											<li class="list_items">'.$name.'</li>
+										';
+				            	
+
+				            
+				            
+				                
+						}
+			        
+					}
+			 		echo'
+			 		</ul>
+			 					</div>	
 					<div class="footer">
-						<img src="assets/EOTM_footer.PNG" width="" height="">
-					</div>
+							<img src="assets/EOTM_footer.PNG" width="" height="">
+						</div>
+					
 				</div>
 				<br><br>
 
@@ -443,12 +450,12 @@
 						<p id="long_line">___________________________________________________________________________________</p>
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
+						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="position_of_sender" contentEditable>Director</div>
+			 			<div id="director" contentEditable>Director</div>
 						<br>
 
-						<div id="department_name" contentEditable>Human Resources Management Department</div> 
+						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
 						<br>
 						<br>
 						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
@@ -488,12 +495,12 @@
 						<p id="long_line">___________________________________________________________________________________</p>
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
+						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="position_of_sender" contentEditable>Director</div>
+			 			<div id="director" contentEditable>Director</div>
 						<br>
 
-						<div id="department_name" contentEditable>Human Resources Management Department</div> 
+						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
 						<br>
 						<br>
 						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
@@ -532,12 +539,12 @@
 						<p id="long_line">___________________________________________________________________________________</p>
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
+						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="position_of_sender" contentEditable>Director</div>
+			 			<div id="director" contentEditable>Director</div>
 						<br>
 
-						<div id="department_name" contentEditable>Human Resources Management Department</div> 
+						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
 						<br>
 						<br>
 						<div id="dear" contentEditable>Dear Atty. Saraum:</div>

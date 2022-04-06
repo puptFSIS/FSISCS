@@ -350,9 +350,11 @@
         <?php 
         //global declaration for displaying name and date on form
       $newname = [];
-		$newmonth = [];
+		$newnewmonth = [];
 		$newyear = [];
 		$newdate ='';
+		$namecounter = 0;
+		$namecounterarray = [];
 
         require('config.php');
         $counter = 1;
@@ -454,8 +456,6 @@
 			            }
 			            if(array_key_exists($x,$id))
 			            {
-			            	
-
 				            $new_x = $x+1;
 				            $x_dot = $new_x." ".".";
 				            $name = $sn[$x].', '.$fn[$x].' '.$mn[$x];
@@ -464,24 +464,32 @@
 				            if(!in_array($name, $newname))
 				            {
 				            	$newname[] = $name;
+				            	$namecounter++;
 				            }
 
-				            if(!in_array($month[$x], $newmonth))
+				            if(!in_array($month[$x], $newnewmonth))
 				            {
+				            $monthcount = count($month);
 				            $month_array = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-				            	for($m = 0;$m<12;$m++)
-				            	{
-				            		if($month[$x] == $month_array[$m])
-				            		{
-				            			$newmonth[$m] = $month[$x];
-				            		}
-				            	}
-				            }
+					            // 	for($m = 0;$m<12;$m++)
+					          		// {
+					            // 		if($month_array[$m]== $month[$x])
+					            // 		{
+					            // 			$newnewmonth[$m] = $month[$x];
+					            // 			
+					            // 		}
+					            // 	}
+					            // 	$namecounter++;
+				            $newnewmonth[] = $month[$x];
+				            
+
+				         	}
 
 				            if(!in_array($year[$x], $newyear))
 				            {
 				            	$newyear[] = $year[$x];
 				            }
+
 
 				            
 				            // $name_temp = ["fernan","enan","mary","grace"];
@@ -489,18 +497,19 @@
 				            
 				      //       	echo '
 										// 	<li class="list_items">'.$name.$date.'</li>
-										// ';  
+										// ';   ' ('.$firstmonth.'-'.$lastmonth.' '.$firstyear.'-'.$lastyear.')'
 				                
 							}
 			        
 					}
 					sort($newyear);
-					$firstmonth = reset($newmonth);
-					$lastmonth = end($newmonth);
+					$firstmonth = reset($newnewmonth);
+					$lastmonth = end($newnewmonth);
 					$firstyear = reset($newyear);
 					$lastyear = end($newyear);
 					
 			 		echo'
+			 		
 			 		</ul>
 			 					</div>	
 					<div class="footer">

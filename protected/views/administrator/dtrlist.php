@@ -59,18 +59,19 @@
 		display: block;
 
 		/*position and size*/
-		/*position: absolute;
-		right: 20px;
+		position: absolute;
+		right: 10px;
 		top: 80px;
-*/		
+		
 
-		position: fixed;
+		/*position: fixed;
   		top: 50%;
   		left: 50%;
-  		transform: translate(-50%, -50%);
+  		transform: translate(-50%, -50%);*/
 		height: 350px;
 		width: 400px;
-		z-index: 2;
+		
+		/*sa unahan ng menu list ng dtr_menu*/z-index: 2; 
 
 
 		/*color and bg*/

@@ -175,10 +175,11 @@
 
 		/*position and size*/
 		position: absolute;
-		right: 20px;
+		right: 10px;
 		top: 80px;
 		height: 350px;
 		width: 400px;
+		/*sa unahan ng menu list ng dtr_menu*/z-index: 2; 
 
 
 		/*color and bg*/

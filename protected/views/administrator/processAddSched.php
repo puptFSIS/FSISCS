@@ -132,7 +132,7 @@
 						// $load_type = FacultyLoad($profName,$sy,$units, $sem);
 						// echo $load_type;
 						$sql = "INSERT INTO tbl_schedule VALUES ('','$currID','$courseID','$sec','$cyear','$scode','$title','$units','$lec','$lab','$day','$timeS','$timeE','$roomName','$profName','$sem','$sy','','','','',NULL,'OFFICIAL')";
-						// $result = mysqli_query($conn,$sql);
+						$result = mysqli_query($conn,$sql);
 						// echo $sql;
 						if($result)
 						{

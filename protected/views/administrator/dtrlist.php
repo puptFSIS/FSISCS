@@ -473,7 +473,7 @@ else if ($status == "approved")
 						<p class="hap_comment_class" id="comments'.$counter.'"></p>
 								
 						
-						<input type="submit" class="" value="OPEN" onclick="call_print(\'' .$counter. '\')">
+						<input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 
 					</div>
 
@@ -548,7 +548,7 @@ else if ($status == "pending")
 						<p class="hap_comment_class" id="comments'.$counter.'"></p>
 								
 						
-						<input type="submit" class="" value="OPEN" onclick="call_print(\'' .$counter. '\')">
+						<input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 
 					</div>
 
@@ -616,7 +616,7 @@ else if($status == "disapproved")
 						<p class="hap_comment_class" id="comments'.$counter.'"></p>
 								
 						
-						<input type="submit" class="" value="OPEN" onclick="call_print(\'' .$counter. '\')">
+						<input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 
 					</div>
 
@@ -689,7 +689,7 @@ else if($status == "deleted")
 						<p class="hap_comment_class" id="comments'.$counter.'"></p>
 								
 						
-						<input type="submit" class="" value="OPEN" onclick="call_print(\'' .$counter. '\')">
+						<input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 
 					</div>
 

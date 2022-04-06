@@ -370,6 +370,13 @@ a:hover {
   /*display: none;*/
 }
 
+.menu_list_div
+{
+  position: relative;
+  z-index: 1;
+
+}
+
 
 li
 {
@@ -421,8 +428,8 @@ if($preview_value===0)
   if($role === "HAP")
   {
             
-
-    echo '<ul>';
+    echo'<div class="menu_list_div">';
+    echo '<ul class="">';
     echo "<li><a href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
 echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
     
@@ -431,11 +438,13 @@ echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
     echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
 
     echo '</ul>';
+    echo '</div>';
 
   }
   else if($role === "HAP Secretary")
   {
-     echo '<ul>';
+   echo'<div class="menu_list_div">';
+    echo '<ul class="">';
     echo "<li><a href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
 echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
     
@@ -444,7 +453,8 @@ echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
     echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
 
     echo '</ul>';
-    
+    echo '</div>';
+
   }
 
   else

@@ -192,71 +192,123 @@
 
 		#month_input
 		{
-			background-color: #e2d9d9;
+			background-color: #f0f0f0;
 			margin-top: -7px;
 			margin-left: 30px;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
 			transition: transform .04s;
 			color: black;
-			text-transform: uppercase;
-			box-shadow: 2px 2px 5px #9a9393;
-			border-radius: 50px 50px 50px;
-			width: 105px;
+			text-transform: capitalize;
+			width: 103px;
+			height: 15px;
+			text-align: left;
 			font-weight: bold;
+			font-size: 12px;
 			font-family: "Times New Roman", Times, serif;
-		
-		}
-		#month_input:hover
-		{
-			background-color: #c59828;
-			-ms-transform: scale(.5); /* IE 9 */
-  			-webkit-transform: scale(1.5); /* Safari 3-8 */
-  			transform: scale(1.10);
+
 		}
 
-		#hr_name
+		#month_input:hover
 		{
-			background-color: #e2d9d9;
+			background-color: #dadada;
+		}
+
+		#name_of_sender
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
 			transition: transform .04s;
 			color: black;
-			text-transform: uppercase;
-			box-shadow: 2px 2px 5px #9a9393;
-			border-radius: 50px 50px 50px;
-			width: 300px;
+			text-transform: capitalize;
+			width: 280px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-top: 10px;
+			margin-left: 30px;
+			margin-bottom: 3px;
+		}
+
+		#name_of_sender:hover
+		{
+			background-color: #dadada;
+		}
+
+		#position_of_sender
+		{
+
+			height: 15px;
+			width: 103px;
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
 			font-weight: bold;
 			font-family: "Times New Roman", Times, serif;
-			margin-top: 10px;
+			text-align: left;
+			font-size: 12px;
+			margin-left: 30px;
+			margin-bottom: 25px;
+
+		}
+
+		#position_of_sender:hover
+		{
+			background-color: #dadada;
+		}
+
+		#department_name
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 280px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-bottom: 55px;
+			margin-top: -22px;
 			margin-left: 30px;
 		}
 
-		#hr_name:hover
+		#department_name:hover
 		{
-			background-color: #c59828;
-			-ms-transform: scale(.5); /* IE 9 */
-  			-webkit-transform: scale(1.5); /* Safari 3-8 */
-  			transform: scale(1.05);
-		}
-
-		#director
-		{
-			font-weight: bold;
-			font-family: "Times New Roman", Times, serif;
-			margin-top: -10px;
-			margin-left: 35px;
-		}
-
-		#human_resource
-		{
-			font-weight: bold;
-			font-family: "Times New Roman", Times, serif;
-			margin-top: -22px;
-			margin-left: 35px;
+			background-color: #dadada;
 		}
 
 		#dear
 		{
-			font-weight: bold;
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 125px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
 			font-family: "Times New Roman", Times, serif;
-			margin-left: 35px;
+			font-weight: bold;
+			margin-bottom: 18px;
+			margin-top: -22px;
+			margin-left: 30px;
+		}
+
+		#dear:hover
+		{
+			background-color: #dadada;
 		}
 
 		.body_text
@@ -369,15 +421,10 @@
 						<p id="long_line">___________________________________________________________________________________</p>
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
-						<br>
-			 			<div id="director" contentEditable>Director</div>
-						<br>
-
-						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
-						<br>
-						<br>
-						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
+						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
+			 			<input id="position_of_sender" type="" value="Director">
+						<input id="department_name" type="" value="Human Resource Management Department">
+						<input id="dear" type="" value="Dear Atty. Sarum:">
 						<br>
 						<div class="body_text" contentEditable>
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE: 
@@ -453,12 +500,12 @@
 						<p id="long_line">___________________________________________________________________________________</p>
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
+						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="director" contentEditable>Director</div>
+			 			<div id="position_of_sender" contentEditable>Director</div>
 						<br>
 
-						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
+						<div id="department_name" contentEditable>Human Resources Management Department</div> 
 						<br>
 						<br>
 						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
@@ -498,12 +545,12 @@
 						<p id="long_line">___________________________________________________________________________________</p>
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
+						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="director" contentEditable>Director</div>
+			 			<div id="position_of_sender" contentEditable>Director</div>
 						<br>
 
-						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
+						<div id="department_name" contentEditable>Human Resources Management Department</div> 
 						<br>
 						<br>
 						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
@@ -542,12 +589,12 @@
 						<p id="long_line">___________________________________________________________________________________</p>
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="hr_name" type="" name="" value="'.$hrmd.'">
+						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
 						<br>
-			 			<div id="director" contentEditable>Director</div>
+			 			<div id="position_of_sender" contentEditable>Director</div>
 						<br>
 
-						<div id="human_resource" contentEditable>Human Resources Management Department</div> 
+						<div id="department_name" contentEditable>Human Resources Management Department</div> 
 						<br>
 						<br>
 						<div id="dear" contentEditable>Dear Atty. Saraum:</div>

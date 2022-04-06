@@ -296,6 +296,11 @@
 
     <form method="POST">
         <?php 
+        //global declaration for displaying name and date on form
+      $newname = [];
+		$newmonth = [];
+		$newyear = [];
+		$newdate ='';
 
         require('config.php');
         $counter = 1;
@@ -392,8 +397,8 @@
 					 				<ul>
 
 					';
-					foreach($result as $newresult)
-					{}
+					// foreach($result as $newresult)
+					// {}
 					for ($x = 0; $x <= $number_of_items; $x++)
     				{				
     					if ($x >= 1 && $x <= $number_of_items)
@@ -402,26 +407,52 @@
 			            }
 			            if(array_key_exists($x,$id))
 			            {
+			            	
+
 				            $new_x = $x+1;
 				            $x_dot = $new_x." ".".";
 				            $name = $sn[$x].', '.$fn[$x].' '.$mn[$x];
-				            $date = $month[$x].' '.$year[$x];
-				            $name_temp = ["fernan","enan","mary","grace"];
+				            // $date = $month[$x].' '.$year[$x];
+
+				            if(!in_array($name, $newname))
+				            {
+				            	$newname[] = $name;
+				            }
+
+				            if(!in_array($month[$x], $newmonth))
+				            {
+				            $month_array = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+				            	for($m = 0;$m<12;$m++)
+				            	{
+				            		if($month[$x] == $month_array[$m])
+				            		{
+				            			$newmonth[$m] = $month[$x];
+				            		}
+				            	}
+				            }
+
+				            if(!in_array($year[$x], $newyear))
+				            {
+				            	$newyear[] = $year[$x];
+				            }
+
+				            
+				            // $name_temp = ["fernan","enan","mary","grace"];
 				            $ctr = 0;
-
-
 				            
-				            	echo '
-											<li class="list_items">'.$name.'</li>
-										';
-				            	
-
-				            
-				            
+				      //       	echo '
+										// 	<li class="list_items">'.$name.$date.'</li>
+										// ';  
 				                
-						}
+							}
 			        
 					}
+					sort($newyear);
+					$firstmonth = reset($newmonth);
+					$lastmonth = end($newmonth);
+					$firstyear = reset($newyear);
+					$lastyear = end($newyear);
+					
 			 		echo'
 			 		</ul>
 			 					</div>	

@@ -475,7 +475,7 @@ if($status == "pending")
 						</div>
 					</div>
 
-					<button id="check_dtr_id'.$counter.'"  class="viewbtn-s" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
+					<button id="check_dtr_id'.$counter.'"  class="" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
 
 			</tr>
 			
@@ -537,7 +537,7 @@ else if($status == "approved")
 
 					</div>
 
-					<button id="check_dtr_id'.$counter.'"  class="viewbtn-s" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
+					<button id="check_dtr_id'.$counter.'"  class="" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
 
 				 	</center></td>
 
@@ -608,7 +608,7 @@ else if($status == "disapproved")
 
 					</div>
 
-					<button id="check_dtr_id'.$counter.'"  class="viewbtn-s" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
+					<button id="check_dtr_id'.$counter.'"  class="" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
 
 				 	</center></td>
 

@@ -477,7 +477,7 @@ else if ($status == "approved")
 
 					</div>
 
-					<button id="check_dtr_id'.$counter.'" class="newbtn-s" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
+					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
 
 
 
@@ -552,7 +552,7 @@ else if ($status == "pending")
 
 					</div>
 
-					<button id="check_dtr_id'.$counter.'" class="newbtn-s" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
+					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
 
 
 		</center></td>
@@ -620,7 +620,7 @@ else if($status == "disapproved")
 
 					</div>
 
-					<button id="check_dtr_id'.$counter.'" class="newbtn-s" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
+					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
 
 
 
@@ -693,7 +693,7 @@ else if($status == "deleted")
 
 					</div>
 
-					<button id="check_dtr_id'.$counter.'" class="newbtn-s" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
+					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
 
 
 			 </center></td>

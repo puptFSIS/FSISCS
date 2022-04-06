@@ -194,12 +194,12 @@ if(isset($_SESSION['user'])) {
             }
             if($preview_value===1)
             {
-            echo "<h2 class=underlined-header>List of Daily Time Record</h2>";
+            echo "<h2 class=underlined-header>List of Created Daily Time Records</h2>";
             include("Dtr_Table.php");
             }
             if($preview_value===2)
             {
-            echo "<h2 class=underlined-header>List of Daily Time Record</h2>";
+            echo "<h2 class=underlined-header>Daily Time Record Validation</h2>";
             include("HAP_Dtr_Table.php");
             }
             if($preview_value===3)

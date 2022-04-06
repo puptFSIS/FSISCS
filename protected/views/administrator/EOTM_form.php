@@ -331,6 +331,7 @@
 			    $sn[] = $newresult['surname'];
 			    $fn[] = $newresult['firstname'];
 			    $mn[] = $newresult['middlename'];
+			    $fc[] = $newresult['FCode'];
 			    $regpartime[] = $newresult['regpartime'];
 			    $month[] = $newresult['month'];
 			    $year[] = $newresult['year'];
@@ -352,9 +353,7 @@
            		$sql="SELECT DISTINCT * FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
     			$result=mysqli_query($conn,$sql);
 
-           		$sql="SELECT DISTINCT FCode FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
-    			$result_distinct=mysqli_query($conn,$sql);
-
+           		
     			
            		echo'
 	            <div class="page">
@@ -406,13 +405,12 @@
 				            $x_dot = $new_x." ".".";
 				            $name = $sn[$x].', '.$fn[$x].' '.$mn[$x];
 				            $date = $month[$x].' '.$year[$x];
-				            $name_temp = ["fernan","enan","mary","grace"];
+				            $name_temp = [];
 				            $ctr = 0;
-
 
 				            
 				            	echo '
-											<li class="list_items">'.$name.'</li>
+											<li class="list_items">'.$sn[$x].'</li>
 										';
 				            	
 

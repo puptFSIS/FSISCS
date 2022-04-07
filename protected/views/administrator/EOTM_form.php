@@ -29,6 +29,8 @@
 
         .page
         {
+        	width: 612px;
+        	height: 936px;
             border: 2px solid black;
 
         }
@@ -45,22 +47,53 @@
 
         .body_text
         {
-            /*width: 100%;*/
+        	background-color: #f0f0f0;
             padding-bottom: 40px;
-			max-width: 560px;
-			overflow-y: auto;
+			max-width: 555px;
+			max-height: 40px;
+			overflow: auto;
 			overflow-wrap: break-word;
-			border: 1px solid black;
-			margin: auto;
+			border: 1px solid #abb4bd;
+			margin-left: 30px;
+			margin-top: -20px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			text-transform: capitalize;
         }
+
+        .body_text:hover
+        {
+			background-color: #dadada;
+		}
+
+		.listOfFacultyMembers
+
+		{
+			background-color: #f0f0f0;
+			border: 1px solid #abb4bd;
+			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
+			margin-top: -450px;
+			margin-left: 30px;
+			border: none;
+			max-width: 555px;
+			overflow: auto;
+		}
+
+		.listOfFacultyMembers:hover
+		{
+			background-color: #dadada;
+		}
+
 
         .text_div_class
         {
         	padding-bottom: 40px;
-		  max-width: 560px;
-		  overflow-y: auto;
-		  overflow-wrap: break-word;
-		  border: 1px solid black;
+			max-width: 560px;
+			overflow-y: auto;
+			overflow-wrap: break-word;
+			border: 1px solid black;
 			margin: auto;
 
         }
@@ -104,8 +137,8 @@
 		}
 		.body
 		{
-			height: 400px;
-			width: 100%;
+			width: 612px;
+        	height: 936px;
 			background-color: #ffffff;
 		}
 
@@ -309,26 +342,6 @@
 		#dear:hover
 		{
 			background-color: #dadada;
-		}
-
-		.body_text
-
-		{
-			font-weight: bold;
-			font-family: "Times New Roman", Times, serif;
-			margin-left: 35px;
-			border: none;
-		}
-
-		.listOfFacultyMembers
-
-		{
-			font-weight: bold;
-			font-family: "Times New Roman", Times, serif;
-			margin-left: 35px;
-			border: none;
-			height: 100px;
-			overflow-y: scroll;
 		}
 
 		.list_items

@@ -445,7 +445,7 @@ else if ($status == "approved")
 		<tr id="tr_id_'.$counter.'">
 		
 		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'
-		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
+		
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -519,7 +519,7 @@ else if ($status == "pending")
 	echo'
 		<tr id="tr_id_'.$counter.'">
 		<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
+		
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -586,7 +586,7 @@ else if($status == "disapproved")
 		echo'
 			<tr id="tr_id_'.$counter.'">
 			<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
+		
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -656,7 +656,7 @@ else if($status == "deleted")
 		echo'
 			<tr id="tr_id_'.$counter.'">
 			<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
+		
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>

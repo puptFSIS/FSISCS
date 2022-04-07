@@ -340,8 +340,9 @@ width: 300px;
 <script src='assets/sweetalert2.all.min.js'></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/datatables.min.js"></script>
-<!-- <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.3.0/js/dataTables.fixedColumns.js"></script> -->
 <script id=js-dispatcher src='scripts/scripts.js'></script>
+
+<!-- <script type="text/javascript" src="https://cdn.datatables.net/fixedcolumns/3.3.0/js/dataTables.fixedColumns.js"></script> -->
 
 <script>
 

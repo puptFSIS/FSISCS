@@ -507,9 +507,13 @@
 					$lastmonth = end($newnewmonth);
 					$firstyear = reset($newyear);
 					$lastyear = end($newyear);
-					
+					$namecount = count($newname);
+
+					for($p = 0;$p < $namecount;$p++)
+					{
+						echo '<li class="list_items">'.$newname[$p].'</li>';
+					}
 			 		echo'
-			 		
 			 		</ul>
 			 					</div>	
 					<div class="footer">

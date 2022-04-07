@@ -445,7 +445,7 @@ else if ($status == "approved")
 		<tr id="tr_id_'.$counter.'">
 		
 		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'
-		
+		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -519,7 +519,7 @@ else if ($status == "pending")
 	echo'
 		<tr id="tr_id_'.$counter.'">
 		<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		
+		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -586,7 +586,7 @@ else if($status == "disapproved")
 		echo'
 			<tr id="tr_id_'.$counter.'">
 			<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		
+		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -656,7 +656,7 @@ else if($status == "deleted")
 		echo'
 			<tr id="tr_id_'.$counter.'">
 			<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		
+		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -722,7 +722,10 @@ else if($status == "deleted")
 
 //<a href="index.php?r=administrator/Regular_DTR&var='.$newresult['FCode'].'&var2='.$newresult['month'].'&var3='.$newresult['year'].'&var4='.$newresult['regpartime'].'" class="btn-s" title="PRINT PDF" style="width: 12px; height: 20px; background-color:white;"><img src="images/icons/post-dark.png"></a> <a class="btn-s" title="DELETE" style="width: 12px; height: 20px;"><img src="images/icons/x-white.png"></a>
 ?>
-
+<script src='assets/jquery-3.6.0.min.js'></script>
+	<script src='assets/sweetalert2.all.min.js'></script>
+	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script>
 var count = 0;

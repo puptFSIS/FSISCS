@@ -495,12 +495,14 @@
 
 
 
-<p class="month_text">For the month of  </p>
-<p id="month_holder"><?php echo " ".date("M Y");?></p>
+		<p class="month_text">For the month of  </p>
+		<p id="month_holder"><?php echo " ".date("M Y");?></p>
 
-
+	
 	</style>
 
+	<script src='assets/jquery-3.6.0.min.js'></script>
+	<script src='assets/sweetalert2.all.min.js'></script>
 	<?php include("config.php"); include("getPersonalInformation.php");
 		$array_month =array('January','February','March','April','May','June','July','August','September','October','November','December');
 		if(isset($_POST['submit'])) 
@@ -526,7 +528,17 @@
 				    }
 				    else
 				    {
-				        echo "Records added successfully.";
+				        // echo "Records added successfully.";
+				        echo "
+				    	<script>
+				    		Swal.fire(
+                            'DTR Recorded successfully',
+                            '',
+                            'success'
+                        )
+
+				    	</script>";
+				        
 				    }
 			
 			
@@ -674,11 +686,10 @@
 			<p class="footer_incharge_text">In Charge</p>
 		</div>
 		<input id=submitbtn type="submit" name="submit" value="Submit" disabled>
-		<button id=submitbtn2 type="button" >test</button>
+		<button id=submitbtn2 type="submit" >test</button>
 		</form>
 	
-	<script src='assets/jquery-3.6.0.min.js'></script>
-	<script src='assets/sweetalert2.all.min.js'></script>
+	
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
 	<script id=js-dispatcher src='scripts/scripts.js'></script>
@@ -690,43 +701,43 @@
 	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script>
-		 // window.onload = function() {
-   //          var today = new Date();   
-   //          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-   //          var month = today.getMonth()+1
-   //          var year = today.getFullYear();
-   //          var day = today.getDate();
-   //          var getDaysInMonth = function(month,year) {
-   //           return new Date(year, month, 0).getDate()
-   //          };
+		  window.onload = function() {
+             var today = new Date();   
+             var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+             var month = today.getMonth()+1
+             var year = today.getFullYear();
+             var day = today.getDate();
+             var getDaysInMonth = function(month,year) {
+              return new Date(year, month, 0).getDate()
+             };
 
-   //          if(getDaysInMonth(month,year) === day)
-   //          {
-   //              alert(" Today is "+date+" Generate and print your DTR now ");
+            if(getDaysInMonth(month,year) === day)
+             {
+                 alert(" Today is "+date+" Generate and print your DTR now ");
 
-   //          }
-   //      };
+             }
+         };
 
-   //      $('#submitbtn').on('click',function()
-	  //   {
-	  //   	Swal.fire({
-			//   title: 'Are you sure?',
-			//   text: "Create this DTR now?",
-			//   icon: 'warning',
-			//   showCancelButton: true,
-			//   confirmButtonColor: '#3085d6',
-			//   cancelButtonColor: '#d33',
-			//   confirmButtonText: 'Yes!'
-			// }).then((result) => {
-			//   if (result.isConfirmed) {
-			//     Swal.fire(
-			//       'SUCCESS!',
-			//       'Your DTR has been generated',
-			//       'success'
-			//     )
-			//   }
-			// })
-	  //   });
+        $('#submitbtn2').on('click',function()
+	    {
+	    	Swal.fire({
+			  title: 'Are you sure?',
+			  text: "Create this DTR now?",
+			  icon: 'warning',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Yes!'
+			}).then((result) => {
+			  if (result.isConfirmed) {
+			    Swal.fire(
+			      'SUCCESS!',
+			      'Your DTR has been generated',
+			      'success'
+			    )
+			  }
+			})
+	    });
 
 	    
 
@@ -1018,7 +1029,12 @@
 		    		var cells_pm_dep = document.getElementById('cells_pm_dep'+a);
 		    		cells_pm_dep.value='';
 		    	}
-                alert("No such directory exists!");
+                // alert("No such directory exists!");
+                Swal.fire(
+                            'No such directory exists!',
+                            'press OK to continue',
+                            'warning'
+                        )
 
             }
 	    		});

@@ -686,7 +686,7 @@
 			<p class="footer_incharge_text">In Charge</p>
 		</div>
 		<input id=submitbtn type="submit" name="submit" value="Submit" disabled>
-		<button id=submitbtn2 type="submit" >test</button>
+		<!-- <button id=submitbtn2 type="submit" >test</button> -->
 		</form>
 	
 	
@@ -718,7 +718,7 @@
              }
          };
 
-        $('#submitbtn2').on('click',function()
+        $('#submitbtn').on('click',function()
 	    {
 	    	Swal.fire({
 			  title: 'Are you sure?',

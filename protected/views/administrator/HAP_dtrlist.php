@@ -342,6 +342,8 @@
 
 
 </style>
+<script src='assets/jquery-3.6.0.min.js'></script>
+<script src='assets/sweetalert2.all.min.js'></script>
 <?php
 // include("config.php");
 
@@ -453,9 +455,10 @@ if($status == "pending")
 							<p id="modal_date_id'.$counter.'" class="fcode_p_Tag"></p>
 							<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="checkbox" class"'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1">
-									<label for="approve" class="approve">  APPROVE</label>
-									<input type="checkbox" class"'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="2 ">
+									<input type="checkbox" class"radio'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1">
+									<label for="approve" class="approve">APPROVE</label>
+
+									<input type="checkbox" class"radio'.$counter.'" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
 									<label for="disapprove" class="disapprove">  DISAPPROVE</label>
 
 
@@ -469,7 +472,8 @@ if($status == "pending")
 						</div>
 							<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
 								
-							<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" > 
+							<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
+
 							<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
 
 						</div>
@@ -628,6 +632,39 @@ else if($status == "disapproved")
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script>
+
+
+
+//////////////////////////////////////////
+///// SWEET ALERT/////
+// $('#submitbtn2').on('click',function()
+// 	    {
+// 	    	Swal.fire({
+// 			  title: 'Are you sure?',
+// 			  text: "Create this DTR now?",
+// 			  icon: 'warning',
+// 			  showCancelButton: true,
+// 			  confirmButtonColor: '#3085d6',
+// 			  cancelButtonColor: '#d33',
+// 			  confirmButtonText: 'Yes!'
+// 			}).then((result) => {
+// 			  if (result.isConfirmed) {
+// 			    Swal.fire(
+// 			      'SUCCESS!',
+// 			      'Your DTR has been generated',
+// 			      'success'
+// 			    )
+// 			  }
+// 			})
+// 	    });
+
+
+
+
+
+
+
+////////////////////
 	
 var count = 0;
 var id = [];
@@ -663,30 +700,84 @@ function post_approval(counter)
 	else 
 	{
 		var approval = document.getElementById("disapprove_box_id"+counter).value;
-
 	}
 	var comments = document.getElementById("comments"+counter).value;
-	console.log(id,approval,comments);
-	$.ajax({
-		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('administrator/Hap_post'); ?>",
-		      data:  {val1:id,val2:approval,val3:comments},
-		      dataType:"JSON",
-		      success:function(data){
-		      	alert("records updated successfully");
-		      	window.location.reload();
-		      },
-		      error:function(data)
-		      {
-		      	alert(JSON.stringify(data));
+	// var comments_id = "comments"+counter;
+	// SWEET ALERT MUNA
+	ajax_sender(id,approval,comments,counter);
+	// window.location.reload();
+	    
+	  //   	Swal.fire({
+			//   title: 'Are you sure?',
+			//   text: "Create this DTR now?",
+			//   icon: 'warning',
+			//   showCancelButton: true,
+			//   confirmButtonColor: '#3085d6',
+			//   cancelButtonColor: '#d33',
+			//   confirmButtonText: 'Yes!'
+			// }).then((result) => {
+			//   if (result.isConfirmed) {
+			//   	this.ajax_sender(id,approval,comments,counter);
+			//     Swal.fire(
+			//       'SUCCESS!',
+			//       'Your DTR has been generated',
+			//       'success'
+			//     )
+			//   }
+			// })
+	   
 
-		      }
-		  });
+	// end of sweet alert
+	
 	
 
 
 }
 
+function ajax_sender(id,approval,comments,counter)
+{
+	  	Swal.fire({
+			  title: 'Are you sure?',
+			  text: "Submit this DTR now?",
+			  icon: 'info',
+			  showCancelButton: true,
+			  confirmButtonColor: '#3085d6',
+			  cancelButtonColor: '#d33',
+			  confirmButtonText: 'Yes!'
+			}).then((result) => {
+			  if (result.isConfirmed) {
+				//////////////////
+				//ajax part
+
+				console.log(id,approval,comments);
+					$.ajax({
+						      type: "POST",
+						      url:    "<?php echo Yii::app()->createUrl('administrator/Hap_post'); ?>",
+						      data:  {val1:id,val2:approval,val3:comments},
+						      dataType:"JSON",
+						      success:function(data){
+						      	// alert("records updated successfully");
+						      },
+						      error:function(data)
+						      {
+						      	alert(JSON.stringify(data));
+
+						      }
+						  });
+
+
+				////////////////
+			    Swal.fire(
+			      'SUCCESS!',
+			      'The DTR has been validated',
+			      'success'
+			    )
+						      	
+			  }
+			})
+
+	
+}
 
 
 

@@ -2074,7 +2074,33 @@ class AdministratorController extends Controller
 
     public function actionSubjectLoad()
     {
-        $this->render('SubjectLoad');
+    	$fcode = Yii::app()->session['fcode'];
+		if (isset($_POST['sem'])) {
+			$sem = $_POST['sem'];
+		}
+		if (isset($_POST['sy'])) {
+			$sy = $_POST['sy'];
+		}
+		if (isset($_GET['sem'])) {
+			$sem = $_GET['sem'];
+		}
+		if (isset($_GET['sy'])) {
+			$sy = $_GET['sy'];
+		}
+		
+		if (isset($_POST['sem']) and isset($_POST['sy'])) {
+			$result = TblSchedule::model()->FacultyLoad($sem, $sy, $fcode);
+			// echo "<pre>";
+			// print_r($result);
+			// echo "</pre>";
+			$this->render('SubjectLoad', array('load' => $result));
+		} else if (isset($_GET['sem']) and isset($_GET['sy'])) {
+			$result = TblSchedule::model()->FacultyLoad($sem, $sy, $fcode);
+			// $this->render('SubjectLoad', array('load' => $result));
+		} else {
+			$this->render('SubjectLoad');
+		}
+        // $this->render('SubjectLoad');
     }
 
     public function actionSubjectPreference()
@@ -2180,6 +2206,20 @@ class AdministratorController extends Controller
     // 	$this->render('PrintFacultyAssignment',array('data'=>$result, 'subjects'=>$resultLoad, 'courses'=>$resultc));
 
     // }
+
+    public function actionPrintFacultyAssign(){
+    	$fcode = Yii::app()->session['fcode'];
+    	$sem = $_GET['sem'];
+    	$sy = $_GET['sy'];
+    	$TeachingLoad = TblSchedule::model()->TakeSubjectLoad($fcode, $sem, $sy);
+    	$courses = TblCourse::model()->GetCourse();
+    	$profInfo = TblEvaluationfaculty::model()->CheckSpecProf($fcode);
+
+    	// echo "<pre>";
+    	// print_r($profInfo);
+    	// echo "</pre>";
+    	$this->render('PrintFacultyAssign',array('TeachingLoad'=>$TeachingLoad, 'profInfo'=>$profInfo, 'courses'=>$courses, 'sem' => $sem, 'sy' => $sy));
+    }
 
     public function actionPrintFacultyPref(){
     	$sem = $_POST['sem'];

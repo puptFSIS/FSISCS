@@ -1,5 +1,4 @@
 ﻿<?php
-session_start();
 include("config.php");
 if(isset($_SESSION['user'])) {
 	if($_SESSION['user']==1) {
@@ -88,7 +87,18 @@ display:none;
     padding: 5px 5px 5px;
     width: 100%;
 }
-    
+
+.page-sidebar-right #page-content{
+	width:100%;
+}
+body.page-media.page-sidebar-right{
+	width:100%;
+}
+
+.page-sidebar-right #page-body-content {
+background:url(../../../../FSISCS/images/page-body-bg-white.png);
+background-repeat:repeat;
+} 
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -198,429 +208,405 @@ display:none;
 
 </section>
 <section>
-<table class=round-8 style="width:100%; ">
-<tbody>
-				
-					<?php
-						$csem = 0;
-						$sy = "";
-						$FCode = $_SESSION['FCode'];
-						if(isset($_POST['sem']) and isset($_POST['sy'])) 
-						{
-							$csem = $_POST['sem'];
-							$sy = $_POST['sy'];
-							$sqlo = "SELECT * from tbl_evaluationfaculty where status = 'Active' and FCode = '$FCode'";
-							$queryo = mysqli_query($conn,$sqlo);
-							while($rowo = mysqli_fetch_array($queryo))
-							{
-								$pr = $_SESSION['FCode'];
-								$sql = "SELECT DISTINCT sprof,sem,schoolYear FROM tbl_schedule WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$pr'";
-								$query = mysqli_query($conn,$sql);
-								while($row = mysqli_fetch_array($query))
-								{
-									$p = $row['sprof'];
-									echo'<h4 class="underlined-header">'.getname($p).' <a href="index.php?r=administrator/PrintTeachingLoad&prof='.'&facode='. $p .'&csem='. $csem .'&sy='. $sy .'" class="btn btn-s" target = "blank">Print</a></h4>
-									
-									<table class="table table-bordered table-hover responsive-utilities">
-									  <tbody>
-										<tr>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">CODE</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;"" >TITLE</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;"">LEC</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;"">LAB</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;"">COURSE</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">DAY</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">TIME</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;"">ROOM</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;"">REQUEST</td>
-										</tr>
-									';
-									
-									$sql1 = "SELECT * FROM tbl_schedule WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$p'";
-								
-								
+<?php if ((isset($_POST['sem']) and isset($_POST['sy'])) OR (isset($_GET['sem']) and isset($_GET['sy']))): ?>
+<?php if (!empty($load)): ?>
+	<p><a href="index.php?r=administrator/PrintFacultyAssign&sem=<?php echo $_POST['sem']?>&sy=<?php echo $_POST['sy']?>" class = "btn btn-primary" target ="_blank">Print</a></p>
+<?php endif ?>
 
-									$query1 = mysqli_query($conn,$sql1);
-									while($row1 = mysqli_fetch_array($query1))
-									{
-										
-										$code = $row1['scode'];
-										$stitle = getTitle($row1['scode'], $row1['courseID']);
-										$lec = getLec($row1['scode'], $row1['courseID']);
-										$lab = getLab($row1['scode'], $row1['courseID']);
-										$currID = $row1['currID'];
-										$cID = $row1['courseID'];
-										$sec = $row1['csection'];
-										$sprof = $row1['sprof'];
-										$schedID = $row1['schedID'];
-										$schoolyear = $row1['schoolYear'];
-										$yrlvl = $row1['cyear'];
-										$sunit = $row1['units'];
-										$course = getCourse($row1['courseID'])." ".$row1['cyear']."-".$row1['csection'];
-										$day = getDay($code,$currID,$cID,$sy,$sec,$yrlvl,$csem);
-										//echo $day;
-									
-										$time = getTime($code,$currID,$cID,$sy,$sec,$yrlvl,$csem);
-										$room = getRoom($code,$currID,$cID,$sy,$sec,$yrlvl,$csem);
-												
-										echo'
-										<tr>
-											<td style="text-align: left;">'. $code .'</td>
-											<td style="text-align: left;">'. $stitle .'</td>
-											<td style="text-align: center;">'. $lec .'</td>
-											<td style="text-align: center;">'. $lab .'</td>
-											<td style="text-align: center;">'. $course.'</td>
-											<td style="text-align: center;">'. $day.'</td>
-											<td style="text-align: center;">'. $time.'</td>
-											<td style="text-align: center;">'. $room.'</td>
-											<td><a href="index.php?r=faculty/viewfacultyrequest&CurrID='. $currID .'&sprof='.$sprof.'&schedID='.$schedID.'&schoolyear='.$schoolyear.'&courseID='. $cID .'&cyear='. $yrlvl .'&scode='. $code .'&sem='. $csem .' &sy='. $sy .'&sec='. $sec .'&title='.$stitle.'&units='.$sunit.'&lec='.$lec.'&lab='.$lab.'" class="btn btn-mini btn-primary btn-block" >REQUEST</a>
-										</tr>';	
-									}	
 
-								echo'
-								</tbody>
-								</table>';
-								}
-							}
-						}
-						
-						if(isset($_GET['sem']) and isset($_GET['sy'])) {
-							$csem = $_GET['sem'];
-							$sy = $_GET['sy'];
-							$sqlo = "SELECT * from tbl_evaluationfaculty where status = 'Active' and FCode = '$FCode'";
-							$queryo = mysqli_query($sqlo);
-							while($rowo = mysqli_fetch_array($queryo))
-							{
-								$pr = $rowo['FCode'];
-								$sql = "SELECT DISTINCT sprof,sem,schoolYear FROM tbl_schedule WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$pr'";
-								$query = mysqli_query($conn,$sql);
-
-								while($row = mysqli_fetch_array($query))
-								{
-									$p = $row['sprof'];
-									echo'<h4 class="underlined-header">'.getname($p).' <a href="index.php?r=administrator/PrintSubjectLoad&prof='. $p .'&csem='. $csem .'&sy='. $sy .'" class="btn btn-s">Print</a></h4>
-									
-									<table class="table table-bordered table-hover responsive-utilities">
-									  <tbody>
-										<tr>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">CODE</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;"" >TITLE</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;"">LEC</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;"">LAB</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;"">COURSE</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">DAY</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">TIME</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;"">ROOM</td>
-											<td style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;"">REQUEST</td>
-									
-										</tr>
-									';	
-									
-									$sql1 = "SELECT * FROM tbl_schedule WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$p'";
-									$query1 = mysqli_query($conn,$sql1);
-									var_dump($sql1);
-									while($row1 = mysqli_fetch_array($query1))
-									{
-										
-										$code = $row1['scode'];
-										$stitle = getTitle($row1['scode'], $row1['courseID']);
-										$lec = getLec($row1['scode'], $row1['courseID']);
-										$lab = getLab($row1['scode'], $row1['courseID']);
-										$currID = $row1['currID'];
-										$cID = $row1['courseID'];
-										$sec = $row1['csection'];
-										$yrlvl = $row1['cyear'];
-										$course = getCourse($row1['courseID'])." ".$row1['cyear']."-".$row1['csection'];
-										$day = getDay($code,$currID,$cID,$sy,$sec,$yrlvl,$csem);
-										$time = getTime($code,$currID,$cID,$sy,$sec,$yrlvl,$csem);
-										$room = getRoom($code,$currID,$cID,$sy,$sec,$yrlvl,$csem);
-											
-										echo '
-										<tr>
-											<td style="text-align: left;">'. $code .'</td>
-											<td style="text-align: left;">'. $stitle .'</td>
-											<td style="text-align: center;">'. $lec .'</td>
-											<td style="text-align: center;">'. $lab .'</td>
-											<td style="text-align: center;">'. $course.'</td>
-											<td style="text-align: center;">'. $day.'</td>
-											<td style="text-align: center;">'. $time.'</td>
-											<td style="text-align: center;">'. $room.'</td>
-											
-										</tr>';	
-									}	
-								echo'
-								</tbody>
-								</table>';
-								}
-							}
-						}
-						
-						function getTitle($code,$cID) 
-						{
-							include("config.php");
-							$sql = "SELECT * FROM tbl_subjectload WHERE scode ='$code' and courseID = '$cID'"; 
-							$result = mysqli_query($conn,$sql);
-							$row = mysqli_fetch_array($result);
-							$title = $row['stitle'];
-							return $title;
-						}
-						
-						function getLec($code,$cID) 
-						{
-							include("config.php");
-							$sql = "SELECT * FROM tbl_subjectload WHERE scode ='$code' and courseID = '$cID'"; 
-							$result = mysqli_query($conn, $sql);
-							$row = mysqli_fetch_array($result);
-							$lec = $row['hrs_lec'];
-							return $lec;
-						}
-						
-						function getLab($code,$cID) 
-						{
-							include("config.php");
-							$sql = "SELECT * FROM tbl_subjectload WHERE scode ='$code' and courseID = '$cID'"; 
-							$result = mysqli_query($conn,$sql);
-							$row = mysqli_fetch_array($result);
-							$lab = $row['hrs_lab'];
-							return $lab;
-						}
-						
-						function getCourse($ccode) 
-						{
-							include("config.php");
-							$sql = "SELECT * FROM tbl_course WHERE course ='$ccode'"; 
-							$result = mysqli_query($conn,$sql);
-							$row = mysqli_fetch_array($result);
-							$code = $row['course_code'];
-							return $code;
-						}
-						
-						function getDay($scode,$currID,$cID,$sy,$sec)
-						{
-							include("config.php");
-							$sql ="SELECT * FROM tbl_schedule WHERE scode ='$scode' AND currID = '$currID' AND schoolYear = '$sy' AND courseID = '$cID' AND csection = '$sec'";
-							$result = mysqli_query($conn,$sql);
-							$row = mysqli_fetch_array($result);
-							if($row['sday2']<>'')
-							{
-								$day = $row['sday'] . '/' . $row['sday2'];
-							}
-							else
-							{
-								$day = $row['sday'];
-							}
-							return $day;
-
-						}
-						
-						function getRoom($scode,$currID,$cID,$sy,$sec)
-						{
-							include("config.php");
-							$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec'";
-							$result = mysqli_query($conn, $sql);
-							$row = mysqli_fetch_array($result);
-							if($row['sroom2']<>'')
-							{
-								$room = $row['sroom'] . '/' . $row['sroom2'];
-							}
-							else
-							{
-								$room = $row['sroom'];
-							}
-							return $room;
-						}
-						
-						function getProf($scode,$currID,$cID,$sy,$sec,$yrlvl,$sem)
-						{
-							include("config.php");
-							$sql ="SELECT * FROM tbl_schedule WHERE scode ='$scode' AND currID = '$currID' AND cyear = '$yrlvl' AND sem = '$sem' AND schoolYear = '$sy' AND courseID = '$cID' AND csection = '$sec'";
-							$result = mysqli_query($conn,$sql);
-							$row = mysqli_fetch_array($result);
-							$prof = getName($row['sprof']);
-							return $prof;
-						}
-						
-						function getTime($scode,$currID,$cID,$sy,$sec)
-						{
-							include("config.php");
-							$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec'";
-							$result = mysqli_query($conn,$sql);
-							$row = mysqli_fetch_array($result);
-							if($row['stimeS2']<>"")
-							{
-								if($row['stimeS']<>0){
-									$time = to12Hr($row['stimeS']) . '-' . to12Hr($row['stimeE']) . '/' . to12Hr($row['stimeS2']) . '-' . to12Hr($row['stimeE2']);
-								}else{
-									$time = "";
-								}
-							}else
-							{
-								if($row['stimeS']<>'')
-								{
-									$time = to12Hr($row['stimeS']) . '-' . to12Hr($row['stimeE']);
-								}
-								else
-								{
-									$time = "";
-								}
-							}
-							return $time;
-						}
-						
-						function getName($fcode)
-						{
-							include("config.php");
-							$Name = "";
-							$sql = "SELECT * FROM tbl_evaluationfaculty WHERE FCode = '$fcode'";
-							$result = mysqli_query($conn,$sql);
-							while($row = mysqli_fetch_array($result)){
-								$Name = $row['LName'] .', '. $row['FName'];
-							}
-							return $Name;
-						}
-						
-						function to12Hr($ctime) {
-							$strTime = "";
-							if($ctime==700) {
-								$strTime = "07:00 AM";
-							} else if($ctime==730) {
-								$strTime = "07:30 AM";
-							} else if($ctime==800) {
-								$strTime = "08:00 AM";
-							} else if($ctime==830) {
-								$strTime = "08:30 AM";
-							} else if($ctime==900) {
-								$strTime = "09:00 AM";
-							} else if($ctime==930) {
-								$strTime = "09:30 AM";
-							} else if($ctime==1000) {
-								$strTime = "10:00 AM";
-							} else if($ctime==1030) {
-								$strTime = "10:30 AM";
-							} else if($ctime==1100) {
-								$strTime = "11:00 AM";
-							} else if($ctime==1130) {
-								$strTime = "11:30 AM";
-							} else if($ctime==1200) {
-								$strTime = "12:00 NN";
-							} else if($ctime==1230) {
-								$strTime = "12:30 NN";
-							} else if($ctime==1300) {
-								$strTime = "01:00 PM";
-							} else if($ctime==1330) {
-								$strTime = "01:30 PM";
-							} else if($ctime==1400) {
-								$strTime = "02:00 PM";
-							} else if($ctime==1430) {
-								$strTime = "02:30 PM";
-							} else if($ctime==1500) {
-								$strTime = "03:00 PM";
-							} else if($ctime==1530) {
-								$strTime = "03:30 PM";
-							} else if($ctime==1600) {
-								$strTime = "04:00 PM";
-							} else if($ctime==1630) {
-								$strTime = "04:30 PM";
-							} else if($ctime==1700) {
-								$strTime = "05:00 PM";
-							} else if($ctime==1730) {
-								$strTime = "05:30 PM";
-							} else if($ctime==1800) {
-								$strTime = "06:00 PM";
-							} else if($ctime==1830) {
-								$strTime = "06:30 PM";
-							} else if($ctime==1900) {
-								$strTime = "07:00 PM";
-							} else if($ctime==1930) {
-								$strTime = "07:30 PM";
-							} else if($ctime==2000) {
-								$strTime = "08:00 PM";
-							} else if($ctime==2030) {
-								$strTime = "08:30 PM";
-							} else if($ctime==2100) {
-								$strTime = "09:00 PM";
-							} else if($ctime==2130) {
-								$strTime = "09:30 PM";
-							} else if($ctime==2200) {
-								$strTime = "10:00 PM";
-							} else if($ctime==2230) {
-								$strTime = "10:30 PM";
-							}
-							return $strTime;
-						}
-						
-						function to24Hr($ctime) {
-							$strTime = "";
-							if($ctime=="07:00 AM") {
-								$strTime = 700;
-							} else if($ctime=="07:30 AM") {
-								$strTime = 730;
-							} else if($ctime=="08:00 AM") {
-								$strTime = 800;
-							} else if($ctime=="08:30 AM") {
-								$strTime = 830;
-							} else if($ctime=="09:00 AM") {
-								$strTime = 900;
-							} else if($ctime=="09:30 AM") {
-								$strTime = 930;
-							} else if($ctime=="10:00 AM") {
-								$strTime = 1000;
-							} else if($ctime=="10:30 AM") {
-								$strTime = 1030;
-							} else if($ctime=="11:00 AM") {
-								$strTime = 1100;
-							} else if($ctime=="11:30 AM") {
-								$strTime = 1130;
-							} else if($ctime=="12:00 NN") {
-								$strTime = 1200;
-							} else if($ctime=="12:30 NN") {
-								$strTime = 1230;
-							} else if($ctime=="01:00 PM") {
-								$strTime = 1300;
-							} else if($ctime=="01:30 PM") {
-								$strTime = 1330;
-							} else if($ctime=="02:00 PM") {
-								$strTime = 1400;
-							} else if($ctime=="02:30 PM") {
-								$strTime = 1430;
-							} else if($ctime=="03:00 PM") {
-								$strTime = 1500;
-							} else if($ctime=="03:30 PM") {
-								$strTime = 1530;
-							} else if($ctime=="04:00 PM") {
-								$strTime = 1600;
-							} else if($ctime=="04:30 PM") {
-								$strTime = 1630;
-							} else if($ctime=="05:00 PM") {
-								$strTime = 1700;
-							} else if($ctime=="05:30 PM") {
-								$strTime = 1730;
-							} else if($ctime=="06:00 PM") {
-								$strTime = 1800;
-							} else if($ctime=="06:30 PM") {
-								$strTime = 1830;
-							} else if($ctime=="07:00 PM") {
-								$strTime = 1900;
-							} else if($ctime=="07:30 PM") {
-								$strTime = 1930;
-							} else if($ctime=="08:00 PM") {
-								$strTime = 2000;
-							} else if($ctime=="08:30 PM") {
-								$strTime = 2030;
-							} else if($ctime=="09:00 PM") {
-								$strTime = 2100;
-							} else if($ctime=="09:30 PM") {
-								$strTime = 2130;
-							} else if($ctime=="10:00 PM") {
-								$strTime = 2200;
-							} else if($ctime=="10:30 PM") {
-								$strTime = 2230;
-							}
-							return $strTime;
-						}
-					?>
-</tbody>
+<!-- Regular Load Table -->
+<?php $totUnits = 0; ?>
+<h4 class="underlined-header">Regular Load</h4>
+<table class="table table-bordered table-hover responsive-utilities">
+	<thead>
+		<tr>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">CODE</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;" >TITLE</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">LEC</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">LAB</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">UNITS</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">COURSE</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">DAY</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;">TIME</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">ROOM</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">REQUEST</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+	<?php foreach ($load as $row): ?>
+		<?php if ($row['load_type']==1 && $row['load_type'] != NULL): ?>
+			<tr>
+			<td style="text-align: center;"><?php echo $row['scode'] ?></td>
+			<td style="text-align: left;"><?php echo $row['stitle'] ?></td>
+			<td style="text-align: center;"><?php echo $row['lec'] ?></td>
+			<td style="text-align: center;"><?php echo $row['lab'] ?></td>
+			<td style="text-align: center;"><?php echo $row['units'] ?></td>
+			<td style="text-align: center;"><?php echo getCourse($row['courseID']) ?></td>
+			<td style="text-align: center;"><?php echo $row['sday'] ?></td>
+			<td style="text-align: center;"><?php echo $row['stimeS'] ?></td>
+			<td style="text-align: center;"><?php echo $row['sroom'] ?></td>
+			<td><a href="index.php?r=administrator/viewfacultyrequest&CurrID=<?php echo $row['currID'] ?>&sprof=<?php echo $row['sprof']?>&schedID=<?php echo $row['schedID']?>&schoolyear=<?php echo $row['schoolYear']?>&courseID=<?php echo $row['courseID'] ?>&cyear=<?php echo $row['cyear'] ?>&scode=<?php echo $row['scode'] ?>&sem=<?php echo $row['sem'] ?> &sy=<?php echo $_POST['sy'] ?>&sec=<?php echo $row['csection'] ?>&title=<?php echo $row['stitle']?>&units=<?php echo $row['units']?>&lec=<?php echo $row['lec']?>&lab=<?php echo $row['lab']?>" class="btn btn-mini btn-primary btn-block" >REQUEST</a>
+		</tr>
+		<?php $totUnits += $row['units']; ?>
+		<?php endif ?>
+		
+	<?php endforeach ?>
+	</tbody>
 </table>
+<p><center><?php echo "Total Units:".$totUnits." Units"; ?></center></p>
+
+<!-- Part Time Load Table -->
+<?php $totUnits = 0; ?>
+<h4 class="underlined-header">Part Time Load</h4>
+<table class="table table-bordered table-hover responsive-utilities">
+	<thead>
+		<tr>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">CODE</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;" >TITLE</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">LEC</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">LAB</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">UNITS</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">COURSE</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">DAY</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;">TIME</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">ROOM</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">REQUEST</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+	<?php foreach ($load as $row): ?>
+		<?php if ($row['load_type']==0  && $row['load_type'] != NULL): ?>
+			<tr>
+			<td style="text-align: center;"><?php echo $row['scode'] ?></td>
+			<td style="text-align: left;"><?php echo $row['stitle'] ?></td>
+			<td style="text-align: center;"><?php echo $row['lec'] ?></td>
+			<td style="text-align: center;"><?php echo $row['lab'] ?></td>
+			<td style="text-align: center;"><?php echo $row['units'] ?></td>
+			<td style="text-align: center;"><?php echo getCourse($row['courseID']) ?></td>
+			<td style="text-align: center;"><?php echo $row['sday'] ?></td>
+			<td style="text-align: center;"><?php echo $row['stimeS'] ?></td>
+			<td style="text-align: center;"><?php echo $row['sroom'] ?></td>
+			<td><a href="index.php?r=administrator/viewfacultyrequest&CurrID=<?php echo $row['currID'] ?>&sprof=<?php echo $row['sprof']?>&schedID=<?php echo $row['schedID']?>&schoolyear=<?php echo $row['schoolYear']?>&courseID=<?php echo $row['courseID'] ?>&cyear=<?php echo $row['cyear'] ?>&scode=<?php echo $row['scode'] ?>&sem=<?php echo $row['sem'] ?> &sy=<?php echo $_POST['sy'] ?>&sec=<?php echo $row['csection'] ?>&title=<?php echo $row['stitle']?>&units=<?php echo $row['units']?>&lec=<?php echo $row['lec']?>&lab=<?php echo $row['lab']?>" class="btn btn-mini btn-primary btn-block" >REQUEST</a>
+		</tr>
+		<?php $totUnits += $row['units']; ?>
+		<?php endif ?>
+		
+	<?php endforeach ?>
+	</tbody>
+</table>
+<p><center><?php echo "Total Units:".$totUnits." Units"; ?></center></p>
+
+<!-- Teaching Substitution -->
+<?php $totUnits = 0; ?>
+<h4 class="underlined-header">Temporary Substitution</h4>
+<table class="table table-bordered table-hover responsive-utilities">
+	<thead>
+		<tr>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">CODE</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;" >TITLE</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">LEC</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">LAB</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">UNITS</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">COURSE</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">DAY</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;">TIME</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">ROOM</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">REQUEST</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<?php foreach ($load as $row): ?>
+			<?php if ($row['load_type']==2  && $row['load_type'] != NULL): ?>
+				<tr>
+					<td style="text-align: center;"><?php echo $row['scode'] ?></td>
+					<td style="text-align: left;"><?php echo $row['stitle'] ?></td>
+					<td style="text-align: center;"><?php echo $row['lec'] ?></td>
+					<td style="text-align: center;"><?php echo $row['lab'] ?></td>
+					<td style="text-align: center;"><?php echo $row['units'] ?></td>
+					<td style="text-align: center;"><?php echo getCourse($row['courseID']) ?></td>
+					<td style="text-align: center;"><?php echo $row['sday'] ?></td>
+					<td style="text-align: center;"><?php echo $row['stimeS'] ?></td>
+					<td style="text-align: center;"><?php echo $row['sroom'] ?></td>
+					<td><a href="index.php?r=administrator/viewfacultyrequest&CurrID=<?php echo $row['currID'] ?>&sprof=<?php echo $row['sprof']?>&schedID=<?php echo $row['schedID']?>&schoolyear=<?php echo $row['schoolYear']?>&courseID=<?php echo $row['courseID'] ?>&cyear=<?php echo $row['cyear'] ?>&scode=<?php echo $row['scode'] ?>&sem=<?php echo $row['sem'] ?> &sy=<?php echo $_POST['sy'] ?>&sec=<?php echo $row['csection'] ?>&title=<?php echo $row['stitle']?>&units=<?php echo $row['units']?>&lec=<?php echo $row['lec']?>&lab=<?php echo $row['lab']?>" class="btn btn-mini btn-primary btn-block" >REQUEST</a>
+				</tr>
+				<?php $totUnits += $row['units']; ?>
+			<?php endif ?>
+		
+	<?php endforeach ?>
+	</tbody>
+</table>
+<p><center><?php echo "Total Units:".$totUnits." Units"; ?></center></p>
+<?php endif ?>
+<?php
+						
+	function getTitle($code,$cID) 
+	{
+include("config.php");
+		$sql = "SELECT * FROM tbl_subjectload WHERE scode ='$code' and courseID = '$cID'"; 
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result);
+		$title = $row['stitle'];
+		return $title;
+	}
+	
+	function getLec($code,$cID) 
+	{
+include("config.php");
+		$sql = "SELECT * FROM tbl_subjectload WHERE scode ='$code' and courseID = '$cID'"; 
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result);
+		$lec = $row['hrs_lec'];
+		return $lec;
+	}
+	
+	function getLab($code,$cID) 
+	{
+include("config.php");
+		$sql = "SELECT * FROM tbl_subjectload WHERE scode ='$code' and courseID = '$cID'"; 
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result);
+		$lab = $row['hrs_lab'];
+		return $lab;
+	}
+	
+	function getCourse($ccode) 
+	{
+include("config.php");
+		$sql = "SELECT * FROM tbl_course WHERE course ='$ccode'"; 
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result);
+		$code = $row['course_code'];
+		return $code;
+	}
+	
+	function gethay($scode,$currID,$cID,$sy,$sec)
+	{
+include("config.php");
+		$sql ="SELECT * FROM tbl_schedule WHERE scode ='$scode' AND currID = '$currID' AND schoolYear = '$sy' AND courseID = '$cID' AND csection = '$sec'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result);
+		if($row['sday2']<>'')
+		{
+			$day = $row['sday'] . '/' . $row['sday2'];
+		}
+		else
+		{
+			$day = $row['sday'];
+		}
+		return $day;
+
+	}
+	
+	function getRoom($scode,$currID,$cID,$sy,$sec)
+	{
+include("config.php");
+		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result);
+		if($row['sroom2']<>'')
+		{
+			$room = $row['sroom'] . '/' . $row['sroom2'];
+		}
+		else
+		{
+			$room = $row['sroom'];
+		}
+		return $room;
+	}
+	
+	function getProf($scode,$currID,$cID,$sy,$sec,$yrlvl,$sem)
+	{
+include("config.php");
+		$sql ="SELECT * FROM tbl_schedule WHERE scode ='$scode' AND currID = '$currID' AND cyear = '$yrlvl' AND sem = '$sem' AND schoolYear = '$sy' AND courseID = '$cID' AND csection = '$sec'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result);
+		$prof = getName($row['sprof']);
+		return $prof;
+	}
+	
+	function getTime($scode,$currID,$cID,$sy,$sec)
+	{
+include("config.php");
+		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec'";
+		$result = mysqli_query($conn, $sql);
+		$row = mysqli_fetch_array($result);
+		if($row['stimeS2']<>"")
+		{
+			if($row['stimeS']<>0){
+				$time = to12Hr($row['stimeS']) . '-' . to12Hr($row['stimeE']) . '/' . to12Hr($row['stimeS2']) . '-' . to12Hr($row['stimeE2']);
+			}else{
+				$time = "";
+			}
+		}else
+		{
+			if($row['stimeS']<>'')
+			{
+				$time = to12Hr($row['stimeS']) . '-' . to12Hr($row['stimeE']);
+			}
+			else
+			{
+				$time = "";
+			}
+		}
+		return $time;
+	}
+	
+	function getName($fcode)
+	{
+include("config.php");
+		$Name = "";
+		$sql = "SELECT * FROM tbl_evaluationfaculty WHERE FCode = '$fcode'";
+		$result = mysqli_query($conn, $sql);
+		while($row = mysqli_fetch_array($result)){
+			$Name = $row['LName'] .', '. $row['FName'];
+		}
+		return $Name;
+	}
+	
+	function to12Hr($ctime) {
+		$strTime = "";
+		if($ctime==700) {
+			$strTime = "07:00 AM";
+		} else if($ctime==730) {
+			$strTime = "07:30 AM";
+		} else if($ctime==800) {
+			$strTime = "08:00 AM";
+		} else if($ctime==830) {
+			$strTime = "08:30 AM";
+		} else if($ctime==900) {
+			$strTime = "09:00 AM";
+		} else if($ctime==930) {
+			$strTime = "09:30 AM";
+		} else if($ctime==1000) {
+			$strTime = "10:00 AM";
+		} else if($ctime==1030) {
+			$strTime = "10:30 AM";
+		} else if($ctime==1100) {
+			$strTime = "11:00 AM";
+		} else if($ctime==1130) {
+			$strTime = "11:30 AM";
+		} else if($ctime==1200) {
+			$strTime = "12:00 NN";
+		} else if($ctime==1230) {
+			$strTime = "12:30 NN";
+		} else if($ctime==1300) {
+			$strTime = "01:00 PM";
+		} else if($ctime==1330) {
+			$strTime = "01:30 PM";
+		} else if($ctime==1400) {
+			$strTime = "02:00 PM";
+		} else if($ctime==1430) {
+			$strTime = "02:30 PM";
+		} else if($ctime==1500) {
+			$strTime = "03:00 PM";
+		} else if($ctime==1530) {
+			$strTime = "03:30 PM";
+		} else if($ctime==1600) {
+			$strTime = "04:00 PM";
+		} else if($ctime==1630) {
+			$strTime = "04:30 PM";
+		} else if($ctime==1700) {
+			$strTime = "05:00 PM";
+		} else if($ctime==1730) {
+			$strTime = "05:30 PM";
+		} else if($ctime==1800) {
+			$strTime = "06:00 PM";
+		} else if($ctime==1830) {
+			$strTime = "06:30 PM";
+		} else if($ctime==1900) {
+			$strTime = "07:00 PM";
+		} else if($ctime==1930) {
+			$strTime = "07:30 PM";
+		} else if($ctime==2000) {
+			$strTime = "08:00 PM";
+		} else if($ctime==2030) {
+			$strTime = "08:30 PM";
+		} else if($ctime==2100) {
+			$strTime = "09:00 PM";
+		} else if($ctime==2130) {
+			$strTime = "09:30 PM";
+		} else if($ctime==2200) {
+			$strTime = "10:00 PM";
+		} else if($ctime==2230) {
+			$strTime = "10:30 PM";
+		}
+		return $strTime;
+	}
+	
+	function to24Hr($ctime) {
+		$strTime = "";
+		if($ctime=="07:00 AM") {
+			$strTime = 700;
+		} else if($ctime=="07:30 AM") {
+			$strTime = 730;
+		} else if($ctime=="08:00 AM") {
+			$strTime = 800;
+		} else if($ctime=="08:30 AM") {
+			$strTime = 830;
+		} else if($ctime=="09:00 AM") {
+			$strTime = 900;
+		} else if($ctime=="09:30 AM") {
+			$strTime = 930;
+		} else if($ctime=="10:00 AM") {
+			$strTime = 1000;
+		} else if($ctime=="10:30 AM") {
+			$strTime = 1030;
+		} else if($ctime=="11:00 AM") {
+			$strTime = 1100;
+		} else if($ctime=="11:30 AM") {
+			$strTime = 1130;
+		} else if($ctime=="12:00 NN") {
+			$strTime = 1200;
+		} else if($ctime=="12:30 NN") {
+			$strTime = 1230;
+		} else if($ctime=="01:00 PM") {
+			$strTime = 1300;
+		} else if($ctime=="01:30 PM") {
+			$strTime = 1330;
+		} else if($ctime=="02:00 PM") {
+			$strTime = 1400;
+		} else if($ctime=="02:30 PM") {
+			$strTime = 1430;
+		} else if($ctime=="03:00 PM") {
+			$strTime = 1500;
+		} else if($ctime=="03:30 PM") {
+			$strTime = 1530;
+		} else if($ctime=="04:00 PM") {
+			$strTime = 1600;
+		} else if($ctime=="04:30 PM") {
+			$strTime = 1630;
+		} else if($ctime=="05:00 PM") {
+			$strTime = 1700;
+		} else if($ctime=="05:30 PM") {
+			$strTime = 1730;
+		} else if($ctime=="06:00 PM") {
+			$strTime = 1800;
+		} else if($ctime=="06:30 PM") {
+			$strTime = 1830;
+		} else if($ctime=="07:00 PM") {
+			$strTime = 1900;
+		} else if($ctime=="07:30 PM") {
+			$strTime = 1930;
+		} else if($ctime=="08:00 PM") {
+			$strTime = 2000;
+		} else if($ctime=="08:30 PM") {
+			$strTime = 2030;
+		} else if($ctime=="09:00 PM") {
+			$strTime = 2100;
+		} else if($ctime=="09:30 PM") {
+			$strTime = 2130;
+		} else if($ctime=="10:00 PM") {
+			$strTime = 2200;
+		} else if($ctime=="10:30 PM") {
+			$strTime = 2230;
+		}
+		return $strTime;
+	}
+?>
+
 
 </section>
 <!-- End - Page body content -->

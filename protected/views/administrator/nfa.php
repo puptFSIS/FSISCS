@@ -156,19 +156,21 @@ include("GetFacultyCode.php");
 	<select name="emptype" style="width: 50%; margin-top: -28px; margin-left: 25%;">
 		<option value="Part-time">Part-time</option>
 		<option value="Temporary">Temporary</option>
-		<option value="Permanent">Permanent</option>
+		<option value="Permanent">Full-time</option>
 	</select>
 </p>
 <p style="margin-bottom: 9px;">* PASSWORD: <input id=pass name=pass type=password style="width: 50%; margin-top: -28px; margin-left: 25%;" /></p>
 <p style="margin-bottom: 9px;">* RE-TYPE: <input id=repass name=repass type=password style="width: 50%; margin-top: -28px; margin-left: 25%;" /></p>
 <p style="margin-bottom: 9px;">* ROLE: 
 	<select name="role" style="width: 50%; margin-top: -28px; margin-left: 25%;">
-		<option value="Staff">Staff</option>
-		<option value="Professor">Professor</option>
 		<option value="Administrator">Administrator</option>
-		<option value="System">System</option>
+		<option value="Faculty Designee">Faculty Designee</option>
 		<option value="HAP">HAP</option>
 		<option value="HAP Secretary">HAP Secretary</option>
+		<option value="Professor">Professor</option>
+		<option value="Staff">Staff</option>
+		<option value="System">System</option>
+		
 	</select>
 </p>
 <br />

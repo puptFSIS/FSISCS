@@ -350,21 +350,24 @@ class AdministratorController extends Controller
 	{
 		$facInfo = TblPersonalinformation::model()->GetFacultyInfo($_GET['EmpID']);
 		$employmentStats = array('Full-time', 'Part-time','Temporary');
-		$status = Yii::app()->db->createCommand('SELECT enu_employmentStat FROM tbl_evaluationfaculty WHERE FCode = :fcode')
+		$rolesSelect = array('Administrator','Faculty Designee','HAP','HAP Secretary','Professor','Staff','System');
+		// $roles2 = array('Administrator','HAP','HAP Secretary','Professor','Staff','System');
+		$status = Yii::app()->db->createCommand('SELECT enu_employmentStat, evalRoles FROM tbl_evaluationfaculty WHERE FCode = :fcode')
 		->bindValue(':fcode',$_GET['FCode'])
 		->queryRow();
 		$stats = $status['enu_employmentStat'];
+		$roles = $status['evalRoles'];
 		// echo "<pre>";
 		// print_r($facInfo);
 		// echo "</pre>";
 
-		$this->render('view',array('row' => $facInfo, 'EmploymentStats' => $employmentStats, 'stats' => $stats));
+		$this->render('view',array('row' => $facInfo, 'EmploymentStats' => $employmentStats, 'stats' => $stats, 'roles' => $roles, 'rolesSelect' => $rolesSelect));
 	}
 
 	public function actionEditFacultyInfo(){
-		// echo "<pre>";
-		// print_r($_POST);
-		// echo "</pre>";
+		echo "<pre>";
+		print_r($_POST);
+		echo "</pre>";
 
 
 		$employ = $_POST['Employment'];
@@ -382,9 +385,26 @@ class AdministratorController extends Controller
 		$tele = $_POST['TeleNum'];
 		$address = $_POST['Address'];
 		$zip = $_POST['Zip'];
+		$roles = $_POST['role'];
 		$password = SHA1($pass);
 
-		if ($employ == "Full-time" || $employ == "Permanent") {
+		if ($employ != "Full-time" && $roles == "Faculty Designee") {
+			header("location: index.php?r=administrator/View&EmpID=".$empID."&FCode=".$fcode."&mes=1");
+		} else {
+			$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
+			->queryRow();
+			$reg = $units['FacultyDesignee'];
+			echo $fcode;
+			$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :load, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
+
+			Yii::app()->db->createCommand($sqlUp)
+			->bindValue(':load', $reg)
+			->bindValue(':fcode', $fcode)
+			->bindValue(':employmentStat',$employ)
+			->query();
+
+
+			if (($employ == "Full-time" || $employ == "Permanent") && ($employ == "Full-time" && $roles != "Faculty Designee")) {
 			$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
 			->queryRow();
 			$reg = $units['RegUnits'];
@@ -419,6 +439,27 @@ class AdministratorController extends Controller
 		// } else if($employ == "Faculty Designee"){
 		// 	$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
 		}
+
+		if($roles=="Staff") {
+			$isAdmin = 0;
+		} else if($roles=="Professor") {
+			$isAdmin = 0;
+		} else if($roles=="Administrator") {
+			$isAdmin = 1;
+		} else if($roles=="HAP") {
+			$isAdmin = 1;
+		} else if($roles=="HAP Secretary") {
+			$isAdmin = 1;
+		} else {
+			$isAdmin = 0;
+		}
+
+		$sqlUp = "UPDATE tbl_evaluationfaculty SET evalRoles = :role, isAdmin = :admin WHERE FCode = :fcode";
+		Yii::app()->db->createCommand($sqlUp)
+		->bindValue(':role', $roles)
+		->bindValue(':admin', $isAdmin)
+		->bindValue(':fcode', $fcode)
+		->query();
 
 		
 
@@ -466,6 +507,9 @@ class AdministratorController extends Controller
 		}
 
 		header("location: index.php?r=administrator/View&EmpID=".$empID."&FCode=".$fcode."&mes=0");
+		}
+
+		
 
 	}
 

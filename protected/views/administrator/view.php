@@ -247,7 +247,7 @@ if($_SESSION['user']==1) {
                 <p style="margin-bottom: 9px;">Password:<input name="pass" type=text style="width: 600px; margin-top: -28px; margin-left: 15%;"  placeholder='New Password'/></p>
 
                 <p style="margin-bottom: 9px;">Employment Status:
-                <select style="width: 600px; margin-top: -28px; margin-left: 15%;" name = "Employment">
+                <select style="width: 600px; margin-top: -28px; margin-left: 15%;" name = "Employment" onclick="change(this)">
                     <option><?php echo $stats ?></option>
                     <?php foreach ($EmploymentStats as $emp): ?>
                         <?php if ($emp != $stats): ?>
@@ -255,6 +255,19 @@ if($_SESSION['user']==1) {
                         <?php endif ?>
                     <?php endforeach ?>
                 </select></p>
+
+                <p style="margin-bottom: 9px;">Role: 
+                    <select name="role" style="width: 600px; margin-top: -28px; margin-left: 15%;">
+                        <option id="roles" value="<?php echo $roles ?>"><?php echo $roles ?></option>
+
+                        <?php foreach ($rolesSelect as $rol): ?>
+                            <?php if ($roles != $rol): ?>
+                                <option id="roles" value="<?php echo $rol ?>"><?php echo $rol ?></option>
+                            <?php endif ?>
+                           
+                        <?php endforeach ?>
+                    </select>
+                </p>
             <!-- End of Account Info -->
 
             <!-- Personal Information -->
@@ -303,7 +316,9 @@ if($_SESSION['user']==1) {
                     
                     
                 </select>
-            </p> 
+            </p>
+
+
             
             <div id="ifYes" style="display: none;">
                 <p style="margin-bottom: 9px;">*Specify: <input style="width: 600px; margin-top: -28px; margin-left: 15%;" type="text" id="other" name="other" /></p><br />
@@ -410,6 +425,23 @@ if($_SESSION['user']==1) {
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 <script>
+    // var roles1 = <?php //echo json_encode($rolesSelect) ?>;
+    // var roles2 = <?php //echo json_encode($roles2) ?>;
+    // var roles = <?php //echo $roles; ?>
+
+    // function change(that){
+
+    //     if(that.value != "Full-time"){
+    //         for (var i = 0; i < roles2.length; i++) {
+    //             document.getElementById("roles").innerHTML = roles2[i];
+    //         }
+    //     } else {
+    //         for (var i = 0; i < roles1.length; i++) {
+    //             document.getElementById("roles").innerHTML = roles1[i];
+    //         }
+    //     }
+    // }
+
     function yesnoCheck(that) {
         if (that.value == "Others") {
       // alert("check");
@@ -426,7 +458,16 @@ if($_SESSION['user']==1) {
             title:'Success!',
             text:'Faculty Information Edited!'
             
-        })
+    })
+    }
+    
+    if(flashdata==1){
+        Swal.fire({
+            icon:'error',
+            title:'Ooops!',
+            text:'Full-time Employees are only allowed to be Faculty Designee!'
+            
+    })    
     }
 </script>
 </body>

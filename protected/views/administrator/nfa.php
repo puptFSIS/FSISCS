@@ -139,6 +139,20 @@ $msg = $_GET['msg'];
 	}
 }
 ?>
+
+<?php if (isset($_GET['mes'])) : ?>
+    <?php if ($_GET['mes']==0): ?>
+    <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+    <?php endif;?>
+
+    <?php if ($_GET['mes']==1): ?>
+    <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+    <?php endif;?>
+
+    <?php if ($_GET['mes']==2): ?>
+    <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+    <?php endif;?>
+<?php endif;?>
 <br />
 <?php
 include("GetFacultyCode.php");
@@ -147,16 +161,16 @@ include("GetFacultyCode.php");
 <input type=hidden name=count value="<?php echo $count;?>"/>
 <p style="margin-bottom: 9px;">* FACULTY CODE.: <input name="fcode" type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" value = "<?php echo $newFCode;?>"/></p>
 <!--<p style="margin-bottom: 9px;">* EMPLOYEE NO.: <input id=EmpID name=EmpID type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" /></p>-->
-<p style="margin-bottom: 9px;">* SURNAME: <input id=sname name=sname type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');" /></p>
+<p style="margin-bottom: 9px;">* SURNAME: <input id=sname name=sname type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/(\..*?)\..*/g, '$1');" /></p>
 <p style="margin-bottom: 9px;">* FIRST NAME: <input id=fname name=fname type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');"/></p>
-<p style="margin-bottom: 9px;">* MIDDLE NAME: <input id=mname name=mname type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');"/></p>
+<p style="margin-bottom: 9px;">* MIDDLE NAME: <input id=mname name=mname type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/(\..*?)\..*/g, '$1');"/></p>
 <p style="margin-bottom: 9px;">&nbsp&nbsp NAME EXTENSION: <input id=next name=next type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');"/></p>
 <!-- <p style="margin-bottom: 9px;">* COURSE GROUP: <input name="cgroup" type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" /></p> -->
 <p style="margin-bottom: 9px;">* EMPLOYMENT TYPE: 
 	<select name="emptype" style="width: 50%; margin-top: -28px; margin-left: 25%;">
+		<option value="Permanent">Full-time</option>
 		<option value="Part-time">Part-time</option>
 		<option value="Temporary">Temporary</option>
-		<option value="Permanent">Full-time</option>
 	</select>
 </p>
 <p style="margin-bottom: 9px;">* PASSWORD: <input id=pass name=pass type=password style="width: 50%; margin-top: -28px; margin-left: 25%;" /></p>
@@ -237,6 +251,19 @@ include("GetFacultyCode.php");
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
+<script src='assets/jquery-3.6.0.min.js'></script>
+<script src='assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
+<script>
+	flashdata = $('.flash-data').data('flashdata')
+	if(flashdata==1){
+        Swal.fire({
+            icon:'error',
+            title:'Ooops!',
+            text:'Full-time Employees are only allowed to be Faculty Designee!'
+            
+    })    
+    }
+</script>
 </body>
 </html>

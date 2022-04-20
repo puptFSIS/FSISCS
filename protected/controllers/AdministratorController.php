@@ -156,11 +156,12 @@ class AdministratorController extends Controller
 		$reg = $ta['RegUnits'];
 		$part = $ta['PartTimeUnits'];
 		$ts = $ta['TempSubUnits'];
+		$fd = $ta['FacultyDesignee'];
 
 		// echo "<pre>";
 		// print_r($_POST);
 		// echo "</pre>";
-		$this->render('processInsertFA',array('reg' => $reg, 'part' => $part, 'ts' => $ts));
+		$this->render('processInsertFA',array('reg' => $reg, 'part' => $part, 'ts' => $ts, 'fd' => $fd));
 	}
 	public function actionProcessUpdateFA()
 	{

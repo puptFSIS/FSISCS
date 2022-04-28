@@ -16,12 +16,20 @@
 	font-style: italic;
 	color: red;
 }
+
+.dtr_table
+{
+   /*max-width: 10px;*/
+   width:90%;
+
+}
+
 </style>
 
 
 
 
-<div> 
+<div > 
 <!-- Video - HTML5 -->
 <p style="font-style: italic;">
 <!-- On the action column, you must click 2 pdf buttons in order to print it as pdf -->
@@ -51,11 +59,12 @@ SHOW:
 </form>
 
 
-<table>
-<thead>
+<table class="dtr_table">
+
+<thead >
 <tr>
 <th><h5><strong>ID</strong></h5></th>
-<th><h5><strong>Fcode</strong></h5></th>
+<th hidden><h5><strong>Fcode</strong></h5></th>
 <th><h5><strong>Last Name</strong></h5></th>
 <th><h5><strong>First Name</strong></h5></th>
 <th><h5><strong>Middle Name</strong></h5></th>
@@ -66,19 +75,19 @@ SHOW:
 </tr>
 </thead>
 
-<tbody>
+	<tbody>
 
-<?php 
-include("dtrlist.php"); 
+		<?php 
+		include("dtrlist.php"); 
 
 
-?>
-<tfoot>
-<tr>
-<td style="font-size: 12px; font-style: italic;" colspan=9><?php echo "DTR List";?></td>
-</tr>
-</tfoot>
-</tbody>
+		?>
+		<tfoot>
+			<tr>
+			<td style="font-size: 12px; font-style: italic;" colspan=9><?php echo "DTR List";?></td>
+			</tr>
+		</tfoot>
+	</tbody>
 </table>
 </div>
 

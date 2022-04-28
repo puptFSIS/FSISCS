@@ -6805,3 +6805,426 @@ Stack trace:
 REQUEST_URI=/FSISCS/index.php?r=administrator/processInsertFA
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/nfa&msg=New%20faculty%20account%20has%20been%20added.&msgType=suc
 ---
+2022/04/27 18:20:42 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/27 18:37:06 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/27 18:37:07 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/27 18:37:23 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/27 18:47:30 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/27 18:50:11 [error] [exception.Error] Error: Call to undefined function mysqli_connect() in C:\xampp\htdocs\FSISCS\config.php:15
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\getPersonalInformation.php(2): include()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(182): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2951): CController->render('daily_time_reco...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actiondaily_time_record()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('daily_time_reco...')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/d...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/daily_time_record
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/
+---
+2022/04/27 18:50:16 [error] [exception.Error] Error: Call to undefined function mysqli_connect() in C:\xampp\htdocs\FSISCS\config.php:15
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\getPersonalInformation.php(2): include()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(182): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2951): CController->render('daily_time_reco...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actiondaily_time_record()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('daily_time_reco...')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/d...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/daily_time_record
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/
+---
+2022/04/28 02:48:32 [error] [exception.Error] Error: Call to undefined function mysqli_connect() in C:\xampp\htdocs\FSISCS\config.php:15
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\getPersonalInformation.php(2): include()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(182): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2951): CController->render('daily_time_reco...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actiondaily_time_record()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('daily_time_reco...')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/d...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/daily_time_record
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/
+---
+2022/04/28 02:49:57 [error] [exception.Error] Error: Call to undefined function mysqli_connect() in C:\xampp\htdocs\FSISCS\config.php:15
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\getPersonalInformation.php(2): include()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(182): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2951): CController->render('daily_time_reco...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actiondaily_time_record()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('daily_time_reco...')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/d...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/daily_time_record
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/
+---
+2022/04/28 02:50:08 [error] [exception.Error] Error: Call to undefined function mysqli_connect() in C:\xampp\htdocs\FSISCS\config.php:15
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\getPersonalInformation.php(2): include()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(182): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2951): CController->render('daily_time_reco...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actiondaily_time_record()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('daily_time_reco...')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/d...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/daily_time_record
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/
+---
+2022/04/28 06:54:03 [error] [exception.Error] Error: Call to undefined function mysqli_connect() in C:\xampp\htdocs\FSISCS\config.php:15
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\getPersonalInformation.php(2): include()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(182): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2951): CController->render('daily_time_reco...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actiondaily_time_record()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('daily_time_reco...')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/d...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/daily_time_record
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/
+---
+2022/04/28 07:14:25 [error] [exception.Error] Error: Call to undefined function mysqli_connect() in C:\xampp\htdocs\FSISCS\config.php:15
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\getPersonalInformation.php(2): include()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(182): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2951): CController->render('daily_time_reco...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actiondaily_time_record()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('daily_time_reco...')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/d...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/daily_time_record
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/
+---
+2022/04/28 14:07:24 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/28 14:15:16 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/28 14:15:21 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/28 14:24:28 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/28 14:24:56 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('51', 'REGULAR', 'January', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=51&val2=REGULAR&val3=January&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/28 14:25:06 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('69', 'REGULAR', 'February', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=69&val2=REGULAR&val3=February&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/04/28 14:25:09 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php(6): FPDF->__construct()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('regular_DTR_sin...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3021): CController->render('regular_DTR_sin...', Array)
+#7 [internal function]: AdministratorController->actionHap_checkDtr('69', 'REGULAR', 'February', '2021', 'FA0797MN2008', 'Rabe', 'Yolanda', 'Follosco')
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_checkDtr')
+#14 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#15 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=69&val2=REGULAR&val3=February&val4=2021&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---

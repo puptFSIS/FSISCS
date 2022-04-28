@@ -445,7 +445,7 @@ else if ($status == "approved")
 		<tr id="tr_id_'.$counter.'">
 		
 		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'
-		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
+		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -454,7 +454,7 @@ else if ($status == "approved")
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
 		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')"><img src="images/icons/check-dark.png"></a> 
 
-			<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
+			<div class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
 						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
 						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
 				
@@ -519,7 +519,7 @@ else if ($status == "pending")
 	echo'
 		<tr id="tr_id_'.$counter.'">
 		<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
+		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -586,7 +586,7 @@ else if($status == "disapproved")
 		echo'
 			<tr id="tr_id_'.$counter.'">
 			<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
+		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
@@ -656,7 +656,7 @@ else if($status == "deleted")
 		echo'
 			<tr id="tr_id_'.$counter.'">
 			<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		<td id="fcode_id'.$counter.'"">' . $newresult['FCode'] . '</td>
+		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>

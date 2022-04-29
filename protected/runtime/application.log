@@ -7229,6 +7229,7 @@ REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=69&val2=REGULAR
 HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
 ---
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 2022/04/29 08:40:12 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:2994)
 Stack trace:
 #0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
@@ -7696,6 +7697,9 @@ in C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php (
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3021)
 in C:\xampp\htdocs\FSISCS\index.php (13)
 2022/04/29 05:44:06 [error] [php] Undefined variable: noneewresult (C:\xampp\htdocs\FSISCS\protected\views\administrator\dtrlist.php:448)
+=======
+2022/04/29 05:43:21 [error] [php] Undefined variable: noneewresult (C:\xampp\htdocs\FSISCS\protected\views\administrator\dtrlist.php:448)
+>>>>>>> Stashed changes
 Stack trace:
 #0 C:\xampp\htdocs\FSISCS\protected\views\administrator\Dtr_Table.php(81): include()
 #1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(198): include()
@@ -7712,11 +7716,19 @@ Stack trace:
 #12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
 #13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+<<<<<<< Updated upstream
 REQUEST_URI=/fsiscs/index.php?r=administrator/DtrTable&sort=approved
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\dtrlist.php (448)
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\Dtr_Table.php (81)
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (198)
 2022/04/29 06:20:30 [error] [php] Undefined variable: day_date (C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php:188)
+=======
+REQUEST_URI=/fsiscs/index.php?r=administrator/DtrTable
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\dtrlist.php (448)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Dtr_Table.php (81)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (198)
+2022/04/29 06:35:30 [error] [php] Undefined variable: day_date (C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php:188)
+>>>>>>> Stashed changes
 Stack trace:
 #0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
 #1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
@@ -7733,6 +7745,7 @@ Stack trace:
 #12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
 #13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+<<<<<<< Updated upstream
 REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=107&val2=LOAD%20TYPE&val3=April&val4=2022&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php (188)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3021)
@@ -8042,12 +8055,26 @@ in C:\xampp\htdocs\FSISCS\index.php (13)
 2022/04/29 08:13:59 [error] [php] mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given (C:\xampp\htdocs\FSISCS\protected\views\administrator\SchedulingPage.php:261)
 Stack trace:
 #0 C:\xampp\htdocs\FSISCS\protected\views\administrator\SchedulingPage.php(261): mysqli_fetch_array()
+=======
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_checkDtr&val1=110&val2=LOAD%20TYPE&val3=April&val4=2022&val5=FA0797MN2008&val6=Rabe&val7=Yolanda&val8=Follosco
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php (188)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3021)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/04/29 07:05:38 [error] [php] mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given (C:\xampp\htdocs\FSISCS\protected\views\administrator\categorizeSubjects.php:182)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\categorizeSubjects.php(182): mysqli_fetch_array()
+>>>>>>> Stashed changes
 #1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
 #2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
 #3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
 #4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+<<<<<<< Updated upstream
 #5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(887): AdministratorController->render()
 #6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSchedulingPage()
+=======
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1597): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionCategorizeSubjects()
+>>>>>>> Stashed changes
 #7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
 #8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
 #9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
@@ -8055,6 +8082,7 @@ Stack trace:
 #11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
 #12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+<<<<<<< Updated upstream
 REQUEST_URI=/fsiscs/index.php?r=administrator/SchedulingPage
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\SchedulingPage.php (261)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (887)
@@ -8120,5 +8148,10 @@ in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (171
 REQUEST_URI=/fsiscs/index.php?r=administrator/RealCurriculumManagement
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\RealCurriculumManagement.php (137)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2289)
+>>>>>>> Stashed changes
+=======
+REQUEST_URI=/fsiscs/index.php?r=administrator/categorizeSubjects
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\categorizeSubjects.php (182)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1597)
 >>>>>>> Stashed changes
 in C:\xampp\htdocs\FSISCS\index.php (13)

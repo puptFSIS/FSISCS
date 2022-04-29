@@ -178,7 +178,7 @@
 		right: 10px;
 		top: 80px;
 		height: 350px;
-		width: 400px;
+		width: 450px;
 		/*sa unahan ng menu list ng dtr_menu*/z-index: 2; 
 
 

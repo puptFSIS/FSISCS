@@ -3,18 +3,22 @@
 
 
 <style>
+
+
 	
-	.show_pending
+	/* .table-container
 	{
-		color: blue;
-		display: none;
+		max-width: 105%;
+	} */
+	.table-width
+	{
+		width: 105%;
 	}
+
 
 </style>
 
-<div>
-<!-- Page content -->
-<div>
+
 <!-- Video - HTML5 -->
 <p style="font-style: italic;">
 <!-- On the action column, you must click 2 pdf buttons in order to print it as pdf -->
@@ -25,14 +29,15 @@ SHOW:
 <a href="index.php?r=administrator/HAPDtrTable&sort=loadtype"><input type="button" value="Load Type" /></a>
 <a href="index.php?r=administrator/HAPDtrTable&sort=month"><input type="button" value="Month" /></a>
 <a href="index.php?r=administrator/HAPDtrTable&sort=year"><input type="button" value="Year" /></a> -->
-<a href="index.php?r=administrator/HAPDtrTable&sort=pending"><input class="show_pending" type="button" value="pending" /></a>
-<a href="index.php?r=administrator/HAPDtrTable&sort=approved"><input class="show_approved" type="button" value="approved" /></a>
-<a href="index.php?r=administrator/HAPDtrTable&sort=disapproved"><input class="show_disaapproved" type="button" value="disapproved" /></a>
+   <a href="index.php?r=administrator/HAPDtrTable&sort=pending"><input class="show_pending" id="pending_click" type="button" value="Pending" onclick="changecolor(1)" /></a>
+<a href="index.php?r=administrator/HAPDtrTable&sort=approved"><input class="show_approved"  id="approved_click"  type="button" value="Approved" /></a>
+<a href="index.php?r=administrator/HAPDtrTable&sort=disapproved"><input class="show_disaapproved" id="disapproved_click"   type="button" value="Disapproved" /></a>
 
 </p>
 
-<table>
+<table class="table-width">
 <thead>
+   
 <tr>
 <th><h5><strong>ID</strong></h5></th>
 <th hidden><h5><strong>Fcode</strong></h5></th>
@@ -61,4 +66,18 @@ include("HAP_dtrlist.php");
 </table>
 </div>
 </div>
+
+<script>
+
+	function changecolor(count)
+		{
+			if(count == 1)
+			{
+				var pending = document.getElementById('pending_click');
+				pending.style.backgroundColor="green";
+         }
+		}
+	
+
+</script>
 </html>

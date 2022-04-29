@@ -131,8 +131,7 @@
 		}
 
 		div > img
-		{
-		  
+		{  
 		  width: 100%;
 		}
 		.body
@@ -242,6 +241,7 @@
 
 		}
 
+
 		#month_input:hover
 		{
 			background-color: #dadada;
@@ -344,6 +344,374 @@
 			background-color: #dadada;
 		}
 
+
+		#month_input2
+		{
+			background-color: #f0f0f0;
+			margin-top: -7px;
+			margin-left: 30px;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 103px;
+			height: 15px;
+			text-align: left;
+			font-weight: bold;
+			font-size: 12px;
+			font-family: "Times New Roman", Times, serif;
+
+		}
+
+
+		#month_input2:hover
+		{
+			background-color: #dadada;
+		}
+
+		#name_of_sender2
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 280px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-top: 10px;
+			margin-left: 30px;
+			margin-bottom: 3px;
+		}
+
+		#name_of_sender2:hover
+		{
+			background-color: #dadada;
+		}
+
+		#position_of_sender2
+		{
+
+			height: 15px;
+			width: 103px;
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
+			text-align: left;
+			font-size: 12px;
+			margin-left: 30px;
+			margin-bottom: 25px;
+
+		}
+
+		#position_of_sender2:hover
+		{
+			background-color: #dadada;
+		}
+
+		#department_name2
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 280px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-bottom: 55px;
+			margin-top: -22px;
+			margin-left: 30px;
+		}
+
+		#department_name2:hover
+		{
+			background-color: #dadada;
+		}
+
+		#dear2
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 125px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-bottom: 18px;
+			margin-top: -22px;
+			margin-left: 30px;
+		}
+
+		#dear2:hover
+		{
+			background-color: #dadada;
+		}
+
+		#month_input3
+		{
+			background-color: #f0f0f0;
+			margin-top: -7px;
+			margin-left: 30px;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 103px;
+			height: 15px;
+			text-align: left;
+			font-weight: bold;
+			font-size: 12px;
+			font-family: "Times New Roman", Times, serif;
+
+		}
+
+
+		#month_input3:hover
+		{
+			background-color: #dadada;
+		}
+
+		#name_of_sender3
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 280px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-top: 10px;
+			margin-left: 30px;
+			margin-bottom: 3px;
+		}
+
+		#name_of_sender3:hover
+		{
+			background-color: #dadada;
+		}
+
+		#position_of_sender3
+		{
+
+			height: 15px;
+			width: 103px;
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
+			text-align: left;
+			font-size: 12px;
+			margin-left: 30px;
+			margin-bottom: 25px;
+
+		}
+
+		#position_of_sender3:hover
+		{
+			background-color: #dadada;
+		}
+
+		#department_name3
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 280px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-bottom: 55px;
+			margin-top: -22px;
+			margin-left: 30px;
+		}
+
+		#department_name3:hover
+		{
+			background-color: #dadada;
+		}
+
+		#dear3
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 125px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-bottom: 18px;
+			margin-top: -22px;
+			margin-left: 30px;
+		}
+
+		#dear3:hover
+		{
+			background-color: #dadada;
+		}
+
+
+		#month_input4
+		{
+			background-color: #f0f0f0;
+			margin-top: -7px;
+			margin-left: 30px;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 103px;
+			height: 15px;
+			text-align: left;
+			font-weight: bold;
+			font-size: 12px;
+			font-family: "Times New Roman", Times, serif;
+
+		}
+
+
+		#month_input4:hover
+		{
+			background-color: #dadada;
+		}
+
+		#name_of_sender4
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 280px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-top: 10px;
+			margin-left: 30px;
+			margin-bottom: 3px;
+		}
+
+		#name_of_sender4:hover
+		{
+			background-color: #dadada;
+		}
+
+		#position_of_sender4
+		{
+
+			height: 15px;
+			width: 103px;
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			font-weight: bold;
+			font-family: "Times New Roman", Times, serif;
+			text-align: left;
+			font-size: 12px;
+			margin-left: 30px;
+			margin-bottom: 25px;
+
+		}
+
+		#position_of_sender4:hover
+		{
+			background-color: #dadada;
+		}
+
+		#department_name4
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 280px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-bottom: 55px;
+			margin-top: -22px;
+			margin-left: 30px;
+		}
+
+		#department_name4:hover
+		{
+			background-color: #dadada;
+		}
+
+		#dear4
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 125px;
+			font-size: 12px;
+			height: 15px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-bottom: 18px;
+			margin-top: -22px;
+			margin-left: 30px;
+		}
+
+		#dear4:hover
+		{
+			background-color: #dadada;
+		}
+
 		.list_items
 		{
 
@@ -357,7 +725,6 @@
 </head>
 
 <body>
-
 
     <form method="POST">
         <?php 
@@ -447,7 +814,7 @@
 						<input id="department_name" type="" value="Human Resource Management Department">
 						<input id="dear" type="" value="Dear Atty. Sarum:">
 						<br>
-						<div class="body_text" contentEditable>
+						<div class="body_text" contentEditable id="paragraph_text">
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE: 
 			 			</div>
 
@@ -456,7 +823,7 @@
 			 			
 					</div>
 					<div class="listOfFacultyMembers" contentEditable>
-					 				<ul>
+					 <ul>
 
 					';
 					// foreach($result as $newresult)
@@ -474,7 +841,7 @@
 				            $name = $sn[$x].', '.$fn[$x].' '.$mn[$x];
 				            // $date = $month[$x].' '.$year[$x];
 
-				            if(!in_array($name, $newname))
+				            if(!in_array($name, $newname) && $regpartime[$x] == 'REGULAR')
 				            {
 				            	$newname[] = $name;
 				            	$namecounter++;
@@ -484,15 +851,7 @@
 				            {
 				            $monthcount = count($month);
 				            $month_array = ['January','February','March','April','May','June','July','August','September','October','November','December'];
-					            // 	for($m = 0;$m<12;$m++)
-					          		// {
-					            // 		if($month_array[$m]== $month[$x])
-					            // 		{
-					            // 			$newnewmonth[$m] = $month[$x];
-					            // 			
-					            // 		}
-					            // 	}
-					            // 	$namecounter++;
+
 				            $newnewmonth[] = $month[$x];
 				            
 
@@ -502,16 +861,9 @@
 				            {
 				            	$newyear[] = $year[$x];
 				            }
-
-
-				            
-				            // $name_temp = ["fernan","enan","mary","grace"];
+   
 				            $ctr = 0;
-				            
-				      //       	echo '
-										// 	<li class="list_items">'.$name.$date.'</li>
-										// ';   ' ('.$firstmonth.'-'.$lastmonth.' '.$firstyear.'-'.$lastyear.')'
-				                
+
 							}
 			        
 					}
@@ -524,14 +876,15 @@
 
 					for($p = 0;$p < $namecount;$p++)
 					{
-						echo '<li class="list_items">'.$newname[$p].'</li>';
+						echo '<li class="list_items" id="regular_name">'.$newname[$p].'</li>';
 					}
 			 		echo'
 			 		</ul>
+
 			 					</div>	
 					<div class="footer">
 							<img src="assets/EOTM_footer.PNG" width="" height="">
-						</div>
+					</div>
 					
 				</div>
 				<br><br>
@@ -543,7 +896,7 @@
 
            }
 
-           if($temporary_list[$q] == "PART TIME")
+           if($temporary_list[$q] == "PART-TIME")
            {
            		echo'
 	            <div class="page">
@@ -557,24 +910,17 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-
-						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
+						<input class="date no_box" id="month_input2" type="" name="" value="'.$date.'">
+						<input class="hrmd no_box" id="name_of_sender2" type="" name="" value="'.$hrmd.'">
+						<input id="position_of_sender2" type="" value="Director">
+						<input id="department_name2" type="" value="Human Resource Management Department">
+						<input id="dear2" type="" value="Dear Atty. Sarum:">
 						<br>
-			 			<div id="position_of_sender" contentEditable>Director</div>
-						<br>
-
-						<div id="department_name" contentEditable>Human Resources Management Department</div> 
-						<br>
-						<br>
-						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
-						<br>
-						<div class="body_text" contentEditable>
+						<div class="body_text" contentEditable id="paragraph_text2">
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
-			 				</div>
+			 			</div>
 					</div>
 
-			 		
 
 					<div class="footer">
 						<img src="assets/EOTM_footer.PNG" width="" height="">
@@ -602,24 +948,16 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-
-						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
+						<input class="date no_box" id="month_input3" type="" name="" value="'.$date.'">
+						<input class="hrmd no_box" id="name_of_sender3" type="" name="" value="'.$hrmd.'">
+						<input id="position_of_sender3" type="" value="Director">
+						<input id="department_name3" type="" value="Human Resource Management Department">
+						<input id="dear3" type="" value="Dear Atty. Sarum:">
 						<br>
-			 			<div id="position_of_sender" contentEditable>Director</div>
-						<br>
-
-						<div id="department_name" contentEditable>Human Resources Management Department</div> 
-						<br>
-						<br>
-						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
-						<br>
-						<div class="body_text" contentEditable>
+						<div class="body_text" contentEditable id="paragraph_text3">
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
-			 				</div>
-					</div>
-
-			 		
+			 			</div>
+					</div>	
 
 					<div class="footer">
 						<img src="assets/EOTM_footer.PNG" width="" height="">
@@ -646,21 +984,15 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-
-						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
+						<input class="date no_box" id="month_input4" type="" name="" value="'.$date.'">
+						<input class="hrmd no_box" id="name_of_sender4" type="" name="" value="'.$hrmd.'">
+						<input id="position_of_sender4" type="" value="Director">
+						<input id="department_name4" type="" value="Human Resource Management Department">
+						<input id="dear4" type="" value="Dear Atty. Sarum:">
 						<br>
-			 			<div id="position_of_sender" contentEditable>Director</div>
-						<br>
-
-						<div id="department_name" contentEditable>Human Resources Management Department</div> 
-						<br>
-						<br>
-						<div id="dear" contentEditable>Dear Atty. Saraum:</div>
-						<br>
-						<div class="body_text" contentEditable>
+						<div class="body_text" contentEditable id="paragraph_text4">
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
-			 				</div>
+			 			</div>
 					</div>
 
 			 		
@@ -682,7 +1014,7 @@
 			$monthcounter++;
             
             
-        }
+        } 
 
 
         ?>

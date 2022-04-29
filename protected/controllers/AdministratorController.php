@@ -3066,7 +3066,7 @@ class AdministratorController extends Controller
 	{
 		$this->render('receiving_document');
 	}
-
+ 
 	public function actionHap_post()  // dtr
 	{
 		$id = $_POST['val1'];

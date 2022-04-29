@@ -69,7 +69,7 @@
   		left: 50%;
   		transform: translate(-50%, -50%);*/
 		height: 350px;
-		width: 400px;
+		width: 450px;
 		
 		/*sa unahan ng menu list ng dtr_menu*/z-index: 2; 
 
@@ -455,9 +455,7 @@ else if ($status == "approved")
 		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')"><img src="images/icons/check-dark.png"></a> 
 
 			<div class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
-						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
-						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
-				
+			
 
 							<p id="idleft">ID: </p>
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>

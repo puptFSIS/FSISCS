@@ -17,10 +17,10 @@
 	color: red;
 }
 
-.dtr_table
+.select
 {
    /*max-width: 10px;*/
-   width:90%;
+   width: 100px;
 
 }
 
@@ -49,7 +49,7 @@ SHOW:
 
 <form name="searchby" id="searchby" action="index.php?r=administrator/DtrTable" method="post">
 <select name="dtrsearch" id="dtrsearch" style="width: 15%;">
-	<option disabled selected value> -- Select an option -- </option>
+	<option class="select" disabled selected value> --Select an option-- </option>
 	<option value="month">Month</option>
 	<option value="year">Year</option>
 	<option value="regpart">Load Type</option>

@@ -119,6 +119,10 @@ if(isset($_SESSION['user'])) {
 	<?php if ($_GET['mes']==1): ?>
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
 	<?php endif;?>
+
+	<?php if ($_GET['mes']==2): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
 <?php endif;?>
 
 <h2 class=underlined-header>Add Schedule <?php echo $_GET['scode'];?></h2>
@@ -315,46 +319,51 @@ if(isset($_SESSION['user'])) {
 </select>
 </p>
 <p style="margin-bottom: 9px;">*Time Start:
-<select name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+<!-- <select name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
 	<?php
-	$blank = "";
-	if(isset($_GET['timeS'])){
-			echo'<option value="'. $_GET['timeS'] .'">'.to12Hr($_GET['timeS']).'</option>';
-		}
-	echo'
-				<option value="'. $blank .'"></option>
-			';
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
-			}
-		}
+	// $blank = "";
+	// if(isset($_GET['timeS'])){
+	// 		echo'<option value="'. $_GET['timeS'] .'">'.to12Hr($_GET['timeS']).'</option>';
+	// 	}
+	// echo'
+	// 			<option value="'. $blank .'"></option>
+	// 		';
+	// 	for($ctime=700;$ctime<=2200;) {
+	// 		echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
+	// 		if($ctime%100==0) {
+	// 			$ctime = $ctime + 30;
+	// 		} else {
+	// 			$ctime = $ctime + 70;
+	// 		}
+	// 	}
 	?>
-</select>
+</select> -->
+
+<input type="time" name="timeS" min="07:00" max="22:00" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" required>
+
 </p>
 <p style="margin-bottom: 9px;">*Time End:
-<select name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+<!-- <select name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;">
 	<?php
-	$blank = "";
-	if(isset($_GET['timeE'])){
-			echo'<option value="'. $_GET['timeE'] .'">'.to12Hr($_GET['timeE']).'</option>';
-		}
-	echo'
-				<option value="'. $blank .'"></option>
-			';
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
-			}
-		}
+	// $blank = "";
+	// if(isset($_GET['timeE'])){
+	// 		echo'<option value="'. $_GET['timeE'] .'">'.to12Hr($_GET['timeE']).'</option>';
+	// 	}
+	// echo'
+	// 			<option value="'. $blank .'"></option>
+	// 		';
+	// 	for($ctime=700;$ctime<=2200;) {
+	// 		echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
+	// 		if($ctime%100==0) {
+	// 			$ctime = $ctime + 30;
+	// 		} else {
+	// 			$ctime = $ctime + 70;
+	// 		}
+	// 	}
 	?>
-</select>
+</select> -->
+
+<input type="time" name="timeE" min="07:00" max="22:00" style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" required>
 </p>
 <!--<p style="margin-bottom: 9px;">*Room:<input name="roomName" type=text style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder='Room Name'/></p>-->
 <p style="margin-bottom: 9px;">*Room:
@@ -517,6 +526,14 @@ if(isset($_SESSION['user'])) {
 			title:'Ooops!',
 			text:'Invalid Data!',
 			timer: '2000'
+		})
+	}
+
+	if(flashdata==2){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
+			text:'Classes are only allowed at 7:00 AM to 10:00 PM',
 		})
 	}
 </script>

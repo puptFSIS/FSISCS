@@ -59,14 +59,17 @@
 
 <h2 class=underlined-header style="margin-left:-65px;">  <?php echo $_GET['scode'];?></h2>
 <?php
+	$s = explode(":", $_POST['timeS']);
+	$e = explode(":", $_POST['timeE']);
+
 	session_start();
 	$base = Yii::app()->getBaseUrl();
 	$prof = $_GET['prof'];
 	$EmpID = $_SESSION['CEmpID']; 
 	include("config.php");
 	$day = $_POST['sday'];
-	$timeS = $_POST['timeS'];
-	$timeE = $_POST['timeE'];
+	$timeS = $s[0].$s[1];
+	$timeE = $e[0].$e[1];
 	$roomName = $_POST['roomName'];
 	$profName = $_POST['profName'];
 	$courseID = $_GET['courseID'];
@@ -175,7 +178,7 @@
 										<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">Professor</td>
 									</tr>
 								';
-				$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && courseID = '$courseID' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
+				$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (".$timeS." BETWEEN  stimeS and stimeE or ".$timeE." BETWEEN stimeS and stimeE) && courseID = '$courseID' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
 				
 				$result = mysqli_query($conn,$sql);
 				while ($row = mysqli_fetch_array($result)) {
@@ -234,7 +237,7 @@
 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">Professor</td>
 								</tr>
 							';
-			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && sprof = '$profName' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
+			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (".$timeS." BETWEEN  stimeS and stimeE or ".$timeE." BETWEEN stimeS and stimeE) && sprof = '$profName' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
 			
 			$result = mysqli_query($conn,$sql);
 			while ($row = mysqli_fetch_array($result)) {
@@ -259,6 +262,11 @@
 									<a href="index.php?r=administrator/AddSched&prof='.$prof.'&day='.$day.'&timeS='.$timeS.'&timeE='.$timeE.'&roomName='.$roomName.'&profName='.$profName.'&CurrID='. $currID .'&courseID='. $courseID .'&cyear='. $cyear .'&scode='. $scode .'&sem='. $sem .' &sy='. $sy .'&sec='. $sec .'&title='.$title.'&units='.$units.'&lec='.$lec.'&lab='.$lab.'" class="btn btn-mini btn-primary btn-block" style="width:45px text-decoration:none; color:white; margin-left:-65px;">BACK</a>';
 			}
 		} else {
+			// $hourS = substr($timeS, 0, 2);
+			
+
+			// $timein = $hourS."00";
+			
 				echo"
 				<script src='".$base."assets/jquery-3.6.0.min.js'></script>
 				<script src='".$base."assets/sweetalert2.all.min.js'></script>
@@ -293,7 +301,9 @@
 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">Professor</td>
 								</tr>
 							';
-			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && sroom = '$roomName' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
+			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (".$timeS." BETWEEN  stimeS and stimeE or ".$timeE." BETWEEN stimeS and stimeE) && sroom = '$roomName' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
+
+				echo $sql;
 			
 			$result = mysqli_query($conn,$sql);
 			while ($row = mysqli_fetch_array($result)) {
@@ -503,76 +513,48 @@
 		return $Subject;
 	}
 	
-	function to12Hr($ctime)
-	{
-		$strTime = "";
-		if($ctime==700) {
-			$strTime = "07:00 AM";
-		} else if($ctime==730) {
-			$strTime = "07:30 AM";
-		} else if($ctime==800) {
-			$strTime = "08:00 AM";
-		} else if($ctime==830) {
-			$strTime = "08:30 AM";
-		} else if($ctime==900) {
-			$strTime = "09:00 AM";
-		} else if($ctime==930) {
-			$strTime = "09:30 AM";
-		} else if($ctime==1000) {
-			$strTime = "10:00 AM";
-		} else if($ctime==1030) {
-			$strTime = "10:30 AM";
-		} else if($ctime==1100) {
-			$strTime = "11:00 AM";
-		} else if($ctime==1130) {
-			$strTime = "11:30 AM";
-		} else if($ctime==1200) {
-			$strTime = "12:00 NN";
-		} else if($ctime==1230) {
-			$strTime = "12:30 NN";
-		} else if($ctime==1300) {
-			$strTime = "01:00 PM";
-		} else if($ctime==1330) {
-			$strTime = "01:30 PM";
-		} else if($ctime==1400) {
-			$strTime = "02:00 PM";
-		} else if($ctime==1430) {
-			$strTime = "02:30 PM";
-		} else if($ctime==1500) {
-			$strTime = "03:00 PM";
-		} else if($ctime==1530) {
-			$strTime = "03:30 PM";
-		} else if($ctime==1600) {
-			$strTime = "04:00 PM";
-		} else if($ctime==1630) {
-			$strTime = "04:30 PM";
-		} else if($ctime==1700) {
-			$strTime = "05:00 PM";
-		} else if($ctime==1730) {
-			$strTime = "05:30 PM";
-		} else if($ctime==1800) {
-			$strTime = "06:00 PM";
-		} else if($ctime==1830) {
-			$strTime = "06:30 PM";
-		} else if($ctime==1900) {
-			$strTime = "07:00 PM";
-		} else if($ctime==1930) {
-			$strTime = "07:30 PM";
-		} else if($ctime==2000) {
-			$strTime = "08:00 PM";
-		} else if($ctime==2030) {
-			$strTime = "08:30 PM";
-		} else if($ctime==2100) {
-			$strTime = "09:00 PM";
-		} else if($ctime==2130) {
-			$strTime = "09:30 PM";
-		} else if($ctime==2200) {
-			$strTime = "10:00 PM";
-		} else if($ctime==2230) {
-			$strTime = "10:30 PM";
-		}
-		return $strTime;
-	}
+	function to12Hr($ctime) {
+
+							$strTime = "";
+							$dn = "";
+
+							if (strlen($ctime) == 4) {
+								$hour = substr($ctime, 0, 2);
+								$min = substr($ctime, 2, 3);
+
+
+
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
+
+								$strTime = $hour.":".$min." ".$dn;
+							 }
+							return $strTime;
+						}
 
 	function checkFirstParameters($day, $timein, $timeout, $roomName, $profName){
 		$valid = "";
@@ -591,7 +573,7 @@
 	function checkRoomSched($day, $timein, $timeout, $sem, $sy, $roomName)
 	{
 		include("config.php");
-		$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sroom = '".$roomName."' and Sched_type = 'OFFICIAL'";
+		$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sroom = '".$roomName."' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$count=mysqli_num_rows($result);
 
@@ -601,7 +583,7 @@
 	function checkProfSched($day, $timein, $timeout, $sem, $sy, $profName)
 	{
 		include("config.php");
-		$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sprof = '".$profName."'and Sched_type = 'OFFICIAL'";
+		$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sprof = '".$profName."'and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$count=mysqli_num_rows($result);
 
@@ -611,7 +593,7 @@
 
 	function checkCourseSched($day, $timein, $timeout, $sem, $sy, $courseID){
 		include("config.php");
-		$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and courseID = '".$courseID."'and Sched_type = 'OFFICIAL'";
+		$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and courseID = '".$courseID."'and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$count=mysqli_num_rows($result);
 

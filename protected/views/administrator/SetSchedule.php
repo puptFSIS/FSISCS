@@ -358,93 +358,95 @@ if(isset($_SESSION['user'])) {
 </select>
 </p>
 <p style="margin-bottom: 9px;">*Time Start:
-<select name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+<!-- <select name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
 	<?php
-		$currID = $_GET['CurrID'];
-		$cID = $_GET['courseID'];
-		$yrlvl = $_GET['cyear'];
-		$scode = $_GET['scode'];
-		$sem = $_GET['sem'];
-		$sy = $_GET['sy'];
-		$sec = $_GET['sec'];
-		$start = "";
+		// $currID = $_GET['CurrID'];
+		// $cID = $_GET['courseID'];
+		// $yrlvl = $_GET['cyear'];
+		// $scode = $_GET['scode'];
+		// $sem = $_GET['sem'];
+		// $sy = $_GET['sy'];
+		// $sec = $_GET['sec'];
+		// $start = "";
 
-		if(isset($_GET['timeS'])){
-			echo'<option value="'. $_GET['timeS'] .'">'.to12Hr($_GET['timeS']).'</option>';
-		}
+		// if(isset($_GET['timeS'])){
+		// 	echo'<option value="'. $_GET['timeS'] .'">'.to12Hr($_GET['timeS']).'</option>';
+		// }
 
-		$sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
-		$result2 = mysqli_query($conn,$sql2);
-		while($row2 = mysqli_fetch_array($result2))
-		{
-			$start = $row2['stimeS'];
-		}
+		// $sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
+		// $result2 = mysqli_query($conn,$sql2);
+		// while($row2 = mysqli_fetch_array($result2))
+		// {
+		// 	$start = $row2['stimeS'];
+		// }
 		
-		if($start <> "")
-		{
-			echo '<option value="'. $start .'">'. to12Hr($start) .'</option>';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
+		// if($start <> "")
+		// {
+		// 	echo '<option value="'. $start .'">'. to12Hr($start) .'</option>';
+		// }
+		// else
+		// {
+		// 	echo'
+		// 		<option value="'. $blank .'"></option>
+		// 	';
+		// }
 
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
-			}
-		}
+		// for($ctime=700;$ctime<=2200;) {
+		// 	echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
+		// 	if($ctime%100==0) {
+		// 		$ctime = $ctime + 30;
+		// 	} else {
+		// 		$ctime = $ctime + 70;
+		// 	}
+		// }
 	?>
-</select>
+</select> -->
+<input type="time" name="timeS" min="07:00" max="22:00" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" value = "" required>
 </p>
 <p style="margin-bottom: 9px;">*Time End:
-<select name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+<!-- <select name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;"> -->
 	<?php
-		$currID = $_GET['CurrID'];
-		$cID = $_GET['courseID'];
-		$yrlvl = $_GET['cyear'];
-		$scode = $_GET['scode'];
-		$sem = $_GET['sem'];
-		$sy = $_GET['sy'];
-		$sec = $_GET['sec'];
-		$end = "";
+		// $currID = $_GET['CurrID'];
+		// $cID = $_GET['courseID'];
+		// $yrlvl = $_GET['cyear'];
+		// $scode = $_GET['scode'];
+		// $sem = $_GET['sem'];
+		// $sy = $_GET['sy'];
+		// $sec = $_GET['sec'];
+		// $end = "";
 
-		if(isset($_GET['timeE'])){
-			echo'<option value="'. $_GET['timeE'] .'">'.to12Hr($_GET['timeE']).'</option>';
-		}
+		// if(isset($_GET['timeE'])){
+		// 	echo'<option value="'. $_GET['timeE'] .'">'.to12Hr($_GET['timeE']).'</option>';
+		// }
 
-		$sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
-		$result2 = mysqli_query($conn,$sql2);
-		while($row2 = mysqli_fetch_array($result2))
-		{
-			$end = $row2['stimeE'];
-		}
+		// $sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
+		// $result2 = mysqli_query($conn,$sql2);
+		// while($row2 = mysqli_fetch_array($result2))
+		// {
+		// 	$end = $row2['stimeE'];
+		// }
 		
-		if($end <> "")
-		{
-			echo '<option value="'. $end .'">'. to12Hr($end) .'</option>';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
-			}
-		}
+		// if($end <> "")
+		// {
+		// 	echo '<option value="'. $end .'">'. to12Hr($end) .'</option>';
+		// }
+		// else
+		// {
+		// 	echo'
+		// 		<option value="'. $blank .'"></option>
+		// 	';
+		// }
+		// for($ctime=700;$ctime<=2200;) {
+		// 	echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
+		// 	if($ctime%100==0) {
+		// 		$ctime = $ctime + 30;
+		// 	} else {
+		// 		$ctime = $ctime + 70;
+		// 	}
+		// }
 	?>
-</select>
+<!-- </select> -->
+<input type="time" name="timeE" min="07:00" max="22:00" style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" value = "" required>
 </p>
 <!--<p style="margin-bottom: 9px;">*Room:<input name="roomName" type=text style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder='Room Name'/></p>-->
 <p style="margin-bottom: 9px;">*Room:

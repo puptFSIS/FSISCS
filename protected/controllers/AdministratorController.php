@@ -898,7 +898,8 @@ class AdministratorController extends Controller
 
 	public function actionSetSchedule()
 	{
-		$this->render('SetSchedule');
+		print_r($_GET);
+		// $this->render('SetSchedule');
 	}
 	public function actionSetInternalSchedule()
 	{
@@ -1676,7 +1677,47 @@ class AdministratorController extends Controller
 	}
 	public function actionProcessAddSched()
 	{
-		$this->render('processAddSched');
+		// print_r($_POST);
+		$prof = $_GET['prof'];
+		$day = $_POST['sday'];
+		$roomName = $_POST['roomName'];
+		$profName = $_POST['profName'];
+		$courseID = $_GET['courseID'];
+		$currID = $_GET['currID'];
+		$cyear = $_GET['cyear'];
+		$scode = $_GET['scode'];
+		$sem = $_GET['sem'];
+		$sy = $_GET['sy'];
+		$sec = $_GET['sec'];
+		$title = $_GET['title'];
+		$units = $_GET['units'];
+		$lec = $_GET['lec'];
+		$lab = $_GET['lab'];
+
+		$timeS = $_POST['timeS'];
+		$timeE = $_POST['timeE'];
+
+		$S = explode(":",$timeS);
+		$E = explode(":",$timeE);
+		// echo $timeS."-".$timeE;
+
+		if($S[0]<=22 && $S[0]>6){
+			if ($S[0] == 22) {
+				if ($S[1] >= 1) {
+					header("location:index.php?r=administrator/AddSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=2");
+				}
+			}
+			if($E[0]<=22 && $E[0]>6){
+				if ($E[0] == 22) {
+					if ($E[1] >= 1) {
+						header("location:index.php?r=administrator/AddSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=2");
+					}
+				}
+				$this->render('processAddSched');
+			}
+		} else {
+			header("location:index.php?r=administrator/AddSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=2");
+		}
 		
 	}
 	public function actionProfSched()
@@ -1936,7 +1977,7 @@ class AdministratorController extends Controller
 
 				$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 
-				
+										
 				$mail->AddAddress($row['email'], $row['firstname']);     
 				
 

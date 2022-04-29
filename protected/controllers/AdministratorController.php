@@ -2326,6 +2326,7 @@ class AdministratorController extends Controller
     public function actionRealCurriculumManagement(){
     	session_start();
     	$result = TblCurriculumref::model()->GetCurrID();
+    	// print_r($result);
     	$this->render('RealCurriculumManagement', array('currID' => $result));
     }
 

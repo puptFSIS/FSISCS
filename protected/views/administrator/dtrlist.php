@@ -548,7 +548,7 @@ else if ($status == "pending")
 						
 						<input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 
-					</div>
+			</div>
 
 					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
 

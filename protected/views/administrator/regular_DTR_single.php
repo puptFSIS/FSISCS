@@ -40,7 +40,7 @@ foreach($first_resultdtr as $newfirst_resultdtr)
 
 foreach($first_resultdtrtimesheet as $newfirst_resultdtrtimesheet)
 {
-	$day_date[]= $newfirst_resultdtrtimesheet['day_date'];
+   $day_date[]= $newfirst_resultdtrtimesheet['day_date'];
    $am_arrival[]=$newfirst_resultdtrtimesheet['am_arrival'];
    $am_departure[]=$newfirst_resultdtrtimesheet['am_departure'];
    $pm_arrival[]=$newfirst_resultdtrtimesheet['pm_arrival'];

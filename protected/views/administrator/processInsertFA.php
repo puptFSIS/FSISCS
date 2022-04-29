@@ -65,7 +65,7 @@ if ($emptype != "Permanent" && $role == "Faculty Designee") {
 						$result=mysqli_query($conn,$sql);
 					}
 				}
-
+					// echo $sql;
 				
 				$sql="INSERT INTO tbl_personalinformation (FCode, surname, firstname, middlename, nameExtension, birthdate, bday, bmonth, byear, EmpID, userID, password, isAdmin, status, civilStatus) VALUES ('$Fcode','$sname','$fname','$mname','$next', '1950-01-01', '01', '01', '1950', '$EmpID', '$EmpID','$epass','$isAdmin','active','Single')";
 				$result=mysqli_query($conn,$sql);	

@@ -177,7 +177,7 @@
 		position: absolute;
 		right: 10px;
 		top: 80px;
-		height: 350px;
+		height: 400px;
 		width: 450px;
 		/*sa unahan ng menu list ng dtr_menu*/z-index: 2; 
 
@@ -455,11 +455,11 @@ if($status == "pending")
 							<p id="modal_date_id'.$counter.'" class="fcode_p_Tag"></p>
 							<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="checkbox" class"radio'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1">
+									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1">
 									<label for="approve" class="approve">APPROVE</label>
 
-									<input type="checkbox" class"radio'.$counter.'" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
-									<label for="disapprove" class="disapprove">  DISAPPROVE</label>
+									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
+									<label for="disapprove" class="disapprove">DISAPPROVE</label>
 
 
 								
@@ -525,8 +525,8 @@ else if($status == "approved")
 						</div>
 						<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="checkbox" class"radio'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="2 ">
-									<label for="approve" class="disapprove"> DISAPPROVE RECORD</label>
+									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="2 ">
+									<label for="approve" class="disapprove">DISAPPROVE RECORD</label>
 									
 
 									<br>
@@ -595,7 +595,7 @@ else if($status == "disapproved")
 						</div>
 						<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="checkbox" class"'.$counter.'" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1 ">
+									<input type="checkbox" class"'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1 ">
 									<label for="approve" class="approve"> APPROVE RECORD</label>
 									
 
@@ -604,7 +604,8 @@ else if($status == "disapproved")
 									
 						</div>
 
-						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'" rows="10" cols="10">	</textarea>
+						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'" rows="10" cols="10"></textarea>
+							
 						 	
 
 						<input id="input_id'.$counter.'" type="submit" onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" > 

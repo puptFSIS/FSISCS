@@ -68,14 +68,17 @@
 	}
 	if(isset($_POST['timeS2']))
 	{
-		$timeS2 = $_POST['timeS2'];
+		$s2 = explode(":", $_POST['timeS2']);
+		$timeS2 = $s2[0].$s2[1];
 	}else
 	{
 		$timeS2 = "";
 	}
 	if(isset($_POST['timeE2']))
 	{
-		$timeE2 = $_POST['timeE2'];
+		$e2 = explode(":", $_POST['timeE2']);
+		$timeE2 = $e2[0].$e2[1];
+		
 	}else
 	{
 		$timeE2 = "";
@@ -87,12 +90,15 @@
 	{
 		$room2 = "";
 	}
+
+	$s = explode(":", $_POST['timeS']);
+	$e = explode(":", $_POST['timeE']);
 	
 	$schedID = $_GET['schedID'];
 	$profold = $_GET['prof'];
 	$day = $_POST['sday'];
-	$timeS = $_POST['timeS'];
-	$timeE = $_POST['timeE'];
+	$timeS = $s[0].$s[1];
+	$timeE = $e[0].$e[1];
 	$roomName = $_POST['roomName'];
 	$profName = $_POST['profName'];
 	$courseID = $_GET['courseID'];
@@ -213,7 +219,7 @@ if($check == 'pass'){
 										<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">Professor</td>
 									</tr>
 								';
-				$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && courseID = '$courseID' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
+				$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && courseID = '$courseID' && schoolYear = '$sy' && sem = '$sem' and schedID != '".$schedID."' && Sched_type = 'OFFICIAL'";
 				
 				$result = mysqli_query($conn,$sql);
 				while ($row = mysqli_fetch_array($result)) {
@@ -272,7 +278,7 @@ if($check == 'pass'){
 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">Professor</td>
 								</tr>
 							';
-			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && sprof = '$profName' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
+			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (".$timeS." BETWEEN  stimeS and stimeE or ".$timeE." BETWEEN stimeS and stimeE) && sprof = '$profName' && schoolYear = '$sy' && sem = '$sem' and schedID != '".$schedID."' && Sched_type = 'OFFICIAL'";
 			
 			$result = mysqli_query($conn,$sql);
 			while ($row = mysqli_fetch_array($result)) {
@@ -333,7 +339,7 @@ if($check == 'pass'){
 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">Professor</td>
 								</tr>
 							';
-			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && sroom = '$roomName' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
+			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (".$timeS." BETWEEN  stimeS and stimeE or ".$timeE." BETWEEN stimeS and stimeE) && sroom = '$roomName' && schoolYear = '$sy' && sem = '$sem' and schedID != '".$schedID."' && Sched_type = 'OFFICIAL'";
 			
 			$result = mysqli_query($conn,$sql);
 			while ($row = mysqli_fetch_array($result)) {
@@ -438,7 +444,7 @@ if($check == 'pass'){
 	function checkRoomSched($day, $timein, $timeout, $sem, $sy, $roomName, $schedID)
 	{
 		include("config.php");
-		$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and sday='".$day."' and schedID != ".$schedID." and sem=".$sem." and schoolYear='".$sy."' and sroom = '".$roomName."'and Sched_type = 'OFFICIAL'";
+		$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sroom = '".$roomName."' and schedID != '".$schedID."' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$count=mysqli_num_rows($result);
 
@@ -448,7 +454,7 @@ if($check == 'pass'){
 	function checkProfSched($day, $timein, $timeout, $sem, $sy, $profName, $schedID)
 	{
 		include("config.php");
-		$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and sday='".$day."' and schedID != ".$schedID." and sem=".$sem." and schoolYear='".$sy."' and sprof = '".$profName."'and Sched_type = 'OFFICIAL'";
+		$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sprof = '".$profName."'and schedID != '".$schedID."' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$count=mysqli_num_rows($result);
 
@@ -458,7 +464,7 @@ if($check == 'pass'){
 
 	function checkCourseSched($day, $timein, $timeout, $sem, $sy, $courseID, $schedID){
 		include("config.php");
-		$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and sday='".$day."' and schedID != ".$schedID." and sem=".$sem." and schoolYear='".$sy."' and courseID = '".$courseID."' and Sched_type = 'OFFICIAL'";
+		$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and courseID = '".$courseID."'and schedID != '".$schedID."' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$count=mysqli_num_rows($result);
 		
@@ -500,271 +506,207 @@ if($check == 'pass'){
 		return $Subject;
 	}
 
-	function to12Hr($stime) {
-		$strTime = "";
-		if($stime==700) {
-			$strTime = "07:00 AM";
-		} else if($stime==730) {
-			$strTime = "07:30 AM";
-		} else if($stime==800) {
-			$strTime = "08:00 AM";
-		} else if($stime==830) {
-			$strTime = "08:30 AM";
-		} else if($stime==900) {
-			$strTime = "09:00 AM";
-		} else if($stime==930) {
-			$strTime = "09:30 AM";
-		} else if($stime==1000) {
-			$strTime = "10:00 AM";
-		} else if($stime==1030) {
-			$strTime = "10:30 AM";
-		} else if($stime==1100) {
-			$strTime = "11:00 AM";
-		} else if($stime==1130) {
-			$strTime = "11:30 AM";
-		} else if($stime==1200) {
-			$strTime = "12:00 NN";
-		} else if($stime==1230) {
-			$strTime = "12:30 NN";
-		} else if($stime==1300) {
-			$strTime = "01:00 PM";
-		} else if($stime==1330) {
-			$strTime = "01:30 PM";
-		} else if($stime==1400) {
-			$strTime = "02:00 PM";
-		} else if($stime==1430) {
-			$strTime = "02:30 PM";
-		} else if($stime==1500) {
-			$strTime = "03:00 PM";
-		} else if($stime==1530) {
-			$strTime = "03:30 PM";
-		} else if($stime==1600) {
-			$strTime = "04:00 PM";
-		} else if($stime==1630) {
-			$strTime = "04:30 PM";
-		} else if($stime==1700) {
-			$strTime = "05:00 PM";
-		} else if($stime==1730) {
-			$strTime = "05:30 PM";
-		} else if($stime==1800) {
-			$strTime = "06:00 PM";
-		} else if($stime==1830) {
-			$strTime = "06:30 PM";
-		} else if($stime==1900) {
-			$strTime = "07:00 PM";
-		} else if($stime==1930) {
-			$strTime = "07:30 PM";
-		} else if($stime==2000) {
-			$strTime = "08:00 PM";
-		} else if($stime==2030) {
-			$strTime = "08:30 PM";
-		} else if($stime==2100) {
-			$strTime = "09:00 PM";
-		} else if($stime==2130) {
-			$strTime = "09:30 PM";
-		} else if($stime==2200) {
-			$strTime = "10:00 PM";
-		} else if($stime==2230) {
-			$strTime = "10:30 PM";
-		}
-		return $strTime;
+	function to12Hr($ctime) {
+
+							$strTime = "";
+							$dn = "";
+
+							if (strlen($ctime) == 4) {
+								$hour = substr($ctime, 0, 2);
+								$min = substr($ctime, 2, 3);
+
+
+
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
+
+								$strTime = $hour.":".$min." ".$dn;
+							 } else {
+							 	$hour = substr($ctime, 0, 1);
+								$min = substr($ctime, 1, 2);
+
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
+
+								$strTime = $hour.":".$min." ".$dn;
+							 }
+							return $strTime;
 	}
 	
-	function to24Hr($ctime) {
-		$strTime = "";
-		if($ctime=="07:00 AM") {
-			$strTime = 700;
-		} else if($ctime=="07:30 AM") {
-			$strTime = 730;
-		} else if($ctime=="08:00 AM") {
-			$strTime = 800;
-		} else if($ctime=="08:30 AM") {
-			$strTime = 830;
-		} else if($ctime=="09:00 AM") {
-			$strTime = 900;
-		} else if($ctime=="09:30 AM") {
-			$strTime = 930;
-		} else if($ctime=="10:00 AM") {
-			$strTime = 1000;
-		} else if($ctime=="10:30 AM") {
-			$strTime = 1030;
-		} else if($ctime=="11:00 AM") {
-			$strTime = 1100;
-		} else if($ctime=="11:30 AM") {
-			$strTime = 1130;
-		} else if($ctime=="12:00 NN") {
-			$strTime = 1200;
-		} else if($ctime=="12:30 NN") {
-			$strTime = 1230;
-		} else if($ctime=="01:00 PM") {
-			$strTime = 1300;
-		} else if($ctime=="01:30 PM") {
-			$strTime = 1330;
-		} else if($ctime=="02:00 PM") {
-			$strTime = 1400;
-		} else if($ctime=="02:30 PM") {
-			$strTime = 1430;
-		} else if($ctime=="03:00 PM") {
-			$strTime = 1500;
-		} else if($ctime=="03:30 PM") {
-			$strTime = 1530;
-		} else if($ctime=="04:00 PM") {
-			$strTime = 1600;
-		} else if($ctime=="04:30 PM") {
-			$strTime = 1630;
-		} else if($ctime=="05:00 PM") {
-			$strTime = 1700;
-		} else if($ctime=="05:30 PM") {
-			$strTime = 1730;
-		} else if($ctime=="06:00 PM") {
-			$strTime = 1800;
-		} else if($ctime=="06:30 PM") {
-			$strTime = 1830;
-		} else if($ctime=="07:00 PM") {
-			$strTime = 1900;
-		} else if($ctime=="07:30 PM") {
-			$strTime = 1930;
-		} else if($ctime=="08:00 PM") {
-			$strTime = 2000;
-		} else if($ctime=="08:30 PM") {
-			$strTime = 2030;
-		} else if($ctime=="09:00 PM") {
-			$strTime = 2100;
-		} else if($ctime=="09:30 PM") {
-			$strTime = 2130;
-		} else if($ctime=="10:00 PM") {
-			$strTime = 2200;
-		} else if($ctime=="10:30 PM") {
-			$strTime = 2230;
-		}
-		return $strTime;
-	}
 
-	function FacultyLoad($fcode, $sy, $units, $sem){
-		include("config.php");
-		$load_type="";
-		$sql1 = "SELECT * FROM tbl_facultycurrentload WHERE FCode='".$fcode."' and schoolYear ='".$sy."' and sem =".$sem."";
-		$result1 = mysqli_query($conn, $sql1);
-		$row1 = mysqli_fetch_array($result1);
-		$count = mysqli_num_rows($result1);
-		$regular = $row1['Regular_Load'];
-		$partTime = $row1['PartTime_Load'];
-		$tsLoad = $row1['TeachingSub_Load'];
+	// function FacultyLoad($fcode, $sy, $units, $sem){
+	// 	include("config.php");
+	// 	$load_type="";
+	// 	$sql1 = "SELECT * FROM tbl_facultycurrentload WHERE FCode='".$fcode."' and schoolYear ='".$sy."' and sem =".$sem."";
+	// 	$result1 = mysqli_query($conn, $sql1);
+	// 	$row1 = mysqli_fetch_array($result1);
+	// 	$count = mysqli_num_rows($result1);
+	// 	$regular = $row1['Regular_Load'];
+	// 	$partTime = $row1['PartTime_Load'];
+	// 	$tsLoad = $row1['TeachingSub_Load'];
 
-		if($count<=0){
-			$sqleval = "SELECT Regular_Load, PartTime_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
-			$result = mysqli_query($conn, $sqleval);
-			$row = mysqli_fetch_array($result);
-			$reg = $row['Regular_Load'];
-			// $part = $row['PartTime_Load'];
+	// 	if($count<=0){
+	// 		$sqleval = "SELECT Regular_Load, PartTime_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
+	// 		$result = mysqli_query($conn, $sqleval);
+	// 		$row = mysqli_fetch_array($result);
+	// 		$reg = $row['Regular_Load'];
+	// 		// $part = $row['PartTime_Load'];
 
 
-			$sqlfac = "INSERT INTO tbl_facultycurrentload VALUES('','".$fcode."',0,0,0,".$sem.",'".$sy."')";
-			mysqli_query($conn,$sqlfac);
+	// 		$sqlfac = "INSERT INTO tbl_facultycurrentload VALUES('','".$fcode."',0,0,0,".$sem.",'".$sy."')";
+	// 		mysqli_query($conn,$sqlfac);
 			
 			
-			if($reg == 0){
-				$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$units."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
-				$load_type = 0;
-			} else {
-				$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$units."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
-				$load_type = 1;
-			}
-			mysqli_query($conn,$sqlup);
-		} else {
-			$sqleval = "SELECT Regular_Load, PartTime_Load, TeachingSub_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
-			$result = mysqli_query($conn, $sqleval);
-			$row = mysqli_fetch_array($result);
-			$reg = $row['Regular_Load'];
-			$part = $row['PartTime_Load'];
-			$ts = $row['TeachingSub_Load'];
-			$sum = 0;
+	// 		if($reg == 0){
+	// 			$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$units."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
+	// 			$load_type = 0;
+	// 		} else {
+	// 			$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$units."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
+	// 			$load_type = 1;
+	// 		}
+	// 		mysqli_query($conn,$sqlup);
+	// 	} else {
+	// 		$sqleval = "SELECT Regular_Load, PartTime_Load, TeachingSub_Load FROM tbl_evaluationfaculty WHERE FCode = '".$fcode."'";
+	// 		$result = mysqli_query($conn, $sqleval);
+	// 		$row = mysqli_fetch_array($result);
+	// 		$reg = $row['Regular_Load'];
+	// 		$part = $row['PartTime_Load'];
+	// 		$ts = $row['TeachingSub_Load'];
+	// 		$sum = 0;
 			
-			if($reg == 0){
-				$sum = $partTime + $units;
+	// 		if($reg == 0){
+	// 			$sum = $partTime + $units;
 
-				if ($sum >= $part) {
-					$sum = 0;
-					$sum = $tsLoad + $units;
-					$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND sem = '".$sem."'";
-					$load_type = 2;
-				} else {
-					$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND sem = '".$sem."'";
-					$load_type = 0;
-				}
-			} else if($reg == 9){
-			$sum = $regular + $units;
-				if ($sum >= $reg) {
-					$sum = 0;
-					$sum = $tsLoad + $units;
-					$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
-					$load_type = 2;
-				} else {
-					$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
-					$load_type = 1;
-				}
+	// 			if ($sum >= $part) {
+	// 				$sum = 0;
+	// 				$sum = $tsLoad + $units;
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND sem = '".$sem."'";
+	// 				$load_type = 2;
+	// 			} else {
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND sem = '".$sem."'";
+	// 				$load_type = 0;
+	// 			}
+	// 		} else if($reg == 9){
+	// 		$sum = $regular + $units;
+	// 			if ($sum >= $reg) {
+	// 				$sum = 0;
+	// 				$sum = $tsLoad + $units;
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
+	// 				$load_type = 2;
+	// 			} else {
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' and sem = ".$sem."";
+	// 				$load_type = 1;
+	// 			}
 				
 				
-			} else {
-				$sum = $regular + $units;
-				if ($sum >= $reg) {
-					$sum = 0;
-					$sum = $partTime + $units;
+	// 		} else {
+	// 			$sum = $regular + $units;
+	// 			if ($sum >= $reg) {
+	// 				$sum = 0;
+	// 				$sum = $partTime + $units;
 
-					if ($sum >= $part) {
-						$sum = 0;
-						$sum = $tsLoad + $units;
-						$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
-						$load_type = 2;
-					} else {
-						$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
-						$load_type = 0;
-					}
+	// 				if ($sum >= $part) {
+	// 					$sum = 0;
+	// 					$sum = $tsLoad + $units;
+	// 					$sqlup = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
+	// 					$load_type = 2;
+	// 				} else {
+	// 					$sqlup = "UPDATE tbl_facultycurrentload SET PartTime_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
+	// 					$load_type = 0;
+	// 				}
 					
-				} else {
-					$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
-					$load_type = 1;
-				}
+	// 			} else {
+	// 				$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = '".$sum."' WHERE FCode ='".$fcode."' and schoolYear = '".$sy."' AND  sem = '".$sem."'";
+	// 				$load_type = 1;
+	// 			}
 			
-			}
-			mysqli_query($conn,$sqlup);
-		}
+	// 		}
+	// 		mysqli_query($conn,$sqlup);
+	// 	}
 
-		return $load_type;
-	}
+	// 	return $load_type;
+	// }
 
-	function DiminishFacultyLoadUnit($profold, $fcode, $sy, $units, $sem, $day, $timeS, $timeE, $courseID, $currID, $scode){
-		include('config.php');
-		$sql = "SELECT * FROM tbl_schedule WHERE currID = '".$currID."' AND courseID = '".$courseID."' AND sday = '".$day."' AND stimeS = '".$timeS."' AND stimeE = '".$timeE."' AND sprof = '".$profold."' AND sday = '".$day."' AND scode = '".$scode."' AND sem = '".$sem."' AND schoolYear = '".$sy."' AND Sched_type = 'OFFICIAL'";
+	// function DiminishFacultyLoadUnit($profold, $fcode, $sy, $units, $sem, $day, $timeS, $timeE, $courseID, $currID, $scode){
+	// 	include('config.php');
+	// 	$sql = "SELECT * FROM tbl_schedule WHERE currID = '".$currID."' AND courseID = '".$courseID."' AND sday = '".$day."' AND stimeS = '".$timeS."' AND stimeE = '".$timeE."' AND sprof = '".$profold."' AND sday = '".$day."' AND scode = '".$scode."' AND sem = '".$sem."' AND schoolYear = '".$sy."' AND Sched_type = 'OFFICIAL'";
 
-		$result = mysqli_query($conn, $sql);
-		$row = mysqli_fetch_array($result);
+	// 	$result = mysqli_query($conn, $sql);
+	// 	$row = mysqli_fetch_array($result);
 
-		$sqlfac = "SELECT * FROM tbl_facultycurrentload WHERE FCode = '".$profold."' AND sem = '".$sem."' AND schoolYear = '".$sy."'";
-		$result2 = mysqli_query($conn, $sqlfac);
-		$row2 = mysqli_fetch_array($result2);
-		$regular = $row2['Regular_Load'];
-		$partTime = $row2['PartTime_Load'];
-		$ts = $row2['TeachingSub_Load'];
+	// 	$sqlfac = "SELECT * FROM tbl_facultycurrentload WHERE FCode = '".$profold."' AND sem = '".$sem."' AND schoolYear = '".$sy."'";
+	// 	$result2 = mysqli_query($conn, $sqlfac);
+	// 	$row2 = mysqli_fetch_array($result2);
+	// 	$regular = $row2['Regular_Load'];
+	// 	$partTime = $row2['PartTime_Load'];
+	// 	$ts = $row2['TeachingSub_Load'];
 
-		if ($row['load_type'] == 0) {
-			$total = $partTime - $units;
-			$up = "UPDATE tbl_facultycurrentload SET PartTime_Load = ".$total." WHERE FCode = '".$profold."' AND schoolYear = '".$sy."' AND  sem = '".$sem."'";
-			mysqli_query($conn, $up);
-		} else if($row['load_type']==2){
-			$total = $ts - $units;
-			$up = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = ".$total." WHERE FCode = '".$profold."' AND schoolYear = '".$sy."' AND  sem = '".$sem."'";
-			mysqli_query($conn, $up);
-		} else {
-			$total = $regular - $units;
-			$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = ".$total." WHERE FCode ='".$profold."' AND schoolYear = '".$sy."' AND sem = '".$sem."'";
-			mysqli_query($conn, $sqlup);
+	// 	if ($row['load_type'] == 0) {
+	// 		$total = $partTime - $units;
+	// 		$up = "UPDATE tbl_facultycurrentload SET PartTime_Load = ".$total." WHERE FCode = '".$profold."' AND schoolYear = '".$sy."' AND  sem = '".$sem."'";
+	// 		mysqli_query($conn, $up);
+	// 	} else if($row['load_type']==2){
+	// 		$total = $ts - $units;
+	// 		$up = "UPDATE tbl_facultycurrentload SET TeachingSub_Load = ".$total." WHERE FCode = '".$profold."' AND schoolYear = '".$sy."' AND  sem = '".$sem."'";
+	// 		mysqli_query($conn, $up);
+	// 	} else {
+	// 		$total = $regular - $units;
+	// 		$sqlup = "UPDATE tbl_facultycurrentload SET Regular_Load = ".$total." WHERE FCode ='".$profold."' AND schoolYear = '".$sy."' AND sem = '".$sem."'";
+	// 		mysqli_query($conn, $sqlup);
 			
-		}
+	// 	}
 
 		
 		
-	}
+	// }
 
 	function checkPrefProfSched($day, $timeS, $timeE, $sy, $profName, $sem){
 		include("config.php");
@@ -796,14 +738,24 @@ if($check == 'pass'){
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
-<section class='widget-container2 widget-categories'>
-<h2 class=widget-heading>Profile</h2>
+<aside class=page-sidebar style="display: inline-block;">
+<section class='widget-container widget-categories'>
 <div class=widget-content>
-<ul class='widget-list categories-list'>
 <?php include("SchedulingMenu.php");?>
-</ul>
+
 </div>
+</section>
+</aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
 </section>
 </aside>
 <!-- End - Page sidebar -->

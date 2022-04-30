@@ -358,95 +358,107 @@ if(isset($_SESSION['user'])) {
 </select>
 </p>
 <p style="margin-bottom: 9px;">*Time Start:
-<!-- <select name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
 	<?php
-		// $currID = $_GET['CurrID'];
-		// $cID = $_GET['courseID'];
-		// $yrlvl = $_GET['cyear'];
-		// $scode = $_GET['scode'];
-		// $sem = $_GET['sem'];
-		// $sy = $_GET['sy'];
-		// $sec = $_GET['sec'];
-		// $start = "";
+		$currID = $_GET['CurrID'];
+		$cID = $_GET['courseID'];
+		$yrlvl = $_GET['cyear'];
+		$scode = $_GET['scode'];
+		$sem = $_GET['sem'];
+		$sy = $_GET['sy'];
+		$sec = $_GET['sec'];
+		$start = "";
+		$strTime = "";
 
-		// if(isset($_GET['timeS'])){
-		// 	echo'<option value="'. $_GET['timeS'] .'">'.to12Hr($_GET['timeS']).'</option>';
-		// }
+		if(isset($_GET['timeS'])){
+			echo'<option value="'. $_GET['timeS'] .'">'.to12Hr($_GET['timeS']).'</option>';
+		}
 
-		// $sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
-		// $result2 = mysqli_query($conn,$sql2);
-		// while($row2 = mysqli_fetch_array($result2))
-		// {
-		// 	$start = $row2['stimeS'];
-		// }
+		$sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
+		$result2 = mysqli_query($conn,$sql2);
+		while($row2 = mysqli_fetch_array($result2))
+		{
+			$start = $row2['stimeS'];
+		}
 		
-		// if($start <> "")
-		// {
-		// 	echo '<option value="'. $start .'">'. to12Hr($start) .'</option>';
-		// }
-		// else
-		// {
-		// 	echo'
-		// 		<option value="'. $blank .'"></option>
-		// 	';
-		// }
+		if($start <> "")
+		{
+			if (strlen($start) == 4) {
+				$hour = substr($start, 0, 2);
+				$min = substr($start, 2, 3);
 
-		// for($ctime=700;$ctime<=2200;) {
-		// 	echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-		// 	if($ctime%100==0) {
-		// 		$ctime = $ctime + 30;
-		// 	} else {
-		// 		$ctime = $ctime + 70;
-		// 	}
-		// }
+
+
+				if ($hour > 12) {
+					$dn = "PM";
+				} else {
+					$dn = "AM";
+				}
+
+				$strTime = $hour.":".$min;
+			}
+			echo '<input type="time" name="timeS" min="07:00" max="22:00" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" value = "'.$strTime.'" required>';
+
+		}
+		else
+		{
+			echo'
+				<input type="time" name="timeS" min="07:00" max="22:00" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" required>
+			';
+		}
 	?>
-</select> -->
-<input type="time" name="timeS" min="07:00" max="22:00" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" value = "" required>
+
+<!-- <input type="time" name="timeS" min="07:00" max="22:00" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" value = "" required> -->
 </p>
 <p style="margin-bottom: 9px;">*Time End:
 <!-- <select name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;"> -->
 	<?php
-		// $currID = $_GET['CurrID'];
-		// $cID = $_GET['courseID'];
-		// $yrlvl = $_GET['cyear'];
-		// $scode = $_GET['scode'];
-		// $sem = $_GET['sem'];
-		// $sy = $_GET['sy'];
-		// $sec = $_GET['sec'];
-		// $end = "";
+		$currID = $_GET['CurrID'];
+		$cID = $_GET['courseID'];
+		$yrlvl = $_GET['cyear'];
+		$scode = $_GET['scode'];
+		$sem = $_GET['sem'];
+		$sy = $_GET['sy'];
+		$sec = $_GET['sec'];
+		$end = "";
 
-		// if(isset($_GET['timeE'])){
-		// 	echo'<option value="'. $_GET['timeE'] .'">'.to12Hr($_GET['timeE']).'</option>';
-		// }
+		if(isset($_GET['timeE'])){
+			echo'<option value="'. $_GET['timeE'] .'">'.to12Hr($_GET['timeE']).'</option>';
+		}
 
-		// $sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
-		// $result2 = mysqli_query($conn,$sql2);
-		// while($row2 = mysqli_fetch_array($result2))
-		// {
-		// 	$end = $row2['stimeE'];
-		// }
+		$sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
+		$result2 = mysqli_query($conn,$sql2);
+		while($row2 = mysqli_fetch_array($result2))
+		{
+			$end = $row2['stimeE'];
+		}
 		
-		// if($end <> "")
-		// {
-		// 	echo '<option value="'. $end .'">'. to12Hr($end) .'</option>';
-		// }
-		// else
-		// {
-		// 	echo'
-		// 		<option value="'. $blank .'"></option>
-		// 	';
-		// }
-		// for($ctime=700;$ctime<=2200;) {
-		// 	echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-		// 	if($ctime%100==0) {
-		// 		$ctime = $ctime + 30;
-		// 	} else {
-		// 		$ctime = $ctime + 70;
-		// 	}
-		// }
+		if($end <> "")
+		{
+			if (strlen($end) == 4) {
+				$hour = substr($end, 0, 2);
+				$min = substr($end, 2, 3);
+
+
+
+				if ($hour > 12) {
+					$dn = "PM";
+				} else {
+					$dn = "AM";
+				}
+
+				$strTime = $hour.":".$min;
+			}
+			echo '<input type="time" name="timeE" min="07:00" max="22:00" style="display: inline-block;margin-left: 27px;margin-bottom: 9px; width: 110px;" value = "'.$strTime.'" required>';
+		}
+		else
+		{
+			echo'
+				<input type="time" name="timeE" min="07:00" max="22:00" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" required>
+			';
+		}
 	?>
 <!-- </select> -->
-<input type="time" name="timeE" min="07:00" max="22:00" style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" value = "" required>
+<!-- <input type="time" name="timeE" min="07:00" max="22:00" style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" value = "" required> -->
 </p>
 <!--<p style="margin-bottom: 9px;">*Room:<input name="roomName" type=text style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder='Room Name'/></p>-->
 <p style="margin-bottom: 9px;">*Room:
@@ -619,8 +631,7 @@ if(isset($_SESSION['user'])) {
 		';
 		////////////////////////////////////////////// START TIME /////////////////////////////////////
 		echo'
-			<p style="margin-bottom: 9px;">*Time Start:
-			<select name="timeS2" style="width: 470px; margin-top: -28px; margin-left: 15%;">';
+			<p style="margin-bottom: 9px;">*Time Start:';
 			$currID = $_GET['CurrID'];
 			$cID = $_GET['courseID'];
 			$yrlvl = $_GET['cyear'];
@@ -638,31 +649,34 @@ if(isset($_SESSION['user'])) {
 			
 			if($start <> "")
 			{
-				echo '<option value="'. $start .'">'. to12Hr($start) .'</option>';
+				if (strlen($start) == 4) {
+				$hour = substr($start, 0, 2);
+				$min = substr($start, 2, 3);
+
+
+
+				if ($hour > 12) {
+					$dn = "PM";
+				} else {
+					$dn = "AM";
+				}
+
+				$strTime = $hour.":".$min;
+			}
+			echo '<input type="time" name="timeS2" min="07:00" max="22:00" style="display: inline-block;margin-left: 29px;margin-bottom: 9px; width: 110px;" value = "'.$strTime.'" required>';
 			}
 			else
 			{
-				echo'
-					<option value="'. $blank .'"></option>
-				';
+				echo '<input type="time" name="timeS2" min="07:00" max="22:00" style="display: inline-block;margin-left: 29px;margin-bottom: 9px; width: 110px;" required>';
 			}
 
-			for($ctime=700;$ctime<=2200;) {
-				echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-				if($ctime%100==0) {
-					$ctime = $ctime + 30;
-				} else {
-					$ctime = $ctime + 70;
-				}
-			}
 		echo'
-			</select>
+			
 			</p>
 		';
 		////////////////////////////////////////////// END TIME /////////////////////////////////////
 		echo'
-			<p style="margin-bottom: 9px;">*Time End:
-			<select name="timeE2" style="width: 470px; margin-top: -28px; margin-left: 15%;">';
+			<p style="margin-bottom: 9px;">*Time End:';
 			$currID = $_GET['CurrID'];
 			$cID = $_GET['courseID'];
 			$yrlvl = $_GET['cyear'];
@@ -680,25 +694,29 @@ if(isset($_SESSION['user'])) {
 			
 			if($end <> "")
 			{
-				echo '<option value="'. $end .'">'. to12Hr($end) .'</option>';
+				if (strlen($end) == 4) {
+					$hour = substr($end, 0, 2);
+					$min = substr($end, 2, 3);
+
+
+
+					if ($hour > 12) {
+						$dn = "PM";
+					} else {
+						$dn = "AM";
+					}
+
+					$strTime = $hour.":".$min;
+				}
+				echo '<input type="time" name="timeE2"min="07:00" max="22:00" style="display: inline-block;margin-left: 31px;margin-bottom: 9px; width: 110px;" value = "'.$strTime.'" required>';
 			}
 			else
 			{
-				echo'
-					<option value="'. $blank .'"></option>
-				';
+				echo '<input type="time" name="timeE2"min="07:00" max="22:00" style="display: inline-block;margin-left: 31px;margin-bottom: 9px; width: 110px;" required>';
 			}
 
-			for($ctime=700;$ctime<=2200;) {
-				echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-				if($ctime%100==0) {
-					$ctime = $ctime + 30;
-				} else {
-					$ctime = $ctime + 70;
-				}
-			}
+			
 		echo'
-			</select>
 			</p>
 		';
 		////////////////////////////////////////////// ROOM /////////////////////////////////////
@@ -751,52 +769,52 @@ if(isset($_SESSION['user'])) {
 
 <?php
 
-	echo'
+	// echo'
 									
-						<table class="table table-bordered table-hover responsive-utilities">
-						  <tbody>
-						  <tr>
-							<td class="table-narrow" colspan = "4">
-							Suggested Professors and Time Schedule for the Subject: '. $scode .'
-							</td>
-						</tr>
-							<tr>
-								<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">PROFESSOR</td>
-								<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">DAY</td>
-								<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">START</td>
-								<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">END</td>
-							</tr>
-						';
+	// 					<table class="table table-bordered table-hover responsive-utilities">
+	// 					  <tbody>
+	// 					  <tr>
+	// 						<td class="table-narrow" colspan = "4">
+	// 						Suggested Professors and Time Schedule for the Subject: '. $scode .'
+	// 						</td>
+	// 					</tr>
+	// 						<tr>
+	// 							<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;"">PROFESSOR</td>
+	// 							<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">DAY</td>
+	// 							<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">START</td>
+	// 							<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">END</td>
+	// 						</tr>
+	// 					';
 
-			$sql="SELECT DISTINCT a.sprof, a.sday, a.stimeS, a.stimeE, a.Whole_Day FROM tbl_timepreferences as a inner join tbl_subjpreferences as b on a.sprof = b.sprof where b.scode = '$scode' AND a.sem = '$sem' and a.schoolYear = '$sy' ";
-			$result = mysqli_query($conn,$sql);
-			while($row = mysqli_fetch_array($result)) 
-			{
-				if ($row['Whole_Day']==1) {
-					echo'
-										<tr>
-											<td style="text-align: left;">'. getName($row['sprof']) .'</td>
-											<td style="text-align: center;">'. $row['sday'] .'</td>
-											<td style="text-align: center;">WHOLE</td>
-											<td style="text-align: center;">DAY</td>
-										</tr>';	
-				} else {
-					echo'
-										<tr>
-											<td style="text-align: left;">'. getName($row['sprof']) .'</td>
-											<td style="text-align: center;">'. $row['sday'] .'</td>
-											<td style="text-align: center;">'. to12Hr($row['stimeS']) .' </td>
-											<td style="text-align: center;">'. to12Hr($row['stimeE']) .' </td>
-										</tr>';	
-				}
+	// 		$sql="SELECT DISTINCT a.sprof, a.sday, a.stimeS, a.stimeE, a.Whole_Day FROM tbl_timepreferences as a inner join tbl_subjpreferences as b on a.sprof = b.sprof where b.scode = '$scode' AND a.sem = '$sem' and a.schoolYear = '$sy' ";
+	// 		$result = mysqli_query($conn,$sql);
+	// 		while($row = mysqli_fetch_array($result)) 
+	// 		{
+	// 			if ($row['Whole_Day']==1) {
+	// 				echo'
+	// 									<tr>
+	// 										<td style="text-align: left;">'. getName($row['sprof']) .'</td>
+	// 										<td style="text-align: center;">'. $row['sday'] .'</td>
+	// 										<td style="text-align: center;">WHOLE</td>
+	// 										<td style="text-align: center;">DAY</td>
+	// 									</tr>';	
+	// 			} else {
+	// 				echo'
+	// 									<tr>
+	// 										<td style="text-align: left;">'. getName($row['sprof']) .'</td>
+	// 										<td style="text-align: center;">'. $row['sday'] .'</td>
+	// 										<td style="text-align: center;">'. to12Hr($row['stimeS']) .' </td>
+	// 										<td style="text-align: center;">'. to12Hr($row['stimeE']) .' </td>
+	// 									</tr>';	
+	// 			}
 			
 				
 
-			}
-								echo'
+	// 		}
+	// 							echo'
 								
-								</tbody>
-								</table>';
+	// 							</tbody>
+	// 							</table>';
 ?>
 
 </section>
@@ -807,13 +825,24 @@ if(isset($_SESSION['user'])) {
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
+<aside class=page-sidebar style="display: inline-block;">
 <section class='widget-container widget-categories'>
 <div class=widget-content>
-<ul class='widget-list categories-list'>
 <?php include("SchedulingMenu.php");?>
-</ul>
+
 </div>
+</section>
+</aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
 </section>
 </aside>
 <!-- End - Page sidebar -->
@@ -860,8 +889,8 @@ if(isset($_SESSION['user'])) {
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
-<script src='http://localhost/FSIS/assets/jquery-3.6.0.min.js'></script>
-<script src='http://localhost/FSIS/assets/sweetalert2.all.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>

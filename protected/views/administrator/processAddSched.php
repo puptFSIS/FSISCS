@@ -552,9 +552,42 @@
 								}
 
 								$strTime = $hour.":".$min." ".$dn;
+							 } else {
+							 	//this is used if the old time format is used
+							 	$hour = substr($ctime, 0, 1);
+								$min = substr($ctime, 1, 2);
+
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
+
+								$strTime = $hour.":".$min." ".$dn;
 							 }
 							return $strTime;
-						}
+	}
 
 	function checkFirstParameters($day, $timein, $timeout, $roomName, $profName){
 		$valid = "";
@@ -797,14 +830,24 @@
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
-<section class='widget-container2 widget-categories'>
-<h2 class=widget-heading>Profile</h2>
+<aside class=page-sidebar style="display: inline-block;">
+<section class='widget-container widget-categories'>
 <div class=widget-content>
-<ul class='widget-list categories-list'>
 <?php include("SchedulingMenu.php");?>
-</ul>
+
 </div>
+</section>
+</aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
 </section>
 </aside>
 <!-- End - Page sidebar -->

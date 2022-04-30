@@ -898,8 +898,7 @@ class AdministratorController extends Controller
 
 	public function actionSetSchedule()
 	{
-		print_r($_GET);
-		// $this->render('SetSchedule');
+		$this->render('SetSchedule');
 	}
 	public function actionSetInternalSchedule()
 	{
@@ -908,7 +907,82 @@ class AdministratorController extends Controller
 
 	public function actionProcessSetSched()
 	{
-		$this->render('processSetSched');
+		print_r($_POST);
+		$prof = $_GET['prof'];
+		$day = $_POST['sday'];
+		$roomName = $_POST['roomName'];
+		$profName = $_POST['profName'];
+		$courseID = $_GET['courseID'];
+		$currID = $_GET['currID'];
+		$cyear = $_GET['cyear'];
+		$scode = $_GET['scode'];
+		$sem = $_GET['sem'];
+		$sy = $_GET['sy'];
+		$sec = $_GET['sec'];
+		$title = $_GET['title'];
+		$units = $_GET['units'];
+		$lec = $_GET['lec'];
+		$lab = $_GET['lab'];
+
+		$timeS1 = $_POST['timeS'];
+		$timeE1 = $_POST['timeE'];
+		
+
+		$S1 = explode(":",$timeS1);
+		$E1 = explode(":",$timeE1);
+		
+
+		if($S1[0]<=22 && $S1[0]>6){
+			if ($S1[0] == 22) {
+				if ($S1[1] >= 1) {
+					header("location:index.php?r=administrator/SetSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=2");
+					
+				}
+			}
+				if($E1[0]<=22 && $E1[0]>6){
+					if ($E1[0] == 22) {
+						if ($E1[1] >= 1) {
+							header("location:index.php?r=administrator/SetSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=2");
+							
+						}
+					}
+					if (isset($_POST['timeS2'])) {
+						$timeS2 = $_POST['timeS2'];
+						$timeE2 = $_POST['timeE2'];
+						$S2 = explode(":",$timeS2);
+						$E2 = explode(":",$timeE2);
+						if($S2[0]<=22 && $S2[0]>6){
+							if ($S2[0] == 22) {
+								if ($S2[1] >= 1) {
+									header("location:index.php?r=administrator/SetSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=2");
+									
+								}
+							}
+							if($E2[0]<=22 && $E2[0]>6){
+								if ($E2[0] == 22) {
+									if ($E2[1] >= 1) {
+										header("location:index.php?r=administrator/SetSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=2");
+										
+									}
+								}
+								
+								$this->render('processSetSched');
+							}
+						} else {
+							header("location:index.php?r=administrator/SetSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=2");
+							
+						}
+					}
+				$this->render('processSetSched');
+			} else {
+				header("location:index.php?r=administrator/SetSched&prof=$prof&CurrID=$currID&courseID=$courseID&cyear=$cyear&scode=$scode&sem=$sem&sy=$sy&sec=$sec&title=$title&units=$units&lec=$lec&lab=$lab&mes=2");
+				
+			}
+
+		// $this->render('processSetSched');
+		} else {
+			echo "not allowed";
+		}
 	}
 	public function actionProcessSetInternalSched()
 	{

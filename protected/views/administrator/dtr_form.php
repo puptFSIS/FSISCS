@@ -1031,9 +1031,9 @@
 		    	}
                 // alert("No such directory exists!");
                 Swal.fire(
-                            'No such directory exists!',
+                            'No record schedule at this date',
                             'press OK to continue',
-                            'warning'
+                            'info'
                         )
 
             }

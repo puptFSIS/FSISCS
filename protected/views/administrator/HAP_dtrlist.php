@@ -179,7 +179,7 @@
 		top: 80px;
 		height: 400px;
 		width: 450px;
-		/*sa unahan ng menu list ng dtr_menu*/z-index: 2; 
+		/*sa unahan ng menu list ng dtr_menu*/z-index: 3; 
 
 
 		/*color and bg*/
@@ -438,7 +438,7 @@ if($status == "pending")
 				<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 				<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
 				<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-				<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
+				<td id="regpartime_id'.$counter.'"" >' . $newresult['regpartime'] . '</td>
 				<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 				<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
 				<td class="actions_class"">
@@ -802,7 +802,7 @@ function call_print(counter)
 				
 }
 
-var counter_temp = [];
+const counter_temp = [];
 var string_counter_temp;
 var int_counter_temp
 
@@ -867,31 +867,30 @@ function open_dtr_modal(counter)
 			modal_id_var.innerText = faculty_id[counter];
 			modal_date_id_var.innerText = loadtype_month_year;
 			modal_fullname_id_var.innerText = fullname;
-			modal_regpartime_id_var.innerText = regpartime_id[counter];
-			// modal_month_id_var.innerText = month_id[counter];
-			modal_date_id_var.innerText = fullname;
+			// modal_regpartime_id_var.innerText = loadtype;
+			
 
 			counter_temp.push(counter);
-			string_counter_temp = counter_temp.toString();
-			int_counter_temp = parseInt(string_counter_temp,10);
-			// if(modal_div[int_counter_temp].style.display === "block")
-			// {
-			// 	    modal_div[int_counter_temp].style.display = "none";
-			// 	    counter_temp = [];
+			
+			console.log(counter_temp);
 
-
-			// }	  
+			// close_dtr_modal(counter);
+			// document.getElementById("modal_for_check_id"+counter_temp[0]).style.display = "none";
+			
 	} 
 	
 
-	else
+
+	else if(modal_div[counter].style.display !== "none")
 	{
-			modal_div[counter].style.display = "none";
-		    	counter_temp = [];
+			 modal_div[counter].style.display = "none";
+			counter_temp.shift();
+			console.log(counter_temp);
+			
 
 	}
 
-	    console.log(counter,counter_temp,string_counter_temp,int_counter_temp);
+
 	
 }
 

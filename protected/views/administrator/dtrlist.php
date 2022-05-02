@@ -71,7 +71,7 @@
 		height: 350px;
 		width: 400px;
 		
-		/*sa unahan ng menu list ng dtr_menu*/z-index: 2; 
+		/*sa unahan ng menu list ng dtr_menu*/z-index: 3; 
 
 
 		/*color and bg*/

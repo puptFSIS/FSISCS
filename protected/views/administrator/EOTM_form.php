@@ -32,6 +32,8 @@
         	width: 612px;
         	height: 936px;
             border: 2px solid black;
+            display: flex;
+            flex-direction: column;
 
         }
 
@@ -112,7 +114,7 @@
             position: relative;
             display: inline-block;
             overflow: hidden;
-            margin: 0;
+            margin-top: auto;
             background-color: #ffffff;
         }
 

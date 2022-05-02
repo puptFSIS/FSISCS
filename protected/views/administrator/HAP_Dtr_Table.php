@@ -6,10 +6,10 @@
 
 
 	
-	/* .table-container
+	 .table-container
 	{
-		max-width: 105%;
-	} */
+		max-width: 100%;
+	} 
 	.table-width
 	{
 		width: 105%;
@@ -31,7 +31,7 @@ SHOW:
 <a href="index.php?r=administrator/HAPDtrTable&sort=year"><input type="button" value="Year" /></a> -->
    <a href="index.php?r=administrator/HAPDtrTable&sort=pending"><input class="show_pending" id="pending_click" type="button" value="Pending" onclick="changecolor(1)" /></a>
 <a href="index.php?r=administrator/HAPDtrTable&sort=approved"><input class="show_approved"  id="approved_click"  type="button" value="Approved" /></a>
-<a href="index.php?r=administrator/HAPDtrTable&sort=disapproved"><input class="show_disaapproved" id="disapproved_click"   type="button" value="Disapproved" /></a>
+<a href="index.php?r=administrator/HAPDtrTable&sort=disapproved"><input class="show_disapproved" id="disapproved_click"   type="button" value="Disapproved" /></a>
 
 </p>
 

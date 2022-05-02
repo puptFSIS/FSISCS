@@ -1028,23 +1028,19 @@
 </body>
 
 <script>
-	const mickey = document.querySelector('#firstname').textContent;
+	// const mickey = document.querySelector('#firstname').textContent;
 	function call_print()
 	{
 
-		// id1 = $("#hap_sec_id"+counter).html();
-		// firstname1= $("#hap_sec_id_fn"+counter).html();
-		// surname1 = $("#hap_sec_id_sn"+counter).html();
-		// middlename1= $("#hap_sec_id_mn"+counter).html();
-		// reg1= $("#hap_sec_id_type"+counter).html();
-		// mon1= $("#hap_sec_id_month"+counter).html();
-		// year1= $("#hap_sec_id_year"+counter).html();
-		// hr_name = document.getElementById("hr_name_id");
-		// newcounter = counter;
+	var month_input = document.getElementById('month_input').value;
+	var name_of_sender = document.getElementById('name_of_sender').value;
+	var position_of_sender = document.getElementById('position_of_sender').value;
+	var department_name = document.getElementById('department_name').value;
+	var dear = document.getElementById('dear').value;
+	var paragraph_text = document.getElementById('paragraph_text').value;
 	
-
 			
-	window.open("index.php?r=/administrator/Hap_generate_rd");
+	window.open("index.php?r=/administrator/Hap_generate_rd&val1="+month_input+"&val2="+name_of_sender+"&val3="+position_of_sender+"&val4="+department_name+"&val5="+dear+"&val6="+paragraph_text);
 				     
 				
 	}

@@ -2,9 +2,7 @@
 require('fpdf.php');
 require('config.php');
 // require('fpdm');
-
-
-
+$month_input1 = $month_input;
 class PDF extends FPDF
 {
 
@@ -319,6 +317,7 @@ class PDF extends FPDF
     }
 
 }
+
 
 $pdf = new PDF('P','mm','legal');
 $pdf->SetFont('Times','B','10');

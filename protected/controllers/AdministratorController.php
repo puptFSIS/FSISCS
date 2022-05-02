@@ -3139,7 +3139,14 @@ class AdministratorController extends Controller
 
 	public function actionHap_generate_rd() // dtr
 	{
-		$this->render('receiving_document');
+		$val1 = $_GET['val1'];
+		$val2 = $_GET['val2'];
+		$val3 = $_GET['val3'];
+		$val4 = $_GET['val4'];
+		$val5 = $_GET['val5'];
+		$val6 = $_GET['val6'];
+
+		$this->render('receiving_document',array('month_input' => $val1,'name_of_sender' => $val2,'position_of_sender' => $val3,'department_name' => $val4,'dear' => $val5,'paragraph_text' => $val6));
 	}
  
 	public function actionHap_post()  // dtr

@@ -100,10 +100,10 @@ class PDF extends FPDF
 
     }
 
-    function directorHR($loadtype)
+    function directorHR($loadtype,$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4)
     {
-        $hr_name = "Atty. MICHELLE KRISTINE D. SARAUM";
-        $short_hr_name = "Atty. Saraum";
+        $hr_name = $name_of_sender;
+        $short_hr_name = $dear;
         $this->SetFont('Times','B',10);
         $this->SetXY(30, 80);
         $this->Cell(45,10,$hr_name,0,0,'C');
@@ -113,14 +113,14 @@ class PDF extends FPDF
 
         $this->SetFont('Times','',10);
         $this->SetXY(20, 85);
-        $this->Cell(12,8,"Director",0,0,'C');
+        $this->Cell(12,8,$position_of_sender,0,0,'C');
         $this->SetXY(20, 88);
-        $this->Cell(70,8,"Human Resources Management Department",0,0,'C');
+        $this->Cell(70,8,$department_name,0,0,'C');
         $this->Ln(20);
 
 
         $this->SetXY(20, 100);
-        $this->Cell(29,8,"Dear ".$short_hr_name.":",0,0,'C');
+        $this->Cell(29,8,$short_hr_name,0,0,'C');
 
         
         $this->SetFont('Times','b',10);
@@ -142,40 +142,35 @@ class PDF extends FPDF
 
        //  TEXTS !!!
         // for regular
-        $regular_text1 = "This is to endorse the Daily Time Record ".$bold_loadtype." of the following FACULTY MEMBERS of";
-        $regular_text2 = "PUP TAGUIG for the month of ".$regular_date.":";
+        $regular_text1 = $paragraph_text;
 
         // for parttime
-        $pt_text1 = "This is to endorse the Daily Time Record ".$bold_loadtype." of the following FACULTY MEMBERS of";
-        $pt_text2 = "PUP TAGUIG for the month of ".$parttime_date.":";
+        $pt_text1 = $paragraph_text2;
 
         // for TS
-        $ts_text1 = "This is to endorse the Daily Time Record ".$bold_loadtype." of the following FACULTY MEMBERS of PUP";
-        $ts_text2 = " TAGUIG for the month of ".$ts_date.":";
+        $ts_text1 = $paragraph_text3;
 
         //for OT
-        $ot_text1 = "This is to endorse the Daily Time Record ".$bold_loadtype." of the following ADMINISTRATIVE PERSONNEL ";
-        $ot_text2 = "of PUP TAGUIG for the month of ".$ot_date.":";
-
+        $ot_text1 = $paragraph_text4;
 
 
         if($loadtype == "REGULAR")
         {
-            $this->texts($regular_text1,$regular_text2);
+            $this->texts($regular_text1,'ew');
         }
         if($loadtype == "PART-TIME")
         {
-            $this->texts($pt_text1,$pt_text2);
+            $this->texts($pt_text1,'ew');
 
         }
         if($loadtype == "TS")
         {
-            $this->texts($ts_text1,$ts_text2);
+            $this->texts($ts_text1,'ew');
 
         }
         if($loadtype == "OT")
         {
-            $this->texts($ot_text1,$ot_text2);
+            $this->texts($ot_text1,'ew');
 
         }
 
@@ -189,7 +184,7 @@ class PDF extends FPDF
 
     }
 
-   function loadtype_knower($month_input)
+   function loadtype_knower($month_input,$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4)
    {
     
     require('config.php');
@@ -218,7 +213,7 @@ class PDF extends FPDF
             $this->AddPage();
             $this->Header();
             $this->date($month_input);
-            $this->directorHR($temporary_list[$q]);
+            $this->directorHR($temporary_list[$q],$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4);
             
             // for($i = 0; $i<$month_date;$i++)
             // {
@@ -320,6 +315,6 @@ class PDF extends FPDF
 
 $pdf = new PDF('P','mm','legal');
 $pdf->SetFont('Times','B','10');
-$pdf->loadtype_knower($month_input);
+$pdf->loadtype_knower($month_input,$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4);
 $pdf->Output();
 ?>

@@ -367,10 +367,6 @@
 		}
 
 
-		#month_input2:hover
-		{
-			background-color: #dadada;
-		}
 
 		#name_of_sender2
 		{
@@ -391,10 +387,7 @@
 			margin-bottom: 3px;
 		}
 
-		#name_of_sender2:hover
-		{
-			background-color: #dadada;
-		}
+
 
 		#position_of_sender2
 		{
@@ -416,10 +409,7 @@
 
 		}
 
-		#position_of_sender2:hover
-		{
-			background-color: #dadada;
-		}
+
 
 		#department_name2
 		{
@@ -440,10 +430,7 @@
 			margin-left: 30px;
 		}
 
-		#department_name2:hover
-		{
-			background-color: #dadada;
-		}
+
 
 		#dear2
 		{
@@ -464,10 +451,7 @@
 			margin-left: 30px;
 		}
 
-		#dear2:hover
-		{
-			background-color: #dadada;
-		}
+
 
 		#month_input3
 		{
@@ -489,10 +473,6 @@
 		}
 
 
-		#month_input3:hover
-		{
-			background-color: #dadada;
-		}
 
 		#name_of_sender3
 		{
@@ -513,10 +493,7 @@
 			margin-bottom: 3px;
 		}
 
-		#name_of_sender3:hover
-		{
-			background-color: #dadada;
-		}
+
 
 		#position_of_sender3
 		{
@@ -538,10 +515,7 @@
 
 		}
 
-		#position_of_sender3:hover
-		{
-			background-color: #dadada;
-		}
+
 
 		#department_name3
 		{
@@ -562,10 +536,6 @@
 			margin-left: 30px;
 		}
 
-		#department_name3:hover
-		{
-			background-color: #dadada;
-		}
 
 		#dear3
 		{
@@ -586,10 +556,7 @@
 			margin-left: 30px;
 		}
 
-		#dear3:hover
-		{
-			background-color: #dadada;
-		}
+
 
 
 		#month_input4
@@ -612,10 +579,7 @@
 		}
 
 
-		#month_input4:hover
-		{
-			background-color: #dadada;
-		}
+
 
 		#name_of_sender4
 		{
@@ -636,10 +600,7 @@
 			margin-bottom: 3px;
 		}
 
-		#name_of_sender4:hover
-		{
-			background-color: #dadada;
-		}
+
 
 		#position_of_sender4
 		{
@@ -661,10 +622,6 @@
 
 		}
 
-		#position_of_sender4:hover
-		{
-			background-color: #dadada;
-		}
 
 		#department_name4
 		{
@@ -685,10 +642,6 @@
 			margin-left: 30px;
 		}
 
-		#department_name4:hover
-		{
-			background-color: #dadada;
-		}
 
 		#dear4
 		{
@@ -709,10 +662,6 @@
 			margin-left: 30px;
 		}
 
-		#dear4:hover
-		{
-			background-color: #dadada;
-		}
 
 		.list_items
 		{
@@ -731,12 +680,7 @@
     <form method="POST">
         <?php 
         //global declaration for displaying name and date on form
-      $newname = [];
-		$newnewmonth = [];
-		$newyear = [];
-		$newdate ='';
-		$namecounter = 0;
-		$namecounterarray = [];
+      
 
         require('config.php');
         $counter = 1;
@@ -790,6 +734,12 @@
            $monthcounter = 0;
            if($temporary_list[$q] == "REGULAR")
            {
+           	$newname = [];
+			$newnewmonth = [];
+			$newyear = [];
+			$newdate ='';
+			$namecounter = 0;
+			$namecounterarray = [];
 
            		$sql="SELECT DISTINCT * FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
     			$result=mysqli_query($conn,$sql);
@@ -813,11 +763,11 @@
 
 						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
 						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
-			 			<input id="position_of_sender" type="" value="Director">
-						<input id="department_name" type="" value="Human Resource Management Department">
-						<input id="dear" type="" value="Dear Atty. Sarum:">
+			 			<input id="position_of_sender" type="" value="Director" oninput="date_onchange(this.value,3)">
+						<input id="department_name" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
+						<input id="dear" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
 						<br>
-						<div class="body_text" contentEditable id="paragraph_text">
+						<div class="body_text" contentEditable id="paragraph_text" >
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE: 
 			 			</div>
 
@@ -825,7 +775,7 @@
 
 			 			
 					</div>
-					<div class="listOfFacultyMembers" contentEditable>
+					<div class="listOfFacultyMembers" contentEditable> 
 					 <ul>
 
 					';
@@ -901,6 +851,12 @@
 
            if($temporary_list[$q] == "PART-TIME")
            {
+           	$newname = [];
+			$newnewmonth = [];
+			$newyear = [];
+			$newdate ='';
+			$namecounter = 0;
+			$namecounterarray = [];
            		echo'
 	            <div class="page">
 	            	<div class="body">
@@ -915,19 +871,77 @@
 						<p id="long_line">___________________________________________________________________________________</p>
 						<input class="date no_box" id="month_input2" type="" name="" value="'.$date.'" disabled>
 						<input class="hrmd no_box" id="name_of_sender2" type="" name="" value="'.$hrmd.'" disabled>
-						<input id="position_of_sender2" type="" value="Director">
-						<input id="department_name2" type="" value="Human Resource Management Department">
-						<input id="dear2" type="" value="Dear Atty. Sarum:">
+						<input id="position_of_sender2" type="" value="Director" disabled>
+						<input id="department_name2" type="" value="Human Resource Management Department" disabled>
+						<input id="dear2" type="" value="Dear Atty. Sarum:" disabled>
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text2">
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
 			 			</div>
 					</div>
+					<div class="listOfFacultyMembers" contentEditable> 
+					 <ul>';
 
+				
+				for ($x = 0; $x <= $number_of_items; $x++)
+    				{				
+    					if ($x >= 1 && $x <= $number_of_items)
+			            {
+			                $y = $y + 5;
+			            }
+			            if(array_key_exists($x,$id))
+			            {
+				            $new_x = $x+1;
+				            $x_dot = $new_x." ".".";
+				            $name = $sn[$x].', '.$fn[$x].' '.$mn[$x];
+				            // $date = $month[$x].' '.$year[$x];
 
+				            if(!in_array($name, $newname) && $regpartime[$x] == 'PART-TIME')
+				            {
+				            	$newname[] = $name;
+				            	$namecounter++;
+				            }
+
+				            if(!in_array($month[$x], $newnewmonth))
+				            {
+				            $monthcount = count($month);
+				            $month_array = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+				            $newnewmonth[] = $month[$x];
+				            
+
+				         	}
+
+				            if(!in_array($year[$x], $newyear))
+				            {
+				            	$newyear[] = $year[$x];
+				            }
+   
+				            $ctr = 0;
+
+							}
+			        
+					}
+					sort($newyear);
+					$firstmonth = reset($newnewmonth);
+					$lastmonth = end($newnewmonth);
+					$firstyear = reset($newyear);
+					$lastyear = end($newyear);
+					$namecount = count($newname);
+
+					for($p = 0;$p < $namecount;$p++)
+					{
+						echo '<li class="list_items" id="regular_name">'.$newname[$p].'</li>';
+					}
+
+					echo'
+			 		</ul>
+
+			 					</div>	
 					<div class="footer">
-						<img src="assets/EOTM_footer.PNG" width="" height="">
+							<img src="assets/EOTM_footer.PNG" width="" height="">
 					</div>
+					
 				</div>
 				<br><br>
 
@@ -939,6 +953,12 @@
 
            if($temporary_list[$q] == "TS")
            {
+           	$newname = [];
+			$newnewmonth = [];
+			$newyear = [];
+			$newdate ='';
+			$namecounter = 0;
+			$namecounterarray = [];
            		echo'
 	            <div class="page">
 	            	<div class="body">
@@ -951,20 +971,81 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input3" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender3" type="" name="" value="'.$hrmd.'">
-						<input id="position_of_sender3" type="" value="Director">
-						<input id="department_name3" type="" value="Human Resource Management Department">
-						<input id="dear3" type="" value="Dear Atty. Sarum:">
+						<input class="date no_box" id="month_input3" type="" name="" value="'.$date.'" disabled>
+						<input class="hrmd no_box" id="name_of_sender3" type="" name="" value="'.$hrmd.'" disabled>
+						<input id="position_of_sender3" type="" value="Director" disabled>
+						<input id="department_name3" type="" value="Human Resource Management Department" disabled>
+						<input id="dear3" type="" value="Dear Atty. Sarum:" disabled>
 						<br>
-						<div class="body_text" contentEditable id="paragraph_text3">
+						<div class="body_text" contentEditable id="paragraph_text3" >
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
 			 			</div>
 					</div>	
 
+					<div class="listOfFacultyMembers" contentEditable> 
+					 <ul>
+
+				';
+
+				for ($x = 0; $x <= $number_of_items; $x++)
+    				{				
+    					if ($x >= 1 && $x <= $number_of_items)
+			            {
+			                $y = $y + 5;
+			            }
+			            if(array_key_exists($x,$id))
+			            {
+				            $new_x = $x+1;
+				            $x_dot = $new_x." ".".";
+				            $name = $sn[$x].', '.$fn[$x].' '.$mn[$x];
+				            // $date = $month[$x].' '.$year[$x];
+
+				            if(!in_array($name, $newname) && $regpartime[$x] == 'TEMPORARY SUBSTITUTION')
+				            {
+				            	$newname[] = $name;
+				            	$namecounter++;
+				            }
+
+				            if(!in_array($month[$x], $newnewmonth))
+				            {
+				            $monthcount = count($month);
+				            $month_array = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+				            $newnewmonth[] = $month[$x];
+				            
+
+				         	}
+
+				            if(!in_array($year[$x], $newyear))
+				            {
+				            	$newyear[] = $year[$x];
+				            }
+   
+				            $ctr = 0;
+
+							}
+			        
+					}
+					sort($newyear);
+					$firstmonth = reset($newnewmonth);
+					$lastmonth = end($newnewmonth);
+					$firstyear = reset($newyear);
+					$lastyear = end($newyear);
+					$namecount = count($newname);
+
+					for($p = 0;$p < $namecount;$p++)
+					{
+						echo '<li class="list_items" id="regular_name">'.$newname[$p].'</li>';
+					}
+
+					echo'
+			 		</ul>
+
+			 					</div>	
 					<div class="footer">
-						<img src="assets/EOTM_footer.PNG" width="" height="">
+							<img src="assets/EOTM_footer.PNG" width="" height="">
 					</div>
+					
 				</div>
 				<br><br>
 
@@ -987,11 +1068,11 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input4" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender4" type="" name="" value="'.$hrmd.'">
-						<input id="position_of_sender4" type="" value="Director">
-						<input id="department_name4" type="" value="Human Resource Management Department">
-						<input id="dear4" type="" value="Dear Atty. Sarum:">
+						<input class="date no_box" id="month_input4" type="" name="" value="'.$date.'" disabled>
+						<input class="hrmd no_box" id="name_of_sender4" type="" name="" value="'.$hrmd.'" disabled>
+						<input id="position_of_sender4" type="" value="Director" disabled>
+						<input id="department_name4" type="" value="Human Resource Management Department" disabled>
+						<input id="dear4" type="" value="Dear Atty. Sarum:" disabled>
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text4">
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
@@ -1033,13 +1114,58 @@
 	function date_onchange(val,counter)
 	{
 		var input_date = document.getElementById('month_input2');
+		var input_date2 = document.getElementById('month_input3');
+		var input_date3 = document.getElementById('month_input4');
 		var sender_name = document.getElementById('name_of_sender2');
+		var sender_name2 = document.getElementById('name_of_sender3');
+		var sender_name3 = document.getElementById('name_of_sender4');
+		var position_of_sender = document.getElementById('position_of_sender2');
+		var position_of_sender2 = document.getElementById('position_of_sender3');
+		var position_of_sender3 = document.getElementById('position_of_sender4');
+		var department_name = document.getElementById('department_name2');
+		var department_name2 = document.getElementById('department_name3');
+		var department_name3 = document.getElementById('department_name4');
+		var dear = document.getElementById('dear2');
+		var dear2 = document.getElementById('dear3');
+		var dear3 = document.getElementById('dear4');
+
+
 		if(counter == 1)
+		{
 			input_date.value = val;
+			input_date2.value = val;
+			input_date3.value = val;
+		}
 		if(counter == 2)
+		{
 			sender_name.value = val;
-		
-		
+			sender_name2.value = val;
+			sender_name3.value = val;
+		}
+		if(counter == 3)
+		{
+			position_of_sender.value = val;
+			position_of_sender2.value = val;
+			position_of_sender3.value = val;
+		}
+		if(counter == 4)
+		{
+			department_name.value = val;
+			department_name2.value = val;
+			department_name3.value = val;
+		}
+		if(counter == 4)
+		{
+			department_name.value = val;
+			department_name2.value = val;
+			department_name3.value = val;
+		}
+		if(counter == 5)
+		{
+			dear.value = val;
+			dear2.value = val;
+			dear3.value = val;
+		}
 		
 	}
 	// const mickey = document.querySelector('#firstname').textContent;
@@ -1051,10 +1177,13 @@
 	var position_of_sender = document.getElementById('position_of_sender').value;
 	var department_name = document.getElementById('department_name').value;
 	var dear = document.getElementById('dear').value;
-	var paragraph_text = document.getElementById('paragraph_text').value;
+	var paragraph_text = document.getElementById('paragraph_text').innerText;
+	var paragraph_text2 = document.getElementById('paragraph_text2').innerText;
+	var paragraph_text3 = document.getElementById('paragraph_text3').innerText;
+	var paragraph_text4 = document.getElementById('paragraph_text4').innerText;
 	
 			
-	window.open("index.php?r=/administrator/Hap_generate_rd&val1="+month_input+"&val2="+name_of_sender+"&val3="+position_of_sender+"&val4="+department_name+"&val5="+dear+"&val6="+paragraph_text);
+	window.open("index.php?r=/administrator/Hap_generate_rd&val1="+month_input+"&val2="+name_of_sender+"&val3="+position_of_sender+"&val4="+department_name+"&val5="+dear+"&val6="+paragraph_text+"&val7="+paragraph_text2+"&val8="+paragraph_text3+"&val9="+paragraph_text4);
 				     
 				
 	}

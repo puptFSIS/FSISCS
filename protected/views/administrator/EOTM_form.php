@@ -741,12 +741,13 @@
         require('config.php');
         $counter = 1;
         $month_date = date("m");
+        $day = date("d");
         $year_date = date("Y");
         $month_array = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 
         $newmonth_date = (int)$month_date;
         $newmonth = $month_array[$newmonth_date-1];
-        $date = $newmonth.' '.$year_date;
+        $date = $newmonth.' '.$day.' '.$year_date;
         $hrmd = "Atty. MICHELLE KRISTINE D. SARAUM";
 
         $counterforitems = 0;
@@ -810,8 +811,8 @@
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
 
-						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'">
+						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
+						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
 			 			<input id="position_of_sender" type="" value="Director">
 						<input id="department_name" type="" value="Human Resource Management Department">
 						<input id="dear" type="" value="Dear Atty. Sarum:">
@@ -912,8 +913,8 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input2" type="" name="" value="'.$date.'">
-						<input class="hrmd no_box" id="name_of_sender2" type="" name="" value="'.$hrmd.'">
+						<input class="date no_box" id="month_input2" type="" name="" value="'.$date.'" disabled>
+						<input class="hrmd no_box" id="name_of_sender2" type="" name="" value="'.$hrmd.'" disabled>
 						<input id="position_of_sender2" type="" value="Director">
 						<input id="department_name2" type="" value="Human Resource Management Department">
 						<input id="dear2" type="" value="Dear Atty. Sarum:">
@@ -1028,6 +1029,19 @@
 </body>
 
 <script>
+
+	function date_onchange(val,counter)
+	{
+		var input_date = document.getElementById('month_input2');
+		var sender_name = document.getElementById('name_of_sender2');
+		if(counter == 1)
+			input_date.value = val;
+		if(counter == 2)
+			sender_name.value = val;
+		
+		
+		
+	}
 	// const mickey = document.querySelector('#firstname').textContent;
 	function call_print()
 	{

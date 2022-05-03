@@ -2,13 +2,13 @@
 require('fpdf.php');
 require('config.php');
 // require('fpdm');
-$month_input1 = $month_input;
+
 class PDF extends FPDF
 {
-
     // Page header
     function Header()
     {
+
         // $this->AddPage('P','A4',0);
         // Logo
         $pup_logo = "assets/logo_1inch.PNG";
@@ -53,15 +53,16 @@ class PDF extends FPDF
 
     }
 
-    function date()
+    function date($month_input)
     {
+
         $month = date("F");
         $day = date("d");
         $year = date("Y");
         $current_date = $month ." ".$day.","." ". $year;
         $this->SetFont('Times','',10);
         $this->SetXY(22, 70);
-        $this->Cell(20,10,$current_date,0,0,'C');
+        $this->Cell(20,10,$month_input,0,0,'C');
         $this->Ln(20);
     }
 
@@ -139,8 +140,6 @@ class PDF extends FPDF
 
 
 
-
-
        //  TEXTS !!!
         // for regular
         $regular_text1 = "This is to endorse the Daily Time Record ".$bold_loadtype." of the following FACULTY MEMBERS of";
@@ -190,7 +189,7 @@ class PDF extends FPDF
 
     }
 
-   function loadtype_knower()
+   function loadtype_knower($month_input)
    {
     
     require('config.php');
@@ -218,7 +217,7 @@ class PDF extends FPDF
             $monthcounter = 0;
             $this->AddPage();
             $this->Header();
-            $this->date();
+            $this->date($month_input);
             $this->directorHR($temporary_list[$q]);
             
             // for($i = 0; $i<$month_date;$i++)
@@ -321,6 +320,6 @@ class PDF extends FPDF
 
 $pdf = new PDF('P','mm','legal');
 $pdf->SetFont('Times','B','10');
-$pdf->loadtype_knower();
+$pdf->loadtype_knower($month_input);
 $pdf->Output();
 ?>

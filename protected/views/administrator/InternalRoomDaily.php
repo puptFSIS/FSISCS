@@ -2806,71 +2806,75 @@ background-repeat:repeat;
 						
 						function to12Hr($ctime) {
 							$strTime = "";
-							if($ctime==700) {
-								$strTime = "07:00 AM";
-							} else if($ctime==730) {
-								$strTime = "07:30 AM";
-							} else if($ctime==800) {
-								$strTime = "08:00 AM";
-							} else if($ctime==830) {
-								$strTime = "08:30 AM";
-							} else if($ctime==900) {
-								$strTime = "09:00 AM";
-							} else if($ctime==930) {
-								$strTime = "09:30 AM";
-							} else if($ctime==1000) {
-								$strTime = "10:00 AM";
-							} else if($ctime==1030) {
-								$strTime = "10:30 AM";
-							} else if($ctime==1100) {
-								$strTime = "11:00 AM";
-							} else if($ctime==1130) {
-								$strTime = "11:30 AM";
-							} else if($ctime==1200) {
-								$strTime = "12:00 NN";
-							} else if($ctime==1230) {
-								$strTime = "12:30 NN";
-							} else if($ctime==1300) {
-								$strTime = "01:00 PM";
-							} else if($ctime==1330) {
-								$strTime = "01:30 PM";
-							} else if($ctime==1400) {
-								$strTime = "02:00 PM";
-							} else if($ctime==1430) {
-								$strTime = "02:30 PM";
-							} else if($ctime==1500) {
-								$strTime = "03:00 PM";
-							} else if($ctime==1530) {
-								$strTime = "03:30 PM";
-							} else if($ctime==1600) {
-								$strTime = "04:00 PM";
-							} else if($ctime==1630) {
-								$strTime = "04:30 PM";
-							} else if($ctime==1700) {
-								$strTime = "05:00 PM";
-							} else if($ctime==1730) {
-								$strTime = "05:30 PM";
-							} else if($ctime==1800) {
-								$strTime = "06:00 PM";
-							} else if($ctime==1830) {
-								$strTime = "06:30 PM";
-							} else if($ctime==1900) {
-								$strTime = "07:00 PM";
-							} else if($ctime==1930) {
-								$strTime = "07:30 PM";
-							} else if($ctime==2000) {
-								$strTime = "08:00 PM";
-							} else if($ctime==2030) {
-								$strTime = "08:30 PM";
-							} else if($ctime==2100) {
-								$strTime = "09:00 PM";
-							} else if($ctime==2130) {
-								$strTime = "09:30 PM";
-							} else if($ctime==2200) {
-								$strTime = "10:00 PM";
-							} else if($ctime==2230) {
-								$strTime = "10:30 PM";
-							}
+							$dn = "";
+
+							if (strlen($ctime) == 4) {
+								$hour = substr($ctime, 0, 2);
+								$min = substr($ctime, 2, 3);
+
+
+
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
+
+								$strTime = $hour.":".$min." ".$dn;
+							 } else {
+							 	$hour = substr($ctime, 0, 1);
+								$min = substr($ctime, 1, 2);
+
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
+
+								$strTime = $hour.":".$min." ".$dn;
+							 }
 							return $strTime;
 						}
 						

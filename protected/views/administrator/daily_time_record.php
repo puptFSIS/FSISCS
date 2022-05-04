@@ -235,7 +235,7 @@ if(isset($_SESSION['user'])) {
         }
         ?>
         <div class=widget-content>
-        <ul class='widget-list categories-list'>
+        
 
         <?php 
         include("getPersonalInformation.php");
@@ -246,7 +246,7 @@ if(isset($_SESSION['user'])) {
 
 
 
-        </ul>
+        
         </div>
         </section>
         </aside>

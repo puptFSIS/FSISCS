@@ -428,8 +428,8 @@ if($preview_value===0)
   if($role === "HAP")
   {
             
-    echo'<div class="menu_list_div">';
-    echo '<ul class="">';
+    
+    echo '<ul class="widget-list categories-list">';
     echo "<li><a href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
     echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
     
@@ -438,13 +438,13 @@ if($preview_value===0)
     // echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
 
     echo '</ul>';
-    echo '</div>';
+    
 
   }
   else if($role === "HAP Secretary")
   {
-   echo'<div class="menu_list_div">';
-    echo '<ul class="">';
+   
+    echo '<ul class="widget-list categories-list">';
     echo "<li><a href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
     echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
     
@@ -453,7 +453,7 @@ if($preview_value===0)
     // echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
 
     echo '</ul>';
-    echo '</div>';
+    
 
   }
 

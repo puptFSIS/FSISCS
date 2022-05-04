@@ -156,7 +156,7 @@
 							timer: '2000'
 						})
 					</script>";
-			(".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE)
+			
 					echo'
 											
 								<table class="table table-bordered table-hover responsive-utilities" style="margin-left:-65px">

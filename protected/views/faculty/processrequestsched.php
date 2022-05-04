@@ -372,72 +372,76 @@ include("config.php");
 
 	function to12Hr($stime) {
 		$strTime = "";
-		if($stime==700) {
-			$strTime = "07:00 AM";
-		} else if($stime==730) {
-			$strTime = "07:30 AM";
-		} else if($stime==800) {
-			$strTime = "08:00 AM";
-		} else if($stime==830) {
-			$strTime = "08:30 AM";
-		} else if($stime==900) {
-			$strTime = "09:00 AM";
-		} else if($stime==930) {
-			$strTime = "09:30 AM";
-		} else if($stime==1000) {
-			$strTime = "10:00 AM";
-		} else if($stime==1030) {
-			$strTime = "10:30 AM";
-		} else if($stime==1100) {
-			$strTime = "11:00 AM";
-		} else if($stime==1130) {
-			$strTime = "11:30 AM";
-		} else if($stime==1200) {
-			$strTime = "12:00 NN";
-		} else if($stime==1230) {
-			$strTime = "12:30 NN";
-		} else if($stime==1300) {
-			$strTime = "01:00 PM";
-		} else if($stime==1330) {
-			$strTime = "01:30 PM";
-		} else if($stime==1400) {
-			$strTime = "02:00 PM";
-		} else if($stime==1430) {
-			$strTime = "02:30 PM";
-		} else if($stime==1500) {
-			$strTime = "03:00 PM";
-		} else if($stime==1530) {
-			$strTime = "03:30 PM";
-		} else if($stime==1600) {
-			$strTime = "04:00 PM";
-		} else if($stime==1630) {
-			$strTime = "04:30 PM";
-		} else if($stime==1700) {
-			$strTime = "05:00 PM";
-		} else if($stime==1730) {
-			$strTime = "05:30 PM";
-		} else if($stime==1800) {
-			$strTime = "06:00 PM";
-		} else if($stime==1830) {
-			$strTime = "06:30 PM";
-		} else if($stime==1900) {
-			$strTime = "07:00 PM";
-		} else if($stime==1930) {
-			$strTime = "07:30 PM";
-		} else if($stime==2000) {
-			$strTime = "08:00 PM";
-		} else if($stime==2030) {
-			$strTime = "08:30 PM";
-		} else if($stime==2100) {
-			$strTime = "09:00 PM";
-		} else if($stime==2130) {
-			$strTime = "09:30 PM";
-		} else if($stime==2200) {
-			$strTime = "10:00 PM";
-		} else if($stime==2230) {
-			$strTime = "10:30 PM";
-		}
-		return $strTime;
+							$dn = "";
+
+							if (strlen($ctime) == 4) {
+								$hour = substr($ctime, 0, 2);
+								$min = substr($ctime, 2, 3);
+
+
+
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
+
+								$strTime = $hour.":".$min." ".$dn;
+							 } else {
+							 	$hour = substr($ctime, 0, 1);
+								$min = substr($ctime, 1, 2);
+
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
+
+								$strTime = $hour.":".$min." ".$dn;
+							 }
+							return $strTime;
 	}
 
 	function to24Hr($ctime) {

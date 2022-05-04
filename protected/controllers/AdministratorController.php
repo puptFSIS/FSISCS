@@ -2621,7 +2621,7 @@ class AdministratorController extends Controller
     	$this->render('PrintSpecificCourse', array('curriculum' => $curriculum, 'course' => $course));
     }
 
-    public function actionPrintCurriculumReport(){
+    public function actionPrintCurriculumReport(){						
     	$curriculum = TblCurriculum::model()->GetAllCurriculum($_GET['year']);
     	$course = TblCourse::model()->GetCourse();
 

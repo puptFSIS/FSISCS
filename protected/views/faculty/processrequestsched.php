@@ -109,14 +109,16 @@ background-repeat:repeat;
 	}
 	if(isset($_POST['timeS2']))
 	{
-		$timeS2 = $_POST['timeS2'];
+		$s2 = explode(":", $_POST['timeS2']);
+		$timeS2 = $s2[0].$s2[1];
 	}else
 	{
 		$timeS2 = "";
 	}
 	if(isset($_POST['timeE2']))
 	{
-		$timeE2 = $_POST['timeE2'];
+		$e2 = explode(":", $_POST['timeE2']);
+		$timeE2 = $e2[0].$e2[1];
 	}else
 	{
 		$timeE2 = "";
@@ -128,9 +130,12 @@ background-repeat:repeat;
 	{
 		$roomName2 = "";
 	}
+
+	$s = explode(":", $_POST['timeS']);
+	$e = explode(":", $_POST['timeE']);
 	$day = $_POST['sday'];
-	$timeS = $_POST['timeS'];
-	$timeE = $_POST['timeE'];
+	$timeS = $s[0].$s[1];
+	$timeE = $e[0].$e[1];
 	$roomName = $_POST['roomName'];
 	$profName = $_POST['profName'];
 	$courseID = $_GET['courseID'];

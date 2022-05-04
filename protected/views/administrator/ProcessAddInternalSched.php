@@ -537,6 +537,18 @@
 </div>
 </section>
 </aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
+</section>
+</aside>
 <!-- End - Page sidebar -->
 </div>
 </section>

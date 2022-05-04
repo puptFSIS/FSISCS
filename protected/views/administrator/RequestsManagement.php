@@ -336,6 +336,18 @@ function getTitle($code,$cID)
 </div>
 </section>
 </aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
+</section>
+</aside>
 <!-- End - Page sidebar -->
 </div>
 </div>
@@ -378,8 +390,8 @@ function getTitle($code,$cID)
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
-<script src='assets/jquery-3.6.0.min.js'></script>
-<script src='assets/sweetalert2.all.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>

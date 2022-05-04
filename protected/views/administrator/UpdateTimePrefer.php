@@ -24,7 +24,7 @@ if(isset($_SESSION['user'])) {
 <meta content='PUP Taguig FSIS' name=description />
 <meta content='vCore Team' name=author />
 <!-- Page title -->
-<title>Add Prefered Schedule</title>
+<title>Update Prefered Schedule</title>
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->

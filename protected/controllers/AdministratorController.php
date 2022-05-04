@@ -1194,7 +1194,28 @@ class AdministratorController extends Controller
 
 	public function actionTimePreferProcess()
 	{
-		$this->render('TimePreferProcessUPDATE');
+		if (isset($_POST['timeS']) || isset($_POST['timeE'])) {
+			$start = $_POST['timeS'];
+			if (empty($_POST['timeS'])) {
+				echo"
+				<script>
+				window.location.replace('index.php?r=administrator/UpdateTimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."&timeID=".$_GET['timeID']."&mes=1');
+				</script>";
+			} else {
+				if (empty($_POST['timeE'])) {
+					echo"
+					<script>
+					window.location.replace('index.php?r=administrator/UpdateTimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."&timeID=".$_GET['timeID']."&mes=1');
+					</script>";
+				} else {
+					$this->render('TimePreferProcessUPDATE');
+				}
+			}
+		
+		} else {
+			$this->render('TimePreferProcessUPDATE');
+		}
+		
 	}
 	public function actionAddTimePrefer()
 	{
@@ -1207,7 +1228,7 @@ class AdministratorController extends Controller
 	}
 	public function actionTimePreferProcessADD()
 	{
-
+		// print_r($_POST);
 		$this->render('TimePreferProcessADD');
 	}
 	public function actiontagSubjectspage()

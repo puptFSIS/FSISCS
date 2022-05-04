@@ -1287,7 +1287,31 @@ class FacultyController extends Controller
 	public function actionTimePreferProcessUPDATE()
 
 	{
-		$this->render('TimePreferProcessUPDATE');
+		print_r($_POST);
+		if (isset($_POST['timeS'])) {
+			$start = $_POST['timeS'];
+			if (empty($_POST['timeS'])) {
+				echo"
+				<script>
+				window.location.replace('index.php?r=faculty/UpdateTimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."&timeID=".$_GET['timeID']."&mes=1');
+				</script>";
+			} else {
+				if (empty($_POST['timeE'])) {
+					echo"
+					<script>
+					window.location.replace('index.php?r=faculty/UpdateTimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."&timeID=".$_GET['timeID']."&mes=1');
+					</script>";
+				} else {
+					$this->render('TimePreferProcessUPDATE');
+				}
+			}
+		
+		} else {
+			$this->render('TimePreferProcessUPDATE');
+		}
+
+	
+		// $this->render('TimePreferProcessUPDATE');
 
 	}
 

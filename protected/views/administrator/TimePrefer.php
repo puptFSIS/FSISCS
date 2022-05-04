@@ -50,7 +50,7 @@ if(isset($_SESSION['user'])) {
 <section class=container-block id=page-body>
 <div class=container-inner>
 <!-- Page title -->
-<?php include("nav.php");?>
+<?php include("headerMenu.php");?>
 
 <!-- End - Page title -->
 <!-- Page body content -->
@@ -126,6 +126,7 @@ if(isset($_SESSION['user'])) {
 <tbody>
 				
 					<?php
+						$profnow = $_SESSION['FCode'];
 						$csem = 0;
 						$sy = "";
 						$timeID = "";
@@ -133,19 +134,8 @@ if(isset($_SESSION['user'])) {
 						{
 							$csem = $_POST['sem'];
 							$sy = $_POST['sy'];
-							$sqlo = "SELECT * from tbl_evaluationfaculty where status = 'Active' order by LName";
-							$queryo = mysqli_query($conn,$sqlo);
-							while($rowo = mysqli_fetch_array($queryo))
-							{
-							if($csem==1) {
-								$strSem = "FIRST SEMESTER";
-							} else if($csem==2) {
-								$strSem = "SECOND SEMESTER";
-							}else if($csem==3) {
-								$strSem = "SUMMER";
-							}
-								$pr = $rowo['FCode'];
-								$sql = "SELECT DISTINCT sprof,sem,schoolYear FROM tbl_timepreferences WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$pr' ";
+		
+								$sql = "SELECT DISTINCT sprof,sem,schoolYear FROM tbl_timepreferences WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$profnow' ";
 								$query = mysqli_query($conn,$sql);
 								while($row = mysqli_fetch_array($query))
 								{
@@ -161,7 +151,7 @@ if(isset($_SESSION['user'])) {
 										<a class="btn btn-mini">'. getname($p) .'</a>
 										</td>
 										<td colspan = "1" align = "right">
-										<a href="index.php?r=administrator/AddTimePrefer&sem='. $csem .'&sy='. $sy .'" class="btn btn-s">ADD</a>
+										<a href="index.php?r=administrator/AddTimePrefer&sem='. $csem .'&sy='. $sy .'" class="btn btn-primary">ADD</a>
 										</td>
 									</tr>
 										<tr>
@@ -203,18 +193,15 @@ if(isset($_SESSION['user'])) {
 								</tbody>
 								</table>';
 								}
-							}
+							
 						}
 						
 						if(isset($_GET['sem']) and isset($_GET['sy'])) {
+							$profnow = $_SESSION['FCode'];
 							$csem = $_GET['sem'];
 							$sy = $_GET['sy'];
-							$sqlo = "SELECT * from tbl_evaluationfaculty where status = 'Active' order by LName";
-							$queryo = mysqli_query($conn,$sqlo);
-							while($rowo = mysqli_fetch_array($queryo))
-							{
-								$pr = $rowo['FCode'];
-								$sql = "SELECT DISTINCT sprof,sem,schoolYear FROM tbl_timepreferences WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$pr'";
+							
+								$sql = "SELECT DISTINCT sprof,sem,schoolYear FROM tbl_timepreferences WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$profnow'";
 								$query = mysqli_query($conn,$sql);
 								while($row = mysqli_fetch_array($query))
 								{
@@ -230,7 +217,7 @@ if(isset($_SESSION['user'])) {
 										<a class="btn btn-mini">'. getname($p) .'</a>
 										</td>
 										<td colspan = "1" align = "right">
-										<a href="index.php?r=administrator/AddTimePrefer&sem='. $csem .'&sy='. $sy .'" class="btn btn-s">ADD</a>
+										<a href="index.php?r=administrator/AddTimePrefer&sem='. $csem .'&sy='. $sy .'" class="btn btn-primary">ADD</a>
 										
 										</td>
 									</tr>
@@ -273,7 +260,7 @@ if(isset($_SESSION['user'])) {
 								</tbody>
 								</table>';
 								}
-							}
+							
 						}
 						
 						function getTitle($code,$cID) 
@@ -378,8 +365,6 @@ include('config.php');
 							if (strlen($ctime) == 4) {
 								$hour = substr($ctime, 0, 2);
 								$min = substr($ctime, 2, 3);
-
-
 
 								if ($hour > 12) {
 									$dn = "PM";

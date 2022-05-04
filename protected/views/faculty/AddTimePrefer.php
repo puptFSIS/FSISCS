@@ -66,6 +66,9 @@ include("config.php");
 	<?php if ($_GET['mes']==3): ?>
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
 	<?php endif;?>
+	<?php if ($_GET['mes']==4): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
 <?php endif;?>
 
 <?php
@@ -290,58 +293,14 @@ include('config.php');
 </p>
 
 <div id="ifYes" style="display: block;">
-	<p style="margin-bottom: 9px;margin-top: 15px;">*Time Start:
-	<select id="Stime"name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-		<?php
-			$start = "";
-			
-			if($start <> "")
-			{
-				echo '<option value="'. $start .'">'. to12Hr($start) .'</option>';
-			}
-			else
-			{
-				echo'
-					<option value="'. $blank .'"></option>
-				';
-			}
-
-			for($ctime=700;$ctime<=2200;) {
-				echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-				if($ctime%100==0) {
-					$ctime = $ctime + 30;
-				} else {
-					$ctime = $ctime + 70;
-				}
-			}
-		?>
-	</select>
+	<p style="margin-bottom: 9px;">*Time Start:
+		<input id="Stime" type="time" name="timeS" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" >
 	</p>
+
+	
 	<p style="margin-bottom: 9px;">*Time End:
-	<select id ="Etime" name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-		<?php
-			$end = "";
-			
-			if($end <> "")
-			{
-				echo '<option value="'. $end .'">'. to12Hr($end) .'</option>';
-			}
-			else
-			{
-				echo'
-					<option value="'. $blank .'"></option>
-				';
-			}
-			for($ctime=700;$ctime<=2200;) {
-				echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-				if($ctime%100==0) {
-					$ctime = $ctime + 30;
-				} else {
-					$ctime = $ctime + 70;
-				}
-			}
-		?>
-	</select>
+
+		<input id ="Etime" type="time" name="timeE"  style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" >
 	</p>
 </div>
 
@@ -466,8 +425,8 @@ include('config.php');
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
-<script src='assets/jquery-3.6.0.min.js'></script>
-<script src='assets/sweetalert2.all.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>
@@ -479,7 +438,9 @@ include('config.php');
 		if ($('#WD').prop('checked')) {
 			
 			document.getElementById("ifYes").style.display = "none";
-			$('select:#Stime,#Etime').attr('disabled',(this.checked))
+			// $('select:#Stime,#Etime').attr('disabled')
+			document.getElementById("Stime").disabled = true;
+			document.getElementById("Etime").disabled = true;
 		} else {
 			document.getElementById("ifYes").style.display = "block";
 		}
@@ -522,6 +483,15 @@ include('config.php');
 			icon:'error',
 			title:'Ooops!',
 			text:'Schedule is Existing',
+			timer: '4000'
+		})
+	}
+
+	if(flashdata==4){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
+			text:'Classes are only from 7:30 AM to 10:30 PM',
 			timer: '4000'
 		})
 	}

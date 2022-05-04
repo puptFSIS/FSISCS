@@ -5,19 +5,23 @@
 	if ((!isset($_POST['sday']) and !isset($_POST['timeS']) and !isset($_POST['timeE']) and !isset($_POST['WholeDay']))) {
 		echo"
 			<script>
-			window.location.replace('index.php?r=administrator/TimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."TimePrefer&mes=1');
+			window.location.replace('index.php?r=administrator/TimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."&timeID=".$_GET['timeID']."&mes=1');
 			</script>";
 			mysqli_close($conn);
 	}
 	
 	if (isset($_POST['timeS'])) {
-		$stimeS = $_POST['timeS'];
+		
+		$s = explode(":", $_POST['timeS']);
+		$stimeS = $s[0].$s[1];
+	
 	} else {
 		$stimeS = "";
 	}
 
 	if (isset($_POST['timeE'])) {
-		$stimeE = $_POST['timeE'];
+		$e = explode(":", $_POST['timeE']);
+		$stimeE = $e[0].$e[1];
 	} else {
 		$stimeE = "";
 	}
@@ -89,6 +93,12 @@
 			window.location.replace('index.php?r=administrator/UpdateTimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."&timeID=". $timeID ."&mes=2');
 			</script>";
 			mysqli_close($conn);
+		} else if($valid == 4){
+			echo"
+			<script>
+			window.location.replace('index.php?r=administrator/UpdateTimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."&timeID=". $timeID ."&mes=3');
+			</script>";
+			mysqli_close($conn);
 		}
 	}
 	
@@ -99,9 +109,17 @@
 		if(is_null($day) OR is_null($timein) or is_null($timeout) or $day == "" or $timein == "" or $timeout == "")
 		{
 			$valid = 1;
-		} else if($timein > $timeout OR $timein == $timeout){
+			
+		} else if($timein > $timeout){
 			$valid = 2;
+			
 
+		} else if($timein == $timeout){
+			$valid = 2;
+			
+		} else if($timein < 730 OR $timeout > 2230){
+				$valid = 4;
+				
 		} else {
 			$valid = 0;
 		}

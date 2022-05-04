@@ -12,13 +12,15 @@
 	}
 	
 	if (isset($_POST['timeS'])) {
-		$stimeS = $_POST['timeS'];
+		$s = explode(":", $_POST['timeS']);
+		$stimeS = $s[0].$s[1];
 	} else {
 		$stimeS = "";
 	}
 
 	if (isset($_POST['timeE'])) {
-		$stimeE = $_POST['timeE'];
+		$e = explode(":", $_POST['timeE']);
+		$stimeE = $e[0].$e[1];
 	} else {
 		$stimeE = "";
 	}
@@ -107,6 +109,12 @@
 				window.location.replace('index.php?r=faculty/AddTimePrefer&mes=3');
 				</script>";
 				mysqli_close($conn);
+		} else if($valid == 4){
+			echo"
+				<script>
+				window.location.replace('index.php?r=faculty/AddTimePrefer&mes=4');
+				</script>";
+				mysqli_close($conn);
 		}
 	}
 	
@@ -119,20 +127,36 @@
 		$sql = "SELECT * FROM tbl_timepreferences WHERE sem='$sem' and schoolYear='$sy' and sprof = '$fcode'";
 		$result = mysqli_query($conn, $sql);
 		$valid = "";
+
+		if(is_null($day) OR is_null($timein) or is_null($timeout) or $day == "" or $timein == "" or $timeout == "")
+		{
+			$valid = 1;
+			
+		} else if($timein > $timeout){
+			$valid = 2;
+			
+
+		} else if($timein == $timeout){
+			$valid = 2;
+			
+		} else if($timein < 730 OR $timeout > 2230){
+				$valid = 4;
+				
+		} else {
+			$valid = 0;
+		}
+
 		while($row=mysqli_fetch_array($result)) 
 		{	
 			
-			if(is_null($day) OR is_null($timein) or is_null($timeout) or $day == "" or $timein == "" or $timeout == "")
-			{
-				$valid = 1;
-			} else if($timein > $timeout OR $timein == $timeout){
-				$valid = 2;
-
-			} else if($day == $row['sday'] AND $timein == $row['stimeS'] AND $timeout == $row['stimeE']){
+			 if($day == $row['sday'] AND $timein == $row['stimeS'] AND $timeout == $row['stimeE']){
 				$valid = 3;
-				break;
+				continue;
 			} else if($day == $row['sday'] AND $row['Whole_Day'] == 1){
 				$valid = 3;
+				break;
+			} else if($timein < 730 OR $timeout > 2230){
+				$valid = 4;
 				break;
 			} else {
 				$valid = 0;

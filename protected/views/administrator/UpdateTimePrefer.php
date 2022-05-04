@@ -33,7 +33,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}</style>
+{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}</style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
@@ -72,6 +72,9 @@ if(isset($_SESSION['user'])) {
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
 	<?php endif;?>
 	<?php if ($_GET['mes']==2): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+	<?php if ($_GET['mes']==3): ?>
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
 	<?php endif;?>
 <?php endif;?>
@@ -237,7 +240,7 @@ if(isset($_SESSION['user'])) {
 ?>
 <p>* Required fields.</p>
 <hr style="margin-top: -10px;" />
-<form id="annc" name="annc" action="index.php?r=administrator/TimePreferProcessUPDATE&sem=<?php echo $_GET['sem']?>&sy=<?php echo $_GET['sy']?>&timeID=<?php echo $timeID;?>" method="post">
+<form id="annc" name="annc" action="index.php?r=administrator/TimePreferProcess&sem=<?php echo $_GET['sem']?>&sy=<?php echo $_GET['sy']?>&timeID=<?php echo $timeID;?>" method="post">
 <p style="margin-bottom: 9px;">*Day:
 <select name="sday" style="width: 470px; margin-top: -28px; margin-left: 15%;">
 	<?php
@@ -305,66 +308,23 @@ if(isset($_SESSION['user'])) {
 	?>
 </select>
 </p>
-<p style="margin-bottom: 12px;">Whole Day
-<?php if (isset($_GET['time'])): ?>
-	<input id ="WD" type="checkbox" name="WholeDay" style="margin-left: 30px;" onchange='act(this)' checked>
-<?php else: ?>
-	<input id ="WD" type="checkbox" name="WholeDay" style="margin-left: 30px;">
-<?php endif ?>
 
-<p style="margin-bottom: 9px;margin-top: 15px;">*Time Start:
-<select id="Stime"name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$start = "";
-		
-		if($start <> "")
-		{
-			echo '<option value="'. $start .'">'. to12Hr($start) .'</option>';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
+<p style="margin-bottom: 12px;">Whole Day:
+<input id ="WD" type="checkbox" name="WholeDay" style="margin-left: 30px;" onclick="yesnoCheck(this)">
+</p>
 
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
-			}
-		}
-	?>
-</select>
-</p>
-<p style="margin-bottom: 9px;">*Time End:
-<select id ="Etime" name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$end = "";
-		
-		if($end <> "")
-		{
-			echo '<option value="'. $end .'">'. to12Hr($end) .'</option>';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
-			}
-		}
-	?>
-</select>
-</p>
+
+<div id="ifYes" style="display: block;">
+	<!-- time picker for time start -->
+	<p style="margin-bottom: 9px;">*Time Start:
+		<input id="Stime" type="time" name="timeS" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" >
+	</p>
+
+	<!-- time picker for time end -->
+	<p style="margin-bottom: 9px;">*Time End:
+		<input id ="Etime" type="time" name="timeE"  style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" >
+	</p>
+</div>
 <!--<p style="margin-bottom: 9px;">*Room:<input name="roomName" type=text style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder='Room Name'/></p>-->
 
 <p style="margin-bottom: 9px;">*Prof. Name:
@@ -473,17 +433,21 @@ if(isset($_SESSION['user'])) {
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
-<script src='http://localhost/FSIS/assets/jquery-3.6.0.min.js'></script>
-<script src='http://localhost/FSIS/assets/sweetalert2.all.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script type="text/javascript">
-	$('#WD').click(function() {
-    	$('select:#Stime,#Etime').attr('disabled',(this.checked))
-	});
-	if ($('#WD').prop('checked')) {
-			$('#Stime').attr('disabled', 'disabled');
-			$('#Etime').attr('disabled', 'disabled');
+	function yesnoCheck(that) {
+		if ($('#WD').prop('checked')) {
+			
+			document.getElementById("ifYes").style.display = "none";
+			// $('select:#Stime,#Etime').attr('disabled')
+			document.getElementById("Stime").disabled = true;
+			document.getElementById("Etime").disabled = true;
+		} else {
+			document.getElementById("ifYes").style.display = "block";
+		}
 	}
 
 	flashdata = $('.flash-data').data('flashdata');
@@ -500,6 +464,15 @@ if(isset($_SESSION['user'])) {
 			icon:'error',
 			title:'Ooops!',
 			text:'Clarify your Preferred Time'
+		})
+	}
+
+	if(flashdata==3){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
+			text:'Classes are only from 7:30 AM to 10:30 PM',
+			timer: '4000'
 		})
 	}
 </script>

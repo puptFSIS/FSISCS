@@ -322,53 +322,16 @@ if(isset($_SESSION['user'])) {
 	?>
 </select>
 </p>
-<p style="margin-bottom: 9px;">*Time Start:
-<!-- <select name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-	// $blank = "";
-	// if(isset($_GET['timeS'])){
-	// 		echo'<option value="'. $_GET['timeS'] .'">'.to12Hr($_GET['timeS']).'</option>';
-	// 	}
-	// echo'
-	// 			<option value="'. $blank .'"></option>
-	// 		';
-	// 	for($ctime=700;$ctime<=2200;) {
-	// 		echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-	// 		if($ctime%100==0) {
-	// 			$ctime = $ctime + 30;
-	// 		} else {
-	// 			$ctime = $ctime + 70;
-	// 		}
-	// 	}
-	?>
-</select> -->
 
+<p style="margin-bottom: 9px;">*Time Start:
 <input type="time" name="timeS" min="07:00" max="22:00" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" required>
 
 </p>
-<p style="margin-bottom: 9px;">*Time End:
-<!-- <select name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-	// $blank = "";
-	// if(isset($_GET['timeE'])){
-	// 		echo'<option value="'. $_GET['timeE'] .'">'.to12Hr($_GET['timeE']).'</option>';
-	// 	}
-	// echo'
-	// 			<option value="'. $blank .'"></option>
-	// 		';
-	// 	for($ctime=700;$ctime<=2200;) {
-	// 		echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-	// 		if($ctime%100==0) {
-	// 			$ctime = $ctime + 30;
-	// 		} else {
-	// 			$ctime = $ctime + 70;
-	// 		}
-	// 	}
-	?>
-</select> -->
 
+<p style="margin-bottom: 9px;">*Time End:
 <input type="time" name="timeE" min="07:00" max="22:00" style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" required>
 </p>
+
 <!--<p style="margin-bottom: 9px;">*Room:<input name="roomName" type=text style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder='Room Name'/></p>-->
 <p style="margin-bottom: 9px;">*Room:
 <select name="roomName" style="width: 470px; margin-top: -28px; margin-left: 15%;">
@@ -529,8 +492,8 @@ if(isset($_SESSION['user'])) {
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
-<script src='assets/jquery-3.6.0.min.js'></script>
-<script src='assets/sweetalert2.all.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>

@@ -54,6 +54,9 @@
 
 <h2 class=underlined-header style="margin-left:-85px;">  <?php echo $_GET['scode'];?></h2>
 <?php
+	$s = explode(":", $_POST['timeS']);
+	$e = explode(":", $_POST['timeE']);
+
 	session_start();
 	$base = Yii::app()->getBaseUrl();
 	$prof = $_GET['prof'];
@@ -62,8 +65,8 @@
 	$schedID2 = $_GET['schedID2'];
 	include("config.php");
 	$day = $_POST['sday'];
-	$timeS = $_POST['timeS'];
-	$timeE = $_POST['timeE'];
+	$timeS = $s[0].$s[1];
+	$timeE = $e[0].$e[1];
 	$roomName = $_POST['roomName'];
 	$profName = $_POST['profName'];
 	$courseID = $_GET['courseID'];
@@ -165,7 +168,7 @@
 										<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">Schedule Type</td>
 									</tr>
 								';
-				$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && courseID = '$courseID' && schoolYear = '$sy' && sem = '$sem' && (Sched_type = 'INTERNAL' or Sched_type = 'OFFICIAL')";
+				$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (".$timeS." BETWEEN stimeS and stimeE or ".$timeE." BETWEEN stimeS and stimeE) && courseID = '$courseID' && schoolYear = '$sy' && sem = '$sem' && (Sched_type = 'INTERNAL' or Sched_type = 'OFFICIAL')";
 				
 				$result = mysqli_query($conn,$sql);
 				while ($row = mysqli_fetch_array($result)) {
@@ -226,7 +229,7 @@
 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">Schedule Type</td>
 								</tr>
 							';
-			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && sprof = '$profName' && schoolYear = '$sy' && sem = '$sem' && (Sched_type = 'INTERNAL' OR Sched_type = 'OFFICIAL')";
+			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (".$timeS." BETWEEN stimeS and stimeE or ".$timeE." BETWEEN stimeS and stimeE) && sprof = '$profName' && schoolYear = '$sy' && sem = '$sem' && (Sched_type = 'INTERNAL' OR Sched_type = 'OFFICIAL')";
 			
 			$result = mysqli_query($conn,$sql);
 			while ($row = mysqli_fetch_array($result)) {
@@ -289,7 +292,7 @@
 									<td style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;"">Schedule Type</td>
 								</tr>
 							';
-			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (stimeS BETWEEN ".$timeS." and ".$timeE." or stimeE BETWEEN ".$timeS." and ".$timeE.") && sroom = '$roomName' && schoolYear = '$sy' && sem = '$sem' && (Sched_type = 'INTERNAL' OR Sched_type = 'OFFICIAL')";
+			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (".$timeS." BETWEEN stimeS and stimeE or ".$timeE." BETWEEN stimeS and stimeE) && sroom = '$roomName' && schoolYear = '$sy' && sem = '$sem' && (Sched_type = 'INTERNAL' OR Sched_type = 'OFFICIAL')";
 			// echo $sql;
 			$result = mysqli_query($conn,$sql);
 			while ($row = mysqli_fetch_array($result)) {
@@ -447,11 +450,11 @@
 	{
 		include("config.php");
 		if ($schedID2=="") {
-			$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and schedID != ".$schedID1." and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sroom = '".$roomName."' and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
+			$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and schedID != ".$schedID1." and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sroom = '".$roomName."' and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
 			$result = mysqli_query($conn,$sql);
 			$count=mysqli_num_rows($result);
 		} else {
-			$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and (schedID != ".$schedID1." AND schedID != ".$schedID2.") and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sroom = '".$roomName."' and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
+			$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE)and (schedID != ".$schedID1." AND schedID != ".$schedID2.") and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sroom = '".$roomName."' and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
 			$result = mysqli_query($conn,$sql);
 			$count=mysqli_num_rows($result);
 		}
@@ -464,11 +467,11 @@
 	{
 		include("config.php");
 		if ($schedID2=="") {
-			$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and schedID != ".$schedID1." and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sprof = '".$profName."'and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
+			$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and schedID != ".$schedID1." and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sprof = '".$profName."'and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
 			$result = mysqli_query($conn,$sql);
 			$count=mysqli_num_rows($result);
 		} else {
-			$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and (schedID != ".$schedID1." AND schedID != ".$schedID2.") and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sprof = '".$profName."'and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
+			$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and (schedID != ".$schedID1." AND schedID != ".$schedID2.") and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and sprof = '".$profName."'and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
 			$result = mysqli_query($conn,$sql);
 			$count=mysqli_num_rows($result);
 		}
@@ -481,11 +484,11 @@
 	function checkCourseSched($day, $timein, $timeout, $sem, $sy, $courseID, $schedID1, $schedID2){
 		include("config.php");
 		if ($schedID2=="") {
-			$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and schedID != ".$schedID1." and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and courseID = '".$courseID."'and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
+			$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and schedID != ".$schedID1." and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and courseID = '".$courseID."'and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
 			$result = mysqli_query($conn,$sql);
 			$count=mysqli_num_rows($result);
 		} else {
-			$sql = "SELECT * FROM tbl_schedule WHERE (stimeS BETWEEN ".$timein." and ".$timeout." or stimeE BETWEEN ".$timein." and ".$timeout.") and (schedID != ".$schedID1." AND schedID != ".$schedID2.") and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and courseID = '".$courseID."'and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
+			$sql = "SELECT * FROM tbl_schedule WHERE (".$timein." BETWEEN stimeS and stimeE or ".$timeout." BETWEEN stimeS and stimeE) and (schedID != ".$schedID1." AND schedID != ".$schedID2.") and sday='".$day."' and sem=".$sem." and schoolYear='".$sy."' and courseID = '".$courseID."'and (Sched_type = 'OFFICIAL' OR Sched_type = 'INTERNAL')";
 			$result = mysqli_query($conn,$sql);
 			$count=mysqli_num_rows($result);
 		}

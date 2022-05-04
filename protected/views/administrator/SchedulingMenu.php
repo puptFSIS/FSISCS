@@ -29,9 +29,9 @@ $count = mysqli_num_rows($result);
      <a href='index.php?r=administrator/SchedulingPage' title="Manages the schedules of professors and classes" >Official Schedule Management</a>
      </li>
 
-     <li style = "padding-left: 40px;">
+     <!-- <li style = "padding-left: 40px;">
      <a href='index.php?r=administrator/PreScheduling' title="Manages schedules prior to the final schedules">Pre-Scheduling</a>
-     </li>
+     </li> -->
 
      <li style = "padding-left: 40px;">
      <!-- <span class="need-confirm-number" style="position:absolute; top: -5px; left: 148px; height: 15px;padding: 2px;display: inline-block; background:#ff0000; color:#fff; border-radius: 5px;"><b><?= $count?></b></span> -->

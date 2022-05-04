@@ -315,41 +315,13 @@ if(isset($_SESSION['user'])) {
 	?>
 </select>
 </p>
+
 <p style="margin-bottom: 9px;">*Time Start:
-<select name="timeS" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-	$blank = "";
-	echo'
-				<option value="'. $blank .'"></option>
-			';
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
-			}
-		}
-	?>
-</select>
+<input type="time" name="timeS" min="07:00" max="22:00" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" required>
 </p>
+
 <p style="margin-bottom: 9px;">*Time End:
-<select name="timeE" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-	$blank = "";
-	echo'
-				<option value="'. $blank .'"></option>
-			';
-		for($ctime=700;$ctime<=2200;) {
-			echo '<option value="'. $ctime .'">'. to12Hr($ctime) .'</option>';
-			if($ctime%100==0) {
-				$ctime = $ctime + 30;
-			} else {
-				$ctime = $ctime + 70;
-			}
-		}
-	?>
-</select>
+<input type="time" name="timeE" min="07:00" max="22:00" style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" required>
 </p>
 <!--<p style="margin-bottom: 9px;">*Room:<input name="roomName" type=text style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder='Room Name'/></p>-->
 <p style="margin-bottom: 9px;">*Room:
@@ -430,6 +402,18 @@ function getName($fcode)
 </div>
 </section>
 </aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
+</section>
+</aside>
 <!-- End - Page sidebar -->
 </div>
 </section>
@@ -474,8 +458,8 @@ function getName($fcode)
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
 
 <!-- Scripts -->
-<script src='http://localhost/FSIS/assets/jquery-3.6.0.min.js'></script>
-<script src='http://localhost/FSIS/assets/sweetalert2.all.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>

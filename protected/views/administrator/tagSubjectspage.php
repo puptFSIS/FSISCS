@@ -59,6 +59,42 @@ background-repeat:repeat;
 }
 </style>
 
+<style type="text/css">
+     .page-content{
+
+    }
+    #st-box 
+    {
+        padding: 1px 2px;
+        display: inline-block;
+        justify-content: center;
+        left: 250px;
+        width:250px;
+        height:70px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background: #fff;
+        position: relative;
+        
+    }
+
+    #rd-box 
+    {
+        padding: 1px 2px;
+        display: inline-block;
+        justify-content: center;
+        left: 250px;
+        width:250px;
+        height:70px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background: #fff;
+        position: relative;
+        
+
+    } 
+</style>
+
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
@@ -109,6 +145,34 @@ background-repeat:repeat;
 <?php endif ?>
 
 <section>
+<div id="st-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <h3><center><?php echo $totUnits?></center></h3>
+
+        <center><p>Maximum Units Allowed</p></center>
+      </div>
+      <a href="#" class="small-box-footer">
+       
+      </a>
+</div>
+</div>
+
+<div id="rd-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <center><h3 id="result"><?php echo $currentTotalUnits?></h3></center>
+        
+
+        <center><p>Total Units Selected</p></center>
+      </div>
+     
+</div>
+</div>
+
+<br />
 <form method="post" action="index.php?r=administrator/TagSubjectADD">
 <?php if (isset($_GET['sem'])): ?>
 	<input type="hidden" name="sem" value="<?php echo $_GET['sem']?>">
@@ -189,8 +253,8 @@ background-repeat:repeat;
 <?php endif ?>
 
 <center><input id = "sub" type="submit" name="Submit" ></center>
-<p style="position: absolute; top: 185px; left: 1000px">Maximum Units Allowed: <?php echo $totUnits?></p>
-<p id="result" style="position: absolute; top: 185px; left: 1240px">Total Units Selected: <?php echo $currentTotalUnits?></p>
+<!-- <p style="position: absolute; top: 185px; left: 1000px">Maximum Units Allowed: <?php echo $totUnits?></p>
+<p id="result" style="position: absolute; top: 185px; left: 1240px">Total Units Selected: <?php echo $currentTotalUnits?></p> -->
 </form>
 
 <?php
@@ -363,7 +427,7 @@ background-repeat:repeat;
         
     	}
 
-	 	$('#result').html( 'Total Units: ' + total + '');
+	 	$('#result').html(total);
 		
 	  
   	});

@@ -61,6 +61,42 @@ width: 300px;
 }
 </style>
 
+<style type="text/css">
+     .page-content{
+
+    }
+    #st-box 
+    {
+        padding: 1px 2px;
+        display: inline-block;
+        justify-content: center;
+        left: 250px;
+        width:250px;
+        height:70px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background: #fff;
+        position: relative;
+        
+    }
+
+    #rd-box 
+    {
+        padding: 1px 2px;
+        display: inline-block;
+        justify-content: center;
+        left: 250px;
+        width:250px;
+        height:70px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background: #fff;
+        position: relative;
+        
+
+    } 
+</style>
+
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
@@ -97,6 +133,35 @@ width: 300px;
 <?php if ($_GET['sem']==2): ?>
 	<h2 class="underlined-header">Tag Subjects for A.Y. <?php echo $_GET['sy']?> 2nd Semester</h2>
 <?php endif ?>
+
+<div id="st-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <h3><center><?php echo $remain = $totUnits - $currentTotalUnits?></center></h3>
+
+        <center><p>Remaining Units Allowed</p></center>
+      </div>
+      <a href="#" class="small-box-footer">
+       
+      </a>
+</div>
+</div>
+
+<div id="rd-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <center><h3 id="result">0</h3></center>
+        
+
+        <center><p>Total Units Selected</p></center>
+      </div>
+     
+</div>
+</div>
+<br>
+<br>
 
 <section>
 <form id="SubjForm" method="post" action="index.php?r=faculty/TagSubjectADD">
@@ -172,8 +237,8 @@ width: 300px;
 <?php endif ?>
 
 <center><input id = "sub" type="submit" name="Submit"></center>
-<p style="position: absolute; top: 175px; left: 1000px">Maximum Units Allowed: <?php echo $totUnits?></p>
-<p id="result" style="position: absolute; top: 175px; left: 1240px">Total Units Selected: <?php echo $currentTotalUnits?></p>
+<!-- <p style="position: absolute; top: 175px; left: 1000px">Maximum Units Allowed: <?php echo $totUnits?></p>
+<p id="result" style="position: absolute; top: 175px; left: 1240px">Total Units Selected: <?php echo $currentTotalUnits?></p> -->
 </form>
 <?php if (isset($_GET['mes'])) : ?>
 	<?php if ($_GET['mes']==1): ?>
@@ -254,7 +319,7 @@ width: 300px;
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 <script>
 	var total = 0;
-	var limit = <?php echo $totUnits?>;
+	var limit = <?php echo $remain?>;
  	var condLimit = parseInt(limit);
  	var cond = condLimit + 1;
 
@@ -342,7 +407,7 @@ width: 300px;
         
     	}
 
-	 	$('#result').html( 'Total Units: ' + total + '');
+	 	$('#result').html(total);
 		
 	  
   	});

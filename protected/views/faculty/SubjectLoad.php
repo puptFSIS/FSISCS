@@ -231,7 +231,11 @@ background-repeat:repeat;
 			<td style="text-align: center;"><?php echo $row['units'] ?></td>
 			<td style="text-align: center;"><?php echo getCourse($row['courseID']) ?></td>
 			<td style="text-align: center;"><?php echo $row['sday'] ?></td>
-			<td style="text-align: center;"><?php echo $row['stimeS'] ?></td>
+			<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+				<td style="text-align: center;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+				<?php else: ?>
+					<td style="text-align: center;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+			<?php endif ?>
 			<td style="text-align: center;"><?php echo $row['sroom'] ?></td>
 			<td><a href="index.php?r=faculty/viewfacultyrequest&CurrID=<?php echo $row['currID'] ?>&sprof=<?php echo $row['sprof']?>&schedID=<?php echo $row['schedID']?>&schoolyear=<?php echo $row['schoolYear']?>&courseID=<?php echo $row['courseID'] ?>&cyear=<?php echo $row['cyear'] ?>&scode=<?php echo $row['scode'] ?>&sem=<?php echo $row['sem'] ?> &sy=<?php echo $_POST['sy'] ?>&sec=<?php echo $row['csection'] ?>&title=<?php echo $row['stitle']?>&units=<?php echo $row['units']?>&lec=<?php echo $row['lec']?>&lab=<?php echo $row['lab']?>" class="btn btn-mini btn-primary btn-block" >REQUEST</a>
 		</tr>
@@ -273,7 +277,11 @@ background-repeat:repeat;
 					<td style="text-align: center;"><?php echo $row['units'] ?></td>
 					<td style="text-align: center;"><?php echo getCourse($row['courseID']) ?></td>
 					<td style="text-align: center;"><?php echo $row['sday'] ?></td>
-					<td style="text-align: center;"><?php echo $row['stimeS'] ?></td>
+					<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+				<td style="text-align: center;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+				<?php else: ?>
+					<td style="text-align: center;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+			<?php endif ?>
 					<td style="text-align: center;"><?php echo $row['sroom'] ?></td>
 					<td><a href="index.php?r=faculty/viewfacultyrequest&CurrID=<?php echo $row['currID'] ?>&sprof=<?php echo $row['sprof']?>&schedID=<?php echo $row['schedID']?>&schoolyear=<?php echo $row['schoolYear']?>&courseID=<?php echo $row['courseID'] ?>&cyear=<?php echo $row['cyear'] ?>&scode=<?php echo $row['scode'] ?>&sem=<?php echo $row['sem'] ?> &sy=<?php echo $_POST['sy'] ?>&sec=<?php echo $row['csection'] ?>&title=<?php echo $row['stitle']?>&units=<?php echo $row['units']?>&lec=<?php echo $row['lec']?>&lab=<?php echo $row['lab']?>" class="btn btn-mini btn-primary btn-block" >REQUEST</a>
 				</tr>

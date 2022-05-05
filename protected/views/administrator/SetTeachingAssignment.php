@@ -121,6 +121,42 @@ background-repeat:repeat;
 }
 </style>
 
+<style type="text/css">
+     .page-content{
+
+    }
+    #st-box 
+    {
+        padding: 1px 2px;
+        display: inline-block;
+        justify-content: center;
+        left: 250px;
+        width:250px;
+        height:70px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background: #fff;
+        position: relative;
+        
+    }
+
+    #rd-box 
+    {
+        padding: 1px 2px;
+        display: inline-block;
+        justify-content: center;
+        left: 250px;
+        width:250px;
+        height:70px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background: #fff;
+        position: relative;
+        
+
+    } 
+</style>
+
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
@@ -151,6 +187,8 @@ background-repeat:repeat;
 <div id=page-content>
 <!-- Video - HTML5 -->
 <section>
+
+
 <?php if (isset($_GET['mes'])) : ?>
 	<?php if ($_GET['mes']==1): ?>
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
@@ -181,18 +219,71 @@ background-repeat:repeat;
 <?php endif ?>
 
 <br>
-<p id="result" style="position: absolute; top: 160px; left: 1240px">Total Units Selected: 0</p>
+<div id="rd-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <center><h3 id="result">0 Units</h3></center>
+        
+
+        <center><p>Total Units Selected
+        				(Lecture + Lab)</p></center>
+      </div>
+     
+</div>
+</div>
 <?php if ($load_type == "Regular"): ?>
-	<p style="position: absolute; top: 160px; left: 940px">Maximum Units Allowed: <?php echo $Regular?></p>
+	<!-- <p style="position: absolute; top: 160px; left: 940px">Maximum Units Allowed: <?php //echo $Regular?></p> -->
+		<div id="st-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <h3><center><?php $total = $Regular - $_GET['totalUnits']; echo $total?></center></h3>
+
+        <center><p>Maximum Units Allowed</p></center>
+      </div>
+      <a href="#" class="small-box-footer">
+       
+      </a>
+</div>
+</div>
 <?php endif ?>
 
 <?php if ($load_type == "PartTime"): ?>
-	<p style="position: absolute; top: 160px; left: 940px">Maximum Units Allowed: <?php echo $PartTime?></p>
+	<!-- <p style="position: absolute; top: 160px; left: 940px">Maximum Units Allowed: <?php //echo $PartTime?></p> -->
+		<div id="st-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <h3><center><?php $total = $PartTime - $_GET['totalUnits']; echo $total?></center></h3>
+
+        <center><p>Maximum Units Allowed</p></center>
+      </div>
+      <a href="#" class="small-box-footer">
+       
+      </a>
+</div>
+</div>
 <?php endif ?>
 
 <?php if ($load_type == "TS"): ?>
-	<p style="position: absolute; top: 160px; left: 940px">Maximum Units Allowed: <?php echo $TS?></p>
+	<!-- <p style="position: absolute; top: 160px; left: 940px">Maximum Units Allowed: <?php //echo $TS?></p> -->
+		<div id="st-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <h3><center><?php $total = $TS - $_GET['totalUnits']; echo $total?></center></h3>
+
+        <center><p>Maximum Units Allowed</p></center>
+      </div>
+      <a href="#" class="small-box-footer">
+       
+      </a>
+</div>
+</div>
 <?php endif ?>
+<br/>
+<br/>
 <form action="index.php?r=administrator/ProcessSetTeachingAssignment" method="POST">
 <table id="SubjTable" class="table table-bordered table-striped table-hover" style="width:100%; ">
 	<thead>
@@ -225,7 +316,11 @@ background-repeat:repeat;
 						<td style="text-align: center;"><?php echo $row['units'] ?></td>
 						<td style="text-align: center;"><?php echo getCourse($row['courseID']) ?></td>
 						<td style="text-align: center;"><?php echo $row['sday'] ?></td>
-						<td style="text-align: center;"><?php echo $row['stimeS'] ?></td>
+						<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+						<td style="text-align: center;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+						<?php else: ?>
+							<td style="text-align: center;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+					<?php endif ?>
 						<td style="text-align: center;"><?php echo $row['sroom'] ?></td>
 						<input type="hidden" name="sched_id[]" value="<?php echo $row['schedID'] ?>">
 						<input type="hidden" name="load_type" value="<?php echo $load_type ?>">
@@ -280,6 +375,8 @@ background-repeat:repeat;
             <input type="hidden" name="prof" value="<?php echo $prof?>">
             <input type="hidden" name="sched_id" value="<?php echo $row['schedID']?>">
             <input type="hidden" name="load_type" value="<?php echo $load_type ?>">
+            <input type="hidden" name="totalUnits" value="<?php echo $_GET['totalUnits'] ?>">
+
 
         </div>
 
@@ -741,7 +838,7 @@ include("config.php");
         
     	}
     	// alert(cond);
-	 	$('#result').html( 'Total Units: ' + total + '');
+	 	$('#result').html(total+' Units');
 		
 	  
   	});

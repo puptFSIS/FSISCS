@@ -175,7 +175,7 @@ foreach ($subject as $row){
 			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">UNITS</th>
 			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">COURSE</th>
 			<th style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">DAY</th>
-			<th style="background-color: maroon; color: white; font-weight: bold; width: 50px; text-align: center;">TIME</th>
+			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">TIME</th>
 			<th style="background-color: maroon; color: white; font-weight: bold; width: 100px; text-align: center;">ROOM</th>
 			
 			
@@ -193,7 +193,11 @@ foreach ($subject as $row){
 					<td style="text-align: center;"><?php echo $row['units'] ?></td>
 					<td style="text-align: center;"><?php echo getCourse($row['courseID']) ?></td>
 					<td style="text-align: center;"><?php echo $row['sday'] ?></td>
-					<td style="text-align: center;"><?php echo $row['stimeS'] ?></td>
+					<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+						<td style="text-align: center;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+						<?php else: ?>
+							<td style="text-align: center;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+					<?php endif ?>
 					<td style="text-align: center;"><?php echo $row['sroom'] ?></td>
 					
 					
@@ -203,6 +207,8 @@ foreach ($subject as $row){
 		<?php endforeach ?>
 	</tbody>
 </table>
+
+<p><a href="index.php?r=administrator/PrintFacultyAssign&sem=<?php echo $_GET['sem']?>&sy=<?php echo $_GET['sy']?>&prof=<?php echo $_GET['prof'] ?>" class = "btn btn-primary" target ="_blank">Print</a></p>
 
 </section>
 <!-- End - Page body content -->
@@ -253,7 +259,11 @@ foreach ($subject as $row){
 					<td style="text-align: center; background-color: white;"><?php echo $row['units'] ?></td>
 					<td style="text-align: center; background-color: white;"><?php echo getCourse($row['courseID']) ?></td>
 					<td style="text-align: center; background-color: white;"><?php echo $row['sday'] ?></td>
-					<td style="text-align: center; background-color: white;"><?php echo $row['stimeS'] ?></td>
+					<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+						<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+						<?php else: ?>
+							<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+					<?php endif ?>
 					<td style="text-align: center; background-color: white;"><?php echo $row['sroom'] ?></td>
 					<td style="text-align: center; background-color:white;"><a href="index.php?r=administrator/SetLoadToNull&sem=<?php echo $sem ?>&sy=<?php echo $sy ?>&prof=<?php echo $prof ?>&sched_id=<?php echo $row['schedID'] ?>"><button>DELETE</button></a></td>
 					
@@ -269,8 +279,17 @@ foreach ($subject as $row){
 		<br>
 		<br>
 	<?php else: ?>
-		<?php $totUnits = 0 ?>
-		<h4 class="underlined-header">Regular Load <a href="index.php?r=administrator/SetTeachingAssignment&mode=Regular&sem=<?php echo $sem?>&sy=<?php echo $sy?>&prof=<?php echo $prof?>" style="color: white;"><button>SET</button></a></h4>
+		<?php $totUnits = 0;$totalUnits=0; ?>
+		<?php foreach ($subject as $row){
+				if ($row['load_type']==1 AND $row['load_type'] != NULL){
+					$totalUnits += $row['lec'] + $row['lab'];
+				}
+
+				// $totalUnits = $totUnits;
+				// $totUnits = 0;
+			} 
+		?>
+		<h4 class="underlined-header">Regular Load <a href="index.php?r=administrator/SetTeachingAssignment&mode=Regular&sem=<?php echo $sem?>&sy=<?php echo $sy?>&prof=<?php echo $prof?>&totalUnits=<?php echo $totalUnits ?>" style="color: white;"><button>SET</button></a></h4>
 		<table class=round-3 style="width:100%;">
 			<thead>
 				<tr>
@@ -290,7 +309,7 @@ foreach ($subject as $row){
 			
 			<tbody>
 			<?php foreach ($subject as $row): ?>
-				<?php if ($row['load_type']==1): ?>
+				<?php if ($row['load_type']==1 AND $row['load_type'] != NULL): ?>
 					<tr>
 					<td style="text-align: center; background-color: white;"><?php echo $row['scode'] ?></td>
 					<td style="text-align: left; background-color: white;"><?php echo $row['stitle'] ?></td>
@@ -299,7 +318,11 @@ foreach ($subject as $row){
 					<td style="text-align: center; background-color: white;"><?php echo $row['units'] ?></td>
 					<td style="text-align: center; background-color: white;"><?php echo getCourse($row['courseID']) ?></td>
 					<td style="text-align: center; background-color: white;"><?php echo $row['sday'] ?></td>
-					<td style="text-align: center; background-color: white;"><?php echo $row['stimeS'] ?></td>
+					<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+						<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+						<?php else: ?>
+							<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+					<?php endif ?>
 					<td style="text-align: center; background-color: white;"><?php echo $row['sroom'] ?></td>
 					<td style="text-align: center; background-color:white;"><a href="index.php?r=administrator/SetLoadToNull&sem=<?php echo $sem ?>&sy=<?php echo $sy ?>&prof=<?php echo $prof ?>&sched_id=<?php echo $row['schedID'] ?>"><button>DELETE</button></a></td>
 					
@@ -357,7 +380,11 @@ foreach ($subject as $row){
 			<td style="text-align: center; background-color: white;"><?php echo $row['units'] ?></td>
 			<td style="text-align: center; background-color: white;"><?php echo getCourse($row['courseID']) ?></td>
 			<td style="text-align: center; background-color: white;"><?php echo $row['sday'] ?></td>
-			<td style="text-align: center; background-color: white;"><?php echo $row['stimeS'] ?></td>
+			<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+				<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+				<?php else: ?>
+					<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+			<?php endif ?>
 			<td style="text-align: center; background-color: white;"><?php echo $row['sroom'] ?></td>
 			<td style="text-align: center; background-color:white;"><a href="index.php?r=administrator/SetLoadToNull&sem=<?php echo $sem ?>&sy=<?php echo $sy ?>&prof=<?php echo $prof ?>&sched_id=<?php echo $row['schedID'] ?>"><button>DELETE</button></a></td>
 			
@@ -374,8 +401,17 @@ foreach ($subject as $row){
 <br>
 
 	<?php else: ?>
-	<?php $totUnits = 0 ?>
-		<h4 class="underlined-header">Part Time Load <a href="index.php?r=administrator/SetTeachingAssignment&mode=PartTime&sem=<?php echo $sem?>&sy=<?php echo $sy?>&prof=<?php echo $prof?>" style="color: white;"><button>SET</button></a></h4>
+	<?php $totUnits = 0; $totalUnits=0;?>
+			<?php foreach ($subject as $row){
+				if ($row['load_type']==0 AND $row['load_type'] != NULL){
+					$totalUnits += $row['lec'] + $row['lab'];
+				}
+
+				// $totalUnits = $totUnits;
+				// $totUnits = 0;
+			} 
+			?>
+		<h4 class="underlined-header">Part Time Load <a href="index.php?r=administrator/SetTeachingAssignment&mode=PartTime&sem=<?php echo $sem?>&sy=<?php echo $sy?>&prof=<?php echo $prof?>&totalUnits=<?php echo $totalUnits ?>" style="color: white;"><button>SET</button></a></h4>
 		<table class=round-3 style="width:100%;">
 			<thead>
 				<tr>
@@ -404,7 +440,11 @@ foreach ($subject as $row){
 					<td style="text-align: center; background-color: white;"><?php echo $row['units'] ?></td>
 					<td style="text-align: center; background-color: white;"><?php echo getCourse($row['courseID']) ?></td>
 					<td style="text-align: center; background-color: white;"><?php echo $row['sday'] ?></td>
-					<td style="text-align: center; background-color: white;"><?php echo $row['stimeS'] ?></td>
+					<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+						<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+						<?php else: ?>
+							<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+					<?php endif ?>
 					<td style="text-align: center; background-color: white;"><?php echo $row['sroom'] ?></td>
 					<td style="text-align: center; background-color:white;"><a href="index.php?r=administrator/SetLoadToNull&sem=<?php echo $sem ?>&sy=<?php echo $sy ?>&prof=<?php echo $prof ?>&sched_id=<?php echo $row['schedID'] ?>"><button>DELETE</button></a></td>
 					
@@ -460,7 +500,11 @@ foreach ($subject as $row){
 						<td style="text-align: center; background-color: white;"><?php echo $row['units'] ?></td>
 						<td style="text-align: center; background-color: white;"><?php echo getCourse($row['courseID']) ?></td>
 						<td style="text-align: center; background-color: white;"><?php echo $row['sday'] ?></td>
-						<td style="text-align: center; background-color: white;"><?php echo $row['stimeS'] ?></td>
+						<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+							<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+							<?php else: ?>
+								<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+						<?php endif ?>
 						<td style="text-align: center; background-color: white;"><?php echo $row['sroom'] ?></td>
 						<td style="text-align: center; background-color:white;"><a href="index.php?r=administrator/SetLoadToNull&sem=<?php echo $sem ?>&sy=<?php echo $sy ?>&prof=<?php echo $prof ?>&sched_id=<?php echo $row['schedID'] ?>"><button>DELETE</button></a></td>
 						
@@ -473,8 +517,19 @@ foreach ($subject as $row){
 	</table>
 	<p><center><?php echo "Total Units:".$totUnits." Units"; ?></center></p>
 <?php else: ?>
-	<?php $totUnits = 0; ?>
-	<h4 class="underlined-header">Temporary Substitution <a href="index.php?r=administrator/SetTeachingAssignment&mode=TS&sem=<?php echo $sem?>&sy=<?php echo $sy?>&prof=<?php echo $prof?>" style="color: white;"><button>SET</button></a></h4>
+	<?php $totUnits = 0; $totalUnits=0;?>
+	<?php foreach ($subject as $row){
+				if ($row['load_type']==2 AND $row['load_type'] != NULL){
+					$totalUnits += $row['lec'] + $row['lab'];
+
+				}
+
+				// $totalUnits = $totUnits;
+
+				// $totUnits = 0;
+			} 
+			?>
+	<h4 class="underlined-header">Temporary Substitution <a href="index.php?r=administrator/SetTeachingAssignment&mode=TS&sem=<?php echo $sem?>&sy=<?php echo $sy?>&prof=<?php echo $prof?>&totalUnits=<?php echo $totalUnits ?>" style="color: white;"><button>SET</button></a></h4>
 	<table class=round-3 style="width:100%;">
 		<thead>
 			<tr>
@@ -494,7 +549,7 @@ foreach ($subject as $row){
 		
 		<tbody>
 			<?php foreach ($subject as $row): ?>
-				<?php if ($row['load_type']==2): ?>
+				<?php if ($row['load_type']==2 AND $row['load_type'] != NULL): ?>
 					<tr>
 						<td style="text-align: center; background-color: white;"><?php echo $row['scode'] ?></td>
 						<td style="text-align: left; background-color: white;"><?php echo $row['stitle'] ?></td>
@@ -503,7 +558,11 @@ foreach ($subject as $row){
 						<td style="text-align: center; background-color: white;"><?php echo $row['units'] ?></td>
 						<td style="text-align: center; background-color: white;"><?php echo getCourse($row['courseID']) ?></td>
 						<td style="text-align: center; background-color: white;"><?php echo $row['sday'] ?></td>
-						<td style="text-align: center; background-color: white;"><?php echo $row['stimeS'] ?></td>
+						<?php if ($row['stimeS2']=="" || $row['stimeS2'] == NULL): ?>
+							<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE']) ?></td>
+							<?php else: ?>
+								<td style="text-align: center;background-color: white;"><?php echo to12Hr($row['stimeS'])."-".to12Hr($row['stimeE'])."/".to12Hr($row['stimeS2'])."-".to12Hr($row['stimeE2']) ?></td>
+						<?php endif ?>
 						<td style="text-align: center; background-color: white;"><?php echo $row['sroom'] ?></td>
 						<td style="text-align: center; background-color:white;"><a href="index.php?r=administrator/SetLoadToNull&sem=<?php echo $sem ?>&sy=<?php echo $sy ?>&prof=<?php echo $prof ?>&sched_id=<?php echo $row['schedID'] ?>"><button>DELETE</button></a></td>
 						

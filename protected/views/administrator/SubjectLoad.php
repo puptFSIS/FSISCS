@@ -210,7 +210,7 @@ background-repeat:repeat;
 <section>
 <?php if ((isset($_POST['sem']) and isset($_POST['sy'])) OR (isset($_GET['sem']) and isset($_GET['sy']))): ?>
 <?php if (!empty($load)): ?>
-	<p><a href="index.php?r=administrator/PrintFacultyAssign&sem=<?php echo $_POST['sem']?>&sy=<?php echo $_POST['sy']?>" class = "btn btn-primary" target ="_blank">Print</a></p>
+	<p><a href="index.php?r=administrator/PrintPersonalFacultyAssign&sem=<?php echo $_POST['sem']?>&sy=<?php echo $_POST['sy']?>" class = "btn btn-primary" target ="_blank">Print</a></p>
 <?php endif ?>
 
 

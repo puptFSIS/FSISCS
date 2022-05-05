@@ -2388,8 +2388,22 @@ class AdministratorController extends Controller
 
     // }
 
-    public function actionPrintFacultyAssign(){
+    public function actionPrintPersonalFacultyAssign(){
     	$fcode = Yii::app()->session['fcode'];
+    	$sem = $_GET['sem'];
+    	$sy = $_GET['sy'];
+    	$TeachingLoad = TblSchedule::model()->TakeSubjectLoad($fcode, $sem, $sy);
+    	$courses = TblCourse::model()->GetCourse();
+    	$profInfo = TblEvaluationfaculty::model()->CheckSpecProf($fcode);
+
+    	// echo "<pre>";
+    	// print_r($profInfo);
+    	// echo "</pre>";
+    	$this->render('PrintFacultyAssign',array('TeachingLoad'=>$TeachingLoad, 'profInfo'=>$profInfo, 'courses'=>$courses, 'sem' => $sem, 'sy' => $sy));
+    }
+
+    public function actionPrintFacultyAssign(){
+    	$fcode = $_GET['prof'];
     	$sem = $_GET['sem'];
     	$sy = $_GET['sy'];
     	$TeachingLoad = TblSchedule::model()->TakeSubjectLoad($fcode, $sem, $sy);
@@ -2885,7 +2899,7 @@ class AdministratorController extends Controller
     	->query();
 
     	// print_r($subject->errors);
-    	header("location: index.php?r=administrator/SetTeachingAssignment&sem=".$sem."&sy=".$sy."&prof=".$prof."&mes=1&mode=".$load_type."");
+    	header("location: index.php?r=administrator/SetTeachingAssignment&sem=".$sem."&sy=".$sy."&prof=".$prof."&mes=1&mode=".$load_type."&totalUnits=".$_POST['totalUnits']."");
 
     }
 

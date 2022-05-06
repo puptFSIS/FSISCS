@@ -20,7 +20,7 @@
 .select
 {
    /*max-width: 10px;*/
-   width: 100px;
+   /*width: 100px;*/
 
 }
 

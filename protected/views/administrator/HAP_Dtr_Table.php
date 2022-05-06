@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<div>
 
 
 <style>
@@ -8,17 +9,17 @@
 	
 	 .table-container
 	{
-		max-width: 100%;
+		/*max-width: 100%;*/
 	} 
 	.table-width
 	{
-		width: 105%;
+		/*width: 105%;*/
 	}
 
 
 </style>
 
-
+<div> 
 <!-- Video - HTML5 -->
 <p style="font-style: italic;">
 <!-- On the action column, you must click 2 pdf buttons in order to print it as pdf -->
@@ -52,17 +53,17 @@ SHOW:
 </tr>
 </thead>
 
-<tbody>
+	<tbody>
 
-<?php 
-include("HAP_dtrlist.php");
-?>
-<tfoot>
-<tr>
-<td style="font-size: 12px; font-style: italic;" colspan=9><?php echo "DTR List";?></td>
-</tr>
-</tfoot>
-</tbody>
+		<?php 
+			include("HAP_dtrlist.php");
+		?>
+		<tfoot>
+			<tr>
+				<td style="font-size: 12px; font-style: italic;" colspan=9><?php echo "DTR List";?></td>
+			</tr>
+		</tfoot>
+	</tbody>
 </table>
 </div>
 </div>

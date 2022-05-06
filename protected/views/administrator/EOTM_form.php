@@ -46,7 +46,7 @@
         .body_text
         {
         	background-color: #f0f0f0;
-            padding-bottom: 40px;
+            padding-bottom: 10px;
 			max-width: 555px;
 			max-height: 40px;
 			overflow: auto;
@@ -57,7 +57,8 @@
 			text-align: left;
 			font-family: "Times New Roman", Times, serif;
 			font-weight: bold;
-			text-transform: capitalize;
+			font-size: 13px;
+
         }
 
         .body_text:hover
@@ -69,6 +70,19 @@
 
 		{
 			background-color: #f0f0f0;
+            padding-bottom: 40px;
+			max-width: 555px;
+			height: 220px;
+			overflow: auto;
+			overflow-wrap: break-word;
+			border: 1px solid #abb4bd;
+			margin-left: 30px;
+			margin-top: -560px;
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			/* font-size: 12px; */
+			/* background-color: #f0f0f0;
 			border: 1px solid #abb4bd;
 			font-weight: bold;
 			font-family: "Times New Roman", Times, serif;
@@ -76,7 +90,7 @@
 			margin-left: 30px;
 			border: none;
 			max-width: 555px;
-			overflow: auto;
+			overflow: auto; */
 		}
 
 		.listOfFacultyMembers:hover
@@ -234,7 +248,7 @@
 			height: 15px;
 			text-align: left;
 			font-weight: bold;
-			font-size: 12px;
+			font-size: 13px;
 			font-family: "Times New Roman", Times, serif;
 
 		}
@@ -254,7 +268,7 @@
 			color: black;
 			text-transform: capitalize;
 			width: 280px;
-			font-size: 12px;
+			font-size: 13px;
 			height: 15px;
 			text-align: left;
 			font-family: "Times New Roman", Times, serif;
@@ -283,7 +297,7 @@
 			font-weight: bold;
 			font-family: "Times New Roman", Times, serif;
 			text-align: left;
-			font-size: 12px;
+			font-size: 13px;
 			margin-left: 30px;
 			margin-bottom: 25px;
 
@@ -303,7 +317,7 @@
 			color: black;
 			text-transform: capitalize;
 			width: 280px;
-			font-size: 12px;
+			font-size: 13px;
 			height: 15px;
 			text-align: left;
 			font-family: "Times New Roman", Times, serif;
@@ -327,7 +341,7 @@
 			color: black;
 			text-transform: capitalize;
 			width: 125px;
-			font-size: 12px;
+			font-size: 13px;
 			height: 15px;
 			text-align: left;
 			font-family: "Times New Roman", Times, serif;
@@ -664,7 +678,66 @@
 
 		}
 
+		.thank_you
+		{
+			/* font-weight:bold; */
+			margin-left:30px;
+			font-size:13px;	
+			margin-bottom:20px;
+		}
 
+		.closing_remarks
+		{
+			/* font-weight:bold; */
+			margin-left:30px;
+			font-size:13px;	
+			margin-bottom:5px;
+		}
+
+		.closing_remarks_sender
+		{
+			font-weight:bold;
+			margin-left:30px;
+			font-size:13px;	
+			margin-bottom:-5px;
+			text-transform: uppercase;
+		}
+
+		.closing_remarks_sender_position
+		{
+			font-weight:bold;
+			margin-left:30px;
+			font-size:13px;	
+			text-transform: capitalize;
+
+		}
+
+		#footer_address
+		{
+			text-align:center;
+			font-weight:bold;
+			text-transform:capitalize;
+			font-size: 10px;
+			margin-bottom: 0px;
+			
+		}
+
+		#footer_email
+		{
+			text-align:center;
+			font-weight:bold;
+			text-transform:lowercase;
+			font-size: 10px;
+			white-space: pre;
+			margin-bottom: 0px;
+		}
+
+		#footer_pup
+		{
+			text-align:center;
+			font-weight:bold;
+			font-size: 18px;
+		}
 
 	</style>
 
@@ -764,12 +837,8 @@
 						<input id="dear" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text" >
-			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE: 
+			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: 
 			 			</div>
-			 			
-
-			 			
-
 			 			
 					</div>
 					
@@ -838,10 +907,18 @@
 			 		echo'
 			 		</ul>
 
-			 					</div>	
-					<div class="footer">
-							<img src="assets/EOTM_footer.PNG" width="" height="">
-					</div>
+			 			</div>	
+						<br>
+						<p class="thank_you">Thank you very much.</p>
+						<p class="closing_remarks">Sincerly Yours,</p>
+						<p class="closing_remarks_sender">test sender</p>
+						<p class="closing_remarks_sender_position">branch director</p>
+						<br>
+						<br>
+						<br>
+						<p id="footer_address">gen santos ave. lower bicutan, taguig city 1772; (direct line) 837-5858 to 60; (telfax) 837-5859;</p>
+						<p id="footer_email">website: www.pup.edu.ph	     e-mail: taguig@pup.edu.ph</p>
+						<p id="footer_pup">THE COUNTRY&#180;S 1<span style="sup{font-size:5px;};">st</span> POLYTECHNICU</p>
 					
 				</div>
 				<br><br>

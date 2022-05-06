@@ -326,7 +326,9 @@ background-repeat:repeat;
 						<input type="hidden" name="load_type" value="<?php echo $load_type ?>">
 						<input type="hidden" name="sem" value="<?php echo $sem?>">
 			            <input type="hidden" name="sy" value="<?php echo $sy?>">
-			            <input type="hidden" name="prof" value="<?php echo $prof?>">			      
+			            <input type="hidden" name="prof" value="<?php echo $prof?>">
+			            <input type="hidden" name="totalUnits" value="<?php echo $_GET['totalUnits'] ?>">
+
 						<td style="text-align: center;">
 							
 							<a data-target='#myModal<?php echo $id?>' data-toggle='modal' href='#myModal<?php echo $id?>'><button>EDIT</button></a>

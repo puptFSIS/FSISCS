@@ -2827,6 +2827,7 @@ class AdministratorController extends Controller
     	$sem = $_POST['sem'];
     	$sy = $_POST['sy'];
     	$prof = $_POST['prof'];
+    	$totalUnits = $_POST['totalUnits'];
 
     	if (isset($_POST['subjID1'])) {
 	    	$checked = $_POST['subjID1'];
@@ -2857,7 +2858,7 @@ class AdministratorController extends Controller
 
 	    	header("Location: index.php?r=administrator/ShowProfSubject&sem=".$sem."&sy=".$sy."&prof=".$prof."&mes=0");
     	} else {
-    		header("Location: index.php?r=administrator/SetTeachingAssignment&sem=".$sem."&sy=".$sy."&prof=".$prof."&mode=".$load_type."&mes=2");
+    		header("Location: index.php?r=administrator/SetTeachingAssignment&sem=".$sem."&sy=".$sy."&prof=".$prof."&mode=".$load_type."&mes=2&totalUnits=".$totalUnits."");
     	}
 
     	

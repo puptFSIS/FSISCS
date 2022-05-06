@@ -106,16 +106,16 @@ class PDF extends FPDF
         $short_hr_name = $dear;
         $this->SetFont('Times','B',10);
         $this->SetXY(30, 80);
-        $this->Cell(45,10,$hr_name,0,0,'C');
+        $this->Cell(48,10,$hr_name,0,0,'C');
         $this->Ln(20);
 
         // $credentials = "Director Human Resources Management Department "
 
         $this->SetFont('Times','',10);
         $this->SetXY(20, 85);
-        $this->Cell(12,8,$position_of_sender,0,0,'C');
-        $this->SetXY(20, 88);
-        $this->Cell(70,8,$department_name,0,0,'C');
+        $this->Cell(14,8,$position_of_sender,0,0,'C');
+        $this->SetXY(20, 89);
+        $this->Cell(63,8,$department_name,0,0,'C');
         $this->Ln(20);
 
 
@@ -153,24 +153,52 @@ class PDF extends FPDF
         //for OT
         $ot_text1 = $paragraph_text4;
 
-
+ 
         if($loadtype == "REGULAR")
         {
-            $this->texts($regular_text1,'ew');
+            $this->SetLeftMargin(30); 
+            $this->SetRightMargin(30); 
+            $this->Ln();
+            $this->SetFont('Times','',10);
+            // Output justified text
+            $this->MultiCell(0,5,$regular_text1,0,'J');
+            // Line break
+            $this->Ln();
         }
         if($loadtype == "PART-TIME")
         {
-            $this->texts($pt_text1,'ew');
+            $this->SetLeftMargin(30); 
+            $this->SetRightMargin(30); 
+            $this->Ln();
+            $this->SetFont('Times','',10);
+            // Output justified text
+            $this->MultiCell(0,5,$pt_text1,0,'J');
+            // Line break
+            $this->Ln();
 
         }
         if($loadtype == "TS")
         {
-            $this->texts($ts_text1,'ew');
+            $this->SetLeftMargin(30); 
+            $this->SetRightMargin(30); 
+            $this->Ln();
+           $this->SetFont('Times','',10);
+            // Output justified text
+            $this->MultiCell(0,5,$ts_text1,0,'J');
+            // Line break
+            $this->Ln();
 
         }
         if($loadtype == "OT")
         {
-            $this->texts($ot_text1,'ew');
+            $this->SetLeftMargin(30); 
+            $this->SetRightMargin(30); 
+            $this->Ln();
+            $this->SetFont('Times','',10);
+            // Output justified text
+            $this->MultiCell(0,5,$ot_text1,0,'J');
+            // Line break
+            $this->Ln();
 
         }
 

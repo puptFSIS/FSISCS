@@ -9917,9 +9917,15 @@ in C:\xampp\htdocs\FSISCS\index.php (13)
 2022/05/05 02:08:11 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
 in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1214)
 in C:\xampp\htdocs\FSISCS\index.php (13)
+<<<<<<< Updated upstream
 2022/05/06 13:23:25 [error] [php] Undefined index: totalUnits (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:2830)
 Stack trace:
 #0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessSetTeachingAssignment()
+=======
+2022/05/06 12:04:50 [error] [php] Undefined variable $sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3139)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+>>>>>>> Stashed changes
 #1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
 #2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
 #3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
@@ -9927,6 +9933,7 @@ Stack trace:
 #5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
 #6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+<<<<<<< Updated upstream
 REQUEST_URI=/FSISCS/index.php?r=administrator/ProcessSetTeachingAssignment
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2830)
 in C:\xampp\htdocs\FSISCS\index.php (13)
@@ -10032,3 +10039,68 @@ REQUEST_URI=/FSISCS/index.php?r=administrator/SetTeachingAssignment&sem=2&sy=202
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\SetTeachingAssignment.php (258)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2800)
 in C:\xampp\htdocs\FSISCS\index.php (13)
+=======
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3139)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/06 12:05:00 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php(316): FPDF->__construct('P', 'mm', 'legal')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('receiving_docum...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3187): CController->render('receiving_docum...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHap_generate_rd()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_generate_rd')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=May%2006%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20Is%20To%20Endorse%20The%20Daily%20Time%20Record%20REGULAR%20Of%20The%20Following%20FACULTY%20MEMBERS%20Of%20PUP%20TAGUIG%20For%20The%20Month%20Of%20DATE:&val7=This%20Is%20To%20Endorse%20The%20Daily%20Time%20Record%20PART-TIME%20Of%20The%20Following%20FACULTY%20MEMBERS%20Of%20PUP%20TAGUIG%20For%20The%20Month%20Of%20DATE:&val8=This%20Is%20To%20Endorse%20The%20Daily%20Time%20Record%20TS%20Of%20The%20Following%20FACULTY%20MEMBERS%20Of%20PUP%20TAGUIG%20For%20The%20Month%20Of%20DATE:&val9=This%20Is%20To%20Endorse%20The%20Daily%20Time%20Record%20OT%20Of%20The%20Following%20FACULTY%20MEMBERS%20Of%20PUP%20TAGUIG%20For%20The%20Month%20Of%20DATE:
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/06 12:47:54 [error] [php] Use of undefined constant J - assumed 'J' (C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php:162)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php(233): PDF->directorHR()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php(335): PDF->loadtype_knower()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3187): AdministratorController->render()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHap_generate_rd()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=May%2006%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20Is%20To%20Endorse%20The%20Daily%20Time%20Record%20REGULAR%20Of%20The%20Following%20FACULTY%20MEMBERS%20Of%20PUP%20TAGUIG%20For%20The%20Month%20Of%20DATE:&val7=This%20Is%20To%20Endorse%20The%20Daily%20Time%20Record%20PART-TIME%20Of%20The%20Following%20FACULTY%20MEMBERS%20Of%20PUP%20TAGUIG%20For%20The%20Month%20Of%20DATE:&val8=This%20Is%20To%20Endorse%20The%20Daily%20Time%20Record%20TS%20Of%20The%20Following%20FACULTY%20MEMBERS%20Of%20PUP%20TAGUIG%20For%20The%20Month%20Of%20DATE:&val9=This%20Is%20To%20Endorse%20The%20Daily%20Time%20Record%20OT%20Of%20The%20Following%20FACULTY%20MEMBERS%20Of%20PUP%20TAGUIG%20For%20The%20Month%20Of%20DATE:
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php (162)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php (233)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php (335)
+2022/05/06 13:44:53 [error] [exception.ParseError] ParseError: syntax error, unexpected 'if' (T_IF), expecting ',' or ';' in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:831
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3229): CController->render('daily_time_reco...', Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('HAP_Secretary_t...')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/H...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+>>>>>>> Stashed changes

@@ -5,11 +5,7 @@
     <title></title>
     <style>
         
-     
 
-       
-
-       
         .body
         {
             height: 600px;
@@ -770,12 +766,15 @@
 						<div class="body_text" contentEditable id="paragraph_text" >
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE: 
 			 			</div>
+			 			
 
 			 			
 
 			 			
 					</div>
+					
 					<div class="listOfFacultyMembers" contentEditable> 
+
 					 <ul>
 
 					';
@@ -830,6 +829,11 @@
 					for($p = 0;$p < $namecount;$p++)
 					{
 						echo '<li class="list_items" id="regular_name">'.$newname[$p].'</li>';
+					}
+
+					if($namecount==0)
+					{
+						echo '<li class="list_items" id="regular_name">(Put name here)</li>';
 					}
 			 		echo'
 			 		</ul>
@@ -933,7 +937,10 @@
 					{
 						echo '<li class="list_items" id="regular_name">'.$newname[$p].'</li>';
 					}
-
+					if($namecount==0)
+					{
+						echo '<li class="list_items" id="regular_name"></li>';
+					}
 					echo'
 			 		</ul>
 
@@ -1037,7 +1044,10 @@
 					{
 						echo '<li class="list_items" id="regular_name">'.$newname[$p].'</li>';
 					}
-
+					if($namecount==0)
+					{
+						echo '<li class="list_items" id="regular_name">  </li>';
+					}
 					echo'
 			 		</ul>
 
@@ -1091,6 +1101,7 @@
 
 				';
 
+				echo '<li class="list_items" id="regular_name"></li>';
 
 
            }

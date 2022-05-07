@@ -1447,11 +1447,49 @@ class FacultyController extends Controller
 	}
 	public function actionIPCRcreatejantojunefaculty()
 	{
-		$this->render('IPCRcreatejantojunefaculty');
+		if(isset($_GET['m'],$_GET['y'],$_GET['fcode']))
+    	{
+        	$m = $_GET['m'];
+        	$y = $_GET['y'];
+        	$fcode = $_GET['fcode'];
+    	}
+		$datasp = TblIpcr1::model()->getIPCR1datasp($y,$fcode);
+		$datacf = TblIpcr1::model()->getIPCR1datacf($y,$fcode);
+		$datasf = TblIpcr1::model()->getIPCR1datasf($y,$fcode);
+
+		// echo "<pre>";
+		// print_r($datasp);
+		// echo "</pre>";
+
+		$this->render('IPCRcreatejantojunefaculty', array(
+			'infosp' => $datasp,
+			'infocf' => $datacf,
+			'infosf' => $datasf,
+			'm' => $m,
+			'y' => $y,
+			'fcode' => $fcode
+		));
 	}
 	public function actionIPCRcreatejultodecfaculty()
 	{
-		$this->render('IPCRcreatejultodecfaculty');
+		if(isset($_GET['m'],$_GET['y'],$_GET['fcode']))
+    	{
+        	$m = $_GET['m'];
+        	$y = $_GET['y'];
+        	$fcode = $_GET['fcode'];
+    	}
+		$datasp = TblIpcr2::model()->getIPCR2datasp($y,$fcode);
+		$datacf = TblIpcr2::model()->getIPCR2datacf($y,$fcode);
+		$datasf = TblIpcr2::model()->getIPCR2datasf($y,$fcode);
+
+		$this->render('IPCRcreatejultodecfaculty', array(
+			'infosp' => $datasp,
+			'infocf' => $datacf,
+			'infosf' => $datasf,
+			'm' => $m,
+			'y' => $y,
+			'fcode' => $fcode
+		));
 	}
 	public function actionIPCRcreatefaculty()
 	{

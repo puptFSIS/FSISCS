@@ -5,21 +5,33 @@ if(isset($_POST['submit']))
 {
 	$m = $_GET['m'];
 	$y = $_GET['y'];
-	$id = $_POST['id'];
-	$fcode = $_POST['EmpID'];
-	
-
+	$idaccomp = $_POST['idaccomp'];
+	$fcode = $_POST['fcode'];
 	$accomplishment = $_POST['accomplishment'];
 	
-	$sql = "UPDATE tbl_ipcraccomp SET accomplishment='$accomplishment' WHERE id_ipcr1 = '$id' ";
-	$result = mysqli_query($conn,$sql);
+	// echo $m;
+	// echo $accomplishment;
+	// echo $idaccomp;
+	// if($m == "JJ")
+	// {
+		$sql = "UPDATE tbl_ipcraccomp SET accomplishment='$accomplishment' WHERE idaccomp = '$idaccomp' ";
+		$result = mysqli_query($conn,$sql);
 	
+	// } else if($m == "JD") {
+		// $sql = "UPDATE tbl_ipcraccomp SET accomplishment='$accomplishment' WHERE id_ipcr2 = '$id' ";
+		// $result = mysqli_query($conn,$sql);
+	// }
 }
 
-//echo $sql;
+// echo $sql;
 	if($result)
 	{
-		header('Location: index.php?r=faculty/IPCRcreatejantojunefaculty&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+		if($m == "JJ")
+		{
+			header('Location: index.php?r=faculty/IPCRcreatejantojunefaculty&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+		} else if($m == "JD") {
+			header('Location: index.php?r=faculty/IPCRcreatejultodecfaculty&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+		}
 	}
 	mysqli_close($conn);
 

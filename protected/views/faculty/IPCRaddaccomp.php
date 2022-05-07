@@ -80,7 +80,17 @@ if(isset($_SESSION['user'])) {
     font-family: "Helvetica";
     padding: 5px 5px 5px;
     width: 100%;
-}</style>
+}
+#save
+{
+    width: 100px;
+}
+
+#head 
+{
+    font-size: 20px;
+}
+</style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
@@ -95,7 +105,16 @@ if(isset($_SESSION['user'])) {
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
 
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<section id=menu_strip>
+<a data-category=all href='http://www.puptaguig.org'>Home</a>
+<a data-category=design href="index.php?r=faculty/">Profile</a>
+<a data-category=design href="index.php?r=faculty/ServiceCredit">Service Credit</a>
+<a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
+<a data-category=design href="index.php?r=faculty/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=faculty/logout">Log out</a>
+</section>
+    </header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -113,7 +132,7 @@ if(isset($_GET['m'],$_GET['y']))
         $y = $_GET['y'];  
     }
 ?>
-<h2 class=underlined-header>INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</h2>
+<h2 class=underlined-header><strong><center>INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</center></strong></h2>
 
 <?php
     if(isset($_GET['msg'])) {
@@ -175,7 +194,7 @@ if($m == "JJ")
     }   
  }
  ?>
-<p style="font-size: 17px;">Add Accomplishment Information</p>
+<p style="font-size: 17px;"><strong>Add Accomplishment Information</strong></p>
 <hr style="margin-top: -10px;" />
 
 
@@ -183,22 +202,20 @@ if($m == "JJ")
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="id" ><?php echo $id;?></textarea>
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="EmpID" ><?php echo $fcode;?></textarea>
 
-<p style="margin-bottom: 9px; font-size: 20px;"><strong>Output:</strong><textarea readonly name="output" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $outputs; ?></textarea></p>
+<h4 class="underlined-header" id="head"><strong>OUTPUT:</strong><textarea readonly name="output" type=text><?php echo $outputs; ?></textarea></h4>
 <br>
+<h4 class="underlined-header" id="head"><strong>SUCCESS INDICATORS:</strong><textarea readonly name="indicators" type=text><?php echo $indi; ?></textarea></h4>
 <br>
-<p style="margin-bottom: 9px; font-size: 15px;"><strong>Success Indicators:</strong><textarea readonly name="indicators" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $indi; ?></textarea></p>
-<br>
-<br>
-<p style="margin-bottom: 9px; font-size: 15px;"><strong>Actual Accomplishments:</strong><textarea name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"> </textarea></p>
-
-<script src="ckeditor/ckeditor.js"></script>
+<h4 class="underlined-header" id="head"><strong>ACTUAL ACCOMPLISHMENT/S:</strong><textarea name="accomplishment" type=text></textarea></h4>
+ 
+<script src="ckeditor4/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('output');
     CKEDITOR.replace('indicators');
     CKEDITOR.replace('accomplishment');
 </script>
 
-<center><button type="submit" name="submit">Save</button></center>
+<center><button id="save" type="submit" name="submit">Save</button></center>
 </form>
 
 
@@ -233,7 +250,7 @@ if($m == "JJ")
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/fsis-team-2/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
+© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
 <!-- Footer right -->

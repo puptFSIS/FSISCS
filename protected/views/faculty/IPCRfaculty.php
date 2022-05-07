@@ -35,7 +35,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
     
 #page-title
 {
@@ -164,7 +164,20 @@ if(isset($_SESSION['user'])) {
 <!-- End - Page subheader -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a class=home data-category=design href='http://www.puptaguig.org'>Home</a>
+<a data-category=all href="index.php?r=faculty/">Profile</a>
+<a data-category=design href="index.php?r=faculty/ServiceCredit">Service Credit</a>
+<a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
+<a data-category=design href="index.php?r=faculty/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=faculty/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -202,7 +215,7 @@ if(isset($_SESSION['user'])) {
                     if (flashdata1) {
                         Swal.fire(
                             'IPCR already submitted.',
-                            '',
+                            'Press OK to continue',
                             'warning'
                         )
                     }

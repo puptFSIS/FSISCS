@@ -249,19 +249,6 @@ if(isset($_SESSION['user'])) {
 </tr>
 </tfoot>
 <tbody >
-
-<?php 
-
-    // if($m == "JJ")
-    // {
-    //     $sql= "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part='sp' AND tbl_ipcr1.year = '$y' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
-    //     $result = mysqli_query($conn,$sql);
-    // } else if($m == "JD")
-    // {
-    //     $sql= "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part='sp' AND tbl_ipcr2.year = '$y' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
-    //     $result = mysqli_query($conn,$sql);
-    // }
-    ?>
             <?php 
                 if($m == "JJ") {
                     $data = $variablesp;
@@ -385,24 +372,6 @@ if(isset($_SESSION['user'])) {
 </tr>
 </tfoot>
 <tbody >
-<?php
-    // if($m == "JJ")
-    // {
-    //     $sql= "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part='cf' AND tbl_ipcr1.year = '$y' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
-    //     $result = mysqli_query($conn,$sql);
-    // } else
-    // {
-    //     $sql= "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part='cf' AND tbl_ipcr2.year = '$y' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
-    //     $result = mysqli_query($conn,$sql);
-    // }
-    //     while($row = mysqli_fetch_array($result)) :
-    //         $outputs = $row['output'];
-    //         $indi = $row['indicators'];
-    //         $accomp = $row['accomplishment'];
-    //         $ifRequired = $row['if_required'];
-    //         $approval = $row['adminApproval'];
-    //         $id = $row['id'];
-?>
                 <?php 
                     if($m == "JJ")
                     {
@@ -522,24 +491,6 @@ if(isset($_SESSION['user'])) {
 </tr>
 </tfoot>
 <tbody >
-<?php
-    // if($m == "JJ")
-    // {
-    //     $sql= "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part='sf' AND tbl_ipcr1.year = '$y' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
-    //     $result = mysqli_query($conn,$sql);
-    // } else
-    // {
-    //     $sql= "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part='sf' AND tbl_ipcr2.year = '$y' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
-    //     $result = mysqli_query($conn,$sql);
-    // }
-    //     while($row = mysqli_fetch_array($result)) :
-    //         $outputs = $row['output'];
-    //         $indi = $row['indicators'];
-    //         $accomp = $row['accomplishment'];
-    //         $ifRequired = $row['if_required'];
-    //         $approval = $row['adminApproval'];
-    //         $id = $row['id'];
-?>
             <?php 
                 if($m == "JJ") {
                     $data = $variablesf;

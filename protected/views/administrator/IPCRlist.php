@@ -26,8 +26,8 @@ if(isset($_SESSION['user'])) {
 <!-- Page title -->
 <title>Administrator | IPCR</title>
 <!--Script of Sweet alert-->
-<script src="<?php echo Yii::app()->getBaseUrl() ?>sweetalert/jquery-3.6.0.min.js"></script>
-<script src="<?php echo Yii::app()->getBaseUrl() ?>sweetalert/sweetalert2.all.min.js"></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
@@ -36,7 +36,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
     
 #page-title
 {
@@ -167,7 +167,24 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -177,7 +194,7 @@ if(isset($_SESSION['user'])) {
 <!-- Video - HTML5 -->
 <section>
 
-<h2 class=underlined-header>Individual Performance Commitment and Review</h2>
+<h2 class=underlined-header><center>Individual Performance Commitment and Review</center></h2>
 
 <!---->
 <?php
@@ -217,7 +234,6 @@ if(isset($_SESSION['user'])) {
                         $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month = '$m' ORDER BY tbl_evaluationfaculty.LName ASC";
                         $result = mysqli_query($conn,$sql);
 
-
                         while($row = mysqli_fetch_array($result)) 
                         {
                             $fcode = $row['FCode'];
@@ -225,13 +241,12 @@ if(isset($_SESSION['user'])) {
                             $status = $row['status'];
                             $mname = $row['MName'];
                             $sname = $row['LName'];
-                            $status = $row['status'];
                     
                             echo '<tr>
                                 <td name="name" style="text-align: left;">'.$sname.", ".$fname." ".$mname.'</td>
                                 <td name="fcode" style="text-align: left;">'.$fcode.'</td>
                                 <td name="status" style="text-align: left;">'.$status.'</td>
-                                <td><a href="index.php?r=administrator/IPCRviewprocess&fcode='.$fcode.'&m='.$m.'&y='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.'"><button type="submit" name="submit" style="width: 100px">View IPCR</button></a></td>
+                                <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 100px">View IPCR</button></a></td>
                             </tr>';
                         }
                     ?>        
@@ -243,6 +258,7 @@ if(isset($_SESSION['user'])) {
 
 
             <!-- Script function for searching -->
+                <script src="js/preventresize.js"></script>
                 <script>
                     function myFunction() 
                     {

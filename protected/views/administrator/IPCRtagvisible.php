@@ -1,13 +1,11 @@
 <?php
 	include('config.php');
+	session_start();
 	require ('PHPMailer-master/src/PHPMailer.php');
 	require ('PHPMailer-master/src/SMTP.php');
-	session_start();
-
 
 	$m = $_GET['m'];
 	$y = $_GET['y'];
-
 
 	$sql2 = "SELECT * FROM tbl_personalinformation WHERE status = 'vip'";
 	$result2 = mysqli_query($conn,$sql2);
@@ -31,11 +29,11 @@
 
 				$mailTo = $email;			
 				ob_start();
-				include 'IPCRemailtemplate.html';
+				include ('IPCRemailtemplate.php');
 				$body = ob_get_clean();
 
 				$mail = new PHPMailer\PHPMailer\PHPMailer();
-
+ 
 				//$mail->SMTPDebug = 3;	//Logs 
 
 				$mail->isSMTP(); //Disable or comment this in Live server

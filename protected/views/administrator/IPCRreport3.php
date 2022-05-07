@@ -26,8 +26,8 @@ if(isset($_SESSION['user'])) {
 <!-- Page title -->
 <title>Administrator | IPCR</title>
 <!--Script of Sweet alert-->
-<script src="<?php echo Yii::app()->getBaseUrl() ?>sweetalert/jquery-3.6.0.min.js"></script>
-<script src="<?php echo Yii::app()->getBaseUrl() ?>sweetalert/sweetalert2.all.min.js"></script>
+<script src="sweetalert/jquery-3.6.0.min.js"></script>
+<script src="sweetalert/sweetalert2.all.min.js"></script>
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->

@@ -2905,14 +2905,23 @@ class AdministratorController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
-    	public function actionprocessAddRemarks()
+    public function actionprocessRating()
+   	{
+   		$this->render('processRating');
+   	}
+   	public function actionprocessfeedback()
+   	{
+   		$this->render('processfeedback');
+   	}
+    public function actionprocessIPCRapproval()
+	{
+		$this->render('processIPCRapproval');
+	}
+    public function actionprocessAddRemarks()
 	{
 		$this->render('processAddRemarks');
 	}
-	public function actionIPCRremarks()
-	{
-		$this->render('IPCRremarks');
-	}
+	/////////////////////////////////////////
 	public function actionIPCRemailtemplate()
 	{
 		$this->render('IPCRemailtemplate');
@@ -2949,10 +2958,6 @@ class AdministratorController extends Controller
 	{
 		$this->render('IPCRtagvisible');
 	}
-	public function actionprocessIPCRapproval()
-	{
-		$this->render('processIPCRapproval');
-	}
 	public function actionIPCRgetlist()
 	{
 		$this->render('IPCRgetlist');
@@ -2961,13 +2966,39 @@ class AdministratorController extends Controller
 	{
 		$this->render('IPCRviewprocess');
 	}
-	public function actionIPCRviewproof()
+	public function actionIPCRevaluation()
 	{
-		$this->render('IPCRviewproof');
+		$this->render('IPCRevaluation');
 	}
 	public function actionIPCRview()
 	{
-		$this->render('IPCRview');
+		if(isset($_GET['m'],$_GET['y'],$_GET['fcode']))
+    	{
+        	$m = $_GET['m'];
+        	$y = $_GET['y'];
+        	$fcode = $_GET['fcode'];
+    	}
+		$datasp = TblIpcr1::model()->getIPCR1datasp($y,$fcode);
+		$datacf = TblIpcr1::model()->getIPCR1datacf($y,$fcode);
+		$datasf = TblIpcr1::model()->getIPCR1datasf($y,$fcode);
+		$data2sp = TblIpcr2::model()->getIPCR2datasp($y,$fcode);
+		$data2cf = TblIpcr2::model()->getIPCR2datacf($y,$fcode);
+		$data2sf = TblIpcr2::model()->getIPCR2datasf($y,$fcode);
+
+		// echo "<pre>";
+		// print_r($datasp);
+		// echo "</pre>";
+		$this->render('IPCRview', array(
+			'variablecf' => $datacf, 
+			'variablesf' => $datasf ,
+			'variablesp' => $datasp, 
+			'variable2sp' => $data2sp,
+			'variable2cf' => $data2cf,
+			'variable2sf' => $data2sf,
+			'fcode' => $fcode, 
+			'm' => $m, 
+			'y' => $y
+		));
 	}
 	public function actionIPCRlist()
 	{

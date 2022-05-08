@@ -455,7 +455,7 @@ if($status == "pending")
 							<p id="modal_date_id'.$counter.'" class="fcode_p_Tag"></p>
 							<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1">
+									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
 									<label for="approve" class="approve">APPROVE</label>
 
 									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
@@ -525,8 +525,11 @@ else if($status == "approved")
 						</div>
 						<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="2 ">
-									<label for="approve" class="disapprove">DISAPPROVE RECORD</label>
+									<input type="hidden" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1" >
+									<label for="approve" class="approve" hidden>APPROVE</label>
+
+									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
+									<label for="disapprove" class="disapprove">DISAPPROVE</label>
 									
 
 									<br>
@@ -595,8 +598,11 @@ else if($status == "disapproved")
 						</div>
 						<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
-									<input type="checkbox" class"'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1 ">
-									<label for="approve" class="approve"> APPROVE RECORD</label>
+									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
+									<label for="approve" class="approve">APPROVE</label>
+
+									<input type="hidden" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
+									<label for="disapprove" class="disapprove" hidden>DISAPPROVE</label>
 									
 
 									<br>
@@ -710,7 +716,7 @@ function post_approval(counter)
 		Swal.fire({
 		  icon: 'error',
 		  title: 'Oops...',
-		  text: 'Select from Approve or Disapprove to proceed',
+		  text: 'check a box to proceed',
 		  footer: '<a href="">Your approval is required</a>'
 		}).then((result) => {
 		  // Reload the Page

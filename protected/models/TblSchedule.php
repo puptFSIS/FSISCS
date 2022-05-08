@@ -270,7 +270,7 @@ class TblSchedule extends CActiveRecord
 		
 	}
 
-	public static function restore_deleted($val2) // dtr
+	public static function restore_deleted($val1) // dtr
 	{
 		$date = date('Y-m-d H:i:s');
 		foreach ($val2 as $id) {

@@ -1485,6 +1485,28 @@ class FacultyController extends Controller
 		
 	}
 
+	public function actionDelete_dtr() // dtr
+	{
+		$id_array = $_POST['val2'];
+		$result = TblSchedule::model()->soft_delete($id_array);
+		
+	}
+
+	public function actionResubmit() // dtr
+	{
+		$id_array = $_POST['val1'];
+		$result = TblSchedule::model()->update_by_resubmit($id_array);
+		
+	}
+	
+
+	public function actionRestore_dtr() // dtr
+	{
+		$id_array = $_POST['val1'];
+		$result = TblSchedule::model()->restore_deleted($id_array);
+		
+	}
+
 
 
 

@@ -694,41 +694,52 @@ function check_dtr(counter)
 function post_approval(counter)
 {
 	var id = $("#faculty_id"+counter).html();
+	var approval = 0;
+	var appro = document.getElementById("approve_box_id"+counter).checked;
+	var disappro = document.getElementById("disapprove_box_id"+counter).checked;
 
-	if (document.getElementById("approve_box_id"+counter).checked) {
-		var approval = document.getElementById("approve_box_id"+counter).value;
+
+
+
+
+	if (appro == false && disappro == false) {
+
+		// approval = appro.value;
+
+
+		Swal.fire({
+		  icon: 'error',
+		  title: 'Oops...',
+		  text: 'Select from Approve or Disapprove to proceed',
+		  footer: '<a href="">Your approval is required</a>'
+		}).then((result) => {
+		  // Reload the Page
+		  location.reload();
+		});
+		console.log(approval);
+
 	}
-	else 
+	else if(appro == true)
 	{
-		var approval = document.getElementById("disapprove_box_id"+counter).value;
-	}
-	var comments = document.getElementById("comments"+counter).value;
-	// var comments_id = "comments"+counter;
-	// SWEET ALERT MUNA
-	ajax_sender(id,approval,comments,counter);
-	// window.location.reload();
-	    
-	  //   	Swal.fire({
-			//   title: 'Are you sure?',
-			//   text: "Create this DTR now?",
-			//   icon: 'warning',
-			//   showCancelButton: true,
-			//   confirmButtonColor: '#3085d6',
-			//   cancelButtonColor: '#d33',
-			//   confirmButtonText: 'Yes!'
-			// }).then((result) => {
-			//   if (result.isConfirmed) {
-			//   	this.ajax_sender(id,approval,comments,counter);
-			//     Swal.fire(
-			//       'SUCCESS!',
-			//       'Your DTR has been generated',
-			//       'success'
-			//     )
-			//   }
-			// })
-	   
 
-	// end of sweet alert
+		approval = 1;
+		var comments = document.getElementById("comments"+counter).value;
+		ajax_sender(id,approval,comments,counter);
+		// window.location.reload();
+		console.log(approval);
+	}
+
+	else
+	{
+		approval = 2;
+		var comments = document.getElementById("comments"+counter).value;
+		ajax_sender(id,approval,comments,counter);
+		// window.location.reload();
+		console.log(approval);
+
+	}
+
+
 	
 	
 
@@ -765,16 +776,26 @@ function ajax_sender(id,approval,comments,counter)
 
 						      }
 						  });
+					
+			    	// window.location.reload();
+			    
 
 
 				////////////////
-			    Swal.fire(
-			      'SUCCESS!',
-			      'The DTR has been validated',
-			      'success'
-			    )
+			    Swal.fire({
+				  // position: 'top-end',
+				  icon: 'success',
+				  title: 'DTR Validation success'
+				  // showConfirmButton: false,
+				  // timer: 1500
+				}).then((result) => {
+				  // Reload the Page
+				  location.reload();
+				});
 						      	
 			  }
+			  
+			  // window.location.reload();
 			})
 
 	

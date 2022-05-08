@@ -452,7 +452,7 @@ else if ($status == "approved")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')"><img src="images/icons/check-dark.png"></a> 
+		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
 
 			<div class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
 						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
@@ -496,9 +496,10 @@ else if ($status == "approved")
 		}
 		else
 		{
-			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
+			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit">
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">
+
 
 
 			'
@@ -526,7 +527,7 @@ else if ($status == "pending")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')"><img src="images/icons/check-dark.png"></a> 
+		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
 
 
 			<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
@@ -567,7 +568,7 @@ else if ($status == "pending")
 		}
 		else
 		{
-			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
+			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit">
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">';
 		}
@@ -593,7 +594,7 @@ else if($status == "disapproved")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-			<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')"><img src="images/icons/check-dark.png"></a> 
+			<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
 
 
 				<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
@@ -635,7 +636,7 @@ else if($status == "disapproved")
 		}
 		else
 		{
-			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
+			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit">
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">';
 		}
@@ -663,7 +664,7 @@ else if($status == "deleted")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-			<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')"><img src="images/icons/check-dark.png"></a>
+			<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a>
 
 
 				<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
@@ -744,7 +745,7 @@ var deletebtn = document.getElementById("deletebtn");
 var restorebtn = document.getElementById("restorebtn"); 
 
 
-function change_color(_this,counter,status)
+function change_color(_this,counter,status,existence)
 {
 
 
@@ -785,13 +786,29 @@ function change_color(_this,counter,status)
 		fcode[counter] = null;
 			
 	}
+	if(existence == 1)
+		{
+			if(count > 0)
+			{
+				restorebtn.style.display="block";
+			}
+			else
+			{
+				restorebtn.style.display="none";
+
+			}
+		}
+
 	if(status == 1)
 	{
 
 		if(count == 1)
 		{
+			// restorebtn.style.display="block";
+
 			deletebtn.style.display="block";
 			submitbtn.style.display="none";
+
 		}
 		else if(count == 2)
 		{
@@ -823,6 +840,8 @@ function change_color(_this,counter,status)
 		{
 			resubmitbtn.style.display="block";
 			deletebtn.style.display="block";
+			// restorebtn.style.display="block";
+
 		}
 		else
 		{
@@ -832,23 +851,26 @@ function change_color(_this,counter,status)
 		}
 
 	}
+
+	
 		
 	
 
 
 	else {
 	
-	deletebtn.style.display="block";
-	if(count==0)
-	{
-		deletebtn.style.display="none";
-		resubmitbtn.style.display="none";
+		deletebtn.style.display="block";
+		if(count==0)
+		{
+			deletebtn.style.display="none";
+			resubmitbtn.style.display="none";
 
-	}
+		}
 		
 	}
 
 	
+
 if(counter=='generate')
 	{
 	 printfpdf(id,reg,mon,year);
@@ -862,7 +884,7 @@ deletebtn.onclick = function()
 {
 	$.ajax({
 		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('administrator/Delete'); ?>",
+		      url:    "<?php echo Yii::app()->createUrl('Faculty/Delete_dtr'); ?>",
 		      data:  {val2:checked},
 		      dataType:"JSON",
 		      success:function(data){
@@ -881,7 +903,7 @@ resubmitbtn.onclick = function()
 {
 	$.ajax({
 		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('administrator/Resubmit'); ?>",
+		      url:    "<?php echo Yii::app()->createUrl('faculty/Resubmit'); ?>",
 		      data:  {val1:checked},
 		      dataType:"JSON",
 		      success:function(data){
@@ -901,7 +923,7 @@ restorebtn.onclick = function()
 {
 	$.ajax({
 		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('administrator/Restore'); ?>",
+		      url:    "<?php echo Yii::app()->createUrl('faculty/Restore_dtr'); ?>",
 		      data:  {val1:checked},
 		      dataType:"JSON",
 		      success:function(data){

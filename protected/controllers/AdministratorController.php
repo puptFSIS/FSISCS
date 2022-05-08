@@ -3242,7 +3242,7 @@ class AdministratorController extends Controller
 		
 	}
 
-	public function actionRestore() // dtr
+	public function actionRestore_dtr() // dtr
 	{
 		$id_array = $_POST['val1'];
 		$result = TblSchedule::model()->restore_deleted($id_array);

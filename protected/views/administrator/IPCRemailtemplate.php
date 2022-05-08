@@ -1,5 +1,5 @@
 <?php 
-    // Get the valur of year and month from the previous page.
+    // Get the value of year and month from the previous page.
     $m = $_GET['m'];
     $y = $_GET['y'];
 ?>

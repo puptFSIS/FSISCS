@@ -69,7 +69,7 @@
   		left: 50%;
   		transform: translate(-50%, -50%);*/
 		height: 350px;
-		width: 400px;
+		width: 460px;
 		
 		/*sa unahan ng menu list ng dtr_menu*/z-index: 3; 
 
@@ -81,7 +81,6 @@
 		border-style:solid;
 		padding: 12px;
 
-		/*overflow: scroll;*/
 
 	}
 
@@ -106,10 +105,9 @@
 /*MODAL CONTENTS!*/
 	.id_p_tag
 	{
-		margin-top: -41px;
-		margin-left: -305px;
+		margin-top: -44px;
+		margin-left: -345px;
 	 	color: black;
-	 	/*float: left;*/
 	 	font-size: 20px;
 	 	font-weight: bold;
 
@@ -127,11 +125,13 @@
 		text-indent: -1.2em;
 		color:black;
 		background: green;
+		position: center;
 		border-radius: 50px;
 		width: auto;
 		bottom:30.5px;
 		padding-top: 4px;
 		font-weight: bold;
+		text-align: center;
 	}
 
 	.hap_approval_status_pending
@@ -146,6 +146,8 @@
 		bottom:30.5px;
 		padding-top: 4px;
 		font-weight: bold;
+		text-align: center;
+		position: center;
 	}
 
 	.hap_approval_status_disapproved
@@ -160,6 +162,8 @@
 		bottom:30.5px;
 		padding-top: 4px;
 		font-weight: bold;
+		text-align: center;
+		position: center;
 	}
 
 	.loadtype_p_tag
@@ -203,9 +207,10 @@
 
 	#idleft
 	{
-		font-size: 15px;
+		font-size: 18px;
 		font-weight: bold;
 		text-align: left;
+		/* padding-right: 50px; */
 	}
 
 	/*-----------------------for fonts------------------*/
@@ -459,7 +464,7 @@ else if ($status == "approved")
 						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
 				
 
-							<p id="idleft">ID: </p>
+							<p id="idleft">ID:</p>
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
@@ -536,7 +541,7 @@ else if ($status == "pending")
 
 							<p id="idleft">ID: </p>
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
-							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
+							<h5 class="hap_approval_status_pending">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
 							<p id="modal_loadtype_id'.$counter.'" class="loadtype_p_Tag"></p>
 							<p id="modal_comment_id'.$counter.'" class="comment_p_Tag"  >'.$newresult['hap_comments'].'</p>
@@ -603,7 +608,7 @@ else if($status == "disapproved")
 
 							<p id="idleft">ID: </p>
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
-							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
+							<h5 class="hap_approval_status_disapproved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
 							<p id="modal_loadtype_id'.$counter.'" class="loadtype_p_Tag"></p>
 							<p id="modal_comment_id'.$counter.'" class="comment_p_Tag"  >'.$newresult['hap_comments'].'</p>

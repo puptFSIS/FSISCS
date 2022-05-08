@@ -737,6 +737,19 @@ function post_approval(counter)
 
 function ajax_sender(id,approval,comments,counter)
 {
+	var temp = approval;
+	// if (temp != 1 || temp != 2)
+	if (temp != 1){
+			Swal.fire({
+			icon: 'error',
+			title: 'Oops...',
+			text: 'Something went wrong!',
+			})
+		}
+		
+
+		else
+		{
 	  	Swal.fire({
 			  title: 'Are you sure?',
 			  text: "Submit this DTR now?",
@@ -776,8 +789,9 @@ function ajax_sender(id,approval,comments,counter)
 						      	
 			  }
 			})
+		}
 
-	
+		
 }
 
 

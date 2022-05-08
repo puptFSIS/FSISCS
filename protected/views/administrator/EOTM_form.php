@@ -737,6 +737,7 @@
 			text-align:center;
 			font-weight:bold;
 			font-size: 18px;
+			font-family: 'Times New Roman';
 		}
 
 	</style>
@@ -918,7 +919,7 @@
 						<br>
 						<p id="footer_address">gen santos ave. lower bicutan, taguig city 1772; (direct line) 837-5858 to 60; (telfax) 837-5859;</p>
 						<p id="footer_email">website: www.pup.edu.ph	     e-mail: taguig@pup.edu.ph</p>
-						<p id="footer_pup">THE COUNTRY&#180;S 1<span style="sup{font-size:5px;};">st</span> POLYTECHNICU</p>
+						<p id="footer_pup">THE COUNTRY&#180;S 1<span style="vertical-align:super;">st</span> POLYTECHNICU</p>
 					
 				</div>
 				<br><br>

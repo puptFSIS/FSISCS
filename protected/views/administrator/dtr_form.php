@@ -11,6 +11,7 @@
 			background-color: white;
 			border: 1px solid black;
 			border-radius: 10px;
+	
 
 
 		}
@@ -31,6 +32,7 @@
 			transition: transform .04s;	
 			/*box-shadow: 5px 7px 12px #888888;*/
 			box-shadow: 5px 4px 10px #9a9393;
+			cursor: pointer;
 		}
 	.dtr_type_id:hover
 		{
@@ -170,6 +172,7 @@
 			left: 45px;
 			font-style: italic;
 			border-radius: 20px;
+		
 		}
 		.month_input_class
 		{
@@ -289,6 +292,7 @@
 			background: #d7cfcf;	
 			transition: transform .04s;
 			width: 100px;
+			cursor: pointer;
 		}
 		.month_dropdown:hover
 		{
@@ -315,6 +319,7 @@
 			color: black;
 			border-radius: 13.5px;
 			transition: transform .04s;
+			cursor: pointer;
 		}
 
 		.year_dropdown:hover

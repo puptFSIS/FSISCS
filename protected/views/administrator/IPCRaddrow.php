@@ -84,7 +84,22 @@ if(isset($_SESSION['user'])) {
     padding: 5px 5px 5px;
     width: 100%;
 }
-    
+ 
+#req
+{
+    width: 100px;
+}   
+
+#head 
+{
+    font-size: 20px;
+}
+
+#select
+{
+    font-size: 20px;
+    width: 350px;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -106,7 +121,20 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<section id=menu_strip>
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+    </header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -116,43 +144,22 @@ if(isset($_SESSION['user'])) {
 
 
 <section>
-<h2 class="underlined-header">INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</h2>
+<h2 class="underlined-header"><center><strong>INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</strong></center></h2>
 
-<?php
-    if(isset($_GET['msg'])) {
-    $msg = $_GET['msg'];
-        if($_GET['msgType']=="succ") {
-            echo '
-            <div class="box-info">
-            <div class="box-content">
-            <p>' . $msg . '</p>
-            </div>
-            </div>
-            <hr style="margin-top:13px;"/>
-            ';
-        } else {
-            echo '
-            <div class="box-error">
-            <div class="box-content">
-            <p>' . $msg . '</p>
-            </div>
-            </div>
-            <hr style="margin-top:13px;"/>
-            ';
-        }
-    } 
-    
-?> 
-<?php
+<?php //get the value of month and year pass by another/ previous page
 if(isset($_GET['m'],$_GET['y'])) :
         $m = $_GET['m'];
         $y = $_GET['y'];
 ?>
-    <br> 
+    <br>   
+    <!-- Form for processing created IPCR input -->
     <form action="index.php?r=administrator/ProcessIPCRinfo<?php echo'&m='.$m.'&y='.$y.'';?>" method="post">
-    <p style="font-size: 15px;"><strong>Add information for: </strong></p>
+    <h4 class="underlined-header" id="req">
+        <input type="hidden" name="checkbox" value="Not Required">
+        <input type="checkbox" name="checkbox" value="Required"> Required</h4>
+    <h4 class="underlined-header" id="select"><strong>Add information for: </strong></h4>
     <select name="part" required>
-        <option value="" disabled selected></option>
+        <option value="" disabled selected>---Select One---</option>
         <option value="sp">Strategic Priority</option>
         <option value="cf">Core Function</option>
         <option value="sf">Support Function</option>
@@ -163,15 +170,15 @@ if(isset($_GET['m'],$_GET['y'])) :
     <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="month"><?= $m; ?></textarea>
     <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="year"><?= $y; ?></textarea>
 <?php endif; ?>
-    <p style="margin-bottom: 9px; font-size: 15px;"><strong>Output:</strong><textarea name="output" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 30%;"  placeholder='Output'></textarea></p>
+    <h4 class="underlined-header" id="head"><strong>OUTPUT:</strong><textarea name="output" type=text placeholder='Output'></textarea></h4>
     <br>
     <br>
-    <p style="margin-bottom: 9px; font-size: 15px;"><strong>Success Indicators:</strong><textarea name="indicators" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 30%;"  placeholder='Success Indicators'></textarea></p>
+    <h4 class="underlined-header" id="head"><strong>SUCCESS INDICATORS:</strong><textarea name="indicators" type=text placeholder='Success Indicators'></textarea></h4>
     <br>
     <br>
     <!--<p style="margin-bottom: 9px; font-size: 15px;"><strong>Actual Accomplishments:</strong><textarea name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 30%;"  placeholder='Actual Accomplishments'></textarea></p>-->
 
-    <script src="ckeditor/ckeditor.js"></script>
+    <script src="ckeditor4/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('output');
         CKEDITOR.replace('indicators');
@@ -214,7 +221,7 @@ if(isset($_GET['m'],$_GET['y'])) :
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/fsis-team-2/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
+© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
 <!-- Footer right -->

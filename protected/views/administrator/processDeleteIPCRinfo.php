@@ -9,13 +9,13 @@
 	$id = $_GET['id'];
 	if($m == "JJ")
 	{
-		$sql = "UPDATE tbl_ipcr1 SET deleted_at ='$today' WHERE id = '$id'";
+		$sql = "UPDATE tbl_ipcr1 SET deleted_on ='$today' WHERE id = '$id'";
 		$result = mysqli_query($conn,$sql);
 		if($result) {
 			header('Location: index.php?r=administrator/IPCRcreatejantojune&s=1&m='.$m.'&y='.$y.'');
 		}
 	} else {
-		$sql = "UPDATE tbl_ipcr2 SET deleted_at ='$today' WHERE id = '$id'";
+		$sql = "UPDATE tbl_ipcr2 SET deleted_on ='$today' WHERE id = '$id'";
 		$result = mysqli_query($conn,$sql);
 		if($result) {
 			header('Location: index.php?r=administrator/IPCRcreatejultodec&s=1&m='.$m.'&y='.$y.'');

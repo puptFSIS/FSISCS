@@ -32,7 +32,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
     
 #page-title
 {
@@ -142,6 +142,19 @@ if(isset($_SESSION['user'])) {
     background-color: antiquewhite;
 }
 
+select {
+  margin: 50px;
+  width: 300px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #CCC;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+}
+
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -163,7 +176,24 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -176,9 +206,6 @@ if(isset($_SESSION['user'])) {
 <h2 class=underlined-header><center>Individual Performance Commitment and Review</center></h2>
 <br>
 <h2 class="underlined">Generate IPCR Report for Faculty</h2>
-<br>
-<br>
-
 <!---->
 <?php  
     
@@ -202,11 +229,7 @@ if(isset($_SESSION['user'])) {
             <option value="" disabled selected>----Choose Year----</option> 
         </select>
     </div>
-    <br>
-    <br>
-
     <center><button type="submit" name="submit" style="width: 110px">Get Report List</button></center>
-
 </form>
 
 </section>

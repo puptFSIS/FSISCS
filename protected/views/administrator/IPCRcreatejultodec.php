@@ -91,6 +91,16 @@ if(isset($_SESSION['user'])) {
     background-color: Lightblue;
     font-size: 22px;
 }
+#asterisk
+{
+    font-size: 20px;
+    color: red;
+}
+
+#category
+{
+    display: inline;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -113,15 +123,31 @@ if(isset($_SESSION['user'])) {
 <!--<section class=container-block id=page-body>-->
 <!--<div class=container-inner>-->
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
 <div id=page-body-content-inner>
 <!-- Page content -->
 <div id=page-content>
-<!-- Video - HTML5 -->
-
 
 <section>
 <?php
@@ -140,7 +166,7 @@ if(isset($_SESSION['user'])) {
  ?>
 
 <h2 class="underlined-header" style="text-align: center;"><strong>Individual Performance, Commitment and Review: JULY TO DECEMBER <?php echo '('.$y.')';?></strong></h2>
-<h2 class="underlined-header" style="width:23%; color: Red;"><strong> Deadline: <?php echo $dline; ?></strong></h2>
+<h2 class="underlined-header" style="width:25%; color: Red;"><strong> Deadline: <input style="display: inline;" placeholder="yyyy-mm-dd" value="<?php echo $dline; ?>" readonly></strong></h2>
 
 <a href="index.php?r=administrator/IPCRcreate"><button style="width: 80px;">&laquo; Previous</button></a>
 <br>
@@ -148,22 +174,21 @@ if(isset($_SESSION['user'])) {
     <a href="index.php?r=administrator/IPCRaddrow<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 80px;">Add Row</button></a>
     <a href="index.php?r=administrator/IPCRsetdeadline<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 100px;" class="btn-set">Set Deadline</button></a>
     <a href="index.php?r=administrator/IPCRform1" target = "blank"><button>Generate PDF</button></a>
-<br>
-
-
-
+<br/>
+<br/>
+<p style="font-size: 15px"><strong>Note: <b id="asterisk">*</b> - Required Fields.</strong></p>
 <table class=round-3 style="width:100%; ">
 <thead>
     <tr>
         <br>
-        <h2 class="underlined-header1">Strategic Priority</h2>
+        <h2 class="underlined-header1"><center><p style="color: black;" id="category">S T R A T E G I C</p><p style="color: gray;" id="category"> P R I O R I T Y</p></center></h2>
+        <th width="5%"><h5 align="center"></h5></th>
         <th width="30%"><h5 align="center">Output</h5></th>
         <th width="30%"><h5 align="center">Success Indicators</h5></th>
         <th width="30%"><h5 align="center">Actual Accomplishments</h5></th>
         <!--<th><h5>Ratings</h5></th>
         <th><h5>Remarks</h5></th>-->
         <th width="20%"><h5 align="center">Action</h5></th>
-
     </tr>
 </thead>
 <tfoot>
@@ -173,13 +198,19 @@ if(isset($_SESSION['user'])) {
 </tfoot>
 <tbody >
 <?php
-        
-        $sql = "SELECT * FROM tbl_ipcr2 WHERE part='sp' AND deleted_at IS NULL AND year = '$y'";
+        // Fetch all the save information in the database of strategic priority
+        $sql = "SELECT * FROM tbl_ipcr2 WHERE part='sp' AND deleted_on IS NULL AND year = '$y'";
         $query = mysqli_query($conn,$sql);
         while($row = mysqli_fetch_array($query)) :
         $id = $row['id'];
+        $ifRequired = $row['if_required'];
 ?>            
            <tr>
+                <td name="required" style="text-align: left;">
+                    <strong>
+                        <center><?php if($ifRequired == "Required") { echo '<p id="asterisk">*</p>';  } else { ""; } ?></center>
+                    </strong>
+                </td>
                 <td name="outputs" style="text-align: left;"><?= $row['output']?></td>
                 <td name="indi" style="text-align: left;"><?= $row['indicators']?></td>
                 <td name="accomp" style="text-align: left;"></td>
@@ -200,7 +231,8 @@ if(isset($_SESSION['user'])) {
 <table class=round-3 style="width:100%; ">
 <thread>
     <tr>
-        <h2 class="underlined-header1">Core Function</h2>
+        <h2 class="underlined-header1"><center><p style="color: black;" id="category">C O R E</p><p style="color: gray;" id="category"> F U N C T I O N</p></center></h2>
+        <th width="5%"><h5 align="center"></h5></th>
         <th width="30%"><h5 align="center">Output</h5></th>
         <th width="30%"><h5 align="center">Succes Indicators</h5></th>
         <th width="30%"><h5 align="center">Actual Accomplishments</h5></th>
@@ -216,13 +248,19 @@ if(isset($_SESSION['user'])) {
 </tfoot>
 <tbody>
 <?php
-        
-        $sql = "SELECT * FROM tbl_ipcr2 WHERE part='cf' AND deleted_at IS NULL AND year = '$y'";
+        // Fetch all the save information in the database of core function
+        $sql = "SELECT * FROM tbl_ipcr2 WHERE part='cf' AND deleted_on IS NULL AND year = '$y'";
         $query = mysqli_query($conn,$sql);
         while($row = mysqli_fetch_array($query)) :
         $id = $row['id'];
+        $ifRequired = $row['if_required'];
 ?>          
            <tr>
+                <td name="required" style="text-align: left;">
+                    <strong>
+                        <center><?php if($ifRequired == "Required") { echo '<p id="asterisk">*</p>';  } else { ""; } ?></center>
+                    </strong>
+                </td>
                 <td name="outputs" style="text-align: left;"><?= $row['output']?></td>
                 <td name="indi" style="text-align: left;"><?= $row['indicators']?></td>
                 <td name="accomp" style="text-align: left;"></td>
@@ -241,7 +279,8 @@ if(isset($_SESSION['user'])) {
 <table class=round-3 style="width:100%; ">
 <thread>
     <tr>
-        <h2 class="underlined-header1">Support Function</h2>
+        <h2 class="underlined-header1"><center><p style="color: black;" id="category">S U P P O R T</p><p style="color: gray;" id="category"> F U N C T I O N</p></center></h2>
+        <th width="5%"><h5 align="center"></h5></th>
         <th width="30%"><h5 align="center">Output</h5></th>
         <th width="30%"><h5 align="center">Succes Indicators</h5></th>
         <th width="30%"><h5 align="center">Actual Accomplishments</h5></th>
@@ -257,13 +296,19 @@ if(isset($_SESSION['user'])) {
 </tfoot>
 <tbody>
 <?php
-        
-        $sql = "SELECT * FROM tbl_ipcr2 WHERE part='sf' AND deleted_at IS NULL AND year = '$y'";
+        // Fetch all the save information in the database of support function
+        $sql = "SELECT * FROM tbl_ipcr2 WHERE part='sf' AND deleted_on IS NULL AND year = '$y'";
         $query = mysqli_query($conn,$sql);
         while($row = mysqli_fetch_array($query)) :  
         $id = $row['id'];
+        $ifRequired = $row['if_required'];
 ?>
            <tr>
+                <td name="required" style="text-align: left;">
+                    <strong>
+                        <center><?php if($ifRequired == "Required") { echo '<p id="asterisk">*</p>';  } else { ""; } ?></center>
+                    </strong>
+                </td>
                 <td name="outputs" style="text-align: left;"><?= $row['output']?></td>
                 <td name="indi" style="text-align: left;"><?= $row['indicators']?></td>
                 <td name="accomp" style="text-align: left;"></td>
@@ -363,7 +408,7 @@ if(isset($_SESSION['user'])) {
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-© Copyright 2011 <a href="https://sites.google.com/view/puptfsis/fsis-team-2/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
+© Copyright 2011 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
 <!-- Footer right -->

@@ -141,7 +141,16 @@ input
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
 
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<section id=menu_strip>
+<a data-category=all href='http://www.puptaguig.org'>Home</a>
+<a data-category=design href="index.php?r=faculty/">Profile</a>
+<a data-category=design href="index.php?r=faculty/ServiceCredit">Service Credit</a>
+<a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
+<a data-category=design href="index.php?r=faculty/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=faculty/logout">Log out</a>
+</section>
+    </header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -152,7 +161,7 @@ input
 <section>
 
  
-<h2 class=underlined-header>INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</h2>
+<h2 class=underlined-header><strong><center>INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</center></strong></h2>
 
 <?php
     
@@ -171,7 +180,7 @@ input
 
      //include('getPersonalInformation.php');
  ?>
-<p style="font-size: 17px;">ADD PROOF FOR ACCOMPLISHMENT</p>
+<p style="font-size: 17px;"><strong>ADD PROOF FOR ACCOMPLISHMENT</strong></p>
 <hr style="margin-top: -10px;" />
 
 <?php
@@ -185,9 +194,13 @@ input
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="EmpID" ><?php echo $fcode;?></textarea>
 
 
-<p style="margin-bottom: 9px; font-size: 15px;"><strong>ACTUAL ACCOMPLISHMENT:</strong><textarea readonly name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $accomp; ?></textarea></p>
+<h4 class="underlined-header">
+    <strong>ACTUAL ACCOMPLISHMENT:</strong>
+    <textarea readonly name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $accomp; ?>
+    </textarea>
+</h4>
 
-<script src="ckeditor/ckeditor.js"></script>
+<script src="ckeditor4/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('accomplishment');
 </script>
@@ -213,25 +226,26 @@ $msg = $_GET['msg'];
 ?>
 <br>
 
-<?php
-echo '<form action="index.php?r=faculty/processProofupload&accomp='.$accomp.'&id='.$id.'&fcode='.$fcode.'" method="post" enctype="multipart/form-data">
 
-    <p style="font-size: 17px;"><strong>UPLOAD PROOF:</strong></p>
+<form action="index.php?r=faculty/processProofupload<?php echo'&accomp='.$accomp.'&id='.$id.'&fcode='.$fcode.''?>" method="post" enctype="multipart/form-data">
+
+    <h4 class="underlined-header"><strong>UPLOAD PROOF:</strong>
     <span><input type="file" name="file">
-    <input type="submit" name="submit" value="Upload"></span>
+    <input type="submit" name="submit" value="Upload"></span></h4>
 
-</form>';
+</form>
 
-// Get images from the database
+ <!-- Get images from the database -->
+<?php
 $query = "SELECT * FROM tbl_proof WHERE id_ipcraccomp = '$id' AND deleted_at IS NULL ORDER BY uploaded_on DESC";
 $result = mysqli_query($conn,$query);
-
-if($result->num_rows > 0){
-    while($row = mysqli_fetch_assoc($result)){
-        $imageURL = 'IPCRuploads/'.$row["file_name"];
-        $upload_date = $row["uploaded_on"];
-        $id = $row['id'];
 ?>
+<?php if($result->num_rows > 0): ?>
+    <?php while($row = mysqli_fetch_assoc($result)): ?>
+        <?php $imageURL = 'IPCRuploads/'.$row["file_name"]; ?>
+        <?php $upload_date = $row["uploaded_on"]; ?>
+        <?php $id = $row['id']; ?>
+
     <div class="img">
         <div class="img-holder">
             <img src="<?php echo $imageURL;?>" alt=""  />
@@ -243,10 +257,10 @@ if($result->num_rows > 0){
             </center>
         </div>
     </div>
-<?php }
-}else{ ?>
+    <?php endwhile; ?>
+<?php else: ?>
     <p>No proof(s) uploaded yet...</p>
-<?php } ?>
+<?php endif; ?>
 
 </section>
 
@@ -279,7 +293,7 @@ if($result->num_rows > 0){
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/fsis-team-2/fsis2-team-members?authuser=0" title="Dbooom Themes">Team Apex | PUP Taguig</a> - All Rights Reserved.
+© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Team Apex | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
 <!-- Footer right -->

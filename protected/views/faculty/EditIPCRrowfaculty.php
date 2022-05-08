@@ -79,7 +79,14 @@ if(isset($_SESSION['user'])) {
     font-family: "Helvetica";
     padding: 5px 5px 5px;
     width: 100%;
-}</style>
+}
+
+#head
+{
+    font-size: 20px;
+}
+
+</style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
@@ -94,7 +101,16 @@ if(isset($_SESSION['user'])) {
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
 
-<?php include("nav.php");?>
+<header id=page-title>
+<section id=menu_strip>
+<a data-category=all href='http://www.puptaguig.org'>Home</a>
+<a data-category=design href="index.php?r=faculty/">Profile</a>
+<a data-category=design href="index.php?r=faculty/ServiceCredit">Service Credit</a>
+<a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
+<a data-category=design href="index.php?r=faculty/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=faculty/logout">Log out</a>
+</section>
+    </header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -106,96 +122,45 @@ if(isset($_SESSION['user'])) {
 
 
 <h2 class=underlined-header>INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</h2>
-
 <?php
-    if(isset($_GET['msg'])) {
-    $msg = $_GET['msg'];
-        if($_GET['msgType']=="succ") {
-            echo '
-            <div class="box-info">
-              <div class="box-content">
-                <p>' . $msg . '</p>
-              </div>
-            </div>
-            <hr style="margin-top:13px;"/>
-            ';
-        } else {
-            echo '
-            <div class="box-error">
-              <div class="box-content">
-                <p>' . $msg . '</p>
-              </div>
-            </div>
-            <hr style="margin-top:13px;"/>
-            ';
-        }
-    } 
-?>
-<?php
-    $outputs = "";
-    $indi = "";
-    $accomp="";
-    $fcode="";
-    if(isset($_GET['output'],$_GET['indicators'],$_GET['accomplishment'],$_GET['fcode']))
+    //Get the passed elements
+    if(isset($_GET['outputs'],$_GET['indi'],$_GET['accomp'],$_GET['fcode'],$_GET['m'],$_GET['y'],$_GET['idaccomp']))
     {
-        $outputs = $_GET['output'];
-        $indi = $_GET['indicators'];
-        $accomp = $_GET['accomplishment'];
-        
+        $outputs = $_GET['outputs'];
+        $indi = $_GET['indi'];
+        $accomp = $_GET['accomp'];
+        $m = $_GET['m'];
+        $y = $_GET['y']; 
+        $idaccomp=$_GET['idaccomp'];  
+        $fcode = $_GET['fcode'];    
     }  
-     
-    $id=$_GET['id'];
-    $fcode = $_GET['fcode'];
-    $sql= "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id WHERE tbl_ipcr1.id='$id' AND tbl_ipcraccomp.FCode='$fcode'";
-    $result= mysqli_query($conn,$sql);
-    while($row = mysqli_fetch_array($result))
-    {
-        $id = $row['id'];
-        $outputs=$row['output'];
-        $indi=$row['indicators'];
-        $accomp=$row['accomplishment'];
-    }   
-
-     include('getPersonalInformation.php');
-
  ?>
-<p style="font-size: 17px;">Edit Row Informations</p>
+
+<p style="font-size: 17px;"><strong>Edit Row Informations</strong></p>
 <hr style="margin-top: -10px;" />
 
-<?php
-if(isset($_GET['m'],$_GET['y']))
-    {
-        $m = $_GET['m'];
-        $y = $_GET['y'];
-        echo '<form action="index.php?r=faculty/processEditIPCRfaculty&m='.$m.'&y='.$y.'" method="post">';
-    }
-?>
-<textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="id" ><?php echo $id;?></textarea>
-<textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="EmpID" ><?php echo $EmpID;?></textarea>
+<form action='index.php?r=faculty/processEditIPCRfaculty<?php echo'&m='.$m.'&y='.$y.'';?>' method="post">
+    <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="idaccomp" ><?php echo $idaccomp;?></textarea>
+    <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="fcode" ><?php echo $fcode;?></textarea>
 
-<p style="margin-bottom: 9px; font-size: 20px;"><strong>Output:</strong><textarea readonly name="output" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $outputs; ?></textarea></p>
-<br>
-<br>
-<p style="margin-bottom: 9px; font-size: 15px;"><strong>Success Indicators:</strong><textarea readonly name="indicators" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $indi; ?></textarea></p>
-<br>
-<br>
-<p style="margin-bottom: 9px; font-size: 15px;"><strong>Actual Accomplishments:</strong><textarea name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $accomp; ?></textarea></p>
+    <h4 class="underlined-header" id="head"><strong>OUTPUT:</strong><textarea readonly name="output" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $outputs; ?></textarea></h4>
+    <br>
+    <br>
+    <h4 class="underlined-header" id="head"><strong>SUCCESS INDICATORS:</strong><textarea readonly name="indicators" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $indi; ?></textarea></h4>
+    <br>
+    <br>
+    <h4 class="underlined-header" id="head"><strong>ACTUAL ACCOMPLISHMENTS:</strong><textarea name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $accomp; ?></textarea></h4>
 
-<script src="ckeditor/ckeditor.js"></script>
+<!-- CKeditor Script to replace <textarea> tag to rich text editor -->
+<script src="ckeditor4/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('output');
     CKEDITOR.replace('indicators');
     CKEDITOR.replace('accomplishment');
 </script>
-
 <center><button type="submit" name="submit" style="width: 100px;">Save</button>
 </form>
-
-
 </section>
-
-<br/>
-
 <!-- End - Showcase gallery -->
 </div>
 <!-- End - Page content -->

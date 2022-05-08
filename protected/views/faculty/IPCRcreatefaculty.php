@@ -36,7 +36,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
     
 #page-title
 {
@@ -146,6 +146,19 @@ if(isset($_SESSION['user'])) {
     background-color: antiquewhite;
 }
 
+select {
+  margin: 50px;
+  width: 300px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #CCC;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+}
+
 </style>
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
@@ -166,7 +179,20 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='http://www.puptaguig.org'>Home</a>
+<a data-category=design href="index.php?r=faculty/">Profile</a>
+<a data-category=design href="index.php?r=faculty/ServiceCredit">Service Credit</a>
+<a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
+<a data-category=design href="index.php?r=faculty/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=faculty/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -176,7 +202,7 @@ if(isset($_SESSION['user'])) {
 <!-- Video - HTML5 -->
 <section>
  
-<h2 class=underlined-header>Individual Performance Commitment and Review</h2>
+<h2 class=underlined-header><center>Individual Performance Commitment and Review</center></h2>
 <br>
 <?php 
 if (isset($_GET['msg'])) {
@@ -199,8 +225,6 @@ $msg = $_GET['msg'];
 ?>
 <br>
 <h2 class="underlined">Edit IPCR for: (*Choose month and year)</h2>
-<br>
-<br>
 <!---->
 <?php  
     
@@ -232,11 +256,7 @@ $msg = $_GET['msg'];
             <option value="" disabled selected>----Choose Year----</option>
         </select>
     </div>
-    <br>
-    <br>
-
-    <center><button type="submit" name="submit">Generate</button>
-
+    <center><button type="submit" name="submit" style="width: 100px;">Generate</button>
 </form>
 </section>
             
@@ -247,6 +267,10 @@ $msg = $_GET['msg'];
 
             <?php if(isset($_GET['b'])) : ?>
                 <div class="flash-data-NA" data-flashdata1="<?= $_GET['b']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if(isset($_GET['c'])) : ?>
+                <div class="flash-data-ND" data-flashdata2="<?= $_GET['c']; ?>"></div>
             <?php endif; ?>
 
             <script>
@@ -285,7 +309,16 @@ $msg = $_GET['msg'];
                             "Press ok to continue",
                             'error'
                         )
-                    }    
+                    }  
+
+                const flashdata2 = $('.flash-data-ND').data('flashdata2')
+                    if (flashdata2) {
+                        Swal.fire(
+                            'No IPCR Created',
+                            "Wait for the moment",
+                            'error'
+                        )
+                    }      
             </script>
 <!-- End - Video -HTML5 -->
 <br/>
@@ -317,7 +350,7 @@ $msg = $_GET['msg'];
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/fsis-team-2/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
+© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
 <!-- Footer right -->

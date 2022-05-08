@@ -11,5 +11,9 @@
 </li>
 
 <li>
+	<a href="#">Download Interpolation</a>
+</li>
+
+<li>
 	<a href='index.php?r=administrator/IPCRemailnotif'>Send IPCR Email Notification</a>
 </li>

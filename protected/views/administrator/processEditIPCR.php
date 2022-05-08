@@ -9,12 +9,13 @@
 		$output = $_POST['output'];
 		$id = $_POST['id'];
 		$indicators = $_POST['indicators'];
+		$ifRequired = $_POST['checkbox'];
 	
 		if($m == "JJ"){
-			$sql = "UPDATE tbl_ipcr1 SET output='$output', indicators='$indicators' WHERE id = '$id'";
+			$sql = "UPDATE tbl_ipcr1 SET if_required='$ifRequired', output='$output', indicators='$indicators' WHERE id = '$id'";
 			$result = mysqli_query($conn,$sql);
 		} else {
-			$sql = "UPDATE tbl_ipcr2 SET output='$output', indicators='$indicators' WHERE id = '$id'";
+			$sql = "UPDATE tbl_ipcr2 SET if_required='$ifRequired', output='$output', indicators='$indicators' WHERE id = '$id'";
 			$result = mysqli_query($conn,$sql);
 		}
 		

@@ -84,7 +84,18 @@ if(isset($_SESSION['user'])) {
     font-family: "Helvetica";
     padding: 5px 5px 5px;
     width: 100%;
-}</style>
+}
+
+#head
+{
+    font-size: 20px;
+}
+
+#req
+{
+    width: 100px;
+}
+</style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
@@ -99,7 +110,20 @@ if(isset($_SESSION['user'])) {
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
 
-<?php include("nav.php");?>
+<header id=page-title>
+<section id=menu_strip>
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+    </header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -144,27 +168,34 @@ if(isset($_GET['m'],$_GET['y']))
     $id = $row['id'];
     $outputs=$row['output'];
     $indi=$row['indicators'];
+    $ifRequired=$row['if_required'];
     //$accomp=$row['accomplishment'];
     }   
-?> 
+?>  
  
 
-<p style="font-size: 17px;">Edit Row Information</p>
+<p style="font-size: 17px;"><strong>Edit Row Information</strong></p>
 <hr style="margin-top: -10px;" />
 
-
-
 <form action="index.php?r=administrator/processEditIPCR<?php echo'&m='.$m.'&y='.$y.'';?>" method="post">
+
+<h4 class="underlined-header" id="req">
+        <input type="hidden" name="checkbox" value="Not Required"/>
+        <input type="checkbox" name="checkbox" value="Required"
+        <?php if($ifRequired == 'Required') : ?>
+            checked = "checked"
+        <?php endif; ?>
+        /> Required</h4>
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="id" ><?php echo $id;?></textarea>
-<p style="margin-bottom: 9px; font-size: 20px;"><strong>OUTPUT:</strong><textarea name="output" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $outputs; ?></textarea></p>
+<h4 class="underlined-header" id="head"><strong>OUTPUT:</strong><textarea name="output" type=text><?php echo $outputs; ?></textarea></h4>
 <br>
 <br>
-<p style="margin-bottom: 9px; font-size: 20px;"><strong>SUCCESS INDICATORS:</strong><textarea name="indicators" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $indi; ?></textarea></p>
+<h4 class="underlined-header" id="head"><strong>SUCCESS INDICATORS:</strong><textarea name="indicators" type=text><?php echo $indi; ?></textarea></h4>
 <br>
 <br>
 <!--<p style="margin-bottom: 9px; font-size: 15px;"><strong>Actual Accomplishments:</strong><textarea name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php //echo $accomp; ?></textarea></p>-->
 
-<script src="ckeditor/ckeditor.js"></script>
+<script src="ckeditor4/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('output');
     CKEDITOR.replace('indicators');
@@ -208,7 +239,7 @@ if(isset($_GET['m'],$_GET['y']))
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/fsis-team-2/fsis2-team-members?authuser=0" title="Dbooom Themes">Team Apex | PUP Taguig</a> - All Rights Reserved.
+© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Team Apex | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
 <!-- Footer right -->

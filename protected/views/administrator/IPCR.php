@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(isset($_SESSION['user'])) {
 	if($_SESSION['user']==1) {
 
@@ -31,7 +32,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
     
 #page-title
 {
@@ -145,6 +146,8 @@ if(isset($_SESSION['user'])) {
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
+
+
 <meta charset="UTF-8"></head>
 <body class='page-media page-sidebar-right' style="background-color: black">
 <!-- JS notice - will be displayed if javascript is disabled -->
@@ -160,7 +163,24 @@ if(isset($_SESSION['user'])) {
 <!-- End - Page subheader -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -173,7 +193,34 @@ if(isset($_SESSION['user'])) {
 <h2 class=underlined-header>Getting started with <b>Individual Performance Commitment and Review</b></h2>
 <iframe width="600" height="375" src="//www.youtube.com/embed/4DbzZEG_dKA" frameborder="0" allowfullscreen></iframe>
 
+<script>
+    //disable resizing
+    (function () {
 
+        /**
+         * Main stopscrollwheelzoom constructor
+         */
+        let SSWZ = function () {
+
+            /**
+             * Handler for scroll- control must be pressed.
+             * @param e
+             */
+            this.keyScrollHandler = function (e) {
+                if (e.ctrlKey) {
+                    e.preventDefault();
+                    return false;
+                }
+            }
+        };
+
+        if (window === top) {
+            let sswz = new SSWZ();
+            window.addEventListener('wheel', sswz.keyScrollHandler, { passive: false });
+        }
+
+    })();
+</script>
 </section>
 <!-- End - Video -HTML5 -->
 <br>

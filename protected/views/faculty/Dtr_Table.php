@@ -40,14 +40,14 @@ SHOW:
 <a href="index.php?r=administrator/DtrTable&sort=loadtype"><input type="button" value="Load Type" /></a>
 <a href="index.php?r=administrator/DtrTable&sort=month"><input type="button" value="Month" /></a>
 <a href="index.php?r=administrator/DtrTable&sort=year"><input type="button" value="Year" /></a> -->
-<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="pending" /></a>
-<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="disapproved"/></a>
-<a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="approved"/></a>
-<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="deleted"/></a>
-<a href="index.php?r=administrator/DtrTable&sort=recent"><input type="button" value="recent"/></a>
+<a href="index.php?r=faculty/DtrTable&sort=pending"><input type="button" value="pending" /></a>
+<a href="index.php?r=faculty/DtrTable&sort=disapproved"><input type="button" value="disapproved"/></a>
+<a href="index.php?r=faculty/DtrTable&sort=approved"><input type="button" value="approved"/></a>
+<a href="index.php?r=faculty/DtrTable&sort=deleted"><input type="button" value="deleted"/></a>
+<a href="index.php?r=faculty/DtrTable&sort=recent"><input type="button" value="recent"/></a>
 </p>
 
-<form name="searchby" id="searchby" action="index.php?r=administrator/DtrTable" method="post">
+<form name="searchby" id="searchby" action="index.php?r=faculty/DtrTable" method="post">
 <select name="dtrsearch" id="dtrsearch" style="width: 15%;">
 	<option class="select" disabled selected value> --Select an option-- </option>
 	<option value="month">Month</option>

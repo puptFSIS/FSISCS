@@ -1,6 +1,11 @@
 <?php
 	include("config.php");
-	$EmpID = $_SESSION['CEmpID'];
+	$EmpID= "";
+	if(isset($_SESSION['CEmpID'])) {
+		$EmpID = $_SESSION['CEmpID'];
+	} else {
+		die(header("Location: index.php?r=site/index"));
+	}
 	$m = "00";
 	$sql = "SELECT * FROM tbl_personalinformation WHERE EmpID='$EmpID'";
 	$result=mysqli_query($conn,$sql);
@@ -57,5 +62,6 @@
 	$email = $row['email'];
 	$cellNo = $row['cellNo'];
 	$tin = $row['TIN_NO'];
-	$EmpID = $row['userID'];
+	$EmpID = $row['EmpID'];
+	$fcode = $row['FCode'];
 ?>

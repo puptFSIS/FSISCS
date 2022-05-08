@@ -459,9 +459,9 @@ if($preview_value===0)
 
   else
   {
-    echo '<ul class="widget-list categories-list">';
-      echo "<li><a href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
-      echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
+    echo '<ul>';
+      echo "<li><a href='index.php?r=faculty/daily_time_record'>DTR Generator </button></a></li>";
+      echo '<li><a href="index.php?r=faculty/DtrTable">Created DTRs</a></li>';
       
    
       // echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";

@@ -6,6 +6,22 @@ class FacultyController extends Controller
 
 {
 
+	private function CheckEmpID($empID){
+
+		$fcode = Yii::app()->session['fcode'];
+		$fullName = Yii::app()->session['fullname'];
+
+		if($fcode != $empID){
+			$_SESSION['CEmpID'] = $fcode;
+			// $_SESSION['FullName'] = $fullName;
+		}
+
+		if($fullName != $_SESSION['FullName']){
+			$_SESSION['FullName'] = $fullName;
+		}
+	}
+
+
 	public function actionIndex()
 
 	{
@@ -1398,6 +1414,101 @@ class FacultyController extends Controller
     	// echo "</pre>";
     	$this->render('PrintFacultyAssign',array('TeachingLoad'=>$TeachingLoad, 'profInfo'=>$profInfo, 'courses'=>$courses, 'sem' => $sem, 'sy' => $sy));
     }
+
+
+    // D T R //
+
+    public function actiondaily_time_record() // dtr
+	{
+		if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	        $this->CheckEmpID($_SESSION['CEmpID']);
+	    } 
+		$var = Yii::app()->session['fetch_use_id'];
+		$preview_value = 0;
+		$this->render('daily_time_record',array('preview_value' => $preview_value));
+	}
+
+	public function actionDtrTable() // dtr
+	{
+		if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	        $this->CheckEmpID($_SESSION['CEmpID']);
+	    } 
+		$var = Yii::app()->session['fetch_use_id'];
+		$preview_value = 1;
+		$this->render('daily_time_record',array('preview_value' => $preview_value));
+	}
+
+	public function actionFetchDtrSched() // dtr
+	{
+		$val1 = $_POST['val1'];
+		$val3 = $_POST['val3'];
+		$val4 = $_POST['val4'];
+		$result = TblSchedule::model()->fetch_loadtype($val1,$val3,$val4);
+		$count = 0;
+		//$this->render('daily_time_record',array('data' => $result, 'timeproff' => $timeprof));
+		foreach($result as $rows) {
+			$sy[] = $rows['schoolYear'];
+			$sprof[] = $rows['sprof'];
+			$sday[] = $rows['sday'];
+			$stitle[] = $rows['stitle'];
+			$stimeS[] = $rows['stimeS'];
+			$stimeE[] = $rows['stimeE'];
+			$sday2[] = $rows['sday2'];
+			$stimeS2[] = $rows['stimeS2'];
+			$stimeE2[] = $rows['load_type'];
+			$count++;
+		}
+		echo json_encode(array('sy' => $sy, 'sprof' => $sprof,'sday' => $sday,'stitle' => $stitle,'stimeS' => $stimeS,'stimeE' => $stimeE,'sday2' => $sday2,'stimeS2' => $stimeS2,'stimeE2' => $stimeE2,'count' => $count)); 
+		
+	}
+
+	public function actionRegular_DTR() // dtr
+	{
+		
+		$val1 = $_POST['val1'];
+		$val2 = $_POST['val2'];
+		$val3= $_POST['val3'];
+		$val4 = $_POST['val4'];
+		$val5= $_POST['val5'];
+		$val6= $_POST['val6'];
+		$val7= $_POST['val7'];
+		$val8= $_POST['val8'];
+		$val9 = $_POST['val9'];
+		$val10 = $_POST['val10'];
+		echo json_encode(array('firstid' => $val1,'firstreg' => $val2,'firstmon' => $val3,'firstyear' => $val4,'firstfcode' => $val5,'secondid' => $val6,'secondreg' => $val7,'secondmon' => $val8,'secondyear' => $val9,'secondfcode'=>$val10));
+		// $result = TblSchedule::model()->fetch_sched($val1,$val2,$val3,$val4,$val5);
+		// echo json_encode(array('result' => $result)); 
+		
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ////////////////////////
+
+
+
+
+
+
+
+
+
+
 
 ///////////////////////////////////////////////
 

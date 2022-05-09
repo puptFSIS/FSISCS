@@ -78,7 +78,7 @@ SHOW:
 	<tbody>
 
 		<?php 
-		include("dtrlist.php"); 
+		// include("dtrlist.php"); 
 
 
 		?>

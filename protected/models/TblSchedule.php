@@ -273,7 +273,7 @@ class TblSchedule extends CActiveRecord
 	public static function restore_deleted($val1) // dtr
 	{
 		$date = date('Y-m-d H:i:s');
-		foreach ($val2 as $id) {
+		foreach ($val1 as $id) {
 			$update = "UPDATE `tbl_dtr` SET `status` = null,`modified_date`='$date'  WHERE id = '$id'";
 		 	Yii::app()->db->createCommand($update)->execute();
 		}

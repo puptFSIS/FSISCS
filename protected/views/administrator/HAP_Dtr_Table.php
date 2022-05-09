@@ -18,6 +18,8 @@
 
 
 </style>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 <div> 
 <!-- Video - HTML5 -->
@@ -36,7 +38,7 @@ SHOW:
 
 </p>
 
-<table class="table-width">
+<table id="ProfTable" class="table table-striped table-bordered">
 <thead>
    
 <tr>
@@ -68,17 +70,31 @@ SHOW:
 </div>
 </div>
 
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/datatables.min.js"></script>
+<script id=js-dispatcher src='scripts/scripts.js'></script>
 <script>
+	var ProfTable = $("#ProfTable").DataTable({
+        "scrollY":        "",
+        "scrollCollapse": false,
+        "paging":         true,
+        "lengthChange": true,
+        "pagingType": "full_numbers",
 
-	function changecolor(count)
-		{
-			if(count == 1)
-			{
-				var pending = document.getElementById('pending_click');
-				pending.style.backgroundColor="green";
-         }
-		}
-	
+
+        language: { 
+        search: "", 
+
+        searchPlaceholder: "Search:" },
+        columnDefs: [ {
+            orderable: false,
+            targets:   0,
+        } ],
+
+
+    });
 
 </script>
 </html>

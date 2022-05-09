@@ -195,7 +195,7 @@ if(isset($_SESSION['user'])) {
             if($preview_value===1)
             {
             echo "<h2 class=underlined-header>List of Created Daily Time Records</h2>";
-            include("Dtr_Table.php");
+            include("Dtr_Table_2.php");
             }
             if($preview_value===2)
             {

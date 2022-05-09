@@ -448,7 +448,6 @@ else if ($status == "approved")
 	{
 	echo'
 		<tr id="tr_id_'.$counter.'">
-		
 		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'
 		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
@@ -523,8 +522,10 @@ else if ($status == "pending")
 	foreach($result as $newresult)
 	{
 	echo'
+
 		<tr id="tr_id_'.$counter.'">
-		<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
+		
+		<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'</td>
 		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
@@ -535,6 +536,25 @@ else if ($status == "pending")
 		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
 
 
+			
+
+					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
+
+
+		</center></td>
+		</tr>
+	';
+	$counter++;
+	}
+	if(empty($newresult))
+		{
+			echo "no records found";
+			
+		}
+		else
+		{
+
+			echo '
 			<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
 						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
 						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
@@ -558,22 +578,9 @@ else if ($status == "pending")
 
 			</div>
 
-					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
 
 
-		</center></td>
-		</tr>
-	';
-	$counter++;
-	}
-	if(empty($newresult))
-		{
-			echo "no records found";
-			
-		}
-		else
-		{
-			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
+			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit">
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">';
 		}

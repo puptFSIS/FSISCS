@@ -87,7 +87,7 @@ background-repeat:repeat;
 <a href = "index.php?r=administrator/PrintSpecificCourseCurr&courseID=<?php echo $_GET['courseID']?>&year=<?php echo $_GET['year']?>&courseName=<?php echo $_GET['courseName']?>" class = "btn btn-r" style = "font-size:13px; font-weight:bold;" target = "blank">Print Curriculum</a> <br>
 
 <section>
-<a href="index.php?r=administrator/ViewCurriculumCourses&year=<?php echo $_GET['year']?>" style ="left: 35em;top: 140px; position:absolute;"><button style="height:35px;">BACK</button></a>
+<a href="index.php?r=administrator/ViewCurriculumCourses&year=<?php echo $_GET['year']?>" style ="left: -60px;top: -110px; position:relative;"><button style="height:35px;">BACK</button></a>
 <?php 
 	$years = $course['NoOfYears'];
 ?>

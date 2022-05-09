@@ -94,7 +94,7 @@ background-repeat:repeat;
 	<?php endif;?>
 <?php endif;?>
 <h2 class="underlined-header">View Subject Load</h2>
-<a href="index.php?r=administrator/CurriculumManagement&courseID=<?php echo $_GET['courseID']?>&sy=<?php echo $_GET['sy']?>" style ="left: 35em;top: 140px; position:absolute;"><button style="height:35px;">BACK</button></a>
+<a href="index.php?r=administrator/CurriculumManagement&courseID=<?php echo $_GET['courseID']?>&sy=<?php echo $_GET['sy']?>" style ="left: -60px;top: -10px; position:relative;"><button style="height:35px;">BACK</button></a>
 <?php
 	$currYear=date("Y")+1;
 	$prevYear=date("Y");
@@ -292,26 +292,7 @@ background-repeat:repeat;
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar style="display: inline-block;">
-<section class='widget-container widget-categories'>
-<div class=widget-content>
-<?php include("SchedulingMenu.php");?>
 
-</div>
-</section>
-</aside>
-
-<aside class="page-sidebar" style="display: inline-block;position: absolute;">
-<section class='widget-container widget-categories'>
-<div class=widget-content>
-
-<?php include("SchedulingMenu2.php");?>
-
-</div>
-
-
-</section>
-</aside>
 <!-- End - Page sidebar -->
 </div>
 </div>

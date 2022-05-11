@@ -149,7 +149,7 @@ if(isset($_SESSION['user'])) {
 <p style="margin-bottom: 9px;">*Units:<input type="text" name="units" style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder='Units'></p>
 <p style="margin-bottom: 9px;">*Hours(Lec):<input name="lec" type=text style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder='Hours(Lecture)'/></p>
 <p style="margin-bottom: 9px;">*Hours(Lab):<input name="lab" type=text style="width: 470px; margin-top: -27px; margin-left: 15%;"  placeholder='Hours(Laboratory)'/></p>
-<center><p><input type="submit" value="Save" /> <button onclick="history.go(-1);">Cancel </button></p></center>
+<center><p><input type="submit" value="Save" /> <a href="index.php?r=administrator/SubjectManagement" class ="btn btn-primarycan">Cancel </a></p></center>
 </form>
 </section>
 <!-- End - Video -HTML5 -->
@@ -159,14 +159,24 @@ if(isset($_SESSION['user'])) {
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
+<aside class=page-sidebar style="display: inline-block;">
 <section class='widget-container widget-categories'>
-<h2 class=widget-heading>Subject Management</h2>
 <div class=widget-content>
-<ul class='widget-list categories-list'>
 <?php include("SchedulingMenu.php");?>
-</ul>
+
 </div>
+</section>
+</aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
 </section>
 </aside>
 <!-- End - Page sidebar -->

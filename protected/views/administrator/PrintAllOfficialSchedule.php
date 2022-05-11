@@ -129,7 +129,7 @@ class PDF extends FPDF
 				$this->SetTextColor(0);
 				$this->SetFont('seguisb','',9);
 				
-				$sql1 = "SELECT * FROM tbl_schedule WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$p' and Sched_type='INTERNAL'";
+				$sql1 = "SELECT * FROM tbl_schedule WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$p'";
 				$query1 = mysqli_query($conn,$sql1);
 				while($row1 = mysqli_fetch_array($query1))
 				{
@@ -256,7 +256,7 @@ class PDF extends FPDF
 		while($rowo = mysqli_fetch_array($queryo))
 		{
 			$pr = $rowo['FCode'];
-			$sql = "SELECT DISTINCT sprof,sem,schoolYear FROM tbl_schedule WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$pr' and Sched_type='OFFICIAL'";
+			$sql = "SELECT DISTINCT sprof,sem,schoolYear FROM tbl_schedule WHERE sem = '$csem' and schoolYear = '$sy' and sprof = '$pr' and Sched_type='INTERNAL'";
 			$query = mysqli_query($conn,$sql);
 			while($row = mysqli_fetch_array($query))
 			{

@@ -248,7 +248,7 @@
 require_once('config.php');
 $counter = 1;
 $generate ="generate";
-$status = "approved";
+$status = "pending";
 if(isset($_GET['sort']))
 {
 	if($_GET['sort']=="id")
@@ -448,7 +448,7 @@ else if ($status == "approved")
 	{
 	echo'
 		<tr id="tr_id_'.$counter.'">
-		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'
+		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'</td>
 		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
@@ -456,7 +456,10 @@ else if ($status == "approved")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+
+		<td><center>
+			
+
 
 			<div class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
 						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
@@ -489,6 +492,12 @@ else if ($status == "approved")
 
 
 		</center></td>
+		<td>
+			<center>
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+				
+			</center>
+		</td>
 		</tr>
 	';
 	$counter++;
@@ -533,7 +542,7 @@ else if ($status == "pending")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+		<td><center>
 
 
 			
@@ -542,6 +551,11 @@ else if ($status == "pending")
 
 
 		</center></td>
+		<td>
+			<center>
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+			</center>
+		</td>
 		</tr>
 	';
 	$counter++;
@@ -606,7 +620,7 @@ else if($status == "disapproved")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-			<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+			<td><center>
 
 
 				<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
@@ -638,6 +652,11 @@ else if($status == "disapproved")
 
 
 			</center></td>
+			<td>
+			<center>
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+			</center>
+		</td>
 			</tr>
 		';
 		$counter++;
@@ -676,7 +695,7 @@ else if($status == "deleted")
 			<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 			<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 			<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-			<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a>
+			<td><center>
 
 
 				<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
@@ -706,6 +725,11 @@ else if($status == "deleted")
 
 
 			 </center></td>
+			 <td>
+			<center>
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+			</center>
+			</td>
 			</tr>
 		';
 		$counter++;

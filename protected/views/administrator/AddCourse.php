@@ -147,15 +147,15 @@ if(isset($_SESSION['user'])) {
 <p>* Required fields.</p>
 <hr style="margin-top: -10px;" />
 <form id="annc" name="annc" action="index.php?r=administrator/processAddCourse" method="post">
-<p style="margin-bottom: 9px;">*Course Code:<input name="ccode" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder='Course Code'/></p>
-<p style="margin-bottom: 9px;">*Course ID:<input name="course" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder='Course ID'/></p>
+<p style="margin-bottom: 9px;">*Course Code:<input name="ccode" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;" oninput="this.value = this.value.replace(/[^a-zA-Z-]/g, '').replace(/(\..*?)\..*/g, '$1');"  placeholder='Course Code'/></p>
+<p style="margin-bottom: 9px;">*Course ID:<input name="course" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder='Course ID'/></p>
 <p style="margin-bottom: 9px;">*Course Description:<input name="cdesc" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder='Course Description'/></p>
-<p style="margin-bottom: 9px;">Course Info:<input name="cinfo" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder="Course Info(Optional)"/></p>
-<p style="margin-bottom: 9px;">Career:<input name="career" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder="Career(Optional)"/></p>
-<p style="margin-bottom: 9px;">*Org ID:<input name="orgID" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder='Org ID'/></p>
-<p style="margin-bottom: 9px;">*Status:<input name="stat" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder='Post Now'/></p>
-<p style="margin-bottom: 9px;">*No of Years:<input name="years" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder='No. Of Years'/></p>
-<center><p><input type="submit" value="Save" /> <button onclick="history.go(-1);">Cancel </button></p></center>
+<p style="margin-bottom: 9px;">Course Info:<input name="cinfo" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Course Info(Optional)"/></p>
+<p style="margin-bottom: 9px;">Career:<input name="career" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Career(Optional)"/></p>
+<p style="margin-bottom: 9px;">*Org ID:<input name="orgID" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder='Org ID'/></p>
+<p style="margin-bottom: 9px;">*Status:<input name="stat" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder='Post Now'/></p>
+<p style="margin-bottom: 9px;">*No of Years:<input name="years" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;" oninput="this.value = this.value.replace(/[^0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder='No. Of Years'/></p>
+<center><p><input type="submit" value="Save" /> <a href="index.php?r=administrator/CourseManagement" class ="btn btn-primarycan">Cancel </a></p></center>
 </form>
 </section>
 <!-- End - Video -HTML5 -->
@@ -165,14 +165,24 @@ if(isset($_SESSION['user'])) {
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
+<aside class=page-sidebar style="display: inline-block;">
 <section class='widget-container widget-categories'>
-
 <div class=widget-content>
-<ul class='widget-list categories-list'>
 <?php include("SchedulingMenu.php");?>
-</ul>
+
 </div>
+</section>
+</aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
 </section>
 </aside>
 <!-- End - Page sidebar -->

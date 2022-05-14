@@ -907,7 +907,6 @@
 					}
 			 		echo'
 			 		</ul>
-
 			 			</div>	
 						<br>
 						<p class="thank_you">Thank you very much.</p>
@@ -951,17 +950,20 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input2" type="" name="" value="'.$date.'" disabled>
-						<input class="hrmd no_box" id="name_of_sender2" type="" name="" value="'.$hrmd.'" disabled>
-						<input id="position_of_sender2" type="" value="Director" disabled>
-						<input id="department_name2" type="" value="Human Resource Management Department" disabled>
-						<input id="dear2" type="" value="Dear Atty. Sarum:" disabled>
+						<input class="date no_box" id="month_input2" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
+						<input class="hrmd no_box" id="name_of_sender2" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
+			 			<input id="position_of_sender2" type="" value="Director" oninput="date_onchange(this.value,3)">
+						<input id="department_name2" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
+						<input id="dear2" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
 						<br>
-						<div class="body_text" contentEditable id="paragraph_text2">
-			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
+						<div class="body_text" contentEditable id="paragraph_text" >
+			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: 
 			 			</div>
+			 			
 					</div>
+					
 					<div class="listOfFacultyMembers" contentEditable> 
+				
 					 <ul>';
 
 				
@@ -1022,14 +1024,21 @@
 					echo'
 			 		</ul>
 
-			 					</div>	
-					<div class="footer">
-							<img src="assets/EOTM_footer.PNG" width="" height="">
-					</div>
-					
-				</div>
-				<br><br>
-
+					 </div>	
+					 <br>
+					 <p class="thank_you">Thank you very much.</p>
+					 <p class="closing_remarks">Sincerly Yours,</p>
+					 <p class="closing_remarks_sender">test sender</p>
+					 <p class="closing_remarks_sender_position">branch director</p>
+					 <br>
+					 <br>
+					 <br>
+					 <p id="footer_address">gen santos ave. lower bicutan, taguig city 1772; (direct line) 837-5858 to 60; (telfax) 837-5859;</p>
+					 <p id="footer_email">website: www.pup.edu.ph	     e-mail: taguig@pup.edu.ph</p>
+					 <p id="footer_pup">THE COUNTRY&#180;S 1<span style="vertical-align:super;">st</span> POLYTECHNICU</p>
+				 
+			 		</div>
+			 <br><br>
 
 
 				';
@@ -1056,19 +1065,23 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input3" type="" name="" value="'.$date.'" disabled>
-						<input class="hrmd no_box" id="name_of_sender3" type="" name="" value="'.$hrmd.'" disabled>
-						<input id="position_of_sender3" type="" value="Director" disabled>
-						<input id="department_name3" type="" value="Human Resource Management Department" disabled>
-						<input id="dear3" type="" value="Dear Atty. Sarum:" disabled>
+						<input class="date no_box" id="month_input3" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
+						<input class="hrmd no_box" id="name_of_sender3" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
+			 			<input id="position_of_sender2" type="" value="Director" oninput="date_onchange(this.value,3)">
+						<input id="department_name3" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
+						<input id="dear3" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text3" >
-			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
+			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: 
 			 			</div>
-					</div>	
-
+			 			
+					</div>
+					
 					<div class="listOfFacultyMembers" contentEditable> 
+						
+			
 					 <ul>
+					 
 
 				';
 
@@ -1128,14 +1141,21 @@
 					}
 					echo'
 			 		</ul>
-
-			 					</div>	
-					<div class="footer">
-							<img src="assets/EOTM_footer.PNG" width="" height="">
+					 </div>	
+					 <br>
+					 <p class="thank_you">Thank you very much.</p>
+					 <p class="closing_remarks">Sincerly Yours,</p>
+					 <p class="closing_remarks_sender">test sender</p>
+					 <p class="closing_remarks_sender_position">branch director</p>
+					 <br>
+					 <br>
+					 <br>
+					 <p id="footer_address">gen santos ave. lower bicutan, taguig city 1772; (direct line) 837-5858 to 60; (telfax) 837-5859;</p>
+					 <p id="footer_email">website: www.pup.edu.ph	     e-mail: taguig@pup.edu.ph</p>
+					 <p id="footer_pup">THE COUNTRY&#180;S 1<span style="vertical-align:super;">st</span> POLYTECHNICU</p>
+				 
 					</div>
-					
-				</div>
-				<br><br>
+					<br><br>
 
 
 

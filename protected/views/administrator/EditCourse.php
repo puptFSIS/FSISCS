@@ -177,7 +177,7 @@ if(isset($_SESSION['user'])) {
 <p style="margin-bottom: 9px;">*No of Years:<input name="years" type=text style="width: 400px; margin-top: -28px; margin-left: 20%;"  value='<?php echo $NoOfYears;?>'/></p>
 <center><p><input type="submit" value="Save" /> 
 
-<button onclick="history.go(-1);">Cancel </button>
+<a href="index.php?r=administrator/CourseManagement" class ="btn btn-primarycan">Cancel </a>
 
 </p></center>
 </form>
@@ -190,13 +190,24 @@ if(isset($_SESSION['user'])) {
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
+<aside class=page-sidebar style="display: inline-block;">
 <section class='widget-container widget-categories'>
 <div class=widget-content>
-<ul class='widget-list categories-list'>
 <?php include("SchedulingMenu.php");?>
-</ul>
+
 </div>
+</section>
+</aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
 </section>
 </aside>
 <!-- End - Page sidebar -->

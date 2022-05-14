@@ -46,7 +46,7 @@ if(isset($_SESSION['user'])) {
 {
     background-color: black;
     padding: 5px 5px 5px;
-    height: 41px;
+    height: 50px;
 }
     
 #menu_strip

@@ -148,9 +148,9 @@ if(isset($_SESSION['user'])) {
 <p>* Required fields.</p>
 <hr style="margin-top: -10px;" />
 <form id="annc" name="annc" action="index.php?r=administrator/processAddRoom" method="post">
-<p style="margin-bottom: 9px;">*Room Name:<input name="room" type="text" style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder='Room Name'/></p>
-<p style="margin-bottom: 9px;">*Room Description:<input name="roomDesc" type="text" style="width: 400px; margin-top: -28px; margin-left: 20%;"  placeholder="Room Description(Optional)"/></p>
-<center><p><input type="submit" value="Save" /> <button onclick="history.go(-1);">Cancel </button></p></center>
+<p style="margin-bottom: 9px;">*Room Name:<input name="room" type="text" style="width: 400px; margin-top: -28px; margin-left: 20%;" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-\s]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder='Room Name'/></p>
+<p style="margin-bottom: 9px;">*Room Description:<input name="roomDesc" type="text" style="width: 400px; margin-top: -28px; margin-left: 20%;" oninput="this.value = this.value.replace(/[^a-zA-Z0-9-\s]/g, '').replace(/(\..*?)\..*/g, '$1');" placeholder="Room Description(Optional)"/></p>
+<center><p><input type="submit" value="Save" /> <a href="index.php?r=administrator/RoomManagement" class ="btn btn-primarycan">Cancel </a></p></center>
 </form>
 </section>
 <!-- End - Video -HTML5 -->
@@ -160,14 +160,24 @@ if(isset($_SESSION['user'])) {
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
+<aside class=page-sidebar style="display: inline-block;">
 <section class='widget-container widget-categories'>
-
 <div class=widget-content>
-<ul class='widget-list categories-list'>
 <?php include("SchedulingMenu.php");?>
-</ul>
+
 </div>
+</section>
+</aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
 </section>
 </aside>
 <!-- End - Page sidebar -->

@@ -2055,7 +2055,7 @@ class AdministratorController extends Controller
 		
 		$receipients = TblEvaltest::model()->findAll();	//Uncomment this for testing the email
 
-		// // $recipients = TblEvaluationfaculty::model()->EmailFaculty(); //Uncomment this for production
+		//$recipients = TblEvaluationfaculty::model()->EmailFaculty(); //Uncomment this for production
 		if(!empty($receipients)) {
 			foreach ($receipients as $row) {
 

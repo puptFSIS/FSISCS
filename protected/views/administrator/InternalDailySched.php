@@ -381,7 +381,7 @@ background-repeat:repeat;
 									</tr>
 								';
 							
-							$sql = "SELECT * FROM tbl_internaschedule WHERE (sem='$csem' AND schoolYear = '$sy' and sday = '$day') or (sem='$csem' AND schoolYear = '$sy' and sday2 = '$day')";
+							$sql = "SELECT * FROM tbl_schedule WHERE (sem='$csem' AND schoolYear = '$sy' and sday = '$day' and Sched_type = 'INTERNAL') or (sem='$csem' AND schoolYear = '$sy' and sday2 = '$day' AND Sched_type = 'INTERNAL')";
 							$query = mysqli_query($conn,$sql);
 							while($row = mysqli_fetch_array($query)) 
 							{
@@ -452,7 +452,7 @@ background-repeat:repeat;
 								';
 							
 							
-							$sql = "SELECT * FROM tbl_internaschedule WHERE (sem='$csem' AND schoolYear = '$sy' and sday = '$day') or (sem='$csem' AND schoolYear = '$sy' and sday2 = '$day')";
+							$sql = "SELECT * FROM tbl_schedule WHERE (sem='$csem' AND schoolYear = '$sy' and sday = '$day' AND Sched_type = 'INTERNAL') or (sem='$csem' AND schoolYear = '$sy' and sday2 = '$day' AND Sched_type = 'INTERNAL')";
 							$query = mysqli_query($conn,$sql);
 							while($row = mysqli_fetch_array($query)) 
 							{
@@ -500,7 +500,7 @@ background-repeat:repeat;
 						function getRoom($scode,$sem,$cID,$sy,$day)
 						{
 							include("config.php");
-							$sql ="SELECT * FROM tbl_internaschedule where (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday = '$day') or (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday2 = '$day')";
+							$sql ="SELECT * FROM tbl_schedule where (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday = '$day' AND Sched_type = 'INTERNAL') or (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday2 = '$day' AND Sched_type = 'INTERNAL')";
 							$result = mysqli_query($conn,$sql);
 							$row = mysqli_fetch_array($result);
 							if($row['sday2']== $day)
@@ -517,7 +517,7 @@ background-repeat:repeat;
 						function getProf($scode,$sem,$cID,$sy,$day)
 						{
 							include("config.php");
-							$sql ="SELECT * FROM tbl_internaschedule where (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday = '$day') or (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday2 = '$day')";
+							$sql ="SELECT * FROM tbl_schedule where (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday = '$day' AND Sched_type = 'INTERNAL') or (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday2 = '$day' AND Sched_type = 'INTERNAL')";
 							$result = mysqli_query($conn,$sql);
 							$row = mysqli_fetch_array($result);
 							$prof = getName($row['sprof']);
@@ -537,7 +537,7 @@ background-repeat:repeat;
 						function getTime($scode,$sem,$cID,$sy,$day)
 						{	
 							include("config.php");
-							$sql ="SELECT * FROM tbl_internaschedule where (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday = '$day') or (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday2 = '$day')";
+							$sql ="SELECT * FROM tbl_schedule where (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday = '$day' AND Sched_type = 'INTERNAL') or (scode ='$scode' and sem = '$sem' and schoolYear = '$sy' and courseID = '$cID' and sday2 = '$day' AND Sched_type = 'INTERNAL')";
 							$result = mysqli_query($conn,$sql);
 							$row = mysqli_fetch_array($result);
 							if($row['sday2']==$day)

@@ -690,7 +690,7 @@
 			<input class="footer_incharge" type="text" name="in_charge" value="MARRISA B. FERRER" >
 			<p class="footer_incharge_text">In Charge</p>
 		</div>
-		<input id=submitbtn type="submit" name="submit" value="Submit" disabled>
+		<input id="submitbtn" type="submit" name="submit" value="Submit" disabled>
 		<!-- <button id=submitbtn2 type="submit" >test</button> -->
 		</form>
 	
@@ -723,26 +723,26 @@
              }
          };
 
-        $('#submitbtn').on('click',function()
-	    {
-	    	Swal.fire({
-			  title: 'Are you sure?',
-			  text: "Create this DTR now?",
-			  icon: 'warning',
-			  showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: 'Yes!'
-			}).then((result) => {
-			  if (result.isConfirmed) {
-			    Swal.fire(
-			      'SUCCESS!',
-			      'Your DTR has been generated',
-			      'success'
-			    )
-			  }
-			})
-	    });
+	        $('#submitbtn').on('click',function()	
+		    {
+		    	Swal.fire({
+				  title: 'Are you sure?',
+				  text: "Create this DTR now?",
+				  icon: 'warning',
+				  showCancelButton: true,
+				  confirmButtonColor: '#3085d6',
+				  cancelButtonColor: '#d33',
+				  confirmButtonText: 'Yes!'
+				}).then((result) => {
+				  if (result.isConfirmed) {
+				    Swal.fire(
+				      'SUCCESS!',
+				      'Your DTR has been generated',
+				      'success'
+				    )
+				  }
+				})
+		    });
 
 	    
 

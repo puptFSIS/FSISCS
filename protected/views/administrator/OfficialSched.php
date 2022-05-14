@@ -419,6 +419,7 @@ if($_POST['facode']=="All")
 								$strTime = $hour.":".$min." ".$dn;
 							 }
 							return $strTime;
+						}
 						
 						function to24Hr($ctime) {
 							$strTime = "";
@@ -497,17 +498,7 @@ if($_POST['facode']=="All")
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar-->
-<aside class=page-sidebar>
-<section class='widget-container widget-categories'>
-<div class=widget-content>
-<ul class='widget-list categories-list'>
-<?php include("SchedulingMenu.php");?>
-</ul>
-</div>
 
-
-</section>
-</aside>
 <!-- End - Page sidebar -->
 </div>
 

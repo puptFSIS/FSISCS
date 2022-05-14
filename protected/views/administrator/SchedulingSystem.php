@@ -90,6 +90,11 @@ if(isset($_SESSION['user'])) {
     padding: 5px;
     text-align: center;
 }
+
+#page-body
+{
+    background-color: antiquewhite;
+}
 </style>
 
 <style type="text/css">

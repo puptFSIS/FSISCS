@@ -41,8 +41,9 @@ SHOW:
 <a href="index.php?r=administrator/DtrTable&sort=month"><input type="button" value="Month" /></a>
 <a href="index.php?r=administrator/DtrTable&sort=year"><input type="button" value="Year" /></a> -->
 <a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="pending" /></a>
-<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="disapproved"/></a>
 <a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="approved"/></a>
+
+<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="disapproved"/></a>
 <a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="deleted"/></a>
 <a href="index.php?r=administrator/DtrTable&sort=recent"><input type="button" value="recent"/></a>
 </p>

@@ -433,6 +433,7 @@ if($status == "pending")
 		echo'
 			
 			<tr id="tr_id_'.$counter.'" ">
+
 				<td id="faculty_id'.$counter.'" class="tr_class" onclick="call_print(\'' .$counter. '\')"">' . $newresult['id']  . '</td>
 				<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 				<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
@@ -461,10 +462,6 @@ if($status == "pending")
 									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
 									<label for="disapprove" class="disapprove">DISAPPROVE</label>
 
-
-								
-
-
 									<br>
 
 
@@ -481,6 +478,23 @@ if($status == "pending")
 
 					<button id="check_dtr_id'.$counter.'"  class="" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
 
+				<td>
+					<center>
+						<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
+									<label for="approve" class="approve">APPROVE</label>
+					</center>
+				</td>
+				<td>
+					<center>
+						<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
+									<label for="disapprove" class="disapprove">DISAPPROVE</label>
+					</center>
+				</td>
+				<td>
+					<center>
+						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
+					</center>
+				</td>
 			</tr>
 			
 
@@ -526,7 +540,7 @@ else if($status == "approved")
 						<div id="checkboxes_id'.$counter.'" class="checkboxes">
 
 									<input type="hidden" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1" >
-									<label for="approve" class="approve" hidden>APPROVE</label>
+										<label for="approve" class="approve" hidden>APPROVE</label>
 
 									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
 									<label for="disapprove" class="disapprove">DISAPPROVE</label>
@@ -632,6 +646,7 @@ else if($status == "disapproved")
 
 	}
 }
+
 
 
 

@@ -1,3 +1,12 @@
+<style>
+	#container
+	{
+		/* max-width: 650px; */
+		width: 105%;
+		/* overflow: hidden; */
+	}
+</style>
+
 
 <!-- //cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css -->
 <!-- <script src="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"></script> -->
@@ -11,7 +20,7 @@
 
 
 
-<div class="table-responsive">
+<div class="table-responsive" id="container">
 	<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="pending" /></a>
 	<a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="approved"/></a>
 	<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="disapproved"/></a>
@@ -81,22 +90,22 @@
     });
 
 
-    $(document).ready(function() {
-    $('#ProfTable').DataTable( {
-        responsive: {
-            details: {
-                display: $.fn.dataTable.Responsive.display.modal( {
-                    header: function ( row ) {
-                        var data = row.data();
-                        return 'Details for '+data[0]+' '+data[1];
-                    }
-                } ),
-                renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
-                    tableClass: 'table'
-                } )
-            }
-        }
-    } );
-} );
+//     $(document).ready(function() {
+//     $('#ProfTable').DataTable( {
+//         responsive: {
+//             details: {
+//                 display: $.fn.dataTable.Responsive.display.modal( {
+//                     header: function ( row ) {
+//                         var data = row.data();
+//                         return 'Details for '+data[0]+' '+data[1];
+//                     }
+//                 } ),
+//                 renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+//                     tableClass: 'table'
+//                 } )
+//             }
+//         }
+//     } );
+// } );
 
 </script>

@@ -669,7 +669,7 @@ else if($status == "disapproved")
 
 
 		</center></td>
-		
+	
 		</tr>
 		';
 		$counter++;

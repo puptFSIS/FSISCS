@@ -38,7 +38,7 @@ SHOW:
 
 </p>
 
-<table id="ProfTable" class="table table-striped table-bordered">
+<table id="ProfTable" class="table table-striped table-bordered" style="margin-left: -80px; margin-">
 <thead>
    
 <tr>
@@ -88,6 +88,7 @@ SHOW:
         "paging":         true,
         "lengthChange": true,
         "pagingType": "full_numbers",
+		// "scrollX": true,
 
 
         language: { 

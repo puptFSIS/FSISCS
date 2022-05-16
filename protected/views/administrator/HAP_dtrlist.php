@@ -112,7 +112,7 @@
 		color: #b90e0a;
 		text-align: left;
 		box-sizing: border-box;
-		width: 80%;
+		width: 250px;
 		height: 20%;
 		border: 1.5px solid black;
 	}
@@ -323,7 +323,7 @@
 		font-weight: bold;
 		font-style: italic;
 		font-size: 12px;
-		color: green;
+		color: green; 		
 	}
 
 	/*-----------------------for inside modal buttons------------------*/
@@ -434,14 +434,14 @@ if($status == "pending")
 			
 			<tr id="tr_id_'.$counter.'" ">
 
-				<td id="faculty_id'.$counter.'" class="tr_class" onclick="call_print(\'' .$counter. '\')"">' . $newresult['id']  . '</td>
+				<td id="faculty_id'.$counter.'" class="tr_class" style="font-weight:bold;" onclick="call_print(\'' .$counter. '\')"">' . $newresult['id']  . '</td>
 				<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-				<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
-				<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
-				<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-				<td id="regpartime_id'.$counter.'"" >' . $newresult['regpartime'] . '</td>
-				<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
-				<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
+				<td id="surname_id'.$counter.'"" style="font-weight:bold;">' . $newresult['surname'] . '</td>
+				<td id="firstname_id'.$counter.'"" style="font-weight:bold;">' . $newresult['firstname'] . '</td>
+				<td id="middlename_id'.$counter.'"" style="font-weight:bold;">' . $newresult['middlename'] . '</td>
+				<td id="regpartime_id'.$counter.'"" style="font-weight:bold;">' . $newresult['regpartime'] . '</td>
+				<td id="month_id'.$counter.'"" style="font-weight:bold;">' . $newresult['month'] . '</td>
+				<td id="year_id'.$counter.'"" style="font-weight:bold;">' . $newresult['year'] . '</td>
 				<td class="actions_class"">
 					<center>
 						
@@ -481,13 +481,13 @@ if($status == "pending")
 				<td>
 					<center>
 						<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
-									<label for="approve" class="approve">APPROVE</label>
+									<label for="approve" class="approve" style="color: green; font-weight:bold;">APPROVE</label>
 					</center>
 				</td>
 				<td>
 					<center>
 						<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
-									<label for="disapprove" class="disapprove">DISAPPROVE</label>
+									<label for="disapprove" class="disapprove" style="color: red;  font-weight:bold;">DISAPPROVE</label>
 					</center>
 				</td>
 				<td>
@@ -599,8 +599,6 @@ else if($status == "disapproved")
 						
 					
 						
-					
-					
 					<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
 						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
 						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
@@ -624,7 +622,7 @@ else if($status == "disapproved")
 									
 						</div>
 
-						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'" rows="10" cols="10"></textarea>
+						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'" rows="1s0" cols="10"></textarea>
 							
 						 	
 
@@ -636,7 +634,9 @@ else if($status == "disapproved")
 					<button id="check_dtr_id'.$counter.'"  class="" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
 
 				 	</center></td>
-
+					 <td></td>
+					 <td></td>
+					 <td></td>		
 			</tr>
 			
 			

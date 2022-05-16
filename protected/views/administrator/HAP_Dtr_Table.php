@@ -38,7 +38,7 @@ SHOW:
 
 </p>
 
-<table id="ProfTable" class="table table-striped table-bordered" style="margin-left: -80px; margin-">
+<table id="ProfTable" class="table table-striped table-bordered" style="margin-left: -68px; margin-">
 <thead>
    
 <tr>
@@ -68,7 +68,7 @@ SHOW:
 		?>
 		<tfoot>
 			<tr>
-				<td style="font-size: 12px; font-style: italic;" colspan=9><?php echo "DTR List";?></td>
+				<td style="font-size: 12px; font-style: italic; font-weight:bold;" colspan=12><?php echo "DTR List";?></td>
 			</tr>
 		</tfoot>
 	</tbody>
@@ -87,12 +87,15 @@ SHOW:
         "scrollCollapse": false,
         "paging":         true,
         "lengthChange": true,
+		"bLengthChange": false,
         "pagingType": "full_numbers",
-		// "scrollX": true,
+		
 
-
+		
         language: { 
         search: "", 
+		
+
 
         searchPlaceholder: "Search:" },
         columnDefs: [ {

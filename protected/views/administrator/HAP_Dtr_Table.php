@@ -45,8 +45,8 @@ SHOW:
 <th><h5><strong>ID</strong></h5></th>
 <th hidden><h5><strong>Fcode</strong></h5></th>
 <th><h5><strong>Last Name</strong></h5></th>
-<th><h5><strong>First Name</strong></h5></th>
-<th><h5><strong>Middle Name</strong></h5></th>
+<th hidden><h5><strong>First Name</strong></h5></th>
+<th hidden><h5><strong>Middle Name</strong></h5></th>
 <th><h5><strong>Load Type</strong></h5></th>
 <th><h5><strong>Month</strong></h5></th>
 <th><h5><strong>Year</strong></h5></th>

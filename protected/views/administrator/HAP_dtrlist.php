@@ -436,9 +436,9 @@ if($status == "pending")
 
 				<td id="faculty_id'.$counter.'" class="tr_class" style="font-weight:bold;" onclick="call_print(\'' .$counter. '\')"">' . $newresult['id']  . '</td>
 				<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-				<td id="surname_id'.$counter.'"" style="font-weight:bold;">' . $newresult['surname'] . '</td>
-				<td id="firstname_id'.$counter.'"" style="font-weight:bold;">' . $newresult['firstname'] . '</td>
-				<td id="middlename_id'.$counter.'"" style="font-weight:bold;">' . $newresult['middlename'] . '</td>
+				<td id="surname_id'.$counter.'"" style="font-weight:bold;">' . $newresult['surname'] . ',' . $newresult['firstname'] . ' ' . $newresult['middlename'] . '</td>
+				<td id="firstname_id'.$counter.'"" style="font-weight:bold;" hidden>' . $newresult['firstname'] . '</td>
+				<td id="middlename_id'.$counter.'"" style="font-weight:bold;" hidden>' . $newresult['middlename'] . '</td>
 				<td id="regpartime_id'.$counter.'"" style="font-weight:bold;">' . $newresult['regpartime'] . '</td>
 				<td id="month_id'.$counter.'"" style="font-weight:bold;">' . $newresult['month'] . '</td>
 				<td id="year_id'.$counter.'"" style="font-weight:bold;">' . $newresult['year'] . '</td>

@@ -2,7 +2,7 @@
 	#container
 	{
 		/* max-width: 650px; */
-		width: 130%;
+		width: 1000px;
 		margin-top: 50px;
 		background-color: #f7f7f7;
 		/* overflow: hidden; */
@@ -10,8 +10,7 @@
 	
 	.container
 	{
-		margin-left: 60px;
-		width: 180%;
+		width: 100%;
 		margin-top: 50px;
 		background-color: #f7f7f7;
 	}
@@ -30,27 +29,27 @@
 
 
 
-<div class="table-responsive" id="container">
+<div class="table-responsive" id="container" >
 	<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
 	<a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="Approved"/></a>
 	<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="Disapproved"/></a>
 
 	<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
 	<!-- <a href="index.php?r=administrator/DtrTable&sort=recent"><input type="button" value="recent"/></a> -->
-	<div class="container2" >
+	<div class="container2">
 	<table id="ProfTable" class="table table-striped table-bordered">
 		<thead >
 			<tr>
 				<th><h5><strong></strong></h5></th>
-				<th><h5><strong>ID</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>ID</strong></h5></th>
 				<th hidden><h5><strong>Fcode</strong></h5></th>
-				<th><h5><strong>Last Name</strong></h5></th>
-				<th><h5><strong>First Name</strong></h5></th>
-				<th><h5><strong>Middle Name</strong></h5></th>
-				<th><h5><strong>Load Type</strong></h5></th>
-				<th><h5><strong>Month</strong></h5></th>
-				<th><h5><strong>Year</strong></h5></th>
-				<th><h5><strong>Actions</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Name</strong></h5></th>
+				<th hidden style="text-align: center;"><h5><strong>First Name</strong></h5></th>
+				<th hidden style="text-align: center;"><h5><strong>Middle Name</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Load Type</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Month</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Year</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Actions</strong></h5></th>
 				<!-- <th><h5><strong></strong></h5></th> -->
 
 			</tr>
@@ -61,7 +60,7 @@
 		
 			<tfoot>
 				<tr>
-					<td style="font-size: 12px; font-style: italic;" colspan=9><?php echo "DTR List";?></td>
+					<td style="font-size: 12px; font-style: italic;" colspan=9 ><?php echo "DTR List";?></td>
 				</tr>
 			</tfoot>
 		</tbody>
@@ -80,7 +79,7 @@
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 <script>
 	var ProfTable = $("#ProfTable").DataTable({
-        "scrollY":        "",
+        "scrollY":        false,
         "scrollCollapse": false,
         "paging":         true,
         "lengthChange": true,

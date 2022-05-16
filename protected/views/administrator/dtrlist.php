@@ -455,14 +455,14 @@ else if ($status == "approved")
 				
 			</center>
 		</td>
-		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'</td>
+		<td id="faculty_id'.$counter.'" style="text-align: center;">' . $newresult['id']  .'</td>
 		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
-		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
-		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
-		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
-		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
+		<td id="surname_id'.$counter.'"" style="text-align: center;">' . $newresult['surname'] . ', ' . $newresult['firstname'] . ', ' . $newresult['middlename'] . '</td>
+		<td id="firstname_id'.$counter.'"" hidden>' . $newresult['firstname'] . '</td>
+		<td id="middlename_id'.$counter.'"" hidden>' . $newresult['middlename'] . '</td>
+		<td id="regpartime_id'.$counter.'"" style="text-align: center;">' . $newresult['regpartime'] . '</td>
+		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
+		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
 
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
@@ -540,14 +540,14 @@ else if ($status == "pending")
 				
 			</center>
 		</td>
-		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'</td>
-		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
-		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
-		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
-		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
-		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
+		<td id="faculty_id'.$counter.'" style="text-align: center;">' . $newresult['id']  .'</td>
+		<td id="fcode_id'.$counter.'"" hidden style="text-align: center;">' . $newresult['FCode'] . '</td>
+		<td id="surname_id'.$counter.'"" style="text-align: center;">' . $newresult['surname'] . ', ' . $newresult['firstname'] . ', ' . $newresult['middlename'] . '</td>
+		<td id="firstname_id'.$counter.'"" style="text-align: center;" hidden></td>
+		<td id="middlename_id'.$counter.'"" hidden></td>
+		<td id="regpartime_id'.$counter.'"" style="text-align: center;">' . $newresult['regpartime'] . '</td>
+		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
+		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
 
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			

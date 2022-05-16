@@ -442,41 +442,7 @@ if($status == "pending")
 				<td id="regpartime_id'.$counter.'"" style="font-weight:bold;">' . $newresult['regpartime'] . '</td>
 				<td id="month_id'.$counter.'"" style="font-weight:bold;">' . $newresult['month'] . '</td>
 				<td id="year_id'.$counter.'"" style="font-weight:bold;">' . $newresult['year'] . '</td>
-				<td class="actions_class"">
-					<center>
-						
 
-						<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
-						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
-						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
-							<p id="idleft">ID: </p>
-							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
-							<h5 class="hap_approval_status_pending">'.$hap_approval_status.'</h5>
-							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
-							<p id="modal_date_id'.$counter.'" class="fcode_p_Tag"></p>
-							<div id="checkboxes_id'.$counter.'" class="checkboxes">
-
-									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
-									<label for="approve" class="approve">APPROVE</label>
-
-									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
-									<label for="disapprove" class="disapprove">DISAPPROVE</label>
-
-									<br>
-
-
-									
-						</div>
-							<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
-								
-							<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
-
-							<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
-
-						</div>
-					</div>
-
-					<button id="check_dtr_id'.$counter.'"  class="" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
 
 				<td>
 					<center>
@@ -493,6 +459,16 @@ if($status == "pending")
 				<td>
 					<center>
 						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
+					</center>
+				</td>
+				<td class=""">
+					<center>
+						<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
+					</center>
+				</td>
+				<td>
+					<center>
+						<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
 					</center>
 				</td>
 			</tr>

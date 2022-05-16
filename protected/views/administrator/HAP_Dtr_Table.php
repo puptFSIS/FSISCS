@@ -54,6 +54,8 @@ SHOW:
 <th><h5><strong></strong></h5></th>
 <th><h5><strong>Actions</strong></h5></th>
 <th><h5><strong></strong></h5></th>
+<th><h5><strong>Submit</strong></h5></th>
+
 
 
 
@@ -89,6 +91,11 @@ SHOW:
         "lengthChange": true,
 		"bLengthChange": false,
         "pagingType": "full_numbers",
+        // 'columnDefs': [{ 'orderable': false, 'targets': 1 }],
+
+         // "order": [[ 0, 'asc' ], [ 0, 'asc' ]],
+         "order": [],
+         
 		
 
 		
@@ -104,7 +111,19 @@ SHOW:
         } ],
 
 
+
+
     });
+    $("#reporProfTabletgrid").dataTable({"order": [],
+    "aoColumns": [
+    { "bSortable": false },
+    { "bSortable": false },
+    { "bSortable": false },
+    { "bSortable": false },
+    { "bSortable": false },
+    { "bSortable": false }
+],
+"sDom": '<"top">rt<"bottom"lp><"clear">'});
 
 </script>
 </html>

@@ -2,8 +2,18 @@
 	#container
 	{
 		/* max-width: 650px; */
-		width: 105%;
+		width: 130%;
+		margin-top: 50px;
+		background-color: #f7f7f7;
 		/* overflow: hidden; */
+	}
+	
+	.container
+	{
+		margin-left: 60px;
+		width: 180%;
+		margin-top: 50px;
+		background-color: #f7f7f7;
 	}
 </style>
 
@@ -21,13 +31,13 @@
 
 
 <div class="table-responsive" id="container">
-	<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="pending" /></a>
-	<a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="approved"/></a>
-	<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="disapproved"/></a>
+	<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
+	<a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="Approved"/></a>
+	<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="Disapproved"/></a>
 
-	<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="deleted"/></a>
+	<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
 	<!-- <a href="index.php?r=administrator/DtrTable&sort=recent"><input type="button" value="recent"/></a> -->
-	</p>
+	<div class="container2" >
 	<table id="ProfTable" class="table table-striped table-bordered">
 		<thead >
 			<tr>
@@ -60,7 +70,7 @@
 
 
 
-
+</div>
 </div>
 
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>

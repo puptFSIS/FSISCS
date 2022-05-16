@@ -622,7 +622,7 @@ else if($status == "disapproved")
 									
 						</div>
 
-						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'" rows="1s0" cols="10"></textarea>
+						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'" rows="10" cols="10"></textarea>
 							
 						 	
 

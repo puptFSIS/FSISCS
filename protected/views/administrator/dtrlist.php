@@ -610,7 +610,7 @@ else if ($status == "pending")
 
 
 //////////////////// DISAPPROVED ///////////////////
-
+	
 else if($status == "disapproved")
 {
 		$hap_approval_status = "DISAPPROVED";

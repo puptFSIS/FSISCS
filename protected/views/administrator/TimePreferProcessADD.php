@@ -127,8 +127,9 @@
 		include("config.php");
 		$sem = $_POST['sem'];
 		$sy = $_POST['sy'];
-		$sql = "SELECT * FROM tbl_timepreferences WHERE sem='$sem' and schoolYear='$sy' and sprof = '$fcode'";
+		$sql = "SELECT * FROM tbl_timepreferences WHERE (".$timein." BETWEEN stimeS AND stimeE OR ".$timeout." BETWEEN stimeS AND stimeE) AND sem='$sem' and schoolYear='$sy' and sprof = '$fcode'";
 		$result = mysqli_query($conn, $sql);
+		$count = mysqli_num_rows($result);
 		$valid = "";
 
 		if(is_null($day) OR is_null($timein) or is_null($timeout) or $day == "" or $timein == "" or $timeout == "")
@@ -143,28 +144,16 @@
 			$valid = 2;
 			
 		} else if($timein < 730 OR $timeout > 2230){
-				$valid = 4;
-				
+			$valid = 4;
+
+		} else if($count != 0){
+			$valid = 3;
+			
 		} else {
 			$valid = 0;
 		}
 
-		while($row=mysqli_fetch_array($result)) 
-		{	
-			
-			 if($day == $row['sday'] AND $timein == $row['stimeS'] AND $timeout == $row['stimeE']){
-				$valid = 3;
-				continue;
-			} else if($day == $row['sday'] AND $row['Whole_Day'] == 1){
-				$valid = 3;
-				break;
-			} else if($timein < 730 OR $timeout > 2230){
-				$valid = 4;
-				break;
-			} else {
-				$valid = 0;
-			}
-		}
+		
 
 		return $valid;
 	}

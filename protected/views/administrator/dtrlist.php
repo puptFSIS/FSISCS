@@ -765,7 +765,6 @@ else if($status == "deleted")
 			
 			<input style="display: none;" id="restorebtn" type="submit" name="restore" value="restore">
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">
-
 			';
 		}
 		
@@ -943,7 +942,10 @@ function change_color(_this,counter,status)
 	
 }
 
-
+restorebtn.onclick = function()
+{
+	console.log("working");
+}
 
 deletebtn.onclick = function() 
 {
@@ -984,10 +986,6 @@ resubmitbtn.onclick = function()
 
 }
 
-restorebtn.onclick = function()
-{
-	console.log("working");
-}
 
 deletebtn1.onclick = function() 
 {

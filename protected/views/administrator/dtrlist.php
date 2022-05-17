@@ -944,7 +944,22 @@ function change_color(_this,counter,status)
 
 restorebtn.onclick = function()
 {
-	console.log("working");
+	// console.log("working");
+	$.ajax({
+		      type: "POST",
+		      url:    "<?php echo Yii::app()->createUrl('administrator/Restore_dtr'); ?>",
+		      data:  {val1:checked},
+		      dataType:"JSON",
+		      success:function(data){
+		      	alert("dtr restored successfully");
+		      	window.location.reload();
+		      },
+		      error:function(data)
+		      {
+		      	alert(JSON.stringify(data));
+
+		      }
+		  });
 }
 
 deletebtn.onclick = function() 

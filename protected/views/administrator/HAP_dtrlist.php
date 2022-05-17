@@ -492,51 +492,40 @@ else if($status == "approved")
 		echo'
 			
 			<tr id="tr_id_'.$counter.'" ">
-				<td id="faculty_id'.$counter.'" class="tr_class" onclick="call_print(\'' .$counter. '\')"">' . $newresult['id']  . '</td>
+				<td id="faculty_id'.$counter.'" class="tr_class" style="font-weight:bold;" onclick="call_print(\'' .$counter. '\')"">' . $newresult['id']  . '</td>
 				<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-				<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
-				<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
-				<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-				<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
-				<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
-				<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
+				<td id="surname_id'.$counter.'"" style="font-weight:bold;">' . $newresult['surname'] . ',' . $newresult['firstname'] . ', ' . $newresult['middlename'] . '</td>
+				<td id="firstname_id'.$counter.'"" style="font-weight:bold;" hidden>' . $newresult['firstname'] . '</td>
+				<td id="middlename_id'.$counter.'"" hidden>' . $newresult['middlename'] . '</td>
+				<td id="regpartime_id'.$counter.'"" style="font-weight:bold;">' . $newresult['regpartime'] . '</td>
+				<td id="month_id'.$counter.'"" style="font-weight:bold;">' . $newresult['month'] . '</td>
+				<td id="year_id'.$counter.'"" style="font-weight:bold;">' . $newresult['year'] . '</td>
 				<td class="actions_class"">
-					<center>	
-						
 
-						<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
-						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
-						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
-							<p id="idleft">ID: </p>
-							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
-							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
-							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
-							<p id="modal_date_id'.$counter.'" class="fcode_p_Tag"></p>
-						</div>
-						<div id="checkboxes_id'.$counter.'" class="checkboxes">
+	
+			<center>
+				<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
+							<label for="disapprove" class="disapprove" style="color: red;  font-weight:bold;">DISAPPROVE</label>
+			</center>
+		</td>
+		<td>
+			<center>
+				<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
+			</center>
+		</td>
+		<td class=""">
+			<center>
+				<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
+			</center>
+		</td>
+		<td>
+			<center>
+				<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
+			</center>
 
-									<input type="hidden" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'" value="1" >
-										<label for="approve" class="approve" hidden>APPROVE</label>
+				
 
-									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
-									<label for="disapprove" class="disapprove">DISAPPROVE</label>
-									
-
-									<br>
-
-									
-						</div>
-
-						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'" rows="10" cols="10"></textarea>
-								
-						<input id="input_id'.$counter.'" type="submit" onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" > 
-						<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
-
-					</div>
-
-					<button id="check_dtr_id'.$counter.'"  class="" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
-
-				 	</center></td>
+				</td>
 
 			</tr>
 			
@@ -562,57 +551,38 @@ else if($status == "disapproved")
 		echo'
 
 			<tr id="tr_id_'.$counter.'" ">
-				<td id="faculty_id'.$counter.'" class="tr_class" onclick="call_print(\'' .$counter. '\')"	>' . $newresult['id']  . '</td>
+				<td id="faculty_id'.$counter.'" class="tr_class"  style="font-weight:bold;" onclick="call_print(\'' .$counter. '\')"	>' . $newresult['id']  . '</td>
 				<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-				<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
-				<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
-				<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-				<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
-				<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
-				<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
+				<td id="surname_id'.$counter.'"" style="font-weight:bold;">' . $newresult['surname'] . ', ' . $newresult['firstname'] . ', ' . $newresult['middlename'] . '</td>
+				<td id="firstname_id'.$counter.'"" hidden>' . $newresult['firstname'] . '</td>
+				<td id="middlename_id'.$counter.'"" hidden>' . $newresult['middlename'] . '</td>
+				<td id="regpartime_id'.$counter.'"" style="font-weight:bold;">' . $newresult['regpartime'] . '</td>
+				<td id="month_id'.$counter.'"" style="font-weight:bold;">' . $newresult['month'] . '</td>
+				<td id="year_id'.$counter.'"" style="font-weight:bold;">' . $newresult['year'] . '</td>
 				<td class="actions_class"">
-					<center>
-						
+
+				<center>
+				<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
+							<label for="approve" class="approve" style="color: green; font-weight:bold;">APPROVE</label>
+			</center>
+		</td>
+		
+		<td>
+			<center>
+				<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
+			</center>
+		</td>
+		<td class=""">
+			<center>
+				<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
+			</center>
+		</td>
+		<td>
+			<center>
+				<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
+			</center>
+					</td>
 					
-						
-					<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
-						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
-						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
-							<p id="idleft">ID: </p>
-							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
-							<h5 class="hap_approval_status_disapproved">'.$hap_approval_status.'</h5>
-							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
-							<p id="modal_date_id'.$counter.'" class="fcode_p_Tag"></p>
-						</div>
-						<div id="checkboxes_id'.$counter.'" class="checkboxes">
-
-									<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
-									<label for="approve" class="approve">APPROVE</label>
-
-									<input type="hidden" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
-									<label for="disapprove" class="disapprove" hidden>DISAPPROVE</label>
-									
-
-									<br>
-
-									
-						</div>
-
-						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'" rows="10" cols="10"></textarea>
-							
-						 	
-
-						<input id="input_id'.$counter.'" type="submit" onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" > 
-						<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
-
-					</div>
-
-					<button id="check_dtr_id'.$counter.'"  class="" onclick="open_dtr_modal('.$counter.')" name="check_dtr">View</button>
-
-				 	</center></td>
-					 <td></td>
-					 <td></td>
-					 <td></td>		
 			</tr>
 			
 			

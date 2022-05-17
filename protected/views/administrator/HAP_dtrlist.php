@@ -384,20 +384,20 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="pending")
 	{
-		$sql="SELECT * FROM tbl_dtr where status != 1 and hap_approval_status = 0";
+		$sql="SELECT * FROM tbl_dtr where hap_approval_status = 0";
 		$result=mysqli_query($conn,$sql);
 		$status = "pending";
 	}
 	if($_GET['sort']=="approved")
 	{
-		$sql="SELECT * FROM tbl_dtr where status != 1 and hap_approval_status = 1";
+		$sql="SELECT * FROM tbl_dtr where hap_approval_status = 1";
 		$result=mysqli_query($conn,$sql);
 		$status = "approved";
 
 	}
 	if($_GET['sort']=="disapproved")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE status != 1 and hap_approval_status = 2";
+		$sql="SELECT * FROM tbl_dtr WHERE hap_approval_status = 2";
 		$result=mysqli_query($conn,$sql);
 		$status = "disapproved";
 		
@@ -527,6 +527,10 @@ else if($status == "approved")
 
 				</td>
 
+			<td>
+				<center></center>
+
+			</td>
 			</tr>
 			
 
@@ -582,6 +586,10 @@ else if($status == "disapproved")
 				<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
 			</center>
 					</td>
+					<td>
+				<center></center>
+
+			</td>
 					
 			</tr>
 			

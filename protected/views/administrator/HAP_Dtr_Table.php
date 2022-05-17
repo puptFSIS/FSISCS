@@ -16,6 +16,11 @@
 		/*width: 105%;*/
 	}
 
+	.withoutSort
+	{
+
+	}
+
 
 </style>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
@@ -93,9 +98,7 @@ SHOW:
         "pagingType": "full_numbers",
         // 'columnDefs': [{ 'orderable': false, 'targets': 1 }],
 
-         // "order": [[ 0, 'asc' ], [ 0, 'asc' ]],
-         "order": [],
-         
+    	
 		
 
 		
@@ -107,8 +110,12 @@ SHOW:
         searchPlaceholder: "Search:" },
         columnDefs: [ {
             orderable: false,
-            targets:   0,
+            targets:   0
+
         } ],
+        
+ 
+
 
 
 

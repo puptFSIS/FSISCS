@@ -319,7 +319,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="pending")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and status != 1 and hap_approval_status = 0";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 0";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{
@@ -366,7 +366,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="deleted")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and status = 1";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 3";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{
@@ -451,7 +451,7 @@ else if ($status == "approved")
 		<tr id="tr_id_'.$counter.'">
 		<td>
 			<center>
-				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')">select</a> 
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')">select</a> 
 				
 			</center>
 		</td>
@@ -512,7 +512,7 @@ else if ($status == "approved")
 		else
 		{
 			echo '
-			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
+			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">
 
@@ -536,7 +536,7 @@ else if ($status == "pending")
 		<tr id="tr_id_'.$counter.'">
 		<td>
 			<center>
-				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')">select</a> 
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')">select</a> 
 				
 			</center>
 		</td>
@@ -598,7 +598,7 @@ else if ($status == "pending")
 		{
 
 			echo '
-			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
+			
 
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">
 
@@ -702,7 +702,7 @@ else if($status == "deleted")
 			<tr id="tr_id_'.$counter.'">
 		<td>
 			<center>
-				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')">select</a> 
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')">select</a> 
 				
 			</center>
 		</td>
@@ -763,7 +763,10 @@ else if($status == "deleted")
 		{
 			echo '
 			
-			<input style="display: none;" id="restorebtn" type="submit" name="restorebtn" value="restore">';
+			<input style="display: none;" id="restorebtn" type="submit" name="restore" value="restore">
+			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">
+
+			';
 		}
 		
 	
@@ -795,10 +798,13 @@ const checked = [];
 var submitbtn = document.getElementById("submitbtn");
 var resubmitbtn = document.getElementById("resubmitbtn");
 var deletebtn = document.getElementById("deletebtn");
+// var deletebtn1 = document.getElementById("deletebtn1");
 var restorebtn = document.getElementById("restorebtn"); 
 
 
-function change_color(_this,counter,status,existence)
+
+
+function change_color(_this,counter,status)
 {
 
 
@@ -842,31 +848,6 @@ function change_color(_this,counter,status,existence)
 	}
 
 
-	if(existence == 1)
-		{
-			// status = 0;
-			if(count > 0)
-			{
-				restorebtn.style.display="block";
-				// submitbtn.style.display="block";
-			}
-			else
-			{
-				restorebtn.style.display="none";
-				// submitbtn.style.display="none";
-
-			}
-		}
-	else
-	{
-		deletebtn.style.display="block";
-		if(count==0)
-		{
-			deletebtn.style.display="none";
-			resubmitbtn.style.display="none";
-
-		}
-	}
 
 	if(status == 1)
 	{
@@ -902,7 +883,7 @@ function change_color(_this,counter,status,existence)
 		}
 		
 	}
-	if(status==2)
+	if(status == 2)
 	{
 
 		if(count > 0)
@@ -921,18 +902,33 @@ function change_color(_this,counter,status,existence)
 
 	}
 
-	
+
+	if(status == 3)
+	{
+
+		if(count > 0)
+		{
+			restorebtn.style.display="block";
+			deletebtn.style.display="block";
+			
 		
-	
 
+		}
+		else
+		{
+			restorebtn.style.display="none";
+			deletebtn.style.display="none";
+			
+		}
 
+	}
 	else{
-	
+		// submitbtn.style.display="block";
 		deletebtn.style.display="block";
 		if(count==0)
 		{
 			deletebtn.style.display="none";
-			resubmitbtn.style.display="none";
+			// resubmitbtn.style.display="none";
 
 		}
 		
@@ -940,7 +936,7 @@ function change_color(_this,counter,status,existence)
 
 	
 
-if(counter=='generate')
+	if(counter=='generate')
 	{
 	 printfpdf(id,reg,mon,year);
 	}
@@ -988,13 +984,32 @@ resubmitbtn.onclick = function()
 
 }
 
-restorebtn.onclick = function() 
+restorebtn.onclick = function()
 {
-	
-
-	console.log("checked");
-
+	console.log("working");
 }
+
+deletebtn1.onclick = function() 
+{
+	$.ajax({
+		      type: "POST",
+		      url:    "<?php echo Yii::app()->createUrl('administrator/Delete_dtr'); ?>",
+		      data:  {val2:checked},
+		      dataType:"JSON",
+		      success:function(data){
+		      	alert("dtr deleted successfully");
+		      	window.location.reload();
+		      },
+		      error:function(data)
+		      {
+		      	alert(JSON.stringify(data));
+
+		      }
+		  });
+}
+
+
+
 
 
 

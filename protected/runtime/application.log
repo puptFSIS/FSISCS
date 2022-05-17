@@ -10982,3 +10982,24 @@ Stack trace:
 REQUEST_URI=/fsiscs/index.php?r=administrator/DtrTable&sort=approved
 HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
 ---
+2022/05/16 15:03:26 [error] [php] Undefined variable: regpartime2 (C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:309)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3198): AdministratorController->render()
+#5 unknown(0): AdministratorController->actionRegular_DTRgoto()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=141&val2=REGULAR&val3=January&val4=2022&val5=FA0797MN2008&val6=undefined&val7=undefined&val8=undefined&val9=undefined&val10=undefined
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php (309)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3198)
+in C:\xampp\htdocs\FSISCS\index.php (13)

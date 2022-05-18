@@ -843,7 +843,7 @@
 			 			
 					</div>
 					
-					<div class="listOfFacultyMembers" contentEditable> 
+					<div id="paragraph_text" class="listOfFacultyMembers" contentEditable> 
 
 					 <ul>
 
@@ -962,7 +962,7 @@
 			 			
 					</div>
 					
-					<div class="listOfFacultyMembers" contentEditable> 
+					<div id="paragraph_text2" class="listOfFacultyMembers" contentEditable> 
 				
 					 <ul>';
 
@@ -1035,7 +1035,7 @@
 					 <br>
 					 <p id="footer_address">gen santos ave. lower bicutan, taguig city 1772; (direct line) 837-5858 to 60; (telfax) 837-5859;</p>
 					 <p id="footer_email">website: www.pup.edu.ph	     e-mail: taguig@pup.edu.ph</p>
-					 <p id="footer_pup">THE COUNTRY&#180;S 1<span style="vertical-align:super;">st</span> POLYTECHNICU</p>
+					 <p id="footer_pup">THE COUNTRY&#180;S 1<span style="vertical-align:super;">st</span> POLYTECHNICHU</p>
 				 
 			 		</div>
 			 <br><br>
@@ -1077,7 +1077,7 @@
 			 			
 					</div>
 					
-					<div class="listOfFacultyMembers" contentEditable> 
+					<div id="paragraph_text3" class="listOfFacultyMembers" contentEditable> 
 						
 			
 					 <ul>
@@ -1211,11 +1211,8 @@
 
 
         ?>
-
-
     </form>
-
-    <button class="generate_btn_class" onclick="call_print()">generate receiving document</button>'
+<button class="generate_btn_class" onclick="call_print()">generate receiving document</button>
 </body>
 
 <script>

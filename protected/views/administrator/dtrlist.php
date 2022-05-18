@@ -514,7 +514,7 @@ else if ($status == "approved")
 			echo '
 			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 
-			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr">
+			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
 
 			'
 			;

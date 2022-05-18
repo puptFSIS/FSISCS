@@ -303,7 +303,7 @@
 							';
 			$sql = "SELECT * FROM tbl_schedule WHERE sday = '$day' && (".$timeS." BETWEEN  stimeS and stimeE or ".$timeE." BETWEEN stimeS and stimeE) && sroom = '$roomName' && schoolYear = '$sy' && sem = '$sem' && Sched_type = 'OFFICIAL'";
 
-				echo $sql;
+				//echo $sql;
 			
 			$result = mysqli_query($conn,$sql);
 			while ($row = mysqli_fetch_array($result)) {

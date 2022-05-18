@@ -946,13 +946,29 @@ function change_color(_this,counter,status)
 
 function delete_dtr()
 {
-	$.ajax({
+
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+		if (result.isConfirmed) 
+		
+			$.ajax({
 		      type: "POST",
 		      url:    "<?php echo Yii::app()->createUrl('administrator/Delete_dtr'); ?>",
 		      data:  {val2:checked},
 		      dataType:"JSON",
 		      success:function(data){
-		      	alert("dtr deleted successfully");
+				Swal.fire(
+					'Deleted!',
+					'Your file has been deleted.',
+					'success'
+				)
 		      	window.location.reload();
 		      },
 		      error:function(data)
@@ -961,23 +977,46 @@ function delete_dtr()
 
 		      }
 		  });
+
+			
+		
+		})
+
+
+
+	
 }
 
 // restorebtn.onclick = function()
 // {
 
-	
+
 // }
 
 function restore_dtr()
 {
+
+	Swal.fire({
+			title: 'Are you sure?',
+			icon: 'warning',
+			showCancelButton: true,
+			showConfirmButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, restore it!'
+	}).then((result) => {
+		if (result.isConfirmed) 
 	$.ajax({
 		      type: "POST",
 		      url:    "<?php echo Yii::app()->createUrl('administrator/Restore_dtr'); ?>",
 		      data:  {val1:checked},
 		      dataType:"JSON",
 		      success:function(data){
-		      	alert("dtr restored successfully");
+				Swal.fire(
+					'Restored!',
+					'Your file has been restored.',
+					'success',
+				)
 		      	window.location.reload();
 		      },
 		      error:function(data)
@@ -986,8 +1025,8 @@ function restore_dtr()
 
 		      }
 		  });
+	})
 }
-
 function resubmit_dtr()
 {
 	$.ajax({

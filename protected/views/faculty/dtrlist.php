@@ -69,7 +69,7 @@
   		left: 50%;
   		transform: translate(-50%, -50%);*/
 		height: 350px;
-		width: 400px;
+		width: 460px;
 		
 		/*sa unahan ng menu list ng dtr_menu*/z-index: 3; 
 
@@ -81,7 +81,6 @@
 		border-style:solid;
 		padding: 12px;
 
-		/*overflow: scroll;*/
 
 	}
 
@@ -106,10 +105,9 @@
 /*MODAL CONTENTS!*/
 	.id_p_tag
 	{
-		margin-top: -41px;
-		margin-left: -305px;
+		margin-top: -44px;
+		margin-left: -345px;
 	 	color: black;
-	 	/*float: left;*/
 	 	font-size: 20px;
 	 	font-weight: bold;
 
@@ -127,11 +125,13 @@
 		text-indent: -1.2em;
 		color:black;
 		background: green;
+		position: center;
 		border-radius: 50px;
 		width: auto;
 		bottom:30.5px;
 		padding-top: 4px;
 		font-weight: bold;
+		text-align: center;
 	}
 
 	.hap_approval_status_pending
@@ -146,6 +146,8 @@
 		bottom:30.5px;
 		padding-top: 4px;
 		font-weight: bold;
+		text-align: center;
+		position: center;
 	}
 
 	.hap_approval_status_disapproved
@@ -160,6 +162,8 @@
 		bottom:30.5px;
 		padding-top: 4px;
 		font-weight: bold;
+		text-align: center;
+		position: center;
 	}
 
 	.loadtype_p_tag
@@ -203,9 +207,10 @@
 
 	#idleft
 	{
-		font-size: 15px;
+		font-size: 18px;
 		font-weight: bold;
 		text-align: left;
+		/* padding-right: 50px; */
 	}
 
 	/*-----------------------for fonts------------------*/
@@ -243,7 +248,7 @@
 require_once('config.php');
 $counter = 1;
 $generate ="generate";
-$status = "approved";
+$status = "pending";
 if(isset($_GET['sort']))
 {
 	if($_GET['sort']=="id")
@@ -314,7 +319,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="pending")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and status != 1 and hap_approval_status = 0";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 0";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{
@@ -361,7 +366,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="deleted")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and status = 1";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 3";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{
@@ -442,24 +447,33 @@ else if ($status == "approved")
 	foreach($result as $newresult)
 	{
 	echo'
-		<tr id="tr_id_'.$counter.'">
 		
-		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'
+		<tr id="tr_id_'.$counter.'">
+		<td>
+			<center>
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')">select</a> 
+				
+			</center>
+		</td>
+		<td id="faculty_id'.$counter.'" style="text-align: center;">' . $newresult['id']  .'</td>
 		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
-		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
-		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
-		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
-		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+		<td id="surname_id'.$counter.'"" style="text-align: center;">' . $newresult['surname'] . ', ' . $newresult['firstname'] . ', ' . $newresult['middlename'] . '</td>
+		<td id="firstname_id'.$counter.'"" hidden>' . $newresult['firstname'] . '</td>
+		<td id="middlename_id'.$counter.'"" hidden>' . $newresult['middlename'] . '</td>
+		<td id="regpartime_id'.$counter.'"" style="text-align: center;">' . $newresult['regpartime'] . '</td>
+		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
+		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
+
+		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
+			
+
 
 			<div class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
 						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
 						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
 				
 
-							<p id="idleft">ID: </p>
+							<p id="idleft">ID:</p>
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
@@ -473,11 +487,11 @@ else if ($status == "approved")
 						<p class="hap_comment_class" id="comments'.$counter.'"></p>
 								
 						
-						<input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
+						
 
 					</div>
 
-					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
+					
 
 
 
@@ -485,6 +499,7 @@ else if ($status == "approved")
 
 
 		</center></td>
+		
 		</tr>
 	';
 	$counter++;
@@ -496,11 +511,10 @@ else if ($status == "approved")
 		}
 		else
 		{
-			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
-			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit">
-			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">
+			echo '
+			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 
-
+			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
 
 			'
 			;
@@ -518,24 +532,33 @@ else if ($status == "pending")
 	foreach($result as $newresult)
 	{
 	echo'
+
 		<tr id="tr_id_'.$counter.'">
-		<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
-		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
-		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
-		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
-		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
-		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-		<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+		<td>
+			<center>
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')">select</a> 
+				
+			</center>
+		</td>
+		<td id="faculty_id'.$counter.'" style="text-align: center;">' . $newresult['id']  .'</td>
+		<td id="fcode_id'.$counter.'"" hidden style="text-align: center;">' . $newresult['FCode'] . '</td>
+		<td id="surname_id'.$counter.'"" style="text-align: center;">' . $newresult['surname'] . ', ' . $newresult['firstname'] . ', ' . $newresult['middlename'] . '</td>
+		<td id="firstname_id'.$counter.'"" style="text-align: center;" hidden></td>
+		<td id="middlename_id'.$counter.'"" hidden></td>
+		<td id="regpartime_id'.$counter.'"" style="text-align: center;">' . $newresult['regpartime'] . '</td>
+		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
+		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
+
+		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
+			
 
 
-			<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
+			<div class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
 						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
 						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
-							
+				
 
-							<p id="idleft">ID: </p>
+							<p id="idleft">ID:</p>
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
@@ -549,14 +572,19 @@ else if ($status == "pending")
 						<p class="hap_comment_class" id="comments'.$counter.'"></p>
 								
 						
-						<input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
+						
 
-			</div>
+					</div>
 
-					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
+					
+
+
+
+
 
 
 		</center></td>
+		
 		</tr>
 	';
 	$counter++;
@@ -568,16 +596,21 @@ else if ($status == "pending")
 		}
 		else
 		{
-			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
-			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit">
-			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">';
+
+			echo '
+			
+
+			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
+
+			'
+			;
 		}
 	
 }
 
 
 //////////////////// DISAPPROVED ///////////////////
-
+	
 else if($status == "disapproved")
 {
 		$hap_approval_status = "DISAPPROVED";
@@ -586,7 +619,13 @@ else if($status == "disapproved")
 		{
 		echo'
 			<tr id="tr_id_'.$counter.'">
-			<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
+		<td>
+			<center>
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')">select</a> 
+				
+			</center>
+		</td>
+		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'</td>
 		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
@@ -594,21 +633,22 @@ else if($status == "disapproved")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-			<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a> 
+
+		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
+			
 
 
-				<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
+			<div class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
 						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
 						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
-							
+				
 
-							<p id="idleft">ID: </p>
+							<p id="idleft">ID:</p>
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
 							<p id="modal_loadtype_id'.$counter.'" class="loadtype_p_Tag"></p>
 							<p id="modal_comment_id'.$counter.'" class="comment_p_Tag"  >'.$newresult['hap_comments'].'</p>
-
 
 						</div>
 						
@@ -617,16 +657,20 @@ else if($status == "disapproved")
 						<p class="hap_comment_class" id="comments'.$counter.'"></p>
 								
 						
-						<input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
+						
 
 					</div>
 
-					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
+					
 
 
 
-			</center></td>
-			</tr>
+
+
+
+		</center></td>
+	
+		</tr>
 		';
 		$counter++;
 		}
@@ -636,9 +680,9 @@ else if($status == "disapproved")
 		}
 		else
 		{
-			echo '<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].','.$newresult['status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
-			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit">
-			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">';
+			echo' 
+			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit" onclick="resubmit_dtr()">
+			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr">';
 		}
 		
 	
@@ -656,7 +700,13 @@ else if($status == "deleted")
 		{
 		echo'
 			<tr id="tr_id_'.$counter.'">
-			<td id="faculty_id'.$counter.'" >' . $newresult['id']  .'
+		<td>
+			<center>
+				<a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].')">select</a> 
+				
+			</center>
+		</td>
+		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'</td>
 		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
 		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
 		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
@@ -664,24 +714,22 @@ else if($status == "deleted")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-			<td><center><a id="getbtn" class="newbtn-s" title="PRINT PDF" style="width: 12px; height: 20px;" onclick="change_color(this,'.$counter.','.$newresult['hap_approval_status'].','.$newresult['status'].')"><img src="images/icons/check-dark.png"></a>
+
+		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
+			
 
 
-				<div  class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
+			<div class="modal_for_check" id="modal_for_check_id'.$counter.'" style="display:none;">
 						<span id="close_id'.$counter.'" onclick="close_dtr_modal('.$counter.')" class="close">&times;</span>
 						<div id="modal_for_check_contents_id'.$counter.'" class="modal_for_check_contents">
-							
+				
 
-							<p id="idleft">ID: </p>
+							<p id="idleft">ID:</p>
 							<h4 id="modal_id_id'.$counter.'" class="id_p_tag"></h4>
 							<h5 class="hap_approval_status_approved">'.$hap_approval_status.'</h5>
 							<h5 id="modal_name_id'.$counter.'" class="name_p_tag space_around"></h5> 
 							<p id="modal_loadtype_id'.$counter.'" class="loadtype_p_Tag"></p>
-							<p id="modal_comment_id'.$counter.'" class="comment_p_Tag" >'.$newresult['hap_comments'].'</p>
-
-
-							
-
+							<p id="modal_comment_id'.$counter.'" class="comment_p_Tag"  >'.$newresult['hap_comments'].'</p>
 
 						</div>
 						
@@ -690,15 +738,20 @@ else if($status == "deleted")
 						<p class="hap_comment_class" id="comments'.$counter.'"></p>
 								
 						
-						<input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
+						
 
 					</div>
 
-					<button id="check_dtr_id'.$counter.'" class="" title="PRINT PDF" onclick="open_dtr_modal('.$counter.')" name="check_dtr" >check</button>
+					
 
 
-			 </center></td>
-			</tr>
+
+
+
+
+		</center></td>
+		
+		</tr>
 		';
 		$counter++;
 		}
@@ -710,7 +763,9 @@ else if($status == "deleted")
 		{
 			echo '
 			
-			<input style="display: none;" id="restorebtn" type="submit" name="restore" value="restore">';
+			<input style="display: none;" id="restorebtn" type="submit" name="restore" value="restore" onclick="restore_dtr()">
+	
+			';
 		}
 		
 	
@@ -743,16 +798,17 @@ var submitbtn = document.getElementById("submitbtn");
 var resubmitbtn = document.getElementById("resubmitbtn");
 var deletebtn = document.getElementById("deletebtn");
 var restorebtn = document.getElementById("restorebtn"); 
+// var testbtn = document.getElementById("testbtn");
 
 
-function change_color(_this,counter,status,existence)
+
+
+
+function change_color(_this,counter,status)
 {
-
-
 		var counter = counter;
 		var status = status;
-
-
+		var existence = existence;
 
 	if(_this.style.backgroundColor != "green" && counter != 'generate')
 	{
@@ -786,25 +842,15 @@ function change_color(_this,counter,status,existence)
 		fcode[counter] = null;
 			
 	}
-	if(existence == 1)
-		{
-			if(count > 0)
-			{
-				restorebtn.style.display="block";
-			}
-			else
-			{
-				restorebtn.style.display="none";
 
-			}
-		}
+
 
 	if(status == 1)
 	{
 
 		if(count == 1)
 		{
-			// restorebtn.style.display="block";
+			
 
 			deletebtn.style.display="block";
 			submitbtn.style.display="none";
@@ -833,14 +879,14 @@ function change_color(_this,counter,status,existence)
 		}
 		
 	}
-	if(status==2)
+	if(status == 2)
 	{
 
 		if(count > 0)
 		{
 			resubmitbtn.style.display="block";
 			deletebtn.style.display="block";
-			// restorebtn.style.display="block";
+		
 
 		}
 		else
@@ -852,18 +898,33 @@ function change_color(_this,counter,status,existence)
 
 	}
 
-	
+
+	if(status == 3)
+	{
+
+		if(count > 0)
+		{
+			restorebtn.style.display="block";
+			deletebtn.style.display="block";
+			
 		
-	
 
+		}
+		else
+		{
+			restorebtn.style.display="none";
+			deletebtn.style.display="none";
+			
+		}
 
-	else {
-	
+	}
+	else{
+		// submitbtn.style.display="block";
 		deletebtn.style.display="block";
 		if(count==0)
 		{
 			deletebtn.style.display="none";
-			resubmitbtn.style.display="none";
+			// resubmitbtn.style.display="none";
 
 		}
 		
@@ -871,20 +932,23 @@ function change_color(_this,counter,status,existence)
 
 	
 
-if(counter=='generate')
+	if(counter=='generate')
 	{
 	 printfpdf(id,reg,mon,year);
 	}
 	
 }
 
+// deletebtn.onclick = function() 
+// {
+	
+// }
 
-
-deletebtn.onclick = function() 
+function delete_dtr()
 {
 	$.ajax({
 		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('Faculty/Delete_dtr'); ?>",
+		      url:    "<?php echo Yii::app()->createUrl('administrator/Delete_dtr'); ?>",
 		      data:  {val2:checked},
 		      dataType:"JSON",
 		      success:function(data){
@@ -899,31 +963,17 @@ deletebtn.onclick = function()
 		  });
 }
 
-resubmitbtn.onclick = function() 
+// restorebtn.onclick = function()
+// {
+
+	
+// }
+
+function restore_dtr()
 {
 	$.ajax({
 		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('faculty/Resubmit'); ?>",
-		      data:  {val1:checked},
-		      dataType:"JSON",
-		      success:function(data){
-		      	alert("dtr resubmitted successfully");
-		      	window.location.reload();
-		      },
-		      error:function(data)
-		      {
-		      	alert(JSON.stringify(data));
-
-		      }
-		  });
-
-}
-
-restorebtn.onclick = function() 
-{
-	$.ajax({
-		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('faculty/Restore_dtr'); ?>",
+		      url:    "<?php echo Yii::app()->createUrl('administrator/Restore_dtr'); ?>",
 		      data:  {val1:checked},
 		      dataType:"JSON",
 		      success:function(data){
@@ -936,8 +986,59 @@ restorebtn.onclick = function()
 
 		      }
 		  });
-
 }
+
+function resubmit_dtr()
+{
+	$.ajax({
+		      type: "POST",
+		      url:    "<?php echo Yii::app()->createUrl('administrator/Resubmit'); ?>",
+		      data:  {val1:checked},
+		      dataType:"JSON",
+		      success:function(data){
+		      	alert("dtr resubmitted successfully");
+		      	window.location.reload();
+		      },
+		      error:function(data)
+		      {
+		      	alert(JSON.stringify(data));
+
+		      }
+		  });
+}
+
+// resubmitbtn.onclick = function() 
+// {
+	
+
+// }
+
+// testbtn.onclick = function() 
+// {
+// 	$.ajax({
+// 		      type: "POST",
+// 		      url:    "<?php echo Yii::app()->createUrl('administrator/Resubmit'); ?>",
+// 		      data:  {val1:checked},
+// 		      dataType:"JSON",
+// 		      success:function(data){
+// 		      	alert("dtr resubmitted successfully");
+// 		      	window.location.reload();
+// 		      },
+// 		      error:function(data)
+// 		      {
+// 		      	alert(JSON.stringify(data));
+
+// 		      }
+// 		  });
+
+// }
+
+
+
+
+
+
+
 
 
 

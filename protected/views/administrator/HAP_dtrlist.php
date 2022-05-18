@@ -503,36 +503,37 @@ else if($status == "approved")
 				<td class="actions_class"">
 
 	
-			<center>
-				<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
-							<label for="disapprove" class="disapprove" style="color: red;  font-weight:bold;">DISAPPROVE</label>
-			</center>
-		</td>
-		<td>
-			<center>
-				<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
-			</center>
-		</td>
-		<td class=""">
-			<center>
-				<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
-			</center>
-		</td>
-		<td>
-			<center>
-				<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
-			</center>
-
-				
+					<center>
+						<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
+								<label for="disapprove" class="disapprove" style="color: red;  font-weight:bold;">DISAPPROVE</label>
+					</center>
+				</td>
+				<td>
+					<center>
+						<input type="hidden" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
+									<label for="approve" class="approve" style="color: green; font-weight:bold;" hidden>APPROVE</label>
+					</center>
+				</td>
+			<td>
+				<center>
+					<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
+				</center>
+			</td>
+			<td class=""">
+				<center>
+					<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
+				</center>
+			</td>
+			<td>
+				<center>
+					<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
+				</center>
 
 				</td>
 
-			<td>
-				<center></center>
-
-			</td>
-			</tr>
-			
+				
+				</tr>
+				
 
 		';
 		$counter++;
@@ -565,35 +566,38 @@ else if($status == "disapproved")
 				<td id="year_id'.$counter.'"" style="font-weight:bold;">' . $newresult['year'] . '</td>
 				<td class="actions_class"">
 
-				<center>
-				<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
-							<label for="approve" class="approve" style="color: green; font-weight:bold;">APPROVE</label>
-			</center>
-		</td>
+					<center>
+						<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="approve_box_id'.$counter.'" name="approval'.$counter.'"  value="1">
+								<label for="approve" class="approve" style="color: green; font-weight:bold;">APPROVE</label>
+					</center>
+				</td>
+				<td>
+					<center>
+						<input type="hidden" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2" >
+									<label for="disapprove" class="disapprove" style="color: red;  font-weight:bold;" hidden>DISAPPROVE</label>
+					</center>
+				</td>
 		
-		<td>
-			<center>
-				<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
-			</center>
-		</td>
-		<td class=""">
-			<center>
-				<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
-			</center>
-		</td>
-		<td>
-			<center>
-				<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
-			</center>
-					</td>
-					<td>
-				<center></center>
-
-			</td>
+				<td>
+					<center>
+						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
+					</center>
+				</td>
+				<td class=""">
+					<center>
+						<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
+					</center>
+				</td>
+				<td>
+					<center>
+						<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
+					</center>
+							</td>
+						
+							
+					</tr>
 					
-			</tr>
-			
-			
+					
 
 		';
 		$counter++;
@@ -704,7 +708,7 @@ function post_approval(counter)
 		console.log(approval);
 	}
 
-	else
+	else if(disappro == true)
 	{
 		approval = 2;
 		var comments = document.getElementById("comments"+counter).value;

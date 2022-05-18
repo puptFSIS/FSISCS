@@ -514,7 +514,7 @@ else if ($status == "approved")
 			echo '
 			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 
-			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">
+			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
 
 			'
 			;
@@ -600,7 +600,7 @@ else if ($status == "pending")
 			echo '
 			
 
-			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">
+			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
 
 			'
 			;
@@ -681,8 +681,8 @@ else if($status == "disapproved")
 		else
 		{
 			echo' 
-			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit">
-			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">';
+			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit" onclick="resubmit_dtr()">
+			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr">';
 		}
 		
 	
@@ -763,8 +763,8 @@ else if($status == "deleted")
 		{
 			echo '
 			
-			<input style="display: none;" id="restorebtn" type="submit" name="restore" value="restore">
-			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete">
+			<input style="display: none;" id="restorebtn" type="submit" name="restore" value="restore" onclick="restore_dtr()">
+	
 			';
 		}
 		
@@ -797,21 +797,18 @@ const checked = [];
 var submitbtn = document.getElementById("submitbtn");
 var resubmitbtn = document.getElementById("resubmitbtn");
 var deletebtn = document.getElementById("deletebtn");
-// var deletebtn1 = document.getElementById("deletebtn1");
 var restorebtn = document.getElementById("restorebtn"); 
+// var testbtn = document.getElementById("testbtn");
+
 
 
 
 
 function change_color(_this,counter,status)
 {
-
-
 		var counter = counter;
 		var status = status;
 		var existence = existence;
-
-
 
 	if(_this.style.backgroundColor != "green" && counter != 'generate')
 	{
@@ -942,16 +939,84 @@ function change_color(_this,counter,status)
 	
 }
 
-restorebtn.onclick = function()
+// deletebtn.onclick = function() 
+// {
+	
+// }
+
+function delete_dtr()
 {
-	// console.log("working");
+
+		Swal.fire({
+			title: 'Are you sure?',
+			text: "You won't be able to revert this!",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, delete it!'
+		}).then((result) => {
+		if (result.isConfirmed) 
+		
+			$.ajax({
+		      type: "POST",
+		      url:    "<?php echo Yii::app()->createUrl('administrator/Delete_dtr'); ?>",
+		      data:  {val2:checked},
+		      dataType:"JSON",
+		      success:function(data){
+				Swal.fire(
+					'Deleted!',
+					'Your file has been deleted.',
+					'success'
+				)
+		      	window.location.reload();
+		      },
+		      error:function(data)
+		      {
+		      	alert(JSON.stringify(data));
+
+		      }
+		  });
+
+			
+		
+		})
+
+
+
+	
+}
+
+// restorebtn.onclick = function()
+// {
+
+
+// }
+
+function restore_dtr()
+{
+
+	Swal.fire({
+			title: 'Are you sure?',
+			icon: 'warning',
+			showCancelButton: true,
+			showConfirmButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, restore it!'
+	}).then((result) => {
+		if (result.isConfirmed) 
 	$.ajax({
 		      type: "POST",
 		      url:    "<?php echo Yii::app()->createUrl('administrator/Restore_dtr'); ?>",
 		      data:  {val1:checked},
 		      dataType:"JSON",
 		      success:function(data){
-		      	alert("dtr restored successfully");
+				Swal.fire(
+					'Restored!',
+					'Your file has been restored.',
+					'success',
+				)
 		      	window.location.reload();
 		      },
 		      error:function(data)
@@ -960,28 +1025,9 @@ restorebtn.onclick = function()
 
 		      }
 		  });
+	})
 }
-
-deletebtn.onclick = function() 
-{
-	$.ajax({
-		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('administrator/Delete_dtr'); ?>",
-		      data:  {val2:checked},
-		      dataType:"JSON",
-		      success:function(data){
-		      	alert("dtr deleted successfully");
-		      	window.location.reload();
-		      },
-		      error:function(data)
-		      {
-		      	alert(JSON.stringify(data));
-
-		      }
-		  });
-}
-
-resubmitbtn.onclick = function() 
+function resubmit_dtr()
 {
 	$.ajax({
 		      type: "POST",
@@ -998,28 +1044,37 @@ resubmitbtn.onclick = function()
 
 		      }
 		  });
-
 }
 
+// resubmitbtn.onclick = function() 
+// {
+	
 
-deletebtn1.onclick = function() 
-{
-	$.ajax({
-		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('administrator/Delete_dtr'); ?>",
-		      data:  {val2:checked},
-		      dataType:"JSON",
-		      success:function(data){
-		      	alert("dtr deleted successfully");
-		      	window.location.reload();
-		      },
-		      error:function(data)
-		      {
-		      	alert(JSON.stringify(data));
+// }
 
-		      }
-		  });
-}
+// testbtn.onclick = function() 
+// {
+// 	$.ajax({
+// 		      type: "POST",
+// 		      url:    "<?php echo Yii::app()->createUrl('administrator/Resubmit'); ?>",
+// 		      data:  {val1:checked},
+// 		      dataType:"JSON",
+// 		      success:function(data){
+// 		      	alert("dtr resubmitted successfully");
+// 		      	window.location.reload();
+// 		      },
+// 		      error:function(data)
+// 		      {
+// 		      	alert(JSON.stringify(data));
+
+// 		      }
+// 		  });
+
+// }
+
+
+
+
 
 
 

@@ -1,99 +1,124 @@
-<!DOCTYPE html> 
-<html>
-<div>
-<!-- Page content -->
 <style>
-
-.text_format
-{
-	font-weight: bold;
-	font-size: 18px;
-}
-
-#note
-{
-	font-weight: bold;
-	font-style: italic;
-	color: red;
-}
-
-.select
-{
-   /*max-width: 10px;*/
-   /*width: 100px;*/
-
-}
-
+	#container
+	{
+		/* max-width: 650px; */
+		width: 1000px;
+		margin-top: 50px;
+		background-color: #f7f7f7;
+		/* overflow: hidden; */
+	}
+	
+	.container
+	{
+		width: 100%;
+		margin-top: 50px;
+		background-color: #f7f7f7;
+	}
 </style>
 
 
+<!-- //cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css -->
+<!-- <script src="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"></script> -->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
 
-<div > 
-<!-- Video - HTML5 -->
-<p style="font-style: italic;">
-<!-- On the action column, you must click 2 pdf buttons in order to print it as pdf -->
-</p>
-<p>
-SHOW: 
-<!-- <a href="index.php?r=administrator/DtrTable&sort=id"><input type="button" value="ID" /></a>
-<a href="index.php?r=administrator/DtrTable&sort=loadtype"><input type="button" value="Load Type" /></a>
-<a href="index.php?r=administrator/DtrTable&sort=month"><input type="button" value="Month" /></a>
-<a href="index.php?r=administrator/DtrTable&sort=year"><input type="button" value="Year" /></a> -->
-<a href="index.php?r=faculty/DtrTable&sort=pending"><input type="button" value="pending" /></a>
-<a href="index.php?r=faculty/DtrTable&sort=disapproved"><input type="button" value="disapproved"/></a>
-<a href="index.php?r=faculty/DtrTable&sort=approved"><input type="button" value="approved"/></a>
-<a href="index.php?r=faculty/DtrTable&sort=deleted"><input type="button" value="deleted"/></a>
-<a href="index.php?r=faculty/DtrTable&sort=recent"><input type="button" value="recent"/></a>
-</p>
-
-<form name="searchby" id="searchby" action="index.php?r=faculty/DtrTable" method="post">
-<select name="dtrsearch" id="dtrsearch" style="width: 15%;">
-	<option class="select" disabled selected value> --Select an option-- </option>
-	<option value="month">Month</option>
-	<option value="year">Year</option>
-	<option value="regpart">Load Type</option>
-</select>
-<input name="dtrsearchinput" id="dtrsearchinput" style="margin-top: -36px; margin-left: 160px; width: 350px;" type="text" placeholder="Search..." />
-<input type="submit" value="Search"/>
-</form>
 
 
-<table class="dtr_table">
+<div class="table-responsive" id="container" >
+	<a href="index.php?r=faculty/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
+	<a href="index.php?r=faculty/DtrTable&sort=approved"><input type="button" value="Approved"/></a>
+	<a href="index.php?r=faculty/DtrTable&sort=disapproved"><input type="button" value="Disapproved"/></a>
 
-<thead >
-<tr>
-<th><h5><strong>ID</strong></h5></th>
-<th hidden><h5><strong>Fcode</strong></h5></th>
-<th><h5><strong>Last Name</strong></h5></th>
-<th><h5><strong>First Name</strong></h5></th>
-<th><h5><strong>Middle Name</strong></h5></th>
-<th><h5><strong>Load Type</strong></h5></th>
-<th><h5><strong>Month</strong></h5></th>
-<th><h5><strong>Year</strong></h5></th>
-<th><h5><strong>Action</strong></h5></th>
-</tr>
-</thead>
-
-	<tbody>
-
-		<?php 
-		include("dtrlist.php"); 
-
-
-		?>
-		<tfoot>
+	<a href="index.php?r=faculty/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
+	<!-- <a href="index.php?r=administrator/DtrTable&sort=recent"><input type="button" value="recent"/></a> -->
+	<br>
+		<br>
+	<div class="container2">
+		<br>
+		<br>
+	<table id="ProfTable" class="table table-striped table-bordered">
+		<thead >
 			<tr>
-			<td style="font-size: 12px; font-style: italic;" colspan=9><?php echo "DTR List";?></td>
+				<th><h5><strong></strong></h5></th>
+				<th style="text-align: center;"><h5><strong>ID</strong></h5></th>
+				<th hidden><h5><strong>Fcode</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Name</strong></h5></th>
+				<th hidden style="text-align: center;"><h5><strong>First Name</strong></h5></th>
+				<th hidden style="text-align: center;"><h5><strong>Middle Name</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Load Type</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Month</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Year</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Actions</strong></h5></th>
+				<!-- <th><h5><strong></strong></h5></th> -->
+
 			</tr>
-		</tfoot>
-	</tbody>
-</table>
+		</thead>
+		<tbody>
+
+			<?php include("dtrlist.php"); ?>
+		
+			<tfoot>
+				<tr>
+					<td style="font-size: 12px; font-style: italic;" colspan=9 ><?php echo "DTR List";?></td>
+				</tr>
+			</tfoot>
+		</tbody>
+
+	</table>
+
+
+
+</div>
 </div>
 
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/datatables.min.js"></script>
+<script id=js-dispatcher src='scripts/scripts.js'></script>
+<script>
+	var ProfTable = $("#ProfTable").DataTable({
+        "scrollY":        false,
+        "scrollCollapse": false,
+        "paging":         true,
+        "lengthChange": true,
+        "pagingType": "full_numbers",
 
 
+        language: { 
+        search: "", 
+
+        searchPlaceholder: "Search:" },
+        columnDefs: [ {
+            orderable: false,
+            targets:   0,
+        } ],
 
 
-</div>
-</html>
+    });
+
+
+//     $(document).ready(function() {
+//     $('#ProfTable').DataTable( {
+//         responsive: {
+//             details: {
+//                 display: $.fn.dataTable.Responsive.display.modal( {
+//                     header: function ( row ) {
+//                         var data = row.data();
+//                         return 'Details for '+data[0]+' '+data[1];
+//                     }
+//                 } ),
+//                 renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
+//                     tableClass: 'table'
+//                 } )
+//             }
+//         }
+//     } );
+// } );
+
+</script>

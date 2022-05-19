@@ -119,7 +119,7 @@ if(isset($_SESSION['user'])) {
 <br />
     <form name="frmSched" method = "post" action = "index.php?r=administrator/ProcessSetFacultyUnits">
         
-        <label>Regular Load (Faculty Designee): </label><input style="width: 35px;display: inline;" type="text" name="TS" value="<?php echo $fd ?>"> Units <br /> <br />
+        <label>Regular Load (Faculty Designee): </label><input style="width: 35px;display: inline;" type="text" name="FD" value="<?php echo $fd ?>"> Units <br /> <br />
         <label for="name">Regular Load: </label><input style="width: 35px;display: inline;" type="text" name="Reg" value="<?php echo $regular ?>"> Units  <br /><br />
         <label>Part-Time Load: </label><input style="width: 35px;display: inline;" type="text" name="Part" value="<?php echo $part ?>"> Units <br /> <br />
         <label>Temporary Substitution: </label><input style="width: 35px;display: inline;" type="text" name="TS" value="<?php echo $ts ?>"> Units <br /> <br />

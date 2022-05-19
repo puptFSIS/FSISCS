@@ -2341,21 +2341,35 @@ class AdministratorController extends Controller
 		$reg = $_POST['Reg'];
 		$part = $_POST['Part'];
 		$ts = $_POST['TS'];
+		$fd = $_POST['FD'];
 
-		$sql = "UPDATE tbl_facultyUnits SET RegUnits = :reg, PartTimeUnits = :part, TempSubUnits = :temp";
+		// print_r($_POST);
 
+		//updates the maintenance for tbl_facultyunits
+		$sql = "UPDATE tbl_facultyUnits SET RegUnits = :reg, PartTimeUnits = :part, TempSubUnits = :temp, FacultyDesignee = :fd";
 		Yii::app()->db->createCommand($sql)
 		->bindValue(':reg',$reg)
 		->bindValue(':part',$part)
 		->bindValue(':temp',$ts)
+		->bindValue(':fd',$fd)
 		->query();
 
-		$sqlUpdateRegularFaculty = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg WHERE Regular_Load != :zero";
+		//updates the regular load of faculty designee 
+		$sql = "UPDATE tbl_evaluationfaculty SET Regular_Load = :fd WHERE evalRoles = :role";
+		Yii::app()->db->createCommand($sql)
+		->bindValue(':fd', $fd)
+		->bindValue(':role', 'Faculty Designee')
+		->query();
+
+		//updates the regular load of regular faculty 
+		$sqlUpdateRegularFaculty = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg WHERE Regular_Load != :zero AND evalRoles != :role";
 		Yii::app()->db->createCommand($sqlUpdateRegularFaculty)
 		->bindValue(':reg',$reg)
 		->bindValue(':zero',0)
+		->bindValue(':role', 'Faculty Designee')
 		->query();
 
+		//updates the part time and ts load of part time faculty 
 		$sqlUpdatePartTs = "UPDATE tbl_evaluationfaculty SET PartTime_Load = :part, TeachingSub_Load = :ts";
 		Yii::app()->db->createCommand($sqlUpdatePartTs)
 		->bindValue(':part',$part)

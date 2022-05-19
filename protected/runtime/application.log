@@ -11117,3 +11117,29 @@ Stack trace:
 REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=May%2018%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20REGULAR%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val7=Rabe,%20Yolanda%20FolloscoFaranal,%20Fernan%20N.&val8=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20TS%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val9=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20OT%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of%20DATE:
 HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
 ---
+2022/05/19 10:18:24 [error] [php] Undefined index: FD (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:2344)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessSetFacultyUnits()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/ProcessSetFacultyUnits
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2344)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/19 10:18:32 [error] [php] Undefined index: FD (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:2344)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessSetFacultyUnits()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/ProcessSetFacultyUnits
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2344)
+in C:\xampp\htdocs\FSISCS\index.php (13)

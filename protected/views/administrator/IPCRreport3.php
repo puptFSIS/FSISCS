@@ -175,24 +175,7 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<header id=page-title>
-<!-- Title and summary -->
-<!-- End - Title and summary -->
-<!-- Title right side -->
-<section id="menu_strip">
-<a data-category=all href='index.php?r=administrator'>Home</a>
-<a data-category=design href="index.php?r=administrator/profile">Profile</a>
-<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
-<a data-category=design href="index.php?r=administrator/reports">Reports</a>
-<a data-category=design href="index.php?r=administrator/forms">Forms</a>
-<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
-<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
-<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
-<a data-category=design href="index.php?r=administrator/other">Other</a>
-<a data-category=design href="index.php?r=administrator/logout">Log out</a>
-</section>
-<!-- End - Title right side -->
-</header>
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -261,7 +244,7 @@ if(isset($_SESSION['user'])) {
                                 <td name="status" style="text-align: center;"><?= $row['status']?></td>
                                 <?php if($m == "JJ") : ?>
                                     <?php if($status == "Submitted") : ?>
-                                        <td><a href="index.php?r=administrator/IPCRform1<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
+                                        <td><a href="index.php?r=administrator/IPCRform12<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
                                     <?php elseif($status == NULL) : ?>
                                         <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
                                     <?php endif; ?>

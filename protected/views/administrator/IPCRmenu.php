@@ -3,7 +3,7 @@
 </li>
 
 <li>
-	<a href="index.php?r=administrator/IPCRratingsremarks">Ratings and Remarks</a>
+	<a href="index.php?r=administrator/IPCRratingsremarks">Evaluation</a>
 </li>
 
 <li>
@@ -11,9 +11,13 @@
 </li>
 
 <li>
-	<a href="#">Download Interpolation</a>
-</li>
+	<a href="index.php?r=administrator/IPCRInterpolation">Generate Interpolation (Excel)</a>
+</li> 
 
+ <!-- <li>
+	<a href='#'>Report (IPCR & Interpolation)</a>
+</li>
+ -->
 <li>
 	<a href='index.php?r=administrator/IPCRemailnotif'>Send IPCR Email Notification</a>
 </li>

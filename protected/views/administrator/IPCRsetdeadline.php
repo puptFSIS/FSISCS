@@ -36,7 +36,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x:0;height:105px;}
     
 #page-title
 {
@@ -196,7 +196,24 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -212,10 +229,10 @@ if(isset($_SESSION['user'])) {
         $y = $_GET['y'];
     }
 ?> 
-<h2 class=underlined-header>Individual Performance Commitment and Review</h2>
+<h2 class=underlined-header><center>Individual Performance Commitment and Review</center></h2>
 <br>
 <br>
-<h2 class="underlined">Set IPCR Deadline (Date & Time)</h2>
+<h2 class="underlined">Set IPCR Deadline (Date)</h2>
 <br>
 <?php 
     $sql = "SELECT * FROM tbl_ipcrvisible WHERE month = '$m' AND year = '$y'";
@@ -227,7 +244,7 @@ if(isset($_SESSION['user'])) {
     
     <form action="index.php?r=administrator/processSetdeadline<?php echo'&m='.$m.'&y='.$y.'';?>" method="post">
         <p style="font-size: 15px;"><strong>Note: If the date exceed on the deadline set, the IPCR will become unavailable to the faculty.</strong></p>
-        <p><h5><strong>PREVIOUS DEADLINE: <u><?php echo $dline; ?></u></strong></h5></p>
+        <p><h5><strong>CURRENT DEADLINE: <u><?php echo $dline; ?></u></strong></h5></p>
         <div id="divdate">
             <input id="date" type="date" name="dlinedatetime" required>
         <!-- <input type="time" name="dlinetime" style="outline: 50px; height: 50px;" required> -->

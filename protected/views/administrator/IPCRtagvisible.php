@@ -1,8 +1,9 @@
 <?php
 	include('config.php');
 	session_start();
-	require ('PHPMailer-master/src/PHPMailer.php');
-	require ('PHPMailer-master/src/SMTP.php');
+	require_once('PHPMailer-master/src/PHPMailer.php');
+	require_once('PHPMailer-master/src/SMTP.php');
+	require ('vendor/autoload.php');
 
 	$m = $_GET['m'];
 	$y = $_GET['y'];

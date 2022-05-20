@@ -10,7 +10,7 @@ if(isset($_SESSION['user'])) {
 } else {
     header("location:index.php?r=site/");
 }
-?>
+?> 
 <!DOCTYPE html>
 <!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
 <!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
@@ -36,7 +36,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
     
 #page-title
 {
@@ -146,6 +146,14 @@ if(isset($_SESSION['user'])) {
     background-color: antiquewhite;
 }
 
+.disabled{
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -167,7 +175,24 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -177,19 +202,21 @@ if(isset($_SESSION['user'])) {
 <!-- Video - HTML5 -->
 <section>
 
-<h2 class=underlined-header><center>Individual Performance Commitment and Review</center></h2>
+<h2 class=underlined-header><center>Individual Performance, Commitment and Review</center></h2>
 
 <!---->
 <?php
     
 
-    if(isset($_GET['m'],$_GET['y']))
+    if(isset($_POST['Month'],$_POST['Year']))
     {
-        $m = $_GET['m'];
-        $y = $_GET['y'];
+        $m = $_POST['Month'];
+        $y = $_POST['Year'];
     }
+    //$sql="SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = $fcode WHERE tbl_ipcr1.year = $y AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
 
 ?>
+
     <div class="main_container" onload="makeTableScroll();">
         <div class="scrollingTable">
                 <br>
@@ -202,13 +229,13 @@ if(isset($_SESSION['user'])) {
                 <!--  Uploaded File list -->
                 
                 <p><strong>Search professor</strong><input type="text" id="myInput" onkeyup="myFunction()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
-                <p><strong>Note: Only APPROVE IPCR Will be seen on the List.</strong></p>
+                <!-- <p><strong>Note: Only APPROVE IPCR Will be seen on the List.</strong></p> -->
                 <table id="myTable">
                     <thead>
                         <tr>
                             <th width="30%"><h5 align="Left">Name</th></h5>
                             <th width="30%"><h5 align="Left">Faculty Code</th></h5>
-                            <th width="30%"><h5 align="Left">Status</th></h5>
+                            <th width="30%"><h5 align="center">Status</th></h5>
                             <th width="5%"><h5 align="center">Action</th></h5> 
                         </tr>
                     </thead>
@@ -217,24 +244,33 @@ if(isset($_SESSION['user'])) {
                         $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month = '$m' ORDER BY tbl_evaluationfaculty.LName ASC";
                         $result = mysqli_query($conn,$sql);
 
-
-                        while($row = mysqli_fetch_array($result)) :
-                        
-                            $fcode = $row['FCode'];
-                            $fname = $row['FName'];
-                            $status = $row['status'];
-                            $mname = $row['MName'];
-                            $sname = $row['LName'];
-                            $status = $row['status'];
                     ?>
+                        <?php while($row = mysqli_fetch_array($result)) : ?>
+                        
+                            <?php
+                                $fcode = $row['FCode'];
+                                $fname = $row['FName'];
+                                $status = $row['status'];
+                                $mname = $row['MName'];
+                                $sname = $row['LName'];
+                                $status = $row['status'];
+                            ?>                    
                             <tr>
                                 <td name="name" style="text-align: left;"><?= $row['LName'],", ", $row['FName']," ",$row['MName']?></td>
                                 <td name="fcode" style="text-align: left;"><?= $row['FCode']?></td>
-                                <td name="status" style="text-align: left;"><?= $row['status']?></td>
+                                <td name="status" style="text-align: center;"><?= $row['status']?></td>
                                 <?php if($m == "JJ") : ?>
-                                    <td><a href="index.php?r=administrator/IPCRform1"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
+                                    <?php if($status == "Submitted") : ?>
+                                        <td><a href="index.php?r=administrator/IPCRform1<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
+                                    <?php elseif($status == NULL) : ?>
+                                        <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
+                                    <?php endif; ?>
                                 <?php else : ?>
-                                    <td><a href="index.php?r=administrator/IPCRform2"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
+                                    <?php if($status == "Submitted"): ?>
+                                        <td><a href="index.php?r=administrator/IPCRform2<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
+                                    <?php elseif($status == NULL): ?>
+                                        <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
+                                    <?php endif; ?>
                                 <?php endif; ?>
                             </tr>
                         <?php endwhile; ?>

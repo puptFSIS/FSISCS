@@ -25,6 +25,10 @@ if(isset($_SESSION['user'])) {
 <meta content='vCore Team' name=author />
 <!-- Page title -->
 <title>IPCR | Add</title>
+
+<!-- <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script> -->
+
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
@@ -121,7 +125,20 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<section id=menu_strip>
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+    </header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -157,10 +174,11 @@ if(isset($_GET['m'],$_GET['y'])) :
     <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="month"><?= $m; ?></textarea>
     <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="year"><?= $y; ?></textarea>
 <?php endif; ?>
-    <h4 class="underlined-header" id="head"><strong>OUTPUT:</strong><textarea name="output" type=text placeholder='Output'></textarea></h4>
+
+    <h4 class="underlined-header" id="head"><strong>OUTPUT:</strong><textarea style="width: 100%; height: 30%;" name="output" type=text placeholder='Output'></textarea></h4>
     <br>
     <br>
-    <h4 class="underlined-header" id="head"><strong>SUCCESS INDICATORS:</strong><textarea name="indicators" type=text placeholder='Success Indicators'></textarea></h4>
+    <h4 class="underlined-header" id="head"><strong>SUCCESS INDICATORS:</strong><textarea style="width: 100%; height: 30%;" name="indicators" type=text placeholder='Success Indicators'></textarea></h4>
     <br>
     <br>
     <!--<p style="margin-bottom: 9px; font-size: 15px;"><strong>Actual Accomplishments:</strong><textarea name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 30%;"  placeholder='Actual Accomplishments'></textarea></p>-->

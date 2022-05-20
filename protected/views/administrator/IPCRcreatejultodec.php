@@ -123,7 +123,25 @@ if(isset($_SESSION['user'])) {
 <!--<section class=container-block id=page-body>-->
 <!--<div class=container-inner>-->
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -155,14 +173,13 @@ if(isset($_SESSION['user'])) {
 <br>
     <a href="index.php?r=administrator/IPCRaddrow<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 80px;">Add Row</button></a>
     <a href="index.php?r=administrator/IPCRsetdeadline<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 100px;" class="btn-set">Set Deadline</button></a>
-    <a href="index.php?r=administrator/IPCRform1" target = "blank"><button>Generate PDF</button></a>
+    <!-- <a href="index.php?r=administrator/IPCRform1" target = "blank"><button>Generate PDF</button></a> -->
 <br/>
 <br/>
 <p style="font-size: 15px"><strong>Note: <b id="asterisk">*</b> - Required Fields.</strong></p>
 <table class=round-3 style="width:100%; ">
 <thead>
     <tr>
-        <br>
         <h2 class="underlined-header1"><center><p style="color: black;" id="category">S T R A T E G I C</p><p style="color: gray;" id="category"> P R I O R I T Y</p></center></h2>
         <th width="5%"><h5 align="center"></h5></th>
         <th width="30%"><h5 align="center">Output</h5></th>
@@ -175,7 +192,7 @@ if(isset($_SESSION['user'])) {
 </thead>
 <tfoot>
 <tr>
-<td colspan=10></td>
+<td colspan="11" style="font-size: 12px">End of Strategic Priotrity</td> 
 </tr>
 </tfoot>
 <tbody >
@@ -225,7 +242,7 @@ if(isset($_SESSION['user'])) {
 </thread>
 <tfoot>
 <tr>
-<td colspan=3></td>
+<td colspan="11" style="font-size: 12px">End of Core Function</td> 
 </tr>
 </tfoot>
 <tbody>
@@ -273,7 +290,7 @@ if(isset($_SESSION['user'])) {
 </thread>
 <tfoot>
 <tr>
-<td colspan=3></td>
+<td colspan="11" style="font-size: 12px">End of Support Function</td> 
 </tr>
 </tfoot>
 <tbody>

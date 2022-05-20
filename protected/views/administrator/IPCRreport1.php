@@ -176,14 +176,31 @@ select {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
 <div id=page-body-content-inner>
 <!-- Page content -->
 <div id=page-content>
-<!-- Video - HTML5 -->
+<!-- Video - HTML5 --> 
 <section>
 
 <h2 class=underlined-header><center>Individual Performance Commitment and Review</center></h2>
@@ -192,15 +209,15 @@ select {
 <!---->
 <?php  
     
-    if(isset($_POST['submit']))
-    {
-        $selectedm = $_POST['Month'];
-        $selectedy = $_POST['Year'];
-    } 
+    // if(isset($_POST['submit']))
+    // {
+    //     $selectedm = $_POST['Month'];
+    //     $selectedy = $_POST['Year'];
+    // } 
     
         
 ?> 
-<form action="index.php?r=administrator/IPCRreport2" method="post">
+<form action="index.php?r=administrator/IPCRreport3" method="post">
     <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
         <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
             <option value="" disabled selected>----Choose Month----</option>

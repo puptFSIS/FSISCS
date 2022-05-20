@@ -124,7 +124,25 @@ if(isset($_SESSION['user'])) {
 <!--<section class=container-block id=page-body>-->
 <!--<div class=container-inner>-->
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -167,9 +185,9 @@ if(isset($_SESSION['user'])) {
     <a href="index.php?r=administrator/IPCRsetdeadline<?php echo'&m='.$m.'&y='.$y.'';?>">
         <button style="width: 100px;" class="btn-set">Set Deadline</button>
     </a>
-    <a href="index.php?r=administrator/IPCRform1" target = "blank">
+    <!-- <a href="index.php?r=administrator/IPCRform1dummy<?php echo'&m='.$m.'&ye='.$y.'';?>" target = "blank">
         <button>Generate PDF</button>
-    </a>
+    </a> -->
 
 <br/>
 <br/>
@@ -192,7 +210,7 @@ if(isset($_SESSION['user'])) {
 </thead>
 <tfoot>
 <tr>
-<td colspan=10></td>
+<td colspan="11" style="font-size: 12px">End of Strategic Priotrity</td> 
 </tr>
 </tfoot>
 <tbody >
@@ -243,7 +261,7 @@ if(isset($_SESSION['user'])) {
 </thread>
 <tfoot>
 <tr>
-<td colspan=3></td>
+<td colspan="11" style="font-size: 12px">End of Core Function</td> 
 </tr>
 </tfoot>
 <tbody>
@@ -292,7 +310,7 @@ if(isset($_SESSION['user'])) {
 </thread>
 <tfoot>
 <tr>
-<td colspan=3></td>
+<td colspan="11" style="font-size: 12px">End of Support Function</td> 
 </tr>
 </tfoot>
 <tbody>

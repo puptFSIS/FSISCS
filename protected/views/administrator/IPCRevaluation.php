@@ -121,6 +121,7 @@ if(isset($_SESSION['user'])) {
 .img-holder
 {
     width: 100%;
+    max-height:250px;
     transition: 0.5s all ease-in-out;
     margin-bottom: 20px;
 }
@@ -131,12 +132,12 @@ if(isset($_SESSION['user'])) {
 
 .img-holder:hover
 {
-    transform: scale(1.5);
+    transform: scale(1.8);
 }
-img 
+img
 {
-    width:  100px;
-    height: 100px; 
+    width:  450px;
+    height: 300px; 
 }
 input
 {
@@ -162,7 +163,20 @@ input
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
 
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<section id="menu_strip">
+<a data-category=all href='index.php?r=administrator'>Home</a>
+<a data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a data-category=design href="index.php?r=administrator/reports">Reports</a>
+<a data-category=design href="index.php?r=administrator/forms">Forms</a>
+<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
+<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=administrator/other">Other</a>
+<a data-category=design href="index.php?r=administrator/logout">Log out</a>
+</section>
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -195,12 +209,15 @@ input
     }
 
  ?>
- 
-<p style="font-size: 17px;"><strong>View Accomplishment and Proof</strong></p>
-<hr style="margin-top: -10px;" />
-<input type="hidden" name="id" value="<?php echo $id;?>">
-<input type="hidden" name="EmpID" value="<?php echo $fcode; ?>">
+<a href="index.php?r=administrator/IPCRview<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>"><button>&laquo; Previous</button></a>
+<br>
+<br>
+<hr style="margin-top: 0px; margin-bottom: 5px;" >
+<p style="font-size: 15px;"><strong>VIEW ACCOMPLISHMENT AND PROOF(S)</strong></p>
 
+<!-- Hidden Containers to store id and fcode which will be use -->
+<input type="hidden" name="id" value="<?php echo $id;?>"> 
+<input type="hidden" name="EmpID" value="<?php echo $fcode; ?>">
 
 <h4 class="underlined-header" id="shadow">
     <strong>ACTUAL ACCOMPLISHMENT/S</strong>
@@ -209,32 +226,75 @@ input
 <br>
 
 <h4 class="underlined-header"><strong>UPLOADED PROOF(S)</strong></h4>
+<table id="myTable">
+    <thead>
+        <tr>              
+            <th width="33%"><h5 align="Center">Proof Name</th></h5>
+            <th width="33%"><h5 align="center">Detail/s</th></h5>
+            <th width="33%"><h5 align="center">Action</th></h5> 
+        </tr>
+    </thead>
 
 <?php //Getting the Uploaded Proofs from Database 
-    // Get images from the database
-    $query = "SELECT * FROM tbl_proof WHERE id_ipcraccomp = '$id' AND deleted_at IS NULL ORDER BY uploaded_on DESC";
-    $result = mysqli_query($conn,$query);
+// Get images from the database
+$query = "SELECT * FROM tbl_proof WHERE id_ipcraccomp = '$id' AND deleted_on IS NULL ORDER BY uploaded_on DESC";
+$result = mysqli_query($conn,$query);
 ?>
     <?php if($result->num_rows > 0): ?>
         <?php while($row = mysqli_fetch_assoc($result)): ?>
-            <?php $imageURL = 'IPCRuploads/'.$row["file_name"]; ?>
+            <?php $imageURL = $row['file_name']; ?>
             <?php $upload_date = $row["uploaded_on"]; ?>
-
-            <div class="img">
-                <div class="img-holder">
-                    <img id="shadow" src="<?php echo $imageURL;?>">
-                </div>
-                <div class="img-info">
-                <center>
-                    <p class="upload"><?php echo 'Uploaded on: ',$upload_date;?></p>
-                </center>
-                </div>
+            <?php $proofid = $row['id']; ?>
+            <tr>
+            <div>
+                <td>
+                    <div>
+                        <center><p><?php echo $imageURL;?></p></center>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <center>
+                            <strong><p class="upload"><?php echo 'Uploaded on: '.$upload_date;?></p></strong>
+                        </center>
+                    </div>
+                </td>
+                <td>
+                    
+                    <center><button data-toggle="modal" data-target="#ModalCenterimage<?php echo $proofid; ?>" style="width:90px">Preview</button></center>
+                    <!-- Modal for Proof Preview -->
+                    <div class="modal fade" id="ModalCenterimage<?php echo $proofid; ?>">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"><strong><?php echo $imageURL;?></strong></h5>
+                          </div>
+                          <div class="modal-body">
+                            <div class="img-holder">
+                                <center><img src="<?php echo 'IPCRuploads/'.$imageURL;?>"></center>
+                            </div>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="modal-footer">
+                            <button id="btn-modal" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End of Modal -->
+                </td>
             </div>
+        </tr>
         <?php endwhile; ?>
     <?php else: ?> 
-        <p><strong>No proof(s) uploaded by Faculty...</strong></p>
+        <tfoot>
+            <tr>
+                <td colspan=3><p>No proof(s) uploaded by Faculty...</p></td>
+            </tr>
+        </tfoot>
     <?php endif; ?>
-
+</table>
 
 </section>
 <!-- End - Showcase gallery -->
@@ -268,7 +328,7 @@ input
                 <h5 class="modal-title" id="exampleModalLongTitle"><strong>ADD RATINGS</strong></h5>
               </div>
               <div class="modal-body">
-                <p><strong>Note: 1 - lowest & 5 - Highest</strong></p>
+                <p style="font-size: 15px;"><strong>Note: 1 - lowest & 5 - Highest</strong></p>
                 <hr style="margin-top: 15px;">
                 <div class="col-md-0"></div>
                     <div class="col-md-12 well">

@@ -451,6 +451,8 @@ class AdministratorController extends Controller
 			$isAdmin = 1;
 		} else if($roles=="HAP Secretary") {
 			$isAdmin = 1;
+		} else if($roles=="Faculty Designee"){
+			$isAdmin = 1;
 		} else {
 			$isAdmin = 0;
 		}

@@ -2919,7 +2919,66 @@ class AdministratorController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
-    public function actionprocessRating()
+    public function actionIPCRInterpolationcomputable()
+    {
+    	$this->render('IPCRInterpolationcomputable');
+    }
+    public function actionIPCRInterpolation()
+    {
+    	$this->render('IPCRInterpolation');
+    }
+    public function actionIPCRform12()
+    {
+    	if(isset($_GET['m'],$_GET['ye'],$_GET['fcode']))
+    	{
+        	$m = $_GET['m'];
+        	$ye = $_GET['ye'];
+        	$fcode = $_GET['fcode'];
+    	}
+		$datasp = TblIpcr1::model()->getIPCR1datasp($ye,$fcode);
+		$datacf = TblIpcr1::model()->getIPCR1datacf($ye,$fcode);
+		$datasf = TblIpcr1::model()->getIPCR1datasf($ye,$fcode);
+
+		// echo "<pre>";
+		// print_r($datasp);
+		// echo "</pre>"; 
+
+		$this->render('IPCRform12', array(
+			'infosp' => $datasp,
+			'infocf' => $datacf,
+			'infosf' => $datasf,
+			'm' => $m,
+			'ye' => $ye,
+			'fcode' => $fcode
+		));
+    }
+   	public function actionIPCRform1dummy()
+   	{
+   		if(isset($_GET['m'],$_GET['ye'],$_GET['fcode']))
+    	{
+        	$m = $_GET['m'];
+        	$ye = $_GET['ye'];
+        	$fcode = $_GET['fcode'];
+    	}
+		$datasp = TblIpcr1::model()->getIPCR1datasp($ye,$fcode);
+		$datacf = TblIpcr1::model()->getIPCR1datacf($ye,$fcode);
+		$datasf = TblIpcr1::model()->getIPCR1datasf($ye,$fcode);
+
+		// echo "<pre>";
+		// print_r($datasp);
+		// echo "</pre>"; 
+
+		$this->render('IPCRform1dummy', array(
+			'infosp' => $datasp,
+			'infocf' => $datacf,
+			'infosf' => $datasf,
+			'm' => $m,
+			'ye' => $ye,
+			'fcode' => $fcode
+		));
+   		//$this->render('IPCRform1dummy');
+   	}
+   	public function actionprocessRating()
    	{
    		$this->render('processRating');
    	}
@@ -3088,11 +3147,52 @@ class AdministratorController extends Controller
 	}
 	public function actionIPCRform2()
 	{
-		$this->render('IPCRform2');
+		if(isset($_GET['m'],$_GET['ye'],$_GET['fcode']))
+    	{
+        	$m = $_GET['m'];
+        	$ye = $_GET['ye'];
+        	$fcode = $_GET['fcode'];
+    	}
+		$datasp = TblIpcr2::model()->getIPCR2datasp($ye,$fcode);
+		$datacf = TblIpcr2::model()->getIPCR2datacf($ye,$fcode);
+		$datasf = TblIpcr2::model()->getIPCR2datasf($ye,$fcode);
+
+		$this->render('IPCRform2', array(
+			'infosp' => $datasp,
+			'infocf' => $datacf,
+			'infosf' => $datasf,
+			'm' => $m,
+			'ye' => $ye,
+			'fcode' => $fcode
+		));
+	
+		//$this->render('IPCRform2');
 	}
 	public function actionIPCRform1()
 	{
-		$this->render('IPCRform1');
+		if(isset($_GET['m'],$_GET['ye'],$_GET['fcode']))
+    	{
+        	$m = $_GET['m'];
+        	$ye = $_GET['ye'];
+        	$fcode = $_GET['fcode'];
+    	}
+		$datasp = TblIpcr1::model()->getIPCR1datasp($ye,$fcode);
+		$datacf = TblIpcr1::model()->getIPCR1datacf($ye,$fcode);
+		$datasf = TblIpcr1::model()->getIPCR1datasf($ye,$fcode);
+
+		// echo "<pre>";
+		// print_r($datasp);
+		// echo "</pre>"; 
+
+		$this->render('IPCRform1', array(
+			'infosp' => $datasp,
+			'infocf' => $datacf,
+			'infosf' => $datasf,
+			'm' => $m,
+			'ye' => $ye,
+			'fcode' => $fcode
+		));
+		//$this->render('IPCRform1');
 	}
 	public function actionIPCRmenu()
 	{
@@ -3104,8 +3204,6 @@ class AdministratorController extends Controller
 	}
 	public function actionIPCR()
 	{
-		session_start();
-		$this->CheckEmpID($_SESSION['CEmpID']);
 		$this->render('IPCR');
 	}
 

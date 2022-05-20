@@ -1,23 +1,23 @@
  <li>
-	<a href='index.php?r=administrator/IPCRcreate'>Create IPCR</a>
+	<a href='index.php?r=administrator/IPCRcreate' title="Create IPCR within specified month and year">Create IPCR</a>
 </li>
 
 <li>
-	<a href="index.php?r=administrator/IPCRratingsremarks">Evaluation</a>
+	<a href="index.php?r=administrator/IPCRratingsremarks" title="Evaluate faculty submitted IPCR">Evaluation</a>
 </li>
 
 <li>
-	<a href="index.php?r=administrator/IPCRreport1">Generate IPCR (PDF)</a>
+	<a href="index.php?r=administrator/IPCRreport1" title="Generate Report (PDF)">Generate IPCR (PDF)</a>
 </li>
 
 <li>
-	<a href="index.php?r=administrator/IPCRInterpolation">Generate Interpolation (Excel)</a>
+	<a href="index.php?r=administrator/IPCRInterpolation" title="Generate Report (Excel)">Generate Interpolation (Excel)</a>
 </li> 
 
  <!-- <li>
-	<a href='#'>Report (IPCR & Interpolation)</a>
-</li>
- -->
+	<a href='#' title="IPCR (PDF) and Interpolation (Excel)">Generate Report</a>
+</li> -->
+
 <li>
-	<a href='index.php?r=administrator/IPCRemailnotif'>Send IPCR Email Notification</a>
+	<a href='index.php?r=administrator/IPCRemailnotif' title="Send Individual Email For Faculty">Send IPCR Email Notification</a>
 </li>

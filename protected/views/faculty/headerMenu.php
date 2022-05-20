@@ -3,7 +3,7 @@
 <section id="menu_strip">
 <a class=home data-category=design href='http://www.puptaguig.org'>Home</a>
 
-<a class=current-cat data-category=all href="index.php?r=faculty/">Profile</a>
+<a data-category=design href="index.php?r=faculty/">Profile</a>
 
 <a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
 
@@ -16,4 +16,4 @@
 <a data-category=design href="index.php?r=faculty/logout">Log out</a>
 </section>
 
-</header>
+</header> 

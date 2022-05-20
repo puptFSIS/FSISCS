@@ -133,8 +133,8 @@ if(isset($_SESSION['user'])) {
 <meta charset="UTF-8"></head>
 <body class='page-media page-sidebar-right'>
 <!-- JS notice - will be displayed if javascript is disabled -->
-<p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
-<!-- End - JS notice -->
+<!-- <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
+ --><!-- End - JS notice -->
 <!-- Page header -->
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
@@ -144,8 +144,8 @@ if(isset($_SESSION['user'])) {
 
 <!-- End - Page subheader -->
 <!-- Page body -->
-<section class=container-block id=page-body>
-<div class=container-inner>
+<!-- <section class=container-block id=page-body>
+<div class=container-inner> -->
 <!-- Page title -->
 <?php include("headerMenu.php");?>
 <!-- End - Page title -->

@@ -35,8 +35,8 @@ if(isset($_SESSION['user'])) {
 .cssLT #ut, .cssUT #ut{filter:progid:DXImageTransform.Microsoft.DropShadow(enabled=false);}
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
-.cssWLGradientIMG{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
-   
+.cssWLGradientIMG{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
+
 #page-title
 {
     background-color: black;
@@ -212,8 +212,7 @@ table,tr, td {
 
 <!-- End - Page subheader -->
 <!-- Page body -->
-<section class=container-block id=page-body>
-<div class=container-inner>
+
 <!-- Page title -->
 <?php include("headerMenu.php");?>
 <!-- End - Page title -->

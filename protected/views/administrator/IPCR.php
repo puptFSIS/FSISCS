@@ -176,34 +176,7 @@ if(isset($_SESSION['user'])) {
 <h2 class=underlined-header>Getting started with <b>Individual Performance Commitment and Review</b></h2>
 <iframe width="600" height="375" src="//www.youtube.com/embed/4DbzZEG_dKA" frameborder="0" allowfullscreen></iframe>
 
-<script>
-    //disable resizing
-    (function () {
-
-        /**
-         * Main stopscrollwheelzoom constructor
-         */
-        let SSWZ = function () {
-
-            /**
-             * Handler for scroll- control must be pressed.
-             * @param e
-             */
-            this.keyScrollHandler = function (e) {
-                if (e.ctrlKey) {
-                    e.preventDefault();
-                    return false;
-                }
-            }
-        };
-
-        if (window === top) {
-            let sswz = new SSWZ();
-            window.addEventListener('wheel', sswz.keyScrollHandler, { passive: false });
-        }
-
-    })();
-</script>
+<script src="js/preventresize.js"></script>
 </section>
 <!-- End - Video -HTML5 -->
 <br>

@@ -11279,3 +11279,22 @@ Stack trace:
 REQUEST_URI=/FSISCS/index.php?r=administrator/Delete_dtr
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/DtrTable&sort=approved
 ---
+2022/05/20 15:56:32 [error] [exception.ParseError] ParseError: syntax error, unexpected '$sql' (T_VARIABLE), expecting ',' or ';' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\SchedulingMenu.php:9
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', Array, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', Array, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('SchedulingSyste...', Array, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1167): CController->render('SchedulingSyste...', Array)
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSchedulingSystem()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('SchedulingSyste...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/S...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/SchedulingSystem
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/faculty
+---

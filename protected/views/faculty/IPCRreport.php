@@ -24,7 +24,7 @@ if(isset($_SESSION['user'])) {
 <meta content='PUP Taguig FSIS' name=description />
 <meta content='vCore Team' name=author />
 <!-- Page title -->
-<title>Faculty | IPCR</title>
+<title>Faculty | Report</title>
 <!--Script of Sweet alert-->
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
@@ -224,21 +224,16 @@ $msg = $_GET['msg'];
 }
 ?>
 <br>
-<h2 class="underlined">Edit IPCR for: (*Choose month and year)</h2>
+<h2 class="underlined">Generate your Report (Choose Month and Year)</h2>
 <!---->
 <?php  
     
     
     // if submit button is pressed
-    if(isset($_POST['submit']))
-    {
-        $fcode = $_POST['fcode'];
-        $selectedm = $_POST['Month'];
-        $selectedy = $_POST['Year'];
-    } 
+    
          
 ?> 
-<form action="index.php?r=faculty/IPCRgenerate" method="post">
+<form action="index.php?r=faculty/IPCRreportprocess" method="post">
 <?php
     include('getPersonalInformation.php');
     $fcode = $EmpID;
@@ -260,17 +255,29 @@ $msg = $_GET['msg'];
 </form>
 </section>
             
-            <!-- For deadline -->
-            <?php if(isset($_GET['a'])) : ?>
-                <div class="flash-data" data-flashdata="<?= $_GET['a']; ?>"></div>
+            
+            <?php if(isset($_GET['warning'])) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['warning']; ?>"></div>
             <?php endif; ?>
 
-            <?php if(isset($_GET['b'])) : ?>
-                <div class="flash-data-NA" data-flashdata1="<?= $_GET['b']; ?>"></div>
+            <?php if(isset($_GET['mes'])) : ?>
+                <div class="flash-data-notsub" data-flashdatanotsub="<?= $_GET['mes']; ?>"></div>
             <?php endif; ?>
 
-            <?php if(isset($_GET['c'])) : ?>
-                <div class="flash-data-ND" data-flashdata2="<?= $_GET['c']; ?>"></div>
+            <?php if(isset($_GET['mesna'])) : ?>
+                <div class="flash-data-notav" data-flashdatanotav="<?= $_GET['mesna']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if(isset($_GET['mess'])) : ?>
+                <div class="flash-data-make" data-flashdatamake="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if(isset($_GET['message'])) : ?>
+                <div class="flash-data-message" data-flashdatamessage="<?= $_GET['message']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if(isset($_GET['null'])) : ?>
+                <div class="flash-data-null" data-flashdatanull="<?= $_GET['null']; ?>"></div>
             <?php endif; ?>
 
             <script>
@@ -296,29 +303,59 @@ $msg = $_GET['msg'];
                 const flashdata = $('.flash-data').data('flashdata')
                     if (flashdata) {
                         Swal.fire(
-                            'Deadline Exceeded!',
-                            "You don't have access on the IPCR",
-                            'error'
+                            'IPCR not fully Approve',
+                            'Please refer to your IPCR',
+                            'warning'
                         )
                     }  
 
-                const flashdata1 = $('.flash-data-NA').data('flashdata1')
-                    if (flashdata1) {
+                const flashdatanull = $('.flash-data-null').data('flashdatanull')
+                    if (flashdatanull) {
                         Swal.fire(
-                            'IPCR is not available at the moment!',
-                            "Press ok to continue",
-                            'error'
+                            'No IPCR existing',
+                            'Press OK to Continue',
+                            'warning'
                         )
                     }  
 
-                const flashdata2 = $('.flash-data-ND').data('flashdata2')
-                    if (flashdata2) {
+                const flashdatanotsub = $('.flash-data-notsub').data('flashdatanotsub')
+                    if (flashdatanotsub) {
                         Swal.fire(
-                            'No IPCR Created',
-                            "Wait for the moment",
-                            'error'
+                            'IPCR not submitted',
+                            "You can't download a copy at the moment",
+                            'warning'
                         )
-                    }      
+                    }  
+
+                const flashdatanotav = $('.flash-data-notav').data('flashdatanotav')
+                    if (flashdatanotav) {
+                        Swal.fire(
+                            'IPCR not available to Generate',
+                            "You can't download a copy at the moment",
+                            'warning'
+                        )
+                    }
+
+                const flashdatamake = $('.flash-data-make').data('flashdatamake')
+                    if (flashdatamake) {
+                        Swal.fire(
+                            'Please make your IPCR first',
+                            "You can't downlaod a copy at the moment",
+                            'warning'
+                        )
+                    }  
+
+                const flashdatamessage = $('.flash-data-message').data('flashdatamessage')
+                    if (flashdatamessage) {
+                        Swal.fire(
+                            'Some of IPCR content are not Reviewed',
+                            "You can't downlaod a copy at the moment",
+                            'warning'
+                        )
+                    }
+
+
+               
             </script>
 <!-- End - Video -HTML5 -->
 <br/>

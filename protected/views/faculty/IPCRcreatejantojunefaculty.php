@@ -140,6 +140,14 @@ if(isset($_SESSION['user'])) {
     margin-left: -15%;
     height: 90px;
 }
+.disabled{
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -163,7 +171,21 @@ if(isset($_SESSION['user'])) {
 <!--<section class=container-block id=page-body>-->
 <!--<div class=container-inner>-->
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<header id=page-title>
+<!-- Title and summary -->
+
+<!-- End - Title and summary -->
+<!-- Title right side -->
+<section id="menu_strip">
+<a data-category=all href='http://www.puptaguig.org'>Home</a>
+<a data-category=design href="index.php?r=faculty/">Profile</a>
+<a data-category=design href="index.php?r=faculty/ServiceCredit">Service Credit</a>
+<a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
+<a data-category=design href="index.php?r=faculty/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=faculty/logout">Log out</a>
+</section>
+<!-- End - Title right side -->
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -173,7 +195,7 @@ if(isset($_SESSION['user'])) {
 <!-- Video - HTML5 -->
 <section>
 <?php 
-
+    
     $sql = "SELECT * FROM tbl_ipcrvisible WHERE month = '$m' AND year = '$y'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result);
@@ -186,7 +208,7 @@ if(isset($_SESSION['user'])) {
 <!-- Deadline -->
 <h2 class="underlined-header" style="width:25%; color: Red; margin-left: -15%;"><strong> Deadline: <input style="display: inline;" placeholder="Not Set" value="<?php echo $dline; ?>" readonly></strong></h2>
 
-<!-- <a href="index.php?r=faculty/IPCRcreatefaculty"><button style="width: 80px; margin-left: -15%;">&laquo; Previous</button></a> -->
+<a href="index.php?r=faculty/IPCRcreatefaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
 <section>
 <div class="w3-code notranslate cssHigh">
     <small><strong><b id="asterisk">*</b> - Required Fields.</strong></small>
@@ -239,7 +261,7 @@ if(isset($_SESSION['user'])) {
                             // echo "</pre>";
                         ?> 
                         </center>
-                    </strong>
+                    </strong> 
                     </td>
                     
                     <td style="white-space:pre-line;" name="outputs" style="text-align: left;"><?= $rowsp['output'] ?></td>
@@ -262,7 +284,7 @@ if(isset($_SESSION['user'])) {
 
                                 <!-- Fetch the feedback to the db to view on the Modal -->
                                 <?php  
-                                    $idaccomp = $rowsp['idaccomp'];
+                                    $idaccomp = $rowsp['idaccomp']; 
                                     $query = "SELECT * FROM tbl_ipcraccomp WHERE idaccomp = '$idaccomp'";
                                     $query_result = mysqli_query($conn,$query);
                                 ?>
@@ -298,12 +320,21 @@ if(isset($_SESSION['user'])) {
                     </td>
 
                 <td style="text-align: center;">
+                    <?php if($rowsp['adminApproval'] == "Approve"): ?>
+                            <button class="disabled" style="width:95px">Add Proof</button>
+                        <?php if ($rowsp['idaccomp'] == "" || $rowsp['idaccomp'] == NULL): ?>
+                            <button class="disabled" style="width:95px">Add Accomp.</button>
+                        <?php else: ?>
+                            <button class="disabled" style="width:95px">Edit Accomp.</button>
+                        <?php endif; ?>
+                    <?php elseif($rowsp['adminApproval'] == "Disapprove" || $rowsp['adminApproval'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddproof<?php echo'&accomp='.$rowsp['accomplishment'].'&fcode='.$fcode.'&id='.$rowsp['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Proof</button></a>
                         <?php if ($rowsp['idaccomp'] == "" || $rowsp['idaccomp'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddaccomp<?php echo'&fcode='.$fcode.'&outputs='.$rowsp['output'].'&indi='.$rowsp['indicators'].'&id='.$rowsp['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Accomp.</button></a>
                         <?php else: ?>
                             <a href="index.php?r=faculty/EditIPCRrowfaculty<?php echo'&fcode='.$fcode.'&outputs='.$rowsp['output'].'&idaccomp='.$rowsp['idaccomp'].'&indi='.$rowsp['indicators'].'&accomp='.$rowsp['accomplishment'].'&y='.$y.'&m='.$m.'';?>"><button style="width:95px">Edit Accomp.</button></a>
-                        <?php endif ?> 
+                        <?php endif ?>
+                    <?php endif; ?> 
                     </td> 
                 </td>
             </tr>
@@ -359,7 +390,7 @@ if(isset($_SESSION['user'])) {
                         </center>
                     </strong>
                     </td>
-                    <!-- <input type="text" value="<?= $row['idaccomp'] ?>" name=""> -->
+                    
                     <td style="white-space:pre-line;" name="outputs" style="text-align: left;"><?= $rowcf['output'] ?></td>
                     <td name="indi" style="text-align: left;"><?= $rowcf['indicators'] ?></td>
                     <td id="accomp" name="accomp" style="text-align: left;"><?= $rowcf['accomplishment'] ?></td>
@@ -415,12 +446,21 @@ if(isset($_SESSION['user'])) {
 
                     </td>
                     <td style="text-align: center;">
+                       <?php if($rowcf['adminApproval'] == "Approve"): ?>
+                            <button class="disabled" style="width:95px">Add Proof</button>
+                        <?php if ($rowcf['idaccomp'] == "" || $rowcf['idaccomp'] == NULL): ?>
+                            <button class="disabled" style="width:95px">Add Accomp.</button>
+                        <?php else: ?>
+                            <button class="disabled" style="width:95px">Edit Accomp.</button>
+                        <?php endif; ?>
+                    <?php elseif($rowcf['adminApproval'] == "Disapprove" || $rowcf['adminApproval'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddproof<?php echo'&accomp='.$rowcf['accomplishment'].'&fcode='.$fcode.'&id='.$rowcf['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Proof</button></a>
                         <?php if ($rowcf['idaccomp'] == "" || $rowcf['idaccomp'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddaccomp<?php echo'&fcode='.$fcode.'&outputs='.$rowcf['output'].'&indi='.$rowcf['indicators'].'&id='.$rowcf['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Accomp.</button></a>
                         <?php else: ?>
                             <a href="index.php?r=faculty/EditIPCRrowfaculty<?php echo'&fcode='.$fcode.'&outputs='.$rowcf['output'].'&idaccomp='.$rowcf['idaccomp'].'&indi='.$rowcf['indicators'].'&accomp='.$rowcf['accomplishment'].'&y='.$y.'&m='.$m.'';?>"><button style="width:95px">Edit Accomp.</button></a>
-                        <?php endif ?> 
+                        <?php endif ?>
+                    <?php endif; ?> 
                     </td>  
                 </tr>
         <?php endforeach; ?>
@@ -518,13 +558,22 @@ if(isset($_SESSION['user'])) {
 
                     </td>
                 
-                        <td style="text-align: center;">
+                    <td style="text-align: center;">
+                    <?php if($rowsf['adminApproval'] == "Approve"): ?>
+                            <button class="disabled" style="width:95px">Add Proof</button>
+                        <?php if ($rowsf['idaccomp'] == "" || $rowsf['idaccomp'] == NULL): ?>
+                            <button class="disabled" style="width:95px">Add Accomp.</button>
+                        <?php else: ?>
+                            <button class="disabled" style="width:95px">Edit Accomp.</button>
+                        <?php endif; ?>
+                    <?php elseif($rowsf['adminApproval'] == "Disapprove" || $rowsf['adminApproval'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddproof<?php echo'&accomp='.$rowsf['accomplishment'].'&fcode='.$fcode.'&id='.$rowsf['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Proof</button></a>
                         <?php if ($rowsf['idaccomp'] == "" || $rowsf['idaccomp'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddaccomp<?php echo'&fcode='.$fcode.'&outputs='.$rowsf['output'].'&indi='.$rowsf['indicators'].'&id='.$rowsf['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Accomp.</button></a>
                         <?php else: ?>
                             <a href="index.php?r=faculty/EditIPCRrowfaculty<?php echo'&fcode='.$fcode.'&outputs='.$rowsf['output'].'&idaccomp='.$rowsf['idaccomp'].'&indi='.$rowsf['indicators'].'&accomp='.$rowsf['accomplishment'].'&y='.$y.'&m='.$m.'';?>"><button style="width:95px">Edit Accomp.</button></a>
-                        <?php endif ?> 
+                        <?php endif ?>
+                    <?php endif; ?> 
                     </td> 
             </tr>
         <?php endforeach ?>
@@ -532,7 +581,7 @@ if(isset($_SESSION['user'])) {
 </table>
     <h5>
         <strong>
-            <center>IF YOU ARE DONE ON YOUR IPCR, PLEASE PRESS THIS BUTTON TO SUBMIT</center>
+            <center>NOTE: DOUBLE CHECK. IF YOU ARE DONE ON YOUR IPCR, PLEASE PRESS THIS BUTTON TO SUBMIT</center>
         </strong>
     </h5>             
     <center>

@@ -3,5 +3,5 @@
 </li>
 
 <li>
-	<a href="index.php?r=faculty/IPCRform1faculty">Generate IPCR (PDF)</a>
+	<a href="index.php?r=faculty/IPCRreport">Generate IPCR (PDF)</a>
 </li>

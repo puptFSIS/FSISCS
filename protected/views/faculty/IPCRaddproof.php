@@ -22,6 +22,12 @@ if(isset($_SESSION['user'])) {
 <meta content='vCore Team' name=author />
 <!-- Page title -->
 <title>IPCR | Add Proof</title>
+<!-- Script for Modal -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
 
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
@@ -37,7 +43,7 @@ if(isset($_SESSION['user'])) {
 {
     background-color: black;
     padding: 5px 5px 5px;
-    height: 41px;
+    height: 50px;
 }
     
 #menu_strip
@@ -103,6 +109,7 @@ if(isset($_SESSION['user'])) {
 .img-holder
 {
     width: 100%;
+    max-height:250px;
     transition: 0.5s all ease-in-out;
     margin-bottom: 20px;
 }
@@ -113,18 +120,20 @@ if(isset($_SESSION['user'])) {
 
 .img-holder:hover
 {
-    transform: scale(1.5);
+    transform: scale(1.8);
 }
 img 
 {
-    width:  100px;
-    height: 100px; 
-    
-    
+    width:  450px;
+    height: 300px; 
 }
 input
 {
     display: inline;
+}
+#shadow 
+{
+    box-shadow: -31px 25px 9px -8px rgba(0,0,0,0.1);
 }
 </style>
 
@@ -141,7 +150,16 @@ input
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
 
-<?php include('headerMenu.php'); ?>
+<header id=page-title>
+<section id=menu_strip>
+<a data-category=all href='http://www.puptaguig.org'>Home</a>
+<a data-category=design href="index.php?r=faculty/">Profile</a>
+<a data-category=design href="index.php?r=faculty/ServiceCredit">Service Credit</a>
+<a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
+<a data-category=design href="index.php?r=faculty/SubjPrefer">Subject Preferences</a>
+<a data-category=design href="index.php?r=faculty/logout">Log out</a>
+</section>
+    </header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -155,9 +173,9 @@ input
 <h2 class=underlined-header><strong><center>INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</center></strong></h2>
 
 <?php
-    
-     
-    $id=$_GET['id'];
+    $y = $_GET['y'];
+    $m = $_GET['m'];
+    $id = $_GET['id'];
     $fcode = $_GET['fcode'];
     $accomp = $_GET['accomp'];
     $sql= "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id WHERE tbl_ipcr1.id='$id' AND tbl_ipcraccomp.FCode='$fcode'";
@@ -165,27 +183,26 @@ input
     while($row = mysqli_fetch_array($result))
     {
         $id = $row['id'];
-
         $accomp=$row['accomplishment'];
     } 
 
      //include('getPersonalInformation.php');
  ?>
-<p style="font-size: 17px;"><strong>ADD PROOF FOR ACCOMPLISHMENT</strong></p>
-<hr style="margin-top: -10px;" />
+<?php if($m == "JJ"): ?>
+    <a href="index.php?r=faculty/IPCRcreatejantojunefaculty<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>"><button>&laquo; Previous</button></a>
+<?php elseif($m =="JD") : ?>
+    <a href="index.php?r=faculty/IPCRcreatejultodecfaculty<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>"><button>&laquo; Previous</button></a>
+<?php endif; ?>
+<br>
+<br>
+<hr style="margin-top: 0px; margin-bottom: 5px;" >
+<p style="font-size: 15px;"><strong>ADD PROOF(S) FOR ACCOMPLISHMENT</strong></p>
 
-<?php
-/*if(isset($_GET['m'],$_GET['y']))
-    {
-        $m = $_GET['m'];
-        $y = $_GET['y'];
-    }
-*/?>
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="id" ><?php echo $id;?></textarea>
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="EmpID" ><?php echo $fcode;?></textarea>
 
 
-<h4 class="underlined-header">
+<h4 class="underlined-header" id="shadow">
     <strong>ACTUAL ACCOMPLISHMENT:</strong>
     <textarea readonly name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $accomp; ?>
     </textarea>
@@ -218,43 +235,88 @@ $msg = $_GET['msg'];
 <br>
 
 
-<form action="index.php?r=faculty/processProofupload<?php echo'&accomp='.$accomp.'&id='.$id.'&fcode='.$fcode.''?>" method="post" enctype="multipart/form-data">
+<form action='index.php?r=faculty/processProofupload<?php echo'&accomp='.$accomp.'&id='.$id.'&fcode='.$fcode.'&y='.$y.'&m='.$m.''?>' method="post" enctype="multipart/form-data">
 
     <h4 class="underlined-header"><strong>UPLOAD PROOF:</strong>
     <span><input type="file" name="file">
     <input type="submit" name="submit" value="Upload"></span></h4>
-
 </form>
+<table id="myTable">
+    <thead>
+        <tr>              
+            <th width="33%"><h5 align="Center">Proof Name</th></h5>
+            <th width="33%"><h5 align="center">Detail/s</th></h5>
+            <th width="33%"><h5 align="center">Action</th></h5> 
+        </tr>
+    </thead>
 
  <!-- Get images from the database -->
 <?php
-$query = "SELECT * FROM tbl_proof WHERE id_ipcraccomp = '$id' AND deleted_at IS NULL ORDER BY uploaded_on DESC";
+$query = "SELECT * FROM tbl_proof WHERE id_ipcraccomp = '$id' AND deleted_on IS NULL ORDER BY uploaded_on DESC";
 $result = mysqli_query($conn,$query);
 ?>
 <?php if($result->num_rows > 0): ?>
     <?php while($row = mysqli_fetch_assoc($result)): ?>
-        <?php $imageURL = 'IPCRuploads/'.$row["file_name"]; ?>
+        <?php $imageURL = $row["file_name"]; ?>
         <?php $upload_date = $row["uploaded_on"]; ?>
-        <?php $id = $row['id']; ?>
+        <?php $proofid = $row['id']; ?>
+        <tr>
+            <div>
+                <td>
+                    <div>
+                        <center><p><?php echo $imageURL; ?></p></center>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <center>
+                            <strong><p class="upload"><?php echo 'Uploaded on: '.$upload_date;?></p></strong>
+                        </center>
+                    </div>
+                </td>
+                <td>
+                    
+                    <center>
+                        <button data-toggle="modal" data-target="#ModalCenterimage<?php echo $proofid; ?>">Preview</button>  
+                        <a onclick='return confirm(\"Are you sure you want to delete?\")' href="index.php?r=faculty/processDeleteproof<?php echo'&accomp='.$accomp.'&id='.$proofid.'&fcode='.$fcode.''?>"><button>Delete</button></a>
+                    </center>
 
-    <div class="img">
-        <div class="img-holder">
-            <img src="<?php echo $imageURL;?>" alt=""  />
-        </div>
-        <div class="img-info">
-            <center>
-                <p class="upload"><?php echo 'Uploaded on: '.$upload_date;?></p>
-                <?php echo'<a onclick="return confirm(\'Are you sure you want to delete?\')" href="index.php?r=faculty/processDeleteproof&accomp='.$accomp.'&id='.$id.'&fcode='.$fcode.'"><button style="width:90px">Delete</button></a>';?>
-            </center>
-        </div>
-    </div>
+                    <!-- Modal for Proof Preview -->  
+                    <div class="modal fade" id="ModalCenterimage<?php echo $proofid; ?>">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle"><strong><?php echo $imageURL;?></strong></h5>
+                          </div>
+                          <div class="modal-body">
+                            <div class="img-holder">
+                                <center><img src="<?php echo 'IPCRuploads/'.$imageURL;?>"></center>
+                            </div>
+                          </div>
+                          <br>
+                          <br>
+                          <div class="modal-footer">
+                            <button id="btn-modal" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- End of Modal -->
+                </td>
+            </div>
+        </tr>
     <?php endwhile; ?>
 <?php else: ?>
-    <p>No proof(s) uploaded yet...</p>
+    <tfoot>
+        <tr>
+            <td colspan=3><p>No proof(s) uploaded yet...</p></td>
+        </tr>
+    </tfoot>
 <?php endif; ?>
+</table>
 
 </section>
-
+        <script src="js/preventresize.js"></script>
 <br/>
 
 <!-- End - Showcase gallery -->

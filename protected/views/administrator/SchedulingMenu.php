@@ -21,9 +21,9 @@ $count = mysqli_num_rows($result);
           <a href='index.php?r=administrator/MakeupClassRequest'>Make Up Classes</a>
      </li>
 
-     <li style = "padding-left: 40px;">
+     <!-- <li style = "padding-left: 40px;">
      <a href='index.php?r=administrator/BridgeSchedulingPage'>Manage Bridge Subjects</a>
-     </li>
+     </li> -->
 
      <li style = "padding-left: 40px;">
      <a href='index.php?r=administrator/SchedulingPage' title="Manages the schedules of professors and classes" >Official Schedule Management</a>

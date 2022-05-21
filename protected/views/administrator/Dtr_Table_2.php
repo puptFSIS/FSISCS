@@ -5,6 +5,7 @@
 		width: 1000px;
 		margin-top: 50px;
 		background-color: #f7f7f7;
+		/*border: 2px solid;*/
 		/* overflow: hidden; */
 	}
 	
@@ -36,40 +37,45 @@
 
 	<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
 	<!-- <a href="index.php?r=administrator/DtrTable&sort=recent"><input type="button" value="recent"/></a> -->
+	<br>
+	<br>
 	<div class="container2">
-	<table id="ProfTable" class="table table-striped table-bordered">
-		<thead >
-			<tr>
-				<th><h5><strong></strong></h5></th>
-				<th style="text-align: center;"><h5><strong>ID</strong></h5></th>
-				<th hidden><h5><strong>Fcode</strong></h5></th>
-				<th style="text-align: center;"><h5><strong>Name</strong></h5></th>
-				<th hidden style="text-align: center;"><h5><strong>First Name</strong></h5></th>
-				<th hidden style="text-align: center;"><h5><strong>Middle Name</strong></h5></th>
-				<th style="text-align: center;"><h5><strong>Load Type</strong></h5></th>
-				<th style="text-align: center;"><h5><strong>Month</strong></h5></th>
-				<th style="text-align: center;"><h5><strong>Year</strong></h5></th>
-				<th style="text-align: center;"><h5><strong>Actions</strong></h5></th>
-				<!-- <th><h5><strong></strong></h5></th> -->
-
-			</tr>
-		</thead>
-		<tbody>
-
-			<?php include("dtrlist.php"); ?>
-		
-			<tfoot>
+		<br>
+		<br>
+		<table id="ProfTable" class="table table-striped table-bordered">
+			<thead >
 				<tr>
-					<td style="font-size: 12px; font-style: italic;" colspan=9 ><?php echo "DTR List";?></td>
+					<th><h5><strong></strong></h5></th>
+					<th style="text-align: center;"><h5><strong>ID</strong></h5></th>
+					<th hidden><h5><strong>Fcode</strong></h5></th>
+					<th style="text-align: center;"><h5><strong>Name</strong></h5></th>
+					<th hidden style="text-align: center;"><h5><strong>First Name</strong></h5></th>
+					<th hidden style="text-align: center;"><h5><strong>Middle Name</strong></h5></th>
+					<th style="text-align: center;"><h5><strong>Load Type</strong></h5></th>
+					<th style="text-align: center;"><h5><strong>Month</strong></h5></th>
+					<th style="text-align: center;"><h5><strong>Year</strong></h5></th>
+					<th style="text-align: center;"><h5><strong>Actions</strong></h5></th>
+					<!-- <th><h5><strong></strong></h5></th> -->
+
 				</tr>
-			</tfoot>
-		</tbody>
+			</thead>
+			<tbody>
 
-	</table>
+				<?php include("dtrlist.php"); ?>
+			
+				<tfoot>
+					<tr>
+						<td style="font-size: 12px; font-style: italic;" colspan=9 ><?php echo "DTR List";?></td>
+					</tr>
+				</tfoot>
+			</tbody>
+
+		</table>
+
+	</div>
 
 
-
-</div>
+	<!-- </div> -->
 </div>
 
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>

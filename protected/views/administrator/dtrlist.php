@@ -604,6 +604,7 @@ else if ($status == "pending")
 
 			echo '
 			
+			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none; background-color:none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
 
@@ -865,7 +866,6 @@ function change_color(_this,counter,status)
 		if(count == 1)
 		{
 			
-
 			deletebtn.style.display="block";
 			submitbtn.style.display="none";
 
@@ -934,12 +934,40 @@ function change_color(_this,counter,status)
 	}
 	else{
 		// submitbtn.style.display="block";
-		deletebtn.style.display="block";
-		if(count==0)
-		{
-			deletebtn.style.display="none";
-			// resubmitbtn.style.display="none";
+		// deletebtn.style.display="block";
+		// if(count==0)
+		// {
+		// 	deletebtn.style.display="none";
+		// 	submitbtn.style.display="none";
 
+		// }
+		if(count == 1)
+		{
+			
+			deletebtn.style.display="block";
+			submitbtn.style.display="none";
+
+		}
+		else if(count == 2)
+		{
+			submitbtn.style.display="block";
+			deletebtn.style.display="block";
+		}
+		else if(count >= 3)
+		{
+			submitbtn.style.display="none";
+			deletebtn.style.display="block";
+			if(count < 2)
+			{
+			submitbtn.style.display="none";
+				
+			}
+		}
+		
+		else
+		{
+			submitbtn.style.display="none";
+			deletebtn.style.display="none";
 		}
 		
 	}
@@ -948,7 +976,27 @@ function change_color(_this,counter,status)
 
 	if(counter=='generate')
 	{
-	 printfpdf(id,reg,mon,year);
+		if(status != 1)
+		{
+			Swal.fire({
+			title: 'Are you sure?',
+			text: "This DTR is not validated yet, click to continue",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes'
+		}).then((result) => {
+			if (result.isConfirmed) 
+	 			printfpdf(id,reg,mon,year);
+
+			})
+		}
+		else
+		{
+	 		printfpdf(id,reg,mon,year);
+
+		}
 	}
 	
 }

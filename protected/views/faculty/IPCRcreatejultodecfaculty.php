@@ -154,30 +154,8 @@ if(isset($_SESSION['user'])) {
 <!-- Page header -->
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
-<!-- End - Page header -->
-
-<!-- Page subheader -->
-
-<!-- End - Page subheader -->
-<!-- Page body -->
-<!--<section class=container-block id=page-body>-->
-<!--<div class=container-inner>-->
-<!-- Page title -->
-<header id=page-title>
-<!-- Title and summary -->
-
-<!-- End - Title and summary -->
-<!-- Title right side -->
-<section id="menu_strip">
-<a data-category=all href='http://www.puptaguig.org'>Home</a>
-<a data-category=design href="index.php?r=faculty/">Profile</a>
-<a data-category=design href="index.php?r=faculty/ServiceCredit">Service Credit</a>
-<a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
-<a data-category=design href="index.php?r=faculty/SubjPrefer">Subject Preferences</a>
-<a data-category=design href="index.php?r=faculty/logout">Log out</a>
-</section>
-<!-- End - Title right side -->
-</header>
+<!-- Header Menu -->
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>

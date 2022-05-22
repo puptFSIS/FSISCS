@@ -164,6 +164,7 @@ if(isset($_SESSION['user'])) {
 <!-- End - Page subheader -->
 
 <!-- Page title -->
+<<<<<<< Updated upstream
 <header id=page-title>
 <!-- Title and summary -->
 <!-- End - Title and summary -->
@@ -179,6 +180,9 @@ if(isset($_SESSION['user'])) {
 </section>
 <!-- End - Title right side -->
 </header>
+=======
+<?php include("headerMenu.php");?>
+>>>>>>> Stashed changes
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>

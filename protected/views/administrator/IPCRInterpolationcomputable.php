@@ -1,5 +1,9 @@
 <?php 
+require 'phpspreadsheet/vendor/autoload.php';
 use \PhpOffice\PhpSpreadsheet\Style\Border;
+// use \PhpOffice\PhpSpreadsheet\Style\Fill;
+
+//January to June
 //Strategic Priority
 $spreadsheet
 	->getActiveSheet()
@@ -8,6 +12,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('B6')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('C6',"")
@@ -15,6 +23,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('C6')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('D6',"")
@@ -22,6 +34,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('D6')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('E6',"=SUM(B6:D6)")
@@ -29,6 +45,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('E6')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('F6',"")
@@ -36,6 +56,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('E6')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('G6',"")
@@ -43,6 +67,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('G6')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('H6',"")
@@ -50,13 +78,21 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('H6')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('I6',"")
 	->getStyle('I6')
 	->getBorders()
 	->getOutline()
-	->setBorderStyle(Border::BORDER_THIN);
+	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('I6')
+    ->getAlignment()
+	->setHorizontal('center');
 
 //Core Funcction
 $spreadsheet
@@ -66,6 +102,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('B7')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('C7',"")
@@ -73,6 +113,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('C7')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('D7',"")
@@ -80,6 +124,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('D7')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('E7',"=SUM(B7:D7)")
@@ -87,6 +135,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('E7')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('F7',"")
@@ -94,6 +146,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('F7')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('G7',"")
@@ -101,6 +157,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('G7')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('H7',"")
@@ -108,13 +168,21 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('H7')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('I7',"")
 	->getStyle('I7')
 	->getBorders()
 	->getOutline()
-	->setBorderStyle(Border::BORDER_THIN);
+	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('I7')
+    ->getAlignment()
+	->setHorizontal('center');
 
 //SP+Core
 $spreadsheet
@@ -124,6 +192,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('B8')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('C8',"=SUM(C6:C7)")
@@ -131,6 +203,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('C8')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('D8',"=SUM(D6:D7)")
@@ -138,6 +214,11 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('D8')
+    ->getAlignment()
+	->setHorizontal('center')
+
 
 	->getActiveSheet()
 	->setCellValue('E8',"=SUM(E6:E7)")
@@ -145,13 +226,21 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('E8')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('F8',"")
+	->setCellValue('F8',"=SUM(F6:F7)")
 	->getStyle('F8')
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('F8')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('G8',"=E8/F8")
@@ -159,6 +248,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('G8')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('H8',"80%")
@@ -166,13 +259,21 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('H8')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('I8',"=G8*H8")
 	->getStyle('I8')
 	->getBorders()
 	->getOutline()
-	->setBorderStyle(Border::BORDER_THIN);
+	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('I8')
+    ->getAlignment()
+	->setHorizontal('center');
 
 //Support Function
 $spreadsheet
@@ -182,6 +283,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('B9')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('C9',"")
@@ -189,6 +294,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('C9')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('D9',"")
@@ -196,6 +305,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('D9')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('E9',"=SUM(B9:D9)")
@@ -203,6 +316,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('E9')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('F9',"")
@@ -210,6 +327,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('F9')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('G9',"=E9/F9")
@@ -217,6 +338,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('G9')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('H9',"20%")
@@ -224,6 +349,10 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('H9')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	->getActiveSheet()
 	->setCellValue('I9',"=G9*H9")
@@ -231,11 +360,260 @@ $spreadsheet
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('I9')
+    ->getAlignment()
+	->setHorizontal('center')
 
 	//Final Rating Jan-Jun
 	->getActiveSheet()
 	->setCellValue('I10',"=SUM(I8:I9)")
 	->getStyle('I10')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+	->getActiveSheet()
+	->getStyle('I10')
+    ->getAlignment()
+	->setHorizontal('center');
+
+/////////////////////////////////////////////////////////////////////////////////
+//July to december
+$spreadsheet
+	->getActiveSheet()
+	->setCellValue('B15',"")
+	->getStyle('B15')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('C15',"")
+	->getStyle('C15')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('D15',"")
+	->getStyle('D15')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('E15',"=SUM(B15:D15)")
+	->getStyle('E15')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('F15',"")
+	->getStyle('F15')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('G15',"")
+	->getStyle('G15')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('H15',"")
+	->getStyle('H15')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('I15',"")
+	->getStyle('I15')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN);
+
+//Core Funcction
+$spreadsheet
+	->getActiveSheet()
+	->setCellValue('B16',"")
+	->getStyle('B16')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('C16',"")
+	->getStyle('C16')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('D16',"")
+	->getStyle('D16')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('E16',"=SUM(B16:D16)")
+	->getStyle('E16')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('F16',"")
+	->getStyle('F16')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('G16',"")
+	->getStyle('G16')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('H16',"")
+	->getStyle('H16')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('I16',"")
+	->getStyle('I16')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN);
+
+//SP+Core
+$spreadsheet
+	->getActiveSheet()
+	->setCellValue('B17',"=SUM(B15:B16)")
+	->getStyle('B17')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('C17',"=SUM(C15:C16)")
+	->getStyle('C17')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('D17',"=SUM(D15:D16)")
+	->getStyle('D17')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('E17',"=SUM(E15:E16)")
+	->getStyle('E17')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('F17',"=SUM(F15:F16)")
+	->getStyle('F17')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('G17',"=E17/F17")
+	->getStyle('G17')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('H17',"80%")
+	->getStyle('H17')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('I17',"=G17*H17")
+	->getStyle('I17')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN);
+
+//Support Function
+$spreadsheet
+	->getActiveSheet()
+	->setCellValue('B18',"")
+	->getStyle('B18')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('C18',"")
+	->getStyle('C18')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('D18',"")
+	->getStyle('D18')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('E18',"=SUM(B18:D18)")
+	->getStyle('E18')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('F18',"")
+	->getStyle('F18')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('G18',"=E18/F18")
+	->getStyle('G18')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('H18',"20%")
+	->getStyle('H18')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	->getActiveSheet()
+	->setCellValue('I18',"=G18*H18")
+	->getStyle('I18')
+	->getBorders()
+	->getOutline()
+	->setBorderStyle(Border::BORDER_THIN)
+
+	//Final Rating July to December
+	->getActiveSheet()
+	->setCellValue('I19',"=SUM(I17:I18)")
+	->getStyle('I19')
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN);

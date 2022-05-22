@@ -173,6 +173,7 @@ if(isset($_SESSION['user'])) {
 <a data-category=all href="index.php?r=faculty/">Profile</a>
 <a data-category=design href="index.php?r=faculty/ServiceCredit">Service Credit</a>
 <a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
+<a data-category=design href="index.php?r=faculty/daily_time_record">DTR</a>
 <a data-category=design href="index.php?r=faculty/SubjPrefer">Subject Preferences</a>
 <a data-category=design href="index.php?r=faculty/logout">Log out</a>
 </section>

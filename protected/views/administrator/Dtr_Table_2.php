@@ -4,8 +4,10 @@
 		/* max-width: 650px; */
 		width: 1000px;
 		margin-top: 50px;
-		background-color: #f7f7f7;
-		/*border: 2px solid;*/
+		/*background-color: #f7f7f7;*/
+		background-color: ghostwhite;
+		border: 2px solid;
+		padding: 10px;
 		/* overflow: hidden; */
 	}
 	
@@ -15,6 +17,70 @@
 		margin-top: 50px;
 		background-color: #f7f7f7;
 	}
+	/*                                         */
+	/* The switch - the box around the slider */
+
+		.switch {
+		  position: relative;
+		  display: inline-block;
+		  width: 60px;
+		  height: 34px;
+		}
+
+		/* Hide default HTML checkbox */
+		.switch input {
+		  opacity: 0;
+		  width: 0;
+		  height: 0;
+		}
+
+		/* The slider */
+		.slider {
+		  position: absolute;
+		  cursor: pointer;
+		  top: 0;
+		  left: 0;
+		  right: 0;
+		  bottom: 0;
+		  background-color: #ccc;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		}
+
+		.slider:before {
+		  position: absolute;
+		  content: "";
+		  height: 26px;
+		  width: 26px;
+		  left: 4px;
+		  bottom: 4px;
+		  background-color: white;
+		  -webkit-transition: .4s;
+		  transition: .4s;
+		}
+
+		input:checked + .slider {
+		  background-color: #2196F3;
+		}
+
+		input:focus + .slider {
+		  box-shadow: 0 0 1px #2196F3;
+		}
+
+		input:checked + .slider:before {
+		  -webkit-transform: translateX(26px);
+		  -ms-transform: translateX(26px);
+		  transform: translateX(26px);
+		}
+
+		/* Rounded sliders */
+		.slider.round {
+		  border-radius: 34px;
+		}
+
+		.slider.round:before {
+		  border-radius: 50%;
+		}
 </style>
 
 
@@ -27,21 +93,30 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 
-
-
-
-<div class="table-responsive" id="container" >
-	<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
+<!-- <h3>Validation</h3>
+<label class="switch">
+		<input type="checkbox">
+		<span class="slider round"></span>
+	</label>
+<br> -->
+SHOW:
+<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
 	<a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="Approved"/></a>
 	<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="Disapproved"/></a>
 
 	<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
+	
+	
+
+
+<br>
+<br>
+<div class="table-responsive" id="container" >
+	
 	<!-- <a href="index.php?r=administrator/DtrTable&sort=recent"><input type="button" value="recent"/></a> -->
-	<br>
-	<br>
+	
 	<div class="container2">
-		<br>
-		<br>
+		
 		<table id="ProfTable" class="table table-striped table-bordered">
 			<thead >
 				<tr>
@@ -91,37 +166,25 @@
         "paging":         true,
         "lengthChange": true,
         "pagingType": "full_numbers",
+        "ordering": true, /// allow sorting sa buong table
+        "aaSorting": [],   /// remove sorting sa unang column  - 0
+        "columnDefs": [
+	        {
+	        	"targets": [0,2,3,4,5,6,7,8,9,10],
+	        	"orderable": false ///remove sorting sa lahat ng column maliban sa isa
+	        }
+        ],
 
 
         language: { 
         search: "", 
 
-        searchPlaceholder: "Search:" },
-        columnDefs: [ {
-            orderable: false,
-            targets:   0,
-        } ],
+        searchPlaceholder: "Search:" }
 
 
     });
 
 
-//     $(document).ready(function() {
-//     $('#ProfTable').DataTable( {
-//         responsive: {
-//             details: {
-//                 display: $.fn.dataTable.Responsive.display.modal( {
-//                     header: function ( row ) {
-//                         var data = row.data();
-//                         return 'Details for '+data[0]+' '+data[1];
-//                     }
-//                 } ),
-//                 renderer: $.fn.dataTable.Responsive.renderer.tableAll( {
-//                     tableClass: 'table'
-//                 } )
-//             }
-//         }
-//     } );
-// } );
+
 
 </script>

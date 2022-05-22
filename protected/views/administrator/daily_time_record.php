@@ -291,7 +291,7 @@ if(isset($_SESSION['user'])) {
 
     </div>
     <!-- End - Theme backgrounds -->
-    <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
+    <!-- <link href='scripts/libs/switcher/switcher.css' rel=stylesheet /> -->
 
     <!-- Scripts -->
     <script>

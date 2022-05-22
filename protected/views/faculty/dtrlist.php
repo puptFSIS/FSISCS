@@ -463,7 +463,13 @@ else if ($status == "approved")
 		<td id="regpartime_id'.$counter.'"" style="text-align: center;">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
-
+		<td>
+			<center>
+				<p>
+				'.$newresult['hap_comments'].'
+				</p>	
+			</center>
+		</td>
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
 
@@ -548,7 +554,13 @@ else if ($status == "pending")
 		<td id="regpartime_id'.$counter.'"" style="text-align: center;">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
-
+		<td>
+			<center>
+				<p>
+				'.$newresult['hap_comments'].'
+				</p>	
+			</center>
+		</td>
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
 
@@ -633,7 +645,13 @@ else if($status == "disapproved")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-
+		<td>
+			<center>
+				<p>
+				'.$newresult['hap_comments'].'
+				</p>	
+			</center>
+		</td>
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
 
@@ -714,7 +732,13 @@ else if($status == "deleted")
 		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-
+		<td>
+			<center>
+				<p>
+				'.$newresult['hap_comments'].'
+				</p>	
+			</center>
+		</td>
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
 

@@ -54,6 +54,7 @@
 					<th style="text-align: center;"><h5><strong>Load Type</strong></h5></th>
 					<th style="text-align: center;"><h5><strong>Month</strong></h5></th>
 					<th style="text-align: center;"><h5><strong>Year</strong></h5></th>
+					<th style="text-align: center;"><h5><strong>Remarks</strong></h5></th>
 					<th style="text-align: center;"><h5><strong>Actions</strong></h5></th>
 					<!-- <th><h5><strong></strong></h5></th> -->
 

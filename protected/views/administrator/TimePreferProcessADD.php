@@ -1,4 +1,9 @@
 <?php
+
+	// echo "<pre>";
+	// print_r($_POST);
+	// echo "</pre>";
+	$dec = 0;
 	session_start();
 	include("config.php");
 	$EmpID = $_SESSION['CEmpID']; 
@@ -12,114 +17,137 @@
 	
 	if (isset($_POST['timeS'])) 
 	{
-		$s = explode(":", $_POST['timeS']);
-		$stimeS = $s[0].$s[1];
+		if (empty($_POST['timeS']) or $_POST['timeS'] == "") {
+			$dec = 1;
+
+			
+		} else {
+			$s = explode(":", $_POST['timeS']);
+			$stimeS = $s[0].$s[1];
+		}
+		
 	} else {
 		$stimeS = "";
 	}
 
 	if (isset($_POST['timeE'])) {
-		$e = explode(":", $_POST['timeE']);
-		$stimeE = $e[0].$e[1];
+
+		if (empty($_POST['timeE']) or $_POST['timeE'] == "") {
+			$dec = 1;
+			
+			
+		} else {
+			$e = explode(":", $_POST['timeE']);
+			$stimeE = $e[0].$e[1];
+		}
+		
 
 	} else {
 		$stimeE = "";
 	}
 
-	$sday = $_POST['sday'];
-	$profName = $_POST['profName'];
-	$sem = $_POST['sem'];
-	$sy = $_POST['sy'];
-	
-	//if Whole Day checkbox is checked
-	if (isset($_POST['WholeDay'])) {
-		$Whole = 1;
-
-		$valid = checkWholeDay($sday, $profName);
-
-		if($valid == 0)
-		{
-				$sql = "INSERT INTO tbl_timepreferences (sday, stimeS, stimeE, Whole_Day, sprof, sem, schoolYear) VALUES ('$sday','','', '$Whole','$profName','$sem','$sy')";
-				$result = mysqli_query($conn, $sql);
-				if($result)
-				{
-				
-				echo"
-				<script>
-				window.location.replace('index.php?r=administrator/AddTimePrefer&mes=0');
-				</script>";
-				mysqli_close($conn);
-				}
-			
-		}
-		else if($valid == 1)
-		{
-			echo"
-				<script>
-				window.location.replace('index.php?r=administrator/AddTimePrefer&mes=1');
-				</script>";
-				mysqli_close($conn);	
-		} else if($valid == 2){
-			echo"
-				<script>
-				window.location.replace('index.php?r=administrator/AddTimePrefer&mes=2');
-				</script>";
-				mysqli_close($conn);
-		} else if($valid == 3){
-			echo"
-				<script>
-				window.location.replace('index.php?r=administrator/AddTimePrefer&mes=2');
-				</script>";
-				mysqli_close($conn);
-		}
-	//if the Whole Day checkbox is not checked
-	} else {
-
-		$valid = checkPrefSched($sday, $stimeS, $stimeE, $profName);
+	if ($dec != 1) {
+		$sday = $_POST['sday'];
+		$profName = $_POST['profName'];
+		$sem = $_POST['sem'];
+		$sy = $_POST['sy'];
 		
-		if($valid == 0)
-		{
+		//if Whole Day checkbox is checked
+		if (isset($_POST['WholeDay'])) {
+			$Whole = 1;
+
+			$valid = checkWholeDay($sday, $profName);
+
+			if($valid == 0)
+			{
+					$sql = "INSERT INTO tbl_timepreferences (sday, stimeS, stimeE, Whole_Day, sprof, sem, schoolYear) VALUES ('$sday','','', '$Whole','$profName','$sem','$sy')";
+					$result = mysqli_query($conn, $sql);
+					if($result)
+					{
+					
+					echo"
+					<script>
+					window.location.replace('index.php?r=administrator/AddTimePrefer&mes=0');
+					</script>";
+					mysqli_close($conn);
+					}
 				
-				$sql = "INSERT INTO tbl_timepreferences (sday, stimeS, stimeE, sprof, sem, schoolYear) VALUES ('$sday','$stimeS','$stimeE','$profName','$sem','$sy')";
-				$result = mysqli_query($conn, $sql);
-				if($result)
-				{
-				
+			}
+			else if($valid == 1)
+			{
 				echo"
-				<script>
-				window.location.replace('index.php?r=administrator/AddTimePrefer&mes=0');
-				</script>";
-				mysqli_close($conn);
-				}
+					<script>
+					window.location.replace('index.php?r=administrator/AddTimePrefer&mes=1');
+					</script>";
+					mysqli_close($conn);	
+			} else if($valid == 2){
+				echo"
+					<script>
+					window.location.replace('index.php?r=administrator/AddTimePrefer&mes=2');
+					</script>";
+					mysqli_close($conn);
+			} else if($valid == 3){
+				echo"
+					<script>
+					window.location.replace('index.php?r=administrator/AddTimePrefer&mes=2');
+					</script>";
+					mysqli_close($conn);
+			}
+		//if the Whole Day checkbox is not checked
+		} else {
+
+			$valid = checkPrefSched($sday, $stimeS, $stimeE, $profName);
 			
+			if($valid == 0)
+			{
+					
+					$sql = "INSERT INTO tbl_timepreferences (sday, stimeS, stimeE, sprof, sem, schoolYear) VALUES ('$sday','$stimeS','$stimeE','$profName','$sem','$sy')";
+					$result = mysqli_query($conn, $sql);
+					if($result)
+					{
+					
+					echo"
+					<script>
+					window.location.replace('index.php?r=administrator/AddTimePrefer&mes=0');
+					</script>";
+					mysqli_close($conn);
+					}
+				
+			}
+			else if($valid == 1)
+			{
+				echo"
+					<script>
+					window.location.replace('index.php?r=administrator/AddTimePrefer&mes=1');
+					</script>";
+					mysqli_close($conn);	
+			} else if($valid == 2){
+				echo"
+					<script>
+					window.location.replace('index.php?r=administrator/AddTimePrefer&mes=2');
+					</script>";
+					mysqli_close($conn);
+			} else if($valid == 3){
+				echo"
+					<script>
+					window.location.replace('index.php?r=administrator/AddTimePrefer&mes=2');
+					</script>";
+					mysqli_close($conn);
+			} else if($valid == 4){
+				echo"
+					<script>
+					window.location.replace('index.php?r=administrator/AddTimePrefer&mes=3');
+					</script>";
+					mysqli_close($conn);
+			}
 		}
-		else if($valid == 1)
-		{
-			echo"
-				<script>
-				window.location.replace('index.php?r=administrator/AddTimePrefer&mes=1');
-				</script>";
-				mysqli_close($conn);	
-		} else if($valid == 2){
-			echo"
-				<script>
-				window.location.replace('index.php?r=administrator/AddTimePrefer&mes=2');
-				</script>";
-				mysqli_close($conn);
-		} else if($valid == 3){
-			echo"
-				<script>
-				window.location.replace('index.php?r=administrator/AddTimePrefer&mes=2');
-				</script>";
-				mysqli_close($conn);
-		} else if($valid == 4){
-			echo"
-				<script>
-				window.location.replace('index.php?r=administrator/AddTimePrefer&mes=3');
-				</script>";
-				mysqli_close($conn);
-		}
+	} else {
+		echo"
+			<script>
+			window.location.replace('index.php?r=administrator/AddTimePrefer&mes=1');
+			</script>";
 	}
+	
 	
 	
 	function checkPrefSched($day, $timein, $timeout, $fcode)

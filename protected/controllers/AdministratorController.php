@@ -2052,7 +2052,7 @@ class AdministratorController extends Controller
 	{
 		$subject = $_POST['subject'];
 		$message = $_POST['message'];
-		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsis.puptaguigcs.net/FSISCS</a> to visit our website.';
+		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
 
 		
 		$receipients = TblEvaltest::model()->findAll();	//Uncomment this for testing the email
@@ -2720,7 +2720,7 @@ class AdministratorController extends Controller
     public function actionsendEmailInd(){
     	$subject = $_POST['subject'];
 		$message = $_POST['message'];
-		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsis.puptaguigcs.net/FSISCS</a> to visit our website.';
+		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
 
 		$i = 0;
 		$emails = array();
@@ -3425,7 +3425,7 @@ class AdministratorController extends Controller
 	{
 		$subject = $_POST['subject'];
 		$message = $_POST['message'];
-		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsis.puptaguigcs.net/FSISCS</a> to visit our website.';
+		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
 
 		$receipients = TblEvaltest::model()->findAll();	//Uncomment this for testing the email
 		// $recipients = TblEvaluationfaculty::model()->EmailFaculty(); //Uncomment this for production

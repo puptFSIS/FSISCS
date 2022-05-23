@@ -482,7 +482,9 @@ if($status == "pending")
 		';
 		$counter++;
 
+
 	}
+	echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 }
 
 
@@ -544,6 +546,7 @@ else if($status == "approved")
 		$counter++;
 
 	}
+	echo "<h3 style='border: 2px solid black; background-color: green; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 }
 
 
@@ -608,6 +611,7 @@ else if($status == "disapproved")
 		$counter++;
 
 	}
+	echo "<h3 style='border: 2px solid black; background-color: red; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 }
 
 

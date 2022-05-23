@@ -243,6 +243,13 @@
 	  font-size: 28px;
 	  font-weight: bold;
 	}
+
+
+
+	.status_tab_apr
+	{
+
+	}
 </style>
 <?php
 require_once('config.php');
@@ -506,12 +513,17 @@ else if ($status == "approved")
 	}
 	if(empty($newresult))
 		{
+			echo "<h3 style='border: 2px solid black; background-color: green; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo "no records found";
+
 			
 		}
 		else
 		{
+
+			echo "<h3 style='border: 2px solid black; background-color: green; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo '
+			
 			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none; background-color:none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
@@ -596,12 +608,14 @@ else if ($status == "pending")
 	}
 	if(empty($newresult))
 		{
+			echo "<h3 style='border: 2px solid black; background-color: yellow; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo "no records found";
 			
 		}
 		else
 		{
 
+			echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo '
 			
 			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none; background-color:none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
@@ -687,10 +701,12 @@ else if($status == "disapproved")
 		}
 		if(empty($newresult))
 		{
+			echo "<h3 style='border: 2px solid black; background-color: red; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo "no records found";
 		}
 		else
 		{
+			echo "<h3 style='border: 2px solid black; background-color: red; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo' 
 			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit" onclick="resubmit_dtr()">
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr">';
@@ -772,10 +788,12 @@ else if($status == "deleted")
 		}
 		if(empty($newresult))
 		{
+			echo "<h3 style='border: 2px solid black; background-color: gray; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo "no records found";
 		}
 		else
 		{
+			echo "<h3 style='border: 2px solid black; background-color: gray; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo '
 			
 			<input style="display: none;" id="restorebtn" type="submit" name="restore" value="restore" onclick="restore_dtr()">

@@ -35,10 +35,13 @@ $spreadsheet
 	->mergeCells('A1:C1')
 	->getCell('A1')->setValue($richtext);
 
-if(isset($_GET['fname'],$_GET['mname'],$_GET['sname'])) {
+if(isset($_GET['fname'],$_GET['mname'],$_GET['sname'],$_GET['y'],$_GET['m'],$_GET['fcode'])) {
 	$firstname = $_GET['fname'];
 	$middlename = $_GET['mname'];
 	$surname = $_GET['sname'];
+	$year = $_GET['y'];
+	$month = $_GET['m'];
+	$fcode = $_GET['fcode'];
 }
 
 $richtextname = new RichText();
@@ -64,7 +67,7 @@ $spreadsheet
 
 //Set the text Bold
 $richtext1 = new RichText(); 
-$cellstyle1 = $richtext1->createTextRun('JANUARY TO JUNE');
+$cellstyle1 = $richtext1->createTextRun('JANUARY TO JUNE, '.$year.'');
 $cellstyle1->getFont()->setBold(true)->setSize(10);
 
 //Place the text inside the Cell
@@ -291,7 +294,7 @@ $spreadsheet
     ->setBorderStyle(Border::BORDER_THIN);
 
 $richtexts = new RichText(); 
-$cellstyles = $richtexts->createTextRun('JULY TO DECEMBER');
+$cellstyles = $richtexts->createTextRun('JULY TO DECEMBER, '.$year.'');
 $cellstyles->getFont()->setBold(true)->setSize(10);
 
 $spreadsheet
@@ -513,7 +516,7 @@ $spreadsheet
     ->setBorderStyle(Border::BORDER_THIN);
 
 $richtextfinal = new RichText(); 
-$cellstylefinal = $richtextfinal->createTextRun('JANUARY - DECEMBER');
+$cellstylefinal = $richtextfinal->createTextRun('JANUARY - DECEMBER, '.$year.'');
 $cellstylefinal->getFont()->setBold(true)->setSize(10);
 
 $spreadsheet

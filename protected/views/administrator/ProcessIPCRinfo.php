@@ -17,22 +17,22 @@
 			$result = mysqli_query($conn,$sql);
 
 			 /* Get the latest id inserted in the db that will use to insert to tbl_accomp and use in checking required field */
-			$last_id = mysqli_insert_id($conn);
+			//$last_id = mysqli_insert_id($conn);
 
-			$query = "INSERT INTO tbl_ipcraccomp (id_ipcr1) VALUES ('".$last_id."')";
-			$query_result = mysqli_query($conn,$query);
+			//$query = "INSERT INTO tbl_ipcraccomp (id_ipcr1) VALUES ('".$last_id."')";
+			//$query_result = mysqli_query($conn,$query);
 		} else {
-			$sql = "INSERT INTO tbl_ipcr2 (output,indicators,part,month,year) VALUES('".$outputs."','".$indi."','".$parts."','".$m."','".$y."')";
+			$sql = "INSERT INTO tbl_ipcr2 (if_required,output,indicators,part,month,year) VALUES('".$ifRequired."','".$outputs."','".$indi."','".$parts."','".$m."','".$y."')";
 			$result = mysqli_query($conn,$sql);
 
 			/* Get the latest id inserted in the db that will use to insert to tbl_accomp and use in checking required field */
-			$last_id = mysqli_insert_id($conn);
+			//$last_id = mysqli_insert_id($conn);
 
-			$query = "INSERT INTO tbl_ipcraccomp (id_ipcr2) VALUES ('".$last_id."')";
-			$query_result = mysqli_query($conn,$query);
+			//$query = "INSERT INTO tbl_ipcraccomp (id_ipcr2) VALUES ('".$last_id."')";
+			//$query_result = mysqli_query($conn,$query);
 		}
 	}
-	if($query_result)
+	if($result)
 	{
 		if($m == "JJ")
 		{

@@ -816,3 +816,1519 @@ REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRinterpolview
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
 >>>>>>> Stashed changes
 ---
+2022/05/22 08:16:42 [error] [php] Undefined variable: firstname (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php:47)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&ye=2021&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (47)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/05/22 08:18:56 [error] [php] Undefined variable: firstname (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php:47)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (47)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/05/22 15:21:53 [error] [php] include(RichText.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\framework\YiiBase.php:463)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\YiiBase.php(463): include()
+#1 unknown(0): autoload()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(13): spl_autoload_call()
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#8 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (13)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 15:50:20 [error] [exception.ParseError] ParseError: syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting end of file in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationcomputable.php:474
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 15:51:06 [error] [exception.ParseError] ParseError: syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting end of file in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationcomputable.php:565
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 15:51:36 [error] [exception.ParseError] ParseError: syntax error, unexpected '->' (T_OBJECT_OPERATOR), expecting ')' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationcomputable.php:1029
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:13:22 [error] [exception.Error] Error: Call to undefined method PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::getActiveSheet() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:57
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:41:00 [error] [exception.ParseError] ParseError: syntax error, unexpected '$spreadsheet' (T_VARIABLE) in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:82
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:46:21 [error] [exception.ParseError] ParseError: syntax error, unexpected '$spreadsheet' (T_VARIABLE) in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:104
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:46:36 [error] [exception.Error] Error: Call to undefined function getStyle() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:93
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:46:52 [error] [exception.Error] Error: Call to undefined method PhpOffice\PhpSpreadsheet\Style\Border::getCell() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:97
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:51:25 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Cell coordinate string can not be a range of cells in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:37
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Style\Style.php(218): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('B5,C5,D5')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Style\Border.php(176): PhpOffice\PhpSpreadsheet\Style\Style->applyFromArray(Array)
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(112): PhpOffice\PhpSpreadsheet\Style\Border->setBorderStyle('thin')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:52:24 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid cell coordinate B5;C5;D5 in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:42
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Style\Style.php(218): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('B5;C5;D5')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Style\Border.php(176): PhpOffice\PhpSpreadsheet\Style\Style->applyFromArray(Array)
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(112): PhpOffice\PhpSpreadsheet\Style\Border->setBorderStyle('thin')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:53:57 [error] [exception.Error] Error: Call to undefined method PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::getActiveSheet() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:107
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:54:28 [error] [exception.Error] Error: Call to undefined method PhpOffice\PhpSpreadsheet\Style\Border::setCellValue() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:112
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 16:55:45 [error] [exception.Error] Error: Call to undefined method PhpOffice\PhpSpreadsheet\Cell\Cell::getAlignment() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:81
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:02:35 [error] [exception.Error] Error: Call to undefined method PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::getActiveSheet() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:143
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:09:55 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid cell coordinate A6 + 1 in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:42
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1344): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('A6 + 1')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1240): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->createNewCell('A6 + 1')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1152): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->getCell('A6 + 1')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(142): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValue('A6 + 1', 'Indicator/Outpu...')
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#17 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:11:07 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid cell coordinate A 6+1 in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:42
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1344): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('A 6+1')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1240): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->createNewCell('A 6+1')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1152): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->getCell('A 6+1')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(142): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValue('A 6+1', 'Indicator/Outpu...')
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#17 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:18:09 [error] [exception.ParseError] ParseError: syntax error, unexpected 'for' (T_FOR) in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:138
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:18:33 [error] [exception.ParseError] ParseError: syntax error, unexpected 'for' (T_FOR) in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:138
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:19:03 [error] [exception.Error] Error: Call to undefined method PhpOffice\PhpSpreadsheet\Spreadsheet::setCellValue() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:141
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:19:18 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid cell coordinate 1 in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:42
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1344): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('1')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1240): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->createNewCell('1')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1152): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->getCell('1')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(148): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValue('1', 'Indicator/Outpu...')
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#17 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:20:33 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid cell coordinate 1 in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:42
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1344): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('1')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1240): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->createNewCell('1')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1152): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->getCell('1')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(148): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValue('1', 'Indicator/Outpu...')
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#17 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:38:23 [error] [php] Undefined variable: count (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:138)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (138)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 17:38:34 [error] [exception.ParseError] ParseError: syntax error, unexpected '10' (T_LNUMBER), expecting variable (T_VARIABLE) or '{' or '$' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:138
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:38:43 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid cell coordinate M6+1 in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:42
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1344): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('M6+1')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1240): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->createNewCell('M6+1')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1152): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->getCell('M6+1')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(142): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValue('M6+1', 'HELLLLLLLOOO')
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#17 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:39:07 [error] [exception.ParseError] ParseError: syntax error, unexpected '.' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:142
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:39:17 [error] [php] A non-numeric value encountered (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:142)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (142)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 17:39:31 [error] [exception.ParseError] ParseError: syntax error, unexpected '$b' (T_VARIABLE), expecting ')' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:142
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:44:04 [error] [exception.ParseError] ParseError: syntax error, unexpected '$a' (T_VARIABLE), expecting ')' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:143
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 17:44:19 [error] [php] Undefined variable: var (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:138)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (138)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 17:54:46 [error] [php] Object of class PhpOffice\PhpSpreadsheet\Spreadsheet could not be converted to int (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:146)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (146)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 17:59:49 [error] [php] Undefined variable: worksheet (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:153)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (153)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 18:00:12 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid cell coordinate AAAA1 in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:42
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1344): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('AAAA1')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1240): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->createNewCell('AAAA1')
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(156): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->getCell('AAAA1')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:09:38 [error] [exception.ParseError] ParseError: syntax error, unexpected ';', expecting ')' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:154
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:10:08 [error] [php] range() expects at least 2 parameters, 1 given (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:154)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(154): range()
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (154)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 18:21:48 [error] [exception.ParseError] ParseError: syntax error, unexpected '>' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:148
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:26:38 [error] [php] Undefined variable: highestRow (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:148)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (148)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 18:28:03 [error] [exception.ParseError] ParseError: syntax error, unexpected 'foreach' (T_FOREACH) in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:164
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:28:15 [error] [exception.ParseError] ParseError: syntax error, unexpected '>' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:172
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:28:33 [error] [exception.ParseError] ParseError: syntax error, unexpected end of file in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:244
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:30:14 [error] [php] include(PHPExcel_IOFactory.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\framework\YiiBase.php:463)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\YiiBase.php(463): include()
+#1 unknown(0): autoload()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(148): spl_autoload_call()
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#8 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (148)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 18:30:49 [error] [php] Undefined variable: objPHPExcel (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:149)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (149)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 18:31:40 [error] [php] Use of undefined constant ABSPATH - assumed 'ABSPATH' (this will throw an Error in a future version of PHP) (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:148)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (148)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 18:32:19 [error] [exception.TypeError] TypeError: Argument 1 passed to PhpOffice\PhpSpreadsheet\IOFactory::load() must be of the type string, object given, called in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php on line 148 and defined in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\IOFactory.php:98
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(148): PhpOffice\PhpSpreadsheet\IOFactory::load(Object(PhpOffice\PhpSpreadsheet\Spreadsheet), 'Xlsx')
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:32:37 [error] [exception.Error] Error: Call to undefined method PhpOffice\PhpSpreadsheet\Writer\Xlsx::getWorksheetIterator() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:149
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:34:48 [error] [php] Use of undefined constant ABSPATH - assumed 'ABSPATH' (this will throw an Error in a future version of PHP) (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:148)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (148)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (777)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 18:35:01 [error] [exception.PhpOffice\PhpSpreadsheet\Reader\Exception] PhpOffice\PhpSpreadsheet\Reader\Exception: File "ABSPATHtest.Xlsx" does not exist. in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Shared\File.php:149
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\IOFactory.php(129): PhpOffice\PhpSpreadsheet\Shared\File::assertFile('ABSPATHtest.Xls...')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\IOFactory.php(100): PhpOffice\PhpSpreadsheet\IOFactory::createReaderForFile('ABSPATHtest.Xls...', NULL)
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(148): PhpOffice\PhpSpreadsheet\IOFactory::load('ABSPATHtest.Xls...')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:35:17 [error] [exception.PhpOffice\PhpSpreadsheet\Reader\Exception] PhpOffice\PhpSpreadsheet\Reader\Exception: File "test.Xlsx" does not exist. in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Shared\File.php:149
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\IOFactory.php(129): PhpOffice\PhpSpreadsheet\Shared\File::assertFile('test.Xlsx')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\IOFactory.php(100): PhpOffice\PhpSpreadsheet\IOFactory::createReaderForFile('test.Xlsx', NULL)
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(148): PhpOffice\PhpSpreadsheet\IOFactory::load('test.Xlsx')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#16 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#17 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:37:28 [error] [exception.ParseError] ParseError: syntax error, unexpected '>' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:151
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:38:58 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid cell coordinate AM in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:42
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1344): PhpOffice\PhpSpreadsheet\Cell\Coordinate::coordinateFromString('AM')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1240): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->createNewCell('AM')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1172): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->getCell('AM')
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(153): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValueByColumnAndRow(1, 'M', 1)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include('C:\\Apps\\xampp\\h...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#17 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#18 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 18:40:29 [error] [php] A non-numeric value encountered (C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:323)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1172): stringFromColumnIndex()
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(153): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValueByColumnAndRow()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php (323)
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php (1172)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (153)
+2022/05/22 18:41:21 [error] [php] A non-numeric value encountered (C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:323)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1172): stringFromColumnIndex()
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(153): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValueByColumnAndRow()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php (323)
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php (1172)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (153)
+2022/05/22 18:41:31 [error] [php] A non-numeric value encountered (C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:323)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1172): stringFromColumnIndex()
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(153): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValueByColumnAndRow()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php (323)
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php (1172)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (153)
+2022/05/22 18:43:40 [error] [php] A non-numeric value encountered (C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:323)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1172): stringFromColumnIndex()
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(153): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValueByColumnAndRow()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php (323)
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php (1172)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (153)
+2022/05/22 18:43:47 [error] [php] A non-numeric value encountered (C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:323)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1172): stringFromColumnIndex()
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(153): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->setCellValueByColumnAndRow()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php (323)
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php (1172)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (153)
+2022/05/22 18:45:37 [error] [exception.Error] Error: Call to undefined method PhpOffice\PhpSpreadsheet\Worksheet\Worksheet::setCellValueByColumn() in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:153
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(777): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 19:22:38 [error] [exception.ParseError] ParseError: syntax error, unexpected '$result' (T_VARIABLE) in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:160
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 19:38:49 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid range: "A10:A5" in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:569
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(432): PhpOffice\PhpSpreadsheet\Cell\Coordinate::validateRange('A10:A5', 1, 2, '10', '5')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(346): PhpOffice\PhpSpreadsheet\Cell\Coordinate::getReferencesForCellBlock('A10:A5')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(741): PhpOffice\PhpSpreadsheet\Cell\Coordinate::extractAllCellReferencesInRange('A10:A5')
+#3 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(363): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->calculateColumnWidths()
+#4 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(70): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeCols(Object(PhpOffice\PhpSpreadsheet\Shared\XMLWriter), Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+#5 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(391): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeWorksheet(Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet), Array, false)
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(793): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('php://output')
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#11 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#17 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#18 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 19:38:50 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid range: "A10:A5" in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:569
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(432): PhpOffice\PhpSpreadsheet\Cell\Coordinate::validateRange('A10:A5', 1, 2, '10', '5')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(346): PhpOffice\PhpSpreadsheet\Cell\Coordinate::getReferencesForCellBlock('A10:A5')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(741): PhpOffice\PhpSpreadsheet\Cell\Coordinate::extractAllCellReferencesInRange('A10:A5')
+#3 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(363): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->calculateColumnWidths()
+#4 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(70): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeCols(Object(PhpOffice\PhpSpreadsheet\Shared\XMLWriter), Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+#5 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(391): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeWorksheet(Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet), Array, false)
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(793): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('php://output')
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#11 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#17 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#18 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 19:38:58 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid range: "A10:A5" in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:569
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(432): PhpOffice\PhpSpreadsheet\Cell\Coordinate::validateRange('A10:A5', 1, 2, '10', '5')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(346): PhpOffice\PhpSpreadsheet\Cell\Coordinate::getReferencesForCellBlock('A10:A5')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(741): PhpOffice\PhpSpreadsheet\Cell\Coordinate::extractAllCellReferencesInRange('A10:A5')
+#3 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(363): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->calculateColumnWidths()
+#4 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(70): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeCols(Object(PhpOffice\PhpSpreadsheet\Shared\XMLWriter), Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+#5 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(391): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeWorksheet(Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet), Array, false)
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(793): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('php://output')
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#11 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#17 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#18 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 19:38:59 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid range: "A10:A5" in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:569
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(432): PhpOffice\PhpSpreadsheet\Cell\Coordinate::validateRange('A10:A5', 1, 2, '10', '5')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(346): PhpOffice\PhpSpreadsheet\Cell\Coordinate::getReferencesForCellBlock('A10:A5')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(741): PhpOffice\PhpSpreadsheet\Cell\Coordinate::extractAllCellReferencesInRange('A10:A5')
+#3 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(363): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->calculateColumnWidths()
+#4 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(70): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeCols(Object(PhpOffice\PhpSpreadsheet\Shared\XMLWriter), Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+#5 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(391): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeWorksheet(Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet), Array, false)
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(793): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('php://output')
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#11 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#17 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#18 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 19:39:04 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid range: "A10:A5" in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:569
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(432): PhpOffice\PhpSpreadsheet\Cell\Coordinate::validateRange('A10:A5', 1, 2, '10', '5')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(346): PhpOffice\PhpSpreadsheet\Cell\Coordinate::getReferencesForCellBlock('A10:A5')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(741): PhpOffice\PhpSpreadsheet\Cell\Coordinate::extractAllCellReferencesInRange('A10:A5')
+#3 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(363): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->calculateColumnWidths()
+#4 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(70): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeCols(Object(PhpOffice\PhpSpreadsheet\Shared\XMLWriter), Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+#5 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(391): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeWorksheet(Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet), Array, false)
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(793): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('php://output')
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#11 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#17 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#18 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 19:39:07 [error] [exception.PhpOffice\PhpSpreadsheet\Exception] PhpOffice\PhpSpreadsheet\Exception: Invalid range: "A10:A5" in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:569
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(432): PhpOffice\PhpSpreadsheet\Cell\Coordinate::validateRange('A10:A5', 1, 2, '10', '5')
+#1 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php(346): PhpOffice\PhpSpreadsheet\Cell\Coordinate::getReferencesForCellBlock('A10:A5')
+#2 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(741): PhpOffice\PhpSpreadsheet\Cell\Coordinate::extractAllCellReferencesInRange('A10:A5')
+#3 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(363): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->calculateColumnWidths()
+#4 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx\Worksheet.php(70): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeCols(Object(PhpOffice\PhpSpreadsheet\Shared\XMLWriter), Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet))
+#5 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Writer\Xlsx.php(391): PhpOffice\PhpSpreadsheet\Writer\Xlsx\Worksheet->writeWorksheet(Object(PhpOffice\PhpSpreadsheet\Worksheet\Worksheet), Array, false)
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(793): PhpOffice\PhpSpreadsheet\Writer\Xlsx->save('php://output')
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRInterpolati...', NULL, true)
+#11 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): CController->render('IPCRInterpolati...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#15 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#16 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRInterpolati...')
+#17 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#18 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#19 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#20 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
+---
+2022/05/22 19:57:47 [error] [php] Undefined offset: 1 (C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php:295)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php(1430): columnIndexFromString()
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(172): PhpOffice\PhpSpreadsheet\Worksheet\Worksheet->getColumnDimension()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(779): include()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Cell\Coordinate.php (295)
+in C:\Apps\xampp\htdocs\FSISCS\phpspreadsheet\vendor\phpoffice\phpspreadsheet\src\PhpSpreadsheet\Worksheet\Worksheet.php (1430)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (172)
+2022/05/22 20:03:39 [error] [php] Undefined index: id (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:186)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(779): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (186)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (779)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 20:12:56 [error] [php] mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:181)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php(181): mysqli_fetch_array()
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(779): include()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (181)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (779)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 20:15:59 [error] [php] Undefined variable: count (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:161)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(779): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (161)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (779)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 20:16:21 [error] [php] Undefined variable: result (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:159)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(779): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (159)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (779)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 20:24:11 [error] [php] Undefined variable: result (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:161)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(779): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (161)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (779)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)
+2022/05/22 20:27:38 [error] [php] Object of class mysqli_result could not be converted to string (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php:169)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(779): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2942): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationSheet2.php (169)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (779)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2942)

@@ -4,7 +4,10 @@
 		/* max-width: 650px; */
 		width: 1000px;
 		margin-top: 50px;
-		background-color: #f7f7f7;
+		/*background-color: #f7f7f7;*/
+		background-color: ghostwhite;
+		border: 2px solid;
+		padding: 10px;
 		/* overflow: hidden; */
 	}
 	
@@ -25,22 +28,19 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.0/css/dataTables.bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.3.0/css/responsive.bootstrap.min.css">
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-
-
-
-
-<div class="table-responsive" id="container" >
-	<a href="index.php?r=faculty/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
+SHOW:
+<a href="index.php?r=faculty/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
 	<a href="index.php?r=faculty/DtrTable&sort=approved"><input type="button" value="Approved"/></a>
 	<a href="index.php?r=faculty/DtrTable&sort=disapproved"><input type="button" value="Disapproved"/></a>
-
 	<a href="index.php?r=faculty/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
-	<!-- <a href="index.php?r=administrator/DtrTable&sort=recent"><input type="button" value="recent"/></a> -->
-	<br>
-		<br>
+
+<br>
+<br>
+
+<div class="table-responsive" id="container" >
+
 	<div class="container2">
-		<br>
-		<br>
+		
 	<table id="ProfTable" class="table table-striped table-bordered">
 		<thead >
 			<tr>
@@ -53,6 +53,7 @@
 				<th style="text-align: center;"><h5><strong>Load Type</strong></h5></th>
 				<th style="text-align: center;"><h5><strong>Month</strong></h5></th>
 				<th style="text-align: center;"><h5><strong>Year</strong></h5></th>
+				<th style="text-align: center;"><h5><strong>Remarks</strong></h5></th>
 				<th style="text-align: center;"><h5><strong>Actions</strong></h5></th>
 				<!-- <th><h5><strong></strong></h5></th> -->
 
@@ -78,9 +79,13 @@
 
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/bootstrap.min.js"></script>
+
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/datatables.min.js"></script>
+
 <script id=js-dispatcher src='scripts/scripts.js'></script>
+
 <script>
 	var ProfTable = $("#ProfTable").DataTable({
         "scrollY":        false,
@@ -88,16 +93,21 @@
         "paging":         true,
         "lengthChange": true,
         "pagingType": "full_numbers",
+        "ordering": true, /// allow sorting sa buong table
+        "aaSorting": [],   /// remove sorting sa unang column  - 0
+        "columnDefs": [
+	        {
+	        	"targets": [0,2,3,4,5,6,7,8,9,10],
+	        	"orderable": false ///remove sorting sa lahat ng column maliban sa isa
+	        }
+        ],
+
 
 
         language: { 
         search: "", 
 
-        searchPlaceholder: "Search:" },
-        columnDefs: [ {
-            orderable: false,
-            targets:   0,
-        } ],
+        searchPlaceholder: "Search:" }
 
 
     });

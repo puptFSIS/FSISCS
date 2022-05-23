@@ -435,7 +435,7 @@ if($status == "pending")
 			<tr id="tr_id_'.$counter.'" ">
 
 				<td id="faculty_id'.$counter.'" class="tr_class" style="font-weight:bold;" onclick="call_print(\'' .$counter. '\')"">' . $newresult['id']  . '</td>
-				<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
+				<td id="fcode_id'.$counter.'" hidden>' . $newresult['FCode'] . '</td>
 				<td id="surname_id'.$counter.'"" style="font-weight:bold;">' . $newresult['surname'] . ',' . $newresult['firstname'] . ' ' . $newresult['middlename'] . '</td>
 				<td id="firstname_id'.$counter.'"" style="font-weight:bold;" hidden>' . $newresult['firstname'] . '</td>
 				<td id="middlename_id'.$counter.'"" style="font-weight:bold;" hidden>' . $newresult['middlename'] . '</td>
@@ -450,34 +450,41 @@ if($status == "pending")
 									<label for="approve" class="approve" style="color: green; font-weight:bold;">APPROVE</label>
 					</center>
 				</td>
+
 				<td>
 					<center>
 						<input type="checkbox" class"radio'.$counter.'" style="cursor: pointer" id="disapprove_box_id'.$counter.'" name="approval'.$counter.'" value="2">
 									<label for="disapprove" class="disapprove" style="color: red;  font-weight:bold;">DISAPPROVE</label>
 					</center>
 				</td>
+
 				<td>
 					<center>
 						<textarea placeholder="Type your comment here" class="input_comments" name="comments" id="comments'.$counter.'"></textarea>
 					</center>
 				</td>
+
 				<td class=""">
 					<center>
 						<input type="submit" class="" value="VIEW PDF" onclick="call_print(\'' .$counter. '\')">
 					</center>
 				</td>
+
 				<td>
 					<center>
 						<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
 					</center>
 				</td>
+				
 			</tr>
 			
 
 		';
 		$counter++;
 
+
 	}
+	echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 }
 
 
@@ -539,6 +546,7 @@ else if($status == "approved")
 		$counter++;
 
 	}
+	echo "<h3 style='border: 2px solid black; background-color: green; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 }
 
 
@@ -592,7 +600,7 @@ else if($status == "disapproved")
 					<center>
 						<input id="input_id'.$counter.'" type="submit" id="submitbtn"  onclick="post_approval('.$counter.')" class="" name="hap_submit_name" value="SUBMIT" id="hap_submit_id'.$counter.'" >
 					</center>
-							</td>
+				</td>
 						
 							
 					</tr>
@@ -603,6 +611,7 @@ else if($status == "disapproved")
 		$counter++;
 
 	}
+	echo "<h3 style='border: 2px solid black; background-color: red; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 }
 
 

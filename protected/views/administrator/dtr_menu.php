@@ -430,11 +430,11 @@ if($preview_value===0)
             
     
     echo '<ul class="widget-list categories-list">';
-    echo "<li><a href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
-    echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
+    echo "<li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
+    echo "<li><a style='color:black' href='index.php?r=administrator/DtrTable'>Created DTRs</a></li>";
     
-    echo "<li><a href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
-    echo "<li><a href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
+    echo "<li><a style='color:black' href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
+    echo "<li><a style='color:black' href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
     // echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
 
     echo '</ul>';
@@ -445,11 +445,11 @@ if($preview_value===0)
   {
    
     echo '<ul class="widget-list categories-list">';
-    echo "<li><a href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
+    echo "<li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
     echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
     
-    echo "<li><a href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
-    echo "<li><a href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
+    echo "<li><a style='color:black' href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
+    echo "<li><a style='color:black' href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
     // echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
 
     echo '</ul>';
@@ -460,8 +460,8 @@ if($preview_value===0)
   else
   {
     echo '<ul class="widget-list categories-list">';
-      echo "<li><a href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
-      echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
+      echo "<li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
+      echo "<li><a style='color:black' href='index.php?r=administrator/DtrTable'>Created DTRs</a></li>";
       
    
       // echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
@@ -475,262 +475,13 @@ if($preview_value===0)
 
 
 
-<!-- modal for subjects right under its button -->
-<div class="modal_for_subjects" id="subj_modal_id">
-  <span id="exit_subjs_id" class="exit_subjs_class"><a href="#">&times;</a></span>
-  <?php 
-    include("config.php");
-    include("getPersonalInformation.php");
-
-    $search= "SELECT MIN(`stitle`) as `stitle` from `tbl_schedule` WHERE `sprof` = '$fcode' GROUP BY `stitle` ";
-    $result = mysqli_query($conn, $search);
-    if(!$result)
-    {
-      echo mysqli_error($conn);   
-    }
-    else if(mysqli_num_rows($result) > 0)
-    {
-      $count = 1;
-      echo "<html>";
-      echo "<h5 class='subjects_result_class'>subjects results</h5>";
-      foreach($result as $new_result)
-      {
-        $new_result2 = $new_result['stitle'];
-        echo "<button name=\"subjsubmit\" class=\"subjects_btn\" onclick=\"subjonclick('".$new_result2."')\">".$count."."." ".$new_result['stitle']."</button>";
-
-        $count++;
-      }
-
-    }
-
-    ?>
-</div>
-
-
-<div id="subj_modall" class="modal3">
-  <!-- Modal content -->
-  <div class="modal-content box">
-    <div class="modal-header_generate">
-      <span class="close3">&times;</span>
-      <!--<h2>Generate Regular Dtr</h2>-->
-    </div>
-    <div class="modal-body">
-    <h4 id="subj_name" name="subj_name"></h4>
-    <?php 
-      //$subj_search= "SELECT * from `tbl_schedule` WHERE `stitle` = '$subj_value'";
-      //$subj_result = mysqli_query($conn, $subj_search);
-    ?>
-    </div>
-  </div>
-</div>
-
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-<div class="modal-content box">
-  <div class="modal-header" id="gradient_inbox">
-      <span class="close">&times;</span>
-      <p class="middle" >NOTIFICATIONS</p>
-      <?php 
-        include("config.php");
-        if(isset($_POST['submitt']))
-        {
-          $search_type = $_POST['search_type'];
-          if($search_type == '1'){
-            $surname_search = $_POST['surname_search'];
-            $search= "SELECT * from `tbl_dtr` WHERE `surname` LIKE '%$surname_search%' ";
-            $result = mysqli_query($conn, $search);
-            if(!$result)
-              {
-                echo mysqli_error($conn);   
-              }
-            else if(mysqli_num_rows($result) > 0 && !empty($surname_search))
-              {
-                $count = 1;
-                echo "<html>";
-                echo "<h5 class='result_text'>Results</h5>";
-                foreach($result as $new_result){
-                echo "<div class='boxed'>";
-                echo "<h6>".$count."."." ".$new_result['firstname']." ".$new_result['middlename']." ".$new_result['surname']."---".$new_result['regpartime']."---".$new_result['month']."---".$new_result['year']."</h6>";
-                echo "<span class=widget-hint><a href='index.php?r=administrator/Regular_DTR&var=".$new_result['FCode']."&var2=".$new_result['month']."&var3=".$new_result['year']."' target='_blank'>Generate</a></span>";
-                echo "</div>";
-                $count++;
-                  }
-              }
-            else {
-              echo "<h6 style='color:#be0000;'>No records found!</h6>";
-                }
-          }
-          if($search_type == '2'){
-            $fn_search = $_POST['fn_search'];
-            $search= "SELECT * from `tbl_dtr` WHERE `firstname` LIKE '%$fn_search%'";
-            $result2 = mysqli_query($conn, $search);
-            if(!$result2)
-              {
-                echo mysqli_error($conn);   
-              }
-            else if(mysqli_num_rows($result2) > 0 && !empty($fn_search))
-              {
-                 $count = 1;
-                echo "<html>";
-                echo "<h5 class='result_text'>Results</h5>";
-                foreach($result2 as $new_result){
-                echo "<div class='boxed'>";
-                echo "<h6>".$count."."." ".$new_result['firstname']." ".$new_result['middlename']." ".$new_result['surname']."---".$new_result['regpartime']."---".$new_result['month']."---".$new_result['year']."</h6>";
-                echo "<span class=widget-hint><a href='index.php?r=administrator/Regular_DTR&var=".$new_result['FCode']."&var2=".$new_result['month']."&var3=".$new_result['year']."' target='_blank'>Generate</a></span>";
-                echo "</div>";
-                $count++;
-                
-                  }
-              }
-            else {
-              echo "<h6 style='color:#be0000;'>No records found!</h6>";
-                }
-          }
-          if($search_type == 3){
-            $mn_search = $_POST['mn_search'];
-            $search= "SELECT * from `tbl_dtr` WHERE `middlename` LIKE '%$mn_search%'";
-            $result3 = mysqli_query($conn, $search);
-            if(!$result3)
-              {
-                echo mysqli_error($conn);   
-              }
-            else if(mysqli_num_rows($result3) > 0 && !empty($mn_search))
-              {
-                $count = 1;
-                echo "<html>";
-                echo "<h5 class='result_text'>Results</h5>";
-                foreach($result3 as $new_result){
-                echo "<div class='boxed'>";
-                echo "<h6>".$count."."." ".$new_result['firstname']." ".$new_result['middlename']." ".$new_result['surname']."---".$new_result['regpartime']."---".$new_result['month']."---".$new_result['year']."</h6>";
-                echo "<span class=widget-hint><a href='index.php?r=administrator/Regular_DTR&var=".$new_result['FCode']."&var2=".$new_result['month']."&var3=".$new_result['year']."' target='_blank'>Generate</a></span>";
-                echo "</div>";
-                $count++;
-                
-                  }
-              }
-            else {
-              echo "<h6 style='color:#be0000;'>No records found!</h6>";
-                }
-          }
-          if($search_type == 4){
-            $year_search = $_POST['year_search'];
-            $search= "SELECT * from `tbl_dtr` WHERE `year` LIKE '%$year_search%'";
-            $result4 = mysqli_query($conn, $search);
-            if(!$result4)
-              {
-                echo mysqli_error($conn);   
-              }
-            else if(mysqli_num_rows($result4) > 0 && !empty($year_search))
-              {
-                 $count = 1;
-                echo "<html>";
-                echo "<h5 class='result_text'>Results</h5>";
-                foreach($result4 as $new_result){
-                echo "<div class='boxed'>";
-                echo "<h6>".$count."."." ".$new_result['firstname']." ".$new_result['middlename']." ".$new_result['surname']."---".$new_result['regpartime']."---".$new_result['month']."---".$new_result['year']."</h6>";
-                echo "<span class=widget-hint><a href='index.php?r=administrator/Regular_DTR&var=".$new_result['FCode']."&var2=".$new_result['month']."&var3=".$new_result['year']."' target='_blank'>Generate</a></span>";
-                echo "</div>";
-                $count++;
-                
-                  }
-              }
-            else {
-              echo "<h6 style='color:#be0000;'>No records found!</h6>";
-                }
-          }
-          if($search_type == 5){
-            $month_search = $_POST['month_search'];
-            $search= "SELECT * from `tbl_dtr` WHERE `month` LIKE '%$month_search%'";
-            $result5 = mysqli_query($conn, $search);
-            if(!$result5)
-              {
-                echo mysqli_error($conn);   
-              }
-            else if(mysqli_num_rows($result5) > 0 && !empty($month_search))
-              {
-                 $count = 1;
-                echo "<html>";
-                echo "<h5 class='result_text'>Results</h5>";
-                foreach($result5 as $new_result){
-                echo "<div class='boxed'>";
-                echo "<h6>".$count."."." ".$new_result['firstname']." ".$new_result['middlename']." ".$new_result['surname']."---".$new_result['regpartime']."---".$new_result['month']."---".$new_result['year']."</h6>";
-                echo "<span class=widget-hint><a href='index.php?r=administrator/Regular_DTR&var=".$new_result['FCode']."&var2=".$new_result['month']."&var3=".$new_result['year']."' target='_blank'>Generate</a></span>";
-                echo "</div>";
-                $count++;
-                
-                  }
-              }
-            else {
-              echo "<h6 style='color:#be0000;'>No records found!</h6>";
-                }
-          }
-
-        }
 
 
 
-      ?>
-  </div>
-    <div class="modal-body">
-    </div>
- <!--  <div class="modal-footer">
-    <h3></h3>
-  </div> -->
-</div>
-</div>
+
+  
 
 
-
-<!-- The Modal for generate-->
-<form method="POST">
-<div id="myModal2" class="modal2">
-  <!-- Modal content -->
-  <div class="modal-content box">
-    <div class="modal-header_generate">
-      <span class="close2">&times;</span>
-      <!--<h2>Generate Regular Dtr</h2>-->
-    </div>
-    <div class="modal-body">
-    <!--<h4>Search by?</h4>-->
-      <select class="search_hover" name="search_type" onchange="getSearchType(this)" id="search_type" onmouseover="mouseOver()" onmouseout="mouseOut()"> 
-        <option style="display:none; width:300px;" >--search by?-- </option>
-        <option style="background-color: white" value="4">Year</option>
-        <option style="background-color: white" value="5">Month</option>
-      </select>
-    <h4 id="search_type_text"></h4>
-    <input style="display: none;" placeholder="Enter surname..." class="surname_search" type="text" name="surname_search" id="surname_search"> 
-    <input style="display: none;" placeholder="Enter first name..." class="fn_search" type="text" name="fn_search" id="fn_search"> 
-    <input style="display: none;" placeholder="Enter middle name..." class="mn_search" type="text" name="mn_search" id="mn_search"> 
-    <!--<input style="display: none;" class="year_search" type="text" name="year_search" id="year_search"> -->
-    <select style="display: none; margin: auto;" id="year_search" class="year_search" name="year_search"> 
-        <option style="display:none; width:300px;" >--year-- </option>
-        <option value="2021">2021</option>
-        <option value="2020">2020</option>
-        <option value="2019">2019</option>
-        <option value="2018">2018</option>
-        <option value="2017">2017</option>
-    </select>
-    <select style="display: none; margin: auto;" id="month_search" class="month_search" name="month_search"> 
-        <option style="display:none; width:300px;" >--month-- </option>
-        <option value="January">JANUARY</option>
-        <option value="February">FEBRUARY</option>
-        <option value="March">MARCH</option>
-        <option value="April">APRIL</option>
-        <option value="May">MAY</option>
-        <option value="June">JUNE</option>
-        <option value="July">JULY</option>
-        <option value="August">AUGUST</option>
-        <option value="September">SEPTEMBER</option>
-        <option value="October">OCTOBER</option>
-        <option value="November">NOVEMBER</option>
-        <option value="December">DECEMBER</option>
-    </select>
-<button id ="submit_button" style="display:none;" type="submit" name="submitt">Generate</button>
-    </div>
-  </div>
-</div>
-</form>
 
 
 

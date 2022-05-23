@@ -1,5 +1,5 @@
  <li>
-	<a href='index.php?r=administrator/IPCRcreate' title="Create IPCR within specified month and year">Create IPCR</a>
+	<a href='index.php?r=administrator/IPCRcreate' title="Create IPCR of specified month and year">Create IPCR</a>
 </li>
 
 <li>
@@ -11,7 +11,7 @@
 </li>
 
 <li>
-	<a href="index.php?r=administrator/IPCRInterpolation" title="Generate Report (Excel)">Generate Interpolation (Excel)</a>
+	<a href="index.php?r=administrator/IPCRinterpolview" title="Generate Report (Excel)">Generate Interpolation (Excel)</a>
 </li> 
 
  <!-- <li>

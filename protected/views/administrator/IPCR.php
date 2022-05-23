@@ -208,7 +208,7 @@ if(isset($_SESSION['user'])) {
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
+© Copyright 2021 <a href="#" title="Development Team">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
 <!-- Footer right -->

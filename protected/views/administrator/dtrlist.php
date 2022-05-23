@@ -243,6 +243,13 @@
 	  font-size: 28px;
 	  font-weight: bold;
 	}
+
+
+
+	.status_tab_apr
+	{
+
+	}
 </style>
 <?php
 require_once('config.php');
@@ -464,6 +471,13 @@ else if ($status == "approved")
 		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
 
+		<td>
+			<center>
+				<p>
+				'.$newresult['hap_comments'].'
+				</p>	
+			</center>
+		</td>
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
 
@@ -491,13 +505,6 @@ else if ($status == "approved")
 
 					</div>
 
-					
-
-
-
-
-
-
 		</center></td>
 		
 		</tr>
@@ -506,13 +513,18 @@ else if ($status == "approved")
 	}
 	if(empty($newresult))
 		{
+			echo "<h3 style='border: 2px solid black; background-color: green; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo "no records found";
+
 			
 		}
 		else
 		{
+
+			echo "<h3 style='border: 2px solid black; background-color: green; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo '
-			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
+			
+			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none; background-color:none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
 
@@ -548,7 +560,12 @@ else if ($status == "pending")
 		<td id="regpartime_id'.$counter.'"" style="text-align: center;">' . $newresult['regpartime'] . '</td>
 		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
-
+		<td>
+			<center>
+				
+				
+			</center>
+		</td>
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
 
@@ -591,14 +608,17 @@ else if ($status == "pending")
 	}
 	if(empty($newresult))
 		{
+			echo "<h3 style='border: 2px solid black; background-color: yellow; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo "no records found";
 			
 		}
 		else
 		{
 
+			echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo '
 			
+			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none; background-color:none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
 
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
 
@@ -625,15 +645,20 @@ else if($status == "disapproved")
 				
 			</center>
 		</td>
-		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'</td>
-		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
-		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
-		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
-		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
-		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-
+		<td id="faculty_id'.$counter.'" style="text-align: center;">' . $newresult['id']  .'</td>
+		<td id="fcode_id'.$counter.'"" hidden style="text-align: center;">' . $newresult['FCode'] . '</td>
+		<td id="surname_id'.$counter.'"" style="text-align: center;">' . $newresult['surname'] . ', ' . $newresult['firstname'] . ', ' . $newresult['middlename'] . '</td>
+		<td id="firstname_id'.$counter.'"" style="text-align: center;" hidden></td>
+		<td id="middlename_id'.$counter.'"" hidden></td>
+		<td id="regpartime_id'.$counter.'"" style="text-align: center;">' . $newresult['regpartime'] . '</td>
+		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
+		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
+		<td>
+			<center>
+				
+				
+			</center>
+		</td>
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
 
@@ -676,10 +701,12 @@ else if($status == "disapproved")
 		}
 		if(empty($newresult))
 		{
+			echo "<h3 style='border: 2px solid black; background-color: red; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo "no records found";
 		}
 		else
 		{
+			echo "<h3 style='border: 2px solid black; background-color: red; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo' 
 			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit" onclick="resubmit_dtr()">
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr">';
@@ -706,15 +733,19 @@ else if($status == "deleted")
 				
 			</center>
 		</td>
-		<td id="faculty_id'.$counter.'">' . $newresult['id']  .'</td>
-		<td id="fcode_id'.$counter.'"" hidden>' . $newresult['FCode'] . '</td>
-		<td id="surname_id'.$counter.'"">' . $newresult['surname'] . '</td>
-		<td id="firstname_id'.$counter.'"">' . $newresult['firstname'] . '</td>
-		<td id="middlename_id'.$counter.'"">' . $newresult['middlename'] . '</td>
-		<td id="regpartime_id'.$counter.'"">' . $newresult['regpartime'] . '</td>
-		<td id="month_id'.$counter.'"">' . $newresult['month'] . '</td>
-		<td id="year_id'.$counter.'"">' . $newresult['year'] . '</td>
-
+		<td id="faculty_id'.$counter.'" style="text-align: center;">' . $newresult['id']  .'</td>
+		<td id="fcode_id'.$counter.'"" hidden style="text-align: center;">' . $newresult['FCode'] . '</td>
+		<td id="surname_id'.$counter.'"" style="text-align: center;">' . $newresult['surname'] . ', ' . $newresult['firstname'] . ', ' . $newresult['middlename'] . '</td>
+		<td id="firstname_id'.$counter.'"" style="text-align: center;" hidden></td>
+		<td id="middlename_id'.$counter.'"" hidden></td>
+		<td id="regpartime_id'.$counter.'"" style="text-align: center;">' . $newresult['regpartime'] . '</td>
+		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
+		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
+		<td>
+			<center>
+				
+			</center>
+		</td>
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
 
@@ -757,10 +788,12 @@ else if($status == "deleted")
 		}
 		if(empty($newresult))
 		{
+			echo "<h3 style='border: 2px solid black; background-color: gray; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo "no records found";
 		}
 		else
 		{
+			echo "<h3 style='border: 2px solid black; background-color: gray; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo '
 			
 			<input style="display: none;" id="restorebtn" type="submit" name="restore" value="restore" onclick="restore_dtr()">
@@ -851,7 +884,6 @@ function change_color(_this,counter,status)
 		if(count == 1)
 		{
 			
-
 			deletebtn.style.display="block";
 			submitbtn.style.display="none";
 
@@ -920,12 +952,40 @@ function change_color(_this,counter,status)
 	}
 	else{
 		// submitbtn.style.display="block";
-		deletebtn.style.display="block";
-		if(count==0)
-		{
-			deletebtn.style.display="none";
-			// resubmitbtn.style.display="none";
+		// deletebtn.style.display="block";
+		// if(count==0)
+		// {
+		// 	deletebtn.style.display="none";
+		// 	submitbtn.style.display="none";
 
+		// }
+		if(count == 1)
+		{
+			
+			deletebtn.style.display="block";
+			submitbtn.style.display="none";
+
+		}
+		else if(count == 2)
+		{
+			submitbtn.style.display="block";
+			deletebtn.style.display="block";
+		}
+		else if(count >= 3)
+		{
+			submitbtn.style.display="none";
+			deletebtn.style.display="block";
+			if(count < 2)
+			{
+			submitbtn.style.display="none";
+				
+			}
+		}
+		
+		else
+		{
+			submitbtn.style.display="none";
+			deletebtn.style.display="none";
 		}
 		
 	}
@@ -934,7 +994,27 @@ function change_color(_this,counter,status)
 
 	if(counter=='generate')
 	{
-	 printfpdf(id,reg,mon,year);
+		if(status != 1)
+		{
+			Swal.fire({
+			title: 'Are you sure?',
+			text: "This DTR is not validated yet, click to continue",
+			icon: 'warning',
+			showCancelButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes'
+		}).then((result) => {
+			if (result.isConfirmed) 
+	 			printfpdf(id,reg,mon,year);
+
+			})
+		}
+		else
+		{
+	 		printfpdf(id,reg,mon,year);
+
+		}
 	}
 	
 }

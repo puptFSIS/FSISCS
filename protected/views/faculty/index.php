@@ -201,9 +201,9 @@ if(isset($_SESSION['user'])) {
 
 <!-- Page body -->
 
-<section class=container-block id=page-body>
+<!-- <section class=container-block id=page-body>
 
-<div class=container-inner>
+<div class=container-inner> -->
 
 <!-- Page title -->
 
@@ -231,7 +231,7 @@ if(isset($_SESSION['user'])) {
 
 <iframe width="600" height="315" src="//www.youtube.com/embed/__4sh3taajk?list=PL-E9-Z9XrAcTe-VQhI2O0fDyQRjhRM_OK" frameborder="0" allowfullscreen></iframe><h2 class=underlined-header></h2>
 
-<h2 class=underlined-header></h2>
+<!-- <h2 class=underlined-header></h2> -->
 
 <br />
 
@@ -369,9 +369,9 @@ if(isset($_SESSION['user'])) {
 
 <!-- End - Page body content -->
 
-</div>
+<!-- </div>
 
-</section>
+</section> -->
 
 <!-- End - Page body -->
 

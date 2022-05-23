@@ -97,7 +97,7 @@ class TblCurrentsyandsem extends CActiveRecord
 	}
 
 	public static function AllData(){
-		$sql = "SELECT * FROM tbl_currentSYandSem";
+		$sql = "SELECT * FROM tbl_currentsyandsem";
 
 		$row = Yii::app()->db->createCommand($sql)
 		->queryAll();

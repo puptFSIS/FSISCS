@@ -11,7 +11,7 @@
 </li>
 
 <li>
-	<a href="#" title="Generate Report (Excel)">Generate Interpolation (Excel)</a>
+	<a href="index.php?r=administrator/IPCRinterpolview" title="Generate Report (Excel)">Generate Interpolation (Excel)</a>
 </li> 
 
  <!-- <li>

@@ -2921,6 +2921,18 @@ class AdministratorController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
+    public function actionIPCRinterpolview2()
+    {
+    	$this->render('IPCRinterpolview2');
+    }
+    public function actionIPCRinterpolview()
+    {
+    	$this->render('IPCRinterpolview');
+    }
+    public function actionIPCRInterpolationSheet2()
+    {
+    	$this->render('IPCRInterpolationSheet2');
+    }
     public function actionIPCRInterpolationcomputable()
     {
     	$this->render('IPCRInterpolationcomputable');

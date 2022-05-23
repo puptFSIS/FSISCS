@@ -43,7 +43,7 @@ if(isset($_SESSION['user']))
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
 
 div.login p
 {
@@ -191,15 +191,15 @@ div.login p
 
 <!-- End - Page subheader -->
 <!-- Page body -->
-<section class=container-block id=page-body>
-<div class=container-inner>
+<!-- <section class=container-block id=page-body>
+<div class=container-inner> -->
 <!-- Page title -->
 <header id=page-title>
 <!-- Title and summary -->
 
 <!-- End - Title and summary -->
 <!-- Title right side -->
-<a href='http://pup-taguig.net/' title='Return to Home' id="home-btn">PUP Taguig Website</a>
+<a href='#' title='Return to Home' id="home-btn">PUP Taguig Website</a>
 
 <!-- End - Title right side -->
 </header>
@@ -298,7 +298,7 @@ Guidance Counselor III
 </ul>
 </div>
 
-<!--<div class="layout-1-3">
+<!-- <div class="layout-1-3">
 	<div class="toggle-block">
 		<div class="toggle-trigger">
 			<a href="#">FAQs</a>
@@ -359,7 +359,7 @@ Guidance Counselor III
 			</form>
 		</div>
 	</div>
-</div>-->
+</div> -->
 
 <h5>Presentation: <a href="http://www.youtube.com/watch?v=KIcbabmyK0E" target="_blank" id="presentation_link">Click Me!</a></h5>
 <font color="black">
@@ -432,8 +432,8 @@ Guidance Counselor III
 </div>
 </section>
 <!-- End - Page body content -->
-</div>
-</section>
+<!-- </div>
+</section> -->
 <!-- End - Page body -->
 
 <!-- Page footer -->
@@ -441,7 +441,7 @@ Guidance Counselor III
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-Copyright 2015 <a href="#" title="Dbooom Themes">Korra Development Team | PUP Taguig</a> - All Rights Reserved.
+Copyright 2015 <a href="#">Korra Development Team | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
 <!-- Footer right -->

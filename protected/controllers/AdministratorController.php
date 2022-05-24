@@ -3492,6 +3492,12 @@ class AdministratorController extends Controller
 	}
 
 
+	public function actionPhpword()
+	{
+		$this->render('PhpWord');
+
+	}
+
 	
 
 

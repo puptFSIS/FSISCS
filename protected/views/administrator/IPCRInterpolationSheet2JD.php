@@ -1,4 +1,4 @@
-<?php
+<?php 
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
 use \PhpOffice\PhpSpreadsheet\RichText\RichText;
@@ -6,82 +6,30 @@ use \PhpOffice\PhpSpreadsheet\Style\Border;
 use \PhpOffice\PhpSpreadsheet\Style\Color;
 use \PhpOffice\PhpSpreadsheet\Style\Fill;
 
-$myWorkSheet = new \PhpOffice\PhpSpreadsheet\Worksheet\Worksheet($spreadsheet, 'IPCR');
-
-
-
-$spreadsheet
-	->addSheet($myWorkSheet, 0);
-$spreadsheet
-	->setActiveSheetIndex(0);
-
-//set default font
-$spreadsheet->getDefaultStyle()
-			->getFont()
-			->setName('Calibri')
-			->setSize(8);
+	$richtext2 = new RichText(); 
+	$cellstyle2 = $richtext2->createTextRun('Strategic Priority');
+	$cellstyle2->getFont()->setBold(true)->setSize(8);
 
 $spreadsheet
 	->getActiveSheet()
-	->getColumnDimension('A')
+	->getColumnDimension('F')
 	->setAutoSize(true);
-
-$richtext = new RichText();
-//ichtext->createText('Name of Individual Performer: ');
-$cellStyle = $richtext->createTextRun('Name of Individual Performer: ');
-$cellStyle->getFont()->setBold(true)->setSize(8);
-
-
-$spreadsheet
-	->getActiveSheet()
-	->mergeCells('A1:C1')
-	->getCell('A1')->setValue($richtext);
-
-$richtextname = new RichText();
-//ichtext->createText('Name of Individual Performer: ');
-$cellStylename = $richtextname->createTextRun(''.$firstname.' '.$middlename.' '.$surname.'');
-$cellStylename->getFont()->setBold(true)->setSize(8);
-
-$spreadsheet
-	->getActiveSheet()
-	->setCellValue('D1',$richtextname);
-
-
-$spreadsheet
-	->getActiveSheet()
-	->mergeCells('A2:D2');
-
-$richtexttitle = new RichText();
-//ichtext->createText('Name of Individual Performer: ');
-$cellStyletitle = $richtexttitle->createTextRun('January to June IPCR');
-$cellStyletitle->getFont()->setBold(true)->setSize(8);
-
-$spreadsheet
-	->getActiveSheet()
-	->setCellValue('A2',$richtexttitle)
-	->getStyle('A2')
-    ->getAlignment()
-	->setHorizontal('center');
-
-$richtext2 = new RichText(); 
-$cellstyle2 = $richtext2->createTextRun('Strategic Priority');
-$cellstyle2->getFont()->setBold(true)->setSize(8);
 
 //Place the text inside the Cell
 $spreadsheet
 	->getActiveSheet()
-    ->mergeCells('A4:A5')
-    ->getStyle('A4:A5')
-    ->getBorders()
-    ->getOutline()
-    ->setBorderStyle(Border::BORDER_THIN)
+   ->mergeCells('F4:F5')
+   ->getStyle('F4:F5')
+   ->getBorders()
+   ->getOutline()
+   ->setBorderStyle(Border::BORDER_THIN)
 	->getActiveSheet()
-	->getCell('A4')
+	->getCell('F4')
 	->setValue($richtext2)
-	->getStyle('A4')
-    ->getAlignment()
-    ->setHorizontal('center')
-    ->setVertical('center');
+	->getStyle('F4')
+   ->getAlignment()
+   ->setHorizontal('center')
+   ->setVertical('center');
 
 $richtext3 = new RichText(); 
 $cellstyle3 = $richtext3->createTextRun('Points Earned');
@@ -89,49 +37,49 @@ $cellstyle3->getFont()->setBold(true)->setSize(8);
 
 $spreadsheet
 	->getActiveSheet()
-	->mergeCells('B4:D4')
-	->getStyle('B4:D4')
+	->mergeCells('G4:I4')
+	->getStyle('G4:I4')
     ->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-    ->getCell('B4')
+    ->getCell('G4')
 	->setValue($richtext3)
-	->getStyle('B4')
+	->getStyle('G4')
     ->getAlignment()
     ->setHorizontal('center');
 
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('B5',"Q")
-	->getStyle('B5')
+	->setCellValue('G5',"Q")
+	->getStyle('G5')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('B5')
+	->getStyle('G5')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('C5',"E")
-	->getStyle('C5')
+	->setCellValue('H5',"E")
+	->getStyle('H5')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('C5')
+	->getStyle('H5')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('D5',"T")
-	->getStyle('D5')
+	->setCellValue('I5',"T")
+	->getStyle('I5')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('D5')
+	->getStyle('I5')
     ->getAlignment()
     ->setHorizontal('center');
 
@@ -149,31 +97,32 @@ $spreadsheet
 
 // $spreadsheet = new Spreadsheet();
 // $sheet = $spreadsheet -> getActiveSheet();
-// foreach(range('A', 3) as $i) {
+// foreach(range('F', 3) as $i) {
 //    $sheet -> setCellValueByColumnAndRow($i, 6, 'Indicator/Output');
 // }
 
-$sql = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'sp' AND tbl_ipcr1.if_required = 'Required' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+$sql = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part = 'sp' AND tbl_ipcr2.if_required = 'Required' AND tbl_ipcr2.month = 'JD' AND tbl_ipcr2.year = '$year' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
 $results = mysqli_query($conn,$sql);
-$count = mysqli_num_rows($results);
+$countJD = mysqli_num_rows($results);
 
-	$counts = $count + 5; //add 5 to the total number of count to align on proper cell
-
-	$num = 1; //counter inside the loop
+	$counts = $countJD + 5;
+	
+	$num = 1; //counter inside for loop
 	for($i = 6; $i<= $counts; $i++)
 	{
 		$spreadsheet
 			->getActiveSheet()
-			->setCellValue('A'.$i.'',"Indicator/Output ".$num."")
-			->getStyle('A'.$i.'')
+			->setCellValue('F'.$i.'',"Indicator/Output ".$num."")
+			->getStyle('F'.$i.'')
 			->getBorders()
 			->getOutline()
 		    ->setBorderStyle(Border::BORDER_THIN);
 			$num++;		
 	}
+	
 	// echo $i;
 		$a = 6;	
-		$query = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'sp' AND tbl_ipcr1.if_required = 'Required' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+		$query = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part = 'sp' AND tbl_ipcr2.if_required = 'Required' AND tbl_ipcr2.month = 'JD' AND tbl_ipcr2.year = '$year' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
 		$query_result = mysqli_query($conn,$query);
 			
 		while($row = mysqli_fetch_assoc($query_result))
@@ -184,39 +133,40 @@ $count = mysqli_num_rows($results);
 			
 			$spreadsheet
 				->getActiveSheet()
-				->setCellValue('B'.$a.'',"".$q."")
-				->getStyle('B'.$a.'')
+				->setCellValue('G'.$a.'',"".$q."")
+				->getStyle('G'.$a.'')
 				->getBorders()
 			    ->getOutline()
 			    ->setBorderStyle(Border::BORDER_THIN)
 			    ->getActiveSheet()
-				->getStyle('B'.$a.'')
+				->getStyle('G'.$a.'')
 			    ->getAlignment()
 			    ->setHorizontal('center')
 
 			    ->getActiveSheet()
-				->setCellValue('C'.$a.'',"".$e."")
-				->getStyle('C'.$a.'')
+				->setCellValue('H'.$a.'',"".$e."")
+				->getStyle('H'.$a.'')
 				->getBorders()
 			    ->getOutline()
 			    ->setBorderStyle(Border::BORDER_THIN)
 			    ->getActiveSheet()
-				->getStyle('C'.$a.'')
+				->getStyle('H'.$a.'')
 			    ->getAlignment()
 			    ->setHorizontal('center')
 
 			    ->getActiveSheet()
-				->setCellValue('D'.$a.'',"".$t."")
-				->getStyle('D'.$a.'')
+				->setCellValue('I'.$a.'',"".$t."")
+				->getStyle('I'.$a.'')
 				->getBorders()
 			    ->getOutline()
 			    ->setBorderStyle(Border::BORDER_THIN)
 			    ->getActiveSheet()
-				->getStyle('D'.$a.'')
+				->getStyle('I'.$a.'')
 			    ->getAlignment()
 			    ->setHorizontal('center');
 			    $a++;
 		}
+		
 		// echo $a;
 		// die;
 		$col = $i - 1;
@@ -225,103 +175,97 @@ $count = mysqli_num_rows($results);
 // 		die;
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('A'.$a.'',"Total Points")
-	->getStyle('A'.$a.'')
+	->setCellValue('F'.$a.'',"Total Points")
+	->getStyle('F'.$a.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('A'.$a.'')
+	->getStyle('F'.$a.'')
     ->getAlignment()
     ->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('B'.$a.'',"=SUM(B6:B".$col.")")
-	->getStyle('B'.$a.'')
+	->setCellValue('G'.$a.'',"=SUM(G6:G".$col.")")
+	->getStyle('G'.$a.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('B'.$a.'')
+	->getStyle('G'.$a.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('C'.$a.'',"=SUM(C6:C".$col.")")
-	->getStyle('C'.$a.'')
+	->setCellValue('H'.$a.'',"=SUM(H6:H".$col.")")
+	->getStyle('H'.$a.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('C'.$a.'')
+	->getStyle('H'.$a.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('D'.$a.'',"=SUM(D6:D".$col.")")
-	->getStyle('D'.$a.'')
+	->setCellValue('I'.$a.'',"=SUM(I6:I".$col.")")
+	->getStyle('I'.$a.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('D'.$a.'')
+	->getStyle('I'.$a.'')
     ->getAlignment()
     ->setHorizontal('center');
 
-// echo $col;
-// die;
 
 $b = $a + 1; //cell column
-
-$cols = $a - 1; //cell column for range computation	
-
+$cols = $a - 1; //cell column for range computation
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('A'.$b.'',"No. of Item Ratings")
-	->getStyle('A'.$b.'')
+	->setCellValue('F'.$b.'',"No. of Item Ratings")
+	->getStyle('F'.$b.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('A'.$b.'')
+	->getStyle('F'.$b.'')
     ->getAlignment()
-    ->setHorizontal('center');
+    ->setHorizontal('center')
 
-
-	$spreadsheet
 	->getActiveSheet()
-	->setCellValue('B'.$b.'',"=COUNTA(B6:B".$cols.")")
-	->getStyle('B'.$b.'')
+	->setCellValue('G'.$b.'',"=COUNTA(G6:G".$col.")")
+	->getStyle('G'.$b.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('B'.$b.'')
+	->getStyle('G'.$b.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('C'.$b.'',"=COUNTA(C6:C".$cols.")")
-	->getStyle('C'.$b.'')
+	->setCellValue('H'.$b.'',"=COUNTA(H6:H".$col.")")
+	->getStyle('H'.$b.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('C'.$b.'')
+	->getStyle('H'.$b.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('D'.$b.'',"=COUNTA(D6:D".$cols.")")
-	->getStyle('D'.$b.'')
+	->setCellValue('I'.$b.'',"=COUNTA(I6:I".$col.")")
+	->getStyle('I'.$b.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('D'.$b.'')
+	->getStyle('I'.$b.'')
     ->getAlignment()
     ->setHorizontal('center');
-	
+
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     //CORE FUNCTION
@@ -336,15 +280,15 @@ $cellstylecf->getFont()->setBold(true)->setSize(8);
 //Place the text inside the Cell
 $spreadsheet
 	->getActiveSheet()
-    ->mergeCells('A'.$c.':A'.$merge.'')
-    ->getStyle('A'.$c.':A'.$merge.'')
+    ->mergeCells('F'.$c.':F'.$merge.'')
+    ->getStyle('F'.$c.':F'.$merge.'')
     ->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
 	->getActiveSheet()
-	->getCell('A'.$c.'')
+	->getCell('F'.$c.'')
 	->setValue($richtextcf)
-	->getStyle('A'.$c.'')
+	->getStyle('F'.$c.'')
     ->getAlignment()
     ->setHorizontal('center')
     ->setVertical('center');
@@ -357,54 +301,54 @@ $cellstylecf1->getFont()->setBold(true)->setSize(8);
 
 $spreadsheet
 	->getActiveSheet()
-	->mergeCells('B'.$c.':D'.$c.'')
-	->getStyle('B'.$c.':D'.$c.'')
+	->mergeCells('G'.$c.':I'.$c.'')
+	->getStyle('G'.$c.':I'.$c.'')
     ->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-    ->getCell('B'.$c.'')
+    ->getCell('G'.$c.'')
 	->setValue($richtextcf1)
-	->getStyle('B'.$c.'')
+	->getStyle('G'.$c.'')
     ->getAlignment()
     ->setHorizontal('center');
 
 $d = $c + 1;
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('B'.$d.'',"Q")
-	->getStyle('B'.$d.'')
+	->setCellValue('G'.$d.'',"Q")
+	->getStyle('G'.$d.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('B'.$d.'')
+	->getStyle('G'.$d.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('C'.$d.'',"E")
-	->getStyle('C'.$d.'')
+	->setCellValue('H'.$d.'',"E")
+	->getStyle('H'.$d.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('C'.$d.'')
+	->getStyle('H'.$d.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('D'.$d.'',"T")
-	->getStyle('D'.$d.'')
+	->setCellValue('I'.$d.'',"T")
+	->getStyle('I'.$d.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('D'.$d.'')
+	->getStyle('I'.$d.'')
     ->getAlignment()
     ->setHorizontal('center');
 
-    $sqlcf = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'cf' AND tbl_ipcr1.if_required = 'Required' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+    $sqlcf = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part = 'cf' AND tbl_ipcr2.if_required = 'Required' AND tbl_ipcr2.month = 'JD' AND tbl_ipcr2.year = '$year' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
 	$resultscf = mysqli_query($conn,$sqlcf);
 	$countcf = mysqli_num_rows($resultscf); //4
 	
@@ -416,8 +360,8 @@ $spreadsheet
 		
 		$spreadsheet
 			->getActiveSheet()
-			->setCellValue('A'.$j.'',"Indicator/Output ".$numcf."")
-			->getStyle('A'.$j.'')
+			->setCellValue('F'.$j.'',"Indicator/Output ".$numcf."")
+			->getStyle('F'.$j.'')
 			->getBorders()
 			->getOutline()
 		    ->setBorderStyle(Border::BORDER_THIN);
@@ -431,7 +375,7 @@ $spreadsheet
 	// 	$new = $j;
 	// 	echo $new;
 		$cell_loop = $cellcf;
-		$querycf = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'cf' AND tbl_ipcr1.if_required = 'Required' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+		$querycf = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part = 'cf' AND tbl_ipcr2.if_required = 'Required' AND tbl_ipcr2.month = 'JD' AND tbl_ipcr2.year = '$year' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
 		$query_resultcf = mysqli_query($conn,$querycf);
 		
 		while($row = mysqli_fetch_assoc($query_resultcf))
@@ -443,35 +387,35 @@ $spreadsheet
 			
 			$spreadsheet
 				->getActiveSheet()
-				->setCellValue('B'.$cell_loop.'',"".$q."")
-				->getStyle('B'.$cell_loop.'')
+				->setCellValue('G'.$cell_loop.'',"".$q."")
+				->getStyle('G'.$cell_loop.'')
 				->getBorders()
 			    ->getOutline()
 			    ->setBorderStyle(Border::BORDER_THIN)
 			    ->getActiveSheet()
-				->getStyle('B'.$cell_loop.'')
+				->getStyle('G'.$cell_loop.'')
 			    ->getAlignment()
 			    ->setHorizontal('center')
 
 			    ->getActiveSheet()
-				->setCellValue('C'.$cell_loop.'',"".$e."")
-				->getStyle('C'.$cell_loop.'')
+				->setCellValue('H'.$cell_loop.'',"".$e."")
+				->getStyle('H'.$cell_loop.'')
 				->getBorders()
 			    ->getOutline()
 			    ->setBorderStyle(Border::BORDER_THIN)
 			    ->getActiveSheet()
-				->getStyle('C'.$cell_loop.'')
+				->getStyle('H'.$cell_loop.'')
 			    ->getAlignment()
 			    ->setHorizontal('center')
 
 			    ->getActiveSheet()
-				->setCellValue('D'.$cell_loop.'',"".$t."")
-				->getStyle('D'.$cell_loop.'')
+				->setCellValue('I'.$cell_loop.'',"".$t."")
+				->getStyle('I'.$cell_loop.'')
 				->getBorders()
 			    ->getOutline()
 			    ->setBorderStyle(Border::BORDER_THIN)
 			    ->getActiveSheet()
-				->getStyle('D'.$cell_loop.'')
+				->getStyle('I'.$cell_loop.'')
 			    ->getAlignment()
 			    ->setHorizontal('center');
 			    $cell_loop++;
@@ -480,46 +424,46 @@ $spreadsheet
 $cell_loop_new = $cell_loop - 1;
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('A'.$j.'',"Total Points")
-	->getStyle('A'.$j.'')
+	->setCellValue('F'.$j.'',"Total Points")
+	->getStyle('F'.$j.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('A'.$j.'')
+	->getStyle('F'.$j.'')
     ->getAlignment()
     ->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('B'.$j.'',"=SUM(B".$cellcf.":B".$cell_loop_new.")")
-	->getStyle('B'.$j.'')
+	->setCellValue('G'.$j.'',"=SUM(G".$cellcf.":G".$cell_loop_new.")")
+	->getStyle('G'.$j.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('B'.$j.'')
+	->getStyle('G'.$j.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('C'.$j.'',"=SUM(C".$cellcf.":C".$cell_loop_new.")")
-	->getStyle('C'.$j.'')
+	->setCellValue('H'.$j.'',"=SUM(H".$cellcf.":H".$cell_loop_new.")")
+	->getStyle('H'.$j.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('C'.$j.'')
+	->getStyle('H'.$j.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('D'.$j.'',"=SUM(D".$cellcf.":D".$cell_loop_new.")")
-	->getStyle('D'.$j.'')
+	->setCellValue('I'.$j.'',"=SUM(I".$cellcf.":I".$cell_loop_new.")")
+	->getStyle('I'.$j.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('D'.$j.'')
+	->getStyle('I'.$j.'')
     ->getAlignment()
     ->setHorizontal('center');
 
@@ -529,46 +473,46 @@ $j2 = $j + 1; //Add +1 column to the latest column
 
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('A'.$j2.'',"No. of Item Ratings")
-	->getStyle('A'.$j2.'')
+	->setCellValue('F'.$j2.'',"No. of Item Ratings")
+	->getStyle('F'.$j2.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('A'.$j2.'')
+	->getStyle('F'.$j2.'')
     ->getAlignment()
     ->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('B'.$j2.'',"=COUNTA(B".$cellcf.":B".$cell_loop_new.")")
-	->getStyle('B'.$j2.'')
+	->setCellValue('G'.$j2.'',"=COUNTA(G".$cellcf.":G".$cell_loop_new.")")
+	->getStyle('G'.$j2.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('B'.$j2.'')
+	->getStyle('G'.$j2.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('C'.$j2.'',"=COUNTA(C".$cellcf.":C".$cell_loop_new.")")
-	->getStyle('C'.$j2.'')
+	->setCellValue('H'.$j2.'',"=COUNTA(H".$cellcf.":H".$cell_loop_new.")")
+	->getStyle('H'.$j2.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('C'.$j2.'')
+	->getStyle('H'.$j2.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('D'.$j2.'',"=COUNTA(D".$cellcf.":D".$cell_loop_new.")")
-	->getStyle('D'.$j2.'')
+	->setCellValue('I'.$j2.'',"=COUNTA(I".$cellcf.":I".$cell_loop_new.")")
+	->getStyle('I'.$j2.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('D'.$j2.'')
+	->getStyle('I'.$j2.'')
     ->getAlignment()
     ->setHorizontal('center');
 
@@ -588,15 +532,15 @@ $cellstylesf->getFont()->setBold(true)->setSize(8);
 //Place the text inside the Cell
 $spreadsheet
 	->getActiveSheet()
-    ->mergeCells('A'.$d.':A'.$mergecell.'')
-    ->getStyle('A'.$d.':A'.$mergecell.'')
+    ->mergeCells('F'.$d.':F'.$mergecell.'')
+    ->getStyle('F'.$d.':F'.$mergecell.'')
     ->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
 	->getActiveSheet()
-	->getCell('A'.$d.'')
+	->getCell('F'.$d.'')
 	->setValue($richtextsf)
-	->getStyle('A'.$d.'')
+	->getStyle('F'.$d.'')
     ->getAlignment()
     ->setHorizontal('center')
     ->setVertical('center');
@@ -609,54 +553,54 @@ $cellstylesf1->getFont()->setBold(true)->setSize(8);
 
 $spreadsheet
 	->getActiveSheet()
-	->mergeCells('B'.$d.':D'.$d.'')
-	->getStyle('B'.$d.':D'.$d.'')
+	->mergeCells('G'.$d.':I'.$d.'')
+	->getStyle('G'.$d.':I'.$d.'')
     ->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-    ->getCell('B'.$d.'')
+    ->getCell('G'.$d.'')
 	->setValue($richtextsf1)
-	->getStyle('B'.$d.'')
+	->getStyle('G'.$d.'')
     ->getAlignment()
     ->setHorizontal('center');
 
 $e = $d + 1;
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('B'.$e.'',"Q")
-	->getStyle('B'.$e.'')
+	->setCellValue('G'.$e.'',"Q")
+	->getStyle('G'.$e.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('B'.$e.'')
+	->getStyle('G'.$e.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('C'.$e.'',"E")
-	->getStyle('C'.$e.'')
+	->setCellValue('H'.$e.'',"E")
+	->getStyle('H'.$e.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('C'.$e.'')
+	->getStyle('H'.$e.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('D'.$e.'',"T")
-	->getStyle('D'.$e.'')
+	->setCellValue('I'.$e.'',"T")
+	->getStyle('I'.$e.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('D'.$e.'')
+	->getStyle('I'.$e.'')
     ->getAlignment()
     ->setHorizontal('center');
 
-    $sqlsf = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'sf' AND tbl_ipcr1.if_required = 'Required' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+    $sqlsf = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part = 'sf' AND tbl_ipcr2.if_required = 'Required' AND tbl_ipcr2.month = 'JD' AND tbl_ipcr2.year = '$year' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
 	$resultssf = mysqli_query($conn,$sqlsf);
 	$countsf = mysqli_num_rows($resultssf); //4
 	
@@ -669,22 +613,17 @@ $spreadsheet
 		
 		$spreadsheet
 			->getActiveSheet()
-			->setCellValue('A'.$k.'',"Indicator/Output ".$numsf."")
-			->getStyle('A'.$k.'')
+			->setCellValue('F'.$k.'',"Indicator/Output ".$numsf."")
+			->getStyle('F'.$k.'')
 			->getBorders()
 			->getOutline()
 		    ->setBorderStyle(Border::BORDER_THIN);
 		    $numsf++;
 					
 	}
-// 	// echo $countscftable;
-// 	// echo $j;
-// 	// echo $cell;
-// 	  // die;
-// 	// 	$new = $j;
-// 	// 	echo $new;
+
 		$cell_loop_sf = $cellsf;
-		$querysf = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'sf' AND tbl_ipcr1.if_required = 'Required' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+		$querysf = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part = 'sf' AND tbl_ipcr2.if_required = 'Required' AND tbl_ipcr2.month = 'JD' AND tbl_ipcr2.year = '$year' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
 		$query_resultsf = mysqli_query($conn,$querysf);
 		
 		while($row = mysqli_fetch_assoc($query_resultsf))
@@ -696,35 +635,35 @@ $spreadsheet
 			
 			$spreadsheet
 				->getActiveSheet()
-				->setCellValue('B'.$cell_loop_sf.'',"".$q."")
-				->getStyle('B'.$cell_loop_sf.'')
+				->setCellValue('G'.$cell_loop_sf.'',"".$q."")
+				->getStyle('G'.$cell_loop_sf.'')
 				->getBorders()
 			    ->getOutline()
 			    ->setBorderStyle(Border::BORDER_THIN)
 			    ->getActiveSheet()
-				->getStyle('B'.$cell_loop_sf.'')
+				->getStyle('G'.$cell_loop_sf.'')
 			    ->getAlignment()
 			    ->setHorizontal('center')
 
 			    ->getActiveSheet()
-				->setCellValue('C'.$cell_loop_sf.'',"".$e."")
-				->getStyle('C'.$cell_loop_sf.'')
+				->setCellValue('H'.$cell_loop_sf.'',"".$e."")
+				->getStyle('H'.$cell_loop_sf.'')
 				->getBorders()
 			    ->getOutline()
 			    ->setBorderStyle(Border::BORDER_THIN)
 			    ->getActiveSheet()
-				->getStyle('C'.$cell_loop_sf.'')
+				->getStyle('H'.$cell_loop_sf.'')
 			    ->getAlignment()
 			    ->setHorizontal('center')
 
 			    ->getActiveSheet()
-				->setCellValue('D'.$cell_loop_sf.'',"".$t."")
-				->getStyle('D'.$cell_loop_sf.'')
+				->setCellValue('I'.$cell_loop_sf.'',"".$t."")
+				->getStyle('I'.$cell_loop_sf.'')
 				->getBorders()
 			    ->getOutline()
 			    ->setBorderStyle(Border::BORDER_THIN)
 			    ->getActiveSheet()
-				->getStyle('D'.$cell_loop_sf.'')
+				->getStyle('I'.$cell_loop_sf.'')
 			    ->getAlignment()
 			    ->setHorizontal('center');
 			    $cell_loop_sf++;
@@ -733,46 +672,46 @@ $spreadsheet
 $cell_loop_sf_new = $cell_loop_sf - 1;
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('A'.$k.'',"Total Points")
-	->getStyle('A'.$k.'')
+	->setCellValue('F'.$k.'',"Total Points")
+	->getStyle('F'.$k.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('A'.$k.'')
+	->getStyle('F'.$k.'')
     ->getAlignment()
     ->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('B'.$k.'',"=SUM(B".$cellsf.":B".$cell_loop_sf_new.")")
-	->getStyle('B'.$k.'')
+	->setCellValue('G'.$k.'',"=SUM(G".$cellsf.":G".$cell_loop_sf_new.")")
+	->getStyle('G'.$k.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('B'.$k.'')
+	->getStyle('G'.$k.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('C'.$k.'',"=SUM(C".$cellsf.":C".$cell_loop_sf_new.")")
-	->getStyle('C'.$k.'')
+	->setCellValue('H'.$k.'',"=SUM(H".$cellsf.":H".$cell_loop_sf_new.")")
+	->getStyle('H'.$k.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('C'.$k.'')
+	->getStyle('H'.$k.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('D'.$k.'',"=SUM(D".$cellsf.":D".$cell_loop_sf_new.")")
-	->getStyle('D'.$k.'')
+	->setCellValue('I'.$k.'',"=SUM(I".$cellsf.":I".$cell_loop_sf_new.")")
+	->getStyle('I'.$k.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('D'.$k.'')
+	->getStyle('I'.$k.'')
     ->getAlignment()
     ->setHorizontal('center');
 
@@ -782,69 +721,47 @@ $cell_itemRating = $k + 1; //Add +1 column to the latest column
 // $cell_loop_new = $cell_loop - 1;
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('A'.$cell_itemRating.'',"No. of Item Ratings")
-	->getStyle('A'.$cell_itemRating.'')
+	->setCellValue('F'.$cell_itemRating.'',"No. of Item Ratings")
+	->getStyle('F'.$cell_itemRating.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('A'.$cell_itemRating.'')
+	->getStyle('F'.$cell_itemRating.'')
     ->getAlignment()
     ->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('B'.$cell_itemRating.'',"=COUNTA(B".$cellsf.":B".$cell_loop_sf_new.")")
-	->getStyle('B'.$cell_itemRating.'')
+	->setCellValue('G'.$cell_itemRating.'',"=COUNTA(G".$cellsf.":G".$cell_loop_sf_new.")")
+	->getStyle('G'.$cell_itemRating.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('B'.$cell_itemRating.'')
+	->getStyle('G'.$cell_itemRating.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('C'.$cell_itemRating.'',"=COUNTA(C".$cellsf.":C".$cell_loop_sf_new.")")
-	->getStyle('C'.$cell_itemRating.'')
+	->setCellValue('H'.$cell_itemRating.'',"=COUNTA(H".$cellsf.":H".$cell_loop_sf_new.")")
+	->getStyle('H'.$cell_itemRating.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('C'.$cell_itemRating.'')
+	->getStyle('H'.$cell_itemRating.'')
     ->getAlignment()
     ->setHorizontal('center')
 
     ->getActiveSheet()
-	->setCellValue('D'.$cell_itemRating.'',"=COUNTA(D".$cellsf.":D".$cell_loop_sf_new.")")
-	->getStyle('D'.$cell_itemRating.'')
+	->setCellValue('I'.$cell_itemRating.'',"=COUNTA(I".$cellsf.":I".$cell_loop_sf_new.")")
+	->getStyle('I'.$cell_itemRating.'')
 	->getBorders()
     ->getOutline()
     ->setBorderStyle(Border::BORDER_THIN)
     ->getActiveSheet()
-	->getStyle('D'.$cell_itemRating.'')
+	->getStyle('I'.$cell_itemRating.'')
     ->getAlignment()
     ->setHorizontal('center');
-
-
-
-
-/////////////////////////////////////////////////////////////////////////////
-$spreadsheet
-	->getActiveSheet()
-	->mergeCells('F2:I2');
-
-$richtexttitle = new RichText();
-//ichtext->createText('Name of Individual Performer: ');
-$cellStyletitle = $richtexttitle->createTextRun('July to December IPCR');
-$cellStyletitle->getFont()->setBold(true)->setSize(8);
-
-$spreadsheet
-	->getActiveSheet()
-	->setCellValue('F2',$richtexttitle)
-	->getStyle('F2')
-    ->getAlignment()
-	->setHorizontal('center');
-
-include('IPCRInterpolationSheet2JD.php');
-
+    
 ?>

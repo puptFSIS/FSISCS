@@ -138,7 +138,7 @@ if(isset($_SESSION['user'])) {
 .w3-code {
     width: 70%; 
     margin-left: -15%;
-    height: 90px;
+    height: 155px;
 }
 .disabled{
   pointer-events: none;
@@ -197,9 +197,13 @@ if(isset($_SESSION['user'])) {
 <a href="index.php?r=faculty/IPCRcreatefaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
 <section>
 <div class="w3-code notranslate cssHigh">
+    <small><strong>REMINDERS</strong></small>
+    <br>
     <small><strong><b id="asterisk">*</b> - Required Fields.</strong></small>
     <br>
-    <small><strong>After Review, If you got "Disapprove" on Approval part, you can click it to view the reason/feedback.</strong></small>
+    <small><strong><li>All REQUIRED FIELDS is used on Approval so checked before you submit.</li></strong></small>
+    <small><strong><li>After Review, If you got "Disapproved" on Approval part, you can click it to view the reason/feedback.</li></strong></small>
+
 </div>
 <table class=round-3 style="width:132%; margin-left: -15%;" id="shadow">
 <thead>
@@ -261,9 +265,9 @@ if(isset($_SESSION['user'])) {
         
                     <td id="approval" name="approval" style="text-align: center;">
                         <strong>
-                        <?php if($rowsp['adminApproval'] == "Approve") : ?>
+                        <?php if($rowsp['adminApproval'] == "Approved") : ?>
                                 <p style=" color: Green;"><?= $rowsp['adminApproval'] ?> </p>
-                        <?php elseif($rowsp['adminApproval'] == "Disapprove") : ?>
+                        <?php elseif($rowsp['adminApproval'] == "Disapproved") : ?>
 
                             <!-- Modal of Disapprove to view Feedback -->
                                 
@@ -388,9 +392,9 @@ if(isset($_SESSION['user'])) {
         
                     <td id="approval" name="approval" style="text-align: center;">
                         <strong>
-                        <?php if($rowcf['adminApproval'] == "Approve") : ?>
+                        <?php if($rowcf['adminApproval'] == "Approved") : ?>
                                 <p style=" color: Green;"><?= $rowcf['adminApproval'] ?> </p>
-                        <?php elseif($rowcf['adminApproval'] == "Disapprove") : ?>
+                        <?php elseif($rowcf['adminApproval'] == "Disapproved") : ?>
 
                             <!-- Modal of Disapprove to view Feedback -->
                                 
@@ -500,9 +504,9 @@ if(isset($_SESSION['user'])) {
         
                     <td id="approval" name="approval" style="text-align: center;">
                         <strong>
-                        <?php if($rowsf['adminApproval'] == "Approve") : ?>
+                        <?php if($rowsf['adminApproval'] == "Approved") : ?>
                                 <p style=" color: Green;"><?= $rowsf['adminApproval']; ?> </p>
-                        <?php elseif($rowsf['adminApproval'] == "Disapprove") : ?>
+                        <?php elseif($rowsf['adminApproval'] == "Disapproved") : ?>
 
                             
                                 <!-- Fetch the feedback to the db to view on the Modal -->

@@ -718,7 +718,6 @@ $spreadsheet
 
 $cell_itemRating = $k + 1; //Add +1 column to the latest column 
 
-// $cell_loop_new = $cell_loop - 1;
 $spreadsheet
 	->getActiveSheet()
 	->setCellValue('F'.$cell_itemRating.'',"No. of Item Ratings")

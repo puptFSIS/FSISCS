@@ -217,12 +217,8 @@ $count = mysqli_num_rows($results);
 			    ->setHorizontal('center');
 			    $a++;
 		}
-		// echo $a;
-		// die;
-		$col = $i - 1;
-// echo $col; 
-// echo $i; 
-// 		die;
+		$col = $i - 1; //Get the latest value of i and deminish by 1 to get the sum of 
+
 $spreadsheet
 	->getActiveSheet()
 	->setCellValue('A'.$a.'',"Total Points")
@@ -267,9 +263,6 @@ $spreadsheet
 	->getStyle('D'.$a.'')
     ->getAlignment()
     ->setHorizontal('center');
-
-// echo $col;
-// die;
 
 $b = $a + 1; //cell column
 
@@ -424,12 +417,6 @@ $spreadsheet
 		    $numcf++;
 					
 	}
-	// echo $countscftable;
-	// echo $j;
-	// echo $cell;
-	  // die;
-	// 	$new = $j;
-	// 	echo $new;
 		$cell_loop = $cellcf;
 		$querycf = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'cf' AND tbl_ipcr1.if_required = 'Required' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
 		$query_resultcf = mysqli_query($conn,$querycf);

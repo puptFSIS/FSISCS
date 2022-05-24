@@ -768,7 +768,7 @@
         $counter = 0;
         $newresult_array  = [];  
         $temporary_list = ["REGULAR","PART-TIME","TS","OT"];
-        $sql="SELECT DISTINCT * FROM tbl_dtr where status != 1 and hap_approval_status = 1";
+        $sql="SELECT DISTINCT * FROM tbl_dtr where hap_approval_status !=2";
         $result=mysqli_query($conn,$sql);
 
         
@@ -811,10 +811,10 @@
 			$namecounter = 0;
 			$namecounterarray = [];
 
-           		$sql="SELECT DISTINCT * FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
+           		$sql="SELECT DISTINCT * FROM tbl_dtr hap_approval_status != 2 and `regpartime` = 'REGULAR'";
     			$result=mysqli_query($conn,$sql);
 
-           		$sql="SELECT DISTINCT FCode FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
+           		$sql="SELECT DISTINCT FCode FROM tbl_dtr where hap_approval_status != 2 and `regpartime` = 'REGULAR'";
     			$result_distinct=mysqli_query($conn,$sql);
 
     			

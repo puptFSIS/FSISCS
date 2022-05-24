@@ -156,7 +156,7 @@
 
 
 </style>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- //cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css -->
 <!-- <script src="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"></script> -->

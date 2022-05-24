@@ -1,8 +1,9 @@
 <?php
 
 // $phpWord = new \PhpOffice\PhpWord\bootstrap.php();
-require_once '\PhpOffice\PhpWord\bootstrap.php';
 
+// require 'PhpWord/vendor/phpoffice/phpword/bootstrap.php';
+require 'PhpWord/vendor/autoload.php';
 // Creating the new document...
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
@@ -55,14 +56,17 @@ $fontStyle->setSize(13);
 $myTextElement = $section->addText('"Believe you can and you\'re halfway there." (Theodor Roosevelt)');
 $myTextElement->setFontStyle($fontStyle);
 
+
+////////////////////////////////////////////////////////////////////////////////////////////
+header("Content-Type: application/vnd.ms-word"); 
+header("Expires: 0"); 
+header("Cache-Control: must-revalidate, post-check=0, pre-check=0"); 
+header("content-disposition: attachment;filename=Report.docx");
+
+
 // Saving the document as OOXML file...
 $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-$objWriter->save('helloWorld.docx');
-
-// Saving the document as ODF file...
-$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'ODText');
-$objWriter->save('helloWorld.odt');
-
-// Saving the document as HTML file...
-$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'HTML');
-$objWriter->save('helloWorld.html');
+ob_clean();
+$objWriter->save('php://output');
+die;
+?>

@@ -620,3 +620,283 @@ REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:30:13 [error] [php] require_once(\PhpOffice\PhpWord\bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:32:18 [error] [php] require_once(PhpWord\bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:32:40 [error] [php] require_once(phpoffice\phpword\bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:36:01 [error] [php] require_once(phpoffice/phpword/bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:5)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require_once()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (5)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (5)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:36:24 [error] [php] require(phpoffice/phpword/bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:5)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (5)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (5)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:37:28 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:37:37 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:38:23 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:38:27 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:39:19 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:39:19 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:39:36 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:41:20 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:41:32 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---

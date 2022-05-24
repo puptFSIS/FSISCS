@@ -6,14 +6,12 @@
 		.dtr_form
 		{
 			
-			width: 560px;
-			height: 1200px;
+			width: 100%;
+			height: 200%;
 			background-color: white;
 			border: 1px solid black;
 			border-radius: 10px;
 	
-
-
 		}
 		.dtr_type_id
 		{
@@ -498,11 +496,25 @@
 			font-weight: bold;
 		}
 
+		input[type="time"]{ 
+			margin: auto;
+		    width:62px;
+		} 
+		input[type="time"]::-webkit-datetime-edit-ampm-field {
+		   display: none;
+		 }
+		 input[type=time]::-webkit-clear-button {
+		   -webkit-appearance: none;
+		   -moz-appearance: none;
+		   appearance: none;
+		   margin: 0; 
+		 }
+		 .date_dtr{
+		 	width: 10%;
+		 	margin: auto;
+		 }
 
-
-		<p class="month_text">For the month of  </p>
-		<p id="month_holder"><?php echo " ".date("M Y");?></p>
-
+		
 	
 	</style>
 
@@ -510,7 +522,7 @@
 	<script src='assets/sweetalert2.all.min.js'></script>
 	<?php include("config.php"); include("getPersonalInformation.php");
 		$array_month =array('January','February','March','April','May','June','July','August','September','October','November','December');
-		if(isset($_POST['submit'])) 
+		if(isset($_POST['submitt'])) 
 		{
 			$RegPartTemp = $_POST['dtr1'];
 			$month = $_POST['dtr2'];
@@ -566,12 +578,12 @@
 
 </head>
 <body>
-	<form method="POST">
+	<form action="" method="POST" id="frm_input_srt">
 		<div class="dtr_form" >
 			<div class="header">
 				<!-- <input class="dtr_type_id" type="text" name="DTR-TYPE_NAME" value="DTR-TYPE"> -->
 					<td><input id="count_day" class="onetothirtyone_input" type="hidden" name="count_day"></td>
-					  <select class="dtr_type_id" name="dtr1" id="dtr" onmouseover="mouseOver()" onmouseout="mouseOut()" onchange="timeprof(this)">
+					  <select class="dtr_type_id" name="dtr1" id="dtr"  onchange="timeprof(this)">
 					  	<option style="display:none;">LOAD TYPE</option>
 					    <option value="REGULAR" id="bg_dropdown">REGULAR</option>
 					    <option value="PART-TIME" id="bg_dropdown">PART-TIME</option>
@@ -611,7 +623,7 @@
 				<select class="year_dropdown" id="year_dropdown_id" name="dtr3" onchange="getYear(this)" >
 						<!-- <option value=""></option> -->
 						<option style="display:none;" value="<?php echo date("Y");?>" ><?php echo date("Y");?></option>
-						<option style="background-color: white" value="2021">2022</option>
+						<option style="background-color: white" value="2022">2022</option>
 					    <option style="background-color: white" value="2021">2021</option>
 					    <option style="background-color: white" value="2020">2020</option>
 					    <option style="background-color: white" value="2019">2019</option>
@@ -658,11 +670,11 @@
 						?>
 					<tr>
 						<input id="cells_datee<?php echo $i; ?>" name="cells_datee<?php echo $i; ?>" type="hidden" >
-						<td id="cells_date<?php echo $i; ?>" name="cells_date<?php echo $i; ?>" ></td>
-						<td><input id="cells_am_arr<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_am_arr<?php echo $i; ?>"></td>
-						<td><input id="cells_am_dep<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_am_dep<?php echo $i; ?>"></td>
-						<td><input id="cells_pm_arr<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_pm_arr<?php echo $i; ?>"></td>
-						<td><input id="cells_pm_dep<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_pm_dep<?php echo $i; ?>"></td>
+						<td class="date_dtr" id="cells_date<?php echo $i; ?>" name="cells_date<?php echo $i; ?>" ></td>
+						<td><input id="cells_am_arr<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_am_arr<?php echo $i; ?>"></td>
+						<td><input id="cells_am_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_am_dep<?php echo $i; ?>"></td>
+						<td><input id="cells_pm_arr<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_arr<?php echo $i; ?>"></td>
+						<td><input id="cells_pm_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_dep<?php echo $i; ?>"></td>
 						<td><input id="cells_hrs_under<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_hrs_under<?php echo $i; ?>"></td>
 						<td><input id="cells_min_under<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_min_under<?php echo $i; ?>"></td> 
 					</tr>
@@ -690,7 +702,7 @@
 			<input class="footer_incharge" type="text" name="in_charge" value="MARRISA B. FERRER" >
 			<p class="footer_incharge_text">In Charge</p>
 		</div>
-		<input id="submitbtn" type="submit" name="submit" value="Submit" disabled>
+		<input id="submitbtn" type="submit" name="submitt" value="Submit" disabled>
 		<!-- <button id=submitbtn2 type="submit" >test</button> -->
 		</form>
 	
@@ -698,51 +710,65 @@
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
 	<script id=js-dispatcher src='scripts/scripts.js'></script>
-	<script>
-
-	    
-
-	    
-	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script>
-		  window.onload = function() {
-             var today = new Date();   
-             var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-             var month = today.getMonth()+1
-             var year = today.getFullYear();
-             var day = today.getDate();
-             var getDaysInMonth = function(month,year) {
-              return new Date(year, month, 0).getDate()
-             };
+		  // window.onload = function() {
+    //          var today = new Date();   
+    //          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    //          var month = today.getMonth()+1
+    //          var year = today.getFullYear();
+    //          var day = today.getDate();
+    //          var getDaysInMonth = function(month,year) {
+    //           return new Date(year, month, 0).getDate()
+    //          };
 
-            if(getDaysInMonth(month,year) === day)
-             {
-                 alert(" Today is "+date+" Generate and print your DTR now ");
+    //         if(getDaysInMonth(month,year) === day)
+    //          {
+    //              alert(" Today is "+date+" Generate and print your DTR now ");
 
-             }
-         };
+    //          }
+    //      };
+    		window.addEventListener('load', (event) =>{
+		    	getmonthyear();
+			});
 
-	        $('#submitbtn').on('click',function()	
-		    {
-		    	Swal.fire({
-				  title: 'Are you sure?',
-				  text: "Create this DTR now?",
-				  icon: 'warning',
-				  showCancelButton: true,
-				  confirmButtonColor: '#3085d6',
-				  cancelButtonColor: '#d33',
-				  confirmButtonText: 'Yes!'
-				}).then((result) => {
-				  if (result.isConfirmed) {
-				    Swal.fire(
-				      'SUCCESS!',
-				      'Your DTR has been generated',
-				      'success'
-				    )
-				  }
-				})
-		    });
+		        $('form #submitbtn').on('click',function(e)	
+			    {
+			    	e.preventDefault();
+
+			    	Swal.fire({
+					  title: 'Are you sure?',
+					  text: "Create this DTR now?",
+					  icon: 'warning',
+					  showCancelButton: true,
+					  confirmButtonColor: '#3085d6',
+					  cancelButtonColor: '#d33',
+					  confirmButtonText: 'Yes!'
+					}).then((result) => {
+					  if (result.isConfirmed) {
+
+					    Swal.fire({
+					      title: 'DTR Generated Successfully',
+						  text: 'Redirecting...',
+						  icon: 'success',
+						  timer: 1700,
+						  showConfirmButton:false, 
+						  showCancelButton:false
+					    }).then((result) => {
+					    	var formm = document.getElementById('frm_input_srt');
+					    	formm.submit();
+					    })
+					    
+					    
+					  }else {
+				        Swal.fire(
+				            'Canceled',
+				            'Your data not deleted',
+				            'error'
+				        )
+				    }
+					})
+			    });
 
 	    
 
@@ -844,6 +870,40 @@
 				d3++;
 			}
 
+			//this below is for removing type time if days of month is not 31 
+			if(x3!==0 && d3!==0)
+			{
+				var cd = document.getElementById('count_day').value;
+		    	if(cd!=31)
+		    	{
+		    		cd++;
+			    	for(var adate=cd;adate<=31;adate++)
+			    	{
+			    		var cells_am_arr = document.getElementById('cells_am_arr'+adate);
+			    		cells_am_arr.type='text';
+			    		var cells_am_dep = document.getElementById('cells_am_dep'+adate);
+			    		cells_am_dep.type='text';
+			    		var cells_pm_arr = document.getElementById('cells_pm_arr'+adate);
+			    		cells_pm_arr.type='text';
+			    		var cells_pm_dep = document.getElementById('cells_pm_dep'+adate);
+			    		cells_pm_dep.type='text';
+			    	}
+			    }
+			    else{
+			    	for(var adate=1;adate<=31;adate++)
+			    	{
+			    		var cells_am_arr = document.getElementById('cells_am_arr'+adate);
+			    		cells_am_arr.type='time';
+			    		var cells_am_dep = document.getElementById('cells_am_dep'+adate);
+			    		cells_am_dep.type='time';
+			    		var cells_pm_arr = document.getElementById('cells_pm_arr'+adate);
+			    		cells_pm_arr.type='time';
+			    		var cells_pm_dep = document.getElementById('cells_pm_dep'+adate);
+			    		cells_pm_dep.type='time';
+			    	}
+			    }
+			}
+
 			if(m2!==0 && x3!==0 && d3!==0)
   			{
 	  			$.ajax({
@@ -853,7 +913,9 @@
 		      dataType:"JSON",
 		      success:function(data){
 		      	var final_stimes;
+		      	var finalfinal_stimes;
 		      	var final_stimee;
+		      	var finalfinal_stimee;
 		      	var stimes_hold = [];
 		      	var stimee_hold = [];
 		      	var final_stimes_pm;
@@ -873,6 +935,8 @@
 		    		cells_pm_arr.value='';
 		    		var cells_pm_dep = document.getElementById('cells_pm_dep'+a);
 		    		cells_pm_dep.value='';
+
+
 		    		var i = document.getElementById('cells_datee'+a).value;
 		    		var ii = i.replace(/[0-9]/g, '');
 		    		var new_ii = ii.replace(/^[\s\d]+/, '');
@@ -928,7 +992,8 @@
 				if (stimes_hold.length==1 && stimes_hold[0]<1200)
 				{
 					final_stimes = stimes_hold[0];
-					cells_am_arr.value = final_stimes;
+					finalfinal_stimes = Array.from(final_stimes.toString());
+					cells_am_arr.value = finalfinal_stimes[0]+finalfinal_stimes[1]+':'+finalfinal_stimes[2]+finalfinal_stimes[3];
 					
 				}
 				if (stimes_hold.length > 1){
@@ -938,7 +1003,8 @@
 					if(stimes_hold[0]<1200)
 					{
 					final_stimes = stimes_hold[0];
-					cells_am_arr.value = final_stimes;
+					finalfinal_stimes = Array.from(final_stimes.toString());
+					cells_am_arr.value = finalfinal_stimes[0]+finalfinal_stimes[1]+':'+finalfinal_stimes[2]+finalfinal_stimes[3];
 					}	
 					
 				}
@@ -946,7 +1012,8 @@
 				if (stimee_hold.length==1 && stimee_hold[0]<1200)
 				{
 					final_stimee = stimee_hold[0];
-					cells_am_dep.value = final_stimee;
+					finalfinal_stimee = Array.from(final_stimee.toString());
+					cells_am_dep.value = finalfinal_stimee[0]+finalfinal_stimee[1]+':'+finalfinal_stimee[2]+finalfinal_stimee[3];
 					
 				}
 				if (stimee_hold.length > 1){
@@ -956,7 +1023,8 @@
 					if(stimee_hold[0]<1200)
 					{
 					final_stimee = stimee_hold[0];
-					cells_am_dep.value = final_stimee;
+					finalfinal_stimee = Array.from(final_stimee.toString());
+					cells_am_dep.value = finalfinal_stimee[0]+finalfinal_stimee[1]+':'+finalfinal_stimee[2]+finalfinal_stimee[3];
 					}	
 					
 				}
@@ -1086,12 +1154,6 @@
 			}
 
 
-		window.onload = function() {
-			getmonthyear();
-		}
-
-		
-
 		function current_date()
 		{
 			n =  new Date();
@@ -1193,7 +1255,7 @@
 		    	}
 
 		    }
-		    
+		
 		    
 		    
 		/*

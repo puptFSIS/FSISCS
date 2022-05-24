@@ -170,6 +170,7 @@ if($m == "JJ")
         $id = $row['id'];
         $outputs=$row['output'];
         $indi=$row['indicators'];
+        $part = $row['part'];
         //$accomp=$row['accomplishment'];
     }   
  } else if($m == "JD")
@@ -181,6 +182,7 @@ if($m == "JJ")
         $id = $row['id'];
         $outputs=$row['output'];
         $indi=$row['indicators'];
+        $part = $row['part'];
         //$accomp=$row['accomplishment'];
     }   
  }
@@ -189,7 +191,7 @@ if($m == "JJ")
 <hr style="margin-top: -10px;" />
 
 
-<form action="index.php?r=faculty/processIPCRaddaccomp<?php echo'&m='.$m.'&y='.$y.''?>" method="post">
+<form action="index.php?r=faculty/processIPCRaddaccomp<?php echo'&m='.$m.'&y='.$y.'&part='.$part.''?>" method="post">
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="id" ><?php echo $id;?></textarea>
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="EmpID" ><?php echo $fcode;?></textarea>
 

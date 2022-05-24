@@ -7,13 +7,14 @@
 	{
 		$m = $_GET['m'];
 		$y = $_GET['y'];
+		$part = $_GET['part'];
 		$id = $_POST['id'];
 		$fcode = $_POST['EmpID'];
 		$accomplishment = $_POST['accomplishment'];
 
 		if($m == "JJ")
 		{
-			$sql = "INSERT INTO tbl_ipcraccomp (id_ipcr1,accomplishment,FCode,month,year) VALUES('".$id."','".$accomplishment."','".$fcode."','".$m."','".$y."')";
+			$sql = "INSERT INTO tbl_ipcraccomp (part,id_ipcr1,accomplishment,FCode,month,year) VALUES('".$part."','".$id."','".$accomplishment."','".$fcode."','".$m."','".$y."')";
 			$result = mysqli_query($conn,$sql);
 
 			//$sql = "UPDATE tbl_ipcraccomp SET accomplishment = '$accomplishment', FCode = '$fcode', month = '$m', year = '$y' WHERE id_ipcr1 = '$id'";
@@ -21,7 +22,7 @@
 			
 		} else if($m == "JD")
 		{
-			 $sql1 = "INSERT INTO tbl_ipcraccomp (id_ipcr2,accomplishment,FCode,month,year) VALUES('".$id."','".$accomplishment."','".$fcode."','".$m."','".$y."')";
+			 $sql1 = "INSERT INTO tbl_ipcraccomp (part,id_ipcr2,accomplishment,FCode,month,year) VALUES('".$part."','".$id."','".$accomplishment."','".$fcode."','".$m."','".$y."')";
 			 $result = mysqli_query($conn,$sql1);
 
 			//$sql = "UPDATE tbl_ipcraccomp SET accomplishment = '$accomplishment', FCode = '$fcode', month = '$m', year = '$y' WHERE id_ipcr2 = '$id'";

@@ -1,5 +1,6 @@
 <?php 
-
+include('config.php');
+	session_start();
 require 'phpspreadsheet/vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\IOFactory;
@@ -53,8 +54,6 @@ $spreadsheet
 	->getActiveSheet()
 	->setCellValue('D1',$richtextname);
 
-//Cells to use in computations
-include('IPCRInterpolationcomputable.php');
 
 //Merge Cell for 'January to June text
 $spreadsheet
@@ -776,6 +775,10 @@ $spreadsheet
 // 	->getActiveSheet()
 // 	->setCellValue('A1',"HELLO");
 
+//Cells to use in computations
+include('IPCRInterpolationcomputable.php');
+
+//Sheet 2
 include('IPCRInterpolationSheet2.php');
 
 

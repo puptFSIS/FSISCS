@@ -2921,6 +2921,10 @@ class AdministratorController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
+    public function actionIPCRInterpolationSheet2JD()
+    {
+    	$this->render('IPCRInterpolationSheet2JD');
+    }
     public function actionIPCRinterpolview2()
     {
     	$this->render('IPCRinterpolview2');

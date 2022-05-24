@@ -4,10 +4,21 @@ use \PhpOffice\PhpSpreadsheet\Style\Border;
 // use \PhpOffice\PhpSpreadsheet\Style\Fill;
 
 //January to June
+
 //Strategic Priority
+//This SQL counts all the sql and 
+$query = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'sp' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+$query_result = mysqli_query($conn,$query);
+$count = mysqli_num_rows($query_result); 
+
+$sp = $count + 6;
+$sp_NoitemRating = $sp + 1;//to get the cell of No. of item rating
+// echo $sp;
+// echo $sp_NoitemRating;
+// die;
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('B6',"")
+	->setCellValue('B6',"='IPCR'!B".$sp."")
 	->getStyle('B6')
 	->getBorders()
 	->getOutline()
@@ -18,7 +29,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('C6',"")
+	->setCellValue('C6',"='IPCR'!C".$sp."")
 	->getStyle('C6')
 	->getBorders()
 	->getOutline()
@@ -29,7 +40,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('D6',"")
+	->setCellValue('D6',"='IPCR'!D".$sp."")
 	->getStyle('D6')
 	->getBorders()
 	->getOutline()
@@ -51,13 +62,13 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('F6',"")
+	->setCellValue('F6',"=SUM('IPCR'!B".$sp_NoitemRating.":D".$sp_NoitemRating.")")
 	->getStyle('F6')
 	->getBorders()
 	->getOutline()
 	->setBorderStyle(Border::BORDER_THIN)
 	->getActiveSheet()
-	->getStyle('E6')
+	->getStyle('F6')
     ->getAlignment()
 	->setHorizontal('center')
 
@@ -95,9 +106,19 @@ $spreadsheet
 	->setHorizontal('center');
 
 //Core Funcction
+$query = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'cf' AND tbl_ipcraccomp.month = '$month' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+$query_result = mysqli_query($conn,$query);
+$countcf = mysqli_num_rows($query_result); 
+$countcf_new = $countcf - 1;
+
+$cf = $sp + (($countcf_new + 1) + 5);
+
+$cf_NoitemRating = $cf + 1;//to get the cell of No. of item rating
+// echo $cf1;
+// die;
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('B7',"")
+	->setCellValue('B7',"='IPCR'!B".$cf."")
 	->getStyle('B7')
 	->getBorders()
 	->getOutline()
@@ -108,7 +129,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('C7',"")
+	->setCellValue('C7',"='IPCR'!C".$cf."")
 	->getStyle('C7')
 	->getBorders()
 	->getOutline()
@@ -119,7 +140,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('D7',"")
+	->setCellValue('D7',"='IPCR'!D".$cf."")
 	->getStyle('D7')
 	->getBorders()
 	->getOutline()
@@ -141,7 +162,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('F7',"")
+	->setCellValue('F7',"=SUM('IPCR'!B".$cf_NoitemRating.":D".$cf_NoitemRating.")")
 	->getStyle('F7')
 	->getBorders()
 	->getOutline()
@@ -276,9 +297,21 @@ $spreadsheet
 	->setHorizontal('center');
 
 //Support Function
+$query = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'sf' AND tbl_ipcraccomp.month = '$month' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+$query_result = mysqli_query($conn,$query);
+$countsf = mysqli_num_rows($query_result);
+$countsf_new = $countsf - 1;
+
+/* computation to find te exact cell row number of Points Earned */
+/* This will auto adjust depending on how many added SP, CF */
+$sf = $cf + (($countsf_new + 1) + 5); 
+
+$sf_NoitemRating = $sf + 1; //to find the cell row number of 'No. of Item Rating'
+
+// echo $sf;
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('B9',"")
+	->setCellValue('B9',"='IPCR'!B".$sf."")
 	->getStyle('B9')
 	->getBorders()
 	->getOutline()
@@ -289,7 +322,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('C9',"")
+	->setCellValue('C9',"='IPCR'!C".$sf."")
 	->getStyle('C9')
 	->getBorders()
 	->getOutline()
@@ -300,7 +333,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('D9',"")
+	->setCellValue('D9',"='IPCR'!D".$sf."")
 	->getStyle('D9')
 	->getBorders()
 	->getOutline()
@@ -322,7 +355,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('F9',"")
+	->setCellValue('F9',"=SUM('IPCR'!B".$sf_NoitemRating.":D".$sf_NoitemRating.")")
 	->getStyle('F9')
 	->getBorders()
 	->getOutline()
@@ -385,10 +418,16 @@ $spreadsheet
 	->setHorizontal('center')
 */
 
+$query = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part = 'sp' AND tbl_ipcraccomp.month = 'JD' AND tbl_ipcr2.year = '$year' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
+$query_result = mysqli_query($conn,$query);
+$count = mysqli_num_rows($query_result); 
+
+$sp = $count + 6;
+$sp_NoitemRating = $sp + 1;//to get the cell of No. of item rating
 //July to december
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('B15',"")
+	->setCellValue('B15',"='IPCR'!G".$sp."")
 	->getStyle('B15')
 	->getBorders()
 	->getOutline()
@@ -399,7 +438,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('C15',"")
+	->setCellValue('C15',"='IPCR'!H".$sp."")
 	->getStyle('C15')
 	->getBorders()
 	->getOutline()
@@ -411,7 +450,7 @@ $spreadsheet
 
 
 	->getActiveSheet()
-	->setCellValue('D15',"")
+	->setCellValue('D15',"='IPCR'!I".$sp."")
 	->getStyle('D15')
 	->getBorders()
 	->getOutline()
@@ -433,7 +472,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('F15',"")
+	->setCellValue('F15',"=SUM('IPCR'!G".$sp_NoitemRating.":I".$sp_NoitemRating.")")
 	->getStyle('F15')
 	->getBorders()
 	->getOutline()
@@ -477,9 +516,16 @@ $spreadsheet
 	->setHorizontal('center');
 
 //Core Funcction
+$query = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'cf' AND tbl_ipcraccomp.month = 'JD' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+$countcf = mysqli_num_rows($query_result); 
+$countcf_new = $countcf - 1;
+
+$cf = $sp + (($countcf_new + 1) + 5);
+
+$cf_NoitemRating = $cf + 1;//to get the cell of No. of item rating
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('B16',"")
+	->setCellValue('B16',"='IPCR'!G".$cf."")
 	->getStyle('B16')
 	->getBorders()
 	->getOutline()
@@ -490,7 +536,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('C16',"")
+	->setCellValue('C16',"='IPCR'!H".$cf."")
 	->getStyle('C16')
 	->getBorders()
 	->getOutline()
@@ -501,7 +547,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('D16',"")
+	->setCellValue('D16',"='IPCR'!I".$cf."")
 	->getStyle('D16')
 	->getBorders()
 	->getOutline()
@@ -524,7 +570,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('F16',"")
+	->setCellValue('F16',"=SUM('IPCR'!G".$cf_NoitemRating.":I".$cf_NoitemRating.")")
 	->getStyle('F16')
 	->getBorders()
 	->getOutline()
@@ -568,6 +614,7 @@ $spreadsheet
 	->setHorizontal('center');
 
 //SP+Core
+
 $spreadsheet
 	->getActiveSheet()
 	->setCellValue('B17',"=SUM(B15:B16)")
@@ -658,9 +705,20 @@ $spreadsheet
 	->setHorizontal('center');
 
 //Support Function
+$query = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part = 'sf' AND tbl_ipcraccomp.month = 'JD' AND tbl_ipcr2.year = '$year' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
+$query_result = mysqli_query($conn,$query);
+$countsf = mysqli_num_rows($query_result);
+$countsf_new = $countsf - 1;
+
+/* computation to find te exact cell row number of Points Earned */
+/* This will auto adjust depending on how many added SP, CF */
+$sf = $cf + (($countsf_new + 1) + 5); 
+
+$sf_NoitemRating = $sf + 1; //to find the cell row number of 'No. of Item Rating'
+
 $spreadsheet
 	->getActiveSheet()
-	->setCellValue('B18',"")
+	->setCellValue('B18',"='IPCR'!G".$sf."")
 	->getStyle('B18')
 	->getBorders()
 	->getOutline()
@@ -671,7 +729,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('C18',"")
+	->setCellValue('C18',"='IPCR'!H".$sf."")
 	->getStyle('C18')
 	->getBorders()
 	->getOutline()
@@ -682,7 +740,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('D18',"")
+	->setCellValue('D18',"='IPCR'!I".$sf."")
 	->getStyle('D18')
 	->getBorders()
 	->getOutline()
@@ -704,7 +762,7 @@ $spreadsheet
 	->setHorizontal('center')
 
 	->getActiveSheet()
-	->setCellValue('F18',"")
+	->setCellValue('F18',"=SUM('IPCR'!G".$sf_NoitemRating.":I".$sf_NoitemRating.")")
 	->getStyle('F18')
 	->getBorders()
 	->getOutline()

@@ -34,7 +34,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:round;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.png);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
     
 #page-title
 {
@@ -162,8 +162,8 @@ if(isset($_SESSION['user'])) {
 
     <!-- End - Page subheader -->
     <!-- Page body -->
-        <section class=container-block id=page-body>
-        <div class=container-inner>
+        <!-- <section class=container-block id=page-body>
+        <div class=container-inner> -->
         <!-- Page title -->
         <?php include("headerMenu.php");?> 
 

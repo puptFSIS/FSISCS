@@ -5,53 +5,51 @@
 require 'PhpWord/vendor/autoload.php';
 $phpWord = new \PhpOffice\PhpWord\PhpWord();
 
-$section = $phpWord->addSection();
 
 
-$subsequent = $section->addHeader();
-$subsequent->addText(htmlspecialchars('Subsequent pages in Section 1 will Have this!'));
-$subsequent->addImage('assets/puplogo.png', array('width' => 80, 'height' => 80));
 
-//header
-// $header = $section->addHeader();
-// $header->firstPage();
-// $table = $header->addTable();
-// $table->addRow();
-// $cell = $table->addCell(4500);
-// $textrun = $cell->addTextRun();
-// // $textrun->addText(htmlspecialchars('This is the header with '));
-// // $textrun->addLink('http://google.com', htmlspecialchars('link to Google'));
-// $table->addCell(4500)->addImage(
-//     'assets/puplogo.png',
-//     array('width' => 80, 'height' => 80, 'align' => 'left')
-// );
+// $subsequent = $section->addHeader();
+// // $subsequent->addText(htmlspecialchars('Subsequent pages in Section 1 will Have this!'));
+// $subsequent->addImage('assets/puplogo.png', array('width' => 80, 'height' => 80));
 
 
-// Adding Text element with font customized using explicitly created font style object...
-// $fontStyle = new \PhpOffice\PhpWord\Style\Font();
-// $fontStyle->setBold(true);
-// $fontStyle->setName('Tahoma');
-// $fontStyle->setSize(13);
-// $myTextElement = $section->addText('Republic of the Philippines');
-// $myTextElement1 = $section->addText('POLYTECHNIC UNIVERSITY OF THE PHILIPPINES');
-// $myTextElement->setFontStyle($fontStyle);
-// $myTextElement1->setFontStyle($fontStyle);
 
+// New portrait section
+$section = $phpWord->addSection(array('borderColor' => '00FF00', 'borderSize' => 12));
+$section->addText('I am placed on a default section.');
 
-$section->addHeader()->addWatermark("assets/puplogo.png",
-array(
-    'width' => round(\PhpOffice\PhpWord\Shared\Converter::cmToPixel(0.5842)),
-    'height' => round(\PhpOffice\PhpWord\Shared\Converter::cmToPixel(2.1336)),
-    'positioning' => \PhpOffice\PhpWord\Style\Image::POSITION_ABSOLUTE,
-    'posHorizontal' => \PhpOffice\PhpWord\Style\Image::POSITION_ABSOLUTE,
-    'posVertical' => \PhpOffice\PhpWord\Style\Image::POSITION_ABSOLUTE,
-    'marginLeft' => round(\PhpOffice\PhpWord\Shared\Converter::cmToPixel(17)),
-    'marginTop' => round(\PhpOffice\PhpWord\Shared\Converter::cmToPixel(1.5)),
-    'wrappingStyle' => 'infront'
-));
-
+// New landscape section
+$section = $phpWord->addSection(array('orientation' => 'landscape'));
+$section->addText('I am placed on a landscape section. Every page starting from this section will be landscape style.');
 $section->addPageBreak();
 $section->addPageBreak();
+
+// New portrait section
+$section = $phpWord->addSection(
+    array('paperSize' => 'Folio', 'marginLeft' => 600, 'marginRight' => 600, 'marginTop' => 600, 'marginBottom' => 600)
+);
+$section->addText('This section uses other margins with folio papersize.');
+
+// The text of this section is vertically centered
+$section = $phpWord->addSection(
+    array('vAlign' => VerticalJc::CENTER)
+);
+$section->addText('This section is vertically centered.');
+
+// New portrait section with Header & Footer
+$section = $phpWord->addSection(
+    array(
+        'marginLeft'   => 200,
+        'marginRight'  => 200,
+        'marginTop'    => 200,
+        'marginBottom' => 200,
+        'headerHeight' => 50,
+        'footerHeight' => 50,
+    )
+);
+$section->addText('This section and we play with header/footer height.');
+$section->addHeader()->addText('Header');
+$section->addFooter()->addText('Footer');
 
 
 

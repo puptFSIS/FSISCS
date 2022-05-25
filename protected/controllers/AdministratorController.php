@@ -3498,6 +3498,12 @@ class AdministratorController extends Controller
 
 	}
 
+	public function actionTransmittal_form()
+	{
+		$this->render('transmittal_form');
+
+	}
+
 	
 
 

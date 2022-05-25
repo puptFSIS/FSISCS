@@ -1213,6 +1213,10 @@
         ?>
     </form>
 <button class="generate_btn_class" onclick="call_print()">generate receiving document</button>
+<button class="generate_btn_class" onclick="preview_transmittal()">preview_transmittal
+    <!-- <a style='color:white' href='index.php?r=administrator/Transmittal_form'>Php word</a> -->
+	
+</button>
 </body>
 
 <script>
@@ -1292,6 +1296,11 @@
 	window.open("index.php?r=/administrator/Hap_generate_rd&val1="+month_input+"&val2="+name_of_sender+"&val3="+position_of_sender+"&val4="+department_name+"&val5="+dear+"&val6="+paragraph_text+"&val7="+paragraph_text2+"&val8="+paragraph_text3+"&val9="+paragraph_text4);
 				     
 				
+	}
+
+	function preview_transmittal()
+	{
+		window.open("index.php?r=/administrator/Transmittal_form");
 	}
 </script>
 </html>

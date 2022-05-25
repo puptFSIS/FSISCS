@@ -62,11 +62,21 @@ header("Content-Type: application/vnd.ms-word");
 header("Expires: 0"); 
 header("Cache-Control: must-revalidate, post-check=0, pre-check=0"); 
 header("content-disposition: attachment;filename=Report.docx");
+ header("Content-Description: File Transfer");
+
+header('Content-Disposition: attachment; filename="' . $file . '"');
+// header('Content-Disposition: inline');
+
+header('Content-Type: application/vnd.openxmlformats-officedocument.wordprocessingml.document');
+header('Content-Transfer-Encoding: binary');
 
 
+// $phpword->save('Perfomance_Appraisal.docx', 'Word2007', true);
+
+readfile('Report.docx');
 // Saving the document as OOXML file...
-$objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
-ob_clean();
-$objWriter->save('php://output');
-die;
+// $objWriter = \PhpOffice\PhpWord\IOFactory::createWriter($phpWord, 'Word2007');
+// ob_clean();
+// $objWriter->save('php://output');
+// die;
 ?>

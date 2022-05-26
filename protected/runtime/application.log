@@ -1180,3 +1180,45 @@ REQUEST_URI=/fsiscs/index.php?r=/administrator/Transmittal_form
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php (35)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3503)
 in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 17:58:36 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php(344): FPDF->__construct('P', 'mm', 'legal')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('receiving_docum...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3349): CController->render('receiving_docum...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHap_generate_rd()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_generate_rd')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=May%2026%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20REGULAR%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val7=Rabe,%20Yolanda%20FolloscoFaranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.Jacinto,%20Ma.%20Teresa%20C.&val8=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20TS%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val9=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20OT%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of%20DATE:
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/26 18:08:04 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php(344): FPDF->__construct('P', 'mm', 'legal')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('receiving_docum...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3349): CController->render('receiving_docum...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHap_generate_rd()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_generate_rd')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=May%2026%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20REGULAR%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val7=Rabe,%20Yolanda%20FolloscoFaranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.Jacinto,%20Ma.%20Teresa%20C.&val8=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20TS%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val9=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20OT%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of%20DATE:
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---

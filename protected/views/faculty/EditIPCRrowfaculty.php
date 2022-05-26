@@ -112,7 +112,7 @@ if(isset($_SESSION['user'])) {
 <section>
 
 
-<h2 class=underlined-header>INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</h2>
+<h2 class=underlined-header><center>Individual Performance, Commitment and Review</center></h2>
 <?php
     //Get the passed elements
     if(isset($_GET['outputs'],$_GET['indi'],$_GET['accomp'],$_GET['fcode'],$_GET['m'],$_GET['y'],$_GET['idaccomp']))

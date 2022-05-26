@@ -81,12 +81,12 @@ $pdf->AddPage();
 		$pdf->SetXY(162,84.5);
 		$pdf->Cell(90,5,'Head of Office',1,0,'C');
 		$pdf->SetXY(252,62);
-		$pdf->Cell(33,5,'Date',1,0,'C');
+		$pdf->Cell(33,5,'Date',1,1,'C');
 		$pdf->Ln(30);
 
 
 		//Tables
-		// $pdf->SetY(90);
+		$pdf->SetX(11);
 		//$pdf->Cell(1);
 		$pdf->SetFont('Times','B',8);
 		$pdf->SetFillColor(211,211,211);
@@ -97,6 +97,7 @@ $pdf->AddPage();
 		$pdf->Cell(55,8,'Remarks',1,0,'C',1);
 		$pdf->Cell(0,4,'',0,1);
 		$pdf->Cell(200,4,'',0,0);
+		$pdf->SetX(211);
 		$pdf->Cell(12.4,4,'Q1',1,0,'C',1);
 		$pdf->Cell(12.4,4,'E2',1,0,'C',1);
 		$pdf->Cell(12.4,4,'T3',1,0,'C',1);
@@ -105,6 +106,7 @@ $pdf->AddPage();
 		//$pdf->Cell(1);
 		$pdf->SetFillColor(83, 207, 214);
 		//$pdf->Rect(0, 0, 210, 297, 'F');
+		$pdf->SetX(11);
 		$pdf->Cell(305,6,'Strategic Priority:',1,1,'L',1);
 		foreach($infosp as $item) {
 			$html_table = '
@@ -123,11 +125,11 @@ $pdf->AddPage();
 				    <td style="width: 168px; font-size: 9px; height: 30px;">'.$item['output'].'</td>
 				    <td style="width: 198px; font-size: 9px;">'.$item['indicators'].'</td>
 				    <td style="width: 198px; font-size: 9px;">'.$item['accomplishment'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$item['rating_quality'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$item['rating_efficiency'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$item['rating_timeliness'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$item['rating_average'].'</td>
-				    <td style="width: 156px; text-align:center; font-size: 10px;">'.$item['remarks'].'</td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;">'.$item['rating_quality'].'</td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;">'.$item['rating_efficiency'].'</td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;">'.$item['rating_timeliness'].'</td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;">'.$item['rating_average'].'</td>
+				    <td style="width: 158.5px; text-align:center; font-size: 10px; height: 30px;">'.$item['remarks'].'</td>
 				  </tr>
 				</thead>
 			</table>
@@ -136,6 +138,7 @@ $pdf->AddPage();
 		}
 		$pdf->Ln(4);
 
+		$pdf->SetX(11);
 		$pdf->SetFont('Times','B',8);
 		$pdf->SetFillColor(211,211,211);
 		$pdf->Cell(60,8,'Output',1,0,'C',1);
@@ -145,6 +148,7 @@ $pdf->AddPage();
 		$pdf->Cell(55,8,'Remarks',1,0,'C',1);
 		$pdf->Cell(0,4,'',0,1);
 		$pdf->Cell(200,4,'',0,0);
+		$pdf->SetX(211);
 		$pdf->Cell(12.4,4,'Q1',1,0,'C',1);
 		$pdf->Cell(12.4,4,'E2',1,0,'C',1);
 		$pdf->Cell(12.4,4,'T3',1,0,'C',1);
@@ -153,6 +157,7 @@ $pdf->AddPage();
 		//$pdf->Cell(1);
 		$pdf->SetFillColor(83, 207, 214);
 		//$pdf->Rect(0, 0, 210, 297, 'F');
+		$pdf->SetX(11);
 		$pdf->Cell(305,6,'Core Function:',1,1,'L',1);
 		foreach($infocf as $itemcf) {
 		$html_table_cf = '
@@ -175,7 +180,7 @@ $pdf->AddPage();
 				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemcf['rating_efficiency'].'</td>
 				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemcf['rating_timeliness'].'</td>
 				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemcf['rating_average'].'</td>
-				    <td style="width: 156px; text-align:center; font-size: 10px;">'.$itemcf['remarks'].'</td>
+				    <td style="width: 158.5px; text-align:center; font-size: 10px;">'.$itemcf['remarks'].'</td>
 				  </tr>
 				</thead>
 			</table>
@@ -184,6 +189,7 @@ $pdf->AddPage();
 		}
 		$pdf->Ln(4);
 
+		$pdf->SetX(11);
 		$pdf->SetFont('Times','B',8);
 		$pdf->SetFillColor(211,211,211);
 		$pdf->Cell(60,8,'Output',1,0,'C',1);
@@ -193,6 +199,7 @@ $pdf->AddPage();
 		$pdf->Cell(55,8,'Remarks',1,0,'C',1);
 		$pdf->Cell(0,4,'',0,1);
 		$pdf->Cell(200,4,'',0,0);
+		$pdf->SetX(211);
 		$pdf->Cell(12.4,4,'Q1',1,0,'C',1);
 		$pdf->Cell(12.4,4,'E2',1,0,'C',1);
 		$pdf->Cell(12.4,4,'T3',1,0,'C',1);
@@ -201,6 +208,7 @@ $pdf->AddPage();
 		//$pdf->Cell(1);
 		$pdf->SetFillColor(83, 207, 214);
 		//$pdf->Rect(0, 0, 210, 297, 'F');
+		$pdf->SetX(11);
 		$pdf->Cell(305,6,'Support Function:',1,1,'L',1);
 		foreach($infosf as $itemsf) {
 			$html_table_sf = '
@@ -223,7 +231,7 @@ $pdf->AddPage();
 				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemsf['rating_efficiency'].'</td>
 				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemsf['rating_timeliness'].'</td>
 				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemsf['rating_average'].'</td>
-				    <td style="width: 156px; text-align:center; font-size: 10px;">'.$itemsf['remarks'].'</td>
+				    <td style="width: 158.5px; text-align:center; font-size: 10px;">'.$itemsf['remarks'].'</td>
 				  </tr>
 				</thead>
 			</table>

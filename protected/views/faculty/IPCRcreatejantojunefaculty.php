@@ -138,7 +138,7 @@ if(isset($_SESSION['user'])) {
 .w3-code {
     width: 70%; 
     margin-left: -15%;
-    height: 155px;
+    height: 135px;
 }
 .disabled{
   pointer-events: none;
@@ -197,7 +197,7 @@ if(isset($_SESSION['user'])) {
 <a href="index.php?r=faculty/IPCRcreatefaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
 <section>
 <div class="w3-code notranslate cssHigh">
-    <small><strong>REMINDERS</strong></small>
+    <small><strong><u>REMINDERS</u></strong></small>
     <br>
     <small><strong><b id="asterisk">*</b> - Required Fields.</strong></small>
     <br>

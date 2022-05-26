@@ -244,7 +244,7 @@ if(isset($_SESSION['user'])) {
                                 <td name="status" style="text-align: center;"><?= $row['status']?></td>
                                 <?php if($m == "JJ") : ?>
                                     <?php if($status == "Submitted") : ?>
-                                        <td><a href="index.php?r=administrator/IPCRform12<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
+                                        <td><a href="index.php?r=administrator/IPCRform1<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
                                     <?php elseif($status == NULL) : ?>
                                         <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
                                     <?php endif; ?>

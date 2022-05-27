@@ -1514,3 +1514,276 @@ Stack trace:
 REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRtagvisible&m=JJ&y=2022
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRcreatejantojune&m=JJ&y=2022
 ---
+2022/05/26 22:25:00 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:25:07 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:30:39 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:30:43 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:30:46 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:32:16 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:32:34 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:32:37 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 23:14:33 [error] [exception.CException] CException: AdministratorController and its behaviors do not have a method or closure named "GetStringWidth". in C:\xampp\htdocs\FSISCS\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php(103): CComponent->__call('GetStringWidth', Array)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#6 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#14 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---
+2022/05/26 23:15:45 [error] [exception.ParseError] ParseError: syntax error, unexpected ',' in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:103
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#3 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#4 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---
+2022/05/26 23:51:17 [error] [php] Undefined variable: difference (C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:106)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): AdministratorController->render()
+#5 unknown(0): AdministratorController->actionRegular_DTRgoto()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php (106)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3328)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 00:05:22 [error] [exception.ParseError] ParseError: syntax error, unexpected '$difference' (T_VARIABLE) in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:85
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#3 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#4 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---
+2022/05/27 00:09:01 [error] [php] Undefined variable: difference (C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:86)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): AdministratorController->render()
+#5 unknown(0): AdministratorController->actionRegular_DTRgoto()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php (86)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3328)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 00:09:16 [error] [php] Undefined variable: quotient (C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:108)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): AdministratorController->render()
+#5 unknown(0): AdministratorController->actionRegular_DTRgoto()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php (108)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3328)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 00:09:32 [error] [exception.ArgumentCountError] ArgumentCountError: Too few arguments to function FPDF::Write(), 1 passed in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php on line 288 and at least 2 expected in C:\xampp\htdocs\FSISCS\fpdf.php:771
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php(288): FPDF->Write(1)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#6 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#14 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---
+2022/05/27 00:10:22 [error] [exception.ArgumentCountError] ArgumentCountError: Too few arguments to function FPDF::Write(), 1 passed in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php on line 288 and at least 2 expected in C:\xampp\htdocs\FSISCS\fpdf.php:771
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php(288): FPDF->Write(1)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#6 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#14 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---

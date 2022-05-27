@@ -1220,7 +1220,7 @@
         ?>
     </form>
 <button class="generate_btn_class" onclick="call_print()">generate receiving document</button>
-<button class="generate_btn_class" onclick="preview_transmittal()">preview_transmittal
+<!-- <button class="generate_btn_class" onclick="preview_transmittal()">preview_transmittal -->
     <!-- <a style='color:white' href='index.php?r=administrator/Transmittal_form'>Php word</a> -->
 	
 </button>

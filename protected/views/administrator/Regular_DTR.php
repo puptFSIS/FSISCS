@@ -77,6 +77,18 @@ foreach($second_resultdtrtimesheet as $newsecond_resultdtrtimesheet)
 }
 
 
+//declarations
+$fullname = $fn." ".$mn." ".$sn;
+
+$underline_left = '________________________________________________________________________';
+$difference_left = $pdf->GetStringWidth($underline_left)-$pdf->GetStringWidth($fullname);
+$quotient_left = $difference_left/2;
+
+$underline_right = '________________________________________________________________________';
+$difference_right = $pdf->GetStringWidth($underline_right)-$pdf->GetStringWidth($fullname);
+$quotient_right = $difference_right/2;
+
+
 
 
 $pdf->SetXY(75, 10);
@@ -97,24 +109,24 @@ $pdf->SetXY(38.5, 22);
 $pdf->SetFont('Arial','B','8');
 $pdf->Write(0,'----------o0o----------');
 
-$pdf->SetXY(32, 26);
+$pdf->SetXY(15, 14);
 $pdf->SetFont('Arial','B','12');
-// $pdf->Write(1,'GECILIE C. ALMIRANEZ');
-// $pdf->Write(1,'(FACULTY NAME)');
-$pdf->Write(1,$fn." ".$mn." ".$sn);
+$pdf->MultiCell(72,28,$fullname,0,'C',false);
+
 
 
 $pdf->SetXY(15, 28);
 $pdf->SetFont('Arial','B','5');
-$pdf->Write(1,'________________________________________________________________________');
+$pdf->Write(1,$underline_left);
 
 $pdf->SetXY(44, 31);
 $pdf->SetFont('Arial','','8');
 $pdf->Write(1,'(Name)');
 
-$pdf->SetXY(60, 35);
+$pdf->SetXY(47, 22);
 $pdf->SetFont('Arial','BI','9');
-$pdf->Write(1,$month." ".$year);
+$pdf->MultiCell(39,28,$month." ".$year,0,'C',false);
+
 
 $pdf->SetXY(16, 36);
 $pdf->SetFont('Arial','I','8.5');
@@ -272,23 +284,25 @@ $pdf->SetXY(16, 231);
 $pdf->SetFont('Arial','I','8');
 $pdf->Write(1,'made daily at the time of arrival and departure from office.');
 
-$pdf->SetXY(25, 240);
+$pdf->SetXY(17, 235);
 $pdf->SetFont('Arial','B','15');
-$pdf->Write(1,$ntd_by_offhour);
+$pdf->multicell(76,14,$ntd_by_offhour,0,'C',False);
+
 // $pdf->Write(1,'(GECILIE C. ALMIRANEZ)');
 
 $pdf->SetXY(17, 243);
 $pdf->SetFont('Arial','B','5');
-$pdf->Write(1,'________________________________________________________________________');
+// $pdf->Write(1,$underline_right);
+$pdf->Write(1,'__________________________________________________________________________');
 
 $pdf->SetXY(23, 247);
 $pdf->SetFont('Arial','I','9');
 $pdf->Write(1,'Noted by as to the prescribed office hours');
 
-$pdf->SetXY(25, 261);
+$pdf->SetXY(17, 256);
 $pdf->SetFont('Arial','B','15');
-$pdf->Write(1,$in_charge);
-// $pdf->Write(1,'GARY ANTONIO C. LIRIO');
+$pdf->multicell(75,14,$in_charge2,0,'C',False);
+
 
 
 $pdf->SetXY(17, 264);
@@ -322,9 +336,13 @@ $pdf->SetXY(143.5, 22);
 $pdf->SetFont('Arial','B','8');
 $pdf->Write(0,'----------o0o----------');
 
-$pdf->SetXY(137, 26);
+// $pdf->SetXY(137, 26);
+// $pdf->SetFont('Arial','B','12');
+// $pdf->Write(1,$fn2." ".$mn2." ".$sn2);
+
+$pdf->SetXY(120, 14);
 $pdf->SetFont('Arial','B','12');
-$pdf->Write(1,$fn2." ".$mn2." ".$sn2);
+$pdf->MultiCell(72,28,$fullname,0,'C',false);
 
 
 $pdf->SetXY(120, 28);
@@ -335,9 +353,9 @@ $pdf->SetXY(149, 31);
 $pdf->SetFont('Arial','','8');
 $pdf->Write(1,'(Name)');
 
-$pdf->SetXY(165, 35);
+$pdf->SetXY(152, 35);
 $pdf->SetFont('Arial','BI','9');
-$pdf->Write(1,$month2." ".$year2);
+$pdf->multicell(39,3,$month2." ".$year2,0,'C',false);
 
 $pdf->SetXY(121, 36);
 $pdf->SetFont('Arial','I','8.5');
@@ -495,25 +513,30 @@ $pdf->SetXY(121, 231);
 $pdf->SetFont('Arial','I','8');
 $pdf->Write(1,'made daily at the time of arrival and departure from office.');
 
-$pdf->SetXY(119.5, 240);
+// $pdf->SetXY(119.5, 240);
+// $pdf->SetFont('Arial','B','15');
+// $pdf->multicell(1,$ntd_by_offhour2);
+
+$pdf->SetXY(120, 235);
 $pdf->SetFont('Arial','B','15');
-$pdf->Write(1,$ntd_by_offhour2);
-// $pdf->Write(1,'(GECILIE C. ALMIRANEZ)');
+$pdf->multicell(76,14,$ntd_by_offhour,0,'C',False);
 
 
-
-$pdf->SetXY(122, 243);
+$pdf->SetXY(120, 243);
 $pdf->SetFont('Arial','B','5');
-$pdf->Write(1,'________________________________________________________________________');
+$pdf->Write(1,'__________________________________________________________________________');
 
 $pdf->SetXY(127, 247);
 $pdf->SetFont('Arial','I','9');
 $pdf->Write(1,'Noted by as to the prescribed office hours:');
 
-$pdf->SetXY(119, 261);
+// $pdf->SetXY(119, 261);
+// $pdf->SetFont('Arial','B','15');
+// $pdf->Write(1,$in_charge2);
+
+$pdf->SetXY(122, 256);
 $pdf->SetFont('Arial','B','15');
-$pdf->Write(1,$in_charge2);
-// $pdf->Write(1,'GARY ANTONIO C. LIRIO');
+$pdf->multicell(75,14,$in_charge2,0,'C',False);
 
 
 $pdf->SetXY(122, 264);

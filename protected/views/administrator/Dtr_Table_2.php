@@ -174,10 +174,9 @@
 	</label>
 <br> -->
 <!-- SHOW: -->
-<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
+	<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
 	<a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="Approved"/></a>
 	<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="Disapproved"/></a>
-
 	<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
 
 

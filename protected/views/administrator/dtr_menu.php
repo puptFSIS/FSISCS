@@ -377,10 +377,23 @@ a:hover {
 
 }
 
+.menu {
+  display: inline-block;
+}
+
+/*.dtrtable {
+  margin-left: 20px;
+}*/
+
+ul .widget-list
+{
+  margin-left: 20px;
+}
 
 li
 {
   font-size: 15px;
+  /*margin-left: 20px;*/
 }
 </style>
 
@@ -424,55 +437,50 @@ if($preview_value===0)
 }
 ?>
 <?php 
-  include("getRole.php");
-  if($role === "HAP")
-  {
+  include("getRole.php"); ?>
+ <?php if($role === "HAP") : ?>
+  
             
     
-    echo '<ul class="widget-list categories-list">';
-    echo "<li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
-    echo "<li><a style='color:black' href='index.php?r=administrator/DtrTable'>Created DTRs</a></li>";
+    <ul class="widget-list categories-list">
+    <li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>
+    <li><a style='color:black' href='index.php?r=administrator/DtrTable'>Created DTRs </a></li>
     
-    echo "<li><a style='color:black' href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
-    echo "<li><a style='color:black' href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
-    echo "<li><a style='color:black' href='index.php?r=administrator/ListOfFac'>List of Faculty Members</a></li>";
-    // echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
-    // echo "<li><a style='color:black' href='index.php?r=administrator/PhpWord'>Php word</a></li>";
+    <li><a style='color:black' href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>
+    <li><a style='color:black' href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>
+    <li><a style='color:black' href='index.php?r=administrator/ListOfFac'>List of Faculty Members</a></li>
+    <!-- <li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>"; -->
+    <!-- <li><a style='color:black' href='index.php?r=administrator/PhpWord'>Php word</a></li>"; -->
     
-    echo '</ul>';
+    </ul>
     
 
-  }
-  else if($role === "HAP Secretary")
-  {
+  
+<?php elseif($role === "HAP Secretary"): ?>
+
    
-    echo '<ul class="widget-list categories-list">';
-    echo "<li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
-    echo '<li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>';
+    <ul class="widget-list categories-list">
+    <li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>
+    <li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>
     
-    echo "<li><a style='color:black' href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>";
-    echo "<li><a style='color:black' href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>";
-    echo "<li><a style='color:black' href='index.php?r=administrator/ListOfFac'>List of Faculty Members</a></li>";
-    // echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
-    // echo "<li><a style='color:black' href='index.php?r=administrator/PhpWord'>Php word</a></li>";
-    echo '</ul>';
+    <li><a style='color:black' href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>
+    <li><a style='color:black' href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>
+    <li><a style='color:black' href='index.php?r=administrator/ListOfFac'>List of Faculty Members</a></li>
+    <!-- <li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>"; -->
+    <!-- <li><a style='color:black' href='index.php?r=administrator/PhpWord'>Php word</a></li>"; -->
+    </ul>
     
-
-  }
-
-  else
-  {
-    echo '<ul class="widget-list categories-list">';
-      echo "<li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>";
-      echo "<li><a style='color:black' href='index.php?r=administrator/DtrTable'>Created DTRs</a></li>";
+<?php else: ?>
+    <ul class="widget-list categories-list">
+      <li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>
+      <li><a style='color:black' href='index.php?r=administrator/DtrTable'>Created DTRs</a></li>
       
    
-      // echo "<li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></li>";
-
-    echo '</ul>';
+      <!-- <li><a href='index.php?r=administrator/Dtr_Email'>Reminder</a></ -->
+    </ul>
     
-  }
- ?>
+  <?php endif ?>
+
 
 
 

@@ -340,7 +340,9 @@
 	  font-weight: bold;
 	}
 
-
+.Swal-wide{
+    width:850px !important;
+}
 </style>
 <script src='assets/jquery-3.6.0.min.js'></script>
 <script src='assets/sweetalert2.all.min.js'></script>

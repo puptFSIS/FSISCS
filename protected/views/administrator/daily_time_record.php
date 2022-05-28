@@ -149,7 +149,7 @@ if(isset($_SESSION['user'])) {
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 <meta charset="UTF-8"></head>
-<body class='page-media page-sidebar-right'>
+<body >
 <!-- JS notice - will be displayed if javascript is disabled -->
     <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
     <!-- End - JS notice -->
@@ -177,6 +177,7 @@ if(isset($_SESSION['user'])) {
         <section>
 
 
+
         <?php 
             
             include("getPersonalInformation.php");
@@ -189,41 +190,71 @@ if(isset($_SESSION['user'])) {
             // }
             if($preview_value === 0)
             {
+                 
+
             echo "<h2 class=underlined-header>Daily Time Record</h2>";
+            include("getPersonalInformation.php");
+            include("getRole.php");
+            include("dtr_menu.php");
             include("dtr_form.php");
             }
             if($preview_value===1)
             {
+            
+
             echo "<h2 class=underlined-header>List of Created Daily Time Records</h2>";
+                 include("getPersonalInformation.php");
+            include("getRole.php");
+            include("dtr_menu.php");
             include("Dtr_Table_2.php");
             }
             if($preview_value===2)
             {
+                 
+
             echo "<h2 class=underlined-header>Daily Time Record Validation</h2>";
+            include("getPersonalInformation.php");
+            include("getRole.php");
+            include("dtr_menu.php");
             include("HAP_Dtr_Table.php");
             }
             if($preview_value===3)
             {
-           
+            
+
             echo "<h2 class=underlined-header>End of the month form</h2>";
+            include("getPersonalInformation.php");
+            include("getRole.php");
+            include("dtr_menu.php");
             // include("HAP_Secretary_table.php"); luma
             include("EOTM_form.php"); // bago
             }
             if($preview_value===4)
             {
-           
+                 
+
             echo "<h2 class=underlined-header>List of Faculty Members</h2>";
+            include("getPersonalInformation.php");
+            include("getRole.php");
+            include("dtr_menu.php");
             // include("HAP_Secretary_table.php"); luma
             include("list_of_faculty_members.php"); // bago
             }
            
             if($preview_value===5)
             {
+
             echo "<h2 class=underlined-header>Reminder</h2>";
+             include("getPersonalInformation.php");
+            include("getRole.php");
+            include("dtr_menu.php");
+
             // include("HAP_Dtr_Table.php");
             }
          ?>
-
+        <?php 
+           
+        ?>
 
         </section>
         <!-- End - Showcase gallery -->
@@ -245,12 +276,7 @@ if(isset($_SESSION['user'])) {
         <div class=widget-content>
         
 
-        <?php 
-        include("getPersonalInformation.php");
-        include("getRole.php");
-        include("dtr_menu.php");
-
-        ?>
+        
 
 
 

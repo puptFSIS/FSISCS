@@ -179,7 +179,7 @@
 	<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="Disapproved"/></a>
 	<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
 
-
+ 
 
 
 

@@ -11,7 +11,7 @@
 		$y = $_POST['y'];
 		$idaccomp = $_POST['idaccomp'];
 		$fcode = $_POST['fcode'];
-		
+
 		if(isset($_POST['feedback'])) {
 			$feedback = $_POST['feedback'];
 
@@ -24,10 +24,10 @@
 	 }
 	 if($result)
 	  	{
-	  		if($btn_value == "Approve")
+	  		if($btn_value == "Approved")
 	  		{
 	  			header('Location: index.php?r=administrator/IPCRview&m='.$m.'&y='.$y.'&fcode='.$fcode.'&a=approve');
-	  		} else if ($btn_value == "Disapprove")
+	  		} else if ($btn_value == "Disapproved")
 	  		{
 	  			header('Location: index.php?r=administrator/IPCRview&m='.$m.'&y='.$y.'&fcode='.$fcode.'&b=disapprove');
 	  		}

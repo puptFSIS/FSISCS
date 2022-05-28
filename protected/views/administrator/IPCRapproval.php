@@ -33,11 +33,11 @@
           <input type="hidden" name="accomp" value="<?php echo $accomp; ?>">
           <input type="hidden" name="fcode" value="<?php echo $fcode; ?>">
           <input type="hidden" name="idaccomp" value="<?php echo $idaccomp; ?>">
-          <button id="App" name="btn" type="submit" value="Approve">Approve</button>
+          <button id="App" name="btn" type="submit" value="Approved">Approved</button>
         </form>
         
         
-          <button id="disapp" data-toggle="modal" data-target="#ModalCenterApproval">Disapprove</button>
+          <button id="disapp" data-toggle="modal" data-target="#ModalCenterApproval">Disapproved</button>
           <!-- <button id="disapp" name="btn" value="Disapprove" data-toggle="modal" data-target="#exampleModalCenter">Disapprove</button> -->
           <!-- <input type="hidden" value="Disapprove" name="Disapprove">
           <input type="submit" value="Submit"> -->
@@ -65,7 +65,7 @@
               </div>
               <div class="modal-footer">
                 <button id="btn-modal" data-dismiss="modal">Close</button>
-                <button  id="btn-modal" name="btn" value="Disapprove" type="submit">Save</button>
+                <button  id="btn-modal" name="btn" value="Disapproved" type="submit">Save</button>
               </div>
               </form>
             </div>

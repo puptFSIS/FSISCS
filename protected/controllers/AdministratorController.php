@@ -3405,6 +3405,20 @@ class AdministratorController extends Controller
 
 	}
 
+	public function actionListOfFac()
+	{
+		if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	        $this->CheckEmpID($_SESSION['CEmpID']);
+	    } 
+		$var = Yii::app()->session['fetch_use_id'];
+		$preview_value = 4; // 2 for checking DTRs
+		$this->render('daily_time_record',array('preview_value' => $preview_value));
+
+
+	}
+
 	public function actionDtr_Form()
 	{
 		if(!isset($_SESSION)) 

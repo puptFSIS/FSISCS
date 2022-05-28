@@ -211,6 +211,14 @@ if(isset($_SESSION['user'])) {
             }
             if($preview_value===4)
             {
+           
+            echo "<h2 class=underlined-header>List of Faculty Members</h2>";
+            // include("HAP_Secretary_table.php"); luma
+            include("list_of_faculty_members.php"); // bago
+            }
+           
+            if($preview_value===5)
+            {
             echo "<h2 class=underlined-header>Reminder</h2>";
             // include("HAP_Dtr_Table.php");
             }

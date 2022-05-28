@@ -1787,3 +1787,128 @@ Stack trace:
 REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
 HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
 ---
+2022/05/27 02:14:01 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 02:14:54 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 02:31:37 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1314)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 02:31:48 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1314)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 02:31:58 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1314)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 03:14:58 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 03:22:49 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1314)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 03:34:30 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 03:43:17 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/28 07:38:45 [error] [exception.CException] CException: AdministratorController cannot find the requested view "list_of_facult_members". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('list_of_facult_...', Array, true)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3411): CController->render('list_of_facult_...', Array)
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('ListOfFac')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/L...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/ListOfFac
+---
+2022/05/28 07:39:05 [error] [exception.CException] CException: AdministratorController cannot find the requested view "list_of_facult_members". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('list_of_facult_...', NULL, true)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3411): CController->render('list_of_facult_...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('ListOfFac')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/L...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/ListOfFac
+---
+2022/05/28 07:39:07 [error] [exception.CException] CException: AdministratorController cannot find the requested view "list_of_facult_members". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('list_of_facult_...', NULL, true)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3411): CController->render('list_of_facult_...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('ListOfFac')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/L...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/ListOfFac
+---

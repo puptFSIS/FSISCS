@@ -1,34 +1,70 @@
-<div id="list_of_faculty_div" class="">
+
+
+
+<style>
 	
-	<h1>
+	.outer_container
+	{
+		width: 1000px;
+		margin-top: 50px;
+		background-color: ghostwhite;
+		border: 2px solid;
+		padding: 10px;
+	}
+
+	.inner_container
+	{
+		width: 100%;
+		margin-top: 50px;
+		background-color: #f7f7f7;
+	}
+
+</style>
+
+
+<a href="index.php?r=administrator/ListOfFac&sort=all"><input type="button" value="View All" /></a>
+<a href="index.php?r=administrator/ListOfFac&sort=passed"><input type="button" value="Already Passed"/></a>
+<a href="index.php?r=administrator/ListOfFac&sort=notyet"><input type="button" value="Not Passing Yet"/></a>
+
+
+<div  class="outer_container">
+	
+	<div id="list_of_faculty_div" class="inner_container" >
+	
+	<!-- <h1>
 		<strong>
-			list of faculty members	
+			FACULTY MEMBERS WITH SCHEDULE
 		</strong>
-	</h1>
+	</h1> -->
 
 
-	<table  id="ProfTable" class="table table-striped table-bordered">
-		<thead>
-			<tr>
-				<th>ID</th>
-				<th>name</th>
-				<th>Status</th>
+		<table  id="ProfTable" class="table table-striped table-bordered">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>name</th>
+					<th>Status</th>
 
-			</tr>
-		</thead>
+				</tr>
+			</thead>
 
-		<?php include("faculty_list.php"); ?>
+			<?php include("faculty_list.php"); ?>
 
 
-		<tfoot>
-			<tr>
-				<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
-			</tr>
-		</tfoot>
+			<tfoot>
+				<tr>
+					<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
+				</tr>
+			</tfoot>
 
-	</table>
+		</table>	
+
+	</div>
+
 
 </div>
+
+
 
 
 
@@ -55,7 +91,7 @@
         "aaSorting": [],   /// remove sorting sa unang column  - 0
         "columnDefs": [
 	        {
-	        	"targets": [1,2,3,4,5,6,7,8,9,10],
+	        	"targets": [0,1,2],
 	        	"orderable": false ///remove sorting sa lahat ng column maliban sa isa
 	        }
         ],

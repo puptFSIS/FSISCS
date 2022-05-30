@@ -337,22 +337,22 @@ if(isset($_SESSION['user'])) {
 
         ////////////////////
 
-        window.onload = function() {
-            var today = new Date();   
-            var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-            var month = today.getMonth()+1
-            var year = today.getFullYear();
-            var day = today.getDate();
-            var getDaysInMonth = function(month,year) {
-             return new Date(year, month, 0).getDate()
-            };
+        // window.onload = function() {
+        //     var today = new Date();   
+        //     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+        //     var month = today.getMonth()+1
+        //     var year = today.getFullYear();
+        //     var day = today.getDate();
+        //     var getDaysInMonth = function(month,year) {
+        //      return new Date(year, month, 0).getDate()
+        //     };
 
-            if(getDaysInMonth(month,year) === day)
-            {
-                alert(" Today is "+date+" Generate and print your DTR now ");
+        //     if(getDaysInMonth(month,year) === day)
+        //     {
+        //         alert(" Today is "+date+" Generate and print your DTR now ");
 
-            }
-        };
+        //     }
+        // };
     </script>
     <script id=js-dispatcher src='scripts/scripts.js'></script>
     

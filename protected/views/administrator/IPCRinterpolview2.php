@@ -204,7 +204,7 @@ if(isset($_SESSION['user'])) {
         <div class="scrollingTable">
                 <br>
                 <?php if($m == "JJ") : ?>
-                    <h3><strong>List of Faculty IPCR Reports <?php echo '(January to June, '.$y.')';?></strong></h3>
+                    <h3><strong>List of Faculty Interpolation Reports <?php echo '('.$y.')';?></strong></h3>
                 <?php else : ?>
                     <h3><strong>List of Faculty IPCR Reports <?php echo '(July to December, '.$y.')';?></strong></h3>
                 <?php endif; ?>

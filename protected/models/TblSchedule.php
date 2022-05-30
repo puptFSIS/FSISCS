@@ -250,7 +250,7 @@ class TblSchedule extends CActiveRecord
 	{
 		$date = date('Y-m-d H:i:s');
 		foreach ($val1 as $id) {
-			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = null, `modified_date`='$date'  WHERE id = '$id'";
+			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = '', `modified_date`='$date'  WHERE id = '$id'";
 		 	Yii::app()->db->createCommand($update)->execute();
 		}
 			
@@ -274,11 +274,25 @@ class TblSchedule extends CActiveRecord
 	{
 		$date = date('Y-m-d H:i:s');
 		foreach ($val1 as $id) {
-			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = null,`modified_date`='$date'  WHERE id = '$id'";
+			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = '',`modified_date`='$date'  WHERE id = '$id'";
 		 	Yii::app()->db->createCommand($update)->execute();
 		}
 			
 		
+	}
+
+	public static function approve_all()
+	{
+		$approve_all = "UPDATE `tbl_dtr` SET `hap_approval_status` = 1 WHERE `hap_approval_status` = ''";
+		Yii::app()->db->createCommand($approve_all)->execute();
+
+	}
+
+	public static function pending_all()
+	{
+		$pending_all = "UPDATE `tbl_dtr` SET `hap_approval_status` = '' WHERE `hap_approval_status` = 1";
+		Yii::app()->db->createCommand($pending_all)->execute();
+
 	}
 
 	

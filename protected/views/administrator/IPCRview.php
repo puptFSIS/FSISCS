@@ -161,25 +161,7 @@ if(isset($_SESSION['user'])) {
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
 
-<header id=page-title>
-<!-- Title and summary -->
-
-<!-- End - Title and summary -->
-<!-- Title right side -->
-<section id="menu_strip">
-<a data-category=all href='index.php?r=administrator'>Home</a>
-<a data-category=design href="index.php?r=administrator/profile">Profile</a>
-<a data-category=design href="index.php?r=administrator/faculty">Faculty</a>
-<a data-category=design href="index.php?r=administrator/reports">Reports</a>
-<a data-category=design href="index.php?r=administrator/forms">Forms</a>
-<a data-category=design href="index.php?r=administrator/ServiceCreditMenu">Service Credit</a>
-<a data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
-<a data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
-<a data-category=design href="index.php?r=administrator/other">Other</a>
-<a data-category=design href="index.php?r=administrator/logout">Log out</a>
-</section>
-<!-- End - Title right side -->
-</header>
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 
@@ -289,9 +271,9 @@ if(isset($_SESSION['user'])) {
         
                     <td id="approval" name="approval" style="text-align: center;">
                         <strong>
-                        <?php if($rows['adminApproval'] == "Approve") : ?>
+                        <?php if($rows['adminApproval'] == "Approved") : ?>
                                 <p style=" color: Green;"><?= $rows['adminApproval'] ?> </p>
-                        <?php elseif($rows['adminApproval'] == "Disapprove") : ?>
+                        <?php elseif($rows['adminApproval'] == "Disapproved") : ?>
 
                             <!-- Modal of Disapprove to view Feedback -->
                                 
@@ -316,7 +298,7 @@ if(isset($_SESSION['user'])) {
                                             </div>
                                             <div class="modal-body">
                                                 
-                                                <textarea id="feedback" rows="15" readonly><?php echo strip_tags($feed); ?></textarea>
+                                                <textarea id="feedback" rows="10" style="font-size: 20px;" readonly><?php echo strip_tags($feed); ?></textarea>
                                             </div> 
                                             <div class="modal-footer">
                                                 <button id="btn-modal" data-dismiss="modal">Close</button>
@@ -409,9 +391,9 @@ if(isset($_SESSION['user'])) {
         
                     <td id="approval" name="approval" style="text-align: center;">
                         <strong>
-                        <?php if($rowcf['adminApproval'] == "Approve") : ?>
+                        <?php if($rowcf['adminApproval'] == "Approved") : ?>
                                 <p style=" color: Green;"><?= $rowcf['adminApproval'] ?> </p>
-                        <?php elseif($rowcf['adminApproval'] == "Disapprove") : ?>
+                        <?php elseif($rowcf['adminApproval'] == "Disapproved") : ?>
 
                             <!-- Modal of Disapprove to view Feedback -->
                                 
@@ -527,9 +509,9 @@ if(isset($_SESSION['user'])) {
         
                     <td id="approval" name="approval" style="text-align: center;">
                         <strong>
-                        <?php if($rowsf['adminApproval'] == "Approve") : ?>
+                        <?php if($rowsf['adminApproval'] == "Approved") : ?>
                                 <p style=" color: Green;"><?= $rowsf['adminApproval'] ?> </p>
-                        <?php elseif($rowsf['adminApproval'] == "Disapprove") : ?>
+                        <?php elseif($rowsf['adminApproval'] == "Disapproved") : ?>
 
                             <!-- Modal of Disapprove to view Feedback -->
                                 
@@ -603,7 +585,7 @@ if(isset($_SESSION['user'])) {
             const flashdata = $('.flash-data').data('flashdata')
                     if (flashdata) {
                         Swal.fire(
-                            'Approve!',
+                            'Approved!',
                             '',
                             'success'
                         )
@@ -613,7 +595,7 @@ if(isset($_SESSION['user'])) {
             const flashdata1 = $('.flash-data-disapprove').data('flashdata1')
                     if (flashdata1) {
                         Swal.fire(
-                            'Disapprove',
+                            'Disapproved!',
                             '',
                             'error'
                         )

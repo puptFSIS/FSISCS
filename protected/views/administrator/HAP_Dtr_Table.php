@@ -41,10 +41,14 @@
 <!-- On the action column, you must click 2 pdf buttons in order to print it as pdf -->
 <!-- </p> -->
 <!-- <p> -->
-SHOW: 
+SORT: 
 <a href="index.php?r=administrator/HAPDtrTable&sort=pending"><input class="show_pending" id="pending_click" type="button" value="Pending" onclick="changecolor(1)" /></a>
 	<a href="index.php?r=administrator/HAPDtrTable&sort=approved"><input class="show_approved"  id="approved_click"  type="button" value="Approved" /></a>
 	<a href="index.php?r=administrator/HAPDtrTable&sort=disapproved"><input class="show_disapproved" id="disapproved_click"   type="button" value="Disapproved" /></a>
+
+
+
+	
 
 
 <br>

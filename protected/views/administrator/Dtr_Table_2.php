@@ -156,7 +156,7 @@
 
 
 </style>
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- //cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css -->
 <!-- <script src="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css"></script> -->
@@ -174,14 +174,13 @@
 	</label>
 <br> -->
 <!-- SHOW: -->
-<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
+	<a href="index.php?r=administrator/DtrTable&sort=pending"><input type="button" value="Pending" /></a>
 	<a href="index.php?r=administrator/DtrTable&sort=approved"><input type="button" value="Approved"/></a>
 	<a href="index.php?r=administrator/DtrTable&sort=disapproved"><input type="button" value="Disapproved"/></a>
-
 	<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
 
-
-
+ 
+	
 
 
 

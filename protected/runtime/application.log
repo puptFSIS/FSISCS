@@ -461,3 +461,1638 @@ REQUEST_URI=/FSISCS/index.php?r=administrator/TimePreferProcessADD
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\TimePreferProcessADD.php (97)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1243)
 in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/24 10:44:57 [error] [php] Invalid argument supplied for foreach() (C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:777)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(210): include()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3387): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php (777)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (210)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3387)
+2022/05/24 14:57:39 [error] [php] require_once(bootstrap.php): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:2)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(2): require_once()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (2)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (2)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:05:41 [error] [exception.Error] Error: Class 'PhpOffice\PhpWord\bootstrap' not found in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:3
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable
+---
+2022/05/24 15:06:57 [error] [php] require_once(\PhpOffice\PhpWord\bootstrap.php): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:06:58 [error] [php] require_once(\PhpOffice\PhpWord\bootstrap.php): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:06:59 [error] [php] require_once(\PhpOffice\PhpWord\bootstrap.php): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:06:59 [error] [php] require_once(\PhpOffice\PhpWord\bootstrap.php): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:07:00 [error] [php] require_once(\PhpOffice\PhpWord\bootstrap.php): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:30:13 [error] [php] require_once(\PhpOffice\PhpWord\bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:32:18 [error] [php] require_once(PhpWord\bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:32:40 [error] [php] require_once(phpoffice\phpword\bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:4)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(4): require_once()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:36:01 [error] [php] require_once(phpoffice/phpword/bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:5)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require_once()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (5)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (5)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:36:24 [error] [php] require(phpoffice/phpword/bootstrap.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:5)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (5)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (5)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+2022/05/24 15:37:28 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:37:37 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:38:23 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:38:27 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:39:19 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:39:19 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:39:36 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:41:20 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 15:41:32 [error] [exception.Exception] Exception: Could not find file '/autoload.php'. It is generated by Composer. Use 'install --prefer-source' or 'update --prefer-source' Composer commands to move forward. in C:\Apps\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\bootstrap.php:22
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php(5): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\Apps\\xampp\\h...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('PhpWord', NULL, true)
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): CController->render('PhpWord')
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('PhpWord')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/P...')
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/PhpWord
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/24 16:52:39 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "transmittal_form". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('transmittal_for...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('transmittal_for...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/t...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/24 16:52:59 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "transmittal_form". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('transmittal_for...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('transmittal_for...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/t...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/24 16:53:01 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "transmittal_form". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('transmittal_for...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('transmittal_for...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/t...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/24 16:53:03 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "transmittal_form". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('transmittal_for...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('transmittal_for...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/t...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/24 16:53:16 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "transmittal_form". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('transmittal_for...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('transmittal_for...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/t...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/24 16:53:17 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "transmittal_form". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('transmittal_for...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('transmittal_for...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/t...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/24 16:53:20 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "transmittal_form". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('transmittal_for...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('transmittal_for...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/t...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/24 16:53:35 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "transmittal_form". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('transmittal_for...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('transmittal_for...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/t...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/24 16:53:39 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "Transmittal_form". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('Transmittal_for...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Transmittal_for...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/T...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/Transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/24 17:42:33 [error] [exception.PhpOffice\PhpWord\Exception\InvalidImageException] PhpOffice\PhpWord\Exception\InvalidImageException: Invalid image: resources/PhpWord.png in C:\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\src\PhpWord\Element\Image.php:418
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\src\PhpWord\Element\Image.php(149): PhpOffice\PhpWord\Element\Image->checkImage()
+#1 [internal function]: PhpOffice\PhpWord\Element\Image->__construct('resources/PhpWo...', Array)
+#2 C:\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\src\PhpWord\Element\AbstractContainer.php(146): ReflectionClass->newInstanceArgs(Array)
+#3 [internal function]: PhpOffice\PhpWord\Element\AbstractContainer->addElement('Image', 'resources/PhpWo...', Array)
+#4 C:\xampp\htdocs\FSISCS\PhpWord\vendor\phpoffice\phpword\src\PhpWord\Element\AbstractContainer.php(113): call_user_func_array(Array, Array)
+#5 C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php(21): PhpOffice\PhpWord\Element\AbstractContainer->__call('addimage', Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('transmittal_for...', NULL, true)
+#10 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3503): CController->render('transmittal_for...')
+#11 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionTransmittal_form()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#13 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#14 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#15 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Transmittal_for...')
+#16 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#17 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#18 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#19 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/25 00:14:12 [error] [exception.ParseError] ParseError: syntax error, unexpected 'Text' (T_STRING) in C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php:25
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('transmittal_for...', NULL, true)
+#3 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3503): CController->render('transmittal_for...')
+#4 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionTransmittal_form()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Transmittal_for...')
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#10 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/25 05:09:42 [error] [php] Undefined variable: file (C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:67)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (67)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/25 05:09:43 [error] [php] Undefined variable: file (C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php:67)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3497): AdministratorController->render()
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionPhpword()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/PhpWord
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\PhpWord.php (67)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3497)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/25 05:50:38 [error] [exception.ParseError] ParseError: syntax error, unexpected '/', expecting end of file in C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php:15
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', NULL, true)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', NULL, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('transmittal_for...', NULL, true)
+#3 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3503): CController->render('transmittal_for...')
+#4 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionTransmittal_form()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Transmittal_for...')
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#10 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Transmittal_form
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/25 05:50:50 [error] [php] Use of undefined constant EOL - assumed 'EOL' (this will throw an Error in a future version of PHP) (C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php:15)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3503): AdministratorController->render()
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionTransmittal_form()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Transmittal_form
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php (15)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3503)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/25 05:50:59 [error] [php] include(VerticalJc.php): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\framework\YiiBase.php:463)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\YiiBase.php(463): include()
+#1 unknown(0): autoload()
+#2 C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php(36): spl_autoload_call()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3503): AdministratorController->render()
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionTransmittal_form()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Transmittal_form
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php (36)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3503)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/25 05:51:42 [error] [php] Undefined variable: section (C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php:11)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3503): AdministratorController->render()
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionTransmittal_form()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Transmittal_form
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php (11)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3503)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/25 05:51:54 [error] [php] include(VerticalJc.php): failed to open stream: No such file or directory (C:\xampp\htdocs\FSISCS\framework\YiiBase.php:463)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\YiiBase.php(463): include()
+#1 unknown(0): autoload()
+#2 C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php(35): spl_autoload_call()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3503): AdministratorController->render()
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionTransmittal_form()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Transmittal_form
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\transmittal_form.php (35)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3503)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+<<<<<<< Updated upstream
+2022/05/26 17:58:36 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php(344): FPDF->__construct('P', 'mm', 'legal')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('receiving_docum...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3349): CController->render('receiving_docum...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHap_generate_rd()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_generate_rd')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=May%2026%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20REGULAR%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val7=Rabe,%20Yolanda%20FolloscoFaranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.Jacinto,%20Ma.%20Teresa%20C.&val8=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20TS%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val9=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20OT%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of%20DATE:
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/26 18:08:04 [error] [exception.Error] Error: Call to undefined function get_magic_quotes_runtime() in C:\xampp\htdocs\FSISCS\fpdf.php:1031
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\fpdf.php(77): FPDF->_dochecks()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php(344): FPDF->__construct('P', 'mm', 'legal')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('receiving_docum...', Array, true)
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3349): CController->render('receiving_docum...', Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHap_generate_rd()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_generate_rd')
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#15 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=May%2026%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20REGULAR%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val7=Rabe,%20Yolanda%20FolloscoFaranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.Jacinto,%20Ma.%20Teresa%20C.&val8=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20TS%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:&val9=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20OT%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of%20DATE:
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+=======
+2022/05/26 18:17:06 [error] [exception.ParseError] ParseError: syntax error, unexpected ',', expecting ')' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php:312
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', Array, true)
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', Array, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRform2', Array, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): CController->render('IPCRform2', Array)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRform2')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRreport3
+---
+2022/05/26 18:20:23 [error] [exception.ParseError] ParseError: syntax error, unexpected ';', expecting ')' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php:10
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', Array, true)
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', Array, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRform2', Array, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): CController->render('IPCRform2', Array)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRform2')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRreport3
+---
+2022/05/26 18:20:40 [error] [php] Undefined variable: widhheader (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php:10)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php (10)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3184)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 18:21:20 [error] [php] Undefined variable: widthheader (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php:10)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php (10)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3184)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 18:21:31 [error] [php] Undefined offset: 0 (C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php:17299)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(5916): TCPDF->writeHTML()
+#1 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(17238): TCPDF->MultiCell()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php(10): TCPDF->writeHTMLCell()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17299)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (5916)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17238)
+2022/05/26 18:21:40 [error] [php] Undefined offset: 0 (C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php:17299)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(5916): TCPDF->writeHTML()
+#1 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(17238): TCPDF->MultiCell()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php(10): TCPDF->writeHTMLCell()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17299)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (5916)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17238)
+2022/05/26 18:21:42 [error] [php] Undefined offset: 0 (C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php:17299)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(5916): TCPDF->writeHTML()
+#1 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(17238): TCPDF->MultiCell()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php(10): TCPDF->writeHTMLCell()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17299)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (5916)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17238)
+2022/05/26 18:21:51 [error] [php] Undefined offset: 0 (C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php:17299)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(5916): TCPDF->writeHTML()
+#1 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(17238): TCPDF->MultiCell()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php(10): TCPDF->writeHTMLCell()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17299)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (5916)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17238)
+2022/05/26 18:21:51 [error] [php] Undefined offset: 0 (C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php:17299)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(5916): TCPDF->writeHTML()
+#1 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(17238): TCPDF->MultiCell()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php(10): TCPDF->writeHTMLCell()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17299)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (5916)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17238)
+2022/05/26 18:21:59 [error] [php] Undefined offset: 0 (C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php:17299)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(5916): TCPDF->writeHTML()
+#1 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(17238): TCPDF->MultiCell()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php(10): TCPDF->writeHTMLCell()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17299)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (5916)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17238)
+2022/05/26 18:22:00 [error] [php] Undefined offset: 0 (C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php:17299)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(5916): TCPDF->writeHTML()
+#1 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(17238): TCPDF->MultiCell()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php(10): TCPDF->writeHTMLCell()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17299)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (5916)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17238)
+2022/05/26 18:22:43 [error] [php] Undefined offset: 0 (C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php:17299)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(5916): TCPDF->writeHTML()
+#1 C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php(17238): TCPDF->MultiCell()
+#2 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRform2.php(10): TCPDF->writeHTMLCell()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#7 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3184): AdministratorController->render()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform2()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#14 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform2&fcode=FA0005TG2022&m=JD&ye=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17299)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (5916)
+in C:\Apps\xampp\htdocs\FSISCS\tcpdf_library\tcpdf.php (17238)
+>>>>>>> Stashed changes
+2022/05/26 19:49:46 [error] [php] require(vendor/autoload.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php:6)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php(6): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3050): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRtagvisible()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRtagvisible&m=JJ&y=2022
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php (6)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php (6)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3050)
+2022/05/26 19:52:55 [error] [exception.ParseError] ParseError: syntax error, unexpected '.' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRemailtemplate.php:120
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRtagvisible', NULL, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3050): CController->render('IPCRtagvisible')
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRtagvisible()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRtagvisible')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRtagvisible&m=JJ&y=2022
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRcreatejantojune&m=JJ&y=2022
+---
+<<<<<<< Updated upstream
+2022/05/26 22:25:00 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:25:07 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:30:39 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:30:43 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:30:46 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:32:16 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:32:34 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 22:32:37 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/26 23:14:33 [error] [exception.CException] CException: AdministratorController and its behaviors do not have a method or closure named "GetStringWidth". in C:\xampp\htdocs\FSISCS\framework\base\CComponent.php:266
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php(103): CComponent->__call('GetStringWidth', Array)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#6 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#14 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---
+2022/05/26 23:15:45 [error] [exception.ParseError] ParseError: syntax error, unexpected ',' in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:103
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#3 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#4 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---
+2022/05/26 23:51:17 [error] [php] Undefined variable: difference (C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:106)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): AdministratorController->render()
+#5 unknown(0): AdministratorController->actionRegular_DTRgoto()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php (106)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3328)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 00:05:22 [error] [exception.ParseError] ParseError: syntax error, unexpected '$difference' (T_VARIABLE) in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:85
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#3 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#4 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---
+2022/05/27 00:09:01 [error] [php] Undefined variable: difference (C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:86)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): AdministratorController->render()
+#5 unknown(0): AdministratorController->actionRegular_DTRgoto()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php (86)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3328)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 00:09:16 [error] [php] Undefined variable: quotient (C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php:108)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): AdministratorController->render()
+#5 unknown(0): AdministratorController->actionRegular_DTRgoto()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php (108)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3328)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 00:09:32 [error] [exception.ArgumentCountError] ArgumentCountError: Too few arguments to function FPDF::Write(), 1 passed in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php on line 288 and at least 2 expected in C:\xampp\htdocs\FSISCS\fpdf.php:771
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php(288): FPDF->Write(1)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#6 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#14 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---
+2022/05/27 00:10:22 [error] [exception.ArgumentCountError] ArgumentCountError: Too few arguments to function FPDF::Write(), 1 passed in C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php on line 288 and at least 2 expected in C:\xampp\htdocs\FSISCS\fpdf.php:771
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\Regular_DTR.php(288): FPDF->Write(1)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('Regular_DTR', Array, true)
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3328): CController->render('Regular_DTR', Array)
+#6 [internal function]: AdministratorController->actionRegular_DTRgoto('16', 'REGULAR', 'September', '2021', 'FA0797MN2008', '82', 'REGULAR', 'January', '2021', 'FA0797MN2008')
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs(Object(AdministratorController), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(AdministratorController), Object(ReflectionMethod), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#11 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Regular_DTRgoto')
+#13 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#14 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#15 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#16 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Regular_DTRgoto&val1=16&val2=REGULAR&val3=September&val4=2021&val5=FA0797MN2008&val6=82&val7=REGULAR&val8=January&val9=2021&val10=FA0797MN2008
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+=======
+2022/05/27 05:13:31 [error] [exception.ParseError] ParseError: syntax error, unexpected '}', expecting end of file in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\processIPCRapproval.php:26
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('processIPCRappr...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3009): CController->render('processIPCRappr...')
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionprocessIPCRapproval()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('processIPCRappr...')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/p...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/processIPCRapproval
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRevaluation&accomp=%3Cp%3ESAMPLE%20DATA%3C/p%3E&fcode=FA0005TG2022&idaccomp=164&id=273&m=JJ&y=2022
+>>>>>>> Stashed changes
+---
+2022/05/27 02:14:01 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 02:14:54 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 02:31:37 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1314)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 02:31:48 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1314)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 02:31:58 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1314)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 03:14:58 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 03:22:49 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1314)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 03:34:30 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/27 03:43:17 [error] [php] Undefined variable: sy (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3301)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionFetchDtrSched()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/FetchDtrSched
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3301)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/05/28 07:38:45 [error] [exception.CException] CException: AdministratorController cannot find the requested view "list_of_facult_members". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('list_of_facult_...', Array, true)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3411): CController->render('list_of_facult_...', Array)
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('ListOfFac')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/L...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/ListOfFac
+---
+2022/05/28 07:39:05 [error] [exception.CException] CException: AdministratorController cannot find the requested view "list_of_facult_members". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('list_of_facult_...', NULL, true)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3411): CController->render('list_of_facult_...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('ListOfFac')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/L...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/ListOfFac
+---
+2022/05/28 07:39:07 [error] [exception.CException] CException: AdministratorController cannot find the requested view "list_of_facult_members". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('list_of_facult_...', NULL, true)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3411): CController->render('list_of_facult_...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('ListOfFac')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/L...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/ListOfFac
+---
+2022/05/28 09:53:39 [error] [exception.ParseError] ParseError: syntax error, unexpected 'if' (T_IF), expecting ':' in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\dtr_menu.php:446
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', Array, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', Array, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3277): CController->render('daily_time_reco...', Array)
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionDtrTable()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('DtrTable')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/D...')
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/DtrTable
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/daily_time_record
+---
+2022/05/28 10:06:20 [error] [php] Undefined variable: id (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:826)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(230): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3391): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/HAP_Secretary_table
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php (826)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (230)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3391)
+2022/05/28 10:06:50 [error] [php] Undefined variable: sem (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php:3)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php(20): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(241): include()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#6 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3417): AdministratorController->render()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/ListOfFac
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php (3)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php (20)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (241)
+2022/05/28 19:19:54 [error] [php] Undefined variable: sem (C:\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php:3)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php(20): include()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(241): include()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3417): AdministratorController->render()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php (3)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php (20)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (241)
+2022/05/28 19:20:21 [error] [php] Undefined variable: sem (C:\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php:3)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php(20): include()
+#1 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(241): include()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#6 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3417): AdministratorController->render()
+#7 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php (3)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php (20)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (241)
+2022/05/28 19:31:33 [error] [exception.ParseError] ParseError: syntax error, unexpected '2021' (T_LNUMBER) in C:\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php:3
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(241): include()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3417): CController->render('daily_time_reco...', Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('ListOfFac')
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/L...')
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#14 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---
+2022/05/29 11:58:24 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "Approve_all". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('Approve_all')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Approve_all')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/A...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/Approve_all
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAPDtrTable
+---
+2022/05/29 12:21:06 [error] [exception.CException] CException: Property "AdministratorController.TblSchedule" is not defined. in C:\xampp\htdocs\FSISCS\framework\base\CComponent.php:130
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3523): CComponent->__get('TblSchedule')
+#1 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionApprove_all()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Approve_all')
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/A...')
+#7 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#9 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/Approve_all
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAPDtrTable
+---
+2022/05/30 01:40:12 [error] [exception.ParseError] ParseError: syntax error, unexpected '""' (T_CONSTANT_ENCAPSED_STRING) in C:\xampp\htdocs\FSISCS\protected\models\TblSchedule.php:286
+Stack trace:
+#0 [internal function]: YiiBase::autoload('TblSchedule')
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3523): spl_autoload_call('TblSchedule')
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionApprove_all()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Approve_all')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/A...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/Approve_all
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAPDtrTable
+---

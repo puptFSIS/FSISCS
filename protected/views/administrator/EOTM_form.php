@@ -768,7 +768,7 @@
         $counter = 0;
         $newresult_array  = [];  
         $temporary_list = ["REGULAR","PART-TIME","TS","OT"];
-        $sql="SELECT DISTINCT * FROM tbl_dtr where status != 1 and hap_approval_status = 1";
+        $sql="SELECT DISTINCT * FROM tbl_dtr where hap_approval_status !=2 and `year` = '2022'";
         $result=mysqli_query($conn,$sql);
 
         
@@ -811,46 +811,13 @@
 			$namecounter = 0;
 			$namecounterarray = [];
 
-           		$sql="SELECT DISTINCT * FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
+           		$sql="SELECT DISTINCT * FROM tbl_dtr hap_approval_status != 2 and `regpartime` = 'REGULAR'";
     			$result=mysqli_query($conn,$sql);
 
-           		$sql="SELECT DISTINCT FCode FROM tbl_dtr where status != 1  and hap_approval_status = 1 and `regpartime` = 'REGULAR'";
+           		$sql="SELECT DISTINCT FCode FROM tbl_dtr where hap_approval_status != 2 and `regpartime` = 'REGULAR'";
     			$result_distinct=mysqli_query($conn,$sql);
 
-    			
-           		echo'
-	            <div class="page">
-	            	<div class="body">
-						<br>
-						<p class="header_first_text">Republic of the Philippines</p>
-						<p class="header_second_text">POLYTECHNIC UNIVERSITY OF THE PHILIPPINES</p>
-						<p class="header_third_text">Office of the Vice President for Branches and Satellite Campuses</p>
-						<p class="header_fourth_text">TAGUIG BRANCH</p>
-						<p class="header_fifth_text">CTS No.</p>
-						<img src="assets/puplogo.png" class="pup_logo">
-						<br>
-						<p id="long_line">___________________________________________________________________________________</p>
-
-						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
-			 			<input id="position_of_sender" type="" value="Director" oninput="date_onchange(this.value,3)">
-						<input id="department_name" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
-						<input id="dear" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
-						<br>
-						<div class="body_text" contentEditable id="paragraph_text" >
-			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: 
-			 			</div>
-			 			
-					</div>
-					
-					<div id="paragraph_text" class="listOfFacultyMembers" contentEditable> 
-
-					 <ul>
-
-					';
-					// foreach($result as $newresult)
-					// {}
-					for ($x = 0; $x <= $number_of_items; $x++)
+    			for ($x = 0; $x <= $number_of_items; $x++)
     				{				
     					if ($x >= 1 && $x <= $number_of_items)
 			            {
@@ -896,6 +863,40 @@
 					$lastyear = end($newyear);
 					$namecount = count($newname);
 
+           		echo'
+	            <div class="page">
+	            	<div class="body">
+						<br>
+						<p class="header_first_text">Republic of the Philippines</p>
+						<p class="header_second_text">POLYTECHNIC UNIVERSITY OF THE PHILIPPINES</p>
+						<p class="header_third_text">Office of the Vice President for Branches and Satellite Campuses</p>
+						<p class="header_fourth_text">TAGUIG BRANCH</p>
+						<p class="header_fifth_text">CTS No.</p>
+						<img src="assets/puplogo.png" class="pup_logo">
+						<br>
+						<p id="long_line">___________________________________________________________________________________</p>
+
+						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
+						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
+			 			<input id="position_of_sender" type="" value="Director" oninput="date_onchange(this.value,3)">
+						<input id="department_name" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
+						<input id="dear" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
+						<br>
+						<div class="body_text" contentEditable id="paragraph_text" >
+			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: '.$firstmonth.'-'.$lastmonth.'
+			 			</div>
+			 			
+					</div>
+					
+					<div id="paragraph_text" class="listOfFacultyMembers" contentEditable> 
+
+					 <ul>
+
+					';
+					// foreach($result as $newresult)
+					// {}
+					
+
 					for($p = 0;$p < $namecount;$p++)
 					{
 						echo '<li class="list_items" id="regular_name">'.$newname[$p].'</li>';
@@ -938,36 +939,8 @@
 			$newdate ='';
 			$namecounter = 0;
 			$namecounterarray = [];
-           		echo'
-	            <div class="page">
-	            	<div class="body">
-						<br>
-						<p class="header_first_text">Republic of the Philippines</p>
-						<p class="header_second_text">POLYTECHNIC UNIVERSITY OF THE PHILIPPINES</p>
-						<p class="header_third_text">Office of the Vice President for Branches and Satellite Campuses</p>
-						<p class="header_fourth_text">TAGUIG BRANCH</p>
-						<p class="header_fifth_text">CTS No.</p>
-						<img src="assets/puplogo.png" class="pup_logo">
-						<br>
-						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input2" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
-						<input class="hrmd no_box" id="name_of_sender2" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
-			 			<input id="position_of_sender2" type="" value="Director" oninput="date_onchange(this.value,3)">
-						<input id="department_name2" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
-						<input id="dear2" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
-						<br>
-						<div class="body_text" contentEditable id="paragraph_text" >
-			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: 
-			 			</div>
-			 			
-					</div>
-					
-					<div id="paragraph_text2" class="listOfFacultyMembers" contentEditable> 
-				
-					 <ul>';
 
-				
-				for ($x = 0; $x <= $number_of_items; $x++)
+			for ($x = 0; $x <= $number_of_items; $x++)
     				{				
     					if ($x >= 1 && $x <= $number_of_items)
 			            {
@@ -1012,6 +985,37 @@
 					$firstyear = reset($newyear);
 					$lastyear = end($newyear);
 					$namecount = count($newname);
+					
+           		echo'
+	            <div class="page">
+	            	<div class="body">
+						<br>
+						<p class="header_first_text">Republic of the Philippines</p>
+						<p class="header_second_text">POLYTECHNIC UNIVERSITY OF THE PHILIPPINES</p>
+						<p class="header_third_text">Office of the Vice President for Branches and Satellite Campuses</p>
+						<p class="header_fourth_text">TAGUIG BRANCH</p>
+						<p class="header_fifth_text">CTS No.</p>
+						<img src="assets/puplogo.png" class="pup_logo">
+						<br>
+						<p id="long_line">___________________________________________________________________________________</p>
+						<input class="date no_box" id="month_input2" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
+						<input class="hrmd no_box" id="name_of_sender2" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
+			 			<input id="position_of_sender2" type="" value="Director" oninput="date_onchange(this.value,3)">
+						<input id="department_name2" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
+						<input id="dear2" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
+						<br>
+						<div class="body_text" contentEditable id="paragraph_text" >
+			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: '.$firstmonth.'-'.$lastmonth.'
+			 			</div>
+			 			
+					</div>
+					
+					<div id="paragraph_text2" class="listOfFacultyMembers" contentEditable> 
+				
+					 <ul>';
+
+				
+				
 
 					for($p = 0;$p < $namecount;$p++)
 					{
@@ -1053,39 +1057,8 @@
 			$newdate ='';
 			$namecounter = 0;
 			$namecounterarray = [];
-           		echo'
-	            <div class="page">
-	            	<div class="body">
-						<br>
-						<p class="header_first_text">Republic of the Philippines</p>
-						<p class="header_second_text">POLYTECHNIC UNIVERSITY OF THE PHILIPPINES</p>
-						<p class="header_third_text">Office of the Vice President for Branches and Satellite Campuses</p>
-						<p class="header_fourth_text">TAGUIG BRANCH</p>
-						<p class="header_fifth_text">CTS No.</p>
-						<img src="assets/puplogo.png" class="pup_logo">
-						<br>
-						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input3" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
-						<input class="hrmd no_box" id="name_of_sender3" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
-			 			<input id="position_of_sender2" type="" value="Director" oninput="date_onchange(this.value,3)">
-						<input id="department_name3" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
-						<input id="dear3" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
-						<br>
-						<div class="body_text" contentEditable id="paragraph_text3" >
-			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: 
-			 			</div>
-			 			
-					</div>
-					
-					<div id="paragraph_text3" class="listOfFacultyMembers" contentEditable> 
-						
-			
-					 <ul>
-					 
 
-				';
-
-				for ($x = 0; $x <= $number_of_items; $x++)
+			for ($x = 0; $x <= $number_of_items; $x++)
     				{				
     					if ($x >= 1 && $x <= $number_of_items)
 			            {
@@ -1130,6 +1103,40 @@
 					$firstyear = reset($newyear);
 					$lastyear = end($newyear);
 					$namecount = count($newname);
+
+           		echo'
+	            <div class="page">
+	            	<div class="body">
+						<br>
+						<p class="header_first_text">Republic of the Philippines</p>
+						<p class="header_second_text">POLYTECHNIC UNIVERSITY OF THE PHILIPPINES</p>
+						<p class="header_third_text">Office of the Vice President for Branches and Satellite Campuses</p>
+						<p class="header_fourth_text">TAGUIG BRANCH</p>
+						<p class="header_fifth_text">CTS No.</p>
+						<img src="assets/puplogo.png" class="pup_logo">
+						<br>
+						<p id="long_line">___________________________________________________________________________________</p>
+						<input class="date no_box" id="month_input3" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
+						<input class="hrmd no_box" id="name_of_sender3" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
+			 			<input id="position_of_sender2" type="" value="Director" oninput="date_onchange(this.value,3)">
+						<input id="department_name3" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
+						<input id="dear3" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
+						<br>
+						<div class="body_text" contentEditable id="paragraph_text3" >
+			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: '.$firstmonth.'-'.$lastmonth.'
+			 			</div>
+			 			
+					</div>
+					
+					<div id="paragraph_text3" class="listOfFacultyMembers" contentEditable> 
+						
+			
+					 <ul>
+					 
+
+				';
+
+				
 
 					for($p = 0;$p < $namecount;$p++)
 					{
@@ -1213,6 +1220,10 @@
         ?>
     </form>
 <button class="generate_btn_class" onclick="call_print()">generate receiving document</button>
+<!-- <button class="generate_btn_class" onclick="preview_transmittal()">preview_transmittal -->
+    <!-- <a style='color:white' href='index.php?r=administrator/Transmittal_form'>Php word</a> -->
+	
+</button>
 </body>
 
 <script>
@@ -1292,6 +1303,11 @@
 	window.open("index.php?r=/administrator/Hap_generate_rd&val1="+month_input+"&val2="+name_of_sender+"&val3="+position_of_sender+"&val4="+department_name+"&val5="+dear+"&val6="+paragraph_text+"&val7="+paragraph_text2+"&val8="+paragraph_text3+"&val9="+paragraph_text4);
 				     
 				
+	}
+
+	function preview_transmittal()
+	{
+		window.open("index.php?r=/administrator/Transmittal_form");
 	}
 </script>
 </html>

@@ -340,7 +340,9 @@
 	  font-weight: bold;
 	}
 
-
+.Swal-wide{
+    width:850px !important;
+}
 </style>
 <script src='assets/jquery-3.6.0.min.js'></script>
 <script src='assets/sweetalert2.all.min.js'></script>
@@ -485,6 +487,9 @@ if($status == "pending")
 
 	}
 	echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
+	echo "<a href='#' onclick='approve_all()'><input  type='button' value='Approve All Entries'/></a> 
+			<a href='index.php?r=administrator/Pending_all'><input type='button' value='Revert All Entries'/></a>
+			<br><br>";
 }
 
 
@@ -664,6 +669,31 @@ var fcode = [];
 var surname = [];
 var firstname = [];
 var middlename = [];
+
+// var approve_all = document.getElementById("approve_all_id");
+
+
+
+function approve_all()
+{
+	Swal.fire({
+	  title: 'Are you sure?',
+	  text: "You won't be able to revert this!",
+	  icon: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: '#3085d6',
+	  cancelButtonColor: '#d33',
+	  confirmButtonText: '<a href="index.php?r=administrator/Approve_all" style="color:white; text-decoration:none;">Approve all</a>'
+	}).then((result) => {
+	  if (result.isConfirmed) {
+	    Swal.fire(
+	      'Deleted!',
+	      'Your file has been deleted.',
+	      'success'
+	    )
+	  }
+	})
+}
 
 
 $(document).on('click', 'input[type="checkbox"]', function() {      

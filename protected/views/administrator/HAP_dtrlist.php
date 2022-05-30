@@ -488,7 +488,7 @@ if($status == "pending")
 	}
 	echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 	echo "<a href='#' onclick='approve_all()'><input  type='button' value='Approve All Entries'/></a> 
-			<a href='index.php?r=administrator/Pending_all'><input type='button' value='Revert All Entries'/></a>
+			<a href='#' onclick='revert_all()'><input type='button' value='Revert All Entries'/></a>
 			<br><br>";
 }
 
@@ -673,7 +673,6 @@ var middlename = [];
 // var approve_all = document.getElementById("approve_all_id");
 
 
-
 function approve_all()
 {
 	Swal.fire({
@@ -683,17 +682,49 @@ function approve_all()
 	  showCancelButton: true,
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
-	  confirmButtonText: '<a href="index.php?r=administrator/Approve_all" style="color:white; text-decoration:none;">Approve all</a>'
+	  confirmButtonText: '<a style="color:white; text-decoration:none;">Approve all</a>'
 	}).then((result) => {
 	  if (result.isConfirmed) {
-	    Swal.fire(
-	      'Deleted!',
-	      'Your file has been deleted.',
-	      'success'
-	    )
-	  }
+		Swal.fire({
+			title: 'All Entries are Approved!',
+			text: 'Redirecting...',
+			icon: 'success',
+			timer: 1700,
+			showConfirmButton:false, 
+			showCancelButton:false
+			}).then((result) => {
+					window.open('index.php?r=administrator/Approve_all', '_parent');
+				})
+	}
 	})
 }
+
+function revert_all()
+{
+	Swal.fire({
+	  title: 'Are you sure?',
+	  text: "You won't be able to revert this!",
+	  icon: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: '#3085d6',
+	  cancelButtonColor: '#d33',
+	  confirmButtonText: '<a style="color:white; text-decoration:none;">Revert All</a>'
+	}).then((result) => {
+	  if (result.isConfirmed) {
+		Swal.fire({
+			title: 'All Entries are Reverted!',
+			text: 'Redirecting...',
+			icon: 'success',
+			timer: 1700,
+			showConfirmButton:false, 
+			showCancelButton:false
+			}).then((result) => {
+					window.open('index.php?r=administrator/Pending_all', '_parent');
+				})
+	}
+	})
+}
+
 
 
 $(document).on('click', 'input[type="checkbox"]', function() {      

@@ -180,7 +180,7 @@
 	<a href="index.php?r=administrator/DtrTable&sort=deleted"><input type="button" value="Deleted"/></a>
 
  
-
+	
 
 
 

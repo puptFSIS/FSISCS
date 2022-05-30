@@ -22,7 +22,7 @@
 
 		<tfoot>
 			<tr>
-				<td style="font-size: 12px; font-style: italic;" colspan=9 ><?php echo "Faculty List";?></td>
+				<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
 			</tr>
 		</tfoot>
 

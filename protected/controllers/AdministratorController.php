@@ -3518,6 +3518,21 @@ class AdministratorController extends Controller
 
 	}
 
+	public function actionApprove_all()
+	{
+		$approve = TblSchedule::model()->approve_all();
+		header("location: index.php?r=administrator/HAPDtrTable&sort=pending");
+	}
+
+	public function actionPending_all()
+	{
+		$pending = TblSchedule::model()->pending_all();
+		header("location: index.php?r=administrator/HAPDtrTable&sort=pending");
+		
+		
+		// return $pending;
+
+	}
 	
 
 

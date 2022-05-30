@@ -1120,6 +1120,50 @@ class AdministratorController extends Controller
 	{
 		$this->render('ProcessAddSubject');
 	}
+
+	public function actionProcessUploadFile(){
+
+		if (isset($_FILES['filename'])) {
+			$Subject = array('currYear','SubjCode','SubjDescription','Category','Units','HoursLab','HoursLec');
+			$subjects = array();
+			$arrayIndex = 0;
+			$fileName = $_FILES["filename"]["tmp_name"];
+			
+
+			
+			//Passing of cell values from the file
+			$file_to_read = fopen($fileName, 'r');
+	 
+		    while (!feof($file_to_read) ) {
+		        $lines[] = fgetcsv($file_to_read, 1000, ',');
+		 
+		    }
+
+		    fclose($file_to_read);
+		    //end of passing values from the file
+
+
+		    //passing array values to another array
+		    $last = count($lines) - 1;
+
+		    for ($x=1; $x < $last; $x++) { 
+		    	if ($x!=1 || $x!=$last) {
+		    		$subjects[$arrayIndex] = array_combine($Subject, $lines[$x]);
+		    		$arrayIndex++;
+		    	}
+		    }
+
+		    //Insert active query
+		    $builder = Yii::app()->db->schema->commandBuilder;
+			$command=$builder->createMultipleInsertCommand('tbl_subjects', $subjects);
+			$command->execute();
+		    header("Location: index.php?r=administrator/SubjectManagement&mes=1");
+		} else {
+			header("Location: index.php?r=administrator/SubjectManagement&mes=3");
+		}
+		
+	}
+
 	public function actionSchedulingMenu()
 	{
 		$requests = TblRequestschedule::model()->countRequests();
@@ -1473,50 +1517,50 @@ class AdministratorController extends Controller
 	{
 		if (isset($_POST['subjID1'])) {
 			$schoolYear = $_POST['year'];
-		$currID = $_POST['currID'];
-    	$cyear = $_POST['cyear'];
-    	$courseID = $_POST['courseID'];
-    	$currYear = $_POST['currYear'];
-    	$sem = $_POST['sem'];
-    	// $courseName = $_POST['courseName'];
-    	$arrayIndex = 0;
+			$currID = $_POST['currID'];
+	    	$cyear = $_POST['cyear'];
+	    	$courseID = $_POST['courseID'];
+	    	$currYear = $_POST['currYear'];
+	    	$sem = $_POST['sem'];
+	    	// $courseName = $_POST['courseName'];
+	    	$arrayIndex = 0;
 
-    	// echo $currYear." ".$cyear." ".$courseID." ".$sem;
+	    	// echo $currYear." ".$cyear." ".$courseID." ".$sem;
 
-    	$checked = $_POST['subjID1'];
-		foreach($_POST['subjID2'] as $key => $value){
-			if(in_array($_POST['subjID2'][$key], $checked)){
-				$subjcode = $_POST['subjID2'][$key];
-				$subjtitle = $_POST['subjTitle'][$key];
-				$lec = $_POST['subjLec'][$key];
-				$lab = $_POST['subjLab'][$key];
-				$units = $_POST['subjUnit'][$key];
-				
-				
-				$Subjects[$arrayIndex] = array(
-				  'currID' => $currID,
-				  'currYear' => $currYear,
-				  'courseID' => $courseID,
-				  'csection' => 1,
-				  'cyear' => $cyear,
-				  'scode' => $subjcode,
-				  'stitle' => $subjtitle,
-				  'sunit' => $units,
-				  'sem' => $sem,
-				  'schoolYear' => $schoolYear,
-				  'hrs_lec' => $lec,
-				  'hrs_lab' => $lab
-				);
+	    	$checked = $_POST['subjID1'];
+			foreach($_POST['subjID2'] as $key => $value){
+				if(in_array($_POST['subjID2'][$key], $checked)){
+					$subjcode = $_POST['subjID2'][$key];
+					$subjtitle = $_POST['subjTitle'][$key];
+					$lec = $_POST['subjLec'][$key];
+					$lab = $_POST['subjLab'][$key];
+					$units = $_POST['subjUnit'][$key];
+					
+					
+					$Subjects[$arrayIndex] = array(
+					  'currID' => $currID,
+					  'currYear' => $currYear,
+					  'courseID' => $courseID,
+					  'csection' => 1,
+					  'cyear' => $cyear,
+					  'scode' => $subjcode,
+					  'stitle' => $subjtitle,
+					  'sunit' => $units,
+					  'sem' => $sem,
+					  'schoolYear' => $schoolYear,
+					  'hrs_lec' => $lec,
+					  'hrs_lab' => $lab
+					);
 
-				$arrayIndex++;
+					$arrayIndex++;
+				}
 			}
-		}
-		$builder = Yii::app()->db->schema->commandBuilder;
-		$command=$builder->createMultipleInsertCommand('tbl_subjectload', $Subjects);
-		$command->execute();
-		header("location: index.php?r=administrator/Viewcurriculum&courseID=".$courseID."&year=".$cyear."&currID=".$currID."&sy=".$schoolYear."&mes=0&currYear=".$currYear."");
+			$builder = Yii::app()->db->schema->commandBuilder;
+			$command=$builder->createMultipleInsertCommand('tbl_subjectload', $Subjects);
+			$command->execute();
+			header("location: index.php?r=administrator/Viewcurriculum&courseID=".$courseID."&year=".$cyear."&currID=".$currID."&sy=".$schoolYear."&mes=0&currYear=".$currYear."");
 		} else {
-			
+			echo "Insert Error! Please contact the Developers";
 		}
 		
 		
@@ -2921,6 +2965,10 @@ class AdministratorController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
+    public function actionIPCRInterpolationSheet2JD()
+    {
+    	$this->render('IPCRInterpolationSheet2JD');
+    }
     public function actionIPCRinterpolview2()
     {
     	$this->render('IPCRinterpolview2');
@@ -3401,6 +3449,20 @@ class AdministratorController extends Controller
 
 	}
 
+	public function actionListOfFac()
+	{
+		if(!isset($_SESSION)) 
+	    { 
+	        session_start(); 
+	        $this->CheckEmpID($_SESSION['CEmpID']);
+	    } 
+		$var = Yii::app()->session['fetch_use_id'];
+		$preview_value = 4; // 2 for checking DTRs
+		$this->render('daily_time_record',array('preview_value' => $preview_value));
+
+
+	}
+
 	public function actionDtr_Form()
 	{
 		if(!isset($_SESSION)) 
@@ -3488,6 +3550,33 @@ class AdministratorController extends Controller
 	}
 
 
+	public function actionPhpword()
+	{
+		$this->render('PhpWord');
+
+	}
+
+	public function actionTransmittal_form()
+	{
+		$this->render('transmittal_form');
+
+	}
+
+	public function actionApprove_all()
+	{
+		$approve = TblSchedule::model()->approve_all();
+		header("location: index.php?r=administrator/HAPDtrTable&sort=pending");
+	}
+
+	public function actionPending_all()
+	{
+		$pending = TblSchedule::model()->pending_all();
+		header("location: index.php?r=administrator/HAPDtrTable&sort=pending");
+		
+		
+		// return $pending;
+
+	}
 	
 
 

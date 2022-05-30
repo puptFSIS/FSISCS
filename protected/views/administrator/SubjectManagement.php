@@ -151,7 +151,7 @@ width: 300px;
 <?php endif;?>
 
 <h2 class="underlined-header">Subject Management</h2>
-<button  data-toggle="modal" data-target="#myModal" style="height: 30px; width:100px; text-align: center;">Add Subject</button><a href="index.php?r=administrator/SubjectReport" class="btn btn-mini" target = "blank">Print Subject</a>
+<button data-toggle="modal" data-target="#myModal1" style="height: 30px; width:100px; text-align: center;">Add Subject</button> | <button data-toggle="modal" data-target="#myModal2" style="height: 35px; width:100px; text-align: center;">Upload a CSV File</button> | <a href="index.php?r=administrator/SubjectReport" class="btn btn-mini" target = "blank">Print Subject</a>
 <br />
 <br />
 
@@ -210,8 +210,8 @@ width: 300px;
 
 </section>
 
-<!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+<!-- Modal 1 -->
+  <div class="modal fade" id="myModal1" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <form id="annc" name="annc" action="index.php?r=administrator/processAddSubject" method="post">
@@ -257,8 +257,36 @@ width: 300px;
           </form>
         </div>
       </div>
+    </div>
+</div>
+
+<!-- Modal 2 -->
+    <!-- Modal 1 -->
+  <div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form id="annc" name="annc" action="index.php?r=administrator/processUploadFile" method="post" enctype="multipart/form-data">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color:black;">&times;</span>
+            </button>
+          <h4 class="modal-title" style="position: absolute; left: 5px;top: 5px;">Subject Management</h4>
+        </div>
+        <div class="modal-body">
+            <p style="margin-bottom: 9px;">
+                File Name: <input type="file" name="filename">
+            </p>
+        </div>
+
+        <div class="modal-footer">
+          <input type="submit" name="Submit">
+          </form>
+          <div></div>
+        </div>
+      </div>
       
     </div>
+
   </div>
 
 </section>

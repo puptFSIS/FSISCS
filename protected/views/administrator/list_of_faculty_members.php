@@ -41,9 +41,9 @@
 		<table  id="ProfTable" class="table table-striped table-bordered">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>name</th>
-					<th>Status</th>
+					<th class="thead" style="text-align: center;"><strong>ID</strong></th>
+					<th class="thead" style="text-align: center;"><strong>name</strong></th>
+					<th class="thead" style="text-align: center;"><strong>Status</strong></th>
 
 				</tr>
 			</thead>

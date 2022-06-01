@@ -14,7 +14,11 @@
 
 		$query = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcr1.id = tbl_ipcraccomp.id_ipcr1 WHERE tbl_ipcr1.month = '$m' AND tbl_ipcr1.year = '$y' AND tbl_ipcr1.deleted_on IS NULL AND tbl_ipcr1.if_required = 'Required'";
 	} else if($m == "JD") {
-		$query = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcr2.id = tbl_ipcraccomp.id_ipcr2 WHERE tbl_ipcraccomp.fcode = '$fcode' AND tbl_ipcr2.month = '$m' AND tbl_ipcr2.year = '$y' AND tbl_ipcr2.deleted_on IS NULL AND tbl_ipcr2.if_required = 'Required'"; 
+		$query1 = "SELECT * from tbl_ipcr2 WHERE month = '$m' AND year ='$y' AND if_required = 'Required'";
+		$query_result1 = mysqli_query($conn,$query1);
+		$count_ipcr1 = mysqli_num_rows($query_result1);
+
+		$query = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcr2.id = tbl_ipcraccomp.id_ipcr2 WHERE tbl_ipcr2.month = '$m' AND tbl_ipcr2.year = '$y' AND tbl_ipcr2.deleted_on IS NULL AND tbl_ipcr2.if_required = 'Required'"; 
 		
 	}
 	$query_result = mysqli_query($conn,$query);

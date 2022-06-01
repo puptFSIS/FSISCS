@@ -950,7 +950,9 @@
 		      	var stimes_hold = [];
 		      	var stimee_hold = [];
 		      	var final_stimes_pm;
+		      	var finalfinal_stimes_pm;
 		      	var final_stimee_pm;
+		      	var finalfinal_stimee_pm;
 		      	var stimes_hold_pm = [];
 		      	var stimee_hold_pm = [];
 
@@ -1068,7 +1070,8 @@
 				if (filter.length==1 && filter[0]>1159)
 				{
 					final_stimes_pm = filter[0];
-					cells_pm_arr.value = final_stimes_pm;
+					finalfinal_stimes_pm = Array.from(final_stimes_pm.toString());
+					cells_pm_arr.value = finalfinal_stimes_pm[0]+finalfinal_stimes_pm[1]+':'+finalfinal_stimes_pm[2]+finalfinal_stimes_pm[3];
 					
 				}
 				if (filter.length > 1){
@@ -1078,7 +1081,8 @@
 					if(filter[0]>1159)
 					{
 					final_stimes_pm = filter[0];
-					cells_pm_arr.value = final_stimes_pm;
+					finalfinal_stimes_pm = Array.from(final_stimes_pm.toString());
+					cells_pm_arr.value = finalfinal_stimes_pm[0]+finalfinal_stimes_pm[1]+':'+finalfinal_stimes_pm[2]+finalfinal_stimes_pm[3];
 					}	
 					
 				} 
@@ -1091,7 +1095,8 @@
 				if (filter2.length==1 && filter2[0]>1159)
 				{
 					final_stimee_pm = filter2[0];
-					cells_pm_dep.value = final_stimee_pm;
+					finalfinal_stimee_pm = Array.from(final_stimee_pm.toString());
+					cells_pm_dep.value = finalfinal_stimee_pm[0]+finalfinal_stimee_pm[1]+':'+finalfinal_stimee_pm[2]+finalfinal_stimee_pm[3];
 					
 				}
 				if (filter2.length > 1){
@@ -1101,7 +1106,8 @@
 					if(filter2[0]>1159)
 					{
 					final_stimee_pm = filter2[0];
-					cells_pm_dep.value = final_stimee_pm;
+					finalfinal_stimee_pm = Array.from(final_stimee_pm.toString());
+					cells_pm_dep.value = finalfinal_stimee_pm[0]+finalfinal_stimee_pm[1]+':'+finalfinal_stimee_pm[2]+finalfinal_stimee_pm[3];
 					}	
 					
 				} 

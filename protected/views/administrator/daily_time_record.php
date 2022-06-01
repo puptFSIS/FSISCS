@@ -203,7 +203,7 @@ if(isset($_SESSION['user'])) {
             
 
             echo "<h2 class=underlined-header>List of Created Daily Time Records</h2>";
-                 include("getPersonalInformation.php");
+            include("getPersonalInformation.php");
             include("getRole.php");
             include("dtr_menu.php");
             include("Dtr_Table_2.php");

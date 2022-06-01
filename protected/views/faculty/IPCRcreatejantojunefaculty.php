@@ -571,7 +571,7 @@ if(isset($_SESSION['user'])) {
 </table>
     <h5>
         <strong>
-            <center>NOTE: DOUBLE CHECK. IF YOU ARE DONE ON YOUR IPCR, PLEASE PRESS THIS BUTTON TO SUBMIT</center>
+            <center>NOTE: DOUBLE CHECK. IF YOU'RE DONE ON YOUR IPCR, PLEASE PRESS THIS BUTTON TO SUBMIT</center>
         </strong>
     </h5>             
     <center>

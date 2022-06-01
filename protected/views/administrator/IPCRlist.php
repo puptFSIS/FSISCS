@@ -188,7 +188,7 @@ if(isset($_SESSION['user'])) {
         $m = $_GET['m'];
         $y = $_GET['y'];
     }
-
+ 
 ?>
     <div class="main_container" onload="makeTableScroll();">
         <div class="scrollingTable">
@@ -198,6 +198,14 @@ if(isset($_SESSION['user'])) {
                 <?php else : ?>
                     <h3><strong>List of Faculty IPCR <?php echo '(July to December, '.$y.')';?></strong></h3>
                 <?php endif; ?>
+                <br>
+                <a href="">
+                    <button style="background-color: green;">Approved IPCR</button>
+                </a>
+                <a href="">
+                    <button style="background-color: blue;">Pending IPCR</button>
+                </a>
+                <br>
                 <br>
                 <!--  Uploaded File list -->
                 
@@ -214,12 +222,12 @@ if(isset($_SESSION['user'])) {
                     </thead>
                     <?php
                      //Database
-                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month = '$m' ORDER BY tbl_evaluationfaculty.LName ASC";
+                        $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status = 'Submitted' ORDER BY tbl_evaluationfaculty.LName ASC";
                         $result = mysqli_query($conn,$sql);
 
                         while($row = mysqli_fetch_array($result)) 
                         {
-                            $fcode = $row['FCode'];
+                            $fcode = $row['fcode'];
                             $fname = $row['FName'];
                             $status = $row['status'];
                             $mname = $row['MName'];
@@ -240,8 +248,9 @@ if(isset($_SESSION['user'])) {
             <?php endif; ?>
 
 
-            <!-- Script function for searching -->
+            
                 <script src="js/preventresize.js"></script>
+                <!-- Script function for searching -->
                 <script>
                     function myFunction() 
                     {

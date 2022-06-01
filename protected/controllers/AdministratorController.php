@@ -2965,6 +2965,14 @@ class AdministratorController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
+    public function actionIPCRemailtemplatePending()
+    {
+    	$this->render('IPCRemailtemplatePending');
+    }
+    public function actionIPCRemailtemplateApproved()
+    {
+    	$this->render('IPCRemailtemplateApproved');
+    }
     public function actionIPCRInterpolationSheet2JD()
     {
     	$this->render('IPCRInterpolationSheet2JD');

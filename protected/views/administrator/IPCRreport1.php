@@ -250,7 +250,7 @@ select {
 <div class=widget-content>
 <ul class='widget-list categories-list'>
 <?php include("IPCRmenu.php");?> 
-</ul>
+</ul> 
 </div>
 </section>
 </aside>

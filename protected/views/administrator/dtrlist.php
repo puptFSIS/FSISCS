@@ -262,12 +262,12 @@ if(isset($_GET['sort']))
 	{
 		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and status != 1 ";
 		$result=mysqli_query($conn,$sql);
-		if(empty($result))
+		if(empty($result)) 
 		
 		{
 			$status = "empty";
 			
-		}
+		} 
 		else
 		{
 			$status = "pending";

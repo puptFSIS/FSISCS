@@ -34,6 +34,11 @@ if(isset($_SESSION['user'])) {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- For Alerts -->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
@@ -200,6 +205,12 @@ if(isset($_SESSION['user'])) {
 
 <section>
 <a href="index.php?r=administrator/IPCRlist<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 80px; margin-left: -15%;">&laquo; Previous</button></a>
+<a href="index.php?r=faculty/IPCRtagcomplete<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>">
+            <button style="float: right; margin-left: 10px; margin-right: -15%; background-color: blue;">Mark as Pending</button>
+        </a>
+<a href="index.php?r=faculty/IPCRtagcomplete<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>">
+            <button style="float: right; margin-right: -20px; background-color: green;">Mark as Approved</button>
+        </a>
 
 <br>
 <table class=round-3 style="width:132%; margin-left: -15%;" id="shadow">
@@ -563,6 +574,11 @@ if(isset($_SESSION['user'])) {
 
 </tbody>
 </table>
+
+          
+  
+       
+ 
 </div>
 </div>
             <!-- prevent page resize -->

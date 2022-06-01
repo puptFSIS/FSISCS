@@ -192,11 +192,11 @@ select {
 <!---->
 <?php  
     
-    if(isset($_POST['submit']))
-    {
-        $selectedm = $_POST['Month'];
-        $selectedy = $_POST['Year'];
-    } 
+    // if(isset($_POST['submit']))
+    // {
+    //     $selectedm = $_POST['Month'];
+    //     $selectedy = $_POST['Year'];
+    // } 
     
          
 ?> 

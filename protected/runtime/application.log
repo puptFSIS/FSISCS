@@ -1992,6 +1992,7 @@ REQUEST_URI=/FSISCS/index.php?r=administrator/ListOfFac
 in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php (3)
 in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php (20)
 in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (241)
+<<<<<<< Updated upstream
 2022/05/28 19:19:54 [error] [php] Undefined variable: sem (C:\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php:3)
 Stack trace:
 #0 C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php(20): include()
@@ -2429,3 +2430,134 @@ REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac&sort=notyet
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\faculty_list.php (67)
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php (51)
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (241)
+=======
+2022/05/28 12:45:58 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "IPCRvalidation". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('IPCRvalidation')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRvalidation')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRvalidation
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRreport3
+---
+2022/05/31 17:07:55 [error] [php] mysqli_fetch_array() expects parameter 1 to be mysqli_result, bool given (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRlist.php:220)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRlist.php(220): mysqli_fetch_array()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3096): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRlist()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRlist&m=JJ&y=2022
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRlist.php (220)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3096)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/05/31 17:16:55 [error] [php] Undefined index: FCode (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRlist.php:222)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3096): AdministratorController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRlist()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRlist&m=JJ&y=2022
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRlist.php (222)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3096)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/05/31 18:59:09 [error] [php] Undefined variable: fcode (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRlist.php:202)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3096): AdministratorController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRlist()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRlist&m=JJ&y=2022
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRlist.php (202)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3096)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/05/31 21:10:52 [error] [php] include(IPCRemailtemplateApprove.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php:33)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php(33): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3050): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRtagvisible()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRtagvisible&m=JJ&y=2022
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php (33)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php (33)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3050)
+2022/05/31 21:12:31 [error] [php] include(IPCRemailtemplateApprove.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php:33)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php(33): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3054): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRtagvisible()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRtagvisible&m=JJ&y=2022
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php (33)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRtagvisible.php (33)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3054)
+2022/05/31 21:19:34 [error] [exception.ParseError] ParseError: syntax error, unexpected '}' in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:2927
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(276): CWebApplication->createController('IPCRcreatejanto...')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRcreatejantojune&m=JJ&y=2022
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRcreate&a=1
+---
+2022/05/31 21:19:34 [error] [exception.ParseError] ParseError: syntax error, unexpected '}' in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:2927
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(276): CWebApplication->createController('IPCRcreatejanto...')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRcreatejantojune&m=JJ&y=2022
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRcreate&a=1
+---
+>>>>>>> Stashed changes

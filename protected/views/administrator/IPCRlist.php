@@ -146,6 +146,111 @@ if(isset($_SESSION['user'])) {
     background-color: antiquewhite;
 }
 
+.underlined-header-submitted {
+    background-color: black;
+    font-size: 22px;
+    color: white;
+}
+
+.underlined-header-approved {
+    background-color: green;
+    font-size: 22px;
+    color: white;
+}
+
+.underlined-header-pending {
+    background-color: blue;
+    font-size: 22px;
+    color: white;
+}
+/*styles for switchable tab*/
+
+.warpper{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tab1{
+  cursor: pointer;
+  padding:10px 20px;
+  margin:0px 2px;
+  background:#000;
+  display:inline-block;
+  color:#fff;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+.tab2{
+  cursor: pointer;
+  padding:10px 20px;
+  margin:0px 2px;
+  background:green;
+  display:inline-block;
+  color:#fff;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+.tab3{
+  cursor: pointer;
+  padding:10px 20px;
+  margin:0px 2px;
+  background:Blue;
+  display:inline-block;
+  color:#fff;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
+.panels{
+  background:whitesmoke;
+  box-shadow: 0 2rem 2rem #00000080;
+  min-height:200px;
+  width:570px;
+  max-width:1000px;
+  border-radius:3px;
+  /*overflow:hidden;*/
+  padding:20px;  
+}
+.panel{
+  display:none;
+  animation: fadein .8s;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.panel-title{
+  font-size:1.5em;
+  font-weight:bold;
+}
+
+#one:checked ~ .panels #one-panel,
+#two:checked ~ .panels #two-panel,
+#three:checked ~ .panels #three-panel{
+  display:block;
+}
+#one:checked ~ .tabs #one-tab
+{
+  background:#fffffff6;
+  color:#000;
+  border-top: 3px solid #000;
+}
+#two:checked ~ .tabs #two-tab
+{
+  background:#fffffff6;
+  color:#000;
+  border-top: 3px solid green;
+}
+#three:checked ~ .tabs #three-tab
+{
+  background:#fffffff6;
+  color:#000;
+  border-top: 3px solid blue;
+}
+
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -199,49 +304,181 @@ if(isset($_SESSION['user'])) {
                     <h3><strong>List of Faculty IPCR <?php echo '(July to December, '.$y.')';?></strong></h3>
                 <?php endif; ?>
                 <br>
-                <a href="">
-                    <button style="background-color: green;">Approved IPCR</button>
-                </a>
-                <a href="">
-                    <button style="background-color: blue;">Pending IPCR</button>
-                </a>
-                <br>
-                <br>
-                <!--  Uploaded File list -->
                 
-                <p><strong>Search professor</strong><input type="text" id="myInput" onkeyup="myFunction()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
-                <table id="myTable">
-                    <thead>
-                        <tr>
-                            
-                            <th width="30%"><h5 align="Left">Name</th></h5>
-                            <th width="30%"><h5 align="Left">Faculty Code</th></h5>
-                            <th width="30%"><h5 align="Left">Status</th></h5>
-                            <th width="5%"><h5 align="Left">Action</th></h5> 
-                        </tr>
-                    </thead>
-                    <?php
-                     //Database
-                        $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status = 'Submitted' ORDER BY tbl_evaluationfaculty.LName ASC";
-                        $result = mysqli_query($conn,$sql);
+            <div class="warpper">
+                      <input class="radio" id="one" name="group" type="radio" checked style="display: none;">
+                      <input class="radio" id="two" name="group" type="radio" style="display: none;">
+                      <input class="radio" id="three" name="group" type="radio" style="display: none;">
+                    <div class="tabs">
+                          <label class="tab1" id="one-tab" for="one">Submitted</label>
+                          <label class="tab2" id="two-tab" for="two">Approved</label>
+                          <label class="tab3" id="three-tab" for="three">Pending</label>
+                    </div>
+                <div class="panels">
+                    <div class="panel" id="one-panel">
+                        <div class="panel-title underlined-header-submitted"><u><center>SUBMITTED IPCR</center></u></div>
+                        <br>
+                        <p><strong>Search professor</strong><input type="text" id="myInput" onkeyup="myFunction()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
+                        <table id="myTable">
+                            <thead>
+                                <tr>
+                                    
+                                    <th width="30%"><h5 align="Left">Name</th></h5>
+                                    <th width="30%"><h5 align="Left">Faculty Code</th></h5>
+                                    <th width="30%"><h5 align="Left">Status</th></h5>
+                                    <th width="5%"><h5 align="center">Action</th></h5> 
+                                </tr>
+                            </thead>
+                            <?php
+                             //Database
+                                $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status = 'Submitted' ORDER BY tbl_evaluationfaculty.LName ASC";
+                                $result = mysqli_query($conn,$sql);
 
-                        while($row = mysqli_fetch_array($result)) 
-                        {
-                            $fcode = $row['fcode'];
-                            $fname = $row['FName'];
-                            $status = $row['status'];
-                            $mname = $row['MName'];
-                            $sname = $row['LName'];
-                    
-                            echo '<tr>
-                                <td name="name" style="text-align: left;">'.$sname.", ".$fname." ".$mname.'</td>
-                                <td name="fcode" style="text-align: left;">'.$fcode.'</td>
-                                <td name="status" style="text-align: left;">'.$status.'</td>
-                                <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 100px">View IPCR</button></a></td>
-                            </tr>';
-                        }
-                    ?>        
-            </table> 
+                                while($row = mysqli_fetch_array($result)) 
+                                {
+                                    $fcode = $row['fcode'];
+                                    $fname = $row['FName'];
+                                    $status = $row['status'];
+                                    $mname = $row['MName'];
+                                    $sname = $row['LName'];
+                            
+                                    echo '<tr>
+                                        <td name="name" style="text-align: left;">'.$sname.", ".$fname." ".$mname.'</td>
+                                        <td name="fcode" style="text-align: left;">'.$fcode.'</td>
+                                        <td name="status" style="text-align: left;">'.$status.'</td>
+                                        <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 100px">View</button></a></td>
+                                    </tr>';
+                                }
+                            ?>        
+                        </table>
+                    </div>
+                    <div class="panel" id="two-panel">
+                        <div class="panel-title underlined-header-approved"><u><center>APPROVED IPCR</center></u></div>
+                        <br>
+                        <p><strong>Search professor</strong><input type="text" id="myInputApproved" onkeyup="myFunction()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
+                        <table id="myTableApproved">
+                            <thead>
+                                <tr>
+                                    
+                                    <th width="30%"><h5 align="Left">Name</th></h5>
+                                    <th width="30%"><h5 align="Left">Faculty Code</th></h5>
+                                    <th width="15%"><h5 align="Left">Status</th></h5>
+                                    <th width="20%"><h5 align="center">Action</th></h5> 
+                                </tr>
+                            </thead>
+                            <?php
+                             //Database
+                                $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status = 'Approved' ORDER BY tbl_evaluationfaculty.LName ASC";
+                                $result = mysqli_query($conn,$sql);
+
+                                while($row = mysqli_fetch_array($result)) 
+                                {
+                                    $fcode = $row['fcode'];
+                                    $fname = $row['FName'];
+                                    $status = $row['status'];
+                                    $mname = $row['MName'];
+                                    $sname = $row['LName'];
+                            
+                                    echo '<tr>
+                                        <td name="name" style="text-align: left;">'.$sname.", ".$fname." ".$mname.'</td>
+                                        <td name="fcode" style="text-align: left;">'.$fcode.'</td>
+                                        <td name="status" style="text-align: left;">'.$status.'</td>
+                                        <td >
+                                            <a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit">View</button></a>
+                                            <a href="index.php?r=administrator/IPCRform1&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.'"><button type="submit" name="submit">PDF</button></a>
+                                        </td>
+                                    </tr>';
+                                }
+                            ?>  
+                            <script>
+                                function myFunction() 
+                                {
+                                    var input, filter, table, tr, td, i, txtValue;
+                                    input = document.getElementById("myInputApproved");
+                                    filter = input.value.toUpperCase();
+                                    table = document.getElementById("myTableApproved");
+                                    tr = table.getElementsByTagName("tr");
+                                    for (i = 0; i < tr.length; i++) 
+                                    {
+                                        td = tr[i].getElementsByTagName("td")[0];
+                                        if (td) 
+                                        {
+                                            txtValue = td.textContent || td.innerText;
+                                            if (txtValue.toUpperCase().indexOf(filter) > -1) 
+                                            {
+                                             tr[i].style.display = "";
+                                            } else {
+                                                tr[i].style.display = "none";
+                                            }
+                                        }       
+                                    }
+                                }
+                            </script>      
+                        </table>
+                    </div>
+                    <div class="panel" id="three-panel">
+                        <div class="panel-title underlined-header-pending"><u><center>PENDING / ON REVIEW IPCR</center></u></div>
+                        <br>
+                        <p><strong>Search professor</strong><input type="text" id="myInputPending" onkeyup="myFunction()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
+                        <table id="myTablePending">
+                            <thead>
+                                <tr>
+                                    
+                                    <th width="30%"><h5 align="Left">Name</th></h5>
+                                    <th width="30%"><h5 align="Left">Faculty Code</th></h5>
+                                    <th width="30%"><h5 align="Left">Status</th></h5>
+                                    <th width="5%"><h5 align="center">Action</th></h5> 
+                                </tr>
+                            </thead>
+                            <?php
+                             //Database
+                                $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status = 'Pending' ORDER BY tbl_evaluationfaculty.LName ASC";
+                                $result = mysqli_query($conn,$sql);
+
+                                while($row = mysqli_fetch_array($result)) 
+                                {
+                                    $fcode = $row['fcode'];
+                                    $fname = $row['FName'];
+                                    $status = $row['status'];
+                                    $mname = $row['MName'];
+                                    $sname = $row['LName'];
+                            
+                                    echo '<tr>
+                                        <td name="name" style="text-align: left;">'.$sname.", ".$fname." ".$mname.'</td>
+                                        <td name="fcode" style="text-align: left;">'.$fcode.'</td>
+                                        <td name="status" style="text-align: left;">'.$status.'</td>
+                                        <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 100px">View IPCR</button></a></td>
+                                    </tr>';
+                                }
+                            ?>  
+                            <script>
+                                function myFunction() 
+                                {
+                                    var input, filter, table, tr, td, i, txtValue;
+                                    input = document.getElementById("myInputPending");
+                                    filter = input.value.toUpperCase();
+                                    table = document.getElementById("myTablePending");
+                                    tr = table.getElementsByTagName("tr");
+                                    for (i = 0; i < tr.length; i++) 
+                                    {
+                                        td = tr[i].getElementsByTagName("td")[0];
+                                        if (td) 
+                                        {
+                                            txtValue = td.textContent || td.innerText;
+                                            if (txtValue.toUpperCase().indexOf(filter) > -1) 
+                                            {
+                                             tr[i].style.display = "";
+                                            } else {
+                                                tr[i].style.display = "none";
+                                            }
+                                        }       
+                                    }
+                                }
+                            </script>        
+                         </table>
+                    </div>
+                </div>
+            </div>
             <!-- Sweetalert for can't access -->
             <?php if(isset($_GET['a'])) : ?>
                 <div class="flash-data" data-flashdata="<?= $_GET['a']; ?>"></div>
@@ -252,28 +489,7 @@ if(isset($_SESSION['user'])) {
                 <script src="js/preventresize.js"></script>
                 <!-- Script function for searching -->
                 <script>
-                    function myFunction() 
-                    {
-                        var input, filter, table, tr, td, i, txtValue;
-                        input = document.getElementById("myInput");
-                        filter = input.value.toUpperCase();
-                        table = document.getElementById("myTable");
-                        tr = table.getElementsByTagName("tr");
-                        for (i = 0; i < tr.length; i++) 
-                        {
-                            td = tr[i].getElementsByTagName("td")[0];
-                            if (td) 
-                            {
-                                txtValue = td.textContent || td.innerText;
-                                if (txtValue.toUpperCase().indexOf(filter) > -1) 
-                                {
-                                 tr[i].style.display = "";
-                                } else {
-                                    tr[i].style.display = "none";
-                                }
-                            }       
-                        }
-                    }
+                    
  
                     const flashdata = $('.flash-data').data('flashdata')
                     if (flashdata) {

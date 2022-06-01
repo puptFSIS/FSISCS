@@ -2,7 +2,7 @@
 	session_start();
 	include("config.php");
 
-	if(isset($_POST['submit']))
+	if(isset($_POST['submit'])) 
 	{
 		$m = $_GET['m'];
 		$y = $_GET['y'];

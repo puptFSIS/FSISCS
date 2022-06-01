@@ -152,6 +152,90 @@ if(isset($_SESSION['user'])) {
     width: 100%;
     resize: none;
 }
+
+/*Style for alert*/
+.alert{
+  background: lightgreen;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border-radius: 4px;
+  border-left: 8px solid green;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.alert.showAlert{
+  opacity: 1;
+  pointer-events: auto;
+}
+.alert.show{
+  animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+  0%{
+    transform: translateX(100%);
+  }
+  40%{
+    transform: translateX(-10%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+.alert.hide{
+  animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+  0%{
+    transform: translateX(-10px);
+  }
+  40%{
+    transform: translateX(0%);
+  }
+  80%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+.alert .fa-check-circle{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: green;
+  font-size: 30px;
+}
+.alert .msg{
+  padding: 0 20px;
+  font-size: 18px;
+  color: black;
+}
+.alert .close-btn{
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #43d955;
+  padding: 20px 18px;
+  cursor: pointer;
+}
+.alert .close-btn:hover{
+  background: #0bb820;
+}
+.alert .close-btn .fas{
+  color: green;
+  font-size: 22px;
+  line-height: 40px;
+}
+
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -188,30 +272,68 @@ if(isset($_SESSION['user'])) {
     $query = "SELECT * FROM tbl_personalinformation WHERE EmpID = '$fcode'";
     $res = mysqli_query($conn,$query);
 
+
+
     while($rows = mysqli_fetch_array($res))
     {
         $fname = $rows['firstname'];
         $mname = $rows['middlename'];
         $sname = $rows['surname'];
 
-        if($m == "JJ")
+        $sql = "SELECT * FROM tbl_ipcrstatus WHERE fcode = '$fcode' AND month = '$m' AND year = '$y'";
+        $result = mysqli_query($conn,$sql);
+        while($rows = mysqli_fetch_assoc($result))
         {
-            echo '<h2 class="underlined-header" style="width:132%; margin-left: -15%;"><strong>IPCR OF: '.$sname.", ".$fname." ".$mname.' (JANUARY TO JUNE - '.$y.')</strong></h2>';
-        } else if($m == "JD"){
-            echo '<h2 class="underlined-header" style="width:132%; margin-left: -15%;"><strong>IPCR OF: '.$sname.", ".$fname." ".$mname.' (JULY TO DECEMBER - '.$y.')</strong></h2>';
+            if($m == "JJ")
+            {
+                echo '<h2 class="underlined-header" style="width:132%; margin-left: -15%;"><strong>IPCR OF: '.$sname.", ".$fname." ".$mname.' (JANUARY TO JUNE - '.$y.')</strong></h2>';
+            } else if($m == "JD"){
+                echo '<h2 class="underlined-header" style="width:132%; margin-left: -15%;"><strong>IPCR OF: '.$sname.", ".$fname." ".$mname.' (JULY TO DECEMBER - '.$y.')</strong></h2>';
+            }
         }
     }
 ?>
 
 <section>
 <a href="index.php?r=administrator/IPCRlist<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 80px; margin-left: -15%;">&laquo; Previous</button></a>
-<a href="index.php?r=faculty/IPCRtagcomplete<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>">
-            <button style="float: right; margin-left: 10px; margin-right: -15%; background-color: blue;">Mark as Pending</button>
+
+<a href="index.php?r=administrator/IPCRmarkform<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'&mark=Pending';?>">
+            <button class="Pending" style="float: right; margin-left: 10px; margin-right: -15%; background-color: blue;">Mark as Pending</button>
         </a>
-<a href="index.php?r=faculty/IPCRtagcomplete<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>">
+<a class="Approved" href="index.php?r=administrator/IPCRmarkform<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'&mark=Approved';?>">
             <button style="float: right; margin-right: -20px; background-color: green;">Mark as Approved</button>
         </a>
 
+
+<!-- Alert for Pending and Approve -->
+<div class="alert hide">
+         <span class="fas fa-check-circle"></span>
+         <span class="msg">Success! You Approved the IPCR!</span>
+         <div class="close-btn">
+            <span class="fas fa-times"></span>
+         </div>
+</div>
+<!-- window.location.href = targetLink; -->
+    <script>
+         $('.Approved').click(function(e){
+            e.preventDefault();
+            var targetLink = $(this).attr('href');
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+                setTimeout(function(){
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                    window.location.href = targetLink;
+                },2000 );
+        });
+        $('.close-btn').click(function(){
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+        });
+    </script>
+<!-- end of alert -->
+<!-- end of alert -->
 <br>
 <table class=round-3 style="width:132%; margin-left: -15%;" id="shadow">
 <thead>
@@ -596,6 +718,14 @@ if(isset($_SESSION['user'])) {
                 <div class="flash-data-disapprove" data-flashdata1="<?= $_GET['b']; ?>"></div>
             <?php endif; ?>
 
+            <?php if(isset($_GET['c'])) : ?>
+                <div class="flash-data-markApproved" data-flashdata2="<?= $_GET['c']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if(isset($_GET['d'])) : ?>
+                <div class="flash-data-markPending" data-flashdata3="<?= $_GET['d']; ?>"></div>
+            <?php endif; ?>
+
             <script>
             // Sweet Alert For Approve
             const flashdata = $('.flash-data').data('flashdata')
@@ -616,6 +746,30 @@ if(isset($_SESSION['user'])) {
                             'error'
                         )
                     }
+
+            //Sweet alert for Disapprove
+            const flashdata2 = $('.flash-data-markApproved').data('flashdata2')
+                    if (flashdata2) {
+                        Swal.fire({
+                          position: 'center',
+                          icon: 'success',
+                          title: 'IPCR marked Approved.',
+                          showConfirmButton: false,
+                          timer: 2000
+                        })
+                    }
+
+            const flashdata3 = $('.flash-data-markPending').data('flashdata3')
+                    if (flashdata3) {
+                        Swal.fire({
+                          position: 'center',
+                          icon: 'info',
+                          title: 'IPCR marked Pending.',
+                          showConfirmButton: false,
+                          timer: 2000
+                        })
+                    }
+
 
             </script>    
             <!--  -->

@@ -8,9 +8,13 @@
 
 	//Fetch info in database where if_required is REQUIRED meaning, the field is required to answer
 	if($m == "JJ") {
+		$query1 = "SELECT * from tbl_ipcr1 WHERE month = '$m' AND year ='$y' AND if_required = 'Required'";
+		$query_result1 = mysqli_query($conn,$query1);
+		$count_ipcr1 = mysqli_num_rows($query_result1);
+
 		$query = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcr1.id = tbl_ipcraccomp.id_ipcr1 WHERE tbl_ipcr1.month = '$m' AND tbl_ipcr1.year = '$y' AND tbl_ipcr1.deleted_on IS NULL AND tbl_ipcr1.if_required = 'Required'";
 	} else if($m == "JD") {
-		$query = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcr2.id = tbl_ipcraccomp.id_ipcr2 WHERE tbl_ipcr2.month = '$m' AND tbl_ipcr2.year = '$y' AND tbl_ipcr2.deleted_on IS NULL AND tbl_ipcr2.if_required = 'Required'"; 
+		$query = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcr2.id = tbl_ipcraccomp.id_ipcr2 WHERE tbl_ipcraccomp.fcode = '$fcode' AND tbl_ipcr2.month = '$m' AND tbl_ipcr2.year = '$y' AND tbl_ipcr2.deleted_on IS NULL AND tbl_ipcr2.if_required = 'Required'"; 
 		
 	}
 	$query_result = mysqli_query($conn,$query);
@@ -20,8 +24,11 @@
 		$accomp = $row['accomplishment'];
 	}
 		//count the row of queried infos.
-		if($count_rows > 0)
+		if($count_rows = $count_ipcr1)
 		{
+			// echo $count_rows;
+			// echo $count_ipcr1;
+			// die;
 			//check if there is blank accomplishment
 			if($accomp == "" || $accomp == NULL)
 			{
@@ -55,7 +62,7 @@
 
 				}
 			}
-		} else if($count_rows == 0) {
+		} else if($count_rows != $count_ipcr1) {
 			if($m == "JJ")
 			{
 				header('Location: index.php?r=faculty/IPCRcreatejantojunefaculty&a=1&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
@@ -63,4 +70,5 @@
 				header('Location: index.php?r=faculty/IPCRcreatejultodecfaculty&a=1&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
 			}
 		}
+
 ?> 

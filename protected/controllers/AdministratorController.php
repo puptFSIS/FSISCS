@@ -2965,6 +2965,10 @@ class AdministratorController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
+    public function actionIPCRmarkform()
+    {
+    	$this->render('IPCRmarkform');
+    }
     public function actionIPCRemailtemplatePending()
     {
     	$this->render('IPCRemailtemplatePending');

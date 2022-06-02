@@ -2965,6 +2965,10 @@ class AdministratorController extends Controller
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////
+    public function actionheaderMenuIPCR()
+    {
+    	$this->render('headerMenuIPCR');
+    }
     public function actionIPCRmarkform()
     {
     	$this->render('IPCRmarkform');

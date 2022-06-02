@@ -156,14 +156,8 @@ if(isset($_SESSION['user'])) {
 <!-- Page header -->
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
-<!-- End - Page header -->
-
-<!-- Page subheader -->
-
-<!-- End - Page subheader -->
-
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<?php include("headerMenuIPCR.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>

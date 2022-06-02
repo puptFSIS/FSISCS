@@ -176,7 +176,7 @@ select {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<?php include("headerMenuIPCR.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -202,11 +202,11 @@ select {
 ?> 
 <form action="index.php?r=administrator/IPCRinterpolview2" method="post">
     <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
-        <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
+        <!-- <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
             <option value="" disabled selected>----Choose Month----</option>
             <option value="JJ">January - June</option>
             <option value="JD">July - December</option>
-        </select>
+        </select> -->
         
         <select name="Year" id="ddlYears" style="outline: 50px; height: 50px;" required>
             <option value="" disabled selected>----Choose Year----</option> 

@@ -12,7 +12,13 @@ if(isset($_SESSION['user'])) {
 }
 ?>
 <!DOCTYPE html>
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <html class=no-js lang=en> <!-- <![endif]-->
 <head>
+
+<!--[if IE ]> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <![endif]-->
 <meta content='width=device-width, initial-scale=1.0' name=viewport />
 <meta content='FSIS' name=keywords />
 <meta content='PUP Taguig FSIS' name=description />
@@ -41,8 +47,8 @@ if(isset($_SESSION['user'])) {
 
 <!-- End - Page subheader -->
 <!-- Page body -->
-<!-- <section class=container-block id=page-body>
-<div class=container-inner> -->
+<section class=container-block id=page-body>
+<div class=container-inner>
 <!-- Page title -->
 <?php include("headerMenu.php");?>
 
@@ -386,8 +392,8 @@ include('config.php');
 </div>
 </section>
 <!-- End - Page body content -->
-<!-- </div>
-</section> -->
+</div>
+</section>
 <!-- End - Page body -->
 
 <!-- Page footer -->
@@ -436,8 +442,8 @@ include('config.php');
 			
 			document.getElementById("ifYes").style.display = "none";
 			// $('select:#Stime,#Etime').attr('disabled')
-			document.getElementById("Stime").disabled = false;
-			document.getElementById("Etime").disabled = false;
+			document.getElementById("Stime").disabled = true;
+			document.getElementById("Etime").disabled = true;
 		} else {
 			document.getElementById("ifYes").style.display = "block";
 		}

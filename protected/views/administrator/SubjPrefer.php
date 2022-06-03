@@ -137,8 +137,8 @@ if(isset($_SESSION['user'])) {
 
 <!-- End - Page subheader -->
 <!-- Page body -->
-<!-- <section class=container-block id=page-body>
-<div class=container-inner> -->
+<section class=container-block id=page-body>
+<div class=container-inner>
 <!-- Page title -->
 <?php include("headerMenu.php");?>
 <!-- End - Page title -->
@@ -219,8 +219,8 @@ if(isset($_SESSION['user'])) {
 </div>
 </section>
 <!-- End - Page body content -->
-<!-- </div>
-</section> -->
+</div>
+</section>
 <!-- End - Page body -->
 
 <!-- Page footer -->

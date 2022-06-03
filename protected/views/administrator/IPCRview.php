@@ -6,10 +6,10 @@ if(isset($_SESSION['user'])) {
 
     } else if($_SESSION['user']==0) {
 
-    } 
-} else {
+    }
+} else { 
     header("location:index.php?r=site/");
-}
+} 
 ?>
 <!DOCTYPE html>
 <!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
@@ -34,15 +34,38 @@ if(isset($_SESSION['user'])) {
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 
+<!-- For Alerts -->
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
-<style media=screen type='text/css'>@import "styles/base.css";
-.cssLT #ut, .cssUT #ut{filter:progid:DXImageTransform.Microsoft.DropShadow(enabled=false);}
-.cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
-.cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
+<style media=screen type='text/css'> @import "styles/base.css";
+/*.cssLT #ut, .cssUT #ut
+{
+    filter:progid:DXImageTransform.Microsoft.DropShadow(enabled=true);
+}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
+{
+    BACKGROUND-IMAGE: none;
+    top:0;height:103px;
+    background-color:#ffffff;
+}
+.cssWLGradientIMGSSL
+{
+    BACKGROUND-IMAGE: none;
+    top:0;height:103px;
+    background-color:#ffffff;
+} */
+.cssWLGradientIMG
+{
+    BACKGROUND-IMAGE: url(images/hd_tm1.jpg);
+    BACKGROUND-REPEAT:repeat-x;
+    top:0;
+    height:105px;
+}
     
 #page-title
 {
@@ -59,7 +82,7 @@ if(isset($_SESSION['user'])) {
 #menu_strip a
 {
     color: white;
-    padding: 10px 10px 10px;
+    padding: 0px 10px 10px;
     border-radius: 5px;
 }
     
@@ -93,65 +116,6 @@ if(isset($_SESSION['user'])) {
     padding: 5px 5px 5px;
     width: 100%;
 }
-
-.underlined
-{
-    background-color: lightgray;
-    font-size: 18px;
-    padding: 5px;
-    text-align: center;
-}
-
-@media only screen and (min-width:150px) and (max-width:600px)
-{
-/* Title right */
-    .title-right {
-        float: left;
-        margin: 0;
-        padding: 0;
-        height: 240px;
-        line-height: 30px;
-        width: 100%;
-    }
-
-        .title-right a {
-            float: left;
-            display: block;
-            margin 0;
-            height: 30px;
-            padding: 0;
-            line-height: 30px;
-            text-align: center;
-            width: 100%;
-        }
-
-        
-    .title-right a:hover {
-            background: url(../images/transparent/05_white.png);
-            background-color: rgba(255,255,255,.05);
-            width: 100%;
-        }
-
-
-    .title-right a:last-child {
-            margin: 0;
-        }
-
-            .title-right a span {
-                display: block;
-                padding-left: 0;
-                background-position: 0 50%;
-                background-repeat: no-repeat;
-            }
-
-}
-
-
-#page-body
-{
-    background-color: antiquewhite;
-}
-
 .underlined-header1 {
     background-color: Lightblue;
     font-size: 22px;
@@ -189,30 +153,115 @@ if(isset($_SESSION['user'])) {
     resize: none;
 }
 
+/*Style for alert*/
+.alert{
+  background: lightgreen;
+  padding: 20px 40px;
+  min-width: 420px;
+  position: absolute;
+  right: 0;
+  top: 10px;
+  border-radius: 4px;
+  border-left: 8px solid green;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
+.alert.showAlert{
+  opacity: 1;
+  pointer-events: auto;
+}
+.alert.show{
+  animation: show_slide 1s ease forwards;
+}
+@keyframes show_slide {
+  0%{
+    transform: translateX(100%);
+  }
+  40%{
+    transform: translateX(-10%);
+  }
+  80%{
+    transform: translateX(0%);
+  }
+  100%{
+    transform: translateX(-10px);
+  }
+}
+.alert.hide{
+  animation: hide_slide 1s ease forwards;
+}
+@keyframes hide_slide {
+  0%{
+    transform: translateX(-10px);
+  }
+  40%{
+    transform: translateX(0%);
+  }
+  80%{
+    transform: translateX(-10%);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+.alert .fa-check-circle{
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: green;
+  font-size: 30px;
+}
+.alert .msg{
+  padding: 0 20px;
+  font-size: 18px;
+  color: black;
+}
+.alert .close-btn{
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #43d955;
+  padding: 20px 18px;
+  cursor: pointer;
+}
+.alert .close-btn:hover{
+  background: #0bb820;
+}
+.alert .close-btn .fas{
+  color: green;
+  font-size: 22px;
+  line-height: 40px;
+}
+
 </style>
+
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
-
-
 <meta charset="UTF-8"></head>
-<body style="background-color: black">
+<body style="background-color: Black;">
 <!-- JS notice - will be displayed if javascript is disabled -->
-<!--<p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
- End - JS notice -->
+<p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
+<!-- End - JS notice -->
 <!-- Page header -->
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
-<!-- Page title -->
-<?php include("headerMenuIPCR.php");?>
+
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
+
 <section id=page-body-content>
 <div id=page-body-content-inner>
 <!-- Page content -->
 <div id=page-content>
 <!-- Video - HTML5 -->
 <section>
+ 
+
 
 <?php
     
@@ -222,6 +271,8 @@ if(isset($_SESSION['user'])) {
 <?php
     $query = "SELECT * FROM tbl_personalinformation WHERE EmpID = '$fcode'";
     $res = mysqli_query($conn,$query);
+
+
 
     while($rows = mysqli_fetch_array($res))
     {
@@ -246,30 +297,43 @@ if(isset($_SESSION['user'])) {
 <section>
 <a href="index.php?r=administrator/IPCRlist<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 80px; margin-left: -15%;">&laquo; Previous</button></a>
 
-<?php 
-    
-    $sql = "SELECT * FROM tbl_ipcrstatus WHERE fcode = '$fcode' AND month = '$m' AND year = '$y'"; 
-    $res = mysqli_query($conn,$sql);
-
-    while($rows = mysqli_fetch_array($res))
-    {
-        $status = $rows['status'];
-    }
-    if($status == "Submitted" || $status == "Pending")
-    {
-        echo ' 
-            <a href="index.php?r=administrator/IPCRmarkform&fcode='.$fcode.'&m='.$m.'&y='.$y.'&mark=Pending">
-                <button class="Pending" style="float: right; margin-left: 10px; margin-right: -15%; background-color: blue;">Mark as Pending</button>
-            </a>
-            <a class="Approved" href="index.php?r=administrator/IPCRmarkform&fcode='.$fcode.'&m='.$m.'&y='.$y.'&mark=Approved">
-                <button style="float: right; margin-right: -20px; background-color: green;">Mark as Approved</button>
-            </a>
-        ';
-    }
-?>
+<a href="index.php?r=administrator/IPCRmarkform<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'&mark=Pending';?>">
+            <button class="Pending" style="float: right; margin-left: 10px; margin-right: -15%; background-color: blue;">Mark as Pending</button>
+        </a>
+<a class="Approved" href="index.php?r=administrator/IPCRmarkform<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'&mark=Approved';?>">
+            <button style="float: right; margin-right: -20px; background-color: green;">Mark as Approved</button>
+        </a>
 
 
-
+<!-- Alert for Pending and Approve -->
+<div class="alert hide">
+         <span class="fas fa-check-circle"></span>
+         <span class="msg">Success! You Approved the IPCR!</span>
+         <div class="close-btn">
+            <span class="fas fa-times"></span>
+         </div>
+</div>
+<!-- window.location.href = targetLink; -->
+    <script>
+         $('.Approved').click(function(e){
+            e.preventDefault();
+            var targetLink = $(this).attr('href');
+            $('.alert').addClass("show");
+            $('.alert').removeClass("hide");
+            $('.alert').addClass("showAlert");
+                setTimeout(function(){
+                    $('.alert').removeClass("show");
+                    $('.alert').addClass("hide");
+                    window.location.href = targetLink;
+                },2000 );
+        });
+        $('.close-btn').click(function(){
+            $('.alert').removeClass("show");
+            $('.alert').addClass("hide");
+        });
+    </script>
+<!-- end of alert -->
+<!-- end of alert -->
 <br>
 <table class=round-3 style="width:132%; margin-left: -15%;" id="shadow">
 <thead>
@@ -662,9 +726,6 @@ if(isset($_SESSION['user'])) {
                 <div class="flash-data-markPending" data-flashdata3="<?= $_GET['d']; ?>"></div>
             <?php endif; ?>
 
-            <?php if(isset($_GET['err'])) : ?>
-                <div class="flash-data-error" data-flashdata4="<?= $_GET['err']; ?>"></div>
-            <?php endif; ?>
             <script>
             // Sweet Alert For Approve
             const flashdata = $('.flash-data').data('flashdata')
@@ -702,19 +763,8 @@ if(isset($_SESSION['user'])) {
                     if (flashdata3) {
                         Swal.fire({
                           position: 'center',
-                          icon: 'success',
+                          icon: 'info',
                           title: 'IPCR marked Pending.',
-                          showConfirmButton: false,
-                          timer: 2000
-                        })
-                    }
-
-            const flashdata4 = $('.flash-data-error').data('flashdata4')
-                    if (flashdata4) {
-                        Swal.fire({
-                          position: 'center',
-                          icon: 'error',
-                          title: 'Email not sent.',
                           showConfirmButton: false,
                           timer: 2000
                         })
@@ -725,17 +775,30 @@ if(isset($_SESSION['user'])) {
             <!--  -->
 
 </section>
-
 </section>
-<!-- Page footer -->
+
 <footer id=page-footer>
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-© Copyright 2021 <a href="#" title="Development Team">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
+© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/fsis-team-2/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
-
+<!-- Footer right -->
+<section id=footer-right>
+<ul class=footer-navigation>
+<li>
+<a href='http://www.pup-taguig.net' title=Home>Home</a>
+</li>
+<li>
+<a href='index.php?r=site/about' title=About>About</a>
+</li>
+<li>
+<a href='index.php?r=site/contact' title=Contacts>Contacts</a>
+</li>
+</ul>
+</section>
+<!-- End - Footer right -->
 </div>
 </footer>
 <!-- End - Page footer -->
@@ -752,4 +815,3 @@ if(isset($_SESSION['user'])) {
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 </body>
 </html>
-

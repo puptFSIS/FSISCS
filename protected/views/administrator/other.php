@@ -194,8 +194,8 @@ width: 300px;
 
 <!-- End - Page subheader -->
 <!-- Page body -->
-<!-- <section class=container-block id=page-body>
-<div class=container-inner> -->
+<section class=container-block id=page-body>
+<div class=container-inner>
 <!-- Page title -->
 <?php include("headerMenu.php");?>
 <!-- End - Page title -->

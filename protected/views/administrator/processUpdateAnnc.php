@@ -12,5 +12,5 @@
 	if($result) {
 		header("Location: index.php?r=administrator/Announcements");
 	}
-	mysqli_close($conn);
+	mysqli_close();
 ?>

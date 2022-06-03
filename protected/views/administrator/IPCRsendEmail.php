@@ -1,5 +1,5 @@
 <?php
-	//fsisipcr2021@gmail.com - email
+
 	// puptipcr2021 - email pass
 	require ('PHPMailer-master/src/PHPMailer.php');
 	require ('PHPMailer-master/src/SMTP.php');

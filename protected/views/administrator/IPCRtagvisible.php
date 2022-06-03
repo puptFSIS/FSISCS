@@ -1,5 +1,5 @@
 <?php
-	include('config.php'); 
+	include('config.php');
 	session_start();
 	require_once('PHPMailer-master/src/PHPMailer.php');
 	require_once('PHPMailer-master/src/SMTP.php');
@@ -16,7 +16,7 @@
 	while($row = mysqli_fetch_array($result))
 	{
 		$available = $row['visible'];
-	}
+
 		if($available == "Not Available")
 		{
 			// update db and set ipcr availability to faculty 
@@ -27,7 +27,7 @@
 			while($row2 = mysqli_fetch_array($result2))
 			{
 				$email = $row2['email'];
-			}
+
 				$mailTo = $email;			
 				ob_start();
 				include ('IPCRemailtemplate.php');
@@ -70,9 +70,10 @@
 				{
 					header("Location: index.php?r=administrator/IPCRcreate&s=1");
 				}
-			
-		} else if($available == "Available") {
+			}
+		} else if($available == "Available")
+		{
 			header('Location: index.php?r=administrator/IPCRcreate&a=1');
 		}
-	
+	}
 ?>

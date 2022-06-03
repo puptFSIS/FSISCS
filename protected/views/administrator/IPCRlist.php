@@ -272,7 +272,7 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenuIPCR.php");?>
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -306,9 +306,9 @@ if(isset($_SESSION['user'])) {
                 <br>
                 
             <div class="warpper">
-                        <input class="radio" id="one" name="group" type="radio" checked style="display: none;">
-                        <input class="radio" id="two" name="group" type="radio" style="display: none;">
-                        <input class="radio" id="three" name="group" type="radio" style="display: none;">
+                      <input class="radio" id="one" name="group" type="radio" checked style="display: none;">
+                      <input class="radio" id="two" name="group" type="radio" style="display: none;">
+                      <input class="radio" id="three" name="group" type="radio" style="display: none;">
                     <div class="tabs">
                           <label class="tab1" id="one-tab" for="one">Submitted</label>
                           <label class="tab2" id="two-tab" for="two">Approved</label>
@@ -316,10 +316,10 @@ if(isset($_SESSION['user'])) {
                     </div>
                 <div class="panels">
                     <div class="panel" id="one-panel">
-                        <div class="panel-title underlined-header-submitted"><center>SUBMITTED IPCR</center></div>
+                        <div class="panel-title underlined-header-submitted"><u><center>SUBMITTED IPCR</center></u></div>
                         <br>
-                        <p><strong>Search professor</strong><input type="text" id="myInputSubmit" onkeyup="myFunction1()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
-                        <table id="myTableSubmit">
+                        <p><strong>Search professor</strong><input type="text" id="myInput" onkeyup="myFunction()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
+                        <table id="myTable">
                             <thead>
                                 <tr>
                                     
@@ -346,40 +346,16 @@ if(isset($_SESSION['user'])) {
                                         <td name="name" style="text-align: left;">'.$sname.", ".$fname." ".$mname.'</td>
                                         <td name="fcode" style="text-align: left;">'.$fcode.'</td>
                                         <td name="status" style="text-align: left;">'.$status.'</td>
-                                        <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 60px">View</button></a></td>
+                                        <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 100px">View</button></a></td>
                                     </tr>';
                                 }
-                            ?>  
-                            <script>
-                                function myFunction1() 
-                                {
-                                    var input, filter, table, tr, td, i, txtValue;
-                                    input = document.getElementById("myInputSubmit");
-                                    filter = input.value.toUpperCase();
-                                    table = document.getElementById("myTableSubmit");
-                                    tr = table.getElementsByTagName("tr");
-                                    for (i = 0; i < tr.length; i++) 
-                                    {
-                                        td = tr[i].getElementsByTagName("td")[0];
-                                        if (td) 
-                                        {
-                                            txtValue = td.textContent || td.innerText;
-                                            if (txtValue.toUpperCase().indexOf(filter) > -1) 
-                                            {
-                                             tr[i].style.display = "";
-                                            } else {
-                                                tr[i].style.display = "none";
-                                            }
-                                        }       
-                                    }
-                                }
-                            </script>        
+                            ?>        
                         </table>
                     </div>
                     <div class="panel" id="two-panel">
-                        <div class="panel-title underlined-header-approved"><center>APPROVED IPCR</center></div>
+                        <div class="panel-title underlined-header-approved"><u><center>APPROVED IPCR</center></u></div>
                         <br>
-                        <p><strong>Search professor</strong><input type="text" id="myInputApproved" onkeyup="myFunction2()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
+                        <p><strong>Search professor</strong><input type="text" id="myInputApproved" onkeyup="myFunction()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
                         <table id="myTableApproved">
                             <thead>
                                 <tr>
@@ -415,7 +391,7 @@ if(isset($_SESSION['user'])) {
                                 }
                             ?>  
                             <script>
-                                function myFunction2() 
+                                function myFunction() 
                                 {
                                     var input, filter, table, tr, td, i, txtValue;
                                     input = document.getElementById("myInputApproved");
@@ -441,9 +417,9 @@ if(isset($_SESSION['user'])) {
                         </table>
                     </div>
                     <div class="panel" id="three-panel">
-                        <div class="panel-title underlined-header-pending"><center>PENDING / ON REVIEW IPCR</center></div>
+                        <div class="panel-title underlined-header-pending"><u><center>PENDING / ON REVIEW IPCR</center></u></div>
                         <br>
-                        <p><strong>Search professor</strong><input type="text" id="myInputPending" onkeyup="myFunction3()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
+                        <p><strong>Search professor</strong><input type="text" id="myInputPending" onkeyup="myFunction()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
                         <table id="myTablePending">
                             <thead>
                                 <tr>
@@ -471,12 +447,12 @@ if(isset($_SESSION['user'])) {
                                         <td name="name" style="text-align: left;">'.$sname.", ".$fname." ".$mname.'</td>
                                         <td name="fcode" style="text-align: left;">'.$fcode.'</td>
                                         <td name="status" style="text-align: left;">'.$status.'</td>
-                                        <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 60px">View</button></a></td>
+                                        <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 100px">View IPCR</button></a></td>
                                     </tr>';
                                 }
                             ?>  
                             <script>
-                                function myFunction3() 
+                                function myFunction() 
                                 {
                                     var input, filter, table, tr, td, i, txtValue;
                                     input = document.getElementById("myInputPending");

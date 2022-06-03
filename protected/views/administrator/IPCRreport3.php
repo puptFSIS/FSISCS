@@ -175,7 +175,7 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenuIPCR.php");?>
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -243,15 +243,15 @@ if(isset($_SESSION['user'])) {
                                 <td name="fcode" style="text-align: left;"><?= $row['FCode']?></td>
                                 <td name="status" style="text-align: center;"><?= $row['status']?></td>
                                 <?php if($m == "JJ") : ?>
-                                    <?php if($status == "Approved") : ?>
+                                    <?php if($status == "Submitted") : ?>
                                         <td><a href="index.php?r=administrator/IPCRform1<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
-                                    <?php elseif($status == "Submitted" || $status == "Pending") : ?>
+                                    <?php elseif($status == NULL) : ?>
                                         <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
                                     <?php endif; ?>
                                 <?php else : ?>
-                                    <?php if($status == "Approved"): ?>
+                                    <?php if($status == "Submitted"): ?>
                                         <td><a href="index.php?r=administrator/IPCRform2<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
-                                    <?php elseif($status == "Submitted" || $status == "Pending"): ?>
+                                    <?php elseif($status == NULL): ?>
                                         <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
                                     <?php endif; ?>
                                 <?php endif; ?>

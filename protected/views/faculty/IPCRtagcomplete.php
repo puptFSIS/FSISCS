@@ -6,14 +6,12 @@
 	$m = $_GET['m'];
 	$y = $_GET['y'];
 
-	
+	//Fetch info in database where if_required is REQUIRED meaning, the field is required to answer
 	if($m == "JJ") {
-		//count the generated IPCR and this should be the same with the counted accomplishment inputted to be able to submit the form.
 		$query1 = "SELECT * from tbl_ipcr1 WHERE month = '$m' AND year ='$y' AND if_required = 'Required'";
 		$query_result1 = mysqli_query($conn,$query1);
 		$count_ipcr1 = mysqli_num_rows($query_result1);
 
-		//Fetch info in database where if_required is REQUIRED. meaning, the field is required to answer
 		$query = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcr1.id = tbl_ipcraccomp.id_ipcr1 WHERE tbl_ipcr1.month = '$m' AND tbl_ipcr1.year = '$y' AND tbl_ipcr1.deleted_on IS NULL AND tbl_ipcr1.if_required = 'Required'";
 	} else if($m == "JD") {
 		$query1 = "SELECT * from tbl_ipcr2 WHERE month = '$m' AND year ='$y' AND if_required = 'Required'";
@@ -24,13 +22,13 @@
 		
 	}
 	$query_result = mysqli_query($conn,$query);
-	$count_accomp = mysqli_num_rows($query_result); //count Accomplishment
+	$count_rows = mysqli_num_rows($query_result);
 	while($row = mysqli_fetch_array($query_result))
 	{
 		$accomp = $row['accomplishment'];
 	}
 		//count the row of queried infos.
-		if($count_accomp = $count_ipcr1)
+		if($count_rows = $count_ipcr1)
 		{
 			// echo $count_rows;
 			// echo $count_ipcr1;
@@ -68,7 +66,7 @@
 
 				}
 			}
-		} else if($count_accomp != $count_ipcr1) {
+		} else if($count_rows != $count_ipcr1) {
 			if($m == "JJ")
 			{
 				header('Location: index.php?r=faculty/IPCRcreatejantojunefaculty&a=1&m='.$m.'&y='.$y.'&fcode='.$fcode.'');

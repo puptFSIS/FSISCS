@@ -123,7 +123,7 @@ if(isset($_SESSION['user'])) {
 <!--<section class=container-block id=page-body>-->
 <!--<div class=container-inner>-->
 <!-- Page title -->
-<?php include("headerMenuIPCR.php");?>
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>

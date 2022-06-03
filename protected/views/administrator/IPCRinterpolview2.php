@@ -175,7 +175,7 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenu.php");?>
+<?php include("headerMenuIPCR.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -191,9 +191,8 @@ if(isset($_SESSION['user'])) {
 <?php
     
 
-    if(isset($_POST['Month'],$_POST['Year']))
+    if(isset($_POST['Year']))
     {
-        $m = $_POST['Month'];
         $y = $_POST['Year'];
     }
     //$sql="SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = $fcode WHERE tbl_ipcr1.year = $y AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
@@ -203,11 +202,7 @@ if(isset($_SESSION['user'])) {
     <div class="main_container" onload="makeTableScroll();">
         <div class="scrollingTable">
                 <br>
-                <?php if($m == "JJ") : ?>
                     <h3><strong>List of Faculty Interpolation Reports <?php echo '('.$y.')';?></strong></h3>
-                <?php else : ?>
-                    <h3><strong>List of Faculty IPCR Reports <?php echo '(July to December, '.$y.')';?></strong></h3>
-                <?php endif; ?>
                 <br>
                 <!--  Uploaded File list -->
                 
@@ -224,7 +219,7 @@ if(isset($_SESSION['user'])) {
                     </thead>
                     <?php
                      //Database
-                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month = '$m' ORDER BY tbl_evaluationfaculty.LName ASC";
+                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month='JJ' ORDER BY tbl_evaluationfaculty.LName ASC";
                         $result = mysqli_query($conn,$sql);
 
                     ?>
@@ -242,6 +237,7 @@ if(isset($_SESSION['user'])) {
                                 <td name="name" style="text-align: left;"><?= $row['LName'],", ", $row['FName']," ",$row['MName']?></td>
                                 <td name="fcode" style="text-align: left;"><?= $row['FCode']?></td>
                                 <td name="status" style="text-align: center;"><?= $row['status']?></td>
+<<<<<<< HEAD
 <<<<<<< Updated upstream
                                 <?php if($m == "JJ") : ?>
                                     <?php if($status == "Submitted") : ?>
@@ -253,15 +249,14 @@ if(isset($_SESSION['user'])) {
                                         <td><a href="index.php?r=administrator/IPCRInterpolation<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
                                     <?php elseif($status == "Submitted" || $status == "Pending") : ?>
 >>>>>>> Stashed changes
+=======
+                                
+                                    <?php if($status == "Approved") : ?>
+                                        <td><a href="index.php?r=administrator/IPCRInterpolation<?php echo'&fcode='.$fcode.'&y='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
+                                    <?php elseif($status == "Submitted" || $status == "Pending") : ?>
+>>>>>>> parent of 1cf1cad (Revert "Merge branch 'master' of https://github.com/puptFSIS/FSISCS")
                                         <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
                                     <?php endif; ?>
-                                <?php else : ?>
-                                    <?php if($status == "Submitted"): ?>
-                                        <td><a href="index.php?r=administrator/IPCRInterpolation<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
-                                    <?php elseif($status == NULL): ?>
-                                        <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
-                                    <?php endif; ?>
-                                <?php endif; ?>
                             </tr>
                         <?php endwhile; ?>
                         

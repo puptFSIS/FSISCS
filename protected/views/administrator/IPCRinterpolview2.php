@@ -237,24 +237,10 @@ if(isset($_SESSION['user'])) {
                                 <td name="name" style="text-align: left;"><?= $row['LName'],", ", $row['FName']," ",$row['MName']?></td>
                                 <td name="fcode" style="text-align: left;"><?= $row['FCode']?></td>
                                 <td name="status" style="text-align: center;"><?= $row['status']?></td>
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-                                <?php if($m == "JJ") : ?>
-                                    <?php if($status == "Submitted") : ?>
-                                        <td><a href="index.php?r=administrator/IPCRInterpolation<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
-                                    <?php elseif($status == NULL) : ?>
-=======
                                 
                                     <?php if($status == "Approved") : ?>
                                         <td><a href="index.php?r=administrator/IPCRInterpolation<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
                                     <?php elseif($status == "Submitted" || $status == "Pending") : ?>
->>>>>>> Stashed changes
-=======
-                                
-                                    <?php if($status == "Approved") : ?>
-                                        <td><a href="index.php?r=administrator/IPCRInterpolation<?php echo'&fcode='.$fcode.'&y='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
-                                    <?php elseif($status == "Submitted" || $status == "Pending") : ?>
->>>>>>> parent of 1cf1cad (Revert "Merge branch 'master' of https://github.com/puptFSIS/FSISCS")
                                         <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
                                     <?php endif; ?>
                             </tr>

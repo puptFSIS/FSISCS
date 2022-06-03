@@ -3407,3 +3407,23 @@ REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRvalidation
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRinterpolview2
 ---
 >>>>>>> Stashed changes
+2022/06/03 17:25:22 [error] [php] include(headerMenuIPCR.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRinterpolview2.php:178)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRinterpolview2.php(178): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(2986): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRinterpolview2()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRinterpolview2
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRinterpolview2.php (178)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRinterpolview2.php (178)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (2986)

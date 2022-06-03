@@ -53,7 +53,7 @@ $spreadsheet
 
 $richtexttitle = new RichText();
 //ichtext->createText('Name of Individual Performer: ');
-$cellStyletitle = $richtexttitle->createTextRun('January to June IPCR');
+$cellStyletitle = $richtexttitle->createTextRun('January to June, '.$year.' IPCR');
 $cellStyletitle->getFont()->setBold(true)->setSize(8);
 
 $spreadsheet
@@ -822,7 +822,7 @@ $spreadsheet
 
 $richtexttitle = new RichText();
 //ichtext->createText('Name of Individual Performer: ');
-$cellStyletitle = $richtexttitle->createTextRun('July to December IPCR');
+$cellStyletitle = $richtexttitle->createTextRun('July to December, '.$year.' IPCR');
 $cellStyletitle->getFont()->setBold(true)->setSize(8);
 
 $spreadsheet

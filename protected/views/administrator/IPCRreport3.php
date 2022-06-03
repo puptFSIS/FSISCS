@@ -24,7 +24,7 @@ if(isset($_SESSION['user'])) {
 <meta content='PUP Taguig FSIS' name=description />
 <meta content='vCore Team' name=author />
 <!-- Page title -->
-<title>IPCR | Report</title>
+<title>IPCR | Report (PDF)</title>
 <!--Script of Sweet alert-->
 <script src="sweetalert/jquery-3.6.0.min.js"></script>
 <script src="sweetalert/sweetalert2.all.min.js"></script>

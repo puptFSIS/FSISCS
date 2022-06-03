@@ -4240,3 +4240,43 @@ Stack trace:
 REQUEST_URI=/fsiscs/index.php?r=administrator/Dtr_send_email&email=fionafaranal@gmail.com
 HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/ListOfFac&msg=Email%20has%20been%20sent.&msgType=succ
 ---
+2022/06/03 19:47:47 [error] [php] Undefined index: m (C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_email_template.php:3)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_send_email.php(35): include()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3484): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionDtr_send_email()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/Dtr_send_email&email=fionafaranal@gmail.com
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_email_template.php (3)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_send_email.php (35)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3484)
+2022/06/03 19:48:10 [error] [php] Undefined variable: m (C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_email_template.php:116)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_send_email.php(35): include()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3484): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionDtr_send_email()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/Dtr_send_email&email=fionafaranal@gmail.com
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_email_template.php (116)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_send_email.php (35)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3484)

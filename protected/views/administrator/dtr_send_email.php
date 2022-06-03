@@ -31,8 +31,10 @@
 		for ($i=0; $i <$count ; $i++) { 
 			$email=$new_var[$i];
 			$mailTo = $email;
+			ob_start();
+			include ('dtr_email_template.php');
+			$body = ob_get_clean();
 			// $body = $_POST['message'];
-			$body = "GUMANA NA BIMB TULOG NA TAYO HAHAHAHAH";
 
 
 			$mail = new PHPMailer\PHPMailer\PHPMailer();
@@ -60,7 +62,7 @@
 			$mail->isHTML(true); //Enable HTML to atelast design the content
 
 
-			$mail->Subject = "Individual Performance, Commitment and Review (IPCR)"; //Name of Email
+			$mail->Subject = "DAILY TIME RECORD"; //Name of Email
 			$mail->Body = $body;
 			$mail->AltBody = "To view the message, please use an HTML compatible email viewer.";
 			

@@ -3484,6 +3484,11 @@ class AdministratorController extends Controller
 		$this->render("dtr_send_email");
 	}
 
+	public function actiondtr_email_template()
+	{
+		$this->render("dtr_email_template");
+	}
+
 	public function actionDtr_Form()
 	{
 		if(!isset($_SESSION)) 

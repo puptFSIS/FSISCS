@@ -194,6 +194,7 @@ if(isset($_SESSION['user'])) {
     if(isset($_POST['Year']))
     {
         $y = $_POST['Year'];
+        $m = "JJ";
     }
     //$sql="SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = $fcode WHERE tbl_ipcr1.year = $y AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
 

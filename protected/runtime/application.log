@@ -3112,3 +3112,43 @@ Stack trace:
 REQUEST_URI=/fsiscs/index.php?r=administrator/IPCRvalidation
 HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/IPCR
 ---
+2022/06/03 11:04:01 [error] [php] Undefined variable: status (C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php:181)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(241): include()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3473): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php (181)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (241)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3473)
+2022/06/03 12:24:22 [error] [php] Undefined variable: status (C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php:181)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(241): include()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3473): AdministratorController->render()
+#6 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionListOfFac()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=administrator/ListOfFac
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php (181)
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php (241)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3473)

@@ -19,53 +19,361 @@
 		background-color: #f7f7f7;
 	}
 
+
+
+
+
+
+	/*      for switchable tab       */
+
+
+	.warpper{
+	  display:flex;
+	  flex-direction: column;
+	  align-items: center;
+	}
+	.tab1{
+	  cursor: pointer;
+	  padding:10px 20px;
+	  margin:0px 2px;
+	  background:yellow;
+	  display:inline-block;
+	  color:#fff;
+	  border-radius:3px 3px 0px 0px;
+	  box-shadow: 0 0.5rem 0.8rem #00000080;
+	}
+	.tab2{
+	  cursor: pointer;
+	  padding:10px 20px;
+	  margin:0px 2px;
+	  background:green;
+	  display:inline-block;
+	  color:#fff;
+	  border-radius:3px 3px 0px 0px;
+	  box-shadow: 0 0.5rem 0.8rem #00000080;
+	}
+	.tab3{
+	  cursor: pointer;
+	  padding:10px 20px;
+	  margin:0px 2px;
+	  background:orange;
+	  display:inline-block;
+	  color:#fff;
+	  border-radius:3px 3px 0px 0px;
+	  box-shadow: 0 0.5rem 0.8rem #00000080;
+	}
+	.panels{
+	  background:whitesmoke;
+	  box-shadow: 0 2rem 2rem #00000080;
+	  min-height:200px;
+	  /*width:570px;*/
+	  /*max-width:1000px;*/
+	  border-radius:3px;
+	  /*overflow:hidden;*/
+	  padding:20px;  
+	}
+	.panel{
+	  display:none;
+	  animation: fadein .8s;
+	}
+	@keyframes fadein {
+	    from {
+	        opacity:0;
+	    }
+	    to {
+	        opacity:1;
+	    }
+	}
+	.panel-title{
+	  font-size:1.5em;
+	  font-weight:bold;
+	}
+
+	#one:checked ~ .panels #one-panel,
+	#two:checked ~ .panels #two-panel,
+	#three:checked ~ .panels #three-panel{
+	  display:block;
+	}
+	#one:checked ~ .tabs #one-tab
+	{
+	  background:#fffffff6;
+	  color:#000;
+	  border-top: 3px solid #000;
+	}
+	#two:checked ~ .tabs #two-tab
+	{
+	  background:#fffffff6;
+	  color:#000;
+	  border-top: 3px solid green;
+	}
+	#three:checked ~ .tabs #three-tab
+	{
+	  background:#fffffff6;
+	  color:#000;
+	  border-top: 3px solid blue;
+	}
+
 </style>
 
 
-<a href="index.php?r=administrator/ListOfFac&sort=all"><input type="button" value="View All" /></a>
+<!-- <a href="index.php?r=administrator/ListOfFac&sort=all"><input type="button" value="View All" /></a>
 <a href="index.php?r=administrator/ListOfFac&sort=passed"><input type="button" value="Already Passed"/></a>
 <a href="index.php?r=administrator/ListOfFac&sort=notyet"><input type="button" value="Not Passing Yet"/></a>
+ -->
 
-
-<div  class="outer_container">
-	
-	<div id="list_of_faculty_div" class="inner_container" >
-	
-	<!-- <h1>
-		<strong>
-			FACULTY MEMBERS WITH SCHEDULE
-		</strong>
-	</h1> -->
-
-
-		<table  id="ProfTable" class="table table-striped table-bordered">
-			<thead>
-				<tr>
-					<th class="thead" style="text-align: center;"><strong>ID</strong></th>
-					<th class="thead" style="text-align: center;"><strong>name</strong></th>
-					<th class="thead" style="text-align: center;"><strong>Status</strong></th>
-					<!-- <th class="thead" style="text-align: center;"><strong>Actions</strong></th> -->
-
-
-				</tr>
-			</thead>
-
-			<?php include("faculty_list.php"); ?>
-
-
-			<tfoot>
-				<tr>
-					<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
-				</tr>
-			</tfoot>
-
-		</table>	
-
+<div class="warpper">
+	 <input class="radio" id="one" name="group" type="radio" checked style="display: none;">
+	 <input class="radio" id="two" name="group" type="radio" style="display: none;">
+	 <input class="radio" id="three" name="group" type="radio" style="display: none;">
+	<div class="tabs">
+	      <label class="tab1" id="one-tab" for="one">PENDING</label>
+	      <label class="tab2" id="two-tab" for="two">SUBMITTED DTR</label>
+	      <label class="tab3" id="three-tab" for="three">DID NOT SUBMITTED DTR YET</label>
 	</div>
+		<div class="panels">
+            <div class="panel" id="one-panel">
+				<div  class="outer_container">
+					
+					<div id="list_of_faculty_div" class="inner_container" >
+					
+					<!-- <h1>
+						<strong>
+							FACULTY MEMBERS WITH SCHEDULE
+						</strong>
+					</h1> -->
+
+					<?php 
+
+					$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
+					FROM tbl_evaluationfaculty
+					INNER JOIN tbl_schedule
+					ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+					WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022'";
+					 $result=mysqli_query($conn,$sql);
+
+					 ?>
+
+						<table  id="ProfTable" class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th class="thead" style="text-align: center;"><strong>ID</strong></th>
+									<th class="thead" style="text-align: center;"><strong>name</strong></th>
+									<!-- <th class="thead" style="text-align: center;"><strong>Status</strong></th> -->
+									<!-- <th class="thead" style="text-align: center;"><strong>Actions</strong></th> -->
+
+
+								</tr>
+							</thead>
+
+							<?php 
+
+							foreach($result as $newresult)
+							{
+								echo '
+							 	<tr>
+							 		<td>
+							 			'.$newresult['FCode'].'
+							 		</td>
+							 		<td>
+							 			'.$newresult['FName'].' '.$newresult['MName'].' '.$newresult['LName'].'
+							 		</td>
+							 		
+							 	</tr>
+
+							 	';
+
+							}
+
+							
+
+							echo "<h3 style='border: 2px solid black; background-color: YELLOW; text-align: center; color: black'; class='status_tab_apr'>ALL MEMBERS WITH SCHEDULE</h3>";
+
+							 ?>
+
+
+							<tfoot>
+								<tr>
+									<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
+								</tr>
+							</tfoot>
+
+						</table>	
+
+					</div>
+
+
+				</div>
+			</div>
+
+
+
+
+			<!-- panel 2 -->
+			<div class="panel" id="two-panel">
+				<div  class="outer_container">
+					
+					<div id="list_of_faculty_div" class="inner_container" >
+					
+					<!-- <h1>
+						<strong>
+							FACULTY MEMBERS WITH SCHEDULE
+						</strong>
+					</h1> -->
+
+					<?php 
+
+					$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
+					FROM tbl_evaluationfaculty
+					INNER JOIN tbl_schedule
+					ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+					INNER JOIN tbl_dtr 
+					ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
+					WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022'";
+					 $result=mysqli_query($conn,$sql);
+
+					 ?>
+
+						<table  id="ProfTable" class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th class="thead" style="text-align: center;"><strong>ID</strong></th>
+									<th class="thead" style="text-align: center;"><strong>name</strong></th>
+									<!-- <th class="thead" style="text-align: center;"><strong>Status</strong></th> -->
+									<!-- <th class="thead" style="text-align: center;"><strong>Actions</strong></th> -->
+
+
+								</tr>
+							</thead>
+
+							
+							<?php 
+
+							foreach($result as $newresult)
+							{
+								echo '
+							 	<tr>
+							 		<td>
+							 			'.$newresult['FCode'].'
+							 		</td>
+							 		<td>
+							 			'.$newresult['FName'].' '.$newresult['MName'].' '.$newresult['LName'].'
+							 		</td>
+							 		
+							 	</tr>
+
+							 	';
+
+							}
+
+						
+
+							echo "<h3 style='border: 2px solid black; background-color: green; text-align: center; color: black'; class='status_tab_apr'>SUBMITTED DTR</h3>";
+
+							 ?>
+
+							<tfoot>
+								<tr>
+									<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
+								</tr>
+							</tfoot>
+
+						</table>	
+
+					</div>
+
+
+				</div>
+			</div>
+
+
+
+
+			<!-- panel 3 -->
+			<div class="panel" id="three-panel">
+				<div  class="outer_container">
+					
+					<div id="list_of_faculty_div" class="inner_container" >
+					
+					<!-- <h1>
+						<strong>
+							FACULTY MEMBERS WITH SCHEDULE
+						</strong>
+					</h1> -->
+
+
+					<?php 
+
+						$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
+						FROM tbl_evaluationfaculty
+						INNER JOIN tbl_schedule
+						ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+						LEFT JOIN tbl_dtr 
+						ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
+						WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`FCode` IS NULL;";
+						 $result=mysqli_query($conn,$sql);
+
+						 // $status = "Not Yet";
+					 ?>
+
+						<table  id="ProfTable" class="table table-striped table-bordered">
+							<thead>
+								<tr>
+									<th class="thead" style="text-align: center;"><strong>ID</strong></th>
+									<th class="thead" style="text-align: center;"><strong>name</strong></th>
+									<!-- <th class="thead" style="text-align: center;"><strong>Status</strong></th> -->
+									<!-- <th class="thead" style="text-align: center;"><strong>Actions</strong></th> -->
+
+
+								</tr>
+							</thead>
+
+							<?php 
+
+							foreach($result as $newresult)
+							{
+								echo '
+							 	<tr>
+							 		<td>
+							 			'.$newresult['FCode'].'
+							 		</td>
+							 		<td>
+							 			'.$newresult['FName'].' '.$newresult['MName'].' '.$newresult['LName'].'
+							 		</td>
+							 		
+							 	</tr>
+
+							 	';
+
+							}
+
+							echo "<a href='#' onclick='approve_all()'><input  type='button' value='Send Email Reminder'/></a> 
+									
+									<br>";
+
+							echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>DID NOT SUBMIT DTR</h3>";
+
+							 ?>
+
+
+							<tfoot>
+								<tr>
+									<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
+								</tr>
+							</tfoot>
+
+						</table>	
+
+					</div>
+
+
+				</div>
+			</div>
+
+
+		</div>
 
 
 </div>
-
 
 
 

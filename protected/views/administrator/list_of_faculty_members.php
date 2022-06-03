@@ -153,7 +153,7 @@
 
 					 ?>
 
-						<table  id="ProfTable" class="table table-striped table-bordered">
+						<table  id="ProfTable1" class="table table-striped table-bordered">
 							<thead>
 								<tr>
 									<th class="thead" style="text-align: center;"><strong>ID</strong></th>
@@ -186,14 +186,15 @@
 
 							
 
-							echo "<h3 style='border: 2px solid black; background-color: YELLOW; text-align: center; color: black'; class='status_tab_apr'>ALL MEMBERS WITH SCHEDULE</h3>";
+							echo "<h3 style='border: 2px solid black; background-color: gold; text-align: center; color: black'; class='status_tab_apr'>ALL MEMBERS WITH SCHEDULE</h3>";
+							// include("faculty_list.php");
 
 							 ?>
 
 
 							<tfoot>
 								<tr>
-									<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
+									<td style="font-size: 12px; font-style: italic;" colspan=2 ><?php echo "Faculty List";?></td>
 								</tr>
 							</tfoot>
 
@@ -233,11 +234,13 @@
 
 					 ?>
 
-						<table  id="ProfTable" class="table table-striped table-bordered">
+						<table  id="ProfTable2" class="table table-striped table-bordered">
 							<thead>
 								<tr>
 									<th class="thead" style="text-align: center;"><strong>ID</strong></th>
 									<th class="thead" style="text-align: center;"><strong>name</strong></th>
+
+
 									<!-- <th class="thead" style="text-align: center;"><strong>Status</strong></th> -->
 									<!-- <th class="thead" style="text-align: center;"><strong>Actions</strong></th> -->
 
@@ -267,13 +270,13 @@
 
 						
 
-							echo "<h3 style='border: 2px solid black; background-color: green; text-align: center; color: black'; class='status_tab_apr'>SUBMITTED DTR</h3>";
+							echo "<h3 style='border: 2px solid black; background-color:green; text-align: center; color: black'; class='status_tab_apr'>SUBMITTED DTR</h3>";
 
 							 ?>
 
 							<tfoot>
 								<tr>
-									<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
+									<td style="font-size: 12px; font-style: italic;" colspan="3" ><?php echo "Faculty List";?></td>
 								</tr>
 							</tfoot>
 
@@ -303,7 +306,7 @@
 
 					<?php 
 
-						$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
+						$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`,tbl_evaluationfaculty.`Email`
 						FROM tbl_evaluationfaculty
 						INNER JOIN tbl_schedule
 						ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
@@ -315,11 +318,19 @@
 						 // $status = "Not Yet";
 					 ?>
 
-						<table  id="ProfTable" class="table table-striped table-bordered">
+						<table  id="ProfTable3" class="table table-striped table-bordered">
 							<thead>
 								<tr>
 									<th class="thead" style="text-align: center;"><strong>ID</strong></th>
 									<th class="thead" style="text-align: center;"><strong>name</strong></th>
+									<th class="thead" style="text-align: center;"><strong>name</strong></th>
+
+									<!-- <th class="thead" style="text-align: center;"><strong>name</strong></th> -->
+
+									<!-- <th class="thead" style="text-align: center;"><strong>email</strong></th> -->
+									<!-- <th class="thead" style="text-align: center;"><strong>email</strong></th> -->
+
+
 									<!-- <th class="thead" style="text-align: center;"><strong>Status</strong></th> -->
 									<!-- <th class="thead" style="text-align: center;"><strong>Actions</strong></th> -->
 
@@ -328,7 +339,8 @@
 							</thead>
 
 							<?php 
-
+							 $email_container = [];
+							 $counter = 0;
 							foreach($result as $newresult)
 							{
 								echo '
@@ -339,14 +351,29 @@
 							 		<td>
 							 			'.$newresult['FName'].' '.$newresult['MName'].' '.$newresult['LName'].'
 							 		</td>
+							 		<td>
+							 			'.$newresult['Email'].'
+							 		</td>
+							 		
+							 		
 							 		
 							 	</tr>
 
+
+
 							 	';
 
-							}
+							 	
 
-							echo "<a href='#' onclick='approve_all()'><input  type='button' value='Send Email Reminder'/></a> 
+							 	array_push($email_container,$newresult['Email']);
+
+							 	$counter++;
+
+
+							}
+							// $email_container = $newresult['Email'];
+
+							echo "<a href='index.php?r=administrator/Dtr_send_email&email=".$email_container[0]." '><input  type='button' name='send_email' value='Send Email Reminder'/></a> 
 									
 									<br>";
 
@@ -357,7 +384,7 @@
 
 							<tfoot>
 								<tr>
-									<td style="font-size: 12px; font-style: italic;" colspan=3 ><?php echo "Faculty List";?></td>
+									<td style="font-size: 12px; font-style: italic;" colspan="4" ><?php echo "Faculty List";?></td>
 								</tr>
 							</tfoot>
 
@@ -391,7 +418,63 @@
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/datatables.min.js"></script>
 <script>
-	var ProfTable = $("#ProfTable").DataTable({
+	var ProfTable1 = $("#ProfTable1").DataTable({
+        "scrollY":        false,
+        "scrollCollapse": false,
+        "paging":         true,
+        "lengthChange": true,
+        "pagingType": "full_numbers",
+        "ordering": true, /// allow sorting sa buong table
+        "aaSorting": [],   /// remove sorting sa unang column  - 0
+        "columnDefs": [
+	        {
+	        	"targets": [0,1],
+	        	"orderable": false ///remove sorting sa lahat ng column maliban sa isa
+	        }
+        ],
+
+
+
+        language: { 
+        search: "", 
+
+        searchPlaceholder: "Search:" }
+
+
+    });
+
+    
+
+   
+</script>
+<script>
+	var ProfTable2 = $("#ProfTable2").DataTable({
+        "scrollY":        false,
+        "scrollCollapse": false,
+        "paging":         true,
+        "lengthChange": true,
+        "pagingType": "full_numbers",
+        "ordering": true, /// allow sorting sa buong table
+        "aaSorting": [],   /// remove sorting sa unang column  - 0
+        "columnDefs": [
+	        {
+	        	"targets": [0,1],
+	        	"orderable": false ///remove sorting sa lahat ng column maliban sa isa
+	        }
+        ],
+
+
+
+        language: { 
+        search: "", 
+
+        searchPlaceholder: "Search:" }
+
+
+    });
+</script>
+<script>
+	var ProfTable3 = $("#ProfTable3").DataTable({
         "scrollY":        false,
         "scrollCollapse": false,
         "paging":         true,
@@ -415,7 +498,4 @@
 
 
     });
-
-
-
 </script>

@@ -20,14 +20,17 @@
 		if($available == "Not Available")
 		{
 			// update db and set ipcr availability to faculty 
-			$sql1 = "UPDATE tbl_ipcrvisible SET visible = 'Available' WHERE month = '$m' AND year = '$y'";
-			$result1 = mysqli_query($conn,$sql1);
+			// $sql1 = "UPDATE tbl_ipcrvisible SET visible = 'Available' WHERE month = '$m' AND year = '$y'";
+			// $result1 = mysqli_query($conn,$sql1);
 
 			// prompt and email to the faculty if IPCR is available
 			while($row2 = mysqli_fetch_array($result2))
 			{
 				$email = $row2['email'];
+
 			}
+				print_r($email);
+				die;
 				$mailTo = $email;			
 				ob_start();
 				include ('IPCRemailtemplate.php');

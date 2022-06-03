@@ -4280,3 +4280,12 @@ REQUEST_URI=/fsiscs/index.php?r=administrator/Dtr_send_email&email=fionafaranal@
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_email_template.php (116)
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\dtr_send_email.php (35)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3484)
+2022/06/03 20:21:11 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1358)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/03 20:21:33 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1358)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/03 20:21:33 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1358)
+in C:\xampp\htdocs\FSISCS\index.php (13)

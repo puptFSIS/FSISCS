@@ -166,6 +166,9 @@ include("GetFacultyCode.php");
 <p style="margin-bottom: 9px;">* MIDDLE NAME: <input id=mname name=mname type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" oninput="this.value = this.value.replace(/[^a-zA-Z\s]/g, '').replace(/(\..*?)\..*/g, '$1');"/></p>
 <p style="margin-bottom: 9px;">&nbsp&nbsp NAME EXTENSION: <input id=next name=next type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');"/></p>
 <!-- <p style="margin-bottom: 9px;">* COURSE GROUP: <input name="cgroup" type=text style="width: 50%; margin-top: -28px; margin-left: 25%;" /></p> -->
+
+<p style="margin-bottom: 9px;">* EMAIL: <input id=email name=email type=text style="width: 50%; margin-top: -28px; margin-left: 25%;"  /></p>
+
 <p style="margin-bottom: 9px;">* EMPLOYMENT TYPE: 
 	<select name="emptype" style="width: 50%; margin-top: -28px; margin-left: 25%;">
 		<option value="Permanent">Full-time</option>

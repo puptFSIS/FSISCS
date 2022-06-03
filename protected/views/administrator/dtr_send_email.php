@@ -5,15 +5,15 @@
 	require ('PHPMailer-master/src/SMTP.php');
 
 
-	if(isset($_GET['send_email']))
+	if(isset($_GET['email']))
 	{
-		$email = $_GET['send_email'];
-		// echo $email;
-		// die;
+		$email = $_GET['email'];
+		echo $email;
+		die;
 
 	
 
-	$mailTo = "fernannagrampa@gmail.com";
+	$mailTo = "enail";
 	// $body = $_POST['message'];
 	$body = "hello";
 

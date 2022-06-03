@@ -365,15 +365,17 @@
 
 							 	
 
-							 	array_push($email_container,$newresult['Email']);
+							 	// array_push($email_container,$newresult['Email']);
 
-							 	$counter++;
+							 	// $counter++;
 
 
 							}
 							// $email_container = $newresult['Email'];
-
-							echo "<a href='index.php?r=administrator/Dtr_send_email&email=".$email_container[0]." '><input  type='button' name='send_email' value='Send Email Reminder'/></a> 
+							$email = $newresult['Email'];
+							// echo $email;
+							// die;
+							echo "<a href='index.php?r=administrator/Dtr_send_email&email=".$email."'><input  type='button' name='send_email' value='Send Email Reminder'/></a> 
 									
 									<br>";
 

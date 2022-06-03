@@ -3101,3 +3101,14 @@ in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (335
 in C:\xampp\htdocs\FSISCS\index.php (13)
 =======
 >>>>>>> Stashed changes
+2022/06/03 09:02:21 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "IPCRvalidation". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('IPCRvalidation')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRvalidation')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/I...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/IPCRvalidation
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/IPCR
+---

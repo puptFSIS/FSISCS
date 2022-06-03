@@ -44,6 +44,8 @@
 					<th class="thead" style="text-align: center;"><strong>ID</strong></th>
 					<th class="thead" style="text-align: center;"><strong>name</strong></th>
 					<th class="thead" style="text-align: center;"><strong>Status</strong></th>
+					<!-- <th class="thead" style="text-align: center;"><strong>Actions</strong></th> -->
+
 
 				</tr>
 			</thead>

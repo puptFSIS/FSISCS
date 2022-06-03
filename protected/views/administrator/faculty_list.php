@@ -178,6 +178,11 @@ else if($status == "notyet")
 	 	';
 
 	}
+
+	echo "<a href='#' onclick='approve_all()'><input  type='button' value='Send Email Reminder'/></a> 
+			
+			<br>";
+
 	echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>DID NOT SUBMIT DTR</h3>";
 }
 	

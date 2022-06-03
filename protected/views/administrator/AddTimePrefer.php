@@ -436,8 +436,8 @@ include('config.php');
 			
 			document.getElementById("ifYes").style.display = "none";
 			// $('select:#Stime,#Etime').attr('disabled')
-			document.getElementById("Stime").disabled = true;
-			document.getElementById("Etime").disabled = true;
+			document.getElementById("Stime").disabled = false;
+			document.getElementById("Etime").disabled = false;
 		} else {
 			document.getElementById("ifYes").style.display = "block";
 		}

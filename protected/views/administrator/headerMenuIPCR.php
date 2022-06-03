@@ -1,7 +1,10 @@
 <style>
 	.header {
-		float: left;
-		margin:-10px 10px 0px 0px;
+		/*float: left;*/
+		margin:-10px 6.5px 0px 0px;
+	}
+	.c {
+		float: right;
 	}
 </style>
 
@@ -19,6 +22,8 @@
 <a class="header" data-category=design href="index.php?r=administrator/TeachingAssignment">Teaching Assignment</a>
 <a class="header" data-category=design href="index.php?r=administrator/other">Other</a>
 <a class="header" data-category=design href="index.php?r=administrator/logout">Log out</a>
+
+<a class="header c" data-category=design href="#">Notification</a>
 </section>
 
 </header>

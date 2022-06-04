@@ -41,9 +41,6 @@
 </li>
 
 <li>
-	<a href="index.php?r=administrator/IPCRvalidation">IPCR Validation</a>
-</li>
-<li>
 	<a href='index.php?r=administrator/IPCRemailnotif' title="Send Individual Email For Faculty">Send IPCR Email Notification</a>
 </li>
 

@@ -75,16 +75,5 @@
 				header("location: index.php?r=administrator/ListOfFac&msg=Email has been sent.&msgType=succ");
 			}
 		}
-	
-	
-	
-	
-		
-	
-
-	
-
-}
-	
-
+	}
 ?>

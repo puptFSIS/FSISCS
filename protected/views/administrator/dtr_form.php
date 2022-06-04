@@ -57,11 +57,11 @@
 		.user_name_sur
 		{
 			border-radius: 15px 20px 50px;
-			width: 110px;
+			width: 210px;
 			position: relative;
 			bottom:10px;
 			margin: 0 auto;
-			margin-left: 100px;
+			margin-left: 150px;
 			height: 35px;
 			border:none;
 			font-weight: bold;
@@ -84,12 +84,12 @@
 		.user_name_fn
 		{
 			border-radius: 50px 8px 50px;
-			width: 110px;
+			width: 210px;
 			position: relative;
 			bottom:45px;
 			left:115px;
 			margin: 0 auto;
-			margin-left: 100px;
+			margin-left: 270px;
 			height: 35px;
 			border:none;
 			text-align: center;
@@ -112,11 +112,12 @@
 		.user_name_mn
 		{
 			border-radius: 50px 20px 15px;
-			width: 120px;
+			width: 210px;
 			position: relative;
 			bottom:80px;
 			left:115px;
 			margin: 0 auto;
+			margin-left: 500px;
 			height: 35px;
 			border:none;
 			text-align: center;

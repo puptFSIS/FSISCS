@@ -98,7 +98,7 @@
 	{
 	  background:#fffffff6;
 	  color:#000;
-	  border-top: 3px solid #000;
+	  border-top: 3px solid yellow;
 	}
 	#two:checked ~ .tabs #two-tab
 	{
@@ -110,7 +110,7 @@
 	{
 	  background:#fffffff6;
 	  color:#000;
-	  border-top: 3px solid blue;
+	  border-top: 3px solid orange;
 	}
 
 </style>
@@ -136,12 +136,7 @@
 					
 					<div id="list_of_faculty_div" class="inner_container" >
 					
-					<!-- <h1>
-						<strong>
-							FACULTY MEMBERS WITH SCHEDULE
-						</strong>
-					</h1> -->
-
+					
 					<?php 
 
 					$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
@@ -365,7 +360,7 @@
 							$email = $newresult['Email'];
 							// echo $email;
 							// die;
-							echo "<a href='index.php?r=administrator/Dtr_send_email&email=".$email."'><input  type='button' name='send_email' value='Send Email Reminder'/></a> 
+							echo "<a onclick='on_send_email()' ><input id='send_email_id' type='button' name='send_email' value='Send Email Reminder' /></a> 
 									
 									<br>";
 
@@ -490,4 +485,32 @@
 
 
     });
+
+
+
+    // send_email_id
+
+
+    function on_send_email()
+    {
+    	Swal.fire({
+	  title: 'Are you sure?',
+	  text: "You won't be able to revert this!",
+	  icon: 'warning',
+	  showCancelButton: true,
+	  confirmButtonColor: '#3085d6',
+	  cancelButtonColor: '#d33',
+	  confirmButtonText: '<a href="index.php?r=administrator/Dtr_send_email&email=".$email."">Confirm Send email</a>'
+	}).then((result) => {
+	  if (result.isConfirmed) {
+	    Swal.fire(
+	      'Deleted!',
+	      'Your file has been deleted.',
+	      'success'
+	    )
+	  }
+	})
+    }
+
+    
 </script>

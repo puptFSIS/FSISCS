@@ -258,7 +258,7 @@ class TblSchedule extends CActiveRecord
 	{
 		$date = date('Y-m-d H:i:s');
 		foreach ($val1 as $id) {
-			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = '', `modified_date`='$date'  WHERE id = '$id'";
+			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = 0, `modified_date`='$date'  WHERE id = '$id'";
 		 	Yii::app()->db->createCommand($update)->execute();
 		}
 			
@@ -282,7 +282,8 @@ class TblSchedule extends CActiveRecord
 	{
 		$date = date('Y-m-d H:i:s');
 		foreach ($val1 as $id) {
-			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = '',`modified_date`='$date'  WHERE id = '$id'";
+			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = 0,`modified_date`='$date'  WHERE id = '$id'";
+			 
 		 	Yii::app()->db->createCommand($update)->execute();
 		}
 			

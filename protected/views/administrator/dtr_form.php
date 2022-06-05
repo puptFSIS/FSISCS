@@ -19,8 +19,8 @@
   			display: inline-block;
 			border-radius: 25px;
 			width: 185px;
-			top: 10px;
-			left:350px;
+			top: 25px;
+			left:720px;
 			border:none;
 			text-align: center;
 			background: #e2d9d9;
@@ -28,7 +28,6 @@
 			color: black;		
 			font-size: 15.5px;
 			transition: transform .04s;	
-			/*box-shadow: 5px 7px 12px #888888;*/
 			box-shadow: 5px 4px 10px #9a9393;
 			cursor: pointer;
 		}
@@ -46,26 +45,30 @@
 		.civil_service
 		{
 			position:relative;
-			left:120px;
+			left:100px;
+			font-size: 12px;
+			font-style: italic;
 		}
 		.dtr_header_id
 		{
 			position:relative;
 			text-align: center;
+			font-weight: bold;
+			font-size: 25px;
 
 		}
 		.user_name_sur
 		{
 			border-radius: 15px 20px 50px;
-			width: 110px;
+			width: 210px;
 			position: relative;
 			bottom:10px;
 			margin: 0 auto;
-			margin-left: 100px;
+			margin-left: 150px;
 			height: 35px;
 			border:none;
 			font-weight: bold;
-			font-size: 13.8px;
+			font-size: 18px;
 			text-align: center;
 			border-bottom: 1px solid #000000;
 			background: #e2d9d9;
@@ -84,19 +87,19 @@
 		.user_name_fn
 		{
 			border-radius: 50px 8px 50px;
-			width: 110px;
+			width: 210px;
 			position: relative;
 			bottom:45px;
 			left:115px;
 			margin: 0 auto;
-			margin-left: 100px;
+			margin-left: 270px;
 			height: 35px;
 			border:none;
 			text-align: center;
 			border-bottom: 1px solid #000000;
 			background: #e2d9d9;
 			font-weight: bold;
-			font-size: 13.8px;
+			font-size: 18px;
 			color: black;
 			text-transform: uppercase;
 			box-shadow: 5px 4px 10px #9a9393;
@@ -112,17 +115,18 @@
 		.user_name_mn
 		{
 			border-radius: 50px 20px 15px;
-			width: 120px;
+			width: 210px;
 			position: relative;
 			bottom:80px;
 			left:115px;
 			margin: 0 auto;
+			margin-left: 500px;
 			height: 35px;
 			border:none;
 			text-align: center;
 			border-bottom: 1px solid #000000;
 			background: #e2d9d9;
-			font-size: 13.8px;
+			font-size: 18px;
 			font-weight: bold;
 			color: black;
 			text-transform: uppercase;
@@ -167,9 +171,11 @@
 		{
 			position: relative;
 			bottom: 170px;
-			left: 45px;
+			left: 250px;
+			font-size: 18px;
 			font-style: italic;
 			border-radius: 20px;
+			margin-bottom: 0px;
 		
 		}
 		.month_input_class
@@ -186,16 +192,19 @@
 		.official_hours_class
 		{
 			position: relative;
-			bottom: 240px;
-			left: 45px;
+			bottom: 230px;
+			left: 248px;
+			font-size: 18px;
 			font-style: italic;
+			margin-bottom: 8px;
 		}
 
 		.regular_days_extra
 		{
 			position: relative;
-			bottom: 280px;
-			left: 304px;
+			bottom: 270px;
+			font-size: 18px;
+			left: 510px;
 			font-style: italic;
 			/*display: none;*/
 		}
@@ -204,7 +213,8 @@
 		{
 			position: relative;
 			bottom: 300px;
-			left: 319px;
+			left: 525px;
+			font-size: 18px;
 			font-style: italic;
 		}
 
@@ -213,8 +223,8 @@
 			border-radius: 25px;
 			width: 120px;
 			position: relative;
-			bottom:  403px;
-			left: 400px;
+			bottom:  415px;
+			left: 635px;
 			height: 7px;
 			border:none;
 			text-align: center;
@@ -224,6 +234,7 @@
 			font-weight: bold;
 			transition: transform .04s;
 			box-shadow: 2px 1.8px 5px #9a9393;
+
 		}
 
 		.official_hours_input_class:hover
@@ -237,8 +248,9 @@
 		.arrival_and_departure_class
 		{
 			position: relative;
-			bottom: 340px;
-			left: 45px;
+			bottom: 350px;
+			left: 280px;
+			font-size: 18px;
 			font-style: italic;
 			transition: transform .04s;
 		}
@@ -255,8 +267,8 @@
 			border-radius: 25px;
 			width: 120px;
 			position: relative;
-			bottom: 400px;
-			left: 400px;
+			bottom: 410px;
+			left: 635px;
 			height: 7px;
 			border:none;
 			text-align: center;
@@ -279,12 +291,13 @@
 		.month_dropdown
 		{
 			position:relative;
-			left: 360px;
-			bottom: 220px;	
+			left: 405px;
+			bottom: 208px;	
 			border:none;
 			border-bottom: 1px solid #000000;
 			border-radius: 13.5px;
 			font-weight: bold;
+			font-size: 15px;
 			text-align: center;
 			color: black;
 			background: #d7cfcf;	
@@ -305,12 +318,13 @@
 		.year_dropdown
 		{
 			position:relative;
-			left: 470px;
-			bottom: 253px;	
+			left: 515px;
+			bottom: 241px;	
 			width: 50px;
 			height: 33px;	
 			text-align: center;
 			border:none;
+			font-size: 15px;
 			border-bottom: 1px solid #000000;
 			background: #d7cfcf;
 			font-weight: bold;
@@ -423,9 +437,9 @@
 			/*outline: none;*/
 			background: #d7cfcf;
 			background: #ffffff;
-
 			color: black;
 			font-weight: bold;
+			font-size: 25px;
 			transition: transform .04s;
 			text-transform: uppercase;
 		}
@@ -440,7 +454,10 @@
 		{
 			width: 500px;
 			position: relative;
-			bottom: 370px;
+			bottom: 395px;
+			font-size: 12px;
+			font-weight: bold;
+			font-style: italic;
 			margin: 0 auto;
 			text-align: center;
 
@@ -459,7 +476,7 @@
 			border-bottom: 1px solid #000000;
 			/*background: #d7cfcf;*/
 			background: #ffffff;
-
+			font-size: 25px;
 			color: black;
 			font-weight: bold;
 			transition: transform .04s;
@@ -475,9 +492,12 @@
 		{
 			width: 500px;
 			position: relative;
-			bottom: 340px;
+			bottom: 350px;
 			margin: 0 auto;
 			text-align: center;
+			font-size: 12px;
+			font-weight: bold;
+			font-style: italic;
 			
 		}
 
@@ -637,11 +657,11 @@
 					    <option style="background-color: white" value="2014">2014</option>	
 				</select>
 
-				<p class="official_hours_class">Official Hours For</p>
+				<p class="official_hours_class">Official hours for arrival</p>
 				
 				<p class="regular_days_extra">Regular Days</p>
 				<p class="saturdays_extra">Saturdays</p>
-				<p class="arrival_and_departure_class">Arrival and Departure</p>
+				<p class="arrival_and_departure_class">and departure</p>
 				<input id="sample5" class="official_hours_input_class" type="text" name="official_hours_input">
 				<input class="arrival_and_departure_input_class" type="text" name="arrival_and_departure">
 				

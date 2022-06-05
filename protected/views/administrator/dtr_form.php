@@ -19,7 +19,8 @@
   			display: inline-block;
 			border-radius: 25px;
 			width: 185px;
-			top: 25px;
+			margin: auto;
+			margin-top: 20px;
 			left:720px;
 			border:none;
 			text-align: center;
@@ -35,10 +36,11 @@
 		{
 			position: relative;
 			background-color: #e4b235;
-			-ms-transform: scale(.5);  IE 9 
+			-ms-transform: scale(.5);  
   			-webkit-transform: scale(1.5); 
   			transform: scale(1.110);
 		}
+
 
 
 
@@ -604,14 +606,14 @@
 		<input type="text" name="hidden_fcode" id="hidden_fcode"  style="display: none;"   value="<?php echo $EmpID ?>">
 		<div class="dtr_form" >
 			<div class="header">
+				<select class="dtr_type_id" name="dtr1" id="dtr"  onchange="timeprof(this)">
+					<option style="display:none;">LOAD TYPE</option>
+					<option value="REGULAR" id="bg_dropdown">REGULAR</option>
+					<option value="PART-TIME" id="bg_dropdown">PART-TIME</option>
+					<option value="TEMPORARY SUBSTITUTION" id="bg_dropdown">TEMPORARY SUBSTITUTION</option>
+				</select>
 				<!-- <input class="dtr_type_id" type="text" name="DTR-TYPE_NAME" value="DTR-TYPE"> -->
-					<td><input id="count_day" class="onetothirtyone_input" type="hidden" name="count_day"></td>
-					  <select class="dtr_type_id" name="dtr1" id="dtr"  onchange="timeprof(this)">
-					  	<option style="display:none;">LOAD TYPE</option>
-					    <option value="REGULAR" id="bg_dropdown">REGULAR</option>
-					    <option value="PART-TIME" id="bg_dropdown">PART-TIME</option>
-					    <option value="TEMPORARY SUBSTITUTION" id="bg_dropdown">TEMPORARY SUBSTITUTION</option>
-					  </select>
+				<td><input id="count_day" class="onetothirtyone_input" type="hidden" name="count_day"></td>
 				<p id="date_test_id" hidden="true"></p>
 				<p class="civil_service">Civil Service Form No. 48</p>
 				<h3 class="dtr_header_id">DAILY TIME RECORD</h3>
@@ -698,16 +700,16 @@
 						<td><input id="cells_am_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_am_dep<?php echo $i; ?>"></td>
 						<td><input id="cells_pm_arr<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_arr<?php echo $i; ?>"></td>
 						<td><input id="cells_pm_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_dep<?php echo $i; ?>"></td>
-						<td><input id="cells_hrs_under<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_hrs_under<?php echo $i; ?>"></td>
-						<td><input id="cells_min_under<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_min_under<?php echo $i; ?>"></td> 
+						<td><input id="cells_hrs_under<?php echo $i; ?>" class="onetothirtyone_input" oninput="undertimeTotalhrs(this)" type="number" name="cells_hrs_under<?php echo $i; ?>"></td>
+						<td><input id="cells_min_under<?php echo $i; ?>" class="onetothirtyone_input" oninput="undertimeTotalmin(this)" type="number" name="cells_min_under<?php echo $i; ?>"></td> 
 					</tr>
 				<?php }?>
 				
 					
 					<tr>
 						<td class="total_word" colspan="5">TOTAL</td>
-						<td><input class="onetothirtyone_input" type="text" name=""></td>
-						<td><input id="last_cell_id" class="onetothirtyone_input" type="text" name=""></td>
+						<td><input id="last_cell_id_hrs" class="onetothirtyone_input" type="number" name="" disabled></td>
+						<td><input id="last_cell_id_min" class="onetothirtyone_input" type="number" name="" disabled></td>
 					</tr>
 				</div>
 				
@@ -767,7 +769,7 @@
 
     		// sur = getElementByClassName("user_name_sur");
     		// fir = getElementByClassName("user_name_fn");
-    		var fcode = getElementById("hidden_fcode");
+    		var fcode = document.getElementById("hidden_fcode");
 
 
     		window.addEventListener('load', (event) =>{
@@ -776,33 +778,14 @@
 
 		        $('form #submitbtn').on('click',function(e)	
 			    {
-			    	e.preventDefault();
-
 			    	Swal.fire({
-					  title: 'Are you sure?',
-					  text: "Create this DTR now?",
-					  icon: 'warning',
-					  showCancelButton: true,
-					  confirmButtonColor: '#3085d6',
-					  cancelButtonColor: '#d33',
-					  confirmButtonText: 'Yes!'
-					}).then((result) => {
-					  if (result.isConfirmed) {
-
-					    Swal.fire({
-					      title: 'DTR Generated Successfully',
+					  title: 'DTR Generated Successfully',
 						  text: 'Redirecting...',
 						  icon: 'success',
-						  timer: 1700,
 						  showConfirmButton:false, 
 						  showCancelButton:false
-					    }).then((result) => {
-					    	var formm = document.getElementById('frm_input_srt');
-					    	formm.submit();
-					    })
-					    
-					    
-					    $.ajax({
+					}).then((result) => {
+					    	 $.ajax({
 						      type: "POST",
 						      url:    "<?php echo Yii::app()->createUrl('administrator/Update_status'); ?>",
 						      data:  {val1:fcode},
@@ -815,16 +798,8 @@
 						      	alert(JSON.stringify(data));
 
 						      }
-						  });
-
-					  }else {
-				        Swal.fire(
-				            'Canceled',
-				            'Your data not deleted',
-				            'error'
-				        )
-				    }
-					})
+						  })
+					  })			  
 			    });
 
 		  //        		window.onload = function() {
@@ -862,6 +837,28 @@
 		var xx;
 		var new_xx;
 		var fcode1 = '<?php echo $fcode;?>';
+		var hrstotal = 0;
+		var mintotal = 0;
+
+		function undertimeTotalhrs(selectObject){
+			var cd = document.getElementById('count_day').value;
+			var cells_hrs_under = selectObject.value;
+
+			for(var ut=1;ut<cd;ut++)
+			{
+				var cells_hrs_under = document.getElementById('cells_hrs_under'+ut);
+				var cells_min_under = document.getElementById('cells_min_under'+ut);
+				if(cells_hrs_under!=0)
+				{
+					hrstotal += cells_hrs_under;
+				}
+			}
+			var last_cell_id_hrs = document.getElementById('last_cell_id_hrs');
+			last_cell_id_hrs.value = hrstotal;
+			var last_cell_id_min = document.getElementById('last_cell_id_min');
+			last_cell_id_min.value = hrstotal;
+			
+		}
 		
 		
 		function timeprof(selectObject) {
@@ -952,12 +949,20 @@
 			    	{
 			    		var cells_am_arr = document.getElementById('cells_am_arr'+adate);
 			    		cells_am_arr.type='text';
+			    		cells_am_arr.disabled=true;
 			    		var cells_am_dep = document.getElementById('cells_am_dep'+adate);
 			    		cells_am_dep.type='text';
+			    		cells_am_dep.disabled=true;
 			    		var cells_pm_arr = document.getElementById('cells_pm_arr'+adate);
 			    		cells_pm_arr.type='text';
+			    		cells_pm_arr.disabled=true;
 			    		var cells_pm_dep = document.getElementById('cells_pm_dep'+adate);
 			    		cells_pm_dep.type='text';
+			    		cells_pm_dep.disabled=true;
+			    		var cells_hrs_under = document.getElementById('cells_hrs_under'+adate);
+			    		cells_hrs_under.disabled=true;
+			    		var cells_min_under = document.getElementById('cells_min_under'+adate);
+			    		cells_min_under.disabled=true;
 			    	}
 			    }
 			    else{
@@ -977,6 +982,8 @@
 
 			if(m2!==0 && x3!==0 && d3!==0)
   			{
+  			document.getElementById("submitbtn").disabled = false;
+
 	  			$.ajax({
 		      type: "POST",
 		      url:    "<?php echo Yii::app()->createUrl('administrator/FetchDtrSched'); ?>",
@@ -998,6 +1005,7 @@
 
 		      	var counter = 0;
 		    	var cd = document.getElementById('count_day').value;
+		    	
 		    	for(var a=1;a<=cd;a++)
 		    	{
 		    		var cells_am_arr = document.getElementById('cells_am_arr'+a);
@@ -1256,7 +1264,7 @@
 		        sunday = [],
 		        days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
 		        count = 0;
-		        document.getElementById("submitbtn").disabled = false;
+		        
 		   
 		    for (let i =1;i<=31;i++)
 		    {

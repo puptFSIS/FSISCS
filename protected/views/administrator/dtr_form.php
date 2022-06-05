@@ -19,7 +19,8 @@
   			display: inline-block;
 			border-radius: 25px;
 			width: 185px;
-			top: 25px;
+			margin: auto;
+			margin-top: 20px;
 			left:720px;
 			border:none;
 			text-align: center;
@@ -35,10 +36,11 @@
 		{
 			position: relative;
 			background-color: #e4b235;
-			-ms-transform: scale(.5);  IE 9 
+			-ms-transform: scale(.5);  
   			-webkit-transform: scale(1.5); 
   			transform: scale(1.110);
 		}
+
 
 
 
@@ -604,14 +606,14 @@
 		<input type="text" name="hidden_fcode" id="hidden_fcode"  style="display: none;"   value="<?php echo $EmpID ?>">
 		<div class="dtr_form" >
 			<div class="header">
+				<select class="dtr_type_id" name="dtr1" id="dtr"  onchange="timeprof(this)">
+					<option style="display:none;">LOAD TYPE</option>
+					<option value="REGULAR" id="bg_dropdown">REGULAR</option>
+					<option value="PART-TIME" id="bg_dropdown">PART-TIME</option>
+					<option value="TEMPORARY SUBSTITUTION" id="bg_dropdown">TEMPORARY SUBSTITUTION</option>
+				</select>
 				<!-- <input class="dtr_type_id" type="text" name="DTR-TYPE_NAME" value="DTR-TYPE"> -->
-					<td><input id="count_day" class="onetothirtyone_input" type="hidden" name="count_day"></td>
-					  <select class="dtr_type_id" name="dtr1" id="dtr"  onchange="timeprof(this)">
-					  	<option style="display:none;">LOAD TYPE</option>
-					    <option value="REGULAR" id="bg_dropdown">REGULAR</option>
-					    <option value="PART-TIME" id="bg_dropdown">PART-TIME</option>
-					    <option value="TEMPORARY SUBSTITUTION" id="bg_dropdown">TEMPORARY SUBSTITUTION</option>
-					  </select>
+				<td><input id="count_day" class="onetothirtyone_input" type="hidden" name="count_day"></td>
 				<p id="date_test_id" hidden="true"></p>
 				<p class="civil_service">Civil Service Form No. 48</p>
 				<h3 class="dtr_header_id">DAILY TIME RECORD</h3>
@@ -698,16 +700,16 @@
 						<td><input id="cells_am_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_am_dep<?php echo $i; ?>"></td>
 						<td><input id="cells_pm_arr<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_arr<?php echo $i; ?>"></td>
 						<td><input id="cells_pm_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_dep<?php echo $i; ?>"></td>
-						<td><input id="cells_hrs_under<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_hrs_under<?php echo $i; ?>"></td>
-						<td><input id="cells_min_under<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_min_under<?php echo $i; ?>"></td> 
+						<td><input id="cells_hrs_under<?php echo $i; ?>" class="onetothirtyone_input" type="number" name="cells_hrs_under<?php echo $i; ?>"></td>
+						<td><input id="cells_min_under<?php echo $i; ?>" class="onetothirtyone_input" type="number" name="cells_min_under<?php echo $i; ?>"></td> 
 					</tr>
 				<?php }?>
 				
 					
 					<tr>
 						<td class="total_word" colspan="5">TOTAL</td>
-						<td><input class="onetothirtyone_input" type="text" name=""></td>
-						<td><input id="last_cell_id" class="onetothirtyone_input" type="text" name=""></td>
+						<td><input id="last_cell_id_hrs" class="onetothirtyone_input" type="text" name="" disabled></td>
+						<td><input id="last_cell_id_min" class="onetothirtyone_input" type="text" name="" disabled></td>
 					</tr>
 				</div>
 				
@@ -998,6 +1000,7 @@
 
 		      	var counter = 0;
 		    	var cd = document.getElementById('count_day').value;
+		    	document.getElementById("submitbtn").disabled = false;
 		    	for(var a=1;a<=cd;a++)
 		    	{
 		    		var cells_am_arr = document.getElementById('cells_am_arr'+a);
@@ -1256,7 +1259,7 @@
 		        sunday = [],
 		        days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
 		        count = 0;
-		        document.getElementById("submitbtn").disabled = false;
+		        
 		   
 		    for (let i =1;i<=31;i++)
 		    {

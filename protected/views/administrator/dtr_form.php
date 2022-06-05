@@ -581,6 +581,7 @@
 </head>
 <body>
 	<form action="" method="POST" id="frm_input_srt">
+		<input type="text" name="hidden_fcode" id="hidden_fcode"  style="display: none;"   value="<?php echo $EmpID ?>">
 		<div class="dtr_form" >
 			<div class="header">
 				<!-- <input class="dtr_type_id" type="text" name="DTR-TYPE_NAME" value="DTR-TYPE"> -->
@@ -744,6 +745,10 @@
 				// }
     // 		}
 
+    		// sur = getElementByClassName("user_name_sur");
+    		// fir = getElementByClassName("user_name_fn");
+    		var fcode = getElementById("hidden_fcode");
+
 
     		window.addEventListener('load', (event) =>{
 		    	getmonthyear();
@@ -777,6 +782,21 @@
 					    })
 					    
 					    
+					    $.ajax({
+						      type: "POST",
+						      url:    "<?php echo Yii::app()->createUrl('administrator/Update_status'); ?>",
+						      data:  {val1:fcode},
+						      dataType:"JSON",
+						      success:function(data){
+						      	// alert("records updated successfully");
+						      },
+						      error:function(data)
+						      {
+						      	alert(JSON.stringify(data));
+
+						      }
+						  });
+
 					  }else {
 				        Swal.fire(
 				            'Canceled',

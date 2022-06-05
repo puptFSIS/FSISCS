@@ -3409,6 +3409,13 @@ class AdministratorController extends Controller
 		$this->render('receiving_document',array('month_input' => $val1,'name_of_sender' => $val2,'position_of_sender' => $val3,'department_name' => $val4,'dear' => $val5,'paragraph_text' => $val6,'paragraph_text2' => $val7,'paragraph_text3' => $val8,'paragraph_text4' => $val9));
 	}
  
+
+	public function Update_status()
+	{
+		$fcode = $_POST['val1'];
+		$result = TblSchedule::model()->Update_status($fcode);
+	}
+
 	public function actionHap_post()  // dtr
 	{
 		$id = $_POST['val1'];
@@ -3417,6 +3424,8 @@ class AdministratorController extends Controller
 		$result = TblSchedule::model()->update_by_hap($id,$approval,$comments);
 		
 	}
+
+
 
 	public function actionResubmit() // dtr
 	{

@@ -312,7 +312,7 @@
 						ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
 						LEFT JOIN tbl_dtr 
 						ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-						WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`FCode` IS NULL;";
+						WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`ntd_by_offhour` IS NULL;";
 						 $result=mysqli_query($conn,$sql);
 
 						 // $status = "Not Yet";
@@ -324,16 +324,6 @@
 									<th class="thead" style="text-align: center;"><strong>ID</strong></th>
 									<th class="thead" style="text-align: center;"><strong>name</strong></th>
 									<th class="thead" style="text-align: center;"><strong>name</strong></th>
-
-									<!-- <th class="thead" style="text-align: center;"><strong>name</strong></th> -->
-
-									<!-- <th class="thead" style="text-align: center;"><strong>email</strong></th> -->
-									<!-- <th class="thead" style="text-align: center;"><strong>email</strong></th> -->
-
-
-									<!-- <th class="thead" style="text-align: center;"><strong>Status</strong></th> -->
-									<!-- <th class="thead" style="text-align: center;"><strong>Actions</strong></th> -->
-
 
 								</tr>
 							</thead>

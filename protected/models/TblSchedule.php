@@ -238,6 +238,14 @@ class TblSchedule extends CActiveRecord
 		return $row;
 	}
 
+
+	public static function Update_status($val1)
+	{
+		$date = date('Y-m-d H:i:s');
+		$update = "UPDATE `tbl_dtr` SET `status` = 1,`modified_date`='$date'  WHERE `FCode` = '$val1'";
+		 Yii::app()->db->createCommand($update)->execute();
+	}
+
 	public static function update_by_hap($val1,$val2,$val3) // dtr
 	{
 		$date = date('Y-m-d H:i:s');

@@ -2964,7 +2964,15 @@ class AdministratorController extends Controller
 
     }
 
-    ////////////////////////////////////////////////////////////////////////////////////////////
+    /////////////////////////////////IPCR CONTROLLERS////////////////////////////////////
+    public function actionIPCRemailtemplateunsubmit()
+    {
+    	$this->render('IPCRemailtemplateunsubmit');
+    }
+    public function actionIPCRemailreminder()
+    {
+    	$this->render('IPCRemailreminder');
+    }
     public function actionheaderMenuIPCR()
     {
     	$this->render('headerMenuIPCR');
@@ -3285,7 +3293,7 @@ class AdministratorController extends Controller
 		$this->render('IPCR');
 	}
 
-	///////////////////////////////////////////////////////////
+	//////////////////////////////	END  IPCR CONTROLLER/////////////////////////////
 
 
 

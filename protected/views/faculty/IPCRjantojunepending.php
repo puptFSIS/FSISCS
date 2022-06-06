@@ -511,20 +511,19 @@ if(isset($_SESSION['user'])) {
                             
                                 <!-- Fetch the feedback to the db to view on the Modal -->
                                 <?php
-                                    $idaccomp = $rowsf['idaccomp'];
-                                    $query = "SELECT * FROM tbl_ipcraccomp WHERE idaccomp = '$idaccomp'";
+                                    $query = "SELECT * FROM tbl_ipcrfeedback WHERE idaccomp = '$idaccomp'";
                                     $query_result = mysqli_query($conn,$query);
                                 ?>
                                 <?php while($row = mysqli_fetch_array($query_result)): ?>
                                     <?php $feed = $row['adminFeedback']; ?>
                                     <?php $id = $row['idaccomp'];?> 
 
-                                <a data-toggle="modal" data-target="#exampleModalCenter<?php echo $id?>"><p style=" color: red;"><?= $rowsf['adminApproval']; ?></p></a>
+                                <a value="Disapprove" data-toggle="modal" data-target="#ModalCenter<?php echo $id?>"><p style=" color: red;"><?= $rowsf['adminApproval']; ?></p></a>
                                 
                                
 
                                 <!-- Modal of Disapprove to view Feedback -->
-                                <div class="modal fade" id="exampleModalCenter<?php echo $id;?>">
+                                <div class="modal fade" id="ModalCenter<?php echo $id;?>">
                                     <div class="modal-dialog modal-dialog-centered">
                                         <div class="modal-content">
                                             <div class="modal-header">
@@ -570,16 +569,26 @@ if(isset($_SESSION['user'])) {
         <?php endforeach ?>
 </tbody>
 </table>
+<?php 
+    $sql = "SELECT * FROM tbl_ipcrstatus WHERE fcode = '$fcode' AND month = '$m' AND year = '$y'"; 
+    $res = mysqli_query($conn,$sql);
+    while($row = mysqli_fetch_assoc($res))
+    {
+        $status = $row['status'];
+    }
+?>
+<?php if($status == "Pending"): ?>
     <h5>
         <strong>
-            <center>NOTE: DOUBLE CHECK. IF YOU'RE DONE ON YOUR IPCR, PLEASE PRESS THIS BUTTON TO SUBMIT</center>
+            <center>IF YOU'RE DONE ON YOUR IPCR, PLEASE PRESS THIS BUTTON TO RESUBMIT</center>
         </strong>
     </h5>             
     <center>
-        <a href="index.php?r=faculty/IPCRtagcomplete<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>">
-            <button style="width:120px">Submit IPCR</button>
+        <a href="index.php?r=faculty/IPCRresubmitfaculty<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>">
+            <button style="width:120px">Resubmit IPCR</button>
         </a>
     </center>
+<?php endif; ?>
 </div>
 </section>
             <!--Sweet alert REquired field-->

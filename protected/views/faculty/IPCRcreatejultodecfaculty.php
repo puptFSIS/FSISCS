@@ -241,9 +241,9 @@ if(isset($_SESSION['user'])) {
         
                     <td id="approval" name="approval" style="text-align: center;">
                         <strong>
-                        <?php if($rowsp['adminApproval'] == "Approve") : ?>
+                        <?php if($rowsp['adminApproval'] == "Approved") : ?>
                                 <p style=" color: Green;"><?php echo $rowsp['adminApproval']; ?> </p>
-                        <?php elseif($rowsp['adminApproval'] == "Disapprove") : ?>
+                        <?php elseif($rowsp['adminApproval'] == "Disapproved") : ?>
 
                             
                                 <!-- Fetch the feedback to the db to view on the Modal -->
@@ -294,7 +294,7 @@ if(isset($_SESSION['user'])) {
                         <?php else: ?>
                             <button class="disabled" style="width:95px">Edit Accomp.</button>
                         <?php endif; ?>
-                    <?php elseif($rowsp['adminApproval'] == "Disapprove" || $rowsp['adminApproval'] == NULL): ?>
+                    <?php elseif($rowsp['adminApproval'] == "Disapproved" || $rowsp['adminApproval'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddproof<?php echo'&accomp='.$rowsp['accomplishment'].'&fcode='.$fcode.'&id='.$rowsp['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Proof</button></a>
                         <?php if ($rowsp['idaccomp'] == "" || $rowsp['idaccomp'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddaccomp<?php echo'&fcode='.$fcode.'&outputs='.$rowsp['output'].'&indi='.$rowsp['indicators'].'&id='.$rowsp['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Accomp.</button></a>
@@ -368,9 +368,9 @@ if(isset($_SESSION['user'])) {
         
                     <td id="approval" name="approval" style="text-align: center;">
                         <strong>
-                        <?php if($rowcf['adminApproval'] == "Approve") : ?>
+                        <?php if($rowcf['adminApproval'] == "Approved") : ?>
                                 <p style=" color: Green;"><?= $rowcf['adminApproval'] ?> </p>
-                        <?php elseif($rowcf['adminApproval'] == "Disapprove") : ?>
+                        <?php elseif($rowcf['adminApproval'] == "Disapproved") : ?>
 
                             <!-- Modal of Disapprove to view Feedback -->
                                 <!-- Fetch the feedback to the db to view on the Modal -->
@@ -383,7 +383,7 @@ if(isset($_SESSION['user'])) {
                                     <?php $feed = $row['adminFeedback']; ?>
                                     <?php $idaccomp = $row['idaccomp'];?> 
 
-                                <a value="Disapprove" data-toggle="modal" data-target="#exampleModalCenter<?php echo $idaccomp?>"><p style=" color: red;"><?= $row['adminApproval']; ?></p></a>
+                                <a value="Disapproved" data-toggle="modal" data-target="#exampleModalCenter<?php echo $idaccomp?>"><p style=" color: red;"><?= $row['adminApproval']; ?></p></a>
                                 
                                 <div class="modal fade" id="exampleModalCenter<?php echo $idaccomp?>">
                                     <div class="modal-dialog modal-dialog-centered">
@@ -410,14 +410,14 @@ if(isset($_SESSION['user'])) {
 
                     </td>
                     <td style="text-align: center;">
-                    <?php if($rowcf['adminApproval'] == "Approve"): ?>
+                    <?php if($rowcf['adminApproval'] == "Approved"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowcf['idaccomp'] == "" || $rowcf['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>
                         <?php else: ?>
                             <button class="disabled" style="width:95px">Edit Accomp.</button>
                         <?php endif; ?>
-                    <?php elseif($rowcf['adminApproval'] == "Disapprove" || $rowcf['adminApproval'] == NULL): ?>
+                    <?php elseif($rowcf['adminApproval'] == "Disapproved" || $rowcf['adminApproval'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddproof<?php echo'&accomp='.$rowcf['accomplishment'].'&fcode='.$fcode.'&id='.$rowcf['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Proof</button></a>
                         <?php if ($rowcf['idaccomp'] == "" || $rowcf['idaccomp'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddaccomp<?php echo'&fcode='.$fcode.'&outputs='.$rowcf['output'].'&indi='.$rowcf['indicators'].'&id='.$rowcf['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Accomp.</button></a>
@@ -478,21 +478,22 @@ if(isset($_SESSION['user'])) {
         
                     <td id="approval" name="approval" style="text-align: center;">
                         <strong>
-                        <?php if($rowsf['adminApproval'] == "Approve") : ?>
+                        <?php if($rowsf['adminApproval'] == "Approved") : ?>
                                 <p style=" color: Green;"><?= $rowsf['adminApproval']; ?> </p>
-                        <?php elseif($rowsf['adminApproval'] == "Disapprove") : ?>
+                        <?php elseif($rowsf['adminApproval'] == "Disapproved") : ?>
 
                             
                                 <!-- Fetch the feedback to the db to view on the Modal -->
                                 <?php
-                                    $query = "SELECT * FROM tbl_ipcrfeedback WHERE idaccomp = '$idaccomp'";
+                                    $idaccomp = $rowsf['idaccomp'];
+                                    $query = "SELECT * FROM tbl_ipcraccomp WHERE idaccomp = '$idaccomp'";
                                     $query_result = mysqli_query($conn,$query);
                                 ?>
                                 <?php while($row = mysqli_fetch_array($query_result)): ?>
                                     <?php $feed = $row['adminFeedback']; ?>
                                     <?php $id = $row['idaccomp'];?> 
 
-                                <a value="Disapprove" data-toggle="modal" data-target="#ModalCenter<?php echo $id?>"><p style=" color: red;"><?= $rowsf['adminApproval']; ?></p></a>
+                                <a data-toggle="modal" data-target="#ModalCenter<?php echo $id?>"><p style=" color: red;"><?= $rowsf['adminApproval']; ?></p></a>
                                 
                                
 
@@ -523,14 +524,14 @@ if(isset($_SESSION['user'])) {
                     </td>
                 
                     <td style="text-align: center;">
-                    <?php if($rowsf['adminApproval'] == "Approve"): ?>
+                    <?php if($rowsf['adminApproval'] == "Approved"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowsf['idaccomp'] == "" || $rowsf['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>
                         <?php else: ?>
                             <button class="disabled" style="width:95px">Edit Accomp.</button>
                         <?php endif; ?>
-                    <?php elseif($rowsf['adminApproval'] == "Disapprove" || $rowsf['adminApproval'] == NULL): ?>
+                    <?php elseif($rowsf['adminApproval'] == "Disapproved" || $rowsf['adminApproval'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddproof<?php echo'&accomp='.$rowsf['accomplishment'].'&fcode='.$fcode.'&id='.$rowsf['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Proof</button></a>
                         <?php if ($rowsf['idaccomp'] == "" || $rowsf['idaccomp'] == NULL): ?>
                             <a href="index.php?r=faculty/IPCRaddaccomp<?php echo'&fcode='.$fcode.'&outputs='.$rowsf['output'].'&indi='.$rowsf['indicators'].'&id='.$rowsf['id'].'&m='.$m.'&y='.$y.'';?>"><button style="width:95px">Add Accomp.</button></a>

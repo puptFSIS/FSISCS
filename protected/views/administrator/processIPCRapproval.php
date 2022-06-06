@@ -26,10 +26,10 @@
 	  	{
 	  		if($btn_value == "Approved")
 	  		{
-	  			header('Location: index.php?r=administrator/IPCRview&m='.$m.'&y='.$y.'&fcode='.$fcode.'&a=approve');
+	  			header('Location: index.php?r=administrator/IPCRview&m='.$m.'&y='.$y.'&fcode='.$fcode.'&mess=1');
 	  		} else if ($btn_value == "Disapproved")
 	  		{
-	  			header('Location: index.php?r=administrator/IPCRview&m='.$m.'&y='.$y.'&fcode='.$fcode.'&b=disapprove');
+	  			header('Location: index.php?r=administrator/IPCRview&m='.$m.'&y='.$y.'&fcode='.$fcode.'&mess=2');
 	  		}
 	  	}
 ?>

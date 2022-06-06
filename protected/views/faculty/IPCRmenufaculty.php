@@ -3,7 +3,7 @@
 </li>
 
 <li>
-	<a href="index.php?r=faculty/IPCRevaluationfaculty" title="See Evaluated IPCR">Evaluation</a>
+	<a href="index.php?r=faculty/IPCRevaluationfaculty" title="See Evaluated IPCR">Evaluated IPCR</a>
 </li>
 
 <li>

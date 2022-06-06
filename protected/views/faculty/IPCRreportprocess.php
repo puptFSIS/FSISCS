@@ -37,13 +37,13 @@
 				}
 				if($count > 0) 
 				{
-					if($status == "Submitted")
+					if($status == "Submitted" || $status == "Approved")
 					{
 						if($m == "JJ") {
 
 							/* Query to Get/Select all the required field with 'Disapprove' Approval. If there is existing on $row_count, it will not let the USER print a copy of (his/her) IPCR. */
 
-							$sql="SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcraccomp.adminApproval = 'Disapprove' AND tbl_ipcr1.year = '$ye' AND tbl_ipcr1.if_required = 'Required' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+							$sql="SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcraccomp.adminApproval = 'Disapproved' AND tbl_ipcr1.year = '$ye' AND tbl_ipcr1.if_required = 'Required' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
 							$result = mysqli_query($conn,$sql);
 							$row_count = mysqli_num_rows($result);
 							//if($result == NULL) {

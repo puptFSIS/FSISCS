@@ -211,7 +211,7 @@ $msg = $_GET['msg'];
 }
 ?>
 <br>
-<h2 class="underlined">Edit IPCR for: (*Choose month and year)</h2>
+<h2 class="underlined"><strong>Edit IPCR for: </strong> <small>(Choose month and year)</small></h2>
 <!---->
 <?php  
     

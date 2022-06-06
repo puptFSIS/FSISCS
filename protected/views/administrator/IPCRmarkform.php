@@ -66,16 +66,16 @@
 
 				if(!$mail->send())
 				{
-					header('Location: index.php?r=administrator/IPCRview&fcode='.$fcode.'&m='.$m.'&y='.$y.'&err=1');
+					header('Location: index.php?r=administrator/IPCRview&fcode='.$fcode.'&m='.$m.'&y='.$y.'&mess=5');
 				} 
 				else
 				{
 					if($remarks == "Approved")
 					{
-						header('Location: index.php?r=administrator/IPCRview&fcode='.$fcode.'&m='.$m.'&y='.$y.'&c=1');
+						header('Location: index.php?r=administrator/IPCRview&fcode='.$fcode.'&m='.$m.'&y='.$y.'&mess=3');
 					// header('Location: ' . $_SERVER['HTTP_REFERER']);
 					} elseif ($remarks == "Pending") {
-						header('Location: index.php?r=administrator/IPCRview&fcode='.$fcode.'&m='.$m.'&y='.$y.'&d=1');
+						header('Location: index.php?r=administrator/IPCRview&fcode='.$fcode.'&m='.$m.'&y='.$y.'&mess=4');
 					}
 				}
 ?> 

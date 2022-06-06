@@ -163,6 +163,11 @@ if(isset($_SESSION['user'])) {
     font-size: 22px;
     color: white;
 }
+.underlined-header-unsubmitted {
+    background-color: #d19c15;
+    font-size: 22px;
+    color: white;
+}
 /*styles for switchable tab*/
 
 .warpper{
@@ -200,6 +205,16 @@ if(isset($_SESSION['user'])) {
   border-radius:3px 3px 0px 0px;
   box-shadow: 0 0.5rem 0.8rem #00000080;
 }
+.tab4{
+  cursor: pointer;
+  padding:10px 20px;
+  margin:0px 2px;
+  background: #d19c15;
+  display:inline-block;
+  color:#fff;
+  border-radius:3px 3px 0px 0px;
+  box-shadow: 0 0.5rem 0.8rem #00000080;
+}
 .panels{
   background:whitesmoke;
   box-shadow: 0 2rem 2rem #00000080;
@@ -229,7 +244,8 @@ if(isset($_SESSION['user'])) {
 
 #one:checked ~ .panels #one-panel,
 #two:checked ~ .panels #two-panel,
-#three:checked ~ .panels #three-panel{
+#three:checked ~ .panels #three-panel,
+#four:checked ~ .panels #four-panel{
   display:block;
 }
 #one:checked ~ .tabs #one-tab
@@ -249,6 +265,12 @@ if(isset($_SESSION['user'])) {
   background:#fffffff6;
   color:#000;
   border-top: 3px solid blue;
+}
+#four:checked ~ .tabs #four-tab
+{
+  background:#fffffff6;
+  color:#000;
+  border-top: 3px solid #d19c15;
 }
 
 </style>
@@ -309,10 +331,12 @@ if(isset($_SESSION['user'])) {
                         <input class="radio" id="one" name="group" type="radio" checked style="display: none;">
                         <input class="radio" id="two" name="group" type="radio" style="display: none;">
                         <input class="radio" id="three" name="group" type="radio" style="display: none;">
+                        <input class="radio" id="four" name="group" type="radio" style="display: none;">
                     <div class="tabs">
                           <label class="tab1" id="one-tab" for="one">Submitted</label>
                           <label class="tab2" id="two-tab" for="two">Approved</label>
                           <label class="tab3" id="three-tab" for="three">Pending</label>
+                          <label class="tab4" id="four-tab" for="four">Unsubmitted</label>
                     </div>
                 <div class="panels">
                     <div class="panel" id="one-panel">
@@ -501,12 +525,57 @@ if(isset($_SESSION['user'])) {
                             </script>        
                          </table>
                     </div>
+                    <div class="panel" id="four-panel">
+                        <div class="panel-title underlined-header-unsubmitted"><center>UNSUBMITTED IPCR</center></div>
+                        <br>
+                        <p><a href="index.php?r=administrator/IPCRemailreminder<?php echo'&m='.$m.'&y='.$y.'';?>"><button>Send Reminder</button></a></p>
+                        <table id="myTablePending">
+                            <thead>
+                                <tr>
+                                    
+                                    <th width="30%"><h5 align="Left">Name</th></h5>
+                                    <th width="30%"><h5 align="Left">Faculty Code</th></h5>
+                                    <th width="30%"><h5 align="center">Email</th></h5>
+                                    <!-- <th width="5%"><h5 align="center">Action</th></h5>  -->
+                                </tr>
+                            </thead>
+                            <?php
+                             //Database
+                                $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_evaluationfaculty.Email,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status IS NULL ORDER BY tbl_evaluationfaculty.LName ASC";
+                                $result = mysqli_query($conn,$sql);
+
+                                while($row = mysqli_fetch_array($result)) 
+                                {
+                                    $fcode = $row['fcode'];
+                                    $fname = $row['FName'];
+                                    $email = $row['Email'];
+                                    $mname = $row['MName'];
+                                    $sname = $row['LName'];
+                            
+                                    echo '<tr>
+                                        <td name="name" style="text-align: left;">'.$sname.", ".$fname." ".$mname.'</td>
+                                        <td name="fcode" style="text-align: left;">'.$fcode.'</td>
+                                        <td name="email" style="text-align: left;">'.$email.'</td>
+                                    </tr>';
+                                }
+                            ?>  
+<!--                             <td name="status" style="text-align: left;">'.$status.'</td>
+                                        <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 60px">View</button></a></td> -->        
+                         </table>
+                    </div>
                 </div>
             </div>
             <!-- Sweetalert for can't access -->
-            <?php if(isset($_GET['a'])) : ?>
-                <div class="flash-data" data-flashdata="<?= $_GET['a']; ?>"></div>
-            <?php endif; ?>
+            <?php if (isset($_GET['mess'])) : ?>
+                <?php if($_GET['mess'] == 1) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 2) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+            <?php endif;?>
+
 
 
             
@@ -514,15 +583,23 @@ if(isset($_SESSION['user'])) {
                 <!-- Script function for searching -->
                 <script>
                     
- 
-                    const flashdata = $('.flash-data').data('flashdata')
-                    if (flashdata) {
+                    flashdata = $('.flash-data').data('flashdata')
+                    if (flashdata == 1) {
                         Swal.fire(
-                            'IPCR is not yet submitted.',
-                            'You cannot access at the moment.',
+                            'Faculty notify through email',
+                            'Press OK to continue',
+                            'success'
+                        )
+                    }
+
+                    if (flashdata == 2) {
+                        Swal.fire(
+                            'Table is Empty',
+                            'Press OK to continue',
                             'warning'
                         )
-                    }    
+                    }  
+
                 </script>          
         </div>
     </div>

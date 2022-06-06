@@ -178,7 +178,7 @@ div.login p
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 </head>
-<body class='page-media page-sidebar-right'>
+<body class='page-media page-sidebar-right' >
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->

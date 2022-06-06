@@ -104,6 +104,7 @@ if(isset($_SESSION['user'])) {
     font-size: 20px;
     width: 350px;
 }
+/*.page-sidebar-right*/
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />

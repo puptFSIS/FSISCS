@@ -1533,7 +1533,18 @@ class FacultyController extends Controller
 
 
 ///////////////////////////////////////////////
-
+	public function actionIPCRjantojunepending()
+	{
+		$this->render('IPCRjantojunepending');
+	}
+	public function actionIPCRresubmitfaculty()
+	{
+		$this->render('IPCRresubmitfaculty');
+	}
+	public function actionIPCRevaluationfaculty()
+	{
+		$this->render('IPCRevaluationfaculty');
+	}
 	public function actionIPCRreportprocess()
     {
     	$this->render('IPCRreportprocess');

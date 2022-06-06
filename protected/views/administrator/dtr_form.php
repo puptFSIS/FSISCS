@@ -700,8 +700,8 @@
 						<td><input id="cells_am_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_am_dep<?php echo $i; ?>"></td>
 						<td><input id="cells_pm_arr<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_arr<?php echo $i; ?>"></td>
 						<td><input id="cells_pm_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_dep<?php echo $i; ?>"></td>
-						<td><input id="cells_hrs_under<?php echo $i; ?>" class="onetothirtyone_input" oninput="undertimeTotalhrs(this)" type="number" name="cells_hrs_under<?php echo $i; ?>"></td>
-						<td><input id="cells_min_under<?php echo $i; ?>" class="onetothirtyone_input" oninput="undertimeTotalmin(this)" type="number" name="cells_min_under<?php echo $i; ?>"></td> 
+						<td><input id="cells_hrs_under<?php echo $i; ?>" class="onetothirtyone_input" oninput="undertimeTotalhrs()" type="number" name="cells_hrs_under<?php echo $i; ?>"></td>
+						<td><input id="cells_min_under<?php echo $i; ?>" class="onetothirtyone_input" oninput="undertimeTotalhrs()" type="number" name="cells_min_under<?php echo $i; ?>"></td> 
 					</tr>
 				<?php }?>
 				
@@ -837,26 +837,32 @@
 		var xx;
 		var new_xx;
 		var fcode1 = '<?php echo $fcode;?>';
-		var hrstotal = 0;
-		var mintotal = 0;
+		
 
-		function undertimeTotalhrs(selectObject){
+		function undertimeTotalhrs(){
 			var cd = document.getElementById('count_day').value;
-			var cells_hrs_under = selectObject.value;
-
-			for(var ut=1;ut<cd;ut++)
+			var hrstotal = 0;
+			var mintotal = 0;
+			for(var ut=1;ut<=cd;ut++)
 			{
-				var cells_hrs_under = document.getElementById('cells_hrs_under'+ut);
-				var cells_min_under = document.getElementById('cells_min_under'+ut);
+				var cells_hrs_under = document.getElementById('cells_hrs_under'+ut).value;
+				var cells_hrs_under2 = parseInt(cells_hrs_under);
+				var cells_min_under = document.getElementById('cells_min_under'+ut).value;
+				var cells_min_under2 = parseInt(cells_min_under);
 				if(cells_hrs_under!=0)
 				{
-					hrstotal += cells_hrs_under;
+					hrstotal  += cells_hrs_under2;
+				}
+				if(cells_min_under!=0)
+				{
+					mintotal  += cells_min_under2;
 				}
 			}
+
 			var last_cell_id_hrs = document.getElementById('last_cell_id_hrs');
 			last_cell_id_hrs.value = hrstotal;
 			var last_cell_id_min = document.getElementById('last_cell_id_min');
-			last_cell_id_min.value = hrstotal;
+			last_cell_id_min.value = mintotal;
 			
 		}
 		
@@ -970,12 +976,20 @@
 			    	{
 			    		var cells_am_arr = document.getElementById('cells_am_arr'+adate);
 			    		cells_am_arr.type='time';
+			    		cells_am_arr.disabled=false;
 			    		var cells_am_dep = document.getElementById('cells_am_dep'+adate);
 			    		cells_am_dep.type='time';
+			    		cells_am_dep.disabled=false;
 			    		var cells_pm_arr = document.getElementById('cells_pm_arr'+adate);
 			    		cells_pm_arr.type='time';
+			    		cells_pm_arr.disabled=false;
 			    		var cells_pm_dep = document.getElementById('cells_pm_dep'+adate);
 			    		cells_pm_dep.type='time';
+			    		cells_pm_dep.disabled=false;
+			    		var cells_hrs_under = document.getElementById('cells_hrs_under'+adate);
+			    		cells_hrs_under.disabled=false;
+			    		var cells_min_under = document.getElementById('cells_min_under'+adate);
+			    		cells_min_under.disabled=false;
 			    	}
 			    }
 			}

@@ -561,7 +561,9 @@
 			$new_fn= $_POST['DTR_NAME2'];
 			$new_mn= $_POST['DTR_NAME3'];
 			$date = date('Y-m-d H:i:s');
-			$insert = mysqli_query($conn,"INSERT INTO `tbl_dtr`(`id`,`FCode`, `surname`,`firstname`,`middlename`,`regpartime`,`month`,`year`,`days_count`,`reg_days_hrs`,`saturdays`,`ntd_by_offhour`,`in_charge`,`modified_date`) VALUES ('','$fcode','$new_sur','$new_fn','$new_mn','$RegPartTemp','$new_month','$year','$new_count','$reg_days_hrs','$saturdays','$ntd_by','$in_charge','$date')");
+			$undertime_hrs_total = $_POST['last_cell_id_hrs'];
+			$undertime_hrs_min = $_POST['last_cell_id_min'];
+			$insert = mysqli_query($conn,"INSERT INTO `tbl_dtr`(`id`,`FCode`, `surname`,`firstname`,`middlename`,`regpartime`,`month`,`year`,`days_count`,`undertime_hrs_total`, `undertime_min_total`,`reg_days_hrs`,`saturdays`,`ntd_by_offhour`,`in_charge`,`modified_date`) VALUES ('','$fcode','$new_sur','$new_fn','$new_mn','$RegPartTemp','$new_month','$year','$new_count','$undertime_hrs_total','$undertime_hrs_min','$reg_days_hrs','$saturdays','$ntd_by','$in_charge','$date')");
 				if(!$insert)
 				    {
 				        echo mysqli_error($conn);
@@ -708,8 +710,8 @@
 					
 					<tr>
 						<td class="total_word" colspan="5">TOTAL</td>
-						<td><input id="last_cell_id_hrs" class="onetothirtyone_input" type="number" name="" disabled></td>
-						<td><input id="last_cell_id_min" class="onetothirtyone_input" type="number" name="" disabled></td>
+						<td><input id="last_cell_id_hrs" class="onetothirtyone_input" type="number" name="last_cell_id_hrs" readonly></td>
+						<td><input id="last_cell_id_min" class="onetothirtyone_input" type="number" name="last_cell_id_min" readonly></td>
 					</tr>
 				</div>
 				

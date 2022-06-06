@@ -35,6 +35,8 @@ foreach($first_resultdtr as $newfirst_resultdtr)
     $in_charge = $newfirst_resultdtr['in_charge'];
     $new_count = $newfirst_resultdtr['days_count'];
     $fcode = $newfirst_resultdtr['FCode'];
+    $total_hrs = $newfirst_resultdtr['undertime_hrs_total'];
+    $total_min = $newfirst_resultdtr['undertime_min_total'];
 }
 
 
@@ -63,6 +65,8 @@ foreach($second_resultdtr as $newsecond_resultdtr)
     $in_charge2 = $newsecond_resultdtr['in_charge'];
     $new_count2 = $newsecond_resultdtr['days_count'];
     $fcode2 = $newsecond_resultdtr['FCode'];
+    $total_hrs2 = $newsecond_resultdtr['undertime_hrs_total'];
+    $total_min2 = $newsecond_resultdtr['undertime_min_total'];
 }
 
 foreach($second_resultdtrtimesheet as $newsecond_resultdtrtimesheet)
@@ -265,11 +269,11 @@ $pdf->Cell(51,5,'Total',1,0,'R');
 
 $pdf->SetFont('Arial','B','13');
 $pdf->SetXY(68, 62+$y);
-$pdf->Cell(11,5,'',1,0,'C');
+$pdf->Cell(11,5,$total_hrs,1,0,'C');
 
 $pdf->SetFont('Arial','B','13');
 $pdf->SetXY(79, 62+$y);
-$pdf->Cell(11,5,'',1,0,'C');
+$pdf->Cell(11,5,$total_min,1,0,'C');
 
 $pdf->SetXY(16, 225);
 $pdf->SetFont('Arial','I','8');
@@ -494,11 +498,11 @@ $pdf->Cell(51,5,'Total',1,0,'R');
 
 $pdf->SetFont('Arial','B','13');
 $pdf->SetXY(173, 62+$y);
-$pdf->Cell(11,5,'',1,0,'C');
+$pdf->Cell(11,5,$total_hrs2,1,0,'C');
 
 $pdf->SetFont('Arial','B','13');
 $pdf->SetXY(184, 62+$y);
-$pdf->Cell(11,5,'',1,0,'C');
+$pdf->Cell(11,5,$total_min2,1,0,'C');
 
 $pdf->SetXY(121, 225);
 $pdf->SetFont('Arial','I','8');

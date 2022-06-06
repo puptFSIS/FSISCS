@@ -629,7 +629,7 @@
 				<br>
 				<p class="month_text">For the month of  </p>
 				<!-- <p id="month_holder"><?php //echo " ".date("M Y");?></p> -->
-				<select id="month_dropdown_id" class="month_dropdown" name="dtr2" onchange="getMonth(this)">
+				<select id="month_dropdown_id" class="month_dropdown" name="dtr2" onchange="getMonth(this);undertimeTotalhrs();">
 						<!-- <option value=""></option> -->
 						<option style="display:none;" value="<?php echo date("m");?>"><?php echo date("F");?></option>
 						<option style="background-color: white" value="1">January</option>
@@ -647,7 +647,7 @@
 					  
 				</select>
 
-				<select class="year_dropdown" id="year_dropdown_id" name="dtr3" onchange="getYear(this)" >
+				<select class="year_dropdown" id="year_dropdown_id" name="dtr3" onchange="getYear(this);undertimeTotalhrs();" >
 						<!-- <option value=""></option> -->
 						<option style="display:none;" value="<?php echo date("Y");?>" ><?php echo date("Y");?></option>
 						<option style="background-color: white" value="2022">2022</option>
@@ -969,8 +969,18 @@
 			    		cells_pm_dep.disabled=true;
 			    		var cells_hrs_under = document.getElementById('cells_hrs_under'+adate);
 			    		cells_hrs_under.disabled=true;
+			    		cells_hrs_under.value='';
 			    		var cells_min_under = document.getElementById('cells_min_under'+adate);
 			    		cells_min_under.disabled=true;
+			    		cells_min_under.value='';
+			    		var cells_am_arr = document.getElementById('cells_am_arr'+adate);
+			    		cells_am_arr.value='';
+			    		var cells_am_dep = document.getElementById('cells_am_dep'+adate);
+			    		cells_am_dep.value='';
+			    		var cells_pm_arr = document.getElementById('cells_pm_arr'+adate);
+			    		cells_pm_arr.value='';
+			    		var cells_pm_dep = document.getElementById('cells_pm_dep'+adate);
+			    		cells_pm_dep.value='';
 			    	}
 			    }
 			    else{

@@ -316,9 +316,9 @@
 						<table  id="ProfTable3" class="table table-striped table-bordered">
 							<thead>
 								<tr>
-									<th class="thead" style="text-align: center;"><strong>ID</strong></th>
-									<th class="thead" style="text-align: center;"><strong>name</strong></th>
-									<th class="thead" style="text-align: center;"><strong>name</strong></th>
+									<th width="33%" class="thead" style="text-align: center;"><strong>ID</strong></th>
+									<th width="33%" class="thead" style="text-align: center;"><strong>Name</strong></th>
+									<th width="33%"	 class="thead" style="text-align: center;"><strong>Email</strong></th>
 
 								</tr>
 							</thead>
@@ -330,13 +330,13 @@
 							{
 								echo '
 							 	<tr>
-							 		<td>
+							 		<td width="33%">
 							 			'.$newresult['FCode'].'
 							 		</td>
-							 		<td>
+							 		<td width="33%">
 							 			'.$newresult['FName'].' '.$newresult['MName'].' '.$newresult['LName'].'
 							 		</td>
-							 		<td>
+							 		<td width="33%">
 							 			'.$newresult['Email'].'
 							 		</td>
 							 		

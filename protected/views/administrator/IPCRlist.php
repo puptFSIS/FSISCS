@@ -415,7 +415,7 @@ if(isset($_SESSION['user'])) {
                                 </tr>
                             </thead>
                             <?php
-                             //Database
+                             //Database approved
                                 $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status = 'Approved' ORDER BY tbl_evaluationfaculty.LName ASC";
                                 $result = mysqli_query($conn,$sql);
 

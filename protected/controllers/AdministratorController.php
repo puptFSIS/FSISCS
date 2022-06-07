@@ -2818,8 +2818,14 @@ class AdministratorController extends Controller
     public function actionTeachingAssignment(){
     	session_start();
 		$this->CheckEmpID($_SESSION['CEmpID']);
-    	$proflist = TblEvaluationfaculty::model()->GetFcode();
     	$currSemAndSy = TblCurrentsyandsem::model()->AllData();
+
+    	foreach ($currSemAndSy as $row) {
+    		$sem = $row['sem'];
+    		$sy = $row['schoolYear'];
+    	}
+
+    	$proflist = TblEvaluationfaculty::model()->GetFacultyListWithSchedule($sem, $sy);
 
 
     	$this->render('TeachingAssignment', array('prof' => $proflist, 'SyAndSem' => $currSemAndSy));

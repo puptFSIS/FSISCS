@@ -196,7 +196,7 @@ class TblEvaluationfaculty extends CActiveRecord
 	}
 
 	public static function EmailFaculty(){
-		$sql = "Select Email, LName, FName, MName from tbl_evaluationfaculty where status = :status";
+		$sql = "SELECT b.Email, a.LName, a.FName, a.MName from tbl_evaluationfaculty AS a inner join tbl_personalinformation AS b on a.FCode = b.FCode OR a.FCode = b.EmpID WHERE a.status = :status";
 
 		$row = Yii::app()->db->createCommand($sql)
 		->bindValue(':status','Active')
@@ -219,6 +219,18 @@ class TblEvaluationfaculty extends CActiveRecord
 		$sql = "SELECT * FROM tbl_evaluationfaculty ORDER BY LName AND status";
 
 		$row = Yii::app()->db->createCommand($sql)
+		->queryAll();
+
+		return $row;
+	}
+
+	public function GetFacultyListWithSchedule($sem, $sy){
+		$sql = "SELECT DISTINCT FCode, LName, FName, MName FROM tbl_evaluationfaculty as a INNER JOIN tbl_schedule as b on b.sprof = a.FCode WHERE b.sprof = a.FCode and b.sem = :sem and b.schoolYear = :sy and b.Sched_type = :st";
+
+		$row = Yii::app()->db->createCommand($sql)
+		->bindValue(':sem', $sem)
+		->bindValue(':sy', $sy)
+		->bindValue(':st', 'OFFICIAL')
 		->queryAll();
 
 		return $row;

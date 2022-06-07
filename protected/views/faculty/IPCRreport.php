@@ -247,6 +247,10 @@ $msg = $_GET['msg'];
             <?php if($_GET['mess'] == 3) : ?>
                 <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
             <?php endif; ?>
+
+            <?php if($_GET['mess'] == 4) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
         <?php endif; ?>
 
             <script>
@@ -269,7 +273,7 @@ $msg = $_GET['msg'];
 
             </script>
             <script>
-                flashdata = $('.flash-data').data('flashdata')
+                const flashdata = $('.flash-data').data('flashdata')
                     if (flashdata == 1) {
                         Swal.fire(
                             'IPCR not Approved',
@@ -278,7 +282,16 @@ $msg = $_GET['msg'];
                         )
                     }  
 
+                
                     if (flashdata == 2) {
+                        Swal.fire(
+                            'No IPCR existing',
+                            'Press OK to Continue',
+                            'warning'
+                        )
+                    }  
+
+                    if (flashdata == 3) {
                         Swal.fire(
                             'IPCR not available to Generate',
                             "You can't download a copy at the moment",
@@ -286,15 +299,13 @@ $msg = $_GET['msg'];
                         )
                     }
 
-                    if (flashdata == 3) {
+                    if (flashdata == 4) {
                         Swal.fire(
-                            'No IPCR existing',
-                            'Press OK to Continue',
+                            'Please make your IPCR first',
+                            "You can't downlaod a copy at the moment",
                             'warning'
                         )
-                    }
-
-                    
+                    }  
 
                 // const flashdatanotsub = $('.flash-data-notsub').data('flashdatanotsub')
                 //     if (flashdatanotsub) {

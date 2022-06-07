@@ -24,17 +24,26 @@
 			$isVisible = $rows['visible'];
 		}
 
+		$sql_query = "SELECT * FROM tbl_ipcrstatus WHERE fcode = '$fcode' AND month = '$m' AND year = '$ye'";
+		$query_res = mysqli_query($conn,$sql_query);
+		$count_row = mysqli_num_rows($query_res);
+
 		if($m == "JJ")
 		{	
 			if($count > 0)
 			{
 				if($isVisible == "Available")
 				{
-					if($status == "Approved")
+					if($count_row > 0)
 					{
-						header('Location: index.php?r=faculty/IPCRform1faculty&m='.$m.'&ye='.$ye.'&fcode='.$fcode.'');
-					} elseif($status == "Pending" || $status == "Submitted" || $status == NULL) {
-						header('Location: index.php?r=faculty/IPCRreport&mess=1');
+						if($status == "Approved")
+						{
+							header('Location: index.php?r=faculty/IPCRform1faculty&m='.$m.'&ye='.$ye.'&fcode='.$fcode.'');
+						} elseif($status == "Pending" || $status == "Submitted" || $status == NULL) {
+							header('Location: index.php?r=faculty/IPCRreport&mess=1');
+						}
+					} elseif($count_row == 0) {
+						header('Location: index.php?r=faculty/IPCRreport&mess=4');
 					}
 				} elseif($isVisible == "Not Available") {
 					header('Location: index.php?r=faculty/IPCRreport&mess=2');
@@ -49,11 +58,16 @@
 			{
 				if($isVisible == "Available")
 				{
-					if($status == "Approved")
+					if($count_row > 0)
 					{
-						header('Location: index.php?r=faculty/IPCRform2faculty&m='.$m.'&ye='.$ye.'&fcode='.$fcode.'');
-					} elseif($status == "Pending" || $status == "Submitted" || $status == NULL) {
-						header('Location: index.php?r=faculty/IPCRreport&mess=1');
+						if($status == "Approved")
+						{
+							header('Location: index.php?r=faculty/IPCRform2faculty&m='.$m.'&ye='.$ye.'&fcode='.$fcode.'');
+						} elseif($status == "Pending" || $status == "Submitted" || $status == NULL) {
+							header('Location: index.php?r=faculty/IPCRreport&mess=1');
+						}
+					} elseif($count_row == 0) {
+						header('Location: index.php?r=faculty/IPCRreport&mess=4');
 					}
 				} elseif($isVisible == "Not Available") {
 					header('Location: index.php?r=faculty/IPCRreport&mess=2');

@@ -5,13 +5,22 @@
 	require ('PHPMailer-master/src/SMTP.php');
 	include ('config.php');
 
-	$sql = "SELECT DISTINCT tbl_evaluationfaculty.`Email`
-		FROM tbl_evaluationfaculty
-		INNER JOIN tbl_schedule
-		ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
-		LEFT JOIN tbl_dtr 
-		ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-		WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`FCode` IS NULL;";
+	// $sql = "SELECT DISTINCT tbl_evaluationfaculty.`Email`
+	// 	FROM tbl_evaluationfaculty
+	// 	INNER JOIN tbl_schedule
+	// 	ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+	// 	LEFT JOIN tbl_dtr 
+	// 	ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
+	// 	WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`FCode` IS NULL";
+
+
+	$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`,tbl_evaluationfaculty.`Email`
+						FROM tbl_evaluationfaculty
+						INNER JOIN tbl_schedule
+						ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+						LEFT JOIN tbl_dtr 
+						ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
+						WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` = ''";
 		 $result=mysqli_query($conn,$sql);
 		 $count = mysqli_num_rows($result); 
 		 // echo $count;
@@ -66,13 +75,15 @@
 			$mail->Body = $body;
 			$mail->AltBody = "To view the message, please use an HTML compatible email viewer.";
 			
-			if(!$mail->send())
+			if($mail->send())
 			{
-				header("location: index.php?r=administrator/ListOfFac&msg=Email could not be sent.&msgType=err");
+				header("location: index.php?r=administrator/ListOfFac&msg=Email has been sent.&msgType=succ");
+
 			} 
 			else
 			{
-				header("location: index.php?r=administrator/ListOfFac&msg=Email has been sent.&msgType=succ");
+				header("location: index.php?r=administrator/ListOfFac&msg=Email could not be sent.&msgType=err");
+
 			}
 		}
 	}

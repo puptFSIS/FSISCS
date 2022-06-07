@@ -6,13 +6,12 @@
 		.dtr_form
 		{
 			
-			width: 560px;
-			height: 1200px;
+			width: 100%;
+			height: 200%;
 			background-color: white;
 			border: 1px solid black;
 			border-radius: 10px;
-
-
+	
 		}
 		.dtr_type_id
 		{
@@ -20,8 +19,9 @@
   			display: inline-block;
 			border-radius: 25px;
 			width: 185px;
-			top: 10px;
-			left:350px;
+			margin: auto;
+			margin-top: 20px;
+			left:720px;
 			border:none;
 			text-align: center;
 			background: #e2d9d9;
@@ -29,43 +29,48 @@
 			color: black;		
 			font-size: 15.5px;
 			transition: transform .04s;	
-			/*box-shadow: 5px 7px 12px #888888;*/
 			box-shadow: 5px 4px 10px #9a9393;
+			cursor: pointer;
 		}
 	.dtr_type_id:hover
 		{
 			position: relative;
 			background-color: #e4b235;
-			-ms-transform: scale(.5);  IE 9 
+			-ms-transform: scale(.5);  
   			-webkit-transform: scale(1.5); 
   			transform: scale(1.110);
 		}
 
 
 
+
 		.civil_service
 		{
 			position:relative;
-			left:120px;
+			left:100px;
+			font-size: 12px;
+			font-style: italic;
 		}
 		.dtr_header_id
 		{
 			position:relative;
 			text-align: center;
+			font-weight: bold;
+			font-size: 25px;
 
 		}
 		.user_name_sur
 		{
 			border-radius: 15px 20px 50px;
-			width: 110px;
+			width: 210px;
 			position: relative;
 			bottom:10px;
 			margin: 0 auto;
-			margin-left: 100px;
+			margin-left: 150px;
 			height: 35px;
 			border:none;
 			font-weight: bold;
-			font-size: 13.8px;
+			font-size: 18px;
 			text-align: center;
 			border-bottom: 1px solid #000000;
 			background: #e2d9d9;
@@ -84,19 +89,19 @@
 		.user_name_fn
 		{
 			border-radius: 50px 8px 50px;
-			width: 110px;
+			width: 210px;
 			position: relative;
 			bottom:45px;
 			left:115px;
 			margin: 0 auto;
-			margin-left: 100px;
+			margin-left: 270px;
 			height: 35px;
 			border:none;
 			text-align: center;
 			border-bottom: 1px solid #000000;
 			background: #e2d9d9;
 			font-weight: bold;
-			font-size: 13.8px;
+			font-size: 18px;
 			color: black;
 			text-transform: uppercase;
 			box-shadow: 5px 4px 10px #9a9393;
@@ -112,17 +117,18 @@
 		.user_name_mn
 		{
 			border-radius: 50px 20px 15px;
-			width: 120px;
+			width: 210px;
 			position: relative;
 			bottom:80px;
 			left:115px;
 			margin: 0 auto;
+			margin-left: 500px;
 			height: 35px;
 			border:none;
 			text-align: center;
 			border-bottom: 1px solid #000000;
 			background: #e2d9d9;
-			font-size: 13.8px;
+			font-size: 18px;
 			font-weight: bold;
 			color: black;
 			text-transform: uppercase;
@@ -167,9 +173,12 @@
 		{
 			position: relative;
 			bottom: 170px;
-			left: 45px;
+			left: 250px;
+			font-size: 18px;
 			font-style: italic;
 			border-radius: 20px;
+			margin-bottom: 0px;
+		
 		}
 		.month_input_class
 		{
@@ -185,16 +194,19 @@
 		.official_hours_class
 		{
 			position: relative;
-			bottom: 240px;
-			left: 45px;
+			bottom: 230px;
+			left: 248px;
+			font-size: 18px;
 			font-style: italic;
+			margin-bottom: 8px;
 		}
 
 		.regular_days_extra
 		{
 			position: relative;
-			bottom: 280px;
-			left: 304px;
+			bottom: 270px;
+			font-size: 18px;
+			left: 510px;
 			font-style: italic;
 			/*display: none;*/
 		}
@@ -203,7 +215,8 @@
 		{
 			position: relative;
 			bottom: 300px;
-			left: 319px;
+			left: 525px;
+			font-size: 18px;
 			font-style: italic;
 		}
 
@@ -212,8 +225,8 @@
 			border-radius: 25px;
 			width: 120px;
 			position: relative;
-			bottom:  403px;
-			left: 400px;
+			bottom:  415px;
+			left: 635px;
 			height: 7px;
 			border:none;
 			text-align: center;
@@ -223,6 +236,7 @@
 			font-weight: bold;
 			transition: transform .04s;
 			box-shadow: 2px 1.8px 5px #9a9393;
+
 		}
 
 		.official_hours_input_class:hover
@@ -236,8 +250,9 @@
 		.arrival_and_departure_class
 		{
 			position: relative;
-			bottom: 340px;
-			left: 45px;
+			bottom: 350px;
+			left: 280px;
+			font-size: 18px;
 			font-style: italic;
 			transition: transform .04s;
 		}
@@ -254,8 +269,8 @@
 			border-radius: 25px;
 			width: 120px;
 			position: relative;
-			bottom: 400px;
-			left: 400px;
+			bottom: 410px;
+			left: 635px;
 			height: 7px;
 			border:none;
 			text-align: center;
@@ -278,17 +293,19 @@
 		.month_dropdown
 		{
 			position:relative;
-			left: 360px;
-			bottom: 220px;	
+			left: 405px;
+			bottom: 208px;	
 			border:none;
 			border-bottom: 1px solid #000000;
 			border-radius: 13.5px;
 			font-weight: bold;
+			font-size: 15px;
 			text-align: center;
 			color: black;
 			background: #d7cfcf;	
 			transition: transform .04s;
 			width: 100px;
+			cursor: pointer;
 		}
 		.month_dropdown:hover
 		{
@@ -303,18 +320,20 @@
 		.year_dropdown
 		{
 			position:relative;
-			left: 470px;
-			bottom: 253px;	
+			left: 515px;
+			bottom: 241px;	
 			width: 50px;
 			height: 33px;	
 			text-align: center;
 			border:none;
+			font-size: 15px;
 			border-bottom: 1px solid #000000;
 			background: #d7cfcf;
 			font-weight: bold;
 			color: black;
 			border-radius: 13.5px;
 			transition: transform .04s;
+			cursor: pointer;
 		}
 
 		.year_dropdown:hover
@@ -420,9 +439,9 @@
 			/*outline: none;*/
 			background: #d7cfcf;
 			background: #ffffff;
-
 			color: black;
 			font-weight: bold;
+			font-size: 25px;
 			transition: transform .04s;
 			text-transform: uppercase;
 		}
@@ -437,7 +456,10 @@
 		{
 			width: 500px;
 			position: relative;
-			bottom: 370px;
+			bottom: 395px;
+			font-size: 12px;
+			font-weight: bold;
+			font-style: italic;
 			margin: 0 auto;
 			text-align: center;
 
@@ -456,7 +478,7 @@
 			border-bottom: 1px solid #000000;
 			/*background: #d7cfcf;*/
 			background: #ffffff;
-
+			font-size: 25px;
 			color: black;
 			font-weight: bold;
 			transition: transform .04s;
@@ -472,9 +494,12 @@
 		{
 			width: 500px;
 			position: relative;
-			bottom: 340px;
+			bottom: 350px;
 			margin: 0 auto;
 			text-align: center;
+			font-size: 12px;
+			font-weight: bold;
+			font-style: italic;
 			
 		}
 
@@ -493,11 +518,27 @@
 			font-weight: bold;
 		}
 
+		input[type="time"]{ 
+			margin: auto;
+		    width:62px;
+		} 
+		input[type="time"]::-webkit-datetime-edit-ampm-field {
+		   display: none;
+		 }
+		 input[type=time]::-webkit-clear-button {
+		   -webkit-appearance: none;
+		   -moz-appearance: none;
+		   appearance: none;
+		   margin: 0; 
+		 }
+		 .date_dtr{
+		 	width: 10%;
+		 	margin: auto;
+		 }
 
 
-		<p class="month_text">For the month of  </p>
-		<p id="month_holder"><?php echo " ".date("M Y");?></p>
 
+		
 	
 	</style>
 
@@ -505,7 +546,10 @@
 	<script src='assets/sweetalert2.all.min.js'></script>
 	<?php include("config.php"); include("getPersonalInformation.php");
 		$array_month =array('January','February','March','April','May','June','July','August','September','October','November','December');
-		if(isset($_POST['submit'])) 
+		$status = 1;
+		$hap_approval_status = 1;
+		$hap_comments = '';
+		if(isset($_POST['submitt'])) 
 		{
 			$RegPartTemp = $_POST['dtr1'];
 			$month = $_POST['dtr2'];
@@ -520,7 +564,9 @@
 			$new_fn= $_POST['DTR_NAME2'];
 			$new_mn= $_POST['DTR_NAME3'];
 			$date = date('Y-m-d H:i:s');
-			$insert = mysqli_query($conn,"INSERT INTO `tbl_dtr`(`id`,`FCode`, `surname`,`firstname`,`middlename`,`regpartime`,`month`,`year`,`days_count`,`reg_days_hrs`,`saturdays`,`ntd_by_offhour`,`in_charge`,`modified_date`) VALUES ('','$fcode','$new_sur','$new_fn','$new_mn','$RegPartTemp','$new_month','$year','$new_count','$reg_days_hrs','$saturdays','$ntd_by','$in_charge','$date')");
+			$undertime_hrs_total = $_POST['last_cell_id_hrs'];
+			$undertime_hrs_min = $_POST['last_cell_id_min'];
+			$insert = mysqli_query($conn,"INSERT INTO `tbl_dtr`(`id`,`FCode`, `surname`,`firstname`,`middlename`,`regpartime`,`month`,`year`,`days_count`,`undertime_hrs_total`, `undertime_min_total`,`reg_days_hrs`,`saturdays`,`ntd_by_offhour`,`in_charge`,`hap_approval_status`,`hap_comments`,`status`,`modified_date`) VALUES ('','$fcode','$new_sur','$new_fn','$new_mn','$RegPartTemp','$new_month','$year','$new_count','$undertime_hrs_total','$undertime_hrs_min','$reg_days_hrs','$saturdays','$ntd_by','$in_charge','0','$hap_comments','$status','$date')");
 				if(!$insert)
 				    {
 				        echo mysqli_error($conn);
@@ -561,17 +607,18 @@
 
 </head>
 <body>
-	<form method="POST">
+	<form action="" method="POST" id="frm_input_srt">
+		<input type="text" name="hidden_fcode" id="hidden_fcode"  style="display: none;"   value="<?php echo $EmpID ?>">
 		<div class="dtr_form" >
 			<div class="header">
+				<select class="dtr_type_id" name="dtr1" id="dtr"  onchange="timeprof(this)">
+					<option style="display:none;">LOAD TYPE</option>
+					<option value="REGULAR" id="bg_dropdown">REGULAR</option>
+					<option value="PART-TIME" id="bg_dropdown">PART-TIME</option>
+					<option value="TEMPORARY SUBSTITUTION" id="bg_dropdown">TEMPORARY SUBSTITUTION</option>
+				</select>
 				<!-- <input class="dtr_type_id" type="text" name="DTR-TYPE_NAME" value="DTR-TYPE"> -->
-					<td><input id="count_day" class="onetothirtyone_input" type="hidden" name="count_day"></td>
-					  <select class="dtr_type_id" name="dtr1" id="dtr" onmouseover="mouseOver()" onmouseout="mouseOut()" onchange="timeprof(this)">
-					  	<option style="display:none;">LOAD TYPE</option>
-					    <option value="REGULAR" id="bg_dropdown">REGULAR</option>
-					    <option value="PART-TIME" id="bg_dropdown">PART-TIME</option>
-					    <option value="TEMPORARY SUBSTITUTION" id="bg_dropdown">TEMPORARY SUBSTITUTION</option>
-					  </select>
+				<td><input id="count_day" class="onetothirtyone_input" type="hidden" name="count_day"></td>
 				<p id="date_test_id" hidden="true"></p>
 				<p class="civil_service">Civil Service Form No. 48</p>
 				<h3 class="dtr_header_id">DAILY TIME RECORD</h3>
@@ -585,7 +632,7 @@
 				<br>
 				<p class="month_text">For the month of  </p>
 				<!-- <p id="month_holder"><?php //echo " ".date("M Y");?></p> -->
-				<select id="month_dropdown_id" class="month_dropdown" name="dtr2" onchange="getMonth(this)">
+				<select id="month_dropdown_id" class="month_dropdown" name="dtr2" onchange="getMonth(this);undertimeTotalhrs();">
 						<!-- <option value=""></option> -->
 						<option style="display:none;" value="<?php echo date("m");?>"><?php echo date("F");?></option>
 						<option style="background-color: white" value="1">January</option>
@@ -603,10 +650,10 @@
 					  
 				</select>
 
-				<select class="year_dropdown" id="year_dropdown_id" name="dtr3" onchange="getYear(this)" >
+				<select class="year_dropdown" id="year_dropdown_id" name="dtr3" onchange="getYear(this);undertimeTotalhrs();" >
 						<!-- <option value=""></option> -->
 						<option style="display:none;" value="<?php echo date("Y");?>" ><?php echo date("Y");?></option>
-						<option style="background-color: white" value="2021">2022</option>
+						<option style="background-color: white" value="2022">2022</option>
 					    <option style="background-color: white" value="2021">2021</option>
 					    <option style="background-color: white" value="2020">2020</option>
 					    <option style="background-color: white" value="2019">2019</option>
@@ -617,11 +664,11 @@
 					    <option style="background-color: white" value="2014">2014</option>	
 				</select>
 
-				<p class="official_hours_class">Official Hours For</p>
+				<p class="official_hours_class">Official hours for arrival</p>
 				
 				<p class="regular_days_extra">Regular Days</p>
 				<p class="saturdays_extra">Saturdays</p>
-				<p class="arrival_and_departure_class">Arrival and Departure</p>
+				<p class="arrival_and_departure_class">and departure</p>
 				<input id="sample5" class="official_hours_input_class" type="text" name="official_hours_input">
 				<input class="arrival_and_departure_input_class" type="text" name="arrival_and_departure">
 				
@@ -653,21 +700,21 @@
 						?>
 					<tr>
 						<input id="cells_datee<?php echo $i; ?>" name="cells_datee<?php echo $i; ?>" type="hidden" >
-						<td id="cells_date<?php echo $i; ?>" name="cells_date<?php echo $i; ?>" ></td>
-						<td><input id="cells_am_arr<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_am_arr<?php echo $i; ?>"></td>
-						<td><input id="cells_am_dep<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_am_dep<?php echo $i; ?>"></td>
-						<td><input id="cells_pm_arr<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_pm_arr<?php echo $i; ?>"></td>
-						<td><input id="cells_pm_dep<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_pm_dep<?php echo $i; ?>"></td>
-						<td><input id="cells_hrs_under<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_hrs_under<?php echo $i; ?>"></td>
-						<td><input id="cells_min_under<?php echo $i; ?>" class="onetothirtyone_input" type="text" name="cells_min_under<?php echo $i; ?>"></td> 
+						<td class="date_dtr" id="cells_date<?php echo $i; ?>" name="cells_date<?php echo $i; ?>" ></td>
+						<td><input id="cells_am_arr<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_am_arr<?php echo $i; ?>"></td>
+						<td><input id="cells_am_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_am_dep<?php echo $i; ?>"></td>
+						<td><input id="cells_pm_arr<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_arr<?php echo $i; ?>"></td>
+						<td><input id="cells_pm_dep<?php echo $i; ?>" class="onetothirtyone_input" type="time" name="cells_pm_dep<?php echo $i; ?>"></td>
+						<td><input id="cells_hrs_under<?php echo $i; ?>" class="onetothirtyone_input" oninput="undertimeTotalhrs()" type="number" name="cells_hrs_under<?php echo $i; ?>"></td>
+						<td><input id="cells_min_under<?php echo $i; ?>" class="onetothirtyone_input" oninput="undertimeTotalhrs()" type="number" name="cells_min_under<?php echo $i; ?>"></td> 
 					</tr>
 				<?php }?>
 				
 					
 					<tr>
 						<td class="total_word" colspan="5">TOTAL</td>
-						<td><input class="onetothirtyone_input" type="text" name=""></td>
-						<td><input id="last_cell_id" class="onetothirtyone_input" type="text" name=""></td>
+						<td><input id="last_cell_id_hrs" class="onetothirtyone_input" type="number" name="last_cell_id_hrs" readonly></td>
+						<td><input id="last_cell_id_min" class="onetothirtyone_input" type="number" name="last_cell_id_min" readonly></td>
 					</tr>
 				</div>
 				
@@ -685,7 +732,7 @@
 			<input class="footer_incharge" type="text" name="in_charge" value="MARRISA B. FERRER" >
 			<p class="footer_incharge_text">In Charge</p>
 		</div>
-		<input id=submitbtn type="submit" name="submit" value="Submit" disabled>
+		<input id="submitbtn" type="submit" name="submitt" value="Submit" disabled>
 		<!-- <button id=submitbtn2 type="submit" >test</button> -->
 		</form>
 	
@@ -693,52 +740,73 @@
 	<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="assets/js/datatables.min.js"></script>
 	<script id=js-dispatcher src='scripts/scripts.js'></script>
-	<script>
-
-	    
-
-	    
-	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 	<script>
-		  window.onload = function() {
-             var today = new Date();   
-             var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-             var month = today.getMonth()+1
-             var year = today.getFullYear();
-             var day = today.getDate();
-             var getDaysInMonth = function(month,year) {
-              return new Date(year, month, 0).getDate()
-             };
+		  // window.onload = function() {
+    //          var today = new Date();   
+    //          var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    //          var month = today.getMonth()+1
+    //          var year = today.getFullYear();
+    //          var day = today.getDate();
+    //          var getDaysInMonth = function(month,year) {
+    //           return new Date(year, month, 0).getDate()
+    //          };
 
-            if(getDaysInMonth(month,year) === day)
-             {
-                 alert(" Today is "+date+" Generate and print your DTR now ");
+    //         if(getDaysInMonth(month,year) === day)
+    //          {
+    //              alert(" Today is "+date+" Generate and print your DTR now ");
 
-             }
-         };
+    //          }
+    //      };
 
-        $('#submitbtn').on('click',function()
-	    {
-	    	Swal.fire({
-			  title: 'Are you sure?',
-			  text: "Create this DTR now?",
-			  icon: 'warning',
-			  showCancelButton: true,
-			  confirmButtonColor: '#3085d6',
-			  cancelButtonColor: '#d33',
-			  confirmButtonText: 'Yes!'
-			}).then((result) => {
-			  if (result.isConfirmed) {
-			    Swal.fire(
-			      'SUCCESS!',
-			      'Your DTR has been generated',
-			      'success'
-			    )
-			  }
-			})
-	    });
+    // 		window.onload = function() {
+    // 			const { value: email } = await Swal.fire({
+				//   title: 'Input email address',
+				//   input: 'email',
+				//   inputLabel: 'Your email address',
+				//   inputPlaceholder: 'Enter your email address'
+				// })
 
+				// if (email) {
+				//   Swal.fire(`Entered email: ${email}`)
+				// }
+    // 		}
+
+    		// sur = getElementByClassName("user_name_sur");
+    		// fir = getElementByClassName("user_name_fn");
+    		var fcode = document.getElementById("hidden_fcode");
+
+
+    		window.addEventListener('load', (event) =>{
+		    	getmonthyear();
+			});
+
+		        $('form #submitbtn').on('click',function(e)	
+			    {
+			    	Swal.fire({
+					  title: 'DTR Generated Successfully',
+						  text: 'Redirecting...',
+						  icon: 'success',
+						  showConfirmButton:false, 
+						  showCancelButton:false
+					})	
+			    });
+
+
+		  //        		window.onload = function() {
+    // 			const { value: email } = await Swal.fire({
+				//   title: 'Input email address',
+				//   input: 'email',
+				//   inputLabel: 'Your email address',
+				//   inputPlaceholder: 'Enter your email address'
+				// })
+
+				// if (email) {
+				//   Swal.fire(`Entered email: ${email}`)
+				// }
+    // 		}
+
+		        
 	    
 
 
@@ -760,6 +828,34 @@
 		var xx;
 		var new_xx;
 		var fcode1 = '<?php echo $fcode;?>';
+		
+
+		function undertimeTotalhrs(){
+			var cd = document.getElementById('count_day').value;
+			var hrstotal = 0;
+			var mintotal = 0;
+			for(var ut=1;ut<=cd;ut++)
+			{
+				var cells_hrs_under = document.getElementById('cells_hrs_under'+ut).value;
+				var cells_hrs_under2 = parseInt(cells_hrs_under);
+				var cells_min_under = document.getElementById('cells_min_under'+ut).value;
+				var cells_min_under2 = parseInt(cells_min_under);
+				if(cells_hrs_under!=0)
+				{
+					hrstotal  += cells_hrs_under2;
+				}
+				if(cells_min_under!=0)
+				{
+					mintotal  += cells_min_under2;
+				}
+			}
+
+			var last_cell_id_hrs = document.getElementById('last_cell_id_hrs');
+			last_cell_id_hrs.value = hrstotal;
+			var last_cell_id_min = document.getElementById('last_cell_id_min');
+			last_cell_id_min.value = mintotal;
+			
+		}
 		
 		
 		function timeprof(selectObject) {
@@ -839,25 +935,92 @@
 				d3++;
 			}
 
+			//this below is for removing type time if days of month is not 31 
+			if(x3!==0 && d3!==0)
+			{
+				var cd = document.getElementById('count_day').value;
+		    	if(cd!=31)
+		    	{
+		    		cd++;
+			    	for(var adate=cd;adate<=31;adate++)
+			    	{
+			    		var cells_am_arr = document.getElementById('cells_am_arr'+adate);
+			    		cells_am_arr.type='text';
+			    		cells_am_arr.disabled=true;
+			    		var cells_am_dep = document.getElementById('cells_am_dep'+adate);
+			    		cells_am_dep.type='text';
+			    		cells_am_dep.disabled=true;
+			    		var cells_pm_arr = document.getElementById('cells_pm_arr'+adate);
+			    		cells_pm_arr.type='text';
+			    		cells_pm_arr.disabled=true;
+			    		var cells_pm_dep = document.getElementById('cells_pm_dep'+adate);
+			    		cells_pm_dep.type='text';
+			    		cells_pm_dep.disabled=true;
+			    		var cells_hrs_under = document.getElementById('cells_hrs_under'+adate);
+			    		cells_hrs_under.disabled=true;
+			    		cells_hrs_under.value='';
+			    		var cells_min_under = document.getElementById('cells_min_under'+adate);
+			    		cells_min_under.disabled=true;
+			    		cells_min_under.value='';
+			    		var cells_am_arr = document.getElementById('cells_am_arr'+adate);
+			    		cells_am_arr.value='';
+			    		var cells_am_dep = document.getElementById('cells_am_dep'+adate);
+			    		cells_am_dep.value='';
+			    		var cells_pm_arr = document.getElementById('cells_pm_arr'+adate);
+			    		cells_pm_arr.value='';
+			    		var cells_pm_dep = document.getElementById('cells_pm_dep'+adate);
+			    		cells_pm_dep.value='';
+			    	}
+			    }
+			    else{
+			    	for(var adate=1;adate<=31;adate++)
+			    	{
+			    		var cells_am_arr = document.getElementById('cells_am_arr'+adate);
+			    		cells_am_arr.type='time';
+			    		cells_am_arr.disabled=false;
+			    		var cells_am_dep = document.getElementById('cells_am_dep'+adate);
+			    		cells_am_dep.type='time';
+			    		cells_am_dep.disabled=false;
+			    		var cells_pm_arr = document.getElementById('cells_pm_arr'+adate);
+			    		cells_pm_arr.type='time';
+			    		cells_pm_arr.disabled=false;
+			    		var cells_pm_dep = document.getElementById('cells_pm_dep'+adate);
+			    		cells_pm_dep.type='time';
+			    		cells_pm_dep.disabled=false;
+			    		var cells_hrs_under = document.getElementById('cells_hrs_under'+adate);
+			    		cells_hrs_under.disabled=false;
+			    		var cells_min_under = document.getElementById('cells_min_under'+adate);
+			    		cells_min_under.disabled=false;
+			    	}
+			    }
+			}
+
 			if(m2!==0 && x3!==0 && d3!==0)
   			{
+  			document.getElementById("submitbtn").disabled = false;
+
 	  			$.ajax({
 		      type: "POST",
-		      url:    "<?php echo Yii::app()->createUrl('faculty/FetchDtrSched'); ?>",
+		      url:    "<?php echo Yii::app()->createUrl('administrator/FetchDtrSched'); ?>",
 		      data:  {val1:new_xx,val3:yy,val4:fcode1},
 		      dataType:"JSON",
 		      success:function(data){
 		      	var final_stimes;
+		      	var finalfinal_stimes;
 		      	var final_stimee;
+		      	var finalfinal_stimee;
 		      	var stimes_hold = [];
 		      	var stimee_hold = [];
 		      	var final_stimes_pm;
+		      	var finalfinal_stimes_pm;
 		      	var final_stimee_pm;
+		      	var finalfinal_stimee_pm;
 		      	var stimes_hold_pm = [];
 		      	var stimee_hold_pm = [];
 
 		      	var counter = 0;
 		    	var cd = document.getElementById('count_day').value;
+		    	
 		    	for(var a=1;a<=cd;a++)
 		    	{
 		    		var cells_am_arr = document.getElementById('cells_am_arr'+a);
@@ -868,6 +1031,8 @@
 		    		cells_pm_arr.value='';
 		    		var cells_pm_dep = document.getElementById('cells_pm_dep'+a);
 		    		cells_pm_dep.value='';
+
+
 		    		var i = document.getElementById('cells_datee'+a).value;
 		    		var ii = i.replace(/[0-9]/g, '');
 		    		var new_ii = ii.replace(/^[\s\d]+/, '');
@@ -923,7 +1088,8 @@
 				if (stimes_hold.length==1 && stimes_hold[0]<1200)
 				{
 					final_stimes = stimes_hold[0];
-					cells_am_arr.value = final_stimes;
+					finalfinal_stimes = Array.from(final_stimes.toString());
+					cells_am_arr.value = finalfinal_stimes[0]+finalfinal_stimes[1]+':'+finalfinal_stimes[2]+finalfinal_stimes[3];
 					
 				}
 				if (stimes_hold.length > 1){
@@ -933,7 +1099,8 @@
 					if(stimes_hold[0]<1200)
 					{
 					final_stimes = stimes_hold[0];
-					cells_am_arr.value = final_stimes;
+					finalfinal_stimes = Array.from(final_stimes.toString());
+					cells_am_arr.value = finalfinal_stimes[0]+finalfinal_stimes[1]+':'+finalfinal_stimes[2]+finalfinal_stimes[3];
 					}	
 					
 				}
@@ -941,7 +1108,8 @@
 				if (stimee_hold.length==1 && stimee_hold[0]<1200)
 				{
 					final_stimee = stimee_hold[0];
-					cells_am_dep.value = final_stimee;
+					finalfinal_stimee = Array.from(final_stimee.toString());
+					cells_am_dep.value = finalfinal_stimee[0]+finalfinal_stimee[1]+':'+finalfinal_stimee[2]+finalfinal_stimee[3];
 					
 				}
 				if (stimee_hold.length > 1){
@@ -951,7 +1119,8 @@
 					if(stimee_hold[0]<1200)
 					{
 					final_stimee = stimee_hold[0];
-					cells_am_dep.value = final_stimee;
+					finalfinal_stimee = Array.from(final_stimee.toString());
+					cells_am_dep.value = finalfinal_stimee[0]+finalfinal_stimee[1]+':'+finalfinal_stimee[2]+finalfinal_stimee[3];
 					}	
 					
 				}
@@ -964,7 +1133,8 @@
 				if (filter.length==1 && filter[0]>1159)
 				{
 					final_stimes_pm = filter[0];
-					cells_pm_arr.value = final_stimes_pm;
+					finalfinal_stimes_pm = Array.from(final_stimes_pm.toString());
+					cells_pm_arr.value = finalfinal_stimes_pm[0]+finalfinal_stimes_pm[1]+':'+finalfinal_stimes_pm[2]+finalfinal_stimes_pm[3];
 					
 				}
 				if (filter.length > 1){
@@ -974,7 +1144,8 @@
 					if(filter[0]>1159)
 					{
 					final_stimes_pm = filter[0];
-					cells_pm_arr.value = final_stimes_pm;
+					finalfinal_stimes_pm = Array.from(final_stimes_pm.toString());
+					cells_pm_arr.value = finalfinal_stimes_pm[0]+finalfinal_stimes_pm[1]+':'+finalfinal_stimes_pm[2]+finalfinal_stimes_pm[3];
 					}	
 					
 				} 
@@ -987,7 +1158,8 @@
 				if (filter2.length==1 && filter2[0]>1159)
 				{
 					final_stimee_pm = filter2[0];
-					cells_pm_dep.value = final_stimee_pm;
+					finalfinal_stimee_pm = Array.from(final_stimee_pm.toString());
+					cells_pm_dep.value = finalfinal_stimee_pm[0]+finalfinal_stimee_pm[1]+':'+finalfinal_stimee_pm[2]+finalfinal_stimee_pm[3];
 					
 				}
 				if (filter2.length > 1){
@@ -997,7 +1169,8 @@
 					if(filter2[0]>1159)
 					{
 					final_stimee_pm = filter2[0];
-					cells_pm_dep.value = final_stimee_pm;
+					finalfinal_stimee_pm = Array.from(final_stimee_pm.toString());
+					cells_pm_dep.value = finalfinal_stimee_pm[0]+finalfinal_stimee_pm[1]+':'+finalfinal_stimee_pm[2]+finalfinal_stimee_pm[3];
 					}	
 					
 				} 
@@ -1081,12 +1254,6 @@
 			}
 
 
-		window.onload = function() {
-			getmonthyear();
-		}
-
-		
-
 		function current_date()
 		{
 			n =  new Date();
@@ -1112,7 +1279,7 @@
 		        sunday = [],
 		        days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'],
 		        count = 0;
-		        document.getElementById("submitbtn").disabled = false;
+		        
 		   
 		    for (let i =1;i<=31;i++)
 		    {
@@ -1188,7 +1355,7 @@
 		    	}
 
 		    }
-		    
+		
 		    
 		    
 		/*

@@ -224,7 +224,8 @@
 					ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
 					INNER JOIN tbl_dtr 
 					ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-					WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022'";
+					WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` = 1";
+					
 					 $result=mysqli_query($conn,$sql);
 
 					 ?>
@@ -307,7 +308,14 @@
 						ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
 						LEFT JOIN tbl_dtr 
 						ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-						WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`ntd_by_offhour` IS NULL;";
+						WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` = ''";
+						// $sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
+						// FROM tbl_evaluationfaculty
+						// INNER JOIN tbl_schedule
+						// ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+						// INNER JOIN tbl_dtr 
+						// ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
+						// WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` != 1";
 						 $result=mysqli_query($conn,$sql);
 
 						 // $status = "Not Yet";
@@ -358,8 +366,7 @@
 							}
 							// $email_container = $newresult['Email'];
 							$email = $newresult['Email'];
-							// echo $email;
-							// die;
+							
 							echo "<a onclick='on_send_email()' ><input id='send_email_id' type='button' name='send_email' value='Send Email Reminder' /></a> 
 									
 									<br>";
@@ -504,10 +511,11 @@
 	}).then((result) => {
 	  if (result.isConfirmed) {
 	    Swal.fire(
-	      'Deleted!',
-	      'Your file has been deleted.',
-	      'success'
-	    )
+					   'EMAIL sent Successfully',
+						  'Redirecting...',
+						   'success',
+						  
+					)	
 	  }
 	})
     }

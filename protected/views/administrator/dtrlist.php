@@ -326,7 +326,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="pending")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 0";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status != 1";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{

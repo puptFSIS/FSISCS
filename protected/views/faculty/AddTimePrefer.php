@@ -443,12 +443,10 @@ include('config.php');
 			document.getElementById("Etime").disabled = true;
 		} else {
 			document.getElementById("ifYes").style.display = "block";
+			document.getElementById("Stime").disabled = false;
+			document.getElementById("Etime").disabled = false;
 		}
 	}
-	// if ($('#WD').prop('checked')) {
-	// 		$('#Stime').attr('disabled', 'disabled');
-	// 		$('#Etime').attr('disabled', 'disabled');
-	// }
 
 	flashdata = $('.flash-data').data('flashdata')
 	if(flashdata==0){

@@ -436,16 +436,16 @@ include('config.php');
 			
 			document.getElementById("ifYes").style.display = "none";
 			// $('select:#Stime,#Etime').attr('disabled')
-			document.getElementById("Stime").disabled = false;
-			document.getElementById("Etime").disabled = false;
+			document.getElementById("Stime").disabled = true;
+			document.getElementById("Etime").disabled = true;
 		} else {
 			document.getElementById("ifYes").style.display = "block";
+			document.getElementById("Stime").disabled = false;
+			document.getElementById("Etime").disabled = false;
 		}
 	}
 
-	// $('#WD').click(function() {
- //    	$('select:#Stime,#Etime').attr('disabled',(this.checked))
-	// });
+	
 	
 
 	flashdata = $('.flash-data').data('flashdata')

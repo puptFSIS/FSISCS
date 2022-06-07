@@ -224,7 +224,7 @@ if(isset($_SESSION['user'])) {
                     </thead>
                     <?php
                      //Database
-                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month = '$m' ORDER BY tbl_evaluationfaculty.LName ASC";
+                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_ipcrstatus.status = 'Approved' AND tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month = '$m' ORDER BY tbl_evaluationfaculty.LName ASC";
                         $result = mysqli_query($conn,$sql);
 
                     ?>
@@ -243,17 +243,9 @@ if(isset($_SESSION['user'])) {
                                 <td name="fcode" style="text-align: left;"><?= $row['FCode']?></td>
                                 <td name="status" style="text-align: center;"><?= $row['status']?></td>
                                 <?php if($m == "JJ") : ?>
-                                    <?php if($status == "Approved") : ?>
                                         <td><a href="index.php?r=administrator/IPCRform1<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
-                                    <?php elseif($status == "Submitted" || $status == "Pending") : ?>
-                                        <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
-                                    <?php endif; ?>
                                 <?php else : ?>
-                                    <?php if($status == "Approved"): ?>
                                         <td><a href="index.php?r=administrator/IPCRform2<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
-                                    <?php elseif($status == "Submitted" || $status == "Pending"): ?>
-                                        <td><button class="disabled" type="submit" name="submit" style="width: 120px">Generate Report</button></td>
-                                    <?php endif; ?>
                                 <?php endif; ?>
                             </tr>
                         <?php endwhile; ?>

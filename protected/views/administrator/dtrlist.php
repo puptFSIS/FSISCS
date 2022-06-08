@@ -326,7 +326,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="pending")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status != 1";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 0";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{
@@ -373,7 +373,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="deleted")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 3";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 0.3";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{
@@ -931,7 +931,7 @@ function change_color(_this,counter,status)
 	}
 
 
-	if(status == 3)
+	if(status == 0.3 || status==1.3 || status == 2.3)
 	{
 
 		if(count > 0)
@@ -1044,12 +1044,17 @@ function delete_dtr()
 		      data:  {val2:checked},
 		      dataType:"JSON",
 		      success:function(data){
-				Swal.fire(
-					'Deleted!',
-					'Your file has been deleted.',
-					'success'
-				)
-		      	window.location.reload();
+				Swal.fire({
+					  title: 'Your File/s has been Deleted!',
+						  text: 'Redirecting...',
+						  icon: 'success',
+						  showConfirmButton:false, 
+						  showCancelButton:false,
+						  timer:1000
+					}).then(() => {
+						window.location.reload();
+					})	
+		      	
 		      },
 		      error:function(data)
 		      {
@@ -1092,12 +1097,16 @@ function restore_dtr()
 		      data:  {val1:checked},
 		      dataType:"JSON",
 		      success:function(data){
-				Swal.fire(
-					'Restored!',
-					'Your file has been restored.',
-					'success',
-				)
-		      	window.location.reload();
+				Swal.fire({
+					  title: 'Your File/s has been Restored!',
+						  text: 'Redirecting...',
+						  icon: 'success',
+						  showConfirmButton:false, 
+						  showCancelButton:false,
+						  timer:1000
+					}).then(() => {
+						window.location.reload();
+					})	
 		      },
 		      error:function(data)
 		      {

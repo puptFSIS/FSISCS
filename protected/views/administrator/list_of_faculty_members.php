@@ -164,6 +164,8 @@
 
 							foreach($result as $newresult)
 							{
+								if($newresult['FCode'])
+								{
 								echo '
 							 	<tr>
 							 		<td>
@@ -176,6 +178,21 @@
 							 	</tr>
 
 							 	';
+							 	}else{
+							 		echo'
+							 		<tr> 
+							 		<td width="20.5%">
+							 			
+							 		</td>
+							 		<td width="33%">
+							 			No Records Found! 
+							 		</td>
+
+							 		</tr>
+							 		';
+							 		break;
+
+							 	}
 
 							}
 
@@ -249,6 +266,8 @@
 
 							foreach($result as $newresult)
 							{
+								if($newresult['FCode'])
+								{
 								echo '
 							 	<tr>
 							 		<td>
@@ -262,7 +281,23 @@
 
 							 	';
 
-							}
+								}else{
+							 		echo'
+							 		<tr> 
+							 		<td width="20.5%">
+							 			
+							 		</td>
+							 		<td width="33%">
+							 			No Records Found! 
+							 		</td>
+
+							 		</tr>
+							 		';
+							 		break;
+
+							 	}
+
+							}	
 
 						
 
@@ -336,6 +371,8 @@
 							 $counter = 0;
 							foreach($result as $newresult)
 							{
+								if($newresult['FCode'])
+								{
 								echo '
 							 	<tr>
 							 		<td width="33%">
@@ -355,6 +392,24 @@
 
 
 							 	';
+							 	}
+							 	else{
+							 		echo'
+							 		<tr> 
+							 		<td width="33%">
+							 			
+							 		</td>
+							 		<td width="33%">
+							 			<center> No Records Found! </center>
+							 		</td>
+							 		<td width="33%">
+							 			
+							 		</td>
+							 		</tr>
+							 		';
+							 		break;
+
+							 	}
 
 							 	
 
@@ -367,7 +422,7 @@
 							// $email_container = $newresult['Email'];
 							$email = $newresult['Email'];
 							
-							echo "<a onclick='on_send_email()' ><input id='send_email_id' type='button' name='send_email' value='Send Email Reminder' /></a> 
+							echo "<a onclick='on_send_email(".$email.")' ><input id='send_email_id' type='button' name='send_email' value='Send Email Reminder' /></a> 
 									
 									<br>";
 
@@ -498,8 +553,10 @@
     // send_email_id
 
 
-    function on_send_email()
+    function on_send_email(email)
     {
+    	if(email)
+    	{
     	Swal.fire({
 	  title: 'Are you sure?',
 	  text: "You won't be able to revert this!",
@@ -516,8 +573,15 @@
 						   'success',
 						  
 					)	
-	  }
-	})
+	  		}
+		})
+		}
+		else{
+			Swal.fire({
+					 title: 'Email is empty!',
+					  icon: 'error',
+					})
+		}
     }
 
     

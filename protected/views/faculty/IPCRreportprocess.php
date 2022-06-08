@@ -31,10 +31,9 @@
 			$isVisible = $rows['visible'];
 		}
 
-		//Cout the query and check if the IPCR Info of faculty is existing in database
 		$sql_query = "SELECT * FROM tbl_ipcrstatus WHERE fcode = '$fcode' AND month = '$m' AND year = '$ye'";
 		$query_res = mysqli_query($conn,$sql_query);
-		$count_row = mysqli_num_rows($query_res);
+		$count_row = mysqli_num_rows($query_res); //Count the query and check if the IPCR Info of faculty is existing in database
 
 		if($m == "JJ")
 		{	
@@ -56,7 +55,6 @@
 				} elseif($isVisible == "Not Available") {
 					header('Location: index.php?r=faculty/IPCRreport&mess=2');
 				} 
-
 			} else {
 				header('Location: index.php?r=faculty/IPCRreport&mess=3');
 			}
@@ -80,7 +78,6 @@
 				} elseif($isVisible == "Not Available") {
 					header('Location: index.php?r=faculty/IPCRreport&mess=2');
 				} 
-
 			} else {
 				header('Location: index.php?r=faculty/IPCRreport&mess=3');
 			}	

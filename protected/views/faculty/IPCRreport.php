@@ -287,20 +287,21 @@ $msg = $_GET['msg'];
 
                 
                     if (flashdata == 2) {
+                         Swal.fire(
+                            'IPCR not available to Generate',
+                            "You can't download a copy at the moment",
+                            'warning'
+                        )
+                    }
+
+                    if (flashdata == 3) {
                         Swal.fire(
                             'No IPCR existing',
                             'Press OK to Continue',
                             'warning'
                         )
                     }  
-
-                    if (flashdata == 3) {
-                        Swal.fire(
-                            'IPCR not available to Generate',
-                            "You can't download a copy at the moment",
-                            'warning'
-                        )
-                    }
+                       
 
                     if (flashdata == 4) {
                         Swal.fire(

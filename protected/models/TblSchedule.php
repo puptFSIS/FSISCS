@@ -242,7 +242,8 @@ class TblSchedule extends CActiveRecord
 	public static function Update_status($val1)
 	{
 		$date = date('Y-m-d H:i:s');
-		$update = "UPDATE `tbl_dtr` SET `status` = 1,`modified_date`='$date'  WHERE `FCode` = '$val1'";
+		$update = "INSERT INTO `tbl_dtr` SET `status` = '1',`modified_date`='$date'  WHERE `FCode` = '$val1'";
+		
 		 Yii::app()->db->createCommand($update)->execute();
 	}
 
@@ -265,13 +266,13 @@ class TblSchedule extends CActiveRecord
 		
 	}
 
-
+ 
 
 	public static function soft_delete($val2) // dtr
 	{
 		$date = date('Y-m-d H:i:s');
 		foreach ($val2 as $id) {
-			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = 3,`modified_date`='$date'  WHERE id = '$id'";
+			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = CONCAT(`hap_approval_status`,'".".3'),`modified_date`='$date'  WHERE id = '$id'";
 		 	Yii::app()->db->createCommand($update)->execute();
 		}
 			
@@ -282,7 +283,7 @@ class TblSchedule extends CActiveRecord
 	{
 		$date = date('Y-m-d H:i:s');
 		foreach ($val1 as $id) {
-			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = 0,`modified_date`='$date'  WHERE id = '$id'";
+			 $update = "UPDATE `tbl_dtr` SET `hap_approval_status` =REPLACE(`hap_approval_status`,'.3',''),`modified_date`='$date'  WHERE id = '$id'";
 			 
 		 	Yii::app()->db->createCommand($update)->execute();
 		}

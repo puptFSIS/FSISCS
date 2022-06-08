@@ -164,6 +164,8 @@
 
 							foreach($result as $newresult)
 							{
+								if($newresult['FCode'])
+								{
 								echo '
 							 	<tr>
 							 		<td>
@@ -176,6 +178,21 @@
 							 	</tr>
 
 							 	';
+							 	}else{
+							 		echo'
+							 		<tr> 
+							 		<td width="20.5%">
+							 			
+							 		</td>
+							 		<td width="33%">
+							 			No Records Found! 
+							 		</td>
+
+							 		</tr>
+							 		';
+							 		break;
+
+							 	}
 
 							}
 
@@ -224,7 +241,8 @@
 					ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
 					INNER JOIN tbl_dtr 
 					ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-					WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022'";
+					WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` = 1";
+					
 					 $result=mysqli_query($conn,$sql);
 
 					 ?>
@@ -248,6 +266,8 @@
 
 							foreach($result as $newresult)
 							{
+								if($newresult['FCode'])
+								{
 								echo '
 							 	<tr>
 							 		<td>
@@ -261,7 +281,23 @@
 
 							 	';
 
-							}
+								}else{
+							 		echo'
+							 		<tr> 
+							 		<td width="20.5%">
+							 			
+							 		</td>
+							 		<td width="33%">
+							 			No Records Found! 
+							 		</td>
+
+							 		</tr>
+							 		';
+							 		break;
+
+							 	}
+
+							}	
 
 						
 
@@ -307,7 +343,14 @@
 						ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
 						LEFT JOIN tbl_dtr 
 						ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-						WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`ntd_by_offhour` IS NULL;";
+						WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` = ''";
+						// $sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
+						// FROM tbl_evaluationfaculty
+						// INNER JOIN tbl_schedule
+						// ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+						// INNER JOIN tbl_dtr 
+						// ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
+						// WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` != 1";
 						 $result=mysqli_query($conn,$sql);
 
 						 // $status = "Not Yet";
@@ -328,6 +371,8 @@
 							 $counter = 0;
 							foreach($result as $newresult)
 							{
+								if($newresult['FCode'])
+								{
 								echo '
 							 	<tr>
 							 		<td width="33%">
@@ -347,6 +392,24 @@
 
 
 							 	';
+							 	}
+							 	else{
+							 		echo'
+							 		<tr> 
+							 		<td width="33%">
+							 			
+							 		</td>
+							 		<td width="33%">
+							 			<center> No Records Found! </center>
+							 		</td>
+							 		<td width="33%">
+							 			
+							 		</td>
+							 		</tr>
+							 		';
+							 		break;
+
+							 	}
 
 							 	
 
@@ -358,9 +421,8 @@
 							}
 							// $email_container = $newresult['Email'];
 							$email = $newresult['Email'];
-							// echo $email;
-							// die;
-							echo "<a onclick='on_send_email()' ><input id='send_email_id' type='button' name='send_email' value='Send Email Reminder' /></a> 
+							
+							echo "<a onclick='on_send_email(".$email.")' ><input id='send_email_id' type='button' name='send_email' value='Send Email Reminder' /></a> 
 									
 									<br>";
 
@@ -491,8 +553,10 @@
     // send_email_id
 
 
-    function on_send_email()
+    function on_send_email(email)
     {
+    	if(email)
+    	{
     	Swal.fire({
 	  title: 'Are you sure?',
 	  text: "You won't be able to revert this!",
@@ -504,12 +568,20 @@
 	}).then((result) => {
 	  if (result.isConfirmed) {
 	    Swal.fire(
-	      'Deleted!',
-	      'Your file has been deleted.',
-	      'success'
-	    )
-	  }
-	})
+					   'EMAIL sent Successfully',
+						  'Redirecting...',
+						   'success',
+						  
+					)	
+	  		}
+		})
+		}
+		else{
+			Swal.fire({
+					 title: 'Email is empty!',
+					  icon: 'error',
+					})
+		}
     }
 
     

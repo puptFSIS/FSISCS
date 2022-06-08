@@ -538,6 +538,7 @@
 
 
 
+
 		
 	
 	</style>
@@ -546,6 +547,9 @@
 	<script src='assets/sweetalert2.all.min.js'></script>
 	<?php include("config.php"); include("getPersonalInformation.php");
 		$array_month =array('January','February','March','April','May','June','July','August','September','October','November','December');
+		$status = 1;
+		$hap_approval_status = 1;
+		$hap_comments = '';
 		if(isset($_POST['submitt'])) 
 		{
 			$RegPartTemp = $_POST['dtr1'];
@@ -563,7 +567,7 @@
 			$date = date('Y-m-d H:i:s');
 			$undertime_hrs_total = $_POST['last_cell_id_hrs'];
 			$undertime_hrs_min = $_POST['last_cell_id_min'];
-			$insert = mysqli_query($conn,"INSERT INTO `tbl_dtr`(`id`,`FCode`, `surname`,`firstname`,`middlename`,`regpartime`,`month`,`year`,`days_count`,`undertime_hrs_total`, `undertime_min_total`,`reg_days_hrs`,`saturdays`,`ntd_by_offhour`,`in_charge`,`modified_date`) VALUES ('','$fcode','$new_sur','$new_fn','$new_mn','$RegPartTemp','$new_month','$year','$new_count','$undertime_hrs_total','$undertime_hrs_min','$reg_days_hrs','$saturdays','$ntd_by','$in_charge','$date')");
+			$insert = mysqli_query($conn,"INSERT INTO `tbl_dtr`(`id`,`FCode`, `surname`,`firstname`,`middlename`,`regpartime`,`month`,`year`,`days_count`,`undertime_hrs_total`, `undertime_min_total`,`reg_days_hrs`,`saturdays`,`ntd_by_offhour`,`in_charge`,`hap_approval_status`,`hap_comments`,`status`,`modified_date`) VALUES ('','$fcode','$new_sur','$new_fn','$new_mn','$RegPartTemp','$new_month','$year','$new_count','$undertime_hrs_total','$undertime_hrs_min','$reg_days_hrs','$saturdays','$ntd_by','$in_charge','0','$hap_comments','$status','$date')");
 				if(!$insert)
 				    {
 				        echo mysqli_error($conn);
@@ -786,23 +790,9 @@
 						  icon: 'success',
 						  showConfirmButton:false, 
 						  showCancelButton:false
-					}).then((result) => {
-					    	 $.ajax({
-						      type: "POST",
-						      url:    "<?php echo Yii::app()->createUrl('administrator/Update_status'); ?>",
-						      data:  {val1:fcode},
-						      dataType:"JSON",
-						      success:function(data){
-						      	// alert("records updated successfully");
-						      },
-						      error:function(data)
-						      {
-						      	alert(JSON.stringify(data));
-
-						      }
-						  })
-					  })			  
+					})	
 			    });
+
 
 		  //        		window.onload = function() {
     // 			const { value: email } = await Swal.fire({

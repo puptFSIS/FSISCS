@@ -5974,3 +5974,41 @@ Stack trace:
 REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRreport
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=faculty/IPCRcreatefaculty
 ---
+2022/06/08 07:49:53 [error] [php] Undefined variable: firstname (C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRform1faculty.php:54)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): FacultyController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): FacultyController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): FacultyController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php(1614): FacultyController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): FacultyController->actionIPCRform1faculty()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): FacultyController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): FacultyController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): FacultyController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRform1faculty&m=JJ&ye=2022&fcode=FA0005TG2022
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRform1faculty.php (54)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1614)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/08 07:58:41 [error] [php] Undefined index: fcode (C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRreportprocess.php:9)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): FacultyController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): FacultyController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): FacultyController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php(1550): FacultyController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): FacultyController->actionIPCRreportprocess()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): FacultyController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): FacultyController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): FacultyController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRreportprocess
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRreportprocess.php (9)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1550)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)

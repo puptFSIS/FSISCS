@@ -7,8 +7,14 @@
 		$m = $_POST['Month'];
 		$ye = $_POST['Year'];
 		$fcode = $_POST['fcode'];
-		//echo $fcode;
+		$fname = $_POST['fname'];
+		$mname = $_POST['mname'];
+		$sname = $_POST['sname'];
+		// echo $sname;
+		// die;
 		
+
+		//Check if the IPCR status is Approved
 		$sql = "SELECT * FROM tbl_ipcrstatus WHERE year = '$ye' AND month = '$m' AND fcode = '$fcode'";
 			$res = mysqli_query($conn, $sql);
 		while($row = mysqli_fetch_array($res))
@@ -16,6 +22,7 @@
 			$status = $row['status'];
 		}
 
+		//Check if the IPCR is Available to Faculty
 		$query = "SELECT * FROM tbl_ipcrvisible WHERE month = '$m' AND year = '$ye'";
 		$result = mysqli_query($conn,$query);
 		$count = mysqli_num_rows($result);
@@ -24,6 +31,7 @@
 			$isVisible = $rows['visible'];
 		}
 
+		//Cout the query and check if the IPCR Info of faculty is existing in database
 		$sql_query = "SELECT * FROM tbl_ipcrstatus WHERE fcode = '$fcode' AND month = '$m' AND year = '$ye'";
 		$query_res = mysqli_query($conn,$sql_query);
 		$count_row = mysqli_num_rows($query_res);
@@ -38,7 +46,7 @@
 					{
 						if($status == "Approved")
 						{
-							header('Location: index.php?r=faculty/IPCRform1faculty&m='.$m.'&ye='.$ye.'&fcode='.$fcode.'');
+							header('Location: index.php?r=faculty/IPCRform1faculty&m='.$m.'&ye='.$ye.'&fcode='.$fcode.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.'');
 						} elseif($status == "Pending" || $status == "Submitted" || $status == NULL) {
 							header('Location: index.php?r=faculty/IPCRreport&mess=1');
 						}
@@ -62,7 +70,7 @@
 					{
 						if($status == "Approved")
 						{
-							header('Location: index.php?r=faculty/IPCRform2faculty&m='.$m.'&ye='.$ye.'&fcode='.$fcode.'');
+							header('Location: index.php?r=faculty/IPCRform2faculty&m='.$m.'&ye='.$ye.'&fcode='.$fcode.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.'');
 						} elseif($status == "Pending" || $status == "Submitted" || $status == NULL) {
 							header('Location: index.php?r=faculty/IPCRreport&mess=1');
 						}

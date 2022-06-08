@@ -208,17 +208,20 @@ $msg = $_GET['msg'];
 <!---->
 <?php  
     
-    
-    // if submit button is pressed
-    
-         
+    include('getPersonalInformation.php');
+    $fcode = $EmpID;
+    $fname = $firstname;
+    $mname = $middlename;
+    $sname = $surname;
+
 ?> 
 <form action="index.php?r=faculty/IPCRreportprocess" method="post">
 <?php
-    include('getPersonalInformation.php');
-    $fcode = $EmpID;
- 
+// hidden to pass the required info to create IPCR
     echo '<textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="fcode">' .$fcode. '</textarea>';
+    echo '<textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="fname">' .$fname. '</textarea>';
+    echo '<textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="mname">' .$mname. '</textarea>';
+    echo '<textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="sname">' .$sname. '</textarea>';
 ?>
     <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
         <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
@@ -273,7 +276,7 @@ $msg = $_GET['msg'];
 
             </script>
             <script>
-                const flashdata = $('.flash-data').data('flashdata')
+                flashdata = $('.flash-data').data('flashdata')
                     if (flashdata == 1) {
                         Swal.fire(
                             'IPCR not Approved',

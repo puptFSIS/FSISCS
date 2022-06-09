@@ -148,6 +148,10 @@ width: 300px;
     <?php if ($_GET['mes']==3): ?>
     <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
     <?php endif;?>
+
+    <?php if ($_GET['mes']==4): ?>
+    <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+    <?php endif;?>
 <?php endif;?>
 
 <h2 class="underlined-header">Subject Management</h2>
@@ -412,6 +416,15 @@ width: 300px;
             icon:'error',
             title:'Ooops!',
             text:'Please Fill out the Given Fields!',
+            
+        })
+    }
+
+    if(flashdata==4){
+        Swal.fire({
+            icon:'error',
+            title:'Ooops!',
+            text:'CSV files are only allowed!',
             
         })
     }

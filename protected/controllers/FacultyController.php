@@ -1537,6 +1537,27 @@ class FacultyController extends Controller
 	{
 		$this->render('IPCRgenerate_evaluated');
 	}
+	public function actionIPCRjultodecpending()
+	{
+		if(isset($_GET['m'],$_GET['y'],$_GET['fcode']))
+    	{
+        	$m = $_GET['m'];
+        	$y = $_GET['y'];
+        	$fcode = $_GET['fcode'];
+    	}
+		$datasp = TblIpcr2::model()->getIPCR2datasp($y,$fcode);
+		$datacf = TblIpcr2::model()->getIPCR2datacf($y,$fcode);
+		$datasf = TblIpcr2::model()->getIPCR2datasf($y,$fcode);
+
+		$this->render('IPCRjultodecpending', array(
+			'infosp' => $datasp,
+			'infocf' => $datacf,
+			'infosf' => $datasf,
+			'm' => $m,
+			'y' => $y,
+			'fcode' => $fcode
+		));
+	}
 	public function actionIPCRjantojunepending()
 	{
 		if(isset($_GET['m'],$_GET['y'],$_GET['fcode']))

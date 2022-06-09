@@ -177,8 +177,8 @@ if(isset($_SESSION['user'])) {
     <a href="index.php?r=administrator/IPCRdeletefromtable<?php echo'&m='.$m.'&y='.$y.'';?>" class="btn-del">
         <button style="width: 130px;">Delete all from Table</button>
     </a>
-    <!-- <a href="index.php?r=administrator/IPCRform1dummy<?php echo'&m='.$m.'&ye='.$y.'';?>" target = "blank"></a> -->
-        <button data-toggle="modal" data-target="#ModalCenter">Copy IPCR form</button>
+    
+    <button data-toggle="modal" data-target="#ModalCenter">Copy IPCR form</button>
      
     <!-- Modal for Copy IPCR -->
     <div class="modal fade" id="ModalCenter">

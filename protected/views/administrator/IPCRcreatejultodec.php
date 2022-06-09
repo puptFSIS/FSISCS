@@ -28,6 +28,13 @@ if(isset($_SESSION['user'])) {
 <!--Script of Sweet alert-->
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+
+<!-- Script for Modal -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
@@ -154,11 +161,52 @@ if(isset($_SESSION['user'])) {
 <br>
 <br>
     <a href="index.php?r=administrator/IPCRaddrow<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 80px;">Add Row</button></a>
-    <a href="index.php?r=administrator/IPCRsetdeadline<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 100px;" class="btn-set">Set Deadline</button></a>
-    <!-- <a href="index.php?r=administrator/IPCRform1" target = "blank"><button>Generate PDF</button></a> -->
+    <a href="index.php?r=administrator/IPCRsetdeadline<?php echo'&m='.$m.'&y='.$y.'';?>">
+        <button style="width: 100px;" class="btn-set">Set Deadline</button>
+    </a>
+
+    <a href="index.php?r=administrator/IPCRdeletefromtable<?php echo'&m='.$m.'&y='.$y.'';?>" class="btn-del">
+        <button style="width: 130px;">Delete all from Table</button>
+    </a>
+    
+    <button data-toggle="modal" data-target="#ModalCenter">Copy IPCR form</button>
+    
+    <!-- Modal for Copy IPCR -->
+    <div class="modal fade" id="ModalCenter">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <form action="index.php?r=administrator/IPCRcopyform" method="post">
+                <input type="hidden" name="toMonth" value="<?php echo $m; ?>">
+                <input type="hidden" name="toYear" value="<?php echo $y; ?>">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><strong>Copy IPCR form of <small>(Choose month and year)</small></strong></h5>
+              </div>
+              <div class="modal-body">
+                <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+                    <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
+                        <option value="" disabled selected>----Choose Month----</option>
+                        <option value="JJ">January - June</option>
+                        <option value="JD">July - December</option>
+                    </select>
+                    
+                    <select name="Year" id="ddlYears" style="outline: 50px; height: 50px;" required>
+                            <option value="" disabled selected>----Choose Year----</option>
+                    </select>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button id="btn-modal" data-dismiss="modal">Close</button>
+                <button  id="btn-modal" name="submit" type="submit">Copy</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- End of Modal -->
+
 <br/>
 <br/>
-<p style="font-size: 15px"><strong>Note: <b id="asterisk">*</b> - Required Fields.</strong></p>
+<!-- <p style="font-size: 15px"><strong>Note: <b id="asterisk">*</b> - Required Fields.</strong></p> -->
 <table class=round-3 style="width:100%; ">
 <thead>
     <tr>
@@ -308,25 +356,41 @@ if(isset($_SESSION['user'])) {
 </div>
 </section>
             <!--Sweet alert delete-->
-            <?php if(isset($_GET['s'])) : ?>
-                <div class="flash-data" data-flashdata="<?= $_GET['s']; ?>"></div>
+        <?php if(isset($_GET['mess'])) : ?>
+
+            <?php if($_GET['mess'] == 1) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
             <?php endif; ?>
 
             <!-- Sweet alert Save -->
-            <?php if(isset($_GET['a'])) : ?>
-                <div class="flash-data-save" data-flashdata1="<?= $_GET['a']; ?>"></div>
+            <?php if($_GET['mess'] == 2) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
             <?php endif; ?>
 
             <!-- for add row -->
-            <?php if(isset($_GET['b'])) : ?>
-                <div class="flash-data-add" data-flashdata2="<?= $_GET['b']; ?>"></div>
+            <?php if($_GET['mess'] == 3) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
             <?php endif; ?>
 
             <!-- for set deadline -->
-            <?php if(isset($_GET['c'])) : ?>
-                <div class="flash-data-set" data-flashdata3="<?= $_GET['c']; ?>"></div>
+            <?php if($_GET['mess'] == 4) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
             <?php endif; ?>
 
+            <!-- for clear deadline -->
+            <?php if($_GET['mess'] == 5) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if($_GET['mess'] == 6) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if($_GET['mess'] == 7) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
+
+        <?php endif; ?>
                 <script>
                     $('.btn-del').on('click', function(e){
                         e.preventDefault()
@@ -347,9 +411,27 @@ if(isset($_SESSION['user'])) {
                         })
                     })
 
+                    // For auto populated years in modal
+                    window.onload = function () 
+                    {
+                        //Reference the DropDownList.
+                        var ddlYears = document.getElementById("ddlYears");
+     
+                        //Determine the Current Year.
+                        var currentYear = (new Date()).getFullYear()-1;
+     
+                        //Loop and add the Year values to DropDownList.
+                        for (var i = currentYear; i >= 2019; i--) {
+                            var option = document.createElement("OPTION");
+                            option.innerHTML = i;
+                            option.value = i;
+                            ddlYears.appendChild(option);
+                        }
+                    };
 
-                    const flashdata = $('.flash-data').data('flashdata')
-                    if (flashdata) {
+
+                    flashdata = $('.flash-data').data('flashdata')
+                    if (flashdata == 1) {
                         Swal.fire(
                             'Succesfully Deleted',
                             '',
@@ -357,17 +439,17 @@ if(isset($_SESSION['user'])) {
                         )
                     }    
 
-                    const flashdata1 = $('.flash-data-save').data('flashdata1')
-                    if (flashdata1) {
+                    
+                    if (flashdata == 2) {
                         Swal.fire(
                             'Succesfully Saved',
                             '',
                             'success'
                         )
-                    }  
+                    }    
 
-                    const flashdata2 = $('.flash-data-add').data('flashdata2')
-                    if (flashdata2) {
+                    
+                    if (flashdata == 3) {
                         Swal.fire(
                             'Succesfully Added!',
                             'Press OK to continue',
@@ -375,15 +457,39 @@ if(isset($_SESSION['user'])) {
                         )
                     }   
 
-                    const flashdata3 = $('.flash-data-set').data('flashdata3')
-                    if (flashdata3) {
+                    
+                    if (flashdata == 4) {
                         Swal.fire(
                             'Deadline Succesfully Set!',
                             'Press OK to continue',
                             'success'
                         )
-                    }     
+                    }   
 
+                    
+                    if (flashdata == 5) {
+                        Swal.fire(
+                            'Deadline Succesfully Cleared',
+                            'Press OK to continue',
+                            'success'
+                        )
+                    }  
+
+                    if (flashdata == 6) {
+                        Swal.fire(
+                            'IPCR Successfully Copied',
+                            'Press OK to continue',
+                            'success'
+                        )
+                    }   
+
+                    if (flashdata == 7) {
+                        Swal.fire(
+                            'All table contents are deleted',
+                            'Press OK to continue',
+                            'success'
+                        )
+                    }  
                 </script>
 <footer id=page-footer>
 <div class=container-aligner>

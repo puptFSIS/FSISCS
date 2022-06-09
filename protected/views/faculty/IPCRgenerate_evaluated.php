@@ -50,7 +50,7 @@
                                 header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                             }
                             else if($m=='JD') {
-                                header('Location: index.php?r=faculty/IPCRcreatejultodecfaculty&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+                                header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                             }
 
                         } else if($count > 0)
@@ -60,7 +60,7 @@
                                 header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                             }
                             else if($m=='JD') {
-                                header('Location: index.php?r=faculty/IPCRcreatejultodecfaculty&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+                                header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                             }
                         }
                     } else if($deadline != NULL) //If Dealine is Not null or it was set then continue,
@@ -82,7 +82,7 @@
                                     header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                                 }
                                 else if($m=='JD') {
-                                    header('Location: index.php?r=faculty/IPCRcreatejultodecfaculty&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+                                    header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                                 }
                             } else if($count > 0)
                             {
@@ -91,7 +91,7 @@
                                     header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                                 }
                                 else if($m=='JD') {
-                                    header('Location: index.php?r=faculty/IPCRcreatejultodecfaculty&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+                                    header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                                 }
                             }
                         } else { // if exceeded it will return to the previous page and prompt a alert.

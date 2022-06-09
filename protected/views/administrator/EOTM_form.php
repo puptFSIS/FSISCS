@@ -234,7 +234,8 @@
 			margin-left: 20px;
 		}
 
-		#month_input
+		#month_input_reg, #month_input_temp,
+		#month_input_ts, #month_input_ot
 		{
 			background-color: #f0f0f0;
 			margin-top: -7px;
@@ -249,17 +250,20 @@
 			text-align: left;
 			font-weight: bold;
 			font-size: 13px;
+			cursor: text;
 			font-family: "Times New Roman", Times, serif;
 
 		}
 
 
-		#month_input:hover
+		#month_input_reg:hover, #month_input_temp:hover,
+		#month_input_ts:hover, #month_input_ot:hover
 		{
 			background-color: #dadada;
 		}
 
-		#name_of_sender
+		#name_of_sender_reg, #name_of_sender_temp,
+		#name_of_sender_ts, #name_of_sender_ot
 		{
 			background-color: #f0f0f0;
 			box-sizing: border-box;
@@ -276,14 +280,17 @@
 			margin-top: 10px;
 			margin-left: 30px;
 			margin-bottom: 3px;
+			cursor: text;
 		}
 
-		#name_of_sender:hover
+		#name_of_sender_reg:hover, #name_of_sender_temp:hover,
+		#name_of_sender_ts:hover, #name_of_sender_ot:hover
 		{
 			background-color: #dadada;
 		}
 
-		#position_of_sender
+		#position_of_sender_reg, #position_of_sender_temp, 
+		#position_of_sender_ts, #position_of_sender_ot
 		{
 
 			height: 15px;
@@ -300,15 +307,17 @@
 			font-size: 13px;
 			margin-left: 30px;
 			margin-bottom: 25px;
-
+			cursor: text;
 		}
 
-		#position_of_sender:hover
+		#position_of_sender_reg:hover, #position_of_sender_temp:hover,
+		#position_of_sender_ts:hover,  #position_of_sender_ot:hover
 		{
 			background-color: #dadada;
 		}
 
-		#department_name
+		#department_name_reg, #department_name_temp,
+		#department_name_ts, #department_name_ot
 		{
 			background-color: #f0f0f0;
 			box-sizing: border-box;
@@ -325,14 +334,16 @@
 			margin-bottom: 55px;
 			margin-top: -22px;
 			margin-left: 30px;
+			cursor: text;			
 		}
 
-		#department_name:hover
+		#department_name_reg:hover, #department_name_temp:hover,
+		#department_name_ts:hover, #department_name_ot:hover
 		{
 			background-color: #dadada;
 		}
 
-		#dear
+		#dear_reg, #dear_temp, #dear_ts, #dear_ot 
 		{
 			background-color: #f0f0f0;
 			box-sizing: border-box;
@@ -349,327 +360,12 @@
 			margin-bottom: 18px;
 			margin-top: -22px;
 			margin-left: 30px;
+			cursor: text;
 		}
 
-		#dear:hover
+		#dear_reg:hover, #dear_temp:hover, #dear_ts:hover, #dear_ot:hover
 		{
 			background-color: #dadada;
-		}
-
-
-		#month_input2
-		{
-			background-color: #f0f0f0;
-			margin-top: -7px;
-			margin-left: 30px;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 103px;
-			height: 15px;
-			text-align: left;
-			font-weight: bold;
-			font-size: 12px;
-			font-family: "Times New Roman", Times, serif;
-
-		}
-
-
-
-		#name_of_sender2
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 280px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
-			font-weight: bold;
-			margin-top: 10px;
-			margin-left: 30px;
-			margin-bottom: 3px;
-		}
-
-
-
-		#position_of_sender2
-		{
-
-			height: 15px;
-			width: 103px;
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			font-weight: bold;
-			font-family: "Times New Roman", Times, serif;
-			text-align: left;
-			font-size: 12px;
-			margin-left: 30px;
-			margin-bottom: 25px;
-
-		}
-
-
-
-		#department_name2
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 280px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
-			font-weight: bold;
-			margin-bottom: 55px;
-			margin-top: -22px;
-			margin-left: 30px;
-		}
-
-
-
-		#dear2
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 125px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
-			font-weight: bold;
-			margin-bottom: 18px;
-			margin-top: -22px;
-			margin-left: 30px;
-		}
-
-
-
-		#month_input3
-		{
-			background-color: #f0f0f0;
-			margin-top: -7px;
-			margin-left: 30px;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 103px;
-			height: 15px;
-			text-align: left;
-			font-weight: bold;
-			font-size: 12px;
-			font-family: "Times New Roman", Times, serif;
-
-		}
-
-
-
-		#name_of_sender3
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 280px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
-			font-weight: bold;
-			margin-top: 10px;
-			margin-left: 30px;
-			margin-bottom: 3px;
-		}
-
-
-
-		#position_of_sender3
-		{
-
-			height: 15px;
-			width: 103px;
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			font-weight: bold;
-			font-family: "Times New Roman", Times, serif;
-			text-align: left;
-			font-size: 12px;
-			margin-left: 30px;
-			margin-bottom: 25px;
-
-		}
-
-
-
-		#department_name3
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 280px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
-			font-weight: bold;
-			margin-bottom: 55px;
-			margin-top: -22px;
-			margin-left: 30px;
-		}
-
-
-		#dear3
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 125px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
-			font-weight: bold;
-			margin-bottom: 18px;
-			margin-top: -22px;
-			margin-left: 30px;
-		}
-
-
-
-
-		#month_input4
-		{
-			background-color: #f0f0f0;
-			margin-top: -7px;
-			margin-left: 30px;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 103px;
-			height: 15px;
-			text-align: left;
-			font-weight: bold;
-			font-size: 12px;
-			font-family: "Times New Roman", Times, serif;
-
-		}
-
-
-
-
-		#name_of_sender4
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 280px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
-			font-weight: bold;
-			margin-top: 10px;
-			margin-left: 30px;
-			margin-bottom: 3px;
-		}
-
-
-
-		#position_of_sender4
-		{
-
-			height: 15px;
-			width: 103px;
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			font-weight: bold;
-			font-family: "Times New Roman", Times, serif;
-			text-align: left;
-			font-size: 12px;
-			margin-left: 30px;
-			margin-bottom: 25px;
-
-		}
-
-
-		#department_name4
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 280px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
-			font-weight: bold;
-			margin-bottom: 55px;
-			margin-top: -22px;
-			margin-left: 30px;
-		}
-
-
-		#dear4
-		{
-			background-color: #f0f0f0;
-			box-sizing: border-box;
-			border: 1px solid #abb4bd;
-			transition: transform .04s;
-			color: black;
-			text-transform: capitalize;
-			width: 125px;
-			font-size: 12px;
-			height: 15px;
-			text-align: left;
-			font-family: "Times New Roman", Times, serif;
-			font-weight: bold;
-			margin-bottom: 18px;
-			margin-top: -22px;
-			margin-left: 30px;
 		}
 
 
@@ -738,6 +434,35 @@
 			font-weight:bold;
 			font-size: 18px;
 			font-family: 'Times New Roman';
+		}
+
+		#sender_reg, #sender_position_reg,
+		#sender_temp, #sender_position_temp,
+		#sender_ts, #sender_position_ts
+		{
+			background-color: #f0f0f0;
+			box-sizing: border-box;
+			border: 1px solid #abb4bd;
+			transition: transform .04s;
+			color: black;
+			text-transform: capitalize;
+			width: 200px;
+			font-size: 13px;
+			height: 15px;	
+			text-align: left;
+			font-family: "Times New Roman", Times, serif;
+			font-weight: bold;
+			margin-bottom: 10px;
+			margin-top: -5px;
+			margin-left: 29px;
+			cursor: text;	
+		}
+
+		#sender_reg:hover, #sender_position_reg:hover,
+		#sender_temp:hover, #sender_position_temp:hover,
+		#sender_ts:hover, #sender_position_ts:hover
+		{
+			background-color: #dadada;
 		}
 
 	</style>
@@ -876,11 +601,11 @@
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
 
-						<input class="date no_box" id="month_input" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
-						<input class="hrmd no_box" id="name_of_sender" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
-			 			<input id="position_of_sender" type="" value="Director" oninput="date_onchange(this.value,3)">
-						<input id="department_name" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
-						<input id="dear" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
+						<input class="date no_box" id="month_input_reg" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
+						<input class="hrmd no_box" id="name_of_sender_reg" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
+			 			<input id="position_of_sender_reg" type="" value="Director" oninput="date_onchange(this.value,3)">
+						<input id="department_name_reg" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
+						<input id="dear_reg" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text" >
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: '.$firstmonth.'-'.$lastmonth.'
@@ -912,8 +637,8 @@
 						<br>
 						<p class="thank_you">Thank you very much.</p>
 						<p class="closing_remarks">Sincerly Yours,</p>
-						<p class="closing_remarks_sender">test sender</p>
-						<p class="closing_remarks_sender_position">branch director</p>
+						<input id="sender_reg" type="" value="MARISSA B. FERRER">	
+						<input id="sender_position_reg" type="" value="BRANCH DIRECTOR">	
 						<br>
 						<br>
 						<br>
@@ -998,11 +723,11 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input2" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
-						<input class="hrmd no_box" id="name_of_sender2" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
-			 			<input id="position_of_sender2" type="" value="Director" oninput="date_onchange(this.value,3)">
-						<input id="department_name2" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
-						<input id="dear2" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
+						<input class="date no_box" id="month_input_temp" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
+						<input class="hrmd no_box" id="name_of_sender_temp" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
+			 			<input id="position_of_sender_temp" type="" value="Director" oninput="date_onchange(this.value,3)">
+						<input id="department_name_temp" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
+						<input id="dear_temp" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text" >
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: '.$firstmonth.'-'.$lastmonth.'
@@ -1016,7 +741,7 @@
 
 				
 				
-
+					
 					for($p = 0;$p < $namecount;$p++)
 					{
 						echo '<li class="list_items" id="regular_name">'.$newname[$p].'</li>';
@@ -1032,8 +757,8 @@
 					 <br>
 					 <p class="thank_you">Thank you very much.</p>
 					 <p class="closing_remarks">Sincerly Yours,</p>
-					 <p class="closing_remarks_sender">test sender</p>
-					 <p class="closing_remarks_sender_position">branch director</p>
+					 <input id="sender_temp" type="" value="MARISSA B. FERRER">	
+					 <input id="sender_position_temp" type="" value="BRANCH DIRECTOR">	
 					 <br>
 					 <br>
 					 <br>
@@ -1116,11 +841,11 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input3" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
-						<input class="hrmd no_box" id="name_of_sender3" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
-			 			<input id="position_of_sender2" type="" value="Director" oninput="date_onchange(this.value,3)">
-						<input id="department_name3" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
-						<input id="dear3" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
+						<input class="date no_box" id="month_input_ts" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
+						<input class="hrmd no_box" id="name_of_sender_ts" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
+			 			<input id="position_of_sender_ts" type="" value="Director" oninput="date_onchange(this.value,3)">
+						<input id="department_name_ts" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
+						<input id="dear_ts" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text3" >
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: '.$firstmonth.'-'.$lastmonth.'
@@ -1152,8 +877,8 @@
 					 <br>
 					 <p class="thank_you">Thank you very much.</p>
 					 <p class="closing_remarks">Sincerly Yours,</p>
-					 <p class="closing_remarks_sender">test sender</p>
-					 <p class="closing_remarks_sender_position">branch director</p>
+					 <input id="sender_ts" type="" value="MARISSA B. FERRER">	
+					 <input id="sender_position_ts" type="" value="BRANCH DIRECTOR">
 					 <br>
 					 <br>
 					 <br>
@@ -1183,11 +908,11 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input4" type="" name="" value="'.$date.'" disabled>
-						<input class="hrmd no_box" id="name_of_sender4" type="" name="" value="'.$hrmd.'" disabled>
-						<input id="position_of_sender4" type="" value="Director" disabled>
-						<input id="department_name4" type="" value="Human Resource Management Department" disabled>
-						<input id="dear4" type="" value="Dear Atty. Sarum:" disabled>
+						<input class="date no_box" id="month_input_ot" type="" name="" value="'.$date.'" disabled>
+						<input class="hrmd no_box" id="name_of_sender_ot" type="" name="" value="'.$hrmd.'" disabled>
+						<input id="position_of_sender_ot" type="" value="Director" disabled>
+						<input id="department_name_ot" type="" value="Human Resource Management Department" disabled>
+						<input id="dear_ot" type="" value="Dear Atty. Sarum:" disabled>
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text4">
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:

@@ -6700,3 +6700,41 @@ Stack trace:
 REQUEST_URI=/fsiscs/index.php?r=administrator/Approve_all
 HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAPDtrTable&sort=pending
 ---
+2022/06/09 10:45:19 [error] [exception.ParseError] ParseError: syntax error, unexpected '<' in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:1019
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3478): CController->render('daily_time_reco...', Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('HAP_Secretary_t...')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/H...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---
+2022/06/09 10:45:32 [error] [exception.ParseError] ParseError: syntax error, unexpected '<' in C:\xampp\htdocs\FSISCS\protected\views\administrator\EOTM_form.php:1019
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('daily_time_reco...', Array, true)
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3478): CController->render('daily_time_reco...', Array)
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHAP_Secretary_table()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('HAP_Secretary_t...')
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/H...')
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#13 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/HAP_Secretary_table
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/DtrTable&sort=pending
+---

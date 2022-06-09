@@ -293,14 +293,14 @@ class TblSchedule extends CActiveRecord
 
 	public static function approve_all()
 	{
-		$approve_all = "UPDATE `tbl_dtr` SET `hap_approval_status` = 1 WHERE `hap_approval_status` = ''";
+		$approve_all = "UPDATE `tbl_dtr` SET `hap_approval_status` = 1 WHERE `hap_approval_status` = '' or  `hap_approval_status` = 0 ";
 		Yii::app()->db->createCommand($approve_all)->execute();
 
 	}
 
 	public static function pending_all()
 	{
-		$pending_all = "UPDATE `tbl_dtr` SET `hap_approval_status` = '' WHERE `hap_approval_status` = 1";
+		$pending_all = "UPDATE `tbl_dtr` SET `hap_approval_status` = 0 WHERE `hap_approval_status` = 1";
 		Yii::app()->db->createCommand($pending_all)->execute();
 
 	}

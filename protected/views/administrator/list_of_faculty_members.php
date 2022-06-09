@@ -422,7 +422,7 @@
 							// $email_container = $newresult['Email'];
 							$email = $newresult['Email'];
 							
-							echo "<a onclick='on_send_email(".$email.")' ><input id='send_email_id' type='button' name='send_email' value='Send Email Reminder' /></a> 
+							echo "<a onclick='on_send_email(".$email.")' ><input id='send_email_id' type='button' name='send_email' value='Send Email Reminder'/></a> 
 									
 									<br>";
 
@@ -555,33 +555,36 @@
 
     function on_send_email(email)
     {
-    	if(email)
-    	{
-    	Swal.fire({
-	  title: 'Are you sure?',
-	  text: "You won't be able to revert this!",
-	  icon: 'warning',
-	  showCancelButton: true,
-	  confirmButtonColor: '#3085d6',
-	  cancelButtonColor: '#d33',
-	  confirmButtonText: '<a href="index.php?r=administrator/Dtr_send_email&email=".$email."">Confirm Send email</a>'
-	}).then((result) => {
-	  if (result.isConfirmed) {
-	    Swal.fire(
-					   'EMAIL sent Successfully',
-						  'Redirecting...',
-						   'success',
-						  
-					)	
-	  		}
-		})
-		}
-		else{
-			Swal.fire({
-					 title: 'Email is empty!',
-					  icon: 'error',
-					})
-		}
+  //   	if(email)
+  //   	{
+	 //    Swal.fire({
+		//   title: 'Are you sure?',
+		//   text: "You won't be able to revert this!",
+		//   icon: 'warning',
+		//   showCancelButton: true,
+		//   confirmButtonColor: '#3085d6',
+		//   cancelButtonColor: '#d33',
+		//   confirmButtonText: '<a href="index.php?r=administrator/Dtr_send_email&email=".$email."">Confirm Send email</a>'
+		// }).then((result) => {
+		//   if (result.isConfirmed) {
+		//     Swal.fire(
+		// 				   'EMAIL sent Successfully',
+		// 					  'Redirecting...',
+		// 					   'success'
+							  
+		// 				)	
+		//   		}
+		// 	})
+		// }
+		// else{
+		// 		Swal.fire({
+		// 				 title: 'Email is empty!',
+		// 				  icon: 'error'
+		// 				})
+		// 	}
+
+		console.log(email);
+			
     }
 
     

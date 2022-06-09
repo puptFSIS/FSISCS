@@ -6680,3 +6680,23 @@ REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRreportprocess
 in C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRreportprocess.php (9)
 in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1550)
 in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/08 23:17:55 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' SET `hap_approval_status` = 1 WHERE `hap_approval_status` = 0' at line 1. The SQL statement executed was: UPDATE `tbl_dtr` SET `hap_approval_status` = 1 WHERE `hap_approval_status` = '', SET `hap_approval_status` = 1 WHERE `hap_approval_status` = 0 .
+in C:\xampp\htdocs\FSISCS\protected\models\TblSchedule.php (297)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3616)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/08 23:17:55 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ' SET `hap_approval_status` = 1 WHERE `hap_approval_status` = 0' at line 1. The SQL statement executed was: UPDATE `tbl_dtr` SET `hap_approval_status` = 1 WHERE `hap_approval_status` = '', SET `hap_approval_status` = 1 WHERE `hap_approval_status` = 0  in C:\xampp\htdocs\FSISCS\framework\db\CDbCommand.php:358
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\models\TblSchedule.php(297): CDbCommand->execute()
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3616): TblSchedule::approve_all()
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionApprove_all()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Approve_all')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/A...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/fsiscs/index.php?r=administrator/Approve_all
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAPDtrTable&sort=pending
+---

@@ -119,6 +119,8 @@ SORT:
         "pagingType": "full_numbers",
         "ordering": true, /// allow sorting sa buong table
         "aaSorting": [],   /// remove sorting sa unang column  - 0
+	    "order": [[0, 'desc']],
+
         "columnDefs": [
 	        {
 	        	"targets": [1,2,3,4,5,6,7,8,9,10,11,12],

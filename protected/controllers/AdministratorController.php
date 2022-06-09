@@ -1122,42 +1122,46 @@ class AdministratorController extends Controller
 	}
 
 	public function actionProcessUploadFile(){
-
+		$mimes = array('application/vnd.ms.excel','text/plain', 'text/csv','text/tsv','application/csv','text/comma-separated-values','application/excel','application/vnd.ms-excel','application/vnd.msexcel','text/anytext','application/octet-stream','application/txt');
 		if (isset($_FILES['filename'])) {
-			$Subject = array('currYear','SubjCode','SubjDescription','Category','Units','HoursLab','HoursLec');
-			$subjects = array();
-			$arrayIndex = 0;
-			$fileName = $_FILES["filename"]["tmp_name"];
-			
+			if (in_array($_FILES['filename']['type'], $mimes)) {
+				$Subject = array('currYear','SubjCode','SubjDescription','Category','Units','HoursLab','HoursLec');
+				$subjects = array();
+				$arrayIndex = 0;
+				$fileName = $_FILES["filename"]["tmp_name"];
+				
 
-			
-			//Passing of cell values from the file
-			$file_to_read = fopen($fileName, 'r');
-	 
-		    while (!feof($file_to_read) ) {
-		        $lines[] = fgetcsv($file_to_read, 1000, ',');
+				
+				//Passing of cell values from the file
+				$file_to_read = fopen($fileName, 'r');
 		 
-		    }
+			    while (!feof($file_to_read) ) {
+			        $lines[] = fgetcsv($file_to_read, 1000, ',');
+			 
+			    }
 
-		    fclose($file_to_read);
-		    //end of passing values from the file
+			    fclose($file_to_read);
+			    //end of passing values from the file
 
 
-		    //passing array values to another array
-		    $last = count($lines) - 1;
+			    //passing array values to another array
+			    $last = count($lines) - 1;
 
-		    for ($x=1; $x < $last; $x++) { 
-		    	if ($x!=1 || $x!=$last) {
-		    		$subjects[$arrayIndex] = array_combine($Subject, $lines[$x]);
-		    		$arrayIndex++;
-		    	}
-		    }
+			    for ($x=1; $x < $last; $x++) { 
+			    	if ($x!=1 || $x!=$last) {
+			    		$subjects[$arrayIndex] = array_combine($Subject, $lines[$x]);
+			    		$arrayIndex++;
+			    	}
+			    }
 
-		    //Insert active query
-		    $builder = Yii::app()->db->schema->commandBuilder;
-			$command=$builder->createMultipleInsertCommand('tbl_subjects', $subjects);
-			$command->execute();
-		    header("Location: index.php?r=administrator/SubjectManagement&mes=1");
+			    //Insert active query
+			    $builder = Yii::app()->db->schema->commandBuilder;
+				$command=$builder->createMultipleInsertCommand('tbl_subjects', $subjects);
+				$command->execute();
+			    header("Location: index.php?r=administrator/SubjectManagement&mes=1");
+			} else {
+				header("Location: index.php?r=administrator/SubjectManagement&mes=4");
+			}
 		} else {
 			header("Location: index.php?r=administrator/SubjectManagement&mes=3");
 		}

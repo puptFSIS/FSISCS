@@ -36,9 +36,9 @@
 	{
 		if($m == "JJ")
 		{
-			header('Location: index.php?r=administrator/IPCRcreatejantojune&b=1&m='.$m.'&y='.$y.'');
+			header('Location: index.php?r=administrator/IPCRcreatejantojune&m='.$m.'&y='.$y.'&mess=3');
 		} else {
-			header('Location: index.php?r=administrator/IPCRcreatejultodec&b=1&m='.$m.'&y='.$y.'');
+			header('Location: index.php?r=administrator/IPCRcreatejultodecm&m='.$m.'&y='.$y.'&mess=3');
 		}
 	}
 	mysqli_close($conn);

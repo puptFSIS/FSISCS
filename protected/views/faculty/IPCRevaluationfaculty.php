@@ -211,21 +211,21 @@ $msg = $_GET['msg'];
 }
 ?>
 <br>
-<h2 class="underlined"><strong>See your Evaluated IPCR</strong> <small>(Choose month and year)</small></h2>
+<h2 class="underlined"><strong>View your Evaluated IPCR</strong> <small>(Choose month and year)</small></h2>
 <!---->
 <?php  
     
     
-    // if submit button is pressed
-    if(isset($_POST['submit']))
-    {
-        $fcode = $_POST['fcode'];
-        $selectedm = $_POST['Month'];
-        $selectedy = $_POST['Year'];
-    } 
+    // // if submit button is pressed
+    // if(isset($_POST['submit']))
+    // {
+    //     $fcode = $_POST['fcode'];
+    //     $selectedm = $_POST['Month'];
+    //     $selectedy = $_POST['Year'];
+    // } 
          
 ?> 
-<form action="index.php?r=faculty/IPCRgenerate" method="post">
+<form action="index.php?r=faculty/IPCRgenerate_evaluated" method="post">
 <?php
     include('getPersonalInformation.php');
     $fcode = $EmpID;

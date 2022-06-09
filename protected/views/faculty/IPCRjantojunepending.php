@@ -181,30 +181,26 @@ if(isset($_SESSION['user'])) {
 <!-- Video - HTML5 -->
 <section>
 <?php 
-    
+
     $sql = "SELECT * FROM tbl_ipcrvisible WHERE month = '$m' AND year = '$y'";
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result);
     $dline = $row['dline_date'];
-    
+
+    $query = "SELECT status FROM tbl_ipcrstatus WHERE month = '$m' AND year = '$y'";
+    $res = mysqli_query($conn,$query);
+    $row = mysqli_fetch_array($res);
+    $status = $row['status'];
  ?>
 
-<h2 class="underlined-header" id="title" >Create IPCR: <strong>JANUARY TO JUNE <?php echo '('.$y.')';?></strong></h2>
+<h2 class="underlined-header" id="title" >IPCR for: <strong>JANUARY TO JUNE <?php echo '('.$y.')';?></strong><p style="float:right; margin-right: 10px;">Remarks: <strong><?php echo $status; ?></strong></p></h2>
 
 <!-- Deadline -->
-<h2 class="underlined-header" style="width:25%; color: Red; margin-left: -15%;"><strong> Deadline: <input style="display: inline;" placeholder="Not Set" value="<?php echo $dline; ?>" readonly></strong></h2>
+<h2 class="underlined-header" style="width:25%; color: Red; margin-left: -15%;"><strong> Deadline: <input style="display: inline;" placeholder="No Deadline Set" value="<?php echo $dline; ?>" readonly></strong></h2>
 
-<a href="index.php?r=faculty/IPCRcreatefaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
+<a href="index.php?r=faculty/IPCRevaluationfaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
 <section>
-<div class="w3-code notranslate cssHigh">
-    <small><strong><u>REMINDERS</u></strong></small>
-    <br>
-    <small><strong><b id="asterisk">*</b> - Required Fields.</strong></small>
-    <br>
-    <small><strong><li>All REQUIRED FIELDS is used on Approval so checked before you submit.</li></strong></small>
-    <small><strong><li>After Review, If you got "Disapproved" on Approval part, you can click it to view the reason/feedback.</li></strong></small>
-
-</div>
+<br>
 <table class=round-3 style="width:132%; margin-left: -15%;" id="shadow">
 <thead>
     <tr align="center">
@@ -310,7 +306,7 @@ if(isset($_SESSION['user'])) {
                     </td>
 
                 <td style="text-align: center;">
-                    <?php if($rowsp['adminApproval'] == "Approved"): ?>
+                    <?php if($rowsp['adminApproval'] == "Approved" || $status == "Approved"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowsp['idaccomp'] == "" || $rowsp['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>
@@ -436,7 +432,7 @@ if(isset($_SESSION['user'])) {
 
                     </td>
                     <td style="text-align: center;">
-                       <?php if($rowcf['adminApproval'] == "Approved"): ?>
+                    <?php if($rowcf['adminApproval'] == "Approved" || $status == "Approved"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowcf['idaccomp'] == "" || $rowcf['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>
@@ -453,7 +449,7 @@ if(isset($_SESSION['user'])) {
                     <?php endif; ?> 
                     </td>  
                 </tr>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
 </tbody>
 </table>
 <br>
@@ -549,7 +545,7 @@ if(isset($_SESSION['user'])) {
                     </td>
                 
                     <td style="text-align: center;">
-                    <?php if($rowsf['adminApproval'] == "Approved"): ?>
+                    <?php if($rowsf['adminApproval'] == "Approved" || $status == "Approved"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowsf['idaccomp'] == "" || $rowsf['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>

@@ -248,18 +248,33 @@ $msg = $_GET['msg'];
 </section>
             
             <!-- For deadline -->
-            <?php if(isset($_GET['a'])) : ?>
-                <div class="flash-data" data-flashdata="<?= $_GET['a']; ?>"></div>
+        <?php if(isset($_GET['mess'])): ?>
+
+            <?php if($_GET['mess'] == 1) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
             <?php endif; ?>
 
-            <?php if(isset($_GET['b'])) : ?>
-                <div class="flash-data-NA" data-flashdata1="<?= $_GET['b']; ?>"></div>
+            <?php if($_GET['mess'] == 2) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
             <?php endif; ?>
 
-            <?php if(isset($_GET['c'])) : ?>
-                <div class="flash-data-ND" data-flashdata2="<?= $_GET['c']; ?>"></div>
+            <?php if($_GET['mess'] == 3) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
             <?php endif; ?>
 
+            <?php if($_GET['mess'] == 4) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if($_GET['mess'] == 5) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if($_GET['mess'] == 6) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
+
+        <?php endif; ?>
             <script>
                 window.onload = function () 
                 {
@@ -280,8 +295,8 @@ $msg = $_GET['msg'];
 
             </script>
             <script>
-                const flashdata = $('.flash-data').data('flashdata')
-                    if (flashdata) {
+                flashdata = $('.flash-data').data('flashdata')
+                    if (flashdata == 1) {
                         Swal.fire(
                             'Deadline Exceeded!',
                             "You don't have access on the IPCR",
@@ -289,8 +304,7 @@ $msg = $_GET['msg'];
                         )
                     }  
 
-                const flashdata1 = $('.flash-data-NA').data('flashdata1')
-                    if (flashdata1) {
+                    if (flashdata == 2) {
                         Swal.fire(
                             'IPCR is not available at the moment!',
                             "Press ok to continue",
@@ -298,14 +312,38 @@ $msg = $_GET['msg'];
                         )
                     }  
 
-                const flashdata2 = $('.flash-data-ND').data('flashdata2')
-                    if (flashdata2) {
+                    if (flashdata == 3) {
                         Swal.fire(
                             'No IPCR Created',
                             "Wait for the moment",
                             'error'
                         )
-                    }      
+                    }  
+
+                    if (flashdata == 4) {
+                        Swal.fire(
+                            'You submitted your IPCR',
+                            "Wait for the Review",
+                            'info'
+                        )
+                    } 
+
+                    if (flashdata == 5) {
+                        Swal.fire(
+                            'Your IPCR is Pending',
+                            "Proceed to 'Evaluated IPCR' part",
+                            'info'
+                        )
+                    } 
+
+                    if (flashdata == 6) {
+                        Swal.fire(
+                            'Your IPCR is Approved',
+                            "You can Print a copy of your IPCR",
+                            'info'
+                        )
+                    }
+
             </script>
 <!-- End - Video -HTML5 -->
 <br/>

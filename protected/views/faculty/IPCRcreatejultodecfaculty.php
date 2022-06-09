@@ -552,7 +552,7 @@ if(isset($_SESSION['user'])) {
         </strong>
     </h5>             
     <center>
-        <a href="index.php?r=faculty/IPCRtagcomplete<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>">
+        <a href="index.php?r=faculty/IPCRtagcomplete<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>" class="btn-del">
             <button style="width:120px">Submit IPCR</button>
         </a>
     </center>
@@ -564,6 +564,24 @@ if(isset($_SESSION['user'])) {
             <?php endif; ?>
 
             <script>
+                $('.btn-del').on('click', function(e){
+                        e.preventDefault()
+                        const href = $(this).attr('href')
+
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            text: "You won't be able to revert this action.",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: 'green',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Yes, Submit'
+                        }).then((result) => {
+                            if (result.value) {
+                                document.location.href = href;
+                            } 
+                        })
+                    })
             const flashdata = $('.flash-data').data('flashdata')
                     if (flashdata) {
                         Swal.fire(

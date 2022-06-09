@@ -2974,7 +2974,22 @@ class AdministratorController extends Controller
 
     }
 
+
+
+
+
+
+
+
     /////////////////////////////////IPCR CONTROLLERS////////////////////////////////////
+    public function actionIPCRdeletefromtable()
+    {
+    	$this->render('IPCRdeletefromtable');
+    }
+    public function actionIPCRcopyform()
+    {
+    	$this->render('IPCRcopyform');
+    }
     public function actionIPCRemailtemplateunsubmit()
     {
     	$this->render('IPCRemailtemplateunsubmit');

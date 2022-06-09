@@ -1533,9 +1533,35 @@ class FacultyController extends Controller
 
 
 ///////////////////////////////////////////////
+	public function actionIPCRgenerate_evaluated()
+	{
+		$this->render('IPCRgenerate_evaluated');
+	}
 	public function actionIPCRjantojunepending()
 	{
-		$this->render('IPCRjantojunepending');
+		if(isset($_GET['m'],$_GET['y'],$_GET['fcode']))
+    	{
+        	$m = $_GET['m'];
+        	$y = $_GET['y'];
+        	$fcode = $_GET['fcode'];
+    	}
+		$datasp = TblIpcr1::model()->getIPCR1datasp($y,$fcode);
+		$datacf = TblIpcr1::model()->getIPCR1datacf($y,$fcode);
+		$datasf = TblIpcr1::model()->getIPCR1datasf($y,$fcode);
+
+		// echo "<pre>";
+		// print_r($datasp);
+		// echo "</pre>";
+
+		$this->render('IPCRjantojunepending', array(
+			'infosp' => $datasp,
+			'infocf' => $datacf,
+			'infosf' => $datasf,
+			'm' => $m,
+			'y' => $y,
+			'fcode' => $fcode
+		));
+		// $this->render('IPCRjantojunepending');
 	}
 	public function actionIPCRresubmitfaculty()
 	{

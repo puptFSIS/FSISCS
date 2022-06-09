@@ -10,7 +10,11 @@
 		
 		$sql = "UPDATE tbl_ipcrvisible SET dline_date = '$dlinedt' WHERE month = '$m' AND year = '$y'";
 		$result = mysqli_query($conn,$sql);
-		header('Location: index.php?r=administrator/IPCRcreatejantojune&c=1&m='.$m.'&y='.$y.'');
-
+		if($m == "JJ")
+		{
+			header('Location: index.php?r=administrator/IPCRcreatejantojune&m='.$m.'&y='.$y.'&mess=4');
+		} elseif($m == "JD") {
+			header('Location: index.php?r=administrator/IPCRcreatejultodec&m='.$m.'&y='.$y.'&mess=4');
+		}
 
 ?> 

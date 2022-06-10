@@ -2128,7 +2128,10 @@ class AdministratorController extends Controller
     			$mail->Username = 'fsiscs@puptaguigcs.net';                
     			$mail->Password = 'FsiscsEmail@2022';                          
     			$mail->SMTPSecure = 'ssl';                            
-    			$mail->Port = 465;*/                               
+    			$mail->Port = 465;
+
+				$mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
+    			*/                               
 
 				$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 
@@ -2814,7 +2817,9 @@ class AdministratorController extends Controller
 			$mail->Username = 'fsiscs@puptaguigcs.net';                
 			$mail->Password = 'FsiscsEmail@2022';                          
 			$mail->SMTPSecure = 'ssl';                            
-			$mail->Port = 465;*/                                  
+			$mail->Port = 465;
+			$mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
+			*/                                  
 
 			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 
@@ -3612,7 +3617,9 @@ class AdministratorController extends Controller
     			$mail->Username = 'fsiscs@puptaguigcs.net';                
     			$mail->Password = 'FsiscsEmail@2022';                          
     			$mail->SMTPSecure = 'ssl';                            
-    			$mail->Port = 465;*/                                 
+    			$mail->Port = 465;
+
+    			$mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');*/                                 
 
 				$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 

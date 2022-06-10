@@ -2111,14 +2111,24 @@ class AdministratorController extends Controller
 
 				$mail = new YiiMailer;
 
-				// $mail->isSMTP();   // Uncomment this line on testing server 
+				// $mail->isSMTP();   // Uncomment this line on testing server
+				//Uncomment this when testing on the local server such as xampp
 				$mail->SMTPDebug  = 1;                                  
 				$mail->Host = "smtp.gmail.com";  
 				$mail->SMTPAuth = true;                           
 				$mail->Username = 'puptfsis2022@gmail.com';                
 				$mail->Password = '@PUPTfsis2022';                          
 				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465;                                
+				$mail->Port = 465; 
+
+				//Uncomment this following lines when the project is uploaded on the hostinger
+				/*$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.hostinger.com";  
+    			$mail->SMTPAuth = true;                           
+    			$mail->Username = 'fsiscs@puptaguigcs.net';                
+    			$mail->Password = 'FsiscsEmail@2022';                          
+    			$mail->SMTPSecure = 'ssl';                            
+    			$mail->Port = 465;*/                               
 
 				$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 
@@ -2788,13 +2798,23 @@ class AdministratorController extends Controller
 			$mail = new YiiMailer;
 
 			// $mail->isSMTP();   // Uncomment this line on testing server                                  
+			//Uncomment this when testing on the local server such as xampp
 			$mail->SMTPDebug  = 1;                                  
 			$mail->Host = "smtp.gmail.com";  
 			$mail->SMTPAuth = true;                           
 			$mail->Username = 'puptfsis2022@gmail.com';                
 			$mail->Password = '@PUPTfsis2022';                          
 			$mail->SMTPSecure = 'ssl';                            
-			$mail->Port = 465;                                 
+			$mail->Port = 465; 
+
+			//Uncomment this following lines when the project is uploaded on the hostinger
+			/*$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.hostinger.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'fsiscs@puptaguigcs.net';                
+			$mail->Password = 'FsiscsEmail@2022';                          
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;*/                                  
 
 			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 
@@ -3576,13 +3596,23 @@ class AdministratorController extends Controller
 				$mail = new YiiMailer;
 
 				// $mail->isSMTP();   // Uncomment this line on testing server                                  
+				//Uncomment this when testing on the local server such as xampp
 				$mail->SMTPDebug  = 1;                                  
 				$mail->Host = "smtp.gmail.com";  
 				$mail->SMTPAuth = true;                           
 				$mail->Username = 'puptfsis2022@gmail.com';                
 				$mail->Password = '@PUPTfsis2022';                          
 				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465;                                
+				$mail->Port = 465; 
+
+				//Uncomment this following lines when the project is uploaded on the hostinger
+				/*$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.hostinger.com";  
+    			$mail->SMTPAuth = true;                           
+    			$mail->Username = 'fsiscs@puptaguigcs.net';                
+    			$mail->Password = 'FsiscsEmail@2022';                          
+    			$mail->SMTPSecure = 'ssl';                            
+    			$mail->Port = 465;*/                                 
 
 				$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 

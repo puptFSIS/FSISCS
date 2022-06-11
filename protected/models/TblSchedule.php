@@ -272,8 +272,31 @@ class TblSchedule extends CActiveRecord
 	{
 		$date = date('Y-m-d H:i:s');
 		foreach ($val2 as $id) {
-			$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = CONCAT(`hap_approval_status`,'".".3'),`modified_date`='$date'  WHERE id = '$id'";
-		 	Yii::app()->db->createCommand($update)->execute();
+
+			$approve_or_disapprove = "SELECT tbl_dtr.`hap_approval_status` from tbl_dtr where `id` = '$id'";
+			Yii::app()->db->createCommand($approve_or_disapprove)->execute();
+			if($approve_or_disapprove === 0)
+			{
+				$update1 = "UPDATE `tbl_dtr` SET `hap_approval_status` = 3, `modified_date`='$date'  WHERE id = '$id'";
+						Yii::app()->db->createCommand($update1)->execute();
+			}
+			else if($approve_or_disapprove === 1)
+			{
+				$update1 = "UPDATE `tbl_dtr` SET `hap_approval_status` = CONCAT(`hap_approval_status`,'".".3'),`modified_date`='$date'  WHERE id = '$id'";
+						Yii::app()->db->createCommand($update1)->execute();
+			}
+			else if($approve_or_disapprove === 2)
+			{
+				$update1 = "UPDATE `tbl_dtr` SET `hap_approval_status` = CONCAT(`hap_approval_status`,'".".3'),`modified_date`='$date'  WHERE id = '$id'";
+						Yii::app()->db->createCommand($update1)->execute();
+			}
+
+			
+			
+			
+
+
+			
 		}
 			
 		
@@ -281,11 +304,40 @@ class TblSchedule extends CActiveRecord
 
 	public static function restore_deleted($val1) // dtr
 	{
+
 		$date = date('Y-m-d H:i:s');
 		foreach ($val1 as $id) {
-			 $update = "UPDATE `tbl_dtr` SET `hap_approval_status` =REPLACE(`hap_approval_status`,'.3',''),`modified_date`='$date'  WHERE id = '$id'";
-			 
-		 	Yii::app()->db->createCommand($update)->execute();
+
+			$approve_or_disapprove = "SELECT tbl_dtr.`hap_approval_status` from tbl_dtr where `id` = '$id'";
+			Yii::app()->db->createCommand($approve_or_disapprove)->execute();
+
+			if($approve_or_disapprove == '2.3')
+			{
+				$update1 = "UPDATE `tbl_dtr` SET `hap_approval_status` = 4, `modified_date`='$date'  WHERE id = '$id'";
+						Yii::app()->db->createCommand($update1)->execute();
+			}
+			
+
+			// if($approve_or_disapprove == 3)
+			// {
+			// 	$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = 0,`modified_date`='$date'  WHERE id = '$id'";
+		 // 		Yii::app()->db->createCommand($update)->execute();
+			// }
+			// if($approve_or_disapprove == 1.3)
+			// {
+			// 	$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = 1,`modified_date`='$date'  WHERE id = '$id'";
+		 // 		Yii::app()->db->createCommand($update)->execute();
+			// }
+			// if($approve_or_disapprove == 2.3)
+			// {
+			// 		$update = "UPDATE `tbl_dtr` SET `hap_approval_status` = 2,`modified_date`='$date'  WHERE id = '$id'";
+		 // 		Yii::app()->db->createCommand($update)->execute();
+			// }
+
+
+
+
+			
 		}
 			
 		

@@ -342,7 +342,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="disapproved")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and status != 1 and hap_approval_status = 2";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 2";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{
@@ -358,7 +358,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="approved")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and status != 1 and hap_approval_status = 1";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 1";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{
@@ -373,7 +373,7 @@ if(isset($_GET['sort']))
 	}
 	if($_GET['sort']=="deleted")
 	{
-		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 0.3";
+		$sql="SELECT * FROM tbl_dtr WHERE FCode='$fcode' and hap_approval_status = 3 or hap_approval_status = 1.3 or hap_approval_status = 2.3";
 		$result=mysqli_query($conn,$sql);
 		if(empty($result))
 		{
@@ -654,10 +654,7 @@ else if($status == "disapproved")
 		<td id="month_id'.$counter.'"" style="text-align: center;">' . $newresult['month'] . '</td>
 		<td id="year_id'.$counter.'"" style="text-align: center;">' . $newresult['year'] . '</td>
 		<td>
-			<center>
-				
-				
-			</center>
+			' . $newresult['hap_comments'] . '
 		</td>
 		<td><center><input type="submit" class="" value="VIEW" onclick="call_print(\'' .$counter. '\')">
 			
@@ -686,12 +683,6 @@ else if($status == "disapproved")
 
 					</div>
 
-					
-
-
-
-
-
 
 		</center></td>
 	
@@ -709,7 +700,7 @@ else if($status == "disapproved")
 			echo "<h3 style='border: 2px solid black; background-color: red; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo' 
 			<input style="display: none;" id="resubmitbtn" type="submit" name="resubmit" value="resubmit" onclick="resubmit_dtr()">
-			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr">';
+			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">';
 		}
 		
 	
@@ -931,13 +922,13 @@ function change_color(_this,counter,status)
 	}
 
 
-	if(status == 0.3 || status==1.3 || status == 2.3)
+	if(status == 3 || status== 1.3 || status == 2.3)
 	{
 
 		if(count > 0)
 		{
 			restorebtn.style.display="block";
-			deletebtn.style.display="block";
+			// deletebtn.style.display="block";
 			
 		
 
@@ -945,7 +936,7 @@ function change_color(_this,counter,status)
 		else
 		{
 			restorebtn.style.display="none";
-			deletebtn.style.display="none";
+			// deletebtn.style.display="none";
 			
 		}
 

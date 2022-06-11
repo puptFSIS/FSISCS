@@ -64,4 +64,5 @@
 	$tin = $row['TIN_NO'];
 	$EmpID = $row['EmpID'];
 	$fcode = $row['FCode'];
+	// $fcode = $EmpID
 ?>

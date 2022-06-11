@@ -16,7 +16,7 @@
 				$res1 = mysqli_query($conn,$sql1);
 			$sql2 ="INSERT INTO tbl_tmp SELECT if_required,output,indicators,part,month,year,deleted_on FROM tbl_ipcr1 where month = '$mosCpy' AND year = '$yearCpy' AND deleted_on IS NULL";
 				$res2 = mysqli_query($conn,$sql2);
-			$sql3 ="UPDATE tbl_tmp SET year = '$toYear'";
+			$sql3 ="UPDATE tbl_tmp SET year = '$toYear', month = '$toMonth'";
 				$res3 = mysqli_query($conn,$sql3);
 			$sql4 ="INSERT into tbl_ipcr1 (if_required,output,indicators,part,month,year,deleted_on) SELECT * FROM tbl_tmp";
 				$res4 = mysqli_query($conn,$sql4);
@@ -42,7 +42,7 @@
 				$res1 = mysqli_query($conn,$sql1);
 			$sql2 ="INSERT INTO tbl_tmp SELECT if_required,output,indicators,part,month,year,deleted_on FROM tbl_ipcr2 where month = '$mosCpy' AND year = '$yearCpy' AND deleted_on IS NULL";
 				$res2 = mysqli_query($conn,$sql2);
-			$sql3 ="UPDATE tbl_tmp SET year = '$toYear'";
+			$sql3 ="UPDATE tbl_tmp SET year = '$toYear', month = '$toMonth'";
 				$res3 = mysqli_query($conn,$sql3);
 			$sql4 ="INSERT into tbl_ipcr1 (if_required,output,indicators,part,month,year,deleted_on) SELECT * FROM tbl_tmp";
 				$res4 = mysqli_query($conn,$sql4);

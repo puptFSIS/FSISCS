@@ -260,6 +260,10 @@ $msg = $_GET['msg'];
                 <div class="flash-data-ND" data-flashdata2="<?= $_GET['c']; ?>"></div>
             <?php endif; ?>
 
+            <?php if(isset($_GET['d'])) : ?>
+                <div class="flash-data-sub" data-flashdata3="<?= $_GET['d']; ?>"></div>
+            <?php endif; ?>
+
             <script>
                 window.onload = function () 
                 {
@@ -305,7 +309,16 @@ $msg = $_GET['msg'];
                             "Wait for the moment",
                             'error'
                         )
-                    }      
+                    } 
+
+                const flashdata3 = $('.flash-data-sub').data('flashdata3')
+                    if (flashdata3) {
+                        Swal.fire(
+                            'Please Submit your IPCR first',
+                            "Proceed to 'Edit IPCR'",
+                            'info'
+                        )
+                    }    
             </script>
 <!-- End - Video -HTML5 -->
 <br/>

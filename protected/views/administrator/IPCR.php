@@ -167,6 +167,7 @@ footer {
     margin-right: 20px;
     height: 450px;
     overflow: auto;
+    width: 350px;
 }
 
 /*.dropdown-menu {

@@ -38,7 +38,7 @@ if(isset($_POST['view']))
           }
           else
           {
-             $output .= '<li style="padding-right: 10px; padding-bottom: 0px;"><a href="#" style="color:black; padding-right: 20px;" class="text-bold text-italic">No Notification Found</a></li>';
+             $output .= '<li style="padding-right: 10px; padding-bottom: 0px;"><a href="#" style="color:black; padding-right: 20px;" class="text-bold text-italic"><center>No Notification Found</center></a></li>';
           }
      
      $query_1 = "SELECT * FROM tbl_ipcrnotification WHERE status = 0";

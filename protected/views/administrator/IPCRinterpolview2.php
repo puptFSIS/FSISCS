@@ -175,7 +175,7 @@ if(isset($_SESSION['user'])) {
 <!-- Page body -->
 
 <!-- Page title -->
-<?php include("headerMenuIPCR.php");?>
+<?php include("headerMenu.php");?>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>

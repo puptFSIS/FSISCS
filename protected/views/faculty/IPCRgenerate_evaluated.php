@@ -34,44 +34,17 @@
                 {
                     header('Location: index.php?r=faculty/IPCRcreatefaculty&b=1');
                 } else if ($IsAvailable == "Available") {
-                    if($deadline == NULL) //if Deadline is NULL or Not Set, It must continue
-                    {
+                    // if($deadline == NULL) //if Deadline is NULL or Not Set, It must continue
+                    // {
                     
                         $sql = "SELECT * FROM tbl_ipcrstatus WHERE fcode='$fcode' AND month='$m' AND year='$y'";
                         $result = mysqli_query($conn,$sql);
                         $count = mysqli_num_rows($result);
-                        if($count == 0)
-                        {
-                            $sql1 = "INSERT INTO tbl_ipcrstatus (fcode,month,year) VALUES ('".$fcode."','".$m."','".$y."')";
-                            // echo $sql1;
-                            $result1 = mysqli_query($conn,$sql1);
-                            if($m=='JJ')
-                            {
-                                header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
-                            }
-                            else if($m=='JD') {
-                                header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
-                            }
+                        $row = mysqli_fetch_array($result);
+                        $status = $row['status'];
 
-                        } else if($count > 0)
+                        if($status != NULL)
                         {
-                            if($m=='JJ')
-                            {
-                                header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
-                            }
-                            else if($m=='JD') {
-                                header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
-                            }
-                        }
-                    } else if($deadline != NULL) //If Dealine is Not null or it was set then continue,
-                    {
-                      
-                        if($deadline > $today) //If deadline is present, system will check if the the date exceed or not.
-                        {
-                            
-                            $sql = "SELECT * FROM tbl_ipcrstatus WHERE fcode='$fcode' AND month='$m' AND year='$y'";
-                            $result = mysqli_query($conn,$sql);
-                            $count = mysqli_num_rows($result);
                             if($count == 0)
                             {
                                 $sql1 = "INSERT INTO tbl_ipcrstatus (fcode,month,year) VALUES ('".$fcode."','".$m."','".$y."')";
@@ -84,6 +57,7 @@
                                 else if($m=='JD') {
                                     header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                                 }
+
                             } else if($count > 0)
                             {
                                 if($m=='JJ')
@@ -94,10 +68,44 @@
                                     header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                                 }
                             }
-                        } else { // if exceeded it will return to the previous page and prompt a alert.
-                             header('Location: index.php?r=faculty/IPCRcreatefaculty&a=1');
+                        } else {
+                            header('Location: index.php?r=faculty/IPCRevaluationfaculty&d=1');
                         }
-                    }
+                    // } else if($deadline != NULL) //If Dealine is Not null or it was set then continue,
+                    // {
+                      
+                    //     if($deadline > $today) //If deadline is present, system will check if the the date exceed or not.
+                    //     {
+                            
+                    //         $sql = "SELECT * FROM tbl_ipcrstatus WHERE fcode='$fcode' AND month='$m' AND year='$y'";
+                    //         $result = mysqli_query($conn,$sql);
+                    //         $count = mysqli_num_rows($result);
+                    //         if($count == 0)
+                    //         {
+                    //             $sql1 = "INSERT INTO tbl_ipcrstatus (fcode,month,year) VALUES ('".$fcode."','".$m."','".$y."')";
+                    //             // echo $sql1;
+                    //             $result1 = mysqli_query($conn,$sql1);
+                    //             if($m=='JJ')
+                    //             {
+                    //                 header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+                    //             }
+                    //             else if($m=='JD') {
+                    //                 header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+                    //             }
+                    //         } else if($count > 0)
+                    //         {
+                    //             if($m=='JJ')
+                    //             {
+                    //                 header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+                    //             }
+                    //             else if($m=='JD') {
+                    //                 header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+                    //             }
+                    //         }
+                    //     } else { // if exceeded it will return to the previous page and prompt a alert.
+                    //          header('Location: index.php?r=faculty/IPCRcreatefaculty&a=1');
+                    //     }
+                    // }
                 }
             }
 

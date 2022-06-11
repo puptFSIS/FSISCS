@@ -315,7 +315,7 @@ if(isset($_SESSION['user'])) {
                     </td>
 
                 <td style="text-align: center;">
-                    <?php if($rowsp['adminApproval'] == "Approved" || $status == "Approved"): ?>
+                    <?php if($rowsp['adminApproval'] == "Approved" || $status == "Approved" || $status = "Submitted"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowsp['idaccomp'] == "" || $rowsp['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>
@@ -441,7 +441,7 @@ if(isset($_SESSION['user'])) {
 
                     </td>
                     <td style="text-align: center;">
-                       <?php if($rowcf['adminApproval'] == "Approved" || $status == "Approved"): ?>
+                       <?php if($rowcf['adminApproval'] == "Approved" || $status == "Approved" || $status == "Submitted"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowcf['idaccomp'] == "" || $rowcf['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>
@@ -554,7 +554,7 @@ if(isset($_SESSION['user'])) {
                     </td>
                 
                     <td style="text-align: center;">
-                    <?php if($rowsf['adminApproval'] == "Approved" || $status == "Approved"): ?>
+                    <?php if($rowsf['adminApproval'] == "Approved" || $status == "Approved" || $status == "Submitted"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowsf['idaccomp'] == "" || $rowsf['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>
@@ -589,7 +589,7 @@ if(isset($_SESSION['user'])) {
         </strong>
     </h5>             
     <center>
-        <a href="index.php?r=faculty/IPCRresubmitfaculty<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>">
+        <a href="index.php?r=faculty/IPCRresubmitfaculty<?php echo'&fcode='.$fcode.'&m='.$m.'&y='.$y.'';?>" class="btn-resub">
             <button style="width:120px">Resubmit IPCR</button>
         </a>
     </center>
@@ -601,6 +601,25 @@ if(isset($_SESSION['user'])) {
                 <div class="flash-data" data-flashdata="<?= $_GET['a']; ?>"></div>
             <?php endif; ?>
             <script>
+                $('.btn-resub').on('click', function(e){
+                        e.preventDefault()
+                        const href = $(this).attr('href')
+
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            text: "You won't be able to revert this action!",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: 'green',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Yes, Submit!'
+                        }).then((result) => {
+                            if (result.value) {
+                                document.location.href = href;
+                            } 
+                        })
+                    })
+
                 const flashdata = $('.flash-data').data('flashdata')
                     if (flashdata) {
                         Swal.fire(

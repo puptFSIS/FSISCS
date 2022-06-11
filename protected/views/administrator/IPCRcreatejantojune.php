@@ -367,7 +367,7 @@ if(isset($_SESSION['user'])) {
   
 <!-- Tag as Visible --> 
 <h5><strong><center>IF YOU ARE DONE ON CREATING IPCR, PLEASE PRESS THIS BUTTON TO MAKE IPCR AVAILABLE TO FACULTY</center></strong></h5>
-<center><a href="index.php?r=administrator/IPCRtagvisible<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width:120px">Tag as Visible</button></a></center>
+<center><a href="index.php?r=administrator/IPCRtagvisible<?php echo'&m='.$m.'&y='.$y.'';?>" class="btn-del"><button style="width:120px">Tag as Visible</button></a></center>
 </div>
 </div>
 </section>
@@ -509,30 +509,6 @@ if(isset($_SESSION['user'])) {
                 </script>
 
 
-<footer id=page-footer>
-<div class=container-aligner>
-<!-- Footer left -->
-<section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
-</section>
-<!-- End - Footer left -->
-<!-- Footer right -->
-<section id=footer-right>
-<ul class=footer-navigation>
-<li>
-<a href='http://www.pup-taguig.net' title=Home>Home</a>
-</li>
-<li>
-<a href='index.php?r=site/about' title=About>About</a>
-</li>
-<li>
-<a href='index.php?r=site/contact' title=Contacts>Contacts</a>
-</li>
-</ul>
-</section>
-<!-- End - Footer right -->
-</div>
-</footer>
 <!-- End - Page footer -->
 <!-- Theme backgrounds -->
 <div id=theme-backgrounds>

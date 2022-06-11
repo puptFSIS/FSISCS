@@ -20,7 +20,7 @@
     $query = mysqli_query($conn,$sql2);
     $count1 = mysqli_num_rows($query);
 
-    $sql4 = "SELECT status FROM tbl_ipcrstatus WHERE month = '$m' AND year='$y'";
+    $sql4 = "SELECT status FROM tbl_ipcrstatus WHERE month = '$m' AND year='$y' AND fcode = '$fcode'";
     $res = mysqli_query($conn,$sql4);
     $row = mysqli_fetch_array($res);
     $count_row = mysqli_num_rows($res);

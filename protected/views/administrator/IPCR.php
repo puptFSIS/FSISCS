@@ -24,6 +24,11 @@ if(isset($_SESSION['user'])) {
 <meta content='vCore Team' name=author />
 <!-- Page title -->
 <title>Administrator | IPCR</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
@@ -38,7 +43,7 @@ if(isset($_SESSION['user'])) {
 {
     background-color: black;
     padding: 5px 5px 5px;
-    height: 41px;
+    height: 50px;
 }
     
 #menu_strip
@@ -136,12 +141,38 @@ if(isset($_SESSION['user'])) {
 
 }
 
+footer {
+    position: relative;
+}
 
 #page-body
 {
     background-color: antiquewhite;
 }
 
+.header1 {
+        /*float: left;*/
+        margin:-10px 6.5px 0px 0px;
+    }
+    .c {
+        float: right;
+        margin-top: -32px;
+        margin-right: 20px;
+    }
+
+.glyphicon-bell {
+    color: lightblue;
+}
+.dropdown-menu {
+    margin-right: 20px;
+    height: 450px;
+    overflow: auto;
+}
+
+/*.no-bull {
+    list-style-type: none;
+}
+*/
 </style>
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
@@ -157,7 +188,34 @@ if(isset($_SESSION['user'])) {
 <div id="GradientDiv" class="cssWLGradientCommon cssWLGradientIMG"></div>
 
 <!-- Page title -->
-<?php include("headerMenuIPCR.php");?>
+<header id=page-title>
+
+
+
+<section id='menu_strip'>
+<a class="header1" data-category=all href='index.php?r=administrator'>Home</a>
+<a class="header1" data-category=design href="index.php?r=administrator/profile">Profile</a>
+<a class="header1" data-category=design href="index.php?r=administrator/faculty">Faculty</a>
+<a class="header1" data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
+<a class="header1" data-category=design href="index.php?r=administrator/IPCR">IPCR</a>
+<a class="header1" data-category=design href="index.php?r=administrator/daily_time_record">DTR</a>
+<a class="header1" data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
+<a class="header1" data-category=design href="index.php?r=administrator/TeachingAssignment">Teaching Assignment</a>
+<a class="header1" data-category=design href="index.php?r=administrator/other">Other</a>
+<a class="header1" data-category=design href="index.php?r=administrator/logout">Log out</a>
+
+<!-- <a class="header1 c" data-category=design href="#">Notification</a> -->
+<div>
+<ul class="nav navbar-nav navbar-right" > 
+      <li class="dropdown">
+        <a class="dropdown-toggle header1 c" data-toggle="dropdown" data-category=design ><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
+       <ul class="dropdown-menu"></ul>
+      </li>
+     </ul>
+</div>
+</section>
+
+</header>
 <!-- End - Page title -->
 <!-- Page body content -->
 <section id=page-body-content>
@@ -169,13 +227,11 @@ if(isset($_SESSION['user'])) {
  
 <h2 class=underlined-header>Getting started with <b>Individual Performance Commitment and Review</b></h2>
 <iframe width="600" height="375" src="//www.youtube.com/embed/4DbzZEG_dKA" frameborder="0" allowfullscreen></iframe>
-
-<script src="js/preventresize.js"></script>
 </section>
-<!-- End - Video -HTML5 -->
-<br>
+<!-- Scripts -->
+<script src="js/preventresize.js"></script> <!-- prevent Screen Resize -->
+<script src="js/notification.js"></script> <!-- For notification -->
 
-<!-- End - Showcase gallery -->
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->

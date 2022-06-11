@@ -6950,3 +6950,734 @@ REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRdeletefromtable&m=JJ&y=2019
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCRcreatejantojune&m=JJ&y=2019&mess=6
 >>>>>>> Stashed changes
 ---
+2022/06/10 11:16:00 [error] [exception.ParseError] ParseError: syntax error, unexpected 'header' (T_STRING) in C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRresubmitfaculty.php:21
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRresubmitfac...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php(1589): CController->render('IPCRresubmitfac...')
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): FacultyController->actionIPCRresubmitfaculty()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRresubmitfac...')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('faculty/IPCRres...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRresubmitfaculty&fcode=FA0005TG2022&m=JJ&y=2022
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=faculty/IPCRjantojunepending&m=JJ&y=2022&fcode=FA0005TG2022
+---
+2022/06/10 12:02:32 [error] [php] Undefined variable: y (C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php:1697)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): FacultyController->actionIPCRcreatejantojunefaculty()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): FacultyController->runAction()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): FacultyController->runActionWithFilters()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): FacultyController->run()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRcreatejantojunefaculty
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1697)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/10 12:13:16 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:18 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=yes
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:18 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=yes
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:22 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:27 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:32 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:37 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:42 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:47 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:51 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=yes
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:52 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:53 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=yes
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:13:57 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:02 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:07 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:12 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:17 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:22 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:24 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=yes
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:27 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:32 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:37 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:42 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:47 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:52 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:14:57 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:02 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:03 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=yes
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:05 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=yes
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:07 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:12 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:17 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:22 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:27 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:32 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:37 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:42 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:47 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:52 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:15:57 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:02 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:07 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:12 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:17 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:22 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:27 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:32 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:37 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:42 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:47 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:52 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:16:57 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:02 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:07 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:12 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:17 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:22 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:27 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:32 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:37 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:42 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 12:17:47 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "fetch.php". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('fetch.php')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('fetch.php')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/f...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/fetch.php&view=
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/IPCR
+---
+2022/06/10 15:18:45 [error] [exception.ParseError] ParseError: syntax error, unexpected '0' (T_LNUMBER) in C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRresubmitfaculty.php:29
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\Apps\\xampp\\h...', NULL, true)
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\Apps\\xampp\\h...', NULL, true)
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('IPCRresubmitfac...', NULL, true)
+#3 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php(1589): CController->render('IPCRresubmitfac...')
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): FacultyController->actionIPCRresubmitfaculty()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRresubmitfac...')
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('faculty/IPCRres...')
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRresubmitfaculty&fcode=FA0005TG2022&m=JJ&y=2022
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=faculty/IPCRjantojunepending&m=JJ&y=2022&fcode=FA0005TG2022
+---

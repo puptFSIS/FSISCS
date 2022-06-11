@@ -618,7 +618,7 @@ else if ($status == "pending")
 			echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>$status</h3>";
 			echo '
 			
-			<input onclick="change_color(this,\'' .$generate. '\','.$newresult['hap_approval_status'].')" style="display: none; background-color:none;" id="submitbtn" type="submit" name="submit" value="Generate pdf">
+		
 
 			<input style="display: none;" id="deletebtn" type="submit" name="delete" value="delete" onclick="delete_dtr()">
 
@@ -942,40 +942,32 @@ function change_color(_this,counter,status)
 
 	}
 	else{
-		// submitbtn.style.display="block";
-		// deletebtn.style.display="block";
-		// if(count==0)
-		// {
-		// 	deletebtn.style.display="none";
-		// 	submitbtn.style.display="none";
-
-		// }
 		if(count == 1)
 		{
 			
 			deletebtn.style.display="block";
-			submitbtn.style.display="none";
+			// submitbtn.style.display="none";
 
 		}
 		else if(count == 2)
 		{
-			submitbtn.style.display="block";
+			// submitbtn.style.display="block";
 			deletebtn.style.display="block";
 		}
 		else if(count >= 3)
 		{
-			submitbtn.style.display="none";
+			// submitbtn.style.display="none";
 			deletebtn.style.display="block";
 			if(count < 2)
 			{
-			submitbtn.style.display="none";
+			// submitbtn.style.display="none";
 				
 			}
 		}
 		
 		else
 		{
-			submitbtn.style.display="none";
+			// submitbtn.style.display="none";
 			deletebtn.style.display="none";
 		}
 		

@@ -3494,6 +3494,7 @@ class AdministratorController extends Controller
 	
 	public function actionDelete_dtr() // dtr
 	{
+		include('config.php');
 		$id_array = $_POST['val2'];
 		$result = TblSchedule::model()->soft_delete($id_array);
 		

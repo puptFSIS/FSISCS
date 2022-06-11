@@ -186,7 +186,7 @@ footer {
 
 
 <meta charset="UTF-8"></head>
-<body class='page-media page-sidebar-right'>
+<body class='page-media page-sidebar-right' style="background-color: black">
 <!-- JS notice - will be displayed if javascript is disabled -->
 <!--<p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
  End - JS notice -->
@@ -260,7 +260,30 @@ footer {
 <!-- End - Page body -->
 
 <!-- Page footer -->
-
+<footer id=page-footer>
+<div class=container-aligner>
+<!-- Footer left -->
+<section id=footer-left>
+© Copyright 2021 <a href="#" title="Development Team">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
+</section>
+<!-- End - Footer left -->
+<!-- Footer right -->
+<section id=footer-right>
+<ul class=footer-navigation>
+<li>
+<a href='http://www.pup-taguig.net' title=Home>Home</a>
+</li>
+<li>
+<a href='index.php?r=site/about' title=About>About</a>
+</li>
+<li>
+<a href='index.php?r=site/contact' title=Contacts>Contacts</a>
+</li>
+</ul>
+</section>
+<!-- End - Footer right -->
+</div>
+</footer>
 <!-- End - Page footer -->
 <!-- Theme backgrounds -->
 <div id=theme-backgrounds>

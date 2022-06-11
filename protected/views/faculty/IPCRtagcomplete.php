@@ -2,9 +2,14 @@
 	include('config.php'); 
 	session_start();
 
+	include('getPersonalInformation.php');
+
 	$fcode = $_GET['fcode'];
 	$m = $_GET['m'];
 	$y = $_GET['y'];
+	date_default_timezone_set('Asia/Manila');
+    $now = date("h:i:a");
+    $date = date("Y/m/d");
 
 	
 	if($m == "JJ") {
@@ -58,6 +63,19 @@
 						//Set IPCR submitted and this will be reflected to the list of admin.
 						$sql1 = "UPDATE tbl_ipcrstatus SET status = 'Submitted' WHERE fcode ='$fcode' AND month = '$m' AND year = '$y'";
 						$result1 = mysqli_query($conn,$sql1);
+
+
+						if($m == "JJ")
+						{
+							$monthyear = "(January-June, ".$y.")";
+						} else {
+							$monthyear = "(July-December, ".$y.")";
+						}
+
+						$subject = "IPCR Submission ".$monthyear."";
+						$text = "".$surname.", ".$firstname." ".$middlename." Submitted IPCR";
+						$sql_notif = "INSERT INTO tbl_ipcrnotification (subject,text,date,time,status) VALUES ('".$subject."','".$text."','".$date."','".$now."',0)";
+						$res = mysqli_query($conn,$sql_notif);
 
 						header('Location: index.php?r=faculty/IPCRfaculty&a=1');
 

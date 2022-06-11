@@ -38,7 +38,7 @@
 		{
 			header('Location: index.php?r=administrator/IPCRcreatejantojune&m='.$m.'&y='.$y.'&mess=3');
 		} else {
-			header('Location: index.php?r=administrator/IPCRcreatejultodecm&m='.$m.'&y='.$y.'&mess=3');
+			header('Location: index.php?r=administrator/IPCRcreatejultodec&m='.$m.'&y='.$y.'&mess=3');
 		}
 	}
 	mysqli_close($conn);

@@ -27,7 +27,7 @@ if(isset($_POST['view']))
                      <a href="index.php?r=administrator/IPCRratingsremarks" style="color:black; padding-right: 20px;">
                       <strong>'.$row['subject'].'</strong><br/>
                       <small><em>'.$row['text'].'</em></small><br/>
-                      <strong><small><em>Resubmitted on: </em></small></strong>
+                      <strong><small><em>Passed on: </em></small></strong>
                       <small><em>'.$row['date'].' </em></small>
                       <small><em>'.$row['time'].'</em></small>
                      </a>

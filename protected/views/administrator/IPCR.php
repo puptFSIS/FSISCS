@@ -169,6 +169,11 @@ footer {
     overflow: auto;
 }
 
+/*.dropdown-menu {
+  background: #888; 
+}*/
+
+
 /*.no-bull {
     list-style-type: none;
 }

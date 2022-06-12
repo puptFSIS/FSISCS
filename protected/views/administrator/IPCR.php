@@ -170,6 +170,9 @@ footer {
     width: 350px;
 }
 
+/*footer {
+    position: absolute;
+}*/
 /*.dropdown-menu {
   background: #888; 
 }*/
@@ -235,7 +238,7 @@ footer {
 <iframe width="600" height="375" src="//www.youtube.com/embed/4DbzZEG_dKA" frameborder="0" allowfullscreen></iframe>
 </section>
 <!-- Scripts -->
-<script src="js/preventresize.js"></script> <!-- prevent Screen Resize -->
+ <!-- prevent Screen Resize -->
 <script src="js/notification.js"></script> <!-- For notification -->
 
 </div>

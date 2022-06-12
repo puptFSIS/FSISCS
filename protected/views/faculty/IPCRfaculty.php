@@ -188,6 +188,16 @@ if(isset($_SESSION['user'])) {
                 <div class="flash-data-already" data-flashdata1="<?= $_GET['b']; ?>"></div>
             <?php endif; ?>
 
+            <!-- <input type="hidden" id="refreshed" value="no">
+            <script type="text/javascript">
+
+                   onload=function(){
+                       var e=document.getElementById("refreshed");
+                       if(e.value=="no")e.value="yes";
+                       else{e.value="no";location.reload();}
+                   }
+
+            </script> -->
             <script>
                 const flashdata = $('.flash-data-submit').data('flashdata')
                     if (flashdata) {

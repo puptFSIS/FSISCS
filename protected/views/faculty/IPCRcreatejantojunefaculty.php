@@ -186,6 +186,11 @@ if(isset($_SESSION['user'])) {
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_array($result);
     $dline = $row['dline_date'];
+
+    $query = "SELECT status FROM tbl_ipcrstatus WHERE month = '$m' AND year = '$y' AND fcode = '$fcode'";
+    $res = mysqli_query($conn,$query);
+    $row = mysqli_fetch_array($res);
+    $status = $row['status'];
     
  ?>
 
@@ -310,7 +315,7 @@ if(isset($_SESSION['user'])) {
                     </td>
 
                 <td style="text-align: center;">
-                    <?php if($rowsp['adminApproval'] == "Approved"): ?>
+                    <?php if($rowsp['adminApproval'] == "Approved" || $status == "Approved" || $status == "Submitted"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowsp['idaccomp'] == "" || $rowsp['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>
@@ -436,7 +441,7 @@ if(isset($_SESSION['user'])) {
 
                     </td>
                     <td style="text-align: center;">
-                       <?php if($rowcf['adminApproval'] == "Approved"): ?>
+                       <?php if($rowcf['adminApproval'] == "Approved" || $status == "Approved" || $status == "Submitted"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowcf['idaccomp'] == "" || $rowcf['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>
@@ -550,7 +555,7 @@ if(isset($_SESSION['user'])) {
                     </td>
                 
                     <td style="text-align: center;">
-                    <?php if($rowsf['adminApproval'] == "Approved"): ?>
+                    <?php if($rowsf['adminApproval'] == "Approved" || $status == "Approved" || $status == "Submitted"): ?>
                             <button class="disabled" style="width:95px">Add Proof</button>
                         <?php if ($rowsf['idaccomp'] == "" || $rowsf['idaccomp'] == NULL): ?>
                             <button class="disabled" style="width:95px">Add Accomp.</button>

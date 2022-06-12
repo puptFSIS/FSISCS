@@ -1101,14 +1101,32 @@ function restore_dtr()
 }
 function resubmit_dtr()
 {
+	Swal.fire({
+			title: 'Are you sure?',
+			icon: 'warning',
+			showCancelButton: true,
+			showConfirmButton: true,
+			confirmButtonColor: '#3085d6',
+			cancelButtonColor: '#d33',
+			confirmButtonText: 'Yes, Resubmit it!'
+	}).then((result) => {
+		if (result.isConfirmed) 
 	$.ajax({
 		      type: "POST",
 		      url:    "<?php echo Yii::app()->createUrl('administrator/Resubmit'); ?>",
 		      data:  {val1:checked},
 		      dataType:"JSON",
 		      success:function(data){
-		      	alert("dtr resubmitted successfully");
-		      	window.location.reload();
+				Swal.fire({
+					  title: 'Your File/s has been Resubmitted!',
+						  text: 'Redirecting...',
+						  icon: 'success',
+						  showConfirmButton:false, 
+						  showCancelButton:false,
+						  timer:1000
+					}).then(() => {
+						window.location.reload();
+					})	
 		      },
 		      error:function(data)
 		      {
@@ -1116,6 +1134,7 @@ function resubmit_dtr()
 
 		      }
 		  });
+	})
 }
 
 // resubmitbtn.onclick = function() 

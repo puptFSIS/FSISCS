@@ -235,14 +235,21 @@
 
 					<?php 
 
+					
+
 					$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
 					FROM tbl_evaluationfaculty
 					INNER JOIN tbl_schedule
 					ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
 					LEFT JOIN tbl_dtr 
 					ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-					WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` = 1";
+					WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`hap_approval_status` >=0";
 					
+					// $sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName` From tbl_evaluationfaculty
+					// INNER JOIN tbl_dtr ON tbl_evaluationfaculty.`FCode` = tbl_dtr.`FCode`
+					// WHERE tbl_dtr.`hap_approval_status` >= 0";
+
+					// $sql = "SELECT DISTINCT `FCode`, `FName`, `MName`, `LName` FROM tbl_dtr WHERE `status` = 1";
 					 $result=mysqli_query($conn,$sql);
 
 					 ?>
@@ -337,34 +344,39 @@
 
 					<?php 
 
-						$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`,tbl_evaluationfaculty.`Email`
-						FROM tbl_evaluationfaculty
-						INNER JOIN tbl_schedule
-						ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
-						LEFT JOIN tbl_dtr 
-						ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-						WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` = ''";
+					// $sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
+					// FROM tbl_evaluationfaculty
+					// INNER JOIN tbl_schedule
+					// ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+					// WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022'";
 
-						// INNER JOIN tbl_schedule
-						// ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
-						// LEFT JOIN tbl_dtr 
-						// ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-						// WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` = ''";
+						$sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName` ,tbl_evaluationfaculty.`Email`
+					FROM tbl_evaluationfaculty
+					INNER JOIN tbl_schedule
+					ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+					LEFT JOIN tbl_dtr 
+					ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
+					WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`hap_approval_status` is null";
 
-
-						// $sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`
+						// $sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName`,tbl_evaluationfaculty.`Email`
 						// FROM tbl_evaluationfaculty
 						// INNER JOIN tbl_schedule
 						// ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
-						// INNER JOIN tbl_dtr 
-						// ON tbl_dtr.`FCode` = tbl_schedule.`sprof`
-						// WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_dtr.`status` != 1";
+						// LEFT JOIN tbl_dtr ON tbl_schedule.`sprof` = tbl_dtr.`FCode`
+						// WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022' and tbl_schedule.`sprof` IS NULL";
 
+						// $sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`, tbl_evaluationfaculty.`FName`, tbl_evaluationfaculty.`LName`, tbl_evaluationfaculty.`MName` From tbl_evaluationfaculty
+						// INNER JOIN tbl_dtr ON tbl_evaluationfaculty.`FCode` = tbl_dtr.`FCode`
+						// INNER JOIN tbl_schedule ON 
+						// WHERE tbl_dtr.`status` != 1";
 						 $result=mysqli_query($conn,$sql);
-						 if(empty($result))
-						 {
-						 	echo "No Records Found.";
-						 }
+
+						 // $result=mysqli_query($conn,$sql);
+						 // if(empty($result))
+						 // {
+						 // 	echo "No Records Found.";
+						 // }
+
 						
 
 
@@ -438,13 +450,21 @@
 
 							}
 							// $email_container = $newresult['Email'];
+							if(empty($newresult['Email']))
+							{
+								echo "No Data Available";
+							}
+							else
+							{
 							$email = $newresult['Email'];
 							
-							echo "<a onclick='on_send_email(".$email.")' ><input id='send_email_id' type='button' name='send_email' value='Send Email Reminder'/></a> 
+							echo "<input id='send_email_id' type='button' name='send_email' value='Send Email Reminder' onclick='on_send_email(".$email.")'/>
 									
 									<br>";
 
 							echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>DID NOT SUBMIT DTR</h3>";
+							}
+							
 
 							 ?>
 
@@ -573,35 +593,36 @@
 
     function on_send_email(email)
     {
-  //   	if(email)
-  //   	{
-	 //    Swal.fire({
-		//   title: 'Are you sure?',
-		//   text: "You won't be able to revert this!",
-		//   icon: 'warning',
-		//   showCancelButton: true,
-		//   confirmButtonColor: '#3085d6',
-		//   cancelButtonColor: '#d33',
-		//   confirmButtonText: '<a href="index.php?r=administrator/Dtr_send_email&email=".$email."">Confirm Send email</a>'
-		// }).then((result) => {
-		//   if (result.isConfirmed) {
-		//     Swal.fire(
-		// 				   'EMAIL sent Successfully',
-		// 					  'Redirecting...',
-		// 					   'success'
+    	if(email)
+    	{
+	    Swal.fire({
+		  title: 'Are you sure?',
+		  text: "You won't be able to revert this!",
+		  icon: 'warning',
+		  showCancelButton: true,
+		  confirmButtonColor: '#3085d6',
+		  cancelButtonColor: '#d33',
+		  confirmButtonText: '<a href="index.php?r=administrator/Dtr_send_email&email=".$email."">Confirm Send email</a>'
+		}).then((result) => 
+		{
+		  if (result.isConfirmed) {
+		    Swal.fire(
+						   'EMAIL sent Successfully',
+							  'Redirecting...',
+							   'success'
 							  
-		// 				)	
-		//   		}
-		// 	})
-		// }
-		// else{
-		// 		Swal.fire({
-		// 				 title: 'Email is empty!',
-		// 				  icon: 'error'
-		// 				})
-		// 	}
+						)	
+		  		}
+			})
+		}
+		else{
+				Swal.fire({
+						 title: 'Email is empty!',
+						  icon: 'error'
+						})
+			}
 
-		console.log(email);
+		// console.log(email);
 			
     }
 

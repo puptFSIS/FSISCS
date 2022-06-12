@@ -196,7 +196,60 @@ if(isset($_SESSION['user'])) {
             include("getPersonalInformation.php");
             include("getRole.php");
             include("dtr_menu.php");
-            include("dtr_form.php");
+            // include("dtr_form.php");
+             // CHECKER IF THE LOGGED IN USER HAS ALREADY CREATED A SCHEDULE, IF NOT DTR FORM WILL NOT BE INCLUDED
+
+            // echo $EmpID;
+            $status = "has_sched";
+            $counter = 0;
+            $sql = "SELECT DISTINCT tbl_evaluationfaculty.`FCode`
+                    FROM tbl_evaluationfaculty
+                    INNER JOIN tbl_schedule
+                    ON tbl_evaluationfaculty.`FCode` = tbl_schedule.`sprof`
+                    WHERE tbl_schedule.`sem` = 2 and tbl_schedule.`schoolYear` = '2021-2022'";
+                     $result=mysqli_query($conn,$sql);
+                    $row = mysqli_fetch_array($result);
+                    $catcher = $row['FCode'];
+
+
+                    foreach($result as $var)
+                    {
+                        
+                        // if($var['FCode'] == $EmpID)
+                        if(isset($var['FCode']) && $var['FCode'] === $EmpID)
+                        {
+                            // $status = "has_sched"; 
+                            // echo $status;
+                            $counter++;
+
+                        }
+                        else
+                        {
+                            // $status = "has_no_sched";
+                            // echo $var['FCode'],"     ";
+                            // echo $status;
+                            // echo $EmpID;
+                            // echo "count";
+                            
+                        }
+                    }
+                if ($counter >= 1)
+                {
+                    include("dtr_form.php");
+
+                    // include("dtr_form.php");
+
+                    
+                }
+                else
+                {
+                     echo "<h1>No schedule created yet. Create schedule at scheduling tab</h1>";
+                    
+                     // echo "<h1>$EmpID</h1>";
+                }
+
+
+            // END OF CHECKER
             }
             if($preview_value===1)
             {

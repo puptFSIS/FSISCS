@@ -150,11 +150,11 @@ if(isset($_SESSION['user'])) {
 }
 
 footer {
-   position: fixed;
+   position: absolute;
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: red;
+   background-color: black;
    color: white;
    text-align: center;
 }

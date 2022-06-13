@@ -461,7 +461,7 @@ if($preview_value===0)
    
     <ul class="widget-list categories-list">
     <li><a style='color:black' href='index.php?r=administrator/daily_time_record'>DTR Generator </button></a></li>
-    <li><a href="index.php?r=administrator/DtrTable">Created DTRs</a></li>
+    <li><a style='color:black' href="index.php?r=administrator/DtrTable">Created DTRs</a></li>
     
     <li><a style='color:black' href='index.php?r=administrator/HAPDtrTable'>DTR Validation</button></a></li>
     <li><a style='color:black' href='index.php?r=administrator/HAP_Secretary_table'>Generate end of the Month</a></li>

@@ -175,7 +175,7 @@ footer {
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: #4d0000;
+   background-color: black;
    color: white;
    text-align: center;
 }

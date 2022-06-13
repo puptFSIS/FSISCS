@@ -165,7 +165,7 @@ footer {
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 <meta charset="UTF-8"></head>
-<body style="background-color: Black;">
+<body style="background-color: ghostwhite;">
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->
@@ -635,7 +635,7 @@ footer {
 <footer id=page-footer>
     <div class=container-aligner>
         <section id=footer-left>
-            © Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Team Apex | PUP Taguig</a> - All Rights Reserved.
+            © Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0">Team Apex | PUP Taguig</a> - All Rights Reserved.
         </section>
     </div>
 </footer>

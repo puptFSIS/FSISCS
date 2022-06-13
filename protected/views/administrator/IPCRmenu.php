@@ -45,18 +45,6 @@
 	<a href='index.php?r=administrator/IPCRemailnotif' title="Send Individual Email For Faculty">Send IPCR Email Notification</a>
 </li>
 
-<!-- <details style = "padding-top: 6px; margin-left: 5px; margin-bottom: 5px;">
-    <summary style="font-family: Helvetica;font-size: 12px;color: black;">Reports</summary>
-    <li>
-   <a href="index.php?r=administrator/IPCRreport1" title="Generate Report (PDF)">Generate IPCR (PDF)</a>
-    </li>
-
-    <li>
-    <a href="index.php?r=administrator/IPCRinterpolview" title="Generate Report (Excel)">Generate Interpolation (Excel)</a> 
-    </li>
-</details> -->
-
-
 <div class="dropdown">
   <li class="dropbtn">Reports</li>
   <div class="dropdown-content">
@@ -64,18 +52,3 @@
     <a href="index.php?r=administrator/IPCRinterpolview" title="Generate Report (Excel)">Generate Interpolation (Excel)</a>
   </div>
 </div>
-
-
-
-<!-- <li>
-	<a href="index.php?r=administrator/IPCRreport1" title="Generate Report (PDF)">Generate IPCR (PDF)</a>
-</li>
-
-<li>
-	<a href="index.php?r=administrator/IPCRinterpolview" title="Generate Report (Excel)">Generate Interpolation (Excel)</a>
-</li>  -->
-
- <!-- <li>
-	<a href='#' title="IPCR (PDF) and Interpolation (Excel)">Generate Report</a>
-</li> -->
-

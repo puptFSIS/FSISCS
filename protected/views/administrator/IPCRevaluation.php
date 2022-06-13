@@ -166,7 +166,7 @@ input
 }
 
 footer {
-    position: fixed;
+    position: absolute;
    left: 0;
    bottom: 0;
    width: 100%;
@@ -182,7 +182,7 @@ footer {
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 
 <meta charset="UTF-8"></head>
-<body class='page-media page-sidebar-right' style="background-color:blue">
+<body class='page-media page-sidebar-right' style="background-color:ghostwhite;">
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->
@@ -191,11 +191,9 @@ footer {
 
 
 <?php include("headerMenu.php");?>
-<br>
-<br>
 <!-- End - Page title -->
 <!-- Page body content -->
-<!-- <section id=page-body-content> -->
+<section id=page-body-content>
 <div id=page-body-content-inner>
 <!-- Page content -->
 <div id=page-content>
@@ -486,40 +484,11 @@ $result = mysqli_query($conn,$query);
 
 <!-- Page footer -->
 <footer id=page-footer>
-<div class=container-aligner>
-<!-- Footer left -->
-<section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Team Apex | PUP Taguig</a> - All Rights Reserved.
-</section>
-<!-- End - Footer left -->
-<!-- Footer right -->
-<section id=footer-right>
-<ul class=footer-navigation>
-<li>
-<a href='http://www.puptaguig.org' title=Home>Home</a>
-</li>
-<li>
-<a href='index.php?r=site/about' title=About>About</a>
-</li>
-<li>
-<a href='index.php?r=site/contact' title=Contacts>Contacts</a>
-</li>
-</ul>
-</section>
-<!-- End - Footer right -->
-</div>
+    <div class=container-aligner>
+        <section id=footer-left>
+            © Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dev Team">Team Apex | PUP Taguig</a> - All Rights Reserved.
+        </section>
+    </div>
 </footer>
-<!-- End - Page footer -->
-<!-- Theme backgrounds -->
-<div id=theme-backgrounds>
-
-<img alt='Asset 4' data-color='#D64333' src='assets/backgrounds/4.jpg.pagespeed.ce.AV4Gchw-qN.jpg' width=1600 height=1064 />
-
-</div>
-<!-- End - Theme backgrounds -->
-<link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
-
-<!-- Scripts -->
-<script id=js-dispatcher src='scripts/scripts.js'></script>
 </body>
 </html>

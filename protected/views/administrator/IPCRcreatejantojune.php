@@ -109,13 +109,23 @@ if(isset($_SESSION['user'])) {
 {
     display: inline;
 }
+
+footer {
+    position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 <meta charset="UTF-8"></head>
-<body style="background-color: Black;">
+<body style="background-color: ghostwhite;">
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->
@@ -508,18 +518,12 @@ if(isset($_SESSION['user'])) {
                     }  
                 </script>
 
-
-<!-- End - Page footer -->
-<!-- Theme backgrounds -->
-<div id=theme-backgrounds>
-
-<img alt='Asset 4' data-color='#D64333' src='assets/backgrounds/4.jpg.pagespeed.ce.AV4Gchw-qN.jpg' width=1600 height=1064 />
-
-</div>
-<!-- End - Theme backgrounds -->
-<link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
-
-<!-- Scripts -->
-<script id=js-dispatcher src='scripts/scripts.js'></script>
+<footer id=page-footer>
+    <div class=container-aligner>
+        <section id=footer-left>
+            © Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dev Team">Team Apex | PUP Taguig</a> - All Rights Reserved.
+        </section>
+    </div>
+</footer>
 </body>
 </html>

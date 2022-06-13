@@ -48,6 +48,9 @@ if(isset($_SESSION['user'])) {
     
 #page-title
 {
+    width: 100%;
+
+
     background-color: black;
     padding: 5px 5px 5px;
     height: 50px;
@@ -251,6 +254,20 @@ if(isset($_SESSION['user'])) {
     display: grid;
     place-content: center;
 }
+
+footer {
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+#page-body-content {
+    position: inherit;
+}
 </style>
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
@@ -258,7 +275,7 @@ if(isset($_SESSION['user'])) {
 
 
 <meta charset="UTF-8"></head>
-<body style="background-color: black">
+<body style="background-color: white">
 <!-- <div class="loader">
     <div></div>
 </div>
@@ -271,6 +288,7 @@ if(isset($_SESSION['user'])) {
 
         <!-- Page title -->
         <?php include("headerMenu.php");?>
+        
         <!-- End - Page title -->
         <!-- Page body content -->
         <section id=page-body-content>
@@ -704,7 +722,7 @@ if(isset($_SESSION['user'])) {
         </div>
         </div>
                     <!-- prevent page resize -->
-                    <script src="js/preventresize.js"></script>
+                    <!-- <script src="js/preventresize.js"></script> -->
 
 
                     <!-- Sweet Alert -->
@@ -788,7 +806,7 @@ if(isset($_SESSION['user'])) {
 
                     <!--  -->
 
-        </section>
+        <!-- </section> -->
         <!-- Page footer -->
         <footer id=page-footer>
             <div class=container-aligner>

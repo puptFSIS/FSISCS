@@ -16,6 +16,9 @@ $(document).ready(function(){
                 }
             }
         });
+        // setInterval(function(){ 
+        //   load_unseen_notification(); 
+        //  }, 500);
     } 
     load_unseen_notification(); 
 

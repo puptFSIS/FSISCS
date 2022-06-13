@@ -8449,6 +8449,7 @@ HTTP_REFERER=http://localhost/FSISCS/index.php?r=faculty/IPCRcreatejantojunefacu
 ---
 >>>>>>> Stashed changes
 >>>>>>> 2b715c7fc1d9d6222b859bdd88d104720e457f85
+<<<<<<< Updated upstream
 2022/06/12 03:08:14 [error] [php] Undefined index: Email (C:\xampp\htdocs\FSISCS\protected\views\administrator\list_of_faculty_members.php:396)
 Stack trace:
 #0 C:\xampp\htdocs\FSISCS\protected\views\administrator\daily_time_record.php(241): include()
@@ -9016,3 +9017,63 @@ in C:\xampp\htdocs\FSISCS\index.php (13)
 2022/06/12 07:58:20 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1362)
 in C:\xampp\htdocs\FSISCS\index.php (13)
+=======
+2022/06/12 17:18:10 [error] [php] is_nan() expects parameter 1 to be float, string given (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\processRating.php:18)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\processRating.php(18): is_nan()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3119): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionprocessRating()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processRating
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\processRating.php (18)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3119)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/12 17:20:07 [error] [php] Undefined variable: m (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\processRating.php:20)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3119): AdministratorController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionprocessRating()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processRating
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\processRating.php (20)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3119)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/12 17:20:39 [error] [php] Undefined variable: query_result (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\processRating.php:26)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3119): AdministratorController->render()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionprocessRating()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processRating
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\processRating.php (26)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3119)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+>>>>>>> Stashed changes

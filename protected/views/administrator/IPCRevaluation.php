@@ -28,6 +28,10 @@ if(isset($_SESSION['user'])) {
 <!-- Page title -->
 <title>IPCR | Evaluation</title>
 
+<!--Script of Sweet alert-->
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+
 <!-- Script for Modal -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
@@ -148,8 +152,28 @@ input
     box-shadow: -31px 25px 9px -8px rgba(0,0,0,0.1);
 }
 
+.inp {
+    width: 300px;
+    font-size: 18px;
+}
 
+#error1, #error2, #error3, #error4 {
+    position: absolute;
+}
 
+#1{
+    background-color: blue;
+}
+
+footer {
+    position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -158,7 +182,7 @@ input
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 
 <meta charset="UTF-8"></head>
-<body class='page-media page-sidebar-right' style="background-color: Black;">
+<body class='page-media page-sidebar-right' style="background-color:blue">
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->
@@ -167,9 +191,11 @@ input
 
 
 <?php include("headerMenu.php");?>
+<br>
+<br>
 <!-- End - Page title -->
 <!-- Page body content -->
-<section id=page-body-content>
+<!-- <section id=page-body-content> -->
 <div id=page-body-content-inner>
 <!-- Page content -->
 <div id=page-content>
@@ -325,19 +351,27 @@ $result = mysqli_query($conn,$query);
                         <div class="col-md-5">
                             <div class="form-group">
                                 <label>Quality (Q1)</label>
-                                <input type="text" name="quality" min="1" max="5" id="Quality"  onmousewheel="return false" onkeyup="getAverage();" class="form-control" maxlength="1" />
+                                <input class="inp" type="text" name="quality" min="1" max="5" id="Quality"  onmousewheel="return false" onkeyup="getAverage();" class="form-control" maxlength="1">
+                                <div id="error1" style="color:red;" onkeyup="getAverage();"><small></small></div>
+                                <br>
                             </div>
                             <div class="form-group">
                                 <label>Efficiency (E2)</label>
-                                <input type="text" name="efficiency" min="1" max="5" id="Efficiency" onmousewheel="return false" onkeyup="getAverage();" class="form-control" maxlength="1" />
+                                <input class="inp" type="text" name="efficiency" min="1" max="5" id="Efficiency" onmousewheel="return false" onkeyup="getAverage();" class="form-control" maxlength="1" />
+                                <div id="error2" style="color:red;" onkeyup="getAverage();"><small></small></div>
+                                <br>
                             </div>
                             <div class="form-group">
                                 <label>Timeliness (T3)</label>
-                                <input type="text" name="timeliness" min="1" max="5" id="Timeliness" onmousewheel="return false" onkeyup="getAverage();" class="form-control" maxlength="1"/>
+                                <input class="inp" type="text" name="timeliness" min="1" max="5" id="Timeliness" onmousewheel="return false" onkeyup="getAverage();" class="form-control" maxlength="1"/>
+                                <div id="error3" style="color:red;" onkeyup="getAverage();"><small></small></div>
+                                <br>
                             </div>
                             <div class="form-group">
                                 <label>Average (A4)</label>
-                                <input type="text" name="average" class="form-control" id="Average" readonly="readonly"/>
+                                <input class="inp" type="text" name="average" class="form-control" id="Average" readonly="readonly"/>
+                                <div id="error4" style="color:red;"><small></small></div>
+                                <br>
                             </div>
                         </div>
                     </div>
@@ -386,16 +420,52 @@ $result = mysqli_query($conn,$query);
 <?php 
     include('IPCRapproval.php');
 ?>
+        <?php if(isset($_GET['mess'])) : ?>
+
+            <?php if($_GET['mess'] == 1) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
+
+            <?php if($_GET['mess'] == 2) : ?>
+                <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+            <?php endif; ?>
+
+        <?php endif; ?>
 
         <script src="js/ratingcomputation.js"></script>
-        <script src="js/preventresize.js"></script>
+        <!-- <script src="js/preventresize.js"></script> -->
         <script src="ckeditor4/ckeditor.js"></script>
         <script>
             CKEDITOR.replace('remarks');
             CKEDITOR.replace('accomplishment');
             CKEDITOR.replace('feedback');
         </script>
+        <script>
+            flashdata = $('.flash-data').data('flashdata')
+                    if (flashdata == 1) {
+                        Swal.fire(
+                            'One of the fields is Not a number',
+                            'Please revise',
+                            'warning'
+                        )
+                    } 
 
+                    if (flashdata == 2) {
+                        Swal.fire(
+                            'Succesfully Added Rating',
+                            'Press ok to continue',
+                            'success'
+                        )
+                    } 
+
+                    if (flashdata == 3) {
+                        Swal.fire(
+                            'Fields are empty',
+                            'saving unsuccessfully',
+                            'info'
+                        )
+                    } 
+        </script>
 
 </ul>
 

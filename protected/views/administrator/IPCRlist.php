@@ -36,7 +36,7 @@ if(isset($_SESSION['user'])) {
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMGSSL{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
 .cssWLGradientIMG
-{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:repeat-x;top:0;height:105px;}
+{BACKGROUND-IMAGE: url(images/hd_tm1.jpg);BACKGROUND-REPEAT:space;top:0;height:105px;}
     
 #page-title
 {
@@ -273,13 +273,27 @@ if(isset($_SESSION['user'])) {
   border-top: 3px solid #d19c15;
 }
 
+
+footer {
+    position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+ .page-sidebar-right {
+ 
+ }
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 <meta charset="UTF-8"></head>
-<body class='page-media page-sidebar-right' style="background-color: Black;" >
+<body class=' page-sidebar-right' style="background-color: black;" >
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->
@@ -579,7 +593,7 @@ if(isset($_SESSION['user'])) {
 
 
             
-                <script src="js/preventresize.js"></script>
+                <!-- <script src="js/preventresize.js"></script> -->
                 <!-- Script function for searching -->
                 <script>
                     

@@ -148,6 +148,16 @@ if(isset($_SESSION['user'])) {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: red;
+   color: white;
+   text-align: center;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -623,40 +633,11 @@ if(isset($_SESSION['user'])) {
 </section>
 
 <footer id=page-footer>
-<div class=container-aligner>
-<!-- Footer left -->
-<section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
-</section>
-<!-- End - Footer left -->
-<!-- Footer right -->
-<section id=footer-right>
-<ul class=footer-navigation>
-<li>
-<a href='http://www.pup-taguig.net' title=Home>Home</a>
-</li>
-<li>
-<a href='index.php?r=site/about' title=About>About</a>
-</li>
-<li>
-<a href='index.php?r=site/contact' title=Contacts>Contacts</a>
-</li>
-</ul>
-</section>
-<!-- End - Footer right -->
-</div>
+    <div class=container-aligner>
+        <section id=footer-left>
+            © Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Team Apex | PUP Taguig</a> - All Rights Reserved.
+        </section>
+    </div>
 </footer>
-<!-- End - Page footer -->
-<!-- Theme backgrounds -->
-<div id=theme-backgrounds>
-
-<img alt='Asset 4' data-color='#D64333' src='assets/backgrounds/4.jpg.pagespeed.ce.AV4Gchw-qN.jpg' width=1600 height=1064 />
-
-</div>
-<!-- End - Theme backgrounds -->
-<link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
-
-<!-- Scripts -->
-<script id=js-dispatcher src='scripts/scripts.js'></script>
 </body>
 </html>

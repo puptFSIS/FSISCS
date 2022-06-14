@@ -21,9 +21,6 @@
 
 
 
-
-
-
 	/*      for switchable tab       */
 
 
@@ -450,12 +447,7 @@
 
 							}
 							// $email_container = $newresult['Email'];
-							if(empty($newresult['Email']))
-							{
-								echo "No Data Available";
-							}
-							else
-							{
+							
 							$email = $newresult['Email'];
 							
 							echo "<input id='send_email_id' type='button' name='send_email' value='Send Email Reminder' onclick='on_send_email(".$email.")'/>
@@ -463,8 +455,7 @@
 									<br>";
 
 							echo "<h3 style='border: 2px solid black; background-color: orange; text-align: center; color: black'; class='status_tab_apr'>DID NOT SUBMIT DTR</h3>";
-							}
-							
+
 
 							 ?>
 

@@ -100,7 +100,7 @@ class PDF extends FPDF
 
     }
 
-    function directorHR($loadtype,$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4)
+    function directorHR($loadtype,$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4,$paragraph_text_reg,$paragraph_text_pt,$paragraph_text_ts)
     {
         $hr_name = $name_of_sender;
         $short_hr_name = $dear;
@@ -143,12 +143,15 @@ class PDF extends FPDF
        //  TEXTS !!!
         // for regular
         $regular_text1 = $paragraph_text;
+        $reg_text = $paragraph_text_reg;
 
         // for parttime
         $pt_text1 = $paragraph_text2;
+        $pt_text = $paragraph_text_pt;
 
         // for TS
         $ts_text1 = $paragraph_text3;
+        $ts_text = $paragraph_text_ts;
 
         //for OT
         $ot_text1 = $paragraph_text4;
@@ -162,6 +165,7 @@ class PDF extends FPDF
             $this->SetFont('Times','',10);
             // Output justified text
             $this->MultiCell(0,5,$regular_text1,0,'J');
+            $this->MultiCell(0,5,$reg_text,0,'J');
             // Line break
             $this->Ln();
         }
@@ -173,6 +177,7 @@ class PDF extends FPDF
             $this->SetFont('Times','',10);
             // Output justified text
             $this->MultiCell(0,5,$pt_text1,0,'J');
+            $this->MultiCell(0,5,$pt_text,0,'J');
             // Line break
             $this->Ln();
 
@@ -185,6 +190,7 @@ class PDF extends FPDF
            $this->SetFont('Times','',10);
             // Output justified text
             $this->MultiCell(0,5,$ts_text1,0,'J');
+            $this->MultiCell(0,5,$ts_text,0,'J');
             // Line break
             $this->Ln();
 
@@ -212,7 +218,7 @@ class PDF extends FPDF
 
     }
 
-   function loadtype_knower($month_input,$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4)
+   function loadtype_knower($month_input,$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4,$paragraph_text_reg,$paragraph_text_pt,$paragraph_text_ts)
    {
     
     require('config.php');
@@ -241,7 +247,7 @@ class PDF extends FPDF
             $this->AddPage();
             $this->Header();
             $this->date($month_input);
-            $this->directorHR($temporary_list[$q],$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4);
+            $this->directorHR($temporary_list[$q],$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4,$paragraph_text_reg,$paragraph_text_pt,$paragraph_text_ts);
             
             // for($i = 0; $i<$month_date;$i++)
             // {
@@ -343,6 +349,6 @@ class PDF extends FPDF
 
 $pdf = new PDF('P','mm','legal');
 $pdf->SetFont('Times','B','10');
-$pdf->loadtype_knower($month_input,$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4);
+$pdf->loadtype_knower($month_input,$name_of_sender,$position_of_sender,$department_name,$dear,$paragraph_text,$paragraph_text2,$paragraph_text3,$paragraph_text4,$paragraph_text_reg,$paragraph_text_pt,$paragraph_text_ts);
 $pdf->Output();
 ?>

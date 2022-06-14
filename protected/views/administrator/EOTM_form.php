@@ -613,7 +613,7 @@
 			 			
 					</div>
 					
-					<div id="paragraph_text" class="listOfFacultyMembers" contentEditable> 
+					<div id="paragraph_text_reg" class="listOfFacultyMembers" contentEditable> 
 
 					 <ul>
 
@@ -723,19 +723,19 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input_temp" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
-						<input class="hrmd no_box" id="name_of_sender_temp" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
-			 			<input id="position_of_sender_temp" type="" value="Director" oninput="date_onchange(this.value,3)">
-						<input id="department_name_temp" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
-						<input id="dear_temp" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
+						<input class="date no_box" id="month_input_temp" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)" readonly>
+						<input class="hrmd no_box" id="name_of_sender_temp" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)" readonly>
+			 			<input id="position_of_sender_temp" type="" value="Director" oninput="date_onchange(this.value,3)" readonly>
+						<input id="department_name_temp" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)" readonly>
+						<input id="dear_temp" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)" readonly>
 						<br>
-						<div class="body_text" contentEditable id="paragraph_text" >
+						<div class="body_text" contentEditable id="paragraph_text2" >
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: '.$firstmonth.'-'.$lastmonth.'
 			 			</div>
 			 			
 					</div>
 					
-					<div id="paragraph_text2" class="listOfFacultyMembers" contentEditable> 
+					<div id="paragraph_text_pt" class="listOfFacultyMembers" contentEditable> 
 				
 					 <ul>';
 
@@ -841,11 +841,11 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input_ts" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)">
-						<input class="hrmd no_box" id="name_of_sender_ts" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)">
-			 			<input id="position_of_sender_ts" type="" value="Director" oninput="date_onchange(this.value,3)">
-						<input id="department_name_ts" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)">
-						<input id="dear_ts" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)">
+						<input class="date no_box" id="month_input_ts" type="" name="" value="'.$date.'" oninput="date_onchange(this.value,1)" readonly>
+						<input class="hrmd no_box" id="name_of_sender_ts" type="" name="" value="'.$hrmd.'" oninput="date_onchange(this.value,2)" readonly>
+			 			<input id="position_of_sender_ts" type="" value="Director" oninput="date_onchange(this.value,3)" readonly>
+						<input id="department_name_ts" type="" value="Human Resource Management Department" oninput="date_onchange(this.value,4)" readonly>
+						<input id="dear_ts" type="" value="Dear Atty. Sarum:" oninput="date_onchange(this.value,5)" readonly>
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text3" >
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of: '.$firstmonth.'-'.$lastmonth.'
@@ -853,7 +853,7 @@
 			 			
 					</div>
 					
-					<div id="paragraph_text3" class="listOfFacultyMembers" contentEditable> 
+					<div id="paragraph_text_ts" class="listOfFacultyMembers" contentEditable> 
 						
 			
 					 <ul>
@@ -908,11 +908,11 @@
 						<img src="assets/puplogo.png" class="pup_logo">
 						<br>
 						<p id="long_line">___________________________________________________________________________________</p>
-						<input class="date no_box" id="month_input_ot" type="" name="" value="'.$date.'" disabled>
-						<input class="hrmd no_box" id="name_of_sender_ot" type="" name="" value="'.$hrmd.'" disabled>
-						<input id="position_of_sender_ot" type="" value="Director" disabled>
-						<input id="department_name_ot" type="" value="Human Resource Management Department" disabled>
-						<input id="dear_ot" type="" value="Dear Atty. Sarum:" disabled>
+						<input class="date no_box" id="month_input_ot" type="" name="" value="'.$date.'" readonly>
+						<input class="hrmd no_box" id="name_of_sender_ot" type="" name="" value="'.$hrmd.'" readonly>
+						<input id="position_of_sender_ot" type="" value="Director" readonly>
+						<input id="department_name_ot" type="" value="Human Resource Management Department" readonly>
+						<input id="dear_ot" type="" value="Dear Atty. Sarum:" readonly>
 						<br>
 						<div class="body_text" contentEditable id="paragraph_text4">
 			 					This is to endorse the Daily Time Record '.$temporary_list[$q].' of the following FACULTY MEMBERS of PUP TAGUIG for the month of DATE:
@@ -955,21 +955,21 @@
 
 	function date_onchange(val,counter)
 	{
-		var input_date = document.getElementById('month_input2');
-		var input_date2 = document.getElementById('month_input3');
-		var input_date3 = document.getElementById('month_input4');
-		var sender_name = document.getElementById('name_of_sender2');
-		var sender_name2 = document.getElementById('name_of_sender3');
-		var sender_name3 = document.getElementById('name_of_sender4');
-		var position_of_sender = document.getElementById('position_of_sender2');
-		var position_of_sender2 = document.getElementById('position_of_sender3');
-		var position_of_sender3 = document.getElementById('position_of_sender4');
-		var department_name = document.getElementById('department_name2');
-		var department_name2 = document.getElementById('department_name3');
-		var department_name3 = document.getElementById('department_name4');
-		var dear = document.getElementById('dear2');
-		var dear2 = document.getElementById('dear3');
-		var dear3 = document.getElementById('dear4');
+		var input_date = document.getElementById('month_input_temp');
+		var input_date2 = document.getElementById('month_input_ts');
+		var input_date3 = document.getElementById('month_input_ot');
+		var sender_name = document.getElementById('name_of_sender_temp');
+		var sender_name2 = document.getElementById('name_of_sender_ts');
+		var sender_name3 = document.getElementById('name_of_sender_ot');
+		var position_of_sender = document.getElementById('position_of_sender_temp');
+		var position_of_sender2 = document.getElementById('position_of_sender_ts');
+		var position_of_sender3 = document.getElementById('position_of_sender_ot');
+		var department_name = document.getElementById('department_name_temp');
+		var department_name2 = document.getElementById('department_name_ts');
+		var department_name3 = document.getElementById('department_name_ot');
+		var dear = document.getElementById('dear_temp');
+		var dear2 = document.getElementById('dear_ts');
+		var dear3 = document.getElementById('dear_ot');
 
 
 		if(counter == 1)
@@ -1014,18 +1014,21 @@
 	function call_print()
 	{
 
-	var month_input = document.getElementById('month_input').value;
-	var name_of_sender = document.getElementById('name_of_sender').value;
-	var position_of_sender = document.getElementById('position_of_sender').value;
-	var department_name = document.getElementById('department_name').value;
-	var dear = document.getElementById('dear').value;
+	var month_input = document.getElementById('month_input_reg').value;
+	var name_of_sender = document.getElementById('name_of_sender_reg').value;
+	var position_of_sender = document.getElementById('position_of_sender_reg').value;
+	var department_name = document.getElementById('department_name_reg').value;
+	var dear = document.getElementById('dear_reg').value;
 	var paragraph_text = document.getElementById('paragraph_text').innerText;
 	var paragraph_text2 = document.getElementById('paragraph_text2').innerText;
 	var paragraph_text3 = document.getElementById('paragraph_text3').innerText;
 	var paragraph_text4 = document.getElementById('paragraph_text4').innerText;
+	var paragraph_text_reg = document.getElementById('paragraph_text_reg').innerText;
+	var paragraph_text_pt = document.getElementById('paragraph_text_pt').innerText;
+	var paragraph_text_ts = document.getElementById('paragraph_text_ts').innerText;
 	
 			
-	window.open("index.php?r=/administrator/Hap_generate_rd&val1="+month_input+"&val2="+name_of_sender+"&val3="+position_of_sender+"&val4="+department_name+"&val5="+dear+"&val6="+paragraph_text+"&val7="+paragraph_text2+"&val8="+paragraph_text3+"&val9="+paragraph_text4);
+	window.open("index.php?r=/administrator/Hap_generate_rd&val1="+month_input+"&val2="+name_of_sender+"&val3="+position_of_sender+"&val4="+department_name+"&val5="+dear+"&val6="+paragraph_text+"&val7="+paragraph_text2+"&val8="+paragraph_text3+"&val9="+paragraph_text4+"&val10="+paragraph_text_reg+"&val11="+paragraph_text_pt+"&val12="+paragraph_text_ts);
 				     
 				
 	}

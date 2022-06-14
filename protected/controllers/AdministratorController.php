@@ -3463,8 +3463,11 @@ class AdministratorController extends Controller
 		$val7 = $_GET['val7'];
 		$val8 = $_GET['val8'];
 		$val9 = $_GET['val9'];
+		$val10 = $_GET['val10'];
+		$val11 = $_GET['val11'];
+		$val12 = $_GET['val12'];
 
-		$this->render('receiving_document',array('month_input' => $val1,'name_of_sender' => $val2,'position_of_sender' => $val3,'department_name' => $val4,'dear' => $val5,'paragraph_text' => $val6,'paragraph_text2' => $val7,'paragraph_text3' => $val8,'paragraph_text4' => $val9));
+		$this->render('receiving_document',array('month_input' => $val1,'name_of_sender' => $val2,'position_of_sender' => $val3,'department_name' => $val4,'dear' => $val5,'paragraph_text' => $val6,'paragraph_text2' => $val7,'paragraph_text3' => $val8,'paragraph_text4' => $val9,'paragraph_text_reg' => $val10,'paragraph_text_pt' => $val11,'paragraph_text_ts' => $val12));
 	}
  
 

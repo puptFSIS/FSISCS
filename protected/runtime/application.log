@@ -9077,3 +9077,47 @@ in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\processRating.php (
 in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3119)
 in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
 >>>>>>> Stashed changes
+2022/06/14 06:05:56 [error] [php] Undefined variable: val10 (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3467)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHap_generate_rd()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=June%2014%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20REGULAR%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:%20April-November&val7=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20PART-TIME%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:%20April-November&val8=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20TS%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:%20April-November&val9=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20OT%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of%20DATE:&val10=Jacinto,%20Ma.%20Teresa%20C.Faranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.&val11Faranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.Jacinto,%20Ma.%20Teresa%20C.&val12Jacinto,%20Ma.%20Teresa%20C.Faranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3467)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/14 06:09:04 [error] [php] Undefined index: val11 (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3467)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHap_generate_rd()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=June%2014%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20REGULAR%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:%20April-November&val7=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20PART-TIME%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:%20April-November&val8=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20TS%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:%20April-November&val9=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20OT%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of%20DATE:&val10=Jacinto,%20Ma.%20Teresa%20C.Faranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.&val11Faranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.Jacinto,%20Ma.%20Teresa%20C.&val12Jacinto,%20Ma.%20Teresa%20C.Faranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3467)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/14 06:09:26 [error] [exception.ParseError] ParseError: syntax error, unexpected ',', expecting variable (T_VARIABLE) in C:\xampp\htdocs\FSISCS\protected\views\administrator\receiving_document.php:215
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): CBaseController->renderInternal('C:\\xampp\\htdocs...', Array, true)
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): CBaseController->renderFile('C:\\xampp\\htdocs...', Array, true)
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('receiving_docum...', Array, true)
+#3 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3470): CController->render('receiving_docum...', Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionHap_generate_rd()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#8 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('Hap_generate_rd')
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('/administrator/...')
+#10 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#11 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#12 {main}
+REQUEST_URI=/fsiscs/index.php?r=/administrator/Hap_generate_rd&val1=June%2014%202022&val2=Atty.%20MICHELLE%20KRISTINE%20D.%20SARAUM&val3=Director&val4=Human%20Resource%20Management%20Department&val5=Dear%20Atty.%20Sarum:&val6=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20REGULAR%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:%20April-November&val7=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20PART-TIME%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:%20April-November&val8=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20TS%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of:%20April-November&val9=This%20is%20to%20endorse%20the%20Daily%20Time%20Record%20OT%20of%20the%20following%20FACULTY%20MEMBERS%20of%20PUP%20TAGUIG%20for%20the%20month%20of%20DATE:&val10=Jacinto,%20Ma.%20Teresa%20C.Faranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.&val11=Faranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.Jacinto,%20Ma.%20Teresa%20C.&val12=Jacinto,%20Ma.%20Teresa%20C.Faranal,%20Fernan%20N.facultyfaranal,%20facultyfernan%20f.
+HTTP_REFERER=http://localhost/fsiscs/index.php?r=administrator/HAP_Secretary_table
+---

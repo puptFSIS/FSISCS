@@ -327,7 +327,7 @@ $pdf = new MYPDF('L','mm',array(325,210));
 $pdf->setPrintHeader(true);
 $pdf->setPrintFooter(true);
 $PDF_MARGIN_LEFT = 10;
-$PDF_MARGIN_TOP = 30;
+$PDF_MARGIN_TOP = 35;
 $pdf->SetMargins($PDF_MARGIN_LEFT, $PDF_MARGIN_TOP);
 $pdf->AddPage();
 $pdf->intro();

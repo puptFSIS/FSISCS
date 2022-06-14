@@ -33,20 +33,17 @@ class MYPDF extends TCPDF {
 
     public function intro() {
     	//get data which will be use on pdf
-		if(isset($_GET['fname'],$_GET['mname'],$_GET['sname'],$_GET['ye'])) {
-			$firstname = $_GET['fname'];
-			$middlename = $_GET['mname'];
-			$surname = $_GET['sname'];
-			$ye = $_GET['ye'];
+		if(isset($_GET['y'])) {
+			$y = $_GET['y'];
 		}
 		$this->SetY(10);
 		$this->SetFont('Times','B',12);
 		$this->Cell(300,40,'INDIVIDUAL PERFORMANCE COMMITMENT AND REVIEW (IPCR)',0,1,'C');
 		$this->SetY(30);
 		$this->SetFont('Times','',10.5);
-		$this->Cell(310,10,'I, '.$firstname." ".$middlename." ".$surname.' of the PUP TAGUIG CITY BRANCH commit to deliver and agree to be rated on the attainment of the following targets in accordance with the indicated ',0,1,'C');
+		$this->Cell(310,10,'I, ______________________ of the PUP TAGUIG CITY BRANCH commit to deliver and agree to be rated on the attainment of the following targets in accordance with the indicated ',0,1,'C');
 		$this->SetY(37);
-		$this->Cell(120,-2,'measures for the period -JANUARY to JUNE, '.$ye.'.',0,0,'C');
+		$this->Cell(120,-2,'measures for the period -JANUARY to JUNE, '.$y.'.',0,0,'C');
 		$this->Ln(25);
     }
 
@@ -119,12 +116,12 @@ class MYPDF extends TCPDF {
 				  <tr>
 				    <td style="width: 168px; font-size: 9px; height: 30px;">'.$item['output'].'</td>
 				    <td style="width: 198px; font-size: 9px;">'.$item['indicators'].'</td>
-				    <td style="width: 198px; font-size: 9px;">'.$item['accomplishment'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;">'.$item['rating_quality'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;">'.$item['rating_efficiency'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;">'.$item['rating_timeliness'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;">'.$item['rating_average'].'</td>
-				    <td style="width: 158.5px; text-align:center; font-size: 10px; height: 30px;">'.$item['remarks'].'</td>
+				    <td style="width: 198px; font-size: 9px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px; height: 30px;"></td>
+				    <td style="width: 158.5px; text-align:center; font-size: 10px; height: 30px;"></td>
 				  </tr>
 				</thead>
 			</table>
@@ -170,12 +167,12 @@ class MYPDF extends TCPDF {
 				  <tr>
 				    <td style="width: 168px; font-size: 9px; height: 30px;">'.$itemcf['output'].'</td>
 				    <td style="width: 198px; font-size: 9px;">'.$itemcf['indicators'].'</td>
-				    <td style="width: 198px; font-size: 9px;">'.$itemcf['accomplishment'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemcf['rating_quality'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemcf['rating_efficiency'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemcf['rating_timeliness'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemcf['rating_average'].'</td>
-				    <td style="width: 158.5px; text-align:center; font-size: 10px;">'.$itemcf['remarks'].'</td>
+				    <td style="width: 198px; font-size: 9px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px;"></td>
+				    <td style="width: 158.5px; text-align:center; font-size: 10px;"></td>
 				  </tr>
 				</thead>
 			</table>
@@ -221,12 +218,12 @@ class MYPDF extends TCPDF {
 				  <tr>
 				    <td style="width: 168px; font-size: 9px; height: 30px;">'.$itemsf['output'].'</td>
 				    <td style="width: 198px; font-size: 9px;">'.$itemsf['indicators'].'</td>
-				    <td style="width: 198px; font-size: 9px;">'.$itemsf['accomplishment'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemsf['rating_quality'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemsf['rating_efficiency'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemsf['rating_timeliness'].'</td>
-				    <td style="width: 35.4px; text-align:center; font-size: 10px;">'.$itemsf['rating_average'].'</td>
-				    <td style="width: 158.5px; text-align:center; font-size: 10px;">'.$itemsf['remarks'].'</td>
+				    <td style="width: 198px; font-size: 9px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px;"></td>
+				    <td style="width: 35.4px; text-align:center; font-size: 10px;"></td>
+				    <td style="width: 158.5px; text-align:center; font-size: 10px;"></td>
 				  </tr>
 				</thead>
 			</table>

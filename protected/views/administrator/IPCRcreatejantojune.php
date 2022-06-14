@@ -190,7 +190,14 @@ footer {
     </a>
 
     <button data-toggle="modal" data-target="#ModalCenter">Copy IPCR form</button>
-     
+    
+    <?php //include('getPersonalInformation.php'); ?>
+
+    <a href="index.php?r=administrator/IPCRform1copy<?php echo'&m='.$m.'&y='.$y.'&fcode';?>">
+        <button style="width: 100px;">Generate PDF</button>
+    </a>
+
+
     <!-- Modal for Copy IPCR -->
     <div class="modal fade" id="ModalCenter">
           <div class="modal-dialog modal-dialog-centered">

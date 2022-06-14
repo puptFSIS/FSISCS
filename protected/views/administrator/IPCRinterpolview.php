@@ -156,7 +156,7 @@ select {
 }
 
 footer {
-    position: fixed;
+    position: absolute;
    left: 0;
    bottom: 0;
    width: 100%;
@@ -164,6 +164,7 @@ footer {
    color: white;
    text-align: center;
 }
+
 
 </style>
 
@@ -222,7 +223,7 @@ footer {
             <option value="" disabled selected>----Choose Year----</option> 
         </select>
     </div>
-    <center><button type="submit" name="submit" style="width: 110px">Get Report List</button></center>
+    <center><button class="submit" type="submit" name="submit" style="width: 110px">Get Report List</button></center>
 </form>
 
 </section>

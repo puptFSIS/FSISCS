@@ -119,6 +119,7 @@ footer {
    color: white;
    text-align: center;
 }
+
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -187,7 +188,7 @@ footer {
     <a href="index.php?r=administrator/IPCRdeletefromtable<?php echo'&m='.$m.'&y='.$y.'';?>" class="btn-del">
         <button style="width: 130px;">Delete all from Table</button>
     </a>
-    
+
     <button data-toggle="modal" data-target="#ModalCenter">Copy IPCR form</button>
      
     <!-- Modal for Copy IPCR -->
@@ -377,7 +378,7 @@ footer {
   
 <!-- Tag as Visible --> 
 <h5><strong><center>IF YOU ARE DONE ON CREATING IPCR, PLEASE PRESS THIS BUTTON TO MAKE IPCR AVAILABLE TO FACULTY</center></strong></h5>
-<center><a href="index.php?r=administrator/IPCRtagvisible<?php echo'&m='.$m.'&y='.$y.'';?>" class="btn-del"><button style="width:120px">Tag as Visible</button></a></center>
+<center><a href="index.php?r=administrator/IPCRtagvisible<?php echo'&m='.$m.'&y='.$y.'';?>" class="btn-tag"><button style="width:120px">Tag as Visible</button></a></center>
 </div>
 </div>
 </section>
@@ -417,6 +418,8 @@ footer {
             <?php endif; ?>
 
         <?php endif; ?>
+
+                <script src="scrollTotop.js"></script>
                 <script>
                     $('.btn-del').on('click', function(e){
                         e.preventDefault()
@@ -430,6 +433,25 @@ footer {
                             confirmButtonColor: '#3085d6',
                             cancelButtonColor: '#d33',
                             confirmButtonText: 'Yes, delete!'
+                        }).then((result) => {
+                            if (result.value) {
+                                document.location.href = href;
+                            } 
+                        })
+                    })
+
+                    $('.btn-tag').on('click', function(e){
+                        e.preventDefault()
+                        const href = $(this).attr('href')
+
+                        Swal.fire({
+                            title: 'Are you sure?',
+                            text: "You won't be able to revert this action!",
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonColor: 'green',
+                            cancelButtonColor: '#d33',
+                            confirmButtonText: 'Yes, tag visible!'
                         }).then((result) => {
                             if (result.value) {
                                 document.location.href = href;

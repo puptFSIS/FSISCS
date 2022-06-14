@@ -154,13 +154,23 @@ if(isset($_SESSION['user'])) {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+footer {
+    position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 <meta charset="UTF-8"></head>
-<body class='page-media page-sidebar-right' style="background-color: Black;" >
+<body class='page-media page-sidebar-right' style="background-color: ghostwhite;" >
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->
@@ -220,7 +230,7 @@ if(isset($_SESSION['user'])) {
                     </thead>
                     <?php
                      //Database
-                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month='JJ' ORDER BY tbl_evaluationfaculty.LName ASC";
+                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month='JJ' AND tbl_ipcrstatus.status = 'Approved' ORDER BY tbl_evaluationfaculty.LName ASC";
                         $result = mysqli_query($conn,$sql);
 
                     ?>
@@ -320,40 +330,16 @@ if(isset($_SESSION['user'])) {
 
 <!-- Page footer -->
 <footer id=page-footer>
-<div class=container-aligner>
-<!-- Footer left -->
-<section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/fsis-team-2/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
-</section>
-<!-- End - Footer left -->
-<!-- Footer right -->
-<section id=footer-right>
-<ul class=footer-navigation>
-<li>
-<a href='http://www.pup-taguig.net' title=Home>Home</a>
-</li>
-<li>
-<a href='index.php?r=site/about' title=About>About</a>
-</li>
-<li>
-<a href='index.php?r=site/contact' title=Contacts>Contacts</a>
-</li>
-</ul>
-</section>
-<!-- End - Footer right -->
-</div>
+    <div class=container-aligner>
+        <section id=footer-left>
+            © Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dev Team">Team Apex | PUP Taguig</a> - All Rights Reserved.
+        </section>
+    </div>
 </footer>
-<!-- End - Page footer -->
-<!-- Theme backgrounds -->
 <div id=theme-backgrounds>
-
-<img alt='Asset 4' data-color='#D64333' src='assets/backgrounds/4.jpg.pagespeed.ce.AV4Gchw-qN.jpg' width=1600 height=1064 />
-
+    <img alt='Asset 4' data-color='#D64333' src='assets/backgrounds/4.jpg.pagespeed.ce.AV4Gchw-qN.jpg' width=1600 height=1064 />
 </div>
-<!-- End - Theme backgrounds -->
 <link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
-
-<!-- Scripts -->
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 </body>
 </html>     

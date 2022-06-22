@@ -223,7 +223,7 @@ footer {
               </div>
               <div class="modal-footer">
                 <button id="btn-modal" data-dismiss="modal">Close</button>
-                <button  id="btn-modal" name="submit" type="submit">Copy</button>
+                <button  id="btn-modal" name="submit" type="submit">Copy Form</button>
               </div>
               </form>
             </div>
@@ -473,7 +473,7 @@ footer {
                         var ddlYears = document.getElementById("ddlYears");
      
                         //Determine the Current Year.
-                        var currentYear = (new Date()).getFullYear()-1;
+                        var currentYear = (new Date()).getFullYear();
      
                         //Loop and add the Year values to DropDownList.
                         for (var i = currentYear; i >= 2019; i--) {

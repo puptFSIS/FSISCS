@@ -218,7 +218,7 @@ footer {
                 <!--  Uploaded File list -->
                 
                 <p><strong>Search professor</strong><input type="text" id="myInput" onkeyup="myFunction()" placeholder="i.e. Dela Cruz, Juan E." title="Type in a name"></p>
-                <!-- <p><strong>Note: Only APPROVE IPCR Will be seen on the List.</strong></p> -->
+                <p><strong>Note: Only 'APPROVED' IPCR from January to December will be seen on the List and can print Interpolation.</strong></p>
                 <table id="myTable">
                     <thead>
                         <tr>
@@ -230,7 +230,7 @@ footer {
                     </thead>
                     <?php
                      //Database
-                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month='JJ' AND tbl_ipcrstatus.status = 'Approved' ORDER BY tbl_evaluationfaculty.LName ASC";
+                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month='JD' AND tbl_ipcrstatus.status = 'Approved' ORDER BY tbl_evaluationfaculty.LName ASC";
                         $result = mysqli_query($conn,$sql);
 
                     ?>
@@ -336,10 +336,5 @@ footer {
         </section>
     </div>
 </footer>
-<div id=theme-backgrounds>
-    <img alt='Asset 4' data-color='#D64333' src='assets/backgrounds/4.jpg.pagespeed.ce.AV4Gchw-qN.jpg' width=1600 height=1064 />
-</div>
-<link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
-<script id=js-dispatcher src='scripts/scripts.js'></script>
 </body>
 </html>     

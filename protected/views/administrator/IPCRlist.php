@@ -608,7 +608,7 @@ footer {
 
                     if (flashdata == 2) {
                         Swal.fire(
-                            'Table is Empty',
+                            'Table is Empty, no one needs to remind',
                             'Press OK to continue',
                             'warning'
                         )

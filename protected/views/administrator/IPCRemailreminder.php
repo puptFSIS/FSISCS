@@ -65,7 +65,7 @@
 			
 						if(!$mail->send())
 						{
-							header("location: index.php?r=administrator/IPCRemailnotif&msg=Email could not be sent.&msgType=err");
+							header("location: index.php?r=administrator/IPCRlist&m='.$m.'&y='.$y.'&mess=3");
 						} 
 						else
 						{

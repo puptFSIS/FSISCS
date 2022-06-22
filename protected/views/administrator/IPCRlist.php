@@ -584,6 +584,10 @@ footer {
                 <?php if($_GET['mess'] == 2) : ?>
                     <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
                 <?php endif; ?>
+
+                <?php if($_GET['mess'] == 3) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
             <?php endif;?>
 
 
@@ -609,6 +613,14 @@ footer {
                             'warning'
                         )
                     }  
+
+                    if (flashdata == 3) {
+                        Swal.fire(
+                            'Email not sent',
+                            'Press OK to continue',
+                            'success'
+                        )
+                    }
 
                 </script>          
         </div>

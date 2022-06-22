@@ -58,7 +58,7 @@
                 <input type="hidden" name="fcode" value="<?php echo $fcode; ?>">
                 <input type="hidden" name="idaccomp" value="<?php echo $idaccomp; ?>">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle"><strong>ADD FEEDBACK</strong></h5>
+                <h5 class="modal-title" id="exampleModalLongTitle"><strong>ADD REASON, WHY DISAPPROVED?</strong></h5>
               </div>
               <div class="modal-body">
                 <textarea name="feedback"><?php //echo $remarks; ?></textarea>

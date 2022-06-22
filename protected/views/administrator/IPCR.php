@@ -168,6 +168,7 @@ footer {
     height: 450px;
     overflow: auto;
     width: 350px;
+    list-style-type: none;
 }
 
 footer {
@@ -212,10 +213,10 @@ footer {
 
 <!-- <a class="header1 c" data-category=design href="#">Notification</a> -->
 <div>
-<ul class="nav navbar-nav navbar-right" > 
-      <li class="dropdown">
+<ul class="nav navbar-nav navbar-right"> 
+      <li class="dropdown" >
         <a class="dropdown-toggle header1 c" data-toggle="dropdown" data-category=design ><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
-       <ul class="dropdown-menu"><div><h2>Notification</h2></div></ul>
+       <ul class="dropdown-menu"></ul>
       </li>
      </ul>
 </div>

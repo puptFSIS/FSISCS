@@ -96,6 +96,10 @@ width: 300px;
     <?php if ($_GET['mes']==2): ?>
     <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
     <?php endif;?>
+    
+    <?php if ($_GET['mes']==3): ?>
+    <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+    <?php endif;?>
 <?php endif;?>
 <section id=page-body-content>
 <div id=page-body-content-inner>
@@ -106,8 +110,9 @@ width: 300px;
 
 <h2 class=underlined-header>Add Subject to Curriculum <?php echo $_GET['year'];?></h2>
 <button  data-toggle="modal" data-target="#myModal" style="height: 30px; width:100px; text-align: center;">Add Subject</button>
-<br />
-<br />
+<br>
+<br>
+<b><p id="result" style="position: relative;">Subject/s Selected: 0</p></b>
 
 <form name="frmcurr" method = "post" action = "index.php?r=administrator/processAddCurriculumSubj">
 <table id = "SubjTable" class="table table-bordered table-striped table-hover" style="width:100%;">
@@ -136,8 +141,8 @@ width: 300px;
 	</tbody>
 </table>
 <br>
-<center><input id = "sub" type="submit" name="Submit" disabled></center>
-<p id="result" style="position: absolute; top: 180px; left: 950px">Subject/s Selected: 0</p>
+<center><input id = "sub" type="submit" name="Submit"></center>
+
 
 	<input type="hidden" name="sem" value="<?php echo $_GET['sem'];?>" />
 	<input type="hidden" name="courseID" value="<?php echo $_GET['courseID']; ?>" />
@@ -336,6 +341,15 @@ width: 300px;
 			icon:'success',
 			title:'Success!',
 			text:'Subject Added!',
+			
+		})
+	}
+	
+	if(flashdata==3){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
+			text:'Please Select a Subject!',
 			
 		})
 	}

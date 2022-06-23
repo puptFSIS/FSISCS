@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 include("config.php");
 if(isset($_SESSION['user'])) {
@@ -168,11 +168,10 @@ if(isset($_SESSION['user'])) {
 			// echo'<option value="'. $yearString .'">'. $yearString .'</option>';
 
 			while($row = mysqli_fetch_array($result)) {
-				if($yearString!=$row['schoolYear'])
-				{
+				
 				echo'
 					<option value="'. $row['schoolYear'] .'">'. $row['schoolYear'] .'</option>';
-				}
+				
 			}
 		?>
 		</select>

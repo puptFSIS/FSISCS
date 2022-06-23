@@ -1481,7 +1481,16 @@ class AdministratorController extends Controller
 			];
 
 			$tblCurriculumref->save();
-			header("Location: index.php?r=administrator/ViewCurriculum&courseID=".$cID."&sy=".$finSchoolYear."&year=".$cYear."&currID=".$currID."");
+			
+			//gets the curriculum year used based on the curriculum ID
+			$sql = "SELECT DISTINCT currYear FROM tbl_subjectload WHERE currID = :currID";
+            $currYear = Yii::app()->db->createCommand($sql)
+            ->bindValue(':currID',$currID)
+            ->queryRow();
+            
+            $curriculumYear = $currYear['currYear'];
+            
+			header("Location: index.php?r=administrator/ViewCurriculum&courseID=".$cID."&sy=".$finSchoolYear."&year=".$cYear."&currID=".$currID."&currYear=".$curriculumYear."");
 		} else {
 			header("Location: index.php?r=administrator/CurriculumManagement&mes=0&courseID=".$cID."&sy=".$finSchoolYear."&year=".$cYear."");
 		}
@@ -1519,13 +1528,13 @@ class AdministratorController extends Controller
 	}
 	public function actionProcessAddCurrSubj()
 	{
+		$schoolYear = $_POST['year'];
+		$currID = $_POST['currID'];
+    	$cyear = $_POST['cyear'];
+    	$courseID = $_POST['courseID'];
+    	$currYear = $_POST['currYear'];
+    	$sem = $_POST['sem'];
 		if (isset($_POST['subjID1'])) {
-			$schoolYear = $_POST['year'];
-			$currID = $_POST['currID'];
-	    	$cyear = $_POST['cyear'];
-	    	$courseID = $_POST['courseID'];
-	    	$currYear = $_POST['currYear'];
-	    	$sem = $_POST['sem'];
 	    	// $courseName = $_POST['courseName'];
 	    	$arrayIndex = 0;
 
@@ -1564,7 +1573,7 @@ class AdministratorController extends Controller
 			$command->execute();
 			header("location: index.php?r=administrator/Viewcurriculum&courseID=".$courseID."&year=".$cyear."&currID=".$currID."&sy=".$schoolYear."&mes=0&currYear=".$currYear."");
 		} else {
-			echo "Insert Error! Please contact the Developers";
+			header("Location: index.php?r=administrator/AddCurrSubj&courseID=".$courseID."&year=".$cyear."&currID=".$currID."&sem=".$sem."&sy=".$schoolYear."&currYear=".$currYear."&mes=2");
 		}
 		
 		
@@ -2608,37 +2617,41 @@ class AdministratorController extends Controller
     	$sem = $_POST['sem'];
     	$courseName = $_POST['courseName'];
     	$arrayIndex = 0;
-
-    	$checked = $_POST['subjID1'];
-		foreach($_POST['subjID2'] as $key => $value){
-			if(in_array($_POST['subjID2'][$key], $checked)){
-				$subjcode = $_POST['subjID2'][$key];
-				$subjtitle = $_POST['subjTitle'][$key];
-				$lec = $_POST['subjLec'][$key];
-				$lab = $_POST['subjLab'][$key];
-				$units = $_POST['subjUnit'][$key];
-				
-				
-				$Subjects[$arrayIndex] = array(
-				  'currID' => $currYear,
-				  'courseID' => $courseID,
-				  'csection' => 1,
-				  'cyear' => $cyear,
-				  'scode' => $subjcode,
-				  'stitle' => $subjtitle,
-				  'sunit' => $units,
-				  'sem' => $sem,
-				  'hrs_lec' => $lec,
-				  'hrs_lab' => $lab
-				);
-
-				$arrayIndex++;
-			}
-		}
-		$builder = Yii::app()->db->schema->commandBuilder;
-		$command=$builder->createMultipleInsertCommand('tbl_curriculum', $Subjects);
-		$command->execute();
-		header("location: index.php?r=administrator/SetCurriculumCourse&courseID=".$courseID."&year=".$currYear."&courseName=".$courseName."&mes=1");
+    	
+    	if (isset($_POST['subjID1'])){
+    	    $checked = $_POST['subjID1'];
+    		foreach($_POST['subjID2'] as $key => $value){
+    			if(in_array($_POST['subjID2'][$key], $checked)){
+    				$subjcode = $_POST['subjID2'][$key];
+    				$subjtitle = $_POST['subjTitle'][$key];
+    				$lec = $_POST['subjLec'][$key];
+    				$lab = $_POST['subjLab'][$key];
+    				$units = $_POST['subjUnit'][$key];
+    				
+    				
+    				$Subjects[$arrayIndex] = array(
+    				  'currID' => $currYear,
+    				  'courseID' => $courseID,
+    				  'csection' => 1,
+    				  'cyear' => $cyear,
+    				  'scode' => $subjcode,
+    				  'stitle' => $subjtitle,
+    				  'sunit' => $units,
+    				  'sem' => $sem,
+    				  'hrs_lec' => $lec,
+    				  'hrs_lab' => $lab
+    				);
+    
+    				$arrayIndex++;
+    			}
+    		}
+    		$builder = Yii::app()->db->schema->commandBuilder;
+    		$command=$builder->createMultipleInsertCommand('tbl_curriculum', $Subjects);
+    		$command->execute();
+    		header("location: index.php?r=administrator/SetCurriculumCourse&courseID=".$courseID."&year=".$currYear."&courseName=".$courseName."&mes=1");
+    	} else {
+    	    header("location: index.php?r=administrator/AddCurriculumSubj&courseID=".$courseID."&year=".$currYear."&sem=".$sem."&cyear=".$cyear."&courseName=".$courseName."&mes=3");
+    	}
 
     }
 

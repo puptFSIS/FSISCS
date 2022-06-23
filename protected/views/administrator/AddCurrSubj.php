@@ -103,6 +103,7 @@ width: 300px;
 <!-- End - Page subheader -->
 <!-- Page body -->
 <section class=container-block id=page-body>
+
 <div class=container-inner>
 <!-- Page title -->
     <header id=page-title>
@@ -115,9 +116,31 @@ width: 300px;
 <!-- Page content -->
 <div id=page-content>
 <!-- Video - HTML5 -->
+<?php if (isset($_GET['mes'])) : ?>
+	<?php if ($_GET['mes']==1): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
 
+	<?php if ($_GET['mes']==2): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+<?php endif;?>
+
+<?php if ($_GET['sem']==1): ?>
+	<h2 class="underlined-header">Tag Subjects for A.Y. <?php echo $_GET['sy']?> 1st Semester</h2>
+<?php endif ?>
+
+<?php if ($_GET['sem']==2): ?>
+	<h2 class="underlined-header">Tag Subjects for A.Y. <?php echo $_GET['sy']?> 2nd Semester</h2>
+<?php endif ?>
+
+<?php if ($_GET['sem']==3): ?>
+	<h2 class="underlined-header">Tag Subjects for A.Y. <?php echo $_GET['sy']?> Summer</h2>
+<?php endif ?>
 <section>
 <h2 class=underlined-header>Add Subject to <?php echo $course; $year=$_GET['year']; echo $year.'-1';?></h2>
+
+<b><p id="result" style="position: relative;">Subject/s Selected: 0</p></b>
 <form name="frmcurr" method = "post" action = "index.php?r=administrator/processAddCurrSubj">
 <table id = "SubjTable" class="table table-bordered table-striped table-hover" style="width:100%;">
 	<thead>
@@ -145,8 +168,8 @@ width: 300px;
 	</tbody>
 </table>
 <br>
-<center><input id = "sub" type="submit" name="Submit" disabled></center>
-<p id="result" style="position: absolute; top: 130px; left: 950px">Subject/s Selected: </p>
+<center><input id = "sub" type="submit" name="Submit"></center>
+
 
 	<input type="hidden" name="sem" value="<?php echo $_GET['sem'];?>" />
 	<input type="hidden" name="courseID" value="<?php echo $_GET['courseID']; ?>" />
@@ -166,13 +189,24 @@ width: 300px;
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
+<aside class=page-sidebar style="display: inline-block;">
 <section class='widget-container widget-categories'>
 <div class=widget-content>
-<ul class='widget-list categories-list'>
 <?php include("SchedulingMenu.php");?>
-</ul>
+
 </div>
+</section>
+</aside>
+
+<aside class="page-sidebar" style="display: inline-block;position: absolute;">
+<section class='widget-container widget-categories'>
+<div class=widget-content>
+
+<?php include("SchedulingMenu2.php");?>
+
+</div>
+
+
 </section>
 </aside>
 <!-- End - Page sidebar -->
@@ -226,15 +260,7 @@ width: 300px;
 <script type="text/javascript" src="assets/js/dataTables.checkboxes.min.js"></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 <script>
-	showChecked();
-	$('input:checkbox').click(function () {
-		if ($(this).is(':checked')) {
-			$("#sub").attr("disabled", false);
-			
-		} else {
-			 $("#sub").attr("disabled", true);
-		}
-	});
+
 
 	var SubjTable = $("#SubjTable").DataTable({
 		"scrollY":        "50vh",
@@ -253,15 +279,15 @@ width: 300px;
 
 	});
 
-	function showChecked(){
-		document.getElementById("result").textContent = "Subject/s Selected: " + document.querySelectorAll("input:checked").length;
-	}
-
-	document.querySelectorAll("input[id=checks]").forEach(i=>{
-		i.onclick = function(){
-			showChecked();
-		}
-	});
+	var increment2=0; 
+	$('input:checkbox').click(function () { 
+	    if (this.checked) {
+	        increment2++;                 
+	    } else {
+	        increment2--;
+	    }
+	    $('#result').html( 'Subject/s Selected: ' + increment2 + '');             
+	})
 
 	$('.dataTables_filter').addClass('pull-left');
 

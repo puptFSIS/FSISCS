@@ -341,6 +341,8 @@ background-repeat:repeat;
 								$strSem = "1st SEMESTER";
 							} else if($csem==2) {
 								$strSem = "2nd SEMESTER";
+							} else if($csem==3){
+								$strSem = "SUMMER";
 							}
 							echo '
 								<table class="table table-bordered table-hover responsive-utilities">

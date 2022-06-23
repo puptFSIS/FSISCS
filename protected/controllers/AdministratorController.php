@@ -400,7 +400,7 @@ class AdministratorController extends Controller
 
 			Yii::app()->db->createCommand($sqlUp)
 			->bindValue(':load', $reg)
-			->bindValue(':fcode', $fcode)
+			->bindValue(':fcode', $empID)
 			->bindValue(':employmentStat',$employ)
 			->query();
 
@@ -419,7 +419,7 @@ class AdministratorController extends Controller
 			->bindValue(':part',$part)
 			->bindValue(':ts',$ts)
 			->bindValue(':employmentStat',$employ)
-			->bindValue(':fcode',$fcode)
+			->bindValue(':fcode',$empID)
 			->query();
 
 		} else if($employ == "Part-time" || $employ == "Temporary"){
@@ -435,7 +435,7 @@ class AdministratorController extends Controller
 			->bindValue(':part',$part)
 			->bindValue(':ts',$ts)
 			->bindValue(':employmentStat',$employ)
-			->bindValue(':fcode',$fcode)
+			->bindValue(':fcode',$empID)
 			->query();
 		// } else if($employ == "Faculty Designee"){
 		// 	$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
@@ -461,7 +461,7 @@ class AdministratorController extends Controller
 		Yii::app()->db->createCommand($sqlUp)
 		->bindValue(':role', $roles)
 		->bindValue(':admin', $isAdmin)
-		->bindValue(':fcode', $fcode)
+		->bindValue(':fcode', $empID)
 		->query();
 
 		
@@ -504,12 +504,28 @@ class AdministratorController extends Controller
 			$sql2 = "UPDATE tbl_evaluationfaculty SET password = :pass WHERE FCode = :fcode OR EmpID = :empID";
 			Yii::app()->db->createCommand($sql2)
 			->bindValue(':pass', $password)
-			->bindValue(':fcode', $fcode)
+			->bindValue(':fcode', $empID)
 			->bindValue(':empID', $empID)
 			->query();
 		}
 
-		header("location: index.php?r=administrator/View&EmpID=".$empID."&FCode=".$fcode."&mes=0");
+		if ($empID != $fcode) {
+			$sql1 = "UPDATE tbl_evaluationfaculty SET FCode = :fcode, EmpID = :fcode WHERE FCode = :empID OR EmpID = :empID";
+			Yii::app()->db->createCommand($sql1)
+			->bindValue(':fcode',$fcode)
+			->bindValue(':empID',$empID)
+			->query();
+
+			$sql2 = "UPDATE tbl_personalinformation SET FCode = :fcode, EmpID = :fcode, userID = :fcode WHERE FCode = :empID OR EmpID = :empID";
+			Yii::app()->db->createCommand($sql2)
+			->bindValue(':fcode',$fcode)
+			->bindValue(':empID',$empID)
+			->query();
+
+			
+		}
+
+		header("location: index.php?r=administrator/View&EmpID=".$fcode."&FCode=".$fcode."&mes=0");
 		}
 
 		

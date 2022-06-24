@@ -10515,3 +10515,69 @@ Stack trace:
 REQUEST_URI=/FSISCS/index.php?r=administrator/EditFacultyInfo
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (512)
 in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/23 07:38:37 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT tbl_evaluationfaculty WHERE FCode = :fcode.
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (518)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/23 07:38:37 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[HY093]: Invalid parameter number: number of bound variables does not match number of tokens. The SQL statement executed was: SELECT tbl_evaluationfaculty WHERE FCode = :fcode in C:\xampp\htdocs\FSISCS\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(518): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionEditFacultyInfo()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('EditFacultyInfo')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/E...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/EditFacultyInfo
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/view&EmpID=FA0001TG3025&FCode=FA0001TG3025
+---
+2022/06/23 07:38:49 [error] [system.db.CDbCommand] CDbCommand::fetch() failed: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE FCode = 'FA0016TG2009'' at line 1. The SQL statement executed was: SELECT tbl_evaluationfaculty WHERE FCode = :fcode.
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (517)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/23 07:38:49 [error] [exception.CDbException] CDbException: CDbCommand failed to execute the SQL statement: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'WHERE FCode = 'FA0016TG2009'' at line 1. The SQL statement executed was: SELECT tbl_evaluationfaculty WHERE FCode = :fcode in C:\xampp\htdocs\FSISCS\framework\db\CDbCommand.php:543
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\db\CDbCommand.php(415): CDbCommand->queryInternal('fetch', Array, Array)
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(517): CDbCommand->queryRow()
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionEditFacultyInfo()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('EditFacultyInfo')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/E...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/EditFacultyInfo
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/view&EmpID=FA0001TG3025&FCode=FA0001TG3025
+---
+2022/06/23 09:03:39 [error] [php] array_combine(): Both parameters should have an equal number of elements (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1180)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1180): array_combine()
+#1 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessUploadFile()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processUploadFile
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1180)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/23 09:12:44 [error] [php] array_combine(): Both parameters should have an equal number of elements (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1180)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1180): array_combine()
+#1 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessUploadFile()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processUploadFile
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1180)
+in C:\xampp\htdocs\FSISCS\index.php (13)

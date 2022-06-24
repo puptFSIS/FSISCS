@@ -29,6 +29,8 @@ if($role=="Staff") {
 	$isAdmin = 1;
 } else if($role == "Faculty Designee"){
 	$isAdmin = 1;
+} else if($role == "SuperAdmin"){
+	$isAdmin = 1;
 } else {
 	$isAdmin = 0;
 }

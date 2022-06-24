@@ -184,10 +184,12 @@ if(isset($_SESSION['user'])) {
 <p style="margin-bottom: 9px;">To: <textarea name="recipients" style="width: 470px; margin-top: -28px; margin-left: 15%;" rows="10"  disabled><?php echo $string;?></textarea></p>
 <br>
 <!-- <p>Message will be sent to the emails of all active faculty &amp; staff.</p> -->
-<form id="annc" name="annc" action="index.php?r=administrator/sendEmailInd" method="post">
+<form id="annc" name="annc" action="index.php?r=administrator/sendEmailInd" method="post" enctype="multipart/form-data">
 <p style="margin-bottom: 9px;">SUBJECT:<input name="subject" type=text style="width: 470px; margin-top: -28px; margin-left: 15%;"  placeholder='Subject'/></p>
 <br>
 <p style="margin-bottom: 9px;">MESSAGE:<textarea name="message" style="width: 470px; margin-top: -28px; margin-left: 15%;" rows="10" placeholder='Message'></textarea></p>
+<br>
+<p style="margin-bottom: 9px;">Attach File:<input name="filename" type="file" style="width: 470px; margin-top: -28px; margin-left: 15%;" rows="10"></p>
 <?php foreach ($receivers as $row): ?>
     <input type="hidden" name="fcode[]" value="<?php echo $row;?>">
 <?php endforeach ?>

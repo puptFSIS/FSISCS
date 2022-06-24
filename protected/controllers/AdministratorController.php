@@ -389,144 +389,156 @@ class AdministratorController extends Controller
 		$roles = $_POST['role'];
 		$password = SHA1($pass);
 
-		if ($employ != "Full-time" && $roles == "Faculty Designee") {
-			header("location: index.php?r=administrator/View&EmpID=".$empID."&FCode=".$fcode."&mes=1");
-		} else {
-			$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
-			->queryRow();
-			$reg = $units['FacultyDesignee'];
-			echo $fcode;
-			$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :load, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
-
-			Yii::app()->db->createCommand($sqlUp)
-			->bindValue(':load', $reg)
-			->bindValue(':fcode', $empID)
-			->bindValue(':employmentStat',$employ)
-			->query();
-
-
-			if (($employ == "Full-time" || $employ == "Permanent") && ($employ == "Full-time" && $roles != "Faculty Designee")) {
-			$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
-			->queryRow();
-			$reg = $units['RegUnits'];
-			$part = $units['PartTimeUnits'];
-			$ts = $units['TempSubUnits'];
-
-			$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg, PartTime_Load = :part, TeachingSub_Load = :ts, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
-			
-			Yii::app()->db->createCommand($sqlUp)
-			->bindValue(':reg',$reg)
-			->bindValue(':part',$part)
-			->bindValue(':ts',$ts)
-			->bindValue(':employmentStat',$employ)
-			->bindValue(':fcode',$empID)
-			->query();
-
-		} else if($employ == "Part-time" || $employ == "Temporary"){
-			$units = Yii::app()->db->createCommand("SELECT PartTimeUnits, TempSubUnits FROM tbl_facultyunits")
-			->queryRow();
-			$part = $units['PartTimeUnits'];
-			$ts = $units['TempSubUnits'];
-
-			$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg, PartTime_Load = :part, TeachingSub_Load = :ts, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
-
-			Yii::app()->db->createCommand($sqlUp)
-			->bindValue(':reg',0)
-			->bindValue(':part',$part)
-			->bindValue(':ts',$ts)
-			->bindValue(':employmentStat',$employ)
-			->bindValue(':fcode',$empID)
-			->query();
-		// } else if($employ == "Faculty Designee"){
+		// if ($employ != "Full-time" && $roles == "Faculty Designee") {
+		// 	header("location: index.php?r=administrator/View&EmpID=".$empID."&FCode=".$fcode."&mes=1");
+		// } else {
 		// 	$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
-		}
+		// 	->queryRow();
+		// 	$reg = $units['FacultyDesignee'];
+		// 	echo $fcode;
+		// 	$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :load, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
 
-		if($roles=="Staff") {
-			$isAdmin = 0;
-		} else if($roles=="Professor") {
-			$isAdmin = 0;
-		} else if($roles=="Administrator") {
-			$isAdmin = 1;
-		} else if($roles=="HAP") {
-			$isAdmin = 1;
-		} else if($roles=="HAP Secretary") {
-			$isAdmin = 1;
-		} else if($roles=="Faculty Designee"){
-			$isAdmin = 1;
-		} else {
-			$isAdmin = 0;
-		}
+		// 	Yii::app()->db->createCommand($sqlUp)
+		// 	->bindValue(':load', $reg)
+		// 	->bindValue(':fcode', $empID)
+		// 	->bindValue(':employmentStat',$employ)
+		// 	->query();
 
-		$sqlUp = "UPDATE tbl_evaluationfaculty SET evalRoles = :role, isAdmin = :admin WHERE FCode = :fcode";
-		Yii::app()->db->createCommand($sqlUp)
-		->bindValue(':role', $roles)
-		->bindValue(':admin', $isAdmin)
-		->bindValue(':fcode', $empID)
-		->query();
+
+		// 	if (($employ == "Full-time" || $employ == "Permanent") && ($employ == "Full-time" && $roles != "Faculty Designee")) {
+		// 	$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
+		// 	->queryRow();
+		// 	$reg = $units['RegUnits'];
+		// 	$part = $units['PartTimeUnits'];
+		// 	$ts = $units['TempSubUnits'];
+
+		// 	$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg, PartTime_Load = :part, TeachingSub_Load = :ts, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
+			
+		// 	Yii::app()->db->createCommand($sqlUp)
+		// 	->bindValue(':reg',$reg)
+		// 	->bindValue(':part',$part)
+		// 	->bindValue(':ts',$ts)
+		// 	->bindValue(':employmentStat',$employ)
+		// 	->bindValue(':fcode',$empID)
+		// 	->query();
+
+		// } else if($employ == "Part-time" || $employ == "Temporary"){
+		// 	$units = Yii::app()->db->createCommand("SELECT PartTimeUnits, TempSubUnits FROM tbl_facultyunits")
+		// 	->queryRow();
+		// 	$part = $units['PartTimeUnits'];
+		// 	$ts = $units['TempSubUnits'];
+
+		// 	$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg, PartTime_Load = :part, TeachingSub_Load = :ts, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
+
+		// 	Yii::app()->db->createCommand($sqlUp)
+		// 	->bindValue(':reg',0)
+		// 	->bindValue(':part',$part)
+		// 	->bindValue(':ts',$ts)
+		// 	->bindValue(':employmentStat',$employ)
+		// 	->bindValue(':fcode',$empID)
+		// 	->query();
+		// // } else if($employ == "Faculty Designee"){
+		// // 	$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
+		// }
+
+		// if($roles=="Staff") {
+		// 	$isAdmin = 0;
+		// } else if($roles=="Professor") {
+		// 	$isAdmin = 0;
+		// } else if($roles=="Administrator") {
+		// 	$isAdmin = 1;
+		// } else if($roles=="HAP") {
+		// 	$isAdmin = 1;
+		// } else if($roles=="HAP Secretary") {
+		// 	$isAdmin = 1;
+		// } else if($roles=="Faculty Designee"){
+		// 	$isAdmin = 1;
+		// } else {
+		// 	$isAdmin = 0;
+		// }
+
+		// $sqlUp = "UPDATE tbl_evaluationfaculty SET evalRoles = :role, isAdmin = :admin WHERE FCode = :fcode";
+		// Yii::app()->db->createCommand($sqlUp)
+		// ->bindValue(':role', $roles)
+		// ->bindValue(':admin', $isAdmin)
+		// ->bindValue(':fcode', $empID)
+		// ->query();
 
 		
 
-		// $sql = "UPDATE tbl_personalinformation SET civilStatus = $civilstatus, citizenship = $citizenship, height = $height, weight = $weight, email = $email, cellNo = $cell, telNo = $tele, residentialAddress = $address, pzipCode = $zip WHERE id = $id";
+		// // $sql = "UPDATE tbl_personalinformation SET civilStatus = $civilstatus, citizenship = $citizenship, height = $height, weight = $weight, email = $email, cellNo = $cell, telNo = $tele, residentialAddress = $address, pzipCode = $zip WHERE id = $id";
 
-		if ($civilstatus == "Others"){
-			$sql = "UPDATE tbl_personalinformation SET civilStatus = :other, citizenship = :citizenship, height = :height, weight = :weight, email = :email, cellNo = :cell, telNo = :tele, residentialAddress = :address, pzipCode = :zip WHERE id = :id";
-			Yii::app()->db->createCommand($sql)
-			->bindValue(':other', $other)
-			->bindValue(':citizenship', $citizenship)
-			->bindValue(':height', $height)
-			->bindValue(':weight', $weight)
-			->bindValue(':email', $email)
-			->bindValue(':cell', $cell)
-			->bindValue(':tele', $tele)
-			->bindValue(':address', $address)
-			->bindValue(':zip', $zip)
-			->bindValue(':id', $id)
-			->query();
+		// if ($civilstatus == "Others"){
+		// 	$sql = "UPDATE tbl_personalinformation SET civilStatus = :other, citizenship = :citizenship, height = :height, weight = :weight, email = :email, cellNo = :cell, telNo = :tele, residentialAddress = :address, pzipCode = :zip WHERE id = :id";
+		// 	Yii::app()->db->createCommand($sql)
+		// 	->bindValue(':other', $other)
+		// 	->bindValue(':citizenship', $citizenship)
+		// 	->bindValue(':height', $height)
+		// 	->bindValue(':weight', $weight)
+		// 	->bindValue(':email', $email)
+		// 	->bindValue(':cell', $cell)
+		// 	->bindValue(':tele', $tele)
+		// 	->bindValue(':address', $address)
+		// 	->bindValue(':zip', $zip)
+		// 	->bindValue(':id', $id)
+		// 	->query();
 
-		} else {
-			$sql = "UPDATE tbl_personalinformation SET civilStatus = :civilstatus, citizenship = :citizenship, height = :height, weight = :weight, email = :email, cellNo = :cell, telNo = :tele, residentialAddress = :address, pzipCode = :zip WHERE id = :id";
-			Yii::app()->db->createCommand($sql)
-			->bindValue(':civilstatus', $civilstatus)
-			->bindValue(':citizenship', $citizenship)
-			->bindValue(':height', $height)
-			->bindValue(':weight', $weight)
-			->bindValue(':email', $email)
-			->bindValue(':cell', $cell)
-			->bindValue(':tele', $tele)
-			->bindValue(':address', $address)
-			->bindValue(':zip', $zip)
-			->bindValue(':id', $id)
-			->query();
-		}
+		// } else {
+		// 	$sql = "UPDATE tbl_personalinformation SET civilStatus = :civilstatus, citizenship = :citizenship, height = :height, weight = :weight, email = :email, cellNo = :cell, telNo = :tele, residentialAddress = :address, pzipCode = :zip WHERE id = :id";
+		// 	Yii::app()->db->createCommand($sql)
+		// 	->bindValue(':civilstatus', $civilstatus)
+		// 	->bindValue(':citizenship', $citizenship)
+		// 	->bindValue(':height', $height)
+		// 	->bindValue(':weight', $weight)
+		// 	->bindValue(':email', $email)
+		// 	->bindValue(':cell', $cell)
+		// 	->bindValue(':tele', $tele)
+		// 	->bindValue(':address', $address)
+		// 	->bindValue(':zip', $zip)
+		// 	->bindValue(':id', $id)
+		// 	->query();
+		// }
 
 
-		if ($pass != ""){
-			$sql2 = "UPDATE tbl_evaluationfaculty SET password = :pass WHERE FCode = :fcode OR EmpID = :empID";
-			Yii::app()->db->createCommand($sql2)
-			->bindValue(':pass', $password)
-			->bindValue(':fcode', $empID)
-			->bindValue(':empID', $empID)
-			->query();
-		}
+		// if ($pass != ""){
+		// 	$sql2 = "UPDATE tbl_evaluationfaculty SET password = :pass WHERE FCode = :fcode OR EmpID = :empID";
+		// 	Yii::app()->db->createCommand($sql2)
+		// 	->bindValue(':pass', $password)
+		// 	->bindValue(':fcode', $empID)
+		// 	->bindValue(':empID', $empID)
+		// 	->query();
+		// }
 
-		if ($empID != $fcode) {
-			$sql1 = "UPDATE tbl_evaluationfaculty SET FCode = :fcode, EmpID = :fcode WHERE FCode = :empID OR EmpID = :empID";
-			Yii::app()->db->createCommand($sql1)
+		// if ($empID != $fcode) {
+
+			$res = "SELECT FCode FROM tbl_evaluationfaculty WHERE FCode = :fcode";
+			$result = Yii::app()->db->createCommand($res)
 			->bindValue(':fcode',$fcode)
-			->bindValue(':empID',$empID)
-			->query();
+			->queryRow();
 
-			$sql2 = "UPDATE tbl_personalinformation SET FCode = :fcode, EmpID = :fcode, userID = :fcode WHERE FCode = :empID OR EmpID = :empID";
-			Yii::app()->db->createCommand($sql2)
-			->bindValue(':fcode',$fcode)
-			->bindValue(':empID',$empID)
-			->query();
+			if (empty($result)) {
+				echo "empty";
+			} else {
+				echo "wala";
+			}
+
+			// $sql1 = "UPDATE tbl_evaluationfaculty SET FCode = :fcode, EmpID = :fcode WHERE FCode = :empID OR EmpID = :empID";
+			// Yii::app()->db->createCommand($sql1)
+			// ->bindValue(':fcode',$fcode)
+			// ->bindValue(':empID',$empID)
+			// ->query();
+
+			// $sql2 = "UPDATE tbl_personalinformation SET FCode = :fcode, EmpID = :fcode, userID = :fcode WHERE FCode = :empID OR EmpID = :empID";
+			// Yii::app()->db->createCommand($sql2)
+			// ->bindValue(':fcode',$fcode)
+			// ->bindValue(':empID',$empID)
+			// ->query();
 
 			
-		}
+		// }
 
-		header("location: index.php?r=administrator/View&EmpID=".$fcode."&FCode=".$fcode."&mes=0");
-		}
+		// header("location: index.php?r=administrator/View&EmpID=".$fcode."&FCode=".$fcode."&mes=0");
+		// }
 
 		
 
@@ -1159,27 +1171,29 @@ class AdministratorController extends Controller
 			    fclose($file_to_read);
 			    //end of passing values from the file
 
-
+			    echo "<pre>";
+			    print_r($lines);
+			    echo "</pre>";
 			    //passing array values to another array
 			    $last = count($lines) - 1;
 
-			    for ($x=1; $x < $last; $x++) { 
-			    	if ($x!=1 || $x!=$last) {
-			    		$subjects[$arrayIndex] = array_combine($Subject, $lines[$x]);
-			    		$arrayIndex++;
-			    	}
-			    }
+			 //    for ($x=1; $x < $last; $x++) { 
+			 //    	if ($x!=1 || $x!=$last) {
+			 //    		$subjects[$arrayIndex] = array_combine($Subject, $lines[$x]);
+			 //    		$arrayIndex++;
+			 //    	}
+			 //    }
 
-			    //Insert active query
-			    $builder = Yii::app()->db->schema->commandBuilder;
-				$command=$builder->createMultipleInsertCommand('tbl_subjects', $subjects);
-				$command->execute();
-			    header("Location: index.php?r=administrator/SubjectManagement&mes=1");
+			 //    //Insert active query
+			 //    $builder = Yii::app()->db->schema->commandBuilder;
+				// $command=$builder->createMultipleInsertCommand('tbl_subjects', $subjects);
+				// $command->execute();
+			 //    header("Location: index.php?r=administrator/SubjectManagement&mes=1");
 			} else {
-				header("Location: index.php?r=administrator/SubjectManagement&mes=4");
+				// header("Location: index.php?r=administrator/SubjectManagement&mes=4");
 			}
 		} else {
-			header("Location: index.php?r=administrator/SubjectManagement&mes=3");
+			// header("Location: index.php?r=administrator/SubjectManagement&mes=3");
 		}
 		
 	}
@@ -2123,45 +2137,56 @@ class AdministratorController extends Controller
 	}
 	public function actionSendEmail()
 	{
-		$subject = $_POST['subject'];
-		$message = $_POST['message'];
-		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
+		if (isset($_FILES['filename'])) {
+    		$fname = $_FILES['filename']['name'];
+	    	$ftmpname = $_FILES['filename']['tmp_name'];
+	    	$subject = $_POST['subject'];
+			$message = $_POST['message'];
+			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
 
-		
-		$receipients = TblEvaltest::model()->findAll();	//Uncomment this for testing the email
+			$i = 0;
+			$emails = array();
+			foreach ($_POST['fcode'] as $row => $value) {
+				$email[$i] = TblPersonalinformation::model()->GetEmail($_POST['fcode'][$row]);
+				array_push($emails, $email[$i][0]['email']);
+				$i++;
+			}
 
-		//$recipients = TblEvaluationfaculty::model()->EmailFaculty(); //Uncomment this for production
-		if(!empty($receipients)) {
-			foreach ($receipients as $row) {
+			// echo "<pre>";
+			// print_r($email);
+			// echo "<pre>";
+			$i = 0;
 
+
+			foreach ($emails as $row) {
 				$mail = new YiiMailer;
 
-				// $mail->isSMTP();   // Uncomment this line on testing server
+				// $mail->isSMTP();   // Uncomment this line on testing server                                  
 				//Uncomment this when testing on the local server such as xampp
 				$mail->SMTPDebug  = 1;                                  
 				$mail->Host = "smtp.gmail.com";  
 				$mail->SMTPAuth = true;                           
 				$mail->Username = 'puptfsis2022@gmail.com';                
-				$mail->Password = '@PUPTfsis2022';                          
+				$mail->Password = '@PUPtaguigfsis2022';   
+				$mail->addAttachment($ftmpname,$fname);                       
 				$mail->SMTPSecure = 'ssl';                            
 				$mail->Port = 465; 
 
 				//Uncomment this following lines when the project is uploaded on the hostinger
-				/*$mail->SMTPDebug  = 1;                                  
-				$mail->Host = "smtp.hostinger.com";  
-    			$mail->SMTPAuth = true;                           
-    			$mail->Username = 'fsiscs@puptaguigcs.net';                
-    			$mail->Password = 'FsiscsEmail@2022';                          
-    			$mail->SMTPSecure = 'ssl';                            
-    			$mail->Port = 465;
+				// $mail->SMTPDebug  = 1;                                  
+				// $mail->Host = "smtp.hostinger.com";  
+				// $mail->SMTPAuth = true;                           
+				// $mail->Username = 'fls@puptaguigcs.net';                
+    		    // $mail->Password = 'FLSEmail@2022';                      
+				// $mail->SMTPSecure = 'ssl';                            
+				// $mail->Port = 465;
+				// $mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
+				                                  
 
-				$mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
-    			*/                               
+				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 
-				$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
-
-										
-				$mail->AddAddress($row['email'], $row['firstname']);     
+				
+				$mail->AddAddress($row, $email[$i][0]['firstname']);     
 				
 
 				$mail->isHTML(true);                                  
@@ -2169,28 +2194,81 @@ class AdministratorController extends Controller
 				$mail->Subject = $subject;
 				$mail->Body    = $message;
 				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
-				
-				
+				$i++;
 
 				if(!$mail->send()) {
-				 	// header("location: index.php?r=administrator/other&mes=2");
-				 	echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
-				 	// Yii::log("Mailer Error: " . $mail->ErrorInfo,'error','application.controllers.AdministratorController');
-				 	// echo $mail->ErrorInfo;
-				 	// echo "<br>";
+					// header("location: index.php?r=administrator/other&mes=2");
+					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
 				} else {
-					// echo "sent";
 					// header("location: index.php?r=administrator/other&mes=1");
-					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 				}
-				// echo $mail->ErrorInfo;
+			}
+    	} else {
+			$subject = $_POST['subject'];
+			$message = $_POST['message'];
+			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
+
+			$i = 0;
+			$emails = array();
+			foreach ($_POST['fcode'] as $row => $value) {
+				$email[$i] = TblPersonalinformation::model()->GetEmail($_POST['fcode'][$row]);
+				array_push($emails, $email[$i][0]['email']);
+				$i++;
 			}
 
+			// echo "<pre>";
+			// print_r($email);
+			// echo "<pre>";
+			$i = 0;
 
-		} else {
-				// header("location: index.php?r=administrator/other&mes=3");
-				echo "<script>window.location.assign('index.php?r=administrator/other&mes=3')</script>";
-		}
+
+			foreach ($emails as $row) {
+				$mail = new YiiMailer;
+
+				// $mail->isSMTP();   // Uncomment this line on testing server                                  
+				//Uncomment this when testing on the local server such as xampp
+				$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.gmail.com";  
+				$mail->SMTPAuth = true;                           
+				$mail->Username = 'puptfsis2022@gmail.com';                
+				$mail->Password = '@PUPtaguigfsis2022';                         
+				$mail->SMTPSecure = 'ssl';                            
+				$mail->Port = 465; 
+
+				//Uncomment this following lines when the project is uploaded on the hostinger
+				// $mail->SMTPDebug  = 1;                                  
+				// $mail->Host = "smtp.hostinger.com";  
+				// $mail->SMTPAuth = true;                           
+				// $mail->Username = 'fls@puptaguigcs.net';                
+    		    // $mail->Password = 'FLSEmail@2022';                          
+				// $mail->SMTPSecure = 'ssl';                            
+				// $mail->Port = 465;
+				// $mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
+				                                  
+
+				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
+
+				
+				$mail->AddAddress($row, $email[$i][0]['firstname']);     
+				
+
+				$mail->isHTML(true);                                  
+
+				$mail->Subject = $subject;
+				$mail->Body    = $message;
+				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+				$i++;
+
+				if(!$mail->send()) {
+					// header("location: index.php?r=administrator/other&mes=2");
+					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+				} else {
+					// header("location: index.php?r=administrator/other&mes=1");
+					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+				}
+			}
+    	}
 		
 		
 		// $this->render('sendEmail');
@@ -2808,69 +2886,140 @@ class AdministratorController extends Controller
     }
 
     public function actionsendEmailInd(){
-    	$subject = $_POST['subject'];
-		$message = $_POST['message'];
-		$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
+    	if (isset($_FILES['filename'])) {
+    		$fname = $_FILES['filename']['name'];
+	    	$ftmpname = $_FILES['filename']['tmp_name'];
+	    	$subject = $_POST['subject'];
+			$message = $_POST['message'];
+			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
 
-		$i = 0;
-		$emails = array();
-		foreach ($_POST['fcode'] as $row => $value) {
-			$email[$i] = TblPersonalinformation::model()->GetEmail($_POST['fcode'][$row]);
-			array_push($emails, $email[$i][0]['email']);
-			$i++;
-		}
-
-		// echo "<pre>";
-		// print_r($email);
-		// echo "<pre>";
-		$i = 0;
-
-
-		foreach ($emails as $row) {
-			$mail = new YiiMailer;
-
-			// $mail->isSMTP();   // Uncomment this line on testing server                                  
-			//Uncomment this when testing on the local server such as xampp
-			$mail->SMTPDebug  = 1;                                  
-			$mail->Host = "smtp.gmail.com";  
-			$mail->SMTPAuth = true;                           
-			$mail->Username = 'puptfsis2022@gmail.com';                
-			$mail->Password = '@PUPTfsis2022';                          
-			$mail->SMTPSecure = 'ssl';                            
-			$mail->Port = 465; 
-
-			//Uncomment this following lines when the project is uploaded on the hostinger
-			/*$mail->SMTPDebug  = 1;                                  
-			$mail->Host = "smtp.hostinger.com";  
-			$mail->SMTPAuth = true;                           
-			$mail->Username = 'fsiscs@puptaguigcs.net';                
-			$mail->Password = 'FsiscsEmail@2022';                          
-			$mail->SMTPSecure = 'ssl';                            
-			$mail->Port = 465;
-			$mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
-			*/                                  
-
-			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
-
-			
-			$mail->AddAddress($row, $email[$i][0]['firstname']);     
-			
-
-			$mail->isHTML(true);                                  
-
-			$mail->Subject = $subject;
-			$mail->Body    = $message;
-			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
-			$i++;
-
-			if(!$mail->send()) {
-				// header("location: index.php?r=administrator/other&mes=2");
-				echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
-			} else {
-				// header("location: index.php?r=administrator/other&mes=1");
-				echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+			$i = 0;
+			$emails = array();
+			foreach ($_POST['fcode'] as $row => $value) {
+				$email[$i] = TblPersonalinformation::model()->GetEmail($_POST['fcode'][$row]);
+				array_push($emails, $email[$i][0]['email']);
+				$i++;
 			}
-		}
+
+			// echo "<pre>";
+			// print_r($email);
+			// echo "<pre>";
+			$i = 0;
+
+
+			foreach ($emails as $row) {
+				$mail = new YiiMailer;
+
+				// $mail->isSMTP();   // Uncomment this line on testing server                                  
+				//Uncomment this when testing on the local server such as xampp
+				$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.gmail.com";  
+				$mail->SMTPAuth = true;                           
+				$mail->Username = 'puptfsis2022@gmail.com';                
+				$mail->Password = '@PUPtaguigfsis2022';   
+				$mail->addAttachment($ftmpname,$fname);                       
+				$mail->SMTPSecure = 'ssl';                            
+				$mail->Port = 465; 
+
+				//Uncomment this following lines when the project is uploaded on the hostinger
+				// $mail->SMTPDebug  = 1;                                  
+				// $mail->Host = "smtp.hostinger.com";  
+				// $mail->SMTPAuth = true;                           
+				// $mail->Username = 'fls@puptaguigcs.net';                
+    		    // $mail->Password = 'FLSEmail@2022';                          
+				// $mail->SMTPSecure = 'ssl';                            
+				// $mail->Port = 465;
+				// $mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
+				                                  
+
+				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
+
+				
+				$mail->AddAddress($row, $email[$i][0]['firstname']);     
+				
+
+				$mail->isHTML(true);                                  
+
+				$mail->Subject = $subject;
+				$mail->Body    = $message;
+				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+				$i++;
+
+				if(!$mail->send()) {
+					// header("location: index.php?r=administrator/other&mes=2");
+					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+				} else {
+					// header("location: index.php?r=administrator/other&mes=1");
+					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+				}
+			}
+    	} else {
+			$subject = $_POST['subject'];
+			$message = $_POST['message'];
+			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
+
+			$i = 0;
+			$emails = array();
+			foreach ($_POST['fcode'] as $row => $value) {
+				$email[$i] = TblPersonalinformation::model()->GetEmail($_POST['fcode'][$row]);
+				array_push($emails, $email[$i][0]['email']);
+				$i++;
+			}
+
+			// echo "<pre>";
+			// print_r($email);
+			// echo "<pre>";
+			$i = 0;
+
+
+			foreach ($emails as $row) {
+				$mail = new YiiMailer;
+
+				// $mail->isSMTP();   // Uncomment this line on testing server                                  
+				//Uncomment this when testing on the local server such as xampp
+				$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.gmail.com";  
+				$mail->SMTPAuth = true;                           
+				$mail->Username = 'puptfsis2022@gmail.com';                
+				$mail->Password = '@PUPtaguigfsis2022';                         
+				$mail->SMTPSecure = 'ssl';                            
+				$mail->Port = 465; 
+
+				//Uncomment this following lines when the project is uploaded on the hostinger
+				// $mail->SMTPDebug  = 1;                                  
+				// $mail->Host = "smtp.hostinger.com";  
+				// $mail->SMTPAuth = true;                           
+				// $mail->Username = 'fls@puptaguigcs.net';                
+    // 		    $mail->Password = 'FLSEmail@2022';                         
+				// $mail->SMTPSecure = 'ssl';                            
+				// $mail->Port = 465;
+				// $mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
+				                                  
+
+				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
+
+				
+				$mail->AddAddress($row, $email[$i][0]['firstname']);     
+				
+
+				$mail->isHTML(true);                                  
+
+				$mail->Subject = $subject;
+				$mail->Body    = $message;
+				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+				$i++;
+
+				if(!$mail->send()) {
+					// header("location: index.php?r=administrator/other&mes=2");
+					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+				} else {
+					// header("location: index.php?r=administrator/other&mes=1");
+					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+				}
+			}
+    	}
+    	
+    	
     }
 
     public function actionTeachingAssignment(){

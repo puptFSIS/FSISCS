@@ -226,7 +226,7 @@ Branch Director and OU Center Coordinator
 </div>
 </li>
 
-<li>
+<!-- <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/frabe.jpg'>
 <img alt='Ms. Yolanda F. Rabe - Head of Academic Programs and Research Coordinator' src='assets/frabe.jpg' width=600 height=250 />
 </a>
@@ -234,7 +234,7 @@ Branch Director and OU Center Coordinator
 <h3>Ms. Yolanda F. Rabe</h3>
 Head of Academic Programs and Research Coordinator
 </div>
-</li>
+</li> -->
 
 <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/fzarco.jpg'>
@@ -256,7 +256,7 @@ Head, Student Services
 </div>
 </li>
 
-<li>
+<!-- <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/fcanlas.jpg'>
 <img alt='Prof. Bernadette I. Canlas - Head of Admission and Registration Office' src='assets/fcanlas.jpg' width=600 height=250 />
 </a>
@@ -264,9 +264,9 @@ Head, Student Services
 <h3>Prof. Bernadette I. Canlas</h3>
 Head of Admission and Registration Office
 </div>
-</li>
+</li> -->
 
-<li>
+<!-- <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/farada.jpg'>
 <img alt='Prof. Marian Arada - Collecting and Disbursing Officer' src='assets/farada.jpg' width=600 height=250 />
 </a>
@@ -274,7 +274,7 @@ Head of Admission and Registration Office
 <h3>Prof. Marian Arada</h3>
 Collecting and Disbursing Officer
 </div>
-</li>
+</li> -->
 
 <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/fmaliksi.jpg'>

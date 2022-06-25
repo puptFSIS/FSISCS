@@ -389,156 +389,156 @@ class AdministratorController extends Controller
 		$roles = $_POST['role'];
 		$password = SHA1($pass);
 
-		// if ($employ != "Full-time" && $roles == "Faculty Designee") {
-		// 	header("location: index.php?r=administrator/View&EmpID=".$empID."&FCode=".$fcode."&mes=1");
-		// } else {
-		// 	$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
-		// 	->queryRow();
-		// 	$reg = $units['FacultyDesignee'];
-		// 	echo $fcode;
-		// 	$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :load, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
+		if ($employ != "Full-time" && $roles == "Faculty Designee") {
+			header("location: index.php?r=administrator/View&EmpID=".$empID."&FCode=".$fcode."&mes=1");
+		} else {
+			$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
+			->queryRow();
+			$reg = $units['FacultyDesignee'];
+			echo $fcode;
+			$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :load, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
 
-		// 	Yii::app()->db->createCommand($sqlUp)
-		// 	->bindValue(':load', $reg)
-		// 	->bindValue(':fcode', $empID)
-		// 	->bindValue(':employmentStat',$employ)
-		// 	->query();
+			Yii::app()->db->createCommand($sqlUp)
+			->bindValue(':load', $reg)
+			->bindValue(':fcode', $empID)
+			->bindValue(':employmentStat',$employ)
+			->query();
 
 
-		// 	if (($employ == "Full-time" || $employ == "Permanent") && ($employ == "Full-time" && $roles != "Faculty Designee")) {
-		// 	$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
-		// 	->queryRow();
-		// 	$reg = $units['RegUnits'];
-		// 	$part = $units['PartTimeUnits'];
-		// 	$ts = $units['TempSubUnits'];
+			if (($employ == "Full-time" || $employ == "Permanent") && ($employ == "Full-time" && $roles != "Faculty Designee")) {
+			$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
+			->queryRow();
+			$reg = $units['RegUnits'];
+			$part = $units['PartTimeUnits'];
+			$ts = $units['TempSubUnits'];
 
-		// 	$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg, PartTime_Load = :part, TeachingSub_Load = :ts, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
+			$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg, PartTime_Load = :part, TeachingSub_Load = :ts, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
 			
-		// 	Yii::app()->db->createCommand($sqlUp)
-		// 	->bindValue(':reg',$reg)
-		// 	->bindValue(':part',$part)
-		// 	->bindValue(':ts',$ts)
-		// 	->bindValue(':employmentStat',$employ)
-		// 	->bindValue(':fcode',$empID)
-		// 	->query();
+			Yii::app()->db->createCommand($sqlUp)
+			->bindValue(':reg',$reg)
+			->bindValue(':part',$part)
+			->bindValue(':ts',$ts)
+			->bindValue(':employmentStat',$employ)
+			->bindValue(':fcode',$empID)
+			->query();
 
-		// } else if($employ == "Part-time" || $employ == "Temporary"){
-		// 	$units = Yii::app()->db->createCommand("SELECT PartTimeUnits, TempSubUnits FROM tbl_facultyunits")
-		// 	->queryRow();
-		// 	$part = $units['PartTimeUnits'];
-		// 	$ts = $units['TempSubUnits'];
+		} else if($employ == "Part-time" || $employ == "Temporary"){
+			$units = Yii::app()->db->createCommand("SELECT PartTimeUnits, TempSubUnits FROM tbl_facultyunits")
+			->queryRow();
+			$part = $units['PartTimeUnits'];
+			$ts = $units['TempSubUnits'];
 
-		// 	$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg, PartTime_Load = :part, TeachingSub_Load = :ts, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
+			$sqlUp = "UPDATE tbl_evaluationfaculty SET Regular_Load = :reg, PartTime_Load = :part, TeachingSub_Load = :ts, enu_employmentStat = :employmentStat WHERE FCode = :fcode";
 
-		// 	Yii::app()->db->createCommand($sqlUp)
-		// 	->bindValue(':reg',0)
-		// 	->bindValue(':part',$part)
-		// 	->bindValue(':ts',$ts)
-		// 	->bindValue(':employmentStat',$employ)
-		// 	->bindValue(':fcode',$empID)
-		// 	->query();
-		// // } else if($employ == "Faculty Designee"){
-		// // 	$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
-		// }
+			Yii::app()->db->createCommand($sqlUp)
+			->bindValue(':reg',0)
+			->bindValue(':part',$part)
+			->bindValue(':ts',$ts)
+			->bindValue(':employmentStat',$employ)
+			->bindValue(':fcode',$empID)
+			->query();
+		// } else if($employ == "Faculty Designee"){
+		// 	$units = Yii::app()->db->createCommand("SELECT * FROM tbl_facultyunits")
+		}
 
-		// if($roles=="Staff") {
-		// 	$isAdmin = 0;
-		// } else if($roles=="Professor") {
-		// 	$isAdmin = 0;
-		// } else if($roles=="Administrator") {
-		// 	$isAdmin = 1;
-		// } else if($roles=="HAP") {
-		// 	$isAdmin = 1;
-		// } else if($roles=="HAP Secretary") {
-		// 	$isAdmin = 1;
-		// } else if($roles=="Faculty Designee"){
-		// 	$isAdmin = 1;
-		// } else {
-		// 	$isAdmin = 0;
-		// }
+		if($roles=="Staff") {
+			$isAdmin = 0;
+		} else if($roles=="Professor") {
+			$isAdmin = 0;
+		} else if($roles=="Administrator") {
+			$isAdmin = 1;
+		} else if($roles=="HAP") {
+			$isAdmin = 1;
+		} else if($roles=="HAP Secretary") {
+			$isAdmin = 1;
+		} else if($roles=="Faculty Designee"){
+			$isAdmin = 1;
+		} else {
+			$isAdmin = 0;
+		}
 
-		// $sqlUp = "UPDATE tbl_evaluationfaculty SET evalRoles = :role, isAdmin = :admin WHERE FCode = :fcode";
-		// Yii::app()->db->createCommand($sqlUp)
-		// ->bindValue(':role', $roles)
-		// ->bindValue(':admin', $isAdmin)
-		// ->bindValue(':fcode', $empID)
-		// ->query();
+		$sqlUp = "UPDATE tbl_evaluationfaculty SET evalRoles = :role, isAdmin = :admin WHERE FCode = :fcode";
+		Yii::app()->db->createCommand($sqlUp)
+		->bindValue(':role', $roles)
+		->bindValue(':admin', $isAdmin)
+		->bindValue(':fcode', $empID)
+		->query();
 
 		
 
-		// // $sql = "UPDATE tbl_personalinformation SET civilStatus = $civilstatus, citizenship = $citizenship, height = $height, weight = $weight, email = $email, cellNo = $cell, telNo = $tele, residentialAddress = $address, pzipCode = $zip WHERE id = $id";
+		// $sql = "UPDATE tbl_personalinformation SET civilStatus = $civilstatus, citizenship = $citizenship, height = $height, weight = $weight, email = $email, cellNo = $cell, telNo = $tele, residentialAddress = $address, pzipCode = $zip WHERE id = $id";
 
-		// if ($civilstatus == "Others"){
-		// 	$sql = "UPDATE tbl_personalinformation SET civilStatus = :other, citizenship = :citizenship, height = :height, weight = :weight, email = :email, cellNo = :cell, telNo = :tele, residentialAddress = :address, pzipCode = :zip WHERE id = :id";
-		// 	Yii::app()->db->createCommand($sql)
-		// 	->bindValue(':other', $other)
-		// 	->bindValue(':citizenship', $citizenship)
-		// 	->bindValue(':height', $height)
-		// 	->bindValue(':weight', $weight)
-		// 	->bindValue(':email', $email)
-		// 	->bindValue(':cell', $cell)
-		// 	->bindValue(':tele', $tele)
-		// 	->bindValue(':address', $address)
-		// 	->bindValue(':zip', $zip)
-		// 	->bindValue(':id', $id)
-		// 	->query();
+		if ($civilstatus == "Others"){
+			$sql = "UPDATE tbl_personalinformation SET civilStatus = :other, citizenship = :citizenship, height = :height, weight = :weight, email = :email, cellNo = :cell, telNo = :tele, residentialAddress = :address, pzipCode = :zip WHERE id = :id";
+			Yii::app()->db->createCommand($sql)
+			->bindValue(':other', $other)
+			->bindValue(':citizenship', $citizenship)
+			->bindValue(':height', $height)
+			->bindValue(':weight', $weight)
+			->bindValue(':email', $email)
+			->bindValue(':cell', $cell)
+			->bindValue(':tele', $tele)
+			->bindValue(':address', $address)
+			->bindValue(':zip', $zip)
+			->bindValue(':id', $id)
+			->query();
 
-		// } else {
-		// 	$sql = "UPDATE tbl_personalinformation SET civilStatus = :civilstatus, citizenship = :citizenship, height = :height, weight = :weight, email = :email, cellNo = :cell, telNo = :tele, residentialAddress = :address, pzipCode = :zip WHERE id = :id";
-		// 	Yii::app()->db->createCommand($sql)
-		// 	->bindValue(':civilstatus', $civilstatus)
-		// 	->bindValue(':citizenship', $citizenship)
-		// 	->bindValue(':height', $height)
-		// 	->bindValue(':weight', $weight)
-		// 	->bindValue(':email', $email)
-		// 	->bindValue(':cell', $cell)
-		// 	->bindValue(':tele', $tele)
-		// 	->bindValue(':address', $address)
-		// 	->bindValue(':zip', $zip)
-		// 	->bindValue(':id', $id)
-		// 	->query();
-		// }
+		} else {
+			$sql = "UPDATE tbl_personalinformation SET civilStatus = :civilstatus, citizenship = :citizenship, height = :height, weight = :weight, email = :email, cellNo = :cell, telNo = :tele, residentialAddress = :address, pzipCode = :zip WHERE id = :id";
+			Yii::app()->db->createCommand($sql)
+			->bindValue(':civilstatus', $civilstatus)
+			->bindValue(':citizenship', $citizenship)
+			->bindValue(':height', $height)
+			->bindValue(':weight', $weight)
+			->bindValue(':email', $email)
+			->bindValue(':cell', $cell)
+			->bindValue(':tele', $tele)
+			->bindValue(':address', $address)
+			->bindValue(':zip', $zip)
+			->bindValue(':id', $id)
+			->query();
+		}
 
 
-		// if ($pass != ""){
-		// 	$sql2 = "UPDATE tbl_evaluationfaculty SET password = :pass WHERE FCode = :fcode OR EmpID = :empID";
-		// 	Yii::app()->db->createCommand($sql2)
-		// 	->bindValue(':pass', $password)
-		// 	->bindValue(':fcode', $empID)
-		// 	->bindValue(':empID', $empID)
-		// 	->query();
-		// }
+		if ($pass != ""){
+			$sql2 = "UPDATE tbl_evaluationfaculty SET password = :pass WHERE FCode = :fcode OR EmpID = :empID";
+			Yii::app()->db->createCommand($sql2)
+			->bindValue(':pass', $password)
+			->bindValue(':fcode', $empID)
+			->bindValue(':empID', $empID)
+			->query();
+		}
 
-		// if ($empID != $fcode) {
+		if ($empID != $fcode) {
 
-			$res = "SELECT FCode FROM tbl_evaluationfaculty WHERE FCode = :fcode";
-			$result = Yii::app()->db->createCommand($res)
+			// $res = "SELECT FCode FROM tbl_evaluationfaculty WHERE FCode = :fcode";
+			// $result = Yii::app()->db->createCommand($res)
+			// ->bindValue(':fcode',$fcode)
+			// ->queryRow();
+
+			// if (empty($result)) {
+			// 	echo "empty";
+			// } else {
+			// 	echo "wala";
+			// }
+
+			$sql1 = "UPDATE tbl_evaluationfaculty SET FCode = :fcode, EmpID = :fcode WHERE FCode = :empID OR EmpID = :empID";
+			Yii::app()->db->createCommand($sql1)
 			->bindValue(':fcode',$fcode)
-			->queryRow();
+			->bindValue(':empID',$empID)
+			->query();
 
-			if (empty($result)) {
-				echo "empty";
-			} else {
-				echo "wala";
-			}
-
-			// $sql1 = "UPDATE tbl_evaluationfaculty SET FCode = :fcode, EmpID = :fcode WHERE FCode = :empID OR EmpID = :empID";
-			// Yii::app()->db->createCommand($sql1)
-			// ->bindValue(':fcode',$fcode)
-			// ->bindValue(':empID',$empID)
-			// ->query();
-
-			// $sql2 = "UPDATE tbl_personalinformation SET FCode = :fcode, EmpID = :fcode, userID = :fcode WHERE FCode = :empID OR EmpID = :empID";
-			// Yii::app()->db->createCommand($sql2)
-			// ->bindValue(':fcode',$fcode)
-			// ->bindValue(':empID',$empID)
-			// ->query();
+			$sql2 = "UPDATE tbl_personalinformation SET FCode = :fcode, EmpID = :fcode, userID = :fcode WHERE FCode = :empID OR EmpID = :empID";
+			Yii::app()->db->createCommand($sql2)
+			->bindValue(':fcode',$fcode)
+			->bindValue(':empID',$empID)
+			->query();
 
 			
-		// }
+		}
 
-		// header("location: index.php?r=administrator/View&EmpID=".$fcode."&FCode=".$fcode."&mes=0");
-		// }
+		header("location: index.php?r=administrator/View&EmpID=".$fcode."&FCode=".$fcode."&mes=0");
+		}
 
 		
 
@@ -1177,23 +1177,23 @@ class AdministratorController extends Controller
 			    //passing array values to another array
 			    $last = count($lines) - 1;
 
-			 //    for ($x=1; $x < $last; $x++) { 
-			 //    	if ($x!=1 || $x!=$last) {
-			 //    		$subjects[$arrayIndex] = array_combine($Subject, $lines[$x]);
-			 //    		$arrayIndex++;
-			 //    	}
-			 //    }
+			    for ($x=1; $x < $last; $x++) { 
+			    	if ($x!=1 || $x!=$last) {
+			    		$subjects[$arrayIndex] = array_combine($Subject, $lines[$x]);
+			    		$arrayIndex++;
+			    	}
+			    }
 
-			 //    //Insert active query
-			 //    $builder = Yii::app()->db->schema->commandBuilder;
-				// $command=$builder->createMultipleInsertCommand('tbl_subjects', $subjects);
-				// $command->execute();
-			 //    header("Location: index.php?r=administrator/SubjectManagement&mes=1");
+			    //Insert active query
+			    $builder = Yii::app()->db->schema->commandBuilder;
+				$command=$builder->createMultipleInsertCommand('tbl_subjects', $subjects);
+				$command->execute();
+			    header("Location: index.php?r=administrator/SubjectManagement&mes=1");
 			} else {
-				// header("Location: index.php?r=administrator/SubjectManagement&mes=4");
+				header("Location: index.php?r=administrator/SubjectManagement&mes=4");
 			}
 		} else {
-			// header("Location: index.php?r=administrator/SubjectManagement&mes=3");
+			header("Location: index.php?r=administrator/SubjectManagement&mes=3");
 		}
 		
 	}

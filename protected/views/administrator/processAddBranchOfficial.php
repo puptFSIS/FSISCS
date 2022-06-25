@@ -13,6 +13,9 @@
 	$sy = $_POST['sy'];
 	$FCode = $_POST['name'];
 	$Position = $_POST['Position'];
+	$dir = "uploads/";
+	$targetfile = $dir. basename($_FILES["image"]["name"]);
+
 
 	$sql = "SELECT * from tbl_evaluationfaculty where FCode = '$FCode'";
 	$result = mysqli_query($conn,$sql);
@@ -47,8 +50,9 @@
 	// $sql = 'UPDATE tbl_evaluationfaculty SET Regular_Load = 9, PartTime_Load = 0 WHERE FCode = '.$FCode.'';
 	// $result = mysqli_query($conn,$sql);
 	
-	$sql="INSERT INTO tbl_masterlist (FCode,FName,Bday,BMonth,BYear,Contact,Position,Status) VALUES ('$FCode','$Name','$bday','$bmonth','$byear','$contact','$Position','BO')";
+	$sql="INSERT INTO tbl_masterlist (FCode,FName,Bday,BMonth,BYear,Contact,Position,Status,image_file) VALUES ('$FCode','$Name','$bday','$bmonth','$byear','$contact','$Position','BO','$targetfile')";
 	$result=mysqli_query($conn,$sql);
+	move_uploaded_file($_FILES['image']['tmp_name'],$targetfile);
 	if($result) {
 		header("Location: index.php?r=administrator/BranchOfficials&mes=0");
 	}

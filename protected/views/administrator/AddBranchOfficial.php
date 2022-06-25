@@ -92,7 +92,7 @@ if(isset($_SESSION['user'])) {
 
 <p>* Required fields.</p>
 <hr style="margin-top: -10px;" />
-<form id="annc" name="annc" action="index.php?r=administrator/processAddBranchOfficial" method="post">
+<form id="annc" name="annc" action="index.php?r=administrator/processAddBranchOfficial" method="post" enctype="multipart/form-data">
 <p style="margin-bottom: 9px;">*Name:
 <select name="name" id = "sy" style="width: 50%;">
 
@@ -105,7 +105,7 @@ if(isset($_SESSION['user'])) {
 			';
 		}
 		
-		$sql = "SELECT * FROM tbl_evaluationfaculty ORDER BY LName";
+		$sql = "SELECT * FROM tbl_evaluationfaculty WHERE status = 'Active' ORDER BY LName ";
 		$result = mysqli_query($conn, $sql);
 		while($row = mysqli_fetch_array($result)){
 			$Name = $row['LName'] .', '. $row['FName'] . ' ' . substr($row['MName'],0,1);
@@ -122,6 +122,9 @@ if(isset($_SESSION['user'])) {
 <br />	
 </p>
 <p style="margin-bottom: 9px;">Position:<input name="Position" type=text style="width: 50%; margin-top: -1px;"  placeholder="Position Description(Optional)"/></p>
+
+<br />
+<p style="margin-bottom: 9px;">Image:<input name="image" type="file" style="width: 50%; margin-top: -1px;"  placeholder="Choose File"/></p>
 <input type = "hidden" name = "sy" value = "<?php echo $_GET['sy'];?>">
 <center><p><input type="submit" value="Save" /></center>
 </form>

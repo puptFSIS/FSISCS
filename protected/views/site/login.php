@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("config.php");
 if(isset($_SESSION['user'])) 
 {
 	if($_SESSION['CEmpID']==null) 
@@ -212,11 +213,29 @@ div.login p
 <!-- Video - HTML5 -->
 <section>
 <h2 id="slideshow_header">PUP Taguig Branch Officials</h2>
+<?php 
+$sql = "SELECT * FROM tbl_masterlist";
+$query = mysqli_query($conn, $sql);
+?>
 
-<div class=gallery-fading>
-<ul>
+<?php while($row = mysqli_fetch_array($query)): ?>
+	<div class=gallery-fading>
+		<ul>
+			<li>
+				<a class='element-holder media-img' data-rel=prettyPhoto href='assets/fferrer.jpg'>
+				<img alt='<?php echo $row['FName'] ?> - <?php echo $row['Position'] ?>' src='<?php echo $row['image_file'] ?>' width=600 height=250 />
+				</a>
+				<div class=slide-caption-right>
+				<h3><?php echo $row['FName'] ?></h3>
+				<?php echo $row['Position'] ?>
+				</div>
+			</li>
+		</ul>
+	</div>	
+<?php endwhile ?>
 
-<li>
+
+<!-- <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/fferrer.jpg'>
 <img alt='Dr. Marissa B. Ferrer - Branch Director and OU Center Coordinator' src='assets/fferrer.jpg' width=600 height=250 />
 </a>
@@ -224,7 +243,7 @@ div.login p
 <h3>Dr. Marissa B. Ferrer</h3>
 Branch Director and OU Center Coordinator
 </div>
-</li>
+</li> -->
 
 <!-- <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/frabe.jpg'>
@@ -236,7 +255,7 @@ Head of Academic Programs and Research Coordinator
 </div>
 </li> -->
 
-<li>
+<!-- <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/fzarco.jpg'>
 <img alt='Engr. Michael Zarco - Administrative Officer and Property Custodian' src='assets/fzarco.jpg' width=600 height=250 />
 </a>
@@ -244,9 +263,9 @@ Head of Academic Programs and Research Coordinator
 <h3>Engr. Michael Zarco</h3>
 Administrative Officer and Property Custodian
 </div>
-</li>
+</li> -->
 
-<li>
+<!-- <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/fsevilla.jpg'>
 <img alt='Prof. Margarita T. Sevilla, Student Services' src='assets/fsevilla.jpg' width=600 height=250 />
 </a>
@@ -254,7 +273,7 @@ Administrative Officer and Property Custodian
 <h3>Prof. Margarita T. Sevilla</h3>
 Head, Student Services
 </div>
-</li>
+</li> -->
 
 <!-- <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/fcanlas.jpg'>
@@ -276,7 +295,7 @@ Collecting and Disbursing Officer
 </div>
 </li> -->
 
-<li>
+<!-- <li>
 <a class='element-holder media-img' data-rel=prettyPhoto href='assets/fmaliksi.jpg'>
 <img alt='Ms. Liwanag L. Maliksi - Guidance Counselor' src='assets/fmaliksi.jpg' width=600 height=250 />
 </a>
@@ -284,19 +303,18 @@ Collecting and Disbursing Officer
 <h3>Liwanag L. Maliksi</h3>
 Guidance Counselor III
 </div>
-</li>
+</li> -->
 
-<li>
+<!-- <li> -->
 <!-- Item image -->
-<a class='element-holder media-video' data-rel=prettyPhoto href='https://www.youtube.com/watch?v=DL9uOlxrGlE'>
+<!-- <a class='element-holder media-video' data-rel=prettyPhoto href='https://www.youtube.com/watch?v=DL9uOlxrGlE'>
 <img alt='An overview of the system:' src='assets/last.jpg' width=600 height=250 />
 
-</a>
+</a> -->
 <!-- End - Item image -->
-</li>
+<!-- </li> -->
 <!-- End - Gallery item -->
-</ul>
-</div>
+
 
 <!-- <div class="layout-1-3">
 	<div class="toggle-block">

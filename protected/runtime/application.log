@@ -10652,3 +10652,31 @@ REQUEST_URI=/FSISCS/index.php?r=administrator/BranchOfficials
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\BranchOfficials.php (204)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1672)
 in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/25 11:59:27 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1230)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/25 11:59:27 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1230)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/25 11:59:27 [warning] [application] Failed to set unsafe attribute "schedID" of "TblSubjpreferences".
+in C:\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1230)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/06/25 12:21:00 [error] [php] Undefined index: image (C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddBranchOfficial.php:17)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1698): AdministratorController->render()
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProcessAddBranchOfficial()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processAddBranchOfficial
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddBranchOfficial.php (17)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1698)
+in C:\xampp\htdocs\FSISCS\index.php (13)

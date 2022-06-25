@@ -47,10 +47,10 @@
 	// $sql = 'UPDATE tbl_evaluationfaculty SET Regular_Load = 9, PartTime_Load = 0 WHERE FCode = '.$FCode.'';
 	// $result = mysqli_query($conn,$sql);
 	
-	$sql="INSERT INTO tbl_masterlist (FCode,FName,Bday,BMonth,BYear,Contact,Position,Status,sem,schoolYear) VALUES ('$FCode','$Name','$bday','$bmonth','$byear','$contact','$Position','BO','$sem','$sy')";
+	$sql="INSERT INTO tbl_masterlist (FCode,FName,Bday,BMonth,BYear,Contact,Position,Status) VALUES ('$FCode','$Name','$bday','$bmonth','$byear','$contact','$Position','BO')";
 	$result=mysqli_query($conn,$sql);
 	if($result) {
-		header("Location: index.php?r=administrator/BranchOfficials&sy=$sy&msg=Branch official has been added.&msgType=succ");
+		header("Location: index.php?r=administrator/BranchOfficials&mes=0");
 	}
-	mysqli_close();
+	mysqli_close($conn);
 ?>

@@ -115,7 +115,19 @@ if(isset($_SESSION['user'])) {
 <div id="page-content">
 <!-- Video - HTML5 -->
 <section>
+<?php if (isset($_GET['mes'])) : ?>
+    <?php if ($_GET['mes']==0): ?>
+    <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+    <?php endif;?>
 
+    <?php if ($_GET['mes']==1): ?>
+    <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+    <?php endif;?>
+
+    <?php if ($_GET['mes']==2): ?>
+    <div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+    <?php endif;?>
+<?php endif;?>
 <section>
 <h2 class="underlined-header">Branch Officials</h2>
 <?php
@@ -143,7 +155,7 @@ if(isset($_SESSION['user'])) {
 	} 
 ?>
 
-<form name="frmSched" method = "post" action = "index.php?r=administrator/BranchOfficials">
+<!-- <form name="frmSched" method = "post" action = "index.php?r=administrator/BranchOfficials">
 	<h4 class="underlined-header"><strong>Select School Year</strong></h4>
 	<select name = "sy" style="width: 30%;">
 		<?php
@@ -157,19 +169,18 @@ if(isset($_SESSION['user'])) {
 		?>
 	</select>
 	<input type="submit" name="btnSubmit" value="Go" />
-</form>
+</form> -->
 
 <?php
-	if(isset($_POST['sy'])){
-		$sy = $_POST['sy'];
+	
 		echo'
 		<a href="index.php?r=administrator/AddBranchOfficial&sy='.$sy.'" class="btn btn-mini"><button>Add</button></a>
 		<table class=round-3 style="width:100%; ">
 		<thead>
 		<tr>
-		<th><h5>Name</h5></th>
-		<th><h5>Position</h5></th>
-		<th><h5>Action</h5></th>
+		<th style="text-align: center;"><h5>Name</h5></th>
+		<th style="text-align: center;"><h5>Position</h5></th>
+		<th style="text-align: center;"><h5>Action</h5></th>
 		</tr>
 		</thead>
 
@@ -179,18 +190,19 @@ if(isset($_SESSION['user'])) {
 		</tr>
 		</tfoot>
 		<tbody>';
-		$sql = "SELECT * FROM tbl_masterlist WHERE Status = 'BO' and schoolYear = '$sy' order by FName ASC";
+		$sql = "SELECT * FROM tbl_masterlist WHERE Status = 'BO' order by FName ASC";
 		$query = mysqli_query($conn,$sql);
 		while($row = mysqli_fetch_array($query)) 
 		{
 			$Name = $row['FName'];
-			$bofcode = $row['FCode'];
 			$Position = $row['Position'];
+			// $bofcode = $row['FCode'];
+			$id = $row['ID'];
 			echo '
 				<tr>
-				<td style="text-align: left;">'. $Name .'</td>
-				<td style="text-align: left;">'. $Position .'</td>
-				<td style="text-align: left;"><a href="index.php?r=administrator/EditBO&BOName='.$Name.'&BOFCode='.$bofcode.'" class="btn btn-mini"><button>Edit</button></a></td>
+				<td style="text-align: center;">'. $Name .'</td>
+				<td style="text-align: center;">'. $Position .'</td>
+				<td style="text-align: center;"><a href="index.php?r=administrator/DeleteBO&ID='.$id.'" class="btn btn-mini"><button>DELETE</button></a></td>
 				</tr>
 			';
 		}
@@ -198,45 +210,7 @@ if(isset($_SESSION['user'])) {
 		</tbody>
 		</table>
 		';
-	} elseif(isset($_GET['sy'])){
-		$sy = $_GET['sy'];
-		echo'
-		<a href="index.php?r=administrator/AddBranchOfficial&sy='.$sy.'" class="btn btn-mini"><button>Add</button></a>
-		<table class=round-3 style="width:100%; ">
-		<thead>
-		<tr>
-		<th><h5>Name</h5></th>
-		<th><h5>Position</h5></th>
-		<th><h5>Action</h5></th>
-		</tr>
-		</thead>
 
-		<tfoot>
-		<tr>
-		<td colspan=3></td>
-		</tr>
-		</tfoot>
-		<tbody>';
-		$sql = "SELECT * FROM tbl_masterlist WHERE Status = 'BO' and schoolYear = '$sy' order by FName ASC";
-		$query = mysqli_query($conn,$sql);
-		while($row = mysqli_fetch_array($query)) 
-		{
-			$Name = $row['FName'];
-			$Position = $row['Position'];
-			$bofcode = $row['FCode'];
-			echo '
-				<tr>
-				<td style="text-align: left;">'. $Name .'</td>
-				<td style="text-align: left;">'. $Position .'</td>
-				<td style="text-align: left;"><a href="index.php?r=administrator/EditBO&BOName='.$Name.'&BOFCode='.$bofcode.'" class="btn btn-mini"><button>Edit</button></a></td>
-				</tr>
-			';
-		}
-		echo'
-		</tbody>
-		</table>
-		';
-	}
 ?>
 
 </section>
@@ -299,5 +273,30 @@ if(isset($_SESSION['user'])) {
 
 <!-- Scripts -->
 <script id=js-dispatcher src='scripts/scripts.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+<script>
+
+
+
+	flashdata = $('.flash-data').data('flashdata')
+    if(flashdata==0){
+        Swal.fire({
+            icon:'success',
+            title:'Success!',
+            text:'Branch Official Updated!'
+            
+    })
+    }
+    
+    if(flashdata==1){
+        Swal.fire({
+            icon:'success',
+            title:'Success!',
+            text:'Branch Official Deleted!'
+            
+    })    
+    }
+</script>
 </body>
 </html>

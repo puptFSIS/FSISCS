@@ -2111,9 +2111,17 @@ class AdministratorController extends Controller
 	{
 		$this->render('processENFS');
 	}
-	public function actionEditBO()
+	public function actionDeleteBO()
 	{
-		$this->render('EditBO');
+		$id = $_GET['ID'];
+		$sql = "DELETE FROM tbl_masterlist WHERE ID = :id";
+
+		Yii::app()->db->createCommand($sql)
+		->bindValue(':id',$id)
+		->query();
+
+		header('Location: index.php?r=administrator/BranchOfficials&mes=1');
+		// $this->render('DeleteBO');
 	}
 	public function actionprocessChngStat()
 	{

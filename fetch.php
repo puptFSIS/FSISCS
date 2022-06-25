@@ -22,7 +22,7 @@ if(isset($_POST['view']))
           {
                while($row = mysqli_fetch_array($result))
                {
-                    $output .= '
+                    $output.= '
                     <li style="padding-right: 10px; padding-bottom: 5px; padding-left: 15px;">
                      <a href="index.php?r=administrator/IPCRratingsremarks" style="color:black; padding-right: 20px;">
                       <strong>'.$row['subject'].'</strong><br/>
@@ -38,7 +38,7 @@ if(isset($_POST['view']))
           }
           else
           {
-             $output .= '<li style="padding-right: 10px; padding-bottom: 0px; list-style-type: none;"><a href="#" style="color:black; padding-right: 20px;" class="text-bold text-italic"><center>No Notification Found</center></a></li>';
+             $output.= '<li style="padding-right: 10px; padding-bottom: 0px; list-style-type: none;"><a href="#" style="color:black; padding-right: 20px;" class="text-bold text-italic"><center>No Notification Found</center></a></li>';
           }
      
      $query_1 = "SELECT * FROM tbl_ipcrnotification WHERE status = 0";

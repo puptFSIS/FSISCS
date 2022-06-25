@@ -410,7 +410,7 @@ $spreadsheet
     ->getAlignment()
 	->setHorizontal('center');
 
-/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////
 /*	
 	->getActiveSheet()
 	->getStyle('I10')
@@ -516,11 +516,12 @@ $spreadsheet
 	->setHorizontal('center');
 
 //Core Funcction
-$query = "SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr1.part = 'cf' AND tbl_ipcraccomp.month = 'JD' AND tbl_ipcr1.year = '$year' AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
+$query = "SELECT tbl_ipcr2.*,tbl_ipcraccomp.* FROM tbl_ipcr2 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr2 = tbl_ipcr2.id AND tbl_ipcraccomp.FCode = '$fcode' WHERE tbl_ipcr2.part = 'cf' AND tbl_ipcraccomp.month = 'JD' AND tbl_ipcr2.year = '$year' AND tbl_ipcr2.deleted_on IS NULL ORDER BY tbl_ipcr2.id, tbl_ipcraccomp.id_ipcr2 ASC";
+$query_result = mysqli_query($conn,$query);
 $countcf = mysqli_num_rows($query_result); 
 $countcf_new = $countcf - 1;
 
-$cf = $sp + (($countcf_new + 1) + 5);
+$cf = $sp + (($countcf_new + 1) + 5); // the +5 here is the cell associated by the two cells of the previous table, header of the next table and the space between the tables
 
 $cf_NoitemRating = $cf + 1;//to get the cell of No. of item rating
 $spreadsheet

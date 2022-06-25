@@ -168,7 +168,7 @@ footer {
     height: 450px;
     overflow: auto;
     width: 350px;
-    list-style-type: none;
+    border-radius: 10px;
 }
 
 footer {
@@ -180,6 +180,7 @@ footer {
    color: white;
    text-align: center;
 }
+
 </style>
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->

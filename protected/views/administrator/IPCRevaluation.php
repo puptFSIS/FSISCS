@@ -342,7 +342,7 @@ $result = mysqli_query($conn,$query);
                 <h5 class="modal-title" id="exampleModalLongTitle"><strong>ADD RATINGS</strong></h5>
               </div>
               <div class="modal-body">
-                <p style="font-size: 15px;"><strong>Note: 1 - lowest & 5 - Highest</strong></p>
+                <p style="font-size: 15px;"><strong>Note for Rating: 1 - lowest & 5 - Highest</strong></p>
                 <hr style="margin-top: 15px;">
                 <div class="col-md-0"></div>
                     <div class="col-md-12 well">

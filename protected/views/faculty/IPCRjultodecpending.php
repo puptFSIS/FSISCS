@@ -194,14 +194,15 @@ if(isset($_SESSION['user'])) {
     
  ?>
 
-<h2 class="underlined-header" id="title" >Create IPCR: <strong>JANUARY TO JUNE <?php echo '('.$y.')';?></strong><p style="float:right; margin-right: 10px;">Remarks: <strong><?php echo $status; ?></strong></p></h2>
+<h2 class="underlined-header" id="title" >Create IPCR: <strong>JULY TO DECEMBER <?php echo '('.$y.')';?></strong><p style="float:right; margin-right: 10px;">Remarks: <strong><?php echo $status; ?></strong></p></h2>
 
 <!-- Deadline -->
 <h2 class="underlined-header" style="width:25%; color: Red; margin-left: -15%;"><strong> Deadline: <input style="display: inline;" placeholder="Not Set" value="<?php echo $dline; ?>" readonly></strong></h2>
 
-<a href="index.php?r=faculty/IPCRcreatefaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
+<a href="index.php?r=faculty/IPCRevaluationfaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
 <section>
-<div class="w3-code notranslate cssHigh">
+    <br>
+<!-- <div class="w3-code notranslate cssHigh">
     <small><strong><u>REMINDERS</u></strong></small>
     <br>
     <small><strong><b id="asterisk">*</b> - Required Fields.</strong></small>
@@ -209,7 +210,7 @@ if(isset($_SESSION['user'])) {
     <small><strong><li>All REQUIRED FIELDS is used on Approval so checked before you submit.</li></strong></small>
     <small><strong><li>After Review, If you got "Disapproved" on Approval part, you can click it to view the reason/feedback.</li></strong></small>
 
-</div>
+</div> -->
 <table class=round-3 style="width:132%; margin-left: -15%;" id="shadow">
 <thead>
     <tr align="center">

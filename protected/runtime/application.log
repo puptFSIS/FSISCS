@@ -10502,6 +10502,7 @@ Stack trace:
 REQUEST_URI=/FSISCS/index.php?r=administrator/IPCR
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator
 ---
+<<<<<<< Updated upstream
 2022/06/23 07:08:13 [error] [php] Undefined variable: empID (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:512)
 Stack trace:
 #0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionEditFacultyInfo()
@@ -10680,3 +10681,25 @@ REQUEST_URI=/FSISCS/index.php?r=administrator/processAddBranchOfficial
 in C:\xampp\htdocs\FSISCS\protected\views\administrator\processAddBranchOfficial.php (17)
 in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1698)
 in C:\xampp\htdocs\FSISCS\index.php (13)
+=======
+2022/06/23 05:39:27 [error] [php] Undefined variable: cf_nor (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationcomputable.php:528)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php(780): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3117): AdministratorController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRInterpolation()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRInterpolation&fcode=FA0005TG2022&m=JJ&y=2022&fname=JOSHUA&mname=R.&sname=DEL%20ROSARIO
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationcomputable.php (528)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (780)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3117)
+>>>>>>> Stashed changes

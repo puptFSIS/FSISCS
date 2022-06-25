@@ -65,7 +65,7 @@
                                     header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                                 }
                                 else if($m=='JD') {
-                                    header('Location: index.php?r=faculty/IPCRjantojunepending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
+                                    header('Location: index.php?r=faculty/IPCRjultodecpending&m='.$m.'&y='.$y.'&fcode='.$fcode.'');
                                 }
                             }
                         } else {

@@ -2154,54 +2154,44 @@ class AdministratorController extends Controller
 
 			$i = 0;
 			$emails = TblEvaluationfaculty::model()->GetActiveFacultyEmail();
-
-// 			echo "<pre>";
-// 			print_r($emails);
-// 			echo "<pre>";
 			$i = 0;
 
+            $mail = new YiiMailer;
+			// $mail->isSMTP();   // Uncomment this line on testing server                                  
+			//Uncomment this when testing on the local server such as xampp
+			// $mail->SMTPDebug  = 1;                                  
+			// $mail->Host = "smtp.gmail.com";  
+			// $mail->SMTPAuth = true;                           
+			// $mail->Username = 'puptfsis2022@gmail.com';                
+			// $mail->Password = '@PUPtaguigfsis2022';   
+			// $mail->addAttachment($ftmpname,$fname);                       
+			// $mail->SMTPSecure = 'ssl';                            
+			// $mail->Port = 465; 
+
+			//Uncomment this following lines when the project is uploaded on the hostinger
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.hostinger.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'fls@puptaguigcs.net';                
+		    $mail->Password = 'FLSEmail@2022'; 
+		    $mail->addAttachment($ftmpname,$fname);
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;
+			$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
+			$mail->isHTML(true);                                  
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
 
 			foreach ($emails as $row) {
-				$mail = new YiiMailer;
-
-				// $mail->isSMTP();   // Uncomment this line on testing server                                  
-				//Uncomment this when testing on the local server such as xampp
-				// $mail->SMTPDebug  = 1;                                  
-				// $mail->Host = "smtp.gmail.com";  
-				// $mail->SMTPAuth = true;                           
-				// $mail->Username = 'puptfsis2022@gmail.com';                
-				// $mail->Password = '@PUPtaguigfsis2022';   
-				// $mail->addAttachment($ftmpname,$fname);                       
-				// $mail->SMTPSecure = 'ssl';                            
-				// $mail->Port = 465; 
-
-				//Uncomment this following lines when the project is uploaded on the hostinger
-				$mail->SMTPDebug  = 1;                                  
-				$mail->Host = "smtp.hostinger.com";  
-				$mail->SMTPAuth = true;                           
-				$mail->Username = 'fls@puptaguigcs.net';                
-    		    $mail->Password = 'FLSEmail@2022'; 
-    		    $mail->addAttachment($ftmpname,$fname);
-				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465;
-				$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
-
-				
 				$mail->AddAddress($row['Email'], $row['FName']);     
-				
-
-				$mail->isHTML(true);                                  
-
-				$mail->Subject = $subject;
-				$mail->Body    = $message;
-				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
 				$i++;
-
-				if(!$mail->send()) {
-					echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
-				} else {
-					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
-				}
+			}
+			
+			if(!$mail->send()) {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+			} else {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 			}
     	} else {
 			$subject = $_POST['subject'];
@@ -2210,53 +2200,42 @@ class AdministratorController extends Controller
 
 			$i = 0;
 			$emails = TblEvaluationfaculty::model()->GetActiveFacultyEmail();
-
-			/*echo "<pre>";
-			print_r($emails);
-			echo "<pre>";*/
 			$i = 0;
 
-
+            $mail = new YiiMailer;
+			// $mail->isSMTP();   // Uncomment this line on testing server                                  
+			//Uncomment this when testing on the local server such as xampp
+			/*$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.gmail.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'puptfsis2022@gmail.com';                
+			$mail->Password = '@PUPtaguigfsis2022';                         
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465; */
+			
+			//Uncomment this following lines when the project is uploaded on the hostinger
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.hostinger.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'fls@puptaguigcs.net';                
+		    $mail->Password = 'FLSEmail@2022';                          
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;
+			$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
+			$mail->isHTML(true);                                  
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+				
 			foreach ($emails as $row) {
-				$mail = new YiiMailer;
-
-				// $mail->isSMTP();   // Uncomment this line on testing server                                  
-				//Uncomment this when testing on the local server such as xampp
-				/*$mail->SMTPDebug  = 1;                                  
-				$mail->Host = "smtp.gmail.com";  
-				$mail->SMTPAuth = true;                           
-				$mail->Username = 'puptfsis2022@gmail.com';                
-				$mail->Password = '@PUPtaguigfsis2022';                         
-				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465; */
-
-				//Uncomment this following lines when the project is uploaded on the hostinger
-				$mail->SMTPDebug  = 1;                                  
-				$mail->Host = "smtp.hostinger.com";  
-				$mail->SMTPAuth = true;                           
-				$mail->Username = 'fls@puptaguigcs.net';                
-    		    $mail->Password = 'FLSEmail@2022';                          
-				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465;
-				$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
-				                                  
-
-				
 				$mail->AddAddress($row['Email'], $row['FName']);     
-				
-
-				$mail->isHTML(true);                                  
-
-				$mail->Subject = $subject;
-				$mail->Body    = $message;
-				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
 				$i++;
-
-				if(!$mail->send()) {
-					echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
-				} else {
-					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
-				}
+			}
+			
+			if(!$mail->send()) {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+			} else {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 			}
     	}
 		
@@ -2925,59 +2904,47 @@ class AdministratorController extends Controller
 				array_push($emails, $email[$i][0]);
 				$i++;
 			}
-
-// 			echo "<pre>";
-// 			print_r($_POST['fcode']);
-// 			echo "<pre>";
 			$i = 0;
-
-
+			
+			$mail = new YiiMailer;
+			
+			// $mail->isSMTP();   // Uncomment this line on testing server                                  
+			//Uncomment this when testing on the local server such as xampp
+			// $mail->SMTPDebug  = 1;                                  
+			// $mail->Host = "smtp.gmail.com";  
+			// $mail->SMTPAuth = true;                           
+			// $mail->Username = 'puptfsis2022@gmail.com';                
+			// $mail->Password = '@PUPtaguigfsis2022';   
+			// $mail->addAttachment($ftmpname,$fname);                       
+			// $mail->SMTPSecure = 'ssl';                            
+			// $mail->Port = 465;
+			// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
+            
+            
+            //Uncomment this following lines when the project is uploaded on the hostinger
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.hostinger.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'fls@puptaguigcs.net';                
+		    $mail->Password = 'FLSEmail@2022'; 
+		    $mail->addAttachment($ftmpname,$fname);
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;
+			$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
+            $mail->isHTML(true);
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+			
 			foreach ($emails as $row) {
-				$mail = new YiiMailer;
-
-				// $mail->isSMTP();   // Uncomment this line on testing server                                  
-				//Uncomment this when testing on the local server such as xampp
-				// $mail->SMTPDebug  = 1;                                  
-				// $mail->Host = "smtp.gmail.com";  
-				// $mail->SMTPAuth = true;                           
-				// $mail->Username = 'puptfsis2022@gmail.com';                
-				// $mail->Password = '@PUPtaguigfsis2022';   
-				// $mail->addAttachment($ftmpname,$fname);                       
-				// $mail->SMTPSecure = 'ssl';                            
-				// $mail->Port = 465; 
-
-				//Uncomment this following lines when the project is uploaded on the hostinger
-				$mail->SMTPDebug  = 1;                                  
-				$mail->Host = "smtp.hostinger.com";  
-				$mail->SMTPAuth = true;                           
-				$mail->Username = 'fls@puptaguigcs.net';                
-    		    $mail->Password = 'FLSEmail@2022'; 
-    		    $mail->addAttachment($ftmpname,$fname);
-				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465;
-				$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
-				                                  
-
-				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
-
-				
 				$mail->AddAddress($row['Email'], $row['FName']);     
-				
-
-				$mail->isHTML(true);                                  
-
-				$mail->Subject = $subject;
-				$mail->Body    = $message;
-				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
 				$i++;
-
-				if(!$mail->send()) {
-					// header("location: index.php?r=administrator/other&mes=2");
-					echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
-				} else {
-					// header("location: index.php?r=administrator/other&mes=1");
-					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
-				}
+			}
+			
+			if(!$mail->send()) {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+			} else {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 			}
     	} else {
 			$subject = $_POST['subject'];
@@ -2996,12 +2963,8 @@ class AdministratorController extends Controller
 			print_r($emails);
 			echo "<pre>";
 			$i = 0;
-
-
-			foreach ($emails as $row) {
-				$mail = new YiiMailer;
-
-				// $mail->isSMTP();   // Uncomment this line on testing server                                  
+			
+			// $mail->isSMTP();   // Uncomment this line on testing server                                  
 				//Uncomment this when testing on the local server such as xampp
 				/*$mail->SMTPDebug  = 1;                                  
 				$mail->Host = "smtp.gmail.com";  
@@ -3011,37 +2974,31 @@ class AdministratorController extends Controller
 				$mail->SMTPSecure = 'ssl';                            
 				$mail->Port = 465; */
 
-				//Uncomment this following lines when the project is uploaded on the hostinger
-				$mail->SMTPDebug  = 1;                                  
-				$mail->Host = "smtp.hostinger.com";  
-				$mail->SMTPAuth = true;                           
-				$mail->Username = 'fls@puptaguigcs.net';                
-    		    $mail->Password = 'FLSEmail@2022';                          
-				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465;
-				$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
-				                                  
-
-				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
-
-				
+            $mail = new YiiMailer;
+        	//Uncomment this following lines when the project is uploaded on the hostinger
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.hostinger.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'fls@puptaguigcs.net';                
+		    $mail->Password = 'FLSEmail@2022';                          
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;
+			
+			$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
+			$mail->isHTML(true); 
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+			
+			
+			foreach ($emails as $row) {
 				$mail->AddAddress($row['Email'], $row['FName']);    
-				
-
-				$mail->isHTML(true);                                  
-
-				$mail->Subject = $subject;
-				$mail->Body    = $message;
-				$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
 				$i++;
-
-				if(!$mail->send()) {
-					// header("location: index.php?r=administrator/other&mes=2");
-					echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
-				} else {
-					// header("location: index.php?r=administrator/other&mes=1");
-					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
-				}
+			}
+			if(!$mail->send()) {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+			} else {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 			}
     	}
     }

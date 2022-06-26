@@ -56,21 +56,21 @@ if ($emptype != "Permanent" && $role == "Faculty Designee") {
 					
 				} else {
 					if ($emptype == 'Permanent' && $role != "Faculty Designee") {
-						$sql="INSERT INTO tbl_evaluationfaculty (FCode, password, enu_employmentStat, LName, FName, MName, Mobile, Email, evalRoles, EmpID, isAdmin, status, yearAdded, latestCount, Regular_Load, PartTime_Load, TeachingSub_Load) VALUES ('".$Fcode."','".$epass."','".$emptype."','".$sname."','".$fname."','".$mname."','','".$email."','".$role."','".$EmpID."','".$isAdmin."','active','".$currYear."','".$currCount."','".$reg."','".$part."','".$ts."')";
+						$sql="INSERT INTO tbl_evaluationfaculty (FCode, password, enu_employmentStat, LName, FName, MName, Mobile, Email, evalRoles, EmpID, isAdmin, status, yearAdded, latestCount, Regular_Load, PartTime_Load, TeachingSub_Load) VALUES ('".$Fcode."','".$epass."','".$emptype."','".$sname."','".$fname."','".$mname."','','".$email."','".$role."','".$EmpID."','".$isAdmin."','Active','".$currYear."','".$currCount."','".$reg."','".$part."','".$ts."')";
 						$result=mysqli_query($conn,$sql);
 
 					} else if ($emptype == 'Part-time' || $emptype == 'Temporary'){
-						$sql="INSERT INTO tbl_evaluationfaculty (FCode, password, enu_employmentStat, LName, FName, MName, Mobile, Email, evalRoles, EmpID, isAdmin, status, yearAdded, latestCount, Regular_Load, PartTime_Load, TeachingSub_Load) VALUES ('".$Fcode."','".$epass."','".$emptype."','".$sname."','".$fname."','".$mname."','','".$email."','".$role."','".$EmpID."','".$isAdmin."','active','".$currYear."','".$currCount."',0,'".$part."','".$ts."')";
+						$sql="INSERT INTO tbl_evaluationfaculty (FCode, password, enu_employmentStat, LName, FName, MName, Mobile, Email, evalRoles, EmpID, isAdmin, status, yearAdded, latestCount, Regular_Load, PartTime_Load, TeachingSub_Load) VALUES ('".$Fcode."','".$epass."','".$emptype."','".$sname."','".$fname."','".$mname."','','".$email."','".$role."','".$EmpID."','".$isAdmin."','Active','".$currYear."','".$currCount."',0,'".$part."','".$ts."')";
 						$result=mysqli_query($conn,$sql);
 						
 					} else if($emptype == 'Permanent' && $role == "Faculty Designee"){
-						$sql="INSERT INTO tbl_evaluationfaculty (FCode, password, enu_employmentStat, LName, FName, MName, Mobile, Email, evalRoles, EmpID, isAdmin, status, yearAdded, latestCount, Regular_Load, PartTime_Load, TeachingSub_Load) VALUES ('".$Fcode."','".$epass."','".$emptype."','".$sname."','".$fname."','".$mname."','','".$email."','".$role."','".$EmpID."','".$isAdmin."','active','".$currYear."','".$currCount."','".$fd."','".$part."','".$ts."')";
+						$sql="INSERT INTO tbl_evaluationfaculty (FCode, password, enu_employmentStat, LName, FName, MName, Mobile, Email, evalRoles, EmpID, isAdmin, status, yearAdded, latestCount, Regular_Load, PartTime_Load, TeachingSub_Load) VALUES ('".$Fcode."','".$epass."','".$emptype."','".$sname."','".$fname."','".$mname."','','".$email."','".$role."','".$EmpID."','".$isAdmin."','Active','".$currYear."','".$currCount."','".$fd."','".$part."','".$ts."')";
 						$result=mysqli_query($conn,$sql);
 					}
 				}
 					// echo $sql;
 				
-				$sql="INSERT INTO tbl_personalinformation (FCode, surname, firstname, middlename, nameExtension, birthdate, bday, bmonth, byear, EmpID, userID, password, isAdmin, status, civilStatus,email) VALUES ('$Fcode','$sname','$fname','$mname','$next', '1950-01-01', '01', '01', '1950', '$EmpID', '$EmpID','$epass','$isAdmin','active','Single','$email')";
+				$sql="INSERT INTO tbl_personalinformation (FCode, surname, firstname, middlename, nameExtension, birthdate, bday, bmonth, byear, EmpID, userID, password, isAdmin, status, civilStatus,email) VALUES ('$Fcode','$sname','$fname','$mname','$next', '1950-01-01', '01', '01', '1950', '$EmpID', '$EmpID','$epass','$isAdmin','Active','Single','$email')";
 				$result=mysqli_query($conn,$sql);	
 
 				

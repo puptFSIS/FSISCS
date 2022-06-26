@@ -2145,24 +2145,19 @@ class AdministratorController extends Controller
 	}
 	public function actionSendEmail()
 	{
-		if (isset($_FILES['filename'])) {
+	    if (isset($_FILES['filename']) && $_FILES['filename']['name'] != "" && $_FILES['filename']['tmp_name'] != "") {
     		$fname = $_FILES['filename']['name'];
 	    	$ftmpname = $_FILES['filename']['tmp_name'];
 	    	$subject = $_POST['subject'];
 			$message = $_POST['message'];
-			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
+			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
 
 			$i = 0;
-			$emails = array();
-			foreach ($_POST['fcode'] as $row => $value) {
-				$email[$i] = TblPersonalinformation::model()->GetEmail($_POST['fcode'][$row]);
-				array_push($emails, $email[$i][0]['email']);
-				$i++;
-			}
+			$emails = TblEvaluationfaculty::model()->GetActiveFacultyEmail();
 
-			// echo "<pre>";
-			// print_r($email);
-			// echo "<pre>";
+// 			echo "<pre>";
+// 			print_r($emails);
+// 			echo "<pre>";
 			$i = 0;
 
 
@@ -2171,30 +2166,28 @@ class AdministratorController extends Controller
 
 				// $mail->isSMTP();   // Uncomment this line on testing server                                  
 				//Uncomment this when testing on the local server such as xampp
-				$mail->SMTPDebug  = 1;                                  
-				$mail->Host = "smtp.gmail.com";  
-				$mail->SMTPAuth = true;                           
-				$mail->Username = 'puptfsis2022@gmail.com';                
-				$mail->Password = '@PUPtaguigfsis2022';   
-				$mail->addAttachment($ftmpname,$fname);                       
-				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465; 
+				// $mail->SMTPDebug  = 1;                                  
+				// $mail->Host = "smtp.gmail.com";  
+				// $mail->SMTPAuth = true;                           
+				// $mail->Username = 'puptfsis2022@gmail.com';                
+				// $mail->Password = '@PUPtaguigfsis2022';   
+				// $mail->addAttachment($ftmpname,$fname);                       
+				// $mail->SMTPSecure = 'ssl';                            
+				// $mail->Port = 465; 
 
 				//Uncomment this following lines when the project is uploaded on the hostinger
-				// $mail->SMTPDebug  = 1;                                  
-				// $mail->Host = "smtp.hostinger.com";  
-				// $mail->SMTPAuth = true;                           
-				// $mail->Username = 'fls@puptaguigcs.net';                
-    		    // $mail->Password = 'FLSEmail@2022';                      
-				// $mail->SMTPSecure = 'ssl';                            
-				// $mail->Port = 465;
-				// $mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
-				                                  
-
-				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
+				$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.hostinger.com";  
+				$mail->SMTPAuth = true;                           
+				$mail->Username = 'fls@puptaguigcs.net';                
+    		    $mail->Password = 'FLSEmail@2022'; 
+    		    $mail->addAttachment($ftmpname,$fname);
+				$mail->SMTPSecure = 'ssl';                            
+				$mail->Port = 465;
+				$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
 
 				
-				$mail->AddAddress($row, $email[$i][0]['firstname']);     
+				$mail->AddAddress($row['Email'], $row['FName']);     
 				
 
 				$mail->isHTML(true);                                  
@@ -2205,29 +2198,22 @@ class AdministratorController extends Controller
 				$i++;
 
 				if(!$mail->send()) {
-					// header("location: index.php?r=administrator/other&mes=2");
-					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
 				} else {
-					// header("location: index.php?r=administrator/other&mes=1");
-					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 				}
 			}
     	} else {
 			$subject = $_POST['subject'];
 			$message = $_POST['message'];
-			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
+			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
 
 			$i = 0;
-			$emails = array();
-			foreach ($_POST['fcode'] as $row => $value) {
-				$email[$i] = TblPersonalinformation::model()->GetEmail($_POST['fcode'][$row]);
-				array_push($emails, $email[$i][0]['email']);
-				$i++;
-			}
+			$emails = TblEvaluationfaculty::model()->GetActiveFacultyEmail();
 
-			// echo "<pre>";
-			// print_r($email);
-			// echo "<pre>";
+			/*echo "<pre>";
+			print_r($emails);
+			echo "<pre>";*/
 			$i = 0;
 
 
@@ -2236,29 +2222,27 @@ class AdministratorController extends Controller
 
 				// $mail->isSMTP();   // Uncomment this line on testing server                                  
 				//Uncomment this when testing on the local server such as xampp
-				$mail->SMTPDebug  = 1;                                  
+				/*$mail->SMTPDebug  = 1;                                  
 				$mail->Host = "smtp.gmail.com";  
 				$mail->SMTPAuth = true;                           
 				$mail->Username = 'puptfsis2022@gmail.com';                
 				$mail->Password = '@PUPtaguigfsis2022';                         
 				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465; 
+				$mail->Port = 465; */
 
 				//Uncomment this following lines when the project is uploaded on the hostinger
-				// $mail->SMTPDebug  = 1;                                  
-				// $mail->Host = "smtp.hostinger.com";  
-				// $mail->SMTPAuth = true;                           
-				// $mail->Username = 'fls@puptaguigcs.net';                
-    		    // $mail->Password = 'FLSEmail@2022';                          
-				// $mail->SMTPSecure = 'ssl';                            
-				// $mail->Port = 465;
-				// $mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
+				$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.hostinger.com";  
+				$mail->SMTPAuth = true;                           
+				$mail->Username = 'fls@puptaguigcs.net';                
+    		    $mail->Password = 'FLSEmail@2022';                          
+				$mail->SMTPSecure = 'ssl';                            
+				$mail->Port = 465;
+				$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
 				                                  
 
-				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
-
 				
-				$mail->AddAddress($row, $email[$i][0]['firstname']);     
+				$mail->AddAddress($row['Email'], $row['FName']);     
 				
 
 				$mail->isHTML(true);                                  
@@ -2269,11 +2253,9 @@ class AdministratorController extends Controller
 				$i++;
 
 				if(!$mail->send()) {
-					// header("location: index.php?r=administrator/other&mes=2");
-					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
 				} else {
-					// header("location: index.php?r=administrator/other&mes=1");
-					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 				}
 			}
     	}
@@ -2893,25 +2875,60 @@ class AdministratorController extends Controller
     	
     }
 
+    public function actionSendSpecific(){
+    	$receipients = array();
+    	$i = 0;
+    	
+
+    	if (isset($_POST['fcode1'])) {
+    		$checked = $_POST['fcode1'];
+
+    		foreach($_POST['fcode2'] as $key => $value){
+			if(in_array($_POST['fcode2'][$key], $checked)){
+				// $recipients[$i] = $_POST['email2'][$key];
+				array_push($receipients, $_POST['fcode2'][$key]);
+				$i++;
+				}
+			}
+			$i = 0;
+			$emails = array();
+			foreach ($receipients as $row) {
+				$email[$i] = TblPersonalinformation::model()->GetEmail($receipients[$i]);
+				array_push($emails, $email[$i][0]['email']);
+				$i++;
+			}
+			$this->render('messageSpecific',array('receivers'=>$receipients, 'email' => $emails));
+    	} else {
+    		header("location: index.php?r=administrator/other&mes=4");
+    	}
+
+    	
+		
+		// echo "<pre>";
+		// print_r($_POST['fcode1']);
+		// echo "<pre>";
+    	
+    }
+
     public function actionsendEmailInd(){
-    	if (isset($_FILES['filename'])) {
+        if (isset($_FILES['filename']) && $_FILES['filename']['name'] != "" && $_FILES['filename']['tmp_name'] != "") {
     		$fname = $_FILES['filename']['name'];
 	    	$ftmpname = $_FILES['filename']['tmp_name'];
 	    	$subject = $_POST['subject'];
 			$message = $_POST['message'];
-			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
+			$message .= '<br><br><br>Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
 
 			$i = 0;
 			$emails = array();
 			foreach ($_POST['fcode'] as $row => $value) {
-				$email[$i] = TblPersonalinformation::model()->GetEmail($_POST['fcode'][$row]);
-				array_push($emails, $email[$i][0]['email']);
+				$email[$i] = TblEvaluationfaculty::model()->EmailFacultySpecific($_POST['fcode'][$row]);
+				array_push($emails, $email[$i][0]);
 				$i++;
 			}
 
-			// echo "<pre>";
-			// print_r($email);
-			// echo "<pre>";
+// 			echo "<pre>";
+// 			print_r($_POST['fcode']);
+// 			echo "<pre>";
 			$i = 0;
 
 
@@ -2920,30 +2937,31 @@ class AdministratorController extends Controller
 
 				// $mail->isSMTP();   // Uncomment this line on testing server                                  
 				//Uncomment this when testing on the local server such as xampp
-				$mail->SMTPDebug  = 1;                                  
-				$mail->Host = "smtp.gmail.com";  
-				$mail->SMTPAuth = true;                           
-				$mail->Username = 'puptfsis2022@gmail.com';                
-				$mail->Password = '@PUPtaguigfsis2022';   
-				$mail->addAttachment($ftmpname,$fname);                       
-				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465; 
+				// $mail->SMTPDebug  = 1;                                  
+				// $mail->Host = "smtp.gmail.com";  
+				// $mail->SMTPAuth = true;                           
+				// $mail->Username = 'puptfsis2022@gmail.com';                
+				// $mail->Password = '@PUPtaguigfsis2022';   
+				// $mail->addAttachment($ftmpname,$fname);                       
+				// $mail->SMTPSecure = 'ssl';                            
+				// $mail->Port = 465; 
 
 				//Uncomment this following lines when the project is uploaded on the hostinger
-				// $mail->SMTPDebug  = 1;                                  
-				// $mail->Host = "smtp.hostinger.com";  
-				// $mail->SMTPAuth = true;                           
-				// $mail->Username = 'fls@puptaguigcs.net';                
-    		    // $mail->Password = 'FLSEmail@2022';                          
-				// $mail->SMTPSecure = 'ssl';                            
-				// $mail->Port = 465;
-				// $mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
+				$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.hostinger.com";  
+				$mail->SMTPAuth = true;                           
+				$mail->Username = 'fls@puptaguigcs.net';                
+    		    $mail->Password = 'FLSEmail@2022'; 
+    		    $mail->addAttachment($ftmpname,$fname);
+				$mail->SMTPSecure = 'ssl';                            
+				$mail->Port = 465;
+				$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
 				                                  
 
 				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 
 				
-				$mail->AddAddress($row, $email[$i][0]['firstname']);     
+				$mail->AddAddress($row['Email'], $row['FName']);     
 				
 
 				$mail->isHTML(true);                                  
@@ -2955,28 +2973,28 @@ class AdministratorController extends Controller
 
 				if(!$mail->send()) {
 					// header("location: index.php?r=administrator/other&mes=2");
-					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
 				} else {
 					// header("location: index.php?r=administrator/other&mes=1");
-					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 				}
 			}
     	} else {
 			$subject = $_POST['subject'];
 			$message = $_POST['message'];
-			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.';
+			$message .= '<br><br><br>Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
 
 			$i = 0;
 			$emails = array();
 			foreach ($_POST['fcode'] as $row => $value) {
-				$email[$i] = TblPersonalinformation::model()->GetEmail($_POST['fcode'][$row]);
-				array_push($emails, $email[$i][0]['email']);
+				$email[$i] = TblEvaluationfaculty::model()->EmailFacultySpecific($_POST['fcode'][$row]);
+				array_push($emails, $email[$i][0]);
 				$i++;
 			}
 
-			// echo "<pre>";
-			// print_r($email);
-			// echo "<pre>";
+			echo "<pre>";
+			print_r($emails);
+			echo "<pre>";
 			$i = 0;
 
 
@@ -2985,29 +3003,29 @@ class AdministratorController extends Controller
 
 				// $mail->isSMTP();   // Uncomment this line on testing server                                  
 				//Uncomment this when testing on the local server such as xampp
-				$mail->SMTPDebug  = 1;                                  
+				/*$mail->SMTPDebug  = 1;                                  
 				$mail->Host = "smtp.gmail.com";  
 				$mail->SMTPAuth = true;                           
 				$mail->Username = 'puptfsis2022@gmail.com';                
 				$mail->Password = '@PUPtaguigfsis2022';                         
 				$mail->SMTPSecure = 'ssl';                            
-				$mail->Port = 465; 
+				$mail->Port = 465; */
 
 				//Uncomment this following lines when the project is uploaded on the hostinger
-				// $mail->SMTPDebug  = 1;                                  
-				// $mail->Host = "smtp.hostinger.com";  
-				// $mail->SMTPAuth = true;                           
-				// $mail->Username = 'fls@puptaguigcs.net';                
-    // 		    $mail->Password = 'FLSEmail@2022';                         
-				// $mail->SMTPSecure = 'ssl';                            
-				// $mail->Port = 465;
-				// $mail->setFrom('fsiscs@puptaguigcs.net', 'PUPT FSIS');
+				$mail->SMTPDebug  = 1;                                  
+				$mail->Host = "smtp.hostinger.com";  
+				$mail->SMTPAuth = true;                           
+				$mail->Username = 'fls@puptaguigcs.net';                
+    		    $mail->Password = 'FLSEmail@2022';                          
+				$mail->SMTPSecure = 'ssl';                            
+				$mail->Port = 465;
+				$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
 				                                  
 
 				// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
 
 				
-				$mail->AddAddress($row, $email[$i][0]['firstname']);     
+				$mail->AddAddress($row['Email'], $row['FName']);    
 				
 
 				$mail->isHTML(true);                                  
@@ -3019,15 +3037,13 @@ class AdministratorController extends Controller
 
 				if(!$mail->send()) {
 					// header("location: index.php?r=administrator/other&mes=2");
-					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
 				} else {
 					// header("location: index.php?r=administrator/other&mes=1");
-					// echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+					echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
 				}
 			}
     	}
-    	
-    	
     }
 
     public function actionTeachingAssignment(){

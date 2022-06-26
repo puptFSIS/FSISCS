@@ -195,8 +195,19 @@ class TblEvaluationfaculty extends CActiveRecord
 		return $row;
 	}
 
-	public static function EmailFaculty(){
-		$sql = "SELECT b.Email, a.LName, a.FName, a.MName from tbl_evaluationfaculty AS a inner join tbl_personalinformation AS b on a.FCode = b.FCode OR a.FCode = b.EmpID WHERE a.status = :status";
+	public static function EmailFacultySpecific($proflist){
+		$sql = "SELECT b.Email, a.LName, a.FName, a.MName from tbl_evaluationfaculty AS a inner join tbl_personalinformation AS b on a.FCode = b.FCode OR a.FCode = b.EmpID WHERE a.FCode = :fcode a.status = :status AND b.Email != ''";
+
+		$row = Yii::app()->db->createCommand($sql)
+		->bindValue(':status','Active')
+		->bindValue(':fcode',$proflist)
+		->queryAll();
+
+		return $row;
+	}
+
+	public static function GetFcodeWithEmail(){
+		$sql = "Select DISTINCT a.FCode, a.LName, a.FName from tbl_evaluationfaculty AS a inner join tbl_personalinformation AS b where a.status = :status AND b.email != '' AND a.FCode = b.FCode ORDER BY a.LName ASC";
 
 		$row = Yii::app()->db->createCommand($sql)
 		->bindValue(':status','Active')

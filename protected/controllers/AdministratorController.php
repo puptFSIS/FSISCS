@@ -2150,7 +2150,7 @@ class AdministratorController extends Controller
 	    	$ftmpname = $_FILES['filename']['tmp_name'];
 	    	$subject = $_POST['subject'];
 			$message = $_POST['message'];
-			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
+			$message .= '<br><br><br>Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
 
 			$i = 0;
 			$emails = TblEvaluationfaculty::model()->GetActiveFacultyEmail();
@@ -2206,7 +2206,7 @@ class AdministratorController extends Controller
     	} else {
 			$subject = $_POST['subject'];
 			$message = $_POST['message'];
-			$message .= '<br><br><br>Click <a href="http://puptaguig.org/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
+			$message .= '<br><br><br>Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
 
 			$i = 0;
 			$emails = TblEvaluationfaculty::model()->GetActiveFacultyEmail();

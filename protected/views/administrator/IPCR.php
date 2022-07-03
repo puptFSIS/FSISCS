@@ -180,7 +180,13 @@ footer {
    color: white;
    text-align: center;
 }
-
+#slideshow_header
+{
+    background-color: #722c2c;
+    color: #f2d179;
+    padding: 4px;
+    text-align: center;
+}
 </style>
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
@@ -233,7 +239,8 @@ footer {
 <!-- Video - HTML5 -->
 <section>
  
-<h2 class=underlined-header>Getting started with <b>Individual Performance Commitment and Review</b></h2>
+<h2 id="slideshow_header">Getting started with <b>Individual Performance Commitment and Review</b></h2>
+<br>
 <iframe width="600" height="375" src="//www.youtube.com/embed/4DbzZEG_dKA" frameborder="0" allowfullscreen></iframe>
 </section>
 <!-- Scripts -->

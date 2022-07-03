@@ -10703,3 +10703,255 @@ in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolationco
 in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\IPCRInterpolation.php (780)
 in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3117)
 >>>>>>> Stashed changes
+2022/06/25 14:37:06 [error] [php] Undefined index: image_file (C:\Apps\xampp\htdocs\FSISCS\protected\views\site\login.php:226)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\site\index.php(4): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): SiteController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): SiteController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\SiteController.php(32): SiteController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): SiteController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): SiteController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\site\login.php (226)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\site\index.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\SiteController.php (32)
+2022/06/25 14:37:20 [error] [php] Undefined index: image_file (C:\Apps\xampp\htdocs\FSISCS\protected\views\site\login.php:226)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\site\index.php(4): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): SiteController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): SiteController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\SiteController.php(32): SiteController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): SiteController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): SiteController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=site/
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\site\login.php (226)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\site\index.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\SiteController.php (32)
+2022/06/25 14:49:05 [error] [php] Undefined index: image_file (C:\Apps\xampp\htdocs\FSISCS\protected\views\site\login.php:226)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\site\index.php(4): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): SiteController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): SiteController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): SiteController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\SiteController.php(32): SiteController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): SiteController->actionIndex()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): SiteController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): SiteController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): SiteController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=site/
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\site\login.php (226)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\site\index.php (4)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\SiteController.php (32)
+2022/06/26 12:21:32 [error] [exception.CException] CException: AdministratorController cannot find the requested view "index". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:881
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): CController->renderPartial('index', NULL, true)
+#1 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(24): CController->render('index')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIndex()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('')
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/')
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/
+---
+2022/06/26 12:24:20 [error] [php] session_start(): A session had already been started - ignoring (C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\index.php:3)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\index.php(3): session_start()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): FacultyController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): FacultyController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): FacultyController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php(30): FacultyController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): FacultyController->actionIndex()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): FacultyController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): FacultyController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): FacultyController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=faculty
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\index.php (3)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (30)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/26 12:32:46 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "index". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator
+HTTP_REFERER=http://localhost/FSISCS/index.php
+---
+2022/06/26 12:33:57 [error] [php] Undefined variable: ye (C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:3554)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIPCRform1()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/IPCRform1
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3554)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/26 12:35:20 [error] [php] Undefined index: CEmpID (C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:35)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProfile()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/profile
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (35)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/26 12:36:05 [error] [php] Undefined index: CEmpID (C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:35)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionProfile()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/profile
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (35)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/26 12:36:06 [error] [php] Undefined index: CEmpID (C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:23)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionIndex()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (23)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/06/26 12:36:46 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "profile". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('profile')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('profile')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('faculty/profile')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=faculty/profile
+---
+2022/06/29 15:43:33 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "IPCRinterpolview". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('IPCRinterpolvie...')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRinterpolvie...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('faculty/IPCRint...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRinterpolview
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=faculty/IPCRreport
+---
+2022/07/02 16:46:29 [error] [php] Undefined index: undertime_hrs_total (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php:38)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3691): AdministratorController->render()
+#5 unknown(0): AdministratorController->actionHap_checkDtr()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=/administrator/Hap_checkDtr&val1=48&val2=PART-TIME&val3=January&val4=2019&val5=FA0797MN2008&val6=Rabe,%20Yolanda,%20Follosco&val7=Yolanda&val8=Follosco
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php (38)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3691)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/07/02 16:46:40 [error] [php] Undefined index: undertime_hrs_total (C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php:38)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(3691): AdministratorController->render()
+#5 unknown(0): AdministratorController->actionHap_checkDtr()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CAction.php(115): ReflectionMethod->invokeArgs()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#13 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=/administrator/Hap_checkDtr&val1=48&val2=PART-TIME&val3=January&val4=2019&val5=FA0797MN2008&val6=Rabe,%20Yolanda,%20Follosco&val7=Yolanda&val8=Follosco
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\administrator\regular_DTR_single.php (38)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (3691)
+in C:\Apps\xampp\htdocs\FSISCS\index.php (13)
+2022/07/03 04:18:52 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "IPCRinterpolview". in C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('IPCRinterpolvie...')
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('IPCRinterpolvie...')
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('faculty/IPCRint...')
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRinterpolview
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=faculty/IPCRfaculty
+---
+2022/07/03 04:20:37 [error] [php] include(IPCRmenu.php): failed to open stream: No such file or directory (C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRinterpolview.php:263)
+Stack trace:
+#0 C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRinterpolview.php(263): include()
+#1 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#2 C:\Apps\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): FacultyController->renderInternal()
+#3 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(872): FacultyController->renderFile()
+#4 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(785): FacultyController->renderPartial()
+#5 C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php(1546): FacultyController->render()
+#6 C:\Apps\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): FacultyController->actionIPCRinterpolview()
+#7 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#8 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(286): FacultyController->runAction()
+#9 C:\Apps\xampp\htdocs\FSISCS\framework\web\CController.php(265): FacultyController->runActionWithFilters()
+#10 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): FacultyController->run()
+#11 C:\Apps\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#12 C:\Apps\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 C:\Apps\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=faculty/IPCRinterpolview
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRinterpolview.php (263)
+in C:\Apps\xampp\htdocs\FSISCS\protected\views\faculty\IPCRinterpolview.php (263)
+in C:\Apps\xampp\htdocs\FSISCS\protected\controllers\FacultyController.php (1546)

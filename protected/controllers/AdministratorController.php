@@ -2854,32 +2854,32 @@ class AdministratorController extends Controller
     	
     }
 
-    public function actionSendSpecific(){
-    	$receipients = array();
-    	$i = 0;
+   //  public function actionSendSpecific(){
+   //  	$receipients = array();
+   //  	$i = 0;
     	
 
-    	if (isset($_POST['fcode1'])) {
-    		$checked = $_POST['fcode1'];
+   //  	if (isset($_POST['fcode1'])) {
+   //  		$checked = $_POST['fcode1'];
 
-    		foreach($_POST['fcode2'] as $key => $value){
-			if(in_array($_POST['fcode2'][$key], $checked)){
-				// $recipients[$i] = $_POST['email2'][$key];
-				array_push($receipients, $_POST['fcode2'][$key]);
-				$i++;
-				}
-			}
-			$i = 0;
-			$emails = array();
-			foreach ($receipients as $row) {
-				$email[$i] = TblPersonalinformation::model()->GetEmail($receipients[$i]);
-				array_push($emails, $email[$i][0]['email']);
-				$i++;
-			}
-			$this->render('messageSpecific',array('receivers'=>$receipients, 'email' => $emails));
-    	} else {
-    		header("location: index.php?r=administrator/other&mes=4");
-    	}
+   //  		foreach($_POST['fcode2'] as $key => $value){
+			// if(in_array($_POST['fcode2'][$key], $checked)){
+			// 	// $recipients[$i] = $_POST['email2'][$key];
+			// 	array_push($receipients, $_POST['fcode2'][$key]);
+			// 	$i++;
+			// 	}
+			// }
+			// $i = 0;
+			// $emails = array();
+			// foreach ($receipients as $row) {
+			// 	$email[$i] = TblPersonalinformation::model()->GetEmail($receipients[$i]);
+			// 	array_push($emails, $email[$i][0]['email']);
+			// 	$i++;
+			// }
+			// $this->render('messageSpecific',array('receivers'=>$receipients, 'email' => $emails));
+   //  	} else {
+   //  		header("location: index.php?r=administrator/other&mes=4");
+   //  	}
 
     	
 		
@@ -2887,7 +2887,7 @@ class AdministratorController extends Controller
 		// print_r($_POST['fcode1']);
 		// echo "<pre>";
     	
-    }
+    // }
 
     public function actionsendEmailInd(){
         if (isset($_FILES['filename']) && $_FILES['filename']['name'] != "" && $_FILES['filename']['tmp_name'] != "") {

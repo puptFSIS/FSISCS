@@ -164,7 +164,13 @@ footer {
    color: white;
    text-align: center;
 }
-
+#slideshow_header
+{
+    background-color: #722c2c;
+    color: #f2d179;
+    padding: 4px;
+    text-align: center;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -196,7 +202,7 @@ footer {
 <!-- Video - HTML5 -->
 <section>
 
-<h2 class=underlined-header><center>Individual Performance Commitment and Review</center></h2>
+<h2 id="slideshow_header"><center>Individual Performance Commitment and Review</center></h2>
 <br>
 <h2 class="underlined">IPCR Evaluation of Faculty:</h2>
 <!---->

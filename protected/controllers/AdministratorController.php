@@ -2853,7 +2853,6 @@ class AdministratorController extends Controller
 		// echo "<pre>";
     	
     }
-
     public function actionsendEmailInd(){
         if (isset($_FILES['filename']) && $_FILES['filename']['name'] != "" && $_FILES['filename']['tmp_name'] != "") {
     		$fname = $_FILES['filename']['name'];

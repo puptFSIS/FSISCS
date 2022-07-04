@@ -1533,6 +1533,30 @@ class FacultyController extends Controller
 
 
 ///////////////////////////////////////////////
+	public function actionIPCRInterpolationSheet2JD()
+    {
+    	$this->render('IPCRInterpolationSheet2JD');
+    }
+    public function actionIPCRinterpolview2()
+    {
+    	$this->render('IPCRinterpolview2');
+    }
+    public function actionIPCRinterpolview()
+    {
+    	$this->render('IPCRinterpolview');
+    }
+    public function actionIPCRInterpolationSheet2()
+    {
+    	$this->render('IPCRInterpolationSheet2');
+    }
+    public function actionIPCRInterpolationcomputable()
+    {
+    	$this->render('IPCRInterpolationcomputable');
+    }
+    public function actionIPCRInterpolation()
+    {
+    	$this->render('IPCRInterpolation');
+    }
 	public function actionIPCRgenerate_evaluated()
 	{
 		$this->render('IPCRgenerate_evaluated');

@@ -1,14 +1,14 @@
-<?php 
+<?php  
 session_start();
 include("config.php");
 if(isset($_SESSION['user'])) {
-	if($_SESSION['user']==1) {
+    if($_SESSION['user']==1) {
 
-	} else if($_SESSION['user']==0) {
+    } else if($_SESSION['user']==0) {
 
-	}
+    }
 } else {
-	header("location:index.php?r=site/");
+    header("location:index.php?r=site/");
 }
 ?>
 <!DOCTYPE html>
@@ -17,17 +17,13 @@ if(isset($_SESSION['user'])) {
 <!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
 <!--[if (gt IE 9)|!(IE)]> <!--> <html class=no-js lang=en> <!-- <![endif]-->
 <head>
-
 <!--[if IE ]> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <![endif]-->
 <meta content='width=device-width, initial-scale=1.0' name=viewport />
 <meta content='FSIS' name=keywords />
 <meta content='PUP Taguig FSIS' name=description />
 <meta content='vCore Team' name=author />
 <!-- Page title -->
-<title>IPCR | Create</title>
-<!--Script of Sweet alert-->
-<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
-<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+<title>IPCR | Report (Interpolation)</title>
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
@@ -105,7 +101,7 @@ if(isset($_SESSION['user'])) {
         padding: 0;
         height: 240px;
         line-height: 30px;
-		width: 100%;
+        width: 100%;
     }
 
         .title-right a {
@@ -116,18 +112,18 @@ if(isset($_SESSION['user'])) {
             padding: 0;
             line-height: 30px;
             text-align: center;
-			width: 100%;
+            width: 100%;
         }
 
         
-	.title-right a:hover {
+    .title-right a:hover {
             background: url(../images/transparent/05_white.png);
             background-color: rgba(255,255,255,.05);
             width: 100%;
         }
 
 
-	.title-right a:last-child {
+    .title-right a:last-child {
             margin: 0;
         }
 
@@ -159,7 +155,6 @@ select {
   
 }
 
-
 footer {
     position: absolute;
    left: 0;
@@ -170,13 +165,6 @@ footer {
    text-align: center;
 }
 
-#slideshow_header
-{
-    background-color: #722c2c;
-    color: #f2d179;
-    padding: 4px;
-    text-align: center;
-}
 
 </style>
 
@@ -206,49 +194,39 @@ footer {
 <div id=page-body-content-inner>
 <!-- Page content -->
 <div id=page-content>
-<!-- Video - HTML5 -->
+<!-- Video - HTML5 --> 
 <section>
 
-<h2 id="slideshow_header"><center>Individual Performance Commitment and Review</center></h2>
+<h2 class=underlined-header><center>Individual Performance Commitment and Review</center></h2>
 <br>
-<h2 class="underlined">Create IPCR for:</h2>
-<!----> 
+<h2 class="underlined">Generate IPCR Interpolation Report for Faculty</h2>
+<!---->
 <?php  
-     
-    if(isset($_POST['submit']))
-    {
-        $selectedm = $_POST['Month'];
-        $selectedy = $_POST['Year'];
-    } 
+    
+    // if(isset($_POST['submit']))
+    // {
+    //     $selectedm = $_POST['Month'];
+    //     $selectedy = $_POST['Year'];
+    // } 
+    
         
 ?> 
-<form action="index.php?r=administrator/IPCRgenerate" method="post">
+<form action="index.php?r=administrator/IPCRinterpolview2" method="post">
     <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
-        <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
+       <!--  <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
             <option value="" disabled selected>----Choose Month----</option>
             <option value="JJ">January - June</option>
             <option value="JD">July - December</option>
-        </select>
+        </select> -->
         
         <select name="Year" id="ddlYears" style="outline: 50px; height: 50px;" required>
-                <option value="" disabled selected>----Choose Year----</option>
+            <option value="" disabled selected>----Choose Year----</option> 
         </select>
     </div>
-    <center><button type="submit" name="submit" style="width: 100px">Generate</button></center>
-
+    <center><button class="submit" type="submit" name="submit" style="width: 110px">Get Report List</button></center>
 </form>
+
 </section>
-
-            <!--Sweet alert success-->
-            <?php if(isset($_GET['s'])) : ?>
-                <div class="flash-data" data-flashdata="<?= $_GET['s']; ?>"></div>
-            <?php endif; ?>
-
-            <!-- Sweet alert Already visible -->
-            <?php if(isset($_GET['a'])) : ?>
-                <div class="flash-data-already" data-flashdata1="<?= $_GET['a']; ?>"></div>
-            <?php endif; ?>
-
             <script>
                 //Script for auto populate year
                 window.onload = function () 
@@ -268,27 +246,8 @@ footer {
                     }
                 };
 
-                const flashdata = $('.flash-data').data('flashdata')
-                    if (flashdata) {
-                        Swal.fire(
-                            'IPCR Successfully Created and Available to Faculty',
-                            'Faculty notified through email',
-                            'success'
-                        )
-                    } 
-
-                const flashdata1 = $('.flash-data-already').data('flashdata1')
-                    if (flashdata1) {
-                        Swal.fire(
-                            'IPCR Already Created and Available to Faculty.',
-                            '',
-                            'warning'
-                        )
-                    }       
-
 
             </script>
-
 <!-- End - Video -HTML5 -->
 <br/>
 
@@ -301,7 +260,7 @@ footer {
 <h2 class=widget-heading>IPCR</h2>
 <div class=widget-content>
 <ul class='widget-list categories-list'>
-<?php include("IPCRmenu.php");?> 
+<?php include("IPCRmenufaculty.php");?> 
 </ul>
 </div>
 </section>
@@ -322,6 +281,6 @@ footer {
         </section>
     </div>
 </footer>
-
 </body>
 </html>
+

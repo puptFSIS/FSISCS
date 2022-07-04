@@ -45,7 +45,7 @@ return true;
 	<br />';
 ?>
 
-<form name="pictureForm" method="post" autocomplete="off" enctype="multipart/form-data">
+<!-- <form name="pictureForm" method="post" autocomplete="off" enctype="multipart/form-data">
 <div>
 <span>Change Picture</span>
 <input style="width: 100%;"type="file" name="picture" id="picture" onchange="return ajaxFileUpload(this);" />
@@ -121,7 +121,7 @@ return true;
 <li class="hey">
 <a href='index.php?r=faculty/PDS' >Personal Data Sheet</a>
 </li>
-<br />
+<br /> -->
 
 <!--
 <li>

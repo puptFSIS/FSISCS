@@ -23,7 +23,7 @@ if(isset($_SESSION['user'])) {
 <meta content='PUP Taguig FSIS' name=description />
 <meta content='vCore Team' name=author />
 <!-- Page title -->
-<title>IPCR | Evaluation</title>
+<title>IPCR | Deadline Extension</title>
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
@@ -164,13 +164,7 @@ footer {
    color: white;
    text-align: center;
 }
-#slideshow_header
-{
-    background-color: #722c2c;
-    color: #f2d179;
-    padding: 4px;
-    text-align: center;
-}
+
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -199,12 +193,12 @@ footer {
 <div id=page-body-content-inner>
 <!-- Page content -->
 <div id=page-content>
-<!-- Video - HTML5 -->
+<!-- Video - HTML5 --> 
 <section>
 
-<h2 id="slideshow_header"><center>Individual Performance Commitment and Review</center></h2>
+<h2 class=underlined-header><center>Individual Performance Commitment and Review</center></h2>
 <br>
-<h2 class="underlined">IPCR Evaluation of Faculty:</h2>
+<h2 class="underlined">Extend IPCR deadline Report for Faculty</h2>
 <!---->
 <?php  
     
@@ -214,9 +208,9 @@ footer {
     //     $selectedy = $_POST['Year'];
     // } 
     
-         
+        
 ?> 
-<form action="index.php?r=administrator/IPCRgetlist" method="post">
+<form action="index.php?r=administrator/IPCRdeadlineExtend2" method="post">
     <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
         <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
             <option value="" disabled selected>----Choose Month----</option>
@@ -228,12 +222,10 @@ footer {
             <option value="" disabled selected>----Choose Year----</option> 
         </select>
     </div>
-    <center><button type="submit" name="submit" style="width: 100px">Get List</button></center>
- 
+    <center><button type="submit" name="submit" style="width: 110px">Get List</button></center>
 </form>
 
 </section>
-            <!-- <script src="js/preventresize.js"></script> -->
             <script>
                 //Script for auto populate year
                 window.onload = function () 
@@ -268,7 +260,7 @@ footer {
 <div class=widget-content>
 <ul class='widget-list categories-list'>
 <?php include("IPCRmenu.php");?> 
-</ul>
+</ul> 
 </div>
 </section>
 </aside>

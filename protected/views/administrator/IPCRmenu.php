@@ -42,6 +42,10 @@
 </li>
 
 <li>
+  <a href="index.php?r=administrator/IPCRdeadlineExtend1" title="Extend IPCR deadline of faculty">Deadline Extension</a>
+</li>
+
+<li>
 	<a href='index.php?r=administrator/IPCRemailnotif' title="Send Individual Email For Faculty">Send IPCR Email Notification</a>
 </li>
 

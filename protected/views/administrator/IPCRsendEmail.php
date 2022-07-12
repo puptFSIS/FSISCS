@@ -16,7 +16,7 @@
 
 	//$mail->SMTPDebug = 3;	//Logs 
 
-	$mail->isSMTP(); //Disable or comment this in Live server
+	//$mail->isSMTP(); //Disable or comment this in Live server
 
 	$mail->Host = "smtp.gmail.com";	//Host Server
 

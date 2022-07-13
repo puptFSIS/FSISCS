@@ -1069,8 +1069,11 @@ class FacultyController extends Controller
 	public function actionSubjPrefer()
 
 	{
+		$sySem = TblCurrentsyandsem::model()->AllData();
+		$year = $sySem[0]['schoolYear'];
+		$sem = $sySem[0]['sem'];
 
-		$this->render('SubjPrefer');
+		$this->render('SubjPrefer',array('sy' => $year, 'sem' => $sem));
 
 	}
 

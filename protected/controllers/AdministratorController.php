@@ -3047,12 +3047,12 @@ class AdministratorController extends Controller
     	$prof = $_POST['prof'];
     	$totalUnits = $_POST['totalUnits'];
 
-    	if (isset($_POST['subjID1'])) {
-	    	$checked = $_POST['subjID1'];
-	    	foreach($_POST['subjID2'] as $key => $value){
-	    		if (in_array($_POST['subjID2'][$key], $checked)) {
+    	if (isset($_POST['sched_id1'])) {
+	    	$checked = $_POST['sched_id1'];
+	    	foreach($_POST['sched_id2'] as $key => $value){
+	    		if (in_array($_POST['sched_id2'][$key], $checked)) {
 	    			// $subjcode = $_POST['subjID2'][$key]."<br>";
-	    			$sched_id = $_POST['sched_id'][$key];
+	    			$sched_id = $_POST['sched_id2'][$key];
 	    			// echo "<br>";
 
 	    			if ($load_type == "Regular") {
@@ -3088,37 +3088,42 @@ class AdministratorController extends Controller
     	// print_r($_POST);
     	// echo "</pre>";
 
-    	$sem = $_POST['sem'];
-    	$sy = $_POST['sy'];
-    	$prof = $_POST['prof'];
-    	$scode = $_POST['scode'];
-    	$stitle = $_POST['stitle'];
-    	$units = $_POST['units'];
-    	$lec = $_POST['lec'];
-    	$lab = $_POST['lab'];
-    	$schedID = $_POST['sched_id'];
-    	$load_type = $_POST['load_type'];
+    	if($lec != "" || !empty($lec) || $lab != "" || !empty($lab)){
+    		$sem = $_POST['sem'];
+	    	$sy = $_POST['sy'];
+	    	$prof = $_POST['prof'];
+	    	$scode = $_POST['scode'];
+	    	$stitle = $_POST['stitle'];
+	    	$units = $_POST['units'];
+	    	$lec = $_POST['lec'];
+	    	$lab = $_POST['lab'];
+	    	$schedID = $_POST['sched_id'];
+	    	$load_type = $_POST['load_type'];
 
 
-    	// $subject = TblSchedule::model()->findByPk($schedID);
-    	// $subject->scode=$scode;
-    	// $subject->stitle=$stitle;
-    	// $subject->units=$units;
-    	// $subject->lec=$lec;
-    	// $subject->lab=$lab;
-    	// $subject->save();
+	    	// $subject = TblSchedule::model()->findByPk($schedID);
+	    	// $subject->scode=$scode;
+	    	// $subject->stitle=$stitle;
+	    	// $subject->units=$units;
+	    	// $subject->lec=$lec;
+	    	// $subject->lab=$lab;
+	    	// $subject->save();
 
-    	Yii::app()->db->createCommand('UPDATE tbl_schedule SET scode = :scode, stitle = :stitle, units =:units, lec = :lec, lab = :lab WHERE schedID = :schedID')
-    	->bindValue(':scode', $scode)
-    	->bindValue(':stitle', $stitle)
-    	->bindValue(':units', $units)
-    	->bindValue(':lec', $lec)
-    	->bindValue(':lab', $lab)
-    	->bindValue(':schedID', $schedID)
-    	->query();
+	    	Yii::app()->db->createCommand('UPDATE tbl_schedule SET scode = :scode, stitle = :stitle, units =:units, lec = :lec, lab = :lab WHERE schedID = :schedID')
+	    	->bindValue(':scode', $scode)
+	    	->bindValue(':stitle', $stitle)
+	    	->bindValue(':units', $units)
+	    	->bindValue(':lec', $lec)
+	    	->bindValue(':lab', $lab)
+	    	->bindValue(':schedID', $schedID)
+	    	->query();
 
-    	// print_r($subject->errors);
-    	header("location: index.php?r=administrator/SetTeachingAssignment&sem=".$sem."&sy=".$sy."&prof=".$prof."&mes=1&mode=".$load_type."&totalUnits=".$_POST['totalUnits']."");
+	    	// print_r($subject->errors);
+	    	header("location: index.php?r=administrator/SetTeachingAssignment&sem=".$sem."&sy=".$sy."&prof=".$prof."&mes=1&mode=".$load_type."&totalUnits=".$_POST['totalUnits']."");
+	    } else {
+	    	header("location: index.php?r=administrator/SetTeachingAssignment&sem=".$sem."&sy=".$sy."&prof=".$prof."&mes=3&mode=".$load_type."&totalUnits=".$_POST['totalUnits']."");
+	    }
+    	
 
     }
 

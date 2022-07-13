@@ -181,7 +181,7 @@ class PDF extends FPDF
 	function getDay($scode,$currID,$cID,$sy,$sec)
 	{
 		include("config.php");
-		$sql ="SELECT * FROM tbl_schedule WHERE scode ='$scode' AND currID = '$currID' AND schoolYear = '$sy' AND courseID = '$cID' AND csection = '$sec'";
+		$sql ="SELECT * FROM tbl_schedule WHERE scode ='$scode' AND currID = '$currID' AND schoolYear = '$sy' AND courseID = '$cID' AND csection = '$sec' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$row = mysqli_fetch_array($result);
 		$day = $row['sday'];
@@ -191,7 +191,7 @@ class PDF extends FPDF
 	function getDay2($scode,$currID,$cID,$sy,$sec)
 	{
 		include("config.php");
-		$sql ="SELECT * FROM tbl_schedule WHERE scode ='$scode' AND currID = '$currID' AND schoolYear = '$sy' AND courseID = '$cID' AND csection = '$sec'";
+		$sql ="SELECT * FROM tbl_schedule WHERE scode ='$scode' AND currID = '$currID' AND schoolYear = '$sy' AND courseID = '$cID' AND csection = '$sec' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$row = mysqli_fetch_array($result);
 		$day = $row['sday2'];
@@ -201,7 +201,7 @@ class PDF extends FPDF
 	function getRoom($scode,$currID,$cID,$sy,$sec)
 	{
 		include("config.php");
-		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec'";
+		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$row = mysqli_fetch_array($result);
 		if($row['sroom']<>'')
@@ -218,7 +218,7 @@ class PDF extends FPDF
 	function getRoom2($scode,$currID,$cID,$sy,$sec)
 	{
 		include("config.php");
-		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec'";
+		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$row = mysqli_fetch_array($result);
 		if($row['sroom2']<>'')
@@ -235,7 +235,7 @@ class PDF extends FPDF
 	function getProf($scode,$currID,$cID,$sy,$sec)
 	{
 		include("config.php");
-		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec'";
+		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$row = mysqli_fetch_array($result);
 		$prof = getName($row['sprof']);
@@ -245,7 +245,7 @@ class PDF extends FPDF
 	function getTime($scode,$currID,$cID,$sy,$sec)
 	{
 		include("config.php");
-		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec'";
+		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$row = mysqli_fetch_array($result);
 		if($row['stimeS']<>0){
@@ -259,7 +259,7 @@ class PDF extends FPDF
 	function getTime2($scode,$currID,$cID,$sy,$sec)
 	{
 		include("config.php");
-		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec'";
+		$sql ="SELECT * FROM tbl_schedule where scode ='$scode' and currID = '$currID' and schoolYear = '$sy' and courseID = '$cID' and csection = '$sec' and Sched_type = 'OFFICIAL'";
 		$result = mysqli_query($conn,$sql);
 		$row = mysqli_fetch_array($result);
 		if($row['stimeS2']<>0){

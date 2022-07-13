@@ -873,6 +873,15 @@ include("config.php");
 		})
 	}
 
+	if(flashdata==3){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
+			text:'Please fill out the Given Fields',
+			
+		})
+	}
+
 </script>
 </body>
 </html>

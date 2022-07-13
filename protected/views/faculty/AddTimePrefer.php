@@ -19,9 +19,15 @@ include("config.php");
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 <?php include("stylesheet.php");?>
-
 <link href='styles/print.css' media=print rel=stylesheet />
+<style type="text/css" media = "screen">
+.modal-backdrop {
+    /* bug fix - no overlay */    
+    display: none;    
+}
+</style>
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 <meta charset="UTF-8"></head>
@@ -53,6 +59,9 @@ include("config.php");
 <section>
 
 <h2 class=underlined-header>Day Schedule Availability</h2>
+
+<button data-toggle="modal" data-target="#myModal1" style="height: 30px; width:100px; text-align: center;">Add Schedule</button>
+
 <?php if (isset($_GET['mes'])) : ?>
 	<?php if ($_GET['mes']==0): ?>
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
@@ -228,141 +237,183 @@ include('config.php');
 		return $Name;
 	}
 ?>
-<p>* Required fields.</p>
-<hr style="margin-top: -10px;" />
-<form id="annc" name="annc" action="index.php?r=faculty/TimePreferProcessADD" method="post">
-<p style="margin-bottom: 9px;">*Day:
-<select name="sday" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$blank = "";
-		$d1 = "M";
-		$d2 = "T";
-		$d3 = "W";
-		$d4 = "TH";
-		$d5 = "F";
-		$d6 = "S";
-		$d = "";
-		$araw = "";
-		
-		
-		if($araw <> "")
-		{
-			echo '<option value = "'.$araw.'">'. $araw .'</option>';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
-		
-		for($day=1;$day<=6;$day++) 
-		{
-			if($day==1)
-			{
-				$d = $d1;
-			}
-			elseif($day==2)
-			{
-				$d = $d2;
-			}
-			elseif($day==3)
-			{
-				$d = $d3;
-			}
-			elseif($day==4)
-			{
-				$d = $d4;
-			}
-			elseif($day==5)
-			{
-				$d = $d5;
-			}
-			elseif($day==6)
-			{
-				$d = $d6;
-			}
-			echo '<option value = "'.$d.'">'. $d .'</option>';
-		}
-	?>
-</select>
-</p>
 
-<p style="margin-bottom: 12px;">Whole Day
-<input id ="WD" type="checkbox" name="WholeDay" style="margin-left: 30px;" onclick="yesnoCheck(this)">
-</p>
 
-<div id="ifYes" style="display: block;">
-	<p style="margin-bottom: 9px;">*Time Start:
-		<input id="Stime" type="time" name="timeS" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" >
-	</p>
 
-	
-	<p style="margin-bottom: 9px;">*Time End:
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form id="annc" name="annc" action="index.php?r=faculty/TimePreferProcessADD" method="post">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color:black;">&times;</span>
+            </button>
+          <h4 class="modal-title" style="position: absolute; left: 5px;top: 5px;">Add Schedule Preference</h4>
+        </div>
+        <div class="modal-body">
+        	<p>* Required fields.</p>
+			<hr style="margin-top: -10px;" />
+            <p style="margin-bottom: 9px;">*Day:
+				<select name="sday" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+					<?php
+						$blank = "";
+						$d1 = "M";
+						$d2 = "T";
+						$d3 = "W";
+						$d4 = "TH";
+						$d5 = "F";
+						$d6 = "S";
+						$d = "";
+						$araw = "";
+						
+						
+						if($araw <> "")
+						{
+							echo '<option value = "'.$araw.'">'. $araw .'</option>';
+						}
+						else
+						{
+							echo'
+								<option value="'. $blank .'"></option>
+							';
+						}
+						
+						for($day=1;$day<=6;$day++) 
+						{
+							if($day==1)
+							{
+								$d = $d1;
+							}
+							elseif($day==2)
+							{
+								$d = $d2;
+							}
+							elseif($day==3)
+							{
+								$d = $d3;
+							}
+							elseif($day==4)
+							{
+								$d = $d4;
+							}
+							elseif($day==5)
+							{
+								$d = $d5;
+							}
+							elseif($day==6)
+							{
+								$d = $d6;
+							}
+							echo '<option value = "'.$d.'">'. $d .'</option>';
+						}
+					?>
+				</select>
+				</p>
 
-		<input id ="Etime" type="time" name="timeE"  style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" >
-	</p>
+				<p style="margin-bottom: 12px;">Whole Day
+				<input id ="WD" type="checkbox" name="WholeDay" style="margin-left: 55px;" onclick="yesnoCheck(this)">
+				</p>
+
+				<div id="ifYes" style="display: block;">
+					<p style="margin-bottom: 9px;">*Time Start:
+						<input id="Stime" type="time" name="timeS" style="display: inline-block;margin-left: 50px;margin-bottom: 9px; width: 110px;" >
+					</p>
+
+					
+					<p style="margin-bottom: 9px;">*Time End:
+
+						<input id ="Etime" type="time" name="timeE"  style="display: inline-block;margin-left: 54px;margin-bottom: 9px; width: 110px;" >
+					</p>
+				</div>
+
+				<p style="margin-bottom: 9px;">*Prof. Name:
+				<select name="profName" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+					<?php
+						$prof = "";
+						$blank = "";
+						
+						$prof=$_SESSION['FCode'];
+						
+						if($prof <> "")
+						{
+							echo'
+								<option value="'. $prof .'"> '. getName($prof)  .'</option>
+							';
+						}
+						else
+						{
+							echo'
+								<option value="'. $blank .'"></option>
+							';
+						}
+						
+						
+					?>
+				</select>
+				</p>
+
+				<p style="margin-bottom: 9px;">*Semester:
+				<select name="sem" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+					<?php
+						$sql = "SELECT * FROM tbl_currentSYandSem";
+						$result = mysqli_query($conn, $sql);
+
+						while($row = mysqli_fetch_array($result)) {
+							echo '
+								<option value="'. $row['sem'] .'">'. $row['sem'] .'</option>
+							';
+						}
+					?>
+				</select>
+				</p>
+
+				<p style="margin-bottom: 9px;">*School Year:
+				<select name = "sy" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+							<?php
+									$sql = "SELECT DISTINCT schoolYear FROM tbl_subjectload ORDER BY schoolYear DESC LIMIT 2";
+									$result = mysqli_query($conn, $sql);
+									while($row = mysqli_fetch_array($result)) {
+										echo '
+											<option value="'. $row['schoolYear'] .'">'. $row['schoolYear'] .'</option>
+										';
+									}
+							
+							?>
+						</select>
+				</p>
+
+        </div>
+
+        <div class="modal-footer">
+          <input type="submit" name="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
 </div>
 
-<p style="margin-bottom: 9px;">*Prof. Name:
-<select name="profName" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$prof = "";
-		$blank = "";
-		
-		$prof=$_SESSION['FCode'];
-		
-		if($prof <> "")
-		{
-			echo'
-				<option value="'. $prof .'"> '. getName($prof)  .'</option>
-			';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
-		
-		
-	?>
-</select>
-</p>
 
-<p style="margin-bottom: 9px;">*Semester:
-<select name="sem" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$sql = "SELECT * FROM tbl_currentSYandSem";
-		$result = mysqli_query($conn, $sql);
 
-		while($row = mysqli_fetch_array($result)) {
-			echo '
-				<option value="'. $row['sem'] .'">'. $row['sem'] .'</option>
-			';
-		}
-	?>
-</select>
-</p>
 
-<p style="margin-bottom: 9px;">*School Year:
-<select name = "sy" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-			<?php
-					$sql = "SELECT DISTINCT schoolYear FROM tbl_subjectload ORDER BY schoolYear DESC LIMIT 2";
-					$result = mysqli_query($conn, $sql);
-					while($row = mysqli_fetch_array($result)) {
-						echo '
-							<option value="'. $row['schoolYear'] .'">'. $row['schoolYear'] .'</option>
-						';
-					}
-			
-			?>
-		</select>
-</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <form id="annc" name="annc" action="index.php?r=faculty/TimePreferProcessADD" method="post">
+
 
 
 <center><p><input type="submit" value="Save" /> <a href="index.php?r=faculty/SubjPrefer" class="btn btn-primarycan">Cancel</a></p></center>
-</form>
+</form> -->
 </section>
 <!-- End - Video -HTML5 -->
 <br/>
@@ -426,6 +477,7 @@ include('config.php');
 
 <!-- Scripts -->
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/bootstrap.min.js"></script>
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 

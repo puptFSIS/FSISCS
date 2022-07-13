@@ -124,7 +124,7 @@ if(isset($_SESSION['user'])) {
 
 <?php
 	function to12Hr($ctime) {
-		$$strTime = "";
+		$strTime = "";
 							$dn = "";
 
 							if (strlen($ctime) == 4) {

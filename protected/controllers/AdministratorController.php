@@ -3135,7 +3135,14 @@ class AdministratorController extends Controller
 
 
     /////////////////////////////////IPCR CONTROLLERS////////////////////////////////////
-    
+    public function actionIPCRdeadlineExtend1()
+    {
+    	$this->render('IPCRdeadlineExtend1');
+    }
+    public function actionIPCRdeadlineExtend2()
+    {
+    	$this->render('IPCRdeadlineExtend2');
+    }
     public function actionIPCRform2copy()
     {
     	if(isset($_GET['m'],$_GET['y'],$_GET['fcode']))

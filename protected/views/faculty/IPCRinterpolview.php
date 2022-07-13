@@ -211,7 +211,7 @@ footer {
     
         
 ?> 
-<form action="index.php?r=administrator/IPCRinterpolview2" method="post">
+<form action="index.php?r=faculty/IPCRinterpolview2" method="post">
     <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
        <!--  <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
             <option value="" disabled selected>----Choose Month----</option>

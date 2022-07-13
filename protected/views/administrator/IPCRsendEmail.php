@@ -1,6 +1,7 @@
 <?php
+	//email credential
 	//fsisipcr2021@gmail.com - email
-	// puptipcr2021 - email pass
+	//puptipcr2021 - email pass
 	require ('PHPMailer-master/src/PHPMailer.php');
 	require ('PHPMailer-master/src/SMTP.php');
 
@@ -15,7 +16,7 @@
 
 	//$mail->SMTPDebug = 3;	//Logs 
 
-	$mail->isSMTP(); //Disable or comment this in Live server
+	//$mail->isSMTP(); //Disable or comment this in Live server
 
 	$mail->Host = "smtp.gmail.com";	//Host Server
 

@@ -367,7 +367,9 @@ footer {
                              //Database
                                 $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status = 'Submitted' ORDER BY tbl_evaluationfaculty.LName ASC";
                                 $result = mysqli_query($conn,$sql);
+                                $count = mysqli_num_rows($result);
 
+                                if($count > 0) {
                                 while($row = mysqli_fetch_array($result)) 
                                 {
                                     $fcode = $row['fcode'];
@@ -383,7 +385,16 @@ footer {
                                         <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 60px">View</button></a></td>
                                     </tr>';
                                 }
-                            ?>  
+                                } elseif($count == 0) {
+                                    echo '
+                                        <tfoot>
+                                            <tr>
+                                            <td colspan="4" style="font-size: 14px">No Records Found</td> 
+                                            </tr>
+                                        </tfoot>
+                                    ';
+                                } 
+                            ?> 
                             <script>
                                 function myFunction1() 
                                 {
@@ -428,7 +439,9 @@ footer {
                              //Database approved
                                 $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status = 'Approved' ORDER BY tbl_evaluationfaculty.LName ASC";
                                 $result = mysqli_query($conn,$sql);
+                                $count = mysqli_num_rows($result);
 
+                                if($count > 0) {
                                 while($row = mysqli_fetch_array($result)) 
                                 {
                                     $fcode = $row['fcode'];
@@ -446,6 +459,15 @@ footer {
                                             <a href="index.php?r=administrator/IPCRform1&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.'"><button type="submit" name="submit">PDF</button></a>
                                         </td>
                                     </tr>';
+                                }
+                                } elseif($count == 0) {
+                                    echo '
+                                        <tfoot>
+                                            <tr>
+                                            <td colspan="4" style="font-size: 14px">No Records Found</td> 
+                                            </tr>
+                                        </tfoot>
+                                    ';
                                 }
                             ?>  
                             <script>
@@ -492,7 +514,9 @@ footer {
                              //Database
                                 $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status = 'Pending' ORDER BY tbl_evaluationfaculty.LName ASC";
                                 $result = mysqli_query($conn,$sql);
+                                $count = mysqli_num_rows($result);
 
+                                if($count > 0) {
                                 while($row = mysqli_fetch_array($result)) 
                                 {
                                     $fcode = $row['fcode'];
@@ -507,6 +531,15 @@ footer {
                                         <td name="status" style="text-align: left;">'.$status.'</td>
                                         <td><a href="index.php?r=administrator/IPCRviewprocess&status='.$status.'&fcode='.$fcode.'&m='.$m.'&y='.$y.'"><button type="submit" name="submit" style="width: 60px">View</button></a></td>
                                     </tr>';
+                                }
+                                } elseif($count == 0) {
+                                    echo '
+                                        <tfoot>
+                                            <tr>
+                                            <td colspan="4" style="font-size: 14px">No Records Found</td> 
+                                            </tr>
+                                        </tfoot>
+                                    ';
                                 }
                             ?>  
                             <script>
@@ -553,7 +586,9 @@ footer {
                              //Database
                                 $sql = "SELECT tbl_evaluationfaculty.LName,tbl_evaluationfaculty.FName,tbl_evaluationfaculty.MName,tbl_evaluationfaculty.Email,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year = '$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status IS NULL ORDER BY tbl_evaluationfaculty.LName ASC";
                                 $result = mysqli_query($conn,$sql);
+                                $count = mysqli_num_rows($result);
 
+                                if($count > 0) {
                                 while($row = mysqli_fetch_array($result)) 
                                 {
                                     $fcode = $row['fcode'];
@@ -567,6 +602,15 @@ footer {
                                         <td name="fcode" style="text-align: left;">'.$fcode.'</td>
                                         <td name="email" style="text-align: left;">'.$email.'</td>
                                     </tr>';
+                                }
+                                } elseif($count == 0) {
+                                    echo '
+                                        <tfoot>
+                                            <tr>
+                                            <td colspan="4" style="font-size: 14px">No Records Found</td> 
+                                            </tr>
+                                        </tfoot>
+                                    ';
                                 }
                             ?>  
 <!--                             <td name="status" style="text-align: left;">'.$status.'</td>

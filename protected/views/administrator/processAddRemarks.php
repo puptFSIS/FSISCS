@@ -16,7 +16,7 @@
 	}
 	if($result)
 	{
-		header('Location: index.php?r=administrator/IPCRremarks&m='.$m.'&y='.$y.'&id='.$id.'');
+		header('Location: index.php?r=administrator/IPCRratingsremarks&m='.$m.'&y='.$y.'&id='.$id.'');
 	}
 	 mysqli_close($conn);
 ?>

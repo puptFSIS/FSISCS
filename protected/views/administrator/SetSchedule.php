@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 include("config.php");
 if(isset($_SESSION['user'])) {
@@ -373,9 +373,9 @@ if(isset($_SESSION['user'])) {
 		$start = "";
 		$strTime = "";
 
-		if(isset($_GET['timeS'])){
-			echo'<option value="'. $_GET['timeS'] .'">'.to12Hr($_GET['timeS']).'</option>';
-		}
+		// if(isset($_GET['timeS'])){
+		// 	echo'<option value="'. $_GET['timeS'] .'">'.to12Hr($_GET['timeS']).'</option>';
+		// }
 
 		$sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
 		$result2 = mysqli_query($conn,$sql2);
@@ -425,9 +425,9 @@ if(isset($_SESSION['user'])) {
 		$sec = $_GET['sec'];
 		$end = "";
 
-		if(isset($_GET['timeE'])){
-			echo'<option value="'. $_GET['timeE'] .'">'.to12Hr($_GET['timeE']).'</option>';
-		}
+		// if(isset($_GET['timeE'])){
+		// 	echo'<option value="'. $_GET['timeE'] .'">'.to12Hr($_GET['timeE']).'</option>';
+		// }
 
 		$sql2="SELECT * FROM tbl_schedule where schedID = ".$schedID."";
 		$result2 = mysqli_query($conn,$sql2);

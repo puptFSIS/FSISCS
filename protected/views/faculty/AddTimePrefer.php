@@ -1,5 +1,5 @@
 ﻿<?php
-session_start();
+// session_start();
 include("config.php");
 ?>
 <!DOCTYPE html>
@@ -76,6 +76,12 @@ include("config.php");
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
 	<?php endif;?>
 	<?php if ($_GET['mes']==4): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+	<?php if ($_GET['mes']==5): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+	<?php if ($_GET['mes']==6): ?>
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
 	<?php endif;?>
 <?php endif;?>
@@ -394,8 +400,34 @@ include('config.php');
 
 
 
+<!-- Table of Preferred Schedules of the Faculty -->
+<table class="table table-bordered table-hover responsive-utilities">
+	<thead>
+		<tr>
+			<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">DAY</td>
+			<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">TIME</td>
+			<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">ACTION</td>
+		</tr>
+	</thead>
 
+	<tbody>
+		<?php foreach ($timePref as $row): ?>
+			<tr>
+				<td style="text-align: center; background-color: white;"><?php echo $row['sday']?></td>
 
+				<?php if ($row['Whole_Day'] == 1): ?>
+					<td style="text-align: center; background-color: white;">WHOLE DAY</td>
+					<?php else: ?>
+						<td style="text-align: center; background-color: white;"><?php echo to12Hr($row['stimeS'])."/".to12Hr($row['stimeE'])?></td>
+				<?php endif ?>
+
+				
+				<td style="text-align: center;background-color: white;"><a href="index.php?r=faculty/UpdateTimePrefer&sem=<?php echo $row['sem'] ?>&sy=<?php echo $row['schoolYear'] ?>&timeID=<?php echo $row['timeID'] ?>" class="btn btn-primary" >UPDATE</a>
+				<a href="index.php?r=faculty/DeletetimePrefer&timeID=<?php echo $row['timeID'] ?>&sem=<?php echo $row['sem'] ?>&sy=<?php echo $row['schoolYear'] ?>" class="btn btn-s">DELETE</a></td>
+			</tr>
+		<?php endforeach ?>
+	</tbody>
+</table>
 
 
 
@@ -542,6 +574,24 @@ include('config.php');
 			icon:'error',
 			title:'Ooops!',
 			text:'Classes are only from 7:30 AM to 10:30 PM',
+			timer: '4000'
+		})
+	}
+
+		if(flashdata==5){
+		Swal.fire({
+			icon:'success',
+			title:'Success!',
+			text:'Preferred Schedule Deleted',
+			timer: '4000'
+		})
+	}
+
+	if(flashdata==6){
+		Swal.fire({
+			icon:'success',
+			title:'Success!',
+			text:'Preferred Schedule Updated',
 			timer: '4000'
 		})
 	}

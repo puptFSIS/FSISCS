@@ -1126,7 +1126,18 @@ class FacultyController extends Controller
 	public function actionAddTimePrefer()
 
 	{
-		$this->render('AddTimePrefer');
+		$semAndSy = TblCurrentsyandsem::model()->AllData();
+		foreach ($semAndSy as $row) {
+			$sem = $row['sem'];
+			$sy = $row['schoolYear'];
+		}
+		$prof = Yii::app()->session['fcode'];
+		$timePref = TblTimepreferences::model()->GetProfSchedPref($sem, $sy, $prof);
+
+		/*echo "<pre>";
+		print_r($timePref);
+		echo "</pre>";*/
+		$this->render('AddTimePrefer', array('timePref' => $timePref));
 
 	}
 
@@ -1285,7 +1296,7 @@ class FacultyController extends Controller
 		// Delete Active Query in Yii 1.1
 		$deleteTimePrefer = TblTimepreferences::model()->findByPk($timeID);
 		$deleteTimePrefer->delete();
-		header("Location: index.php?r=faculty/TimePrefer&sem=".$sem."&sy=".$sy."&mes=1");
+		header("Location: index.php?r=faculty/AddTimePrefer&mes=5");
 
 		// $this->render('DeletetimePrefer');
 

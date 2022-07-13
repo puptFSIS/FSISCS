@@ -5,15 +5,11 @@
 </li> -->
 
 <li>
-<a href='index.php?r=faculty/AddTimePrefer' >Add Schedule</a>
+<a href='index.php?r=faculty/AddTimePrefer' >Schedule Preferences</a>
 </li>
 
 <li>
 <a href='index.php?r=faculty/tagSubjects' >Choose Subjects</a>
-</li>
-
-<li>
-<a href='index.php?r=faculty/TimePrefer' >Manage Schedules</a>
 </li>
 
 <li>

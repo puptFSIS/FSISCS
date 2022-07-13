@@ -110,4 +110,16 @@ class TblTimepreferences extends CActiveRecord
 		return parent::model($className);
 	}
 
+	public static function GetProfSchedPref($sem, $sy, $prof){
+		$sql = "SELECT * FROM tbl_timepreferences WHERE sem = :sem AND schoolYear = :sy AND sprof = :prof ORDER BY timeID ASC";
+
+		$row = Yii::app()->db->createCommand($sql)
+		->bindValue(":sem", $sem)
+		->bindValue(":sy", $sy)
+		->bindValue(":prof", $prof)
+		->queryAll();
+
+		return $row;
+	}
+
 }

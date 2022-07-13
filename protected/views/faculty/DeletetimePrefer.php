@@ -12,7 +12,7 @@
 
 	$sql="Delete from tbl_timepreferences where timeID = '$timeID'";
 	$result=mysqli_query($conn,$sql);
-	header("Location: index.php?r=faculty/TimePrefer&sem=$sem&sy=$sy&mes=1");
+	header("Location: index.php?r=faculty/AddTimePrefer&mes=5");
 
 
 	mysqli_close($conn);

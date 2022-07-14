@@ -12,7 +12,7 @@
 
 	$sql="Delete from tbl_subjpreferences  where schedID = '$schedID'";
 	$result=mysqli_query($conn,$sql);
-	header("Location: index.php?r=faculty/TagSchedules&sem=$sem&sy=$sy&mes=1");
+	header("Location: index.php?r=faculty/TaggedSubjects&mes=1");
 
 
 	mysqli_close($conn);

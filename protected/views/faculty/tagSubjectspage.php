@@ -164,6 +164,9 @@ width: 300px;
 <br>
 
 <section>
+
+<a href="index.php?r=faculty/TaggedSubjects" style ="left: -60px;top: -140px; position:relative;"><button style="height:35px;">BACK</button></a>
+
 <form id="SubjForm" method="post" action="index.php?r=faculty/TagSubjectADD">
 <?php if (isset($_GET['sem'])): ?>
 	<input type="hidden" name="sem" value="<?php echo $_GET['sem']?>">

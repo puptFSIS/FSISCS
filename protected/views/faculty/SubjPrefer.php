@@ -92,6 +92,40 @@ if(isset($_SESSION['user'])) {
     text-align: center;
 }
 </style>
+
+<style type="text/css">
+    .page-content{
+
+    }
+    #st-box 
+    {
+        padding: 1px 2px;
+        display: flex;
+        justify-content: center;
+        float:left;
+        width:250px;
+        height:70px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background: #fff;
+        
+    }
+
+    #rd-box 
+    {
+        padding: 1px 2px;
+        display: flex;
+        justify-content: center;
+        float:right;
+        width:250px;
+        height:70px;
+        border-radius: 12px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        background: #fff;
+        
+
+    } 
+</style>
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
@@ -121,6 +155,47 @@ if(isset($_SESSION['user'])) {
 <div id=page-content>
 <!-- Video - HTML5 -->
 <section>
+
+<h2>Dashboard</h2>
+<!-- School Year -->
+<div id="st-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <h3><?= $sy;?></h3>
+
+        <center><p>School Year</p></center>
+      </div>
+      <a href="#" class="small-box-footer">
+       
+      </a>
+</div>
+</div>
+
+<!-- Semester -->
+<div id="rd-box">
+    <!-- small card -->
+    <div class="small-box ">
+      <div class="inner">
+        <?php if ($sem == 1): ?>
+            <h3>1st Semester</h3>
+        <?php endif ?>
+        <?php if ($sem == 2): ?>
+            <h3>2nd Semester</h3>
+        <?php endif ?>
+        <?php if ($sem == 3): ?>
+            <h3>Summer</h3>
+        <?php endif ?>
+        
+
+        <center><p>Semester</p></center>
+      </div>
+     
+</div>
+</div>
+
+<br />
+<br />
 <br />
 <br />
 <iframe width="600" height="375" src="//www.youtube.com/embed/GndFY0R3THQ?list=PL-E9-Z9XrAcTe-VQhI2O0fDyQRjhRM_OK" frameborder="0" allowfullscreen></iframe>

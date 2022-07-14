@@ -1113,11 +1113,17 @@ class FacultyController extends Controller
 
 
 
-	public function actionTagSchedules()
+	public function actionTaggedSubjects()
 
 	{
+		$sySem = TblCurrentsyandsem::model()->AllData();
+		$year = $sySem[0]['schoolYear'];
+		$sem = $sySem[0]['sem'];
+		$fcode = Yii::app()->session['fcode'];
 
-		$this->render('TagSchedules');
+		$SubPref = TblSubjpreferences::model()->CheckProfSubPref($sem, $year, $fcode);
+
+		$this->render('TaggedSubjects',array('SubPref' => $SubPref, 'sy' => $year, 'sem' => $sem));
 
 	}
 

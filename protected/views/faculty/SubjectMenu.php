@@ -9,9 +9,5 @@
 </li>
 
 <li>
-<a href='index.php?r=faculty/tagSubjects' >Choose Subjects</a>
-</li>
-
-<li>
-<a href='index.php?r=faculty/TagSchedules' >Manage Subjects</a>
+<a href='index.php?r=faculty/TaggedSubjects' >Subject Preferences</a>
 </li>

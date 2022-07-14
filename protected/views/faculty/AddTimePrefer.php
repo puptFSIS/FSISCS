@@ -23,6 +23,13 @@ include("config.php");
 <?php include("stylesheet.php");?>
 <link href='styles/print.css' media=print rel=stylesheet />
 <style type="text/css" media = "screen">
+#page-title
+{
+    background-color: black;
+    padding: 5px 5px 5px;
+    height: 50px;
+}
+
 .modal-backdrop {
     /* bug fix - no overlay */    
     display: none;    

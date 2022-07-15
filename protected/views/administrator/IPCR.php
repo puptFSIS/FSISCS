@@ -168,7 +168,8 @@ footer {
     height: 450px;
     overflow: auto;
     width: 350px;
-    border-radius: 10px;
+    border-radius: 5px;
+    list-style-type: none;
 }
 
 footer {
@@ -240,8 +241,8 @@ footer {
 <section>
  
 <h2 id="slideshow_header">Getting started with <b>Individual Performance Commitment and Review</b></h2>
-<br>
-<iframe width="600" height="375" src="//www.youtube.com/embed/4DbzZEG_dKA" frameborder="0" allowfullscreen></iframe>
+<br />
+<iframe width="600" height="375" src="https://www.youtube.com/embed/96pAbS9Lfgg" frameborder="0" allowfullscreen></iframe>
 </section>
 <!-- Scripts -->
  <!-- prevent Screen Resize -->

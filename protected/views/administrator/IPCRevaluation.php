@@ -174,6 +174,8 @@ footer {
    color: white;
    text-align: center;
 }
+
+ 
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -324,7 +326,7 @@ $result = mysqli_query($conn,$query);
 <div class="w3-code notranslate cssHigh">
     <h4><strong><center>RATING</center></strong></h4>
     <p>Rate the content of IPCR</p>
-    <button data-toggle="modal" data-target="#ModalCenterRating" style="width: 100px; margin-left: 80px;">Add Rating</button>
+    <button data-toggle="modal" data-target="#ModalCenterRating" style="width: 100px; margin-left: 80px; border-radius: 5px; background-color: #007bff;">Add Rating</button>
 </div>
     
     <!-- Modal for Rating -->
@@ -387,7 +389,7 @@ $result = mysqli_query($conn,$query);
  
     <h4><strong><center>REMARKS</center></strong></h4>
     <p>Add Remarks to the content of IPCR</p>
-    <button data-toggle="modal" data-target="#ModalCenter" style="width: 100px; margin-left: 80px;">Add Remarks</button>
+    <button data-toggle="modal" data-target="#ModalCenter" style="width: 100px; margin-left: 80px; border-radius: 5px; background-color: #007bff;">Add Remarks</button>
 </div>
         <!-- Modal for remarks -->
         <div class="modal fade" id="ModalCenter">

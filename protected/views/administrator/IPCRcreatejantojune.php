@@ -120,6 +120,9 @@ footer {
    text-align: center;
 }
 
+.modal {
+    border-radius: 30px;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -206,9 +209,10 @@ footer {
                 <input type="hidden" name="toMonth" value="<?php echo $m; ?>">
                 <input type="hidden" name="toYear" value="<?php echo $y; ?>">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle"><strong>Copy IPCR form of <small>(Choose month and year)</small></strong></h5>
+                <h5 class="modal-title" id="exampleModalLongTitle"><strong>COPY IPCR FORM <small>(Choose month and year)</small></strong></h5>
               </div>
               <div class="modal-body">
+                <br/>
                 <div style="display:flex; flex-direction: row; justify-content: center; align-items: center">
                     <select name="Month" style="outline: 50px; height: 50px; margin-right: 20px;" required>
                         <option value="" disabled selected>----Choose Month----</option>
@@ -220,6 +224,7 @@ footer {
                             <option value="" disabled selected>----Choose Year----</option>
                     </select>
                 </div>
+                <br/>
               </div>
               <div class="modal-footer">
                 <button id="btn-modal" data-dismiss="modal">Close</button>
@@ -228,7 +233,7 @@ footer {
               </form>
             </div>
           </div>
-        </div>
+    </div>
         <!-- End of Modal -->
 
 <br/>

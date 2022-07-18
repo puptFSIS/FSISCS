@@ -1,18 +1,15 @@
 ﻿<?php
-session_start();
+// session_start();
 include("config.php");
-if(isset($_SESSION['user'])) {
-	if($_SESSION['user']==1) {
-	
-	} else if($_SESSION['user']==0) {
-		header("Location: index.php?r=faculty/");
-	}
-} else {
-	header("location:index.php?r=administrator/");
-}
 ?>
 <!DOCTYPE html>
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]> <!--> <html class=no-js lang=en> <!-- <![endif]-->
 <head>
+
+<!--[if IE ]> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> <![endif]-->
 <meta content='width=device-width, initial-scale=1.0' name=viewport />
 <meta content='FSIS' name=keywords />
 <meta content='PUP Taguig FSIS' name=description />
@@ -22,9 +19,22 @@ if(isset($_SESSION['user'])) {
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 <?php include("stylesheet.php");?>
-
 <link href='styles/print.css' media=print rel=stylesheet />
+<style type="text/css" media = "screen">
+#page-title
+{
+    background-color: black;
+    padding: 5px 5px 5px;
+    height: 50px;
+}
+
+.modal-backdrop {
+    /* bug fix - no overlay */    
+    display: none;    
+}
+</style>
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 <meta charset="UTF-8"></head>
@@ -41,8 +51,8 @@ if(isset($_SESSION['user'])) {
 
 <!-- End - Page subheader -->
 <!-- Page body -->
-<!-- <section class=container-block id=page-body>
-<div class=container-inner> -->
+<section class=container-block id=page-body>
+<div class=container-inner>
 <!-- Page title -->
 <?php include("headerMenu.php");?>
 
@@ -56,6 +66,9 @@ if(isset($_SESSION['user'])) {
 <section>
 
 <h2 class=underlined-header>Day Schedule Availability</h2>
+
+<button data-toggle="modal" data-target="#myModal1" style="height: 30px; width:100px; text-align: center;">Add Schedule</button>
+
 <?php if (isset($_GET['mes'])) : ?>
 	<?php if ($_GET['mes']==0): ?>
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
@@ -69,81 +82,90 @@ if(isset($_SESSION['user'])) {
 	<?php if ($_GET['mes']==3): ?>
 	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
 	<?php endif;?>
+	<?php if ($_GET['mes']==4): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+	<?php if ($_GET['mes']==5): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+	<?php if ($_GET['mes']==6): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
 <?php endif;?>
 
 <?php
 	function to12Hr($ctime) {
 		$strTime = "";
-		$dn = "";
+							$dn = "";
 
-		if (strlen($ctime) == 4) {
-			$hour = substr($ctime, 0, 2);
-			$min = substr($ctime, 2, 3);
+							if (strlen($ctime) == 4) {
+								$hour = substr($ctime, 0, 2);
+								$min = substr($ctime, 2, 3);
 
 
 
-			if ($hour > 12) {
-				$dn = "PM";
-				if ($hour == 13) {
-					$hour = "01";
-				} else if ($hour == 14) {
-					$hour = "02";
-				} else if ($hour == 15) {
-					$hour = "03";
-				} else if ($hour == 16) {
-					$hour = "04";
-				} else if ($hour == 17) {
-					$hour = "05";
-				} else if ($hour == 18) {
-					$hour = "06";
-				} else if ($hour == 19) {
-					$hour = "07";
-				} else if ($hour == 20) {
-					$hour = "08";
-				} else if ($hour == 21) {
-					$hour = "09";
-				} else if ($hour == 22) {
-					$hour = "10";
-				}
-			} else {
-				$dn = "AM";
-			}
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
 
-			$strTime = $hour.":".$min." ".$dn;
-		 } else {
-		 	$hour = substr($ctime, 0, 1);
-			$min = substr($ctime, 1, 2);
+								$strTime = $hour.":".$min." ".$dn;
+							 } else {
+							 	$hour = substr($ctime, 0, 1);
+								$min = substr($ctime, 1, 2);
 
-			if ($hour > 12) {
-				$dn = "PM";
-				if ($hour == 13) {
-					$hour = "01";
-				} else if ($hour == 14) {
-					$hour = "02";
-				} else if ($hour == 15) {
-					$hour = "03";
-				} else if ($hour == 16) {
-					$hour = "04";
-				} else if ($hour == 17) {
-					$hour = "05";
-				} else if ($hour == 18) {
-					$hour = "06";
-				} else if ($hour == 19) {
-					$hour = "07";
-				} else if ($hour == 20) {
-					$hour = "08";
-				} else if ($hour == 21) {
-					$hour = "09";
-				} else if ($hour == 22) {
-					$hour = "10";
-				}
-			} else {
-				$dn = "AM";
-			}
+								if ($hour > 12) {
+									$dn = "PM";
+									if ($hour == 13) {
+										$hour = "01";
+									} else if ($hour == 14) {
+										$hour = "02";
+									} else if ($hour == 15) {
+										$hour = "03";
+									} else if ($hour == 16) {
+										$hour = "04";
+									} else if ($hour == 17) {
+										$hour = "05";
+									} else if ($hour == 18) {
+										$hour = "06";
+									} else if ($hour == 19) {
+										$hour = "07";
+									} else if ($hour == 20) {
+										$hour = "08";
+									} else if ($hour == 21) {
+										$hour = "09";
+									} else if ($hour == 22) {
+										$hour = "10";
+									}
+								} else {
+									$dn = "AM";
+								}
 
-			$strTime = $hour.":".$min." ".$dn;
-		 }
-		return $strTime;
+								$strTime = $hour.":".$min." ".$dn;
+							 }
+							return $strTime;
 	}
 	
 	function to24Hr($ctime) {
@@ -228,142 +250,192 @@ include('config.php');
 		return $Name;
 	}
 ?>
-<p>* Required fields.</p>
-<hr style="margin-top: -10px;" />
-<form id="annc" name="annc" action="index.php?r=administrator/TimePreferProcessADD" method="post">
-<p style="margin-bottom: 9px;">*Day:
-<select name="sday" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$blank = "";
-		$d1 = "M";
-		$d2 = "T";
-		$d3 = "W";
-		$d4 = "TH";
-		$d5 = "F";
-		$d6 = "S";
-		$d = "";
-		$araw = "";
-		
-		
-		if($araw <> "")
-		{
-			echo '<option value = "'.$araw.'">'. $araw .'</option>';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
-		
-		for($day=1;$day<=6;$day++) 
-		{
-			if($day==1)
-			{
-				$d = $d1;
-			}
-			elseif($day==2)
-			{
-				$d = $d2;
-			}
-			elseif($day==3)
-			{
-				$d = $d3;
-			}
-			elseif($day==4)
-			{
-				$d = $d4;
-			}
-			elseif($day==5)
-			{
-				$d = $d5;
-			}
-			elseif($day==6)
-			{
-				$d = $d6;
-			}
-			echo '<option value = "'.$d.'">'. $d .'</option>';
-		}
-	?>
-</select>
-</p>
 
-<p style="margin-bottom: 12px;">Whole Day:
-<input id ="WD" type="checkbox" name="WholeDay" style="margin-left: 30px;" onclick="yesnoCheck(this)">
-</p>
 
-<div id="ifYes" style="display: block;">
-	
-	<p style="margin-bottom: 9px;">*Time Start:
-		<input id="Stime" type="time" name="timeS" style="display: inline-block;margin-left: 24px;margin-bottom: 9px; width: 110px;" >
-	</p>
 
-	
-	<p style="margin-bottom: 9px;">*Time End:
+<div class="modal fade" id="myModal1" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form id="annc" name="annc" action="index.php?r=administrator/TimePreferProcessADD" method="post">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color:black;">&times;</span>
+            </button>
+          <h4 class="modal-title" style="position: absolute; left: 5px;top: 5px;">Add Schedule Preference</h4>
+        </div>
+        <div class="modal-body">
+        	<p>* Required fields.</p>
+			<hr style="margin-top: -10px;" />
+            <p style="margin-bottom: 9px;">*Day:
+				<select name="sday" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+					<?php
+						$blank = "";
+						$d1 = "M";
+						$d2 = "T";
+						$d3 = "W";
+						$d4 = "TH";
+						$d5 = "F";
+						$d6 = "S";
+						$d = "";
+						$araw = "";
+						
+						
+						if($araw <> "")
+						{
+							echo '<option value = "'.$araw.'">'. $araw .'</option>';
+						}
+						else
+						{
+							echo'
+								<option value="'. $blank .'"></option>
+							';
+						}
+						
+						for($day=1;$day<=6;$day++) 
+						{
+							if($day==1)
+							{
+								$d = $d1;
+							}
+							elseif($day==2)
+							{
+								$d = $d2;
+							}
+							elseif($day==3)
+							{
+								$d = $d3;
+							}
+							elseif($day==4)
+							{
+								$d = $d4;
+							}
+							elseif($day==5)
+							{
+								$d = $d5;
+							}
+							elseif($day==6)
+							{
+								$d = $d6;
+							}
+							echo '<option value = "'.$d.'">'. $d .'</option>';
+						}
+					?>
+				</select>
+				</p>
 
-		<input id ="Etime" type="time" name="timeE"  style="display: inline-block;margin-left: 28px;margin-bottom: 9px; width: 110px;" >
-	</p>
+				<p style="margin-bottom: 12px;">Whole Day
+				<input id ="WD" type="checkbox" name="WholeDay" style="margin-left: 55px;" onclick="yesnoCheck(this)">
+				</p>
+
+				<div id="ifYes" style="display: block;">
+					<p style="margin-bottom: 9px;">*Time Start:
+						<input id="Stime" type="time" name="timeS" style="display: inline-block;margin-left: 50px;margin-bottom: 9px; width: 110px;" >
+					</p>
+
+					
+					<p style="margin-bottom: 9px;">*Time End:
+
+						<input id ="Etime" type="time" name="timeE"  style="display: inline-block;margin-left: 54px;margin-bottom: 9px; width: 110px;" >
+					</p>
+				</div>
+
+				<p style="margin-bottom: 9px;">*Prof. Name:
+				<select name="profName" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+					<?php
+						$prof = "";
+						$blank = "";
+						
+						$prof=$_SESSION['FCode'];
+						
+						if($prof <> "")
+						{
+							echo'
+								<option value="'. $prof .'"> '. getName($prof)  .'</option>
+							';
+						}
+						else
+						{
+							echo'
+								<option value="'. $blank .'"></option>
+							';
+						}
+						
+						
+					?>
+				</select>
+				</p>
+
+				<p style="margin-bottom: 9px;">*Semester:
+				<select name="sem" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+					<?php
+						$sql = "SELECT * FROM tbl_currentSYandSem";
+						$result = mysqli_query($conn, $sql);
+
+						while($row = mysqli_fetch_array($result)) {
+							echo '
+								<option value="'. $row['sem'] .'">'. $row['sem'] .'</option>
+							';
+						}
+					?>
+				</select>
+				</p>
+
+				<p style="margin-bottom: 9px;">*School Year:
+				<select name = "sy" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+							<?php
+									$sql = "SELECT DISTINCT schoolYear FROM tbl_subjectload ORDER BY schoolYear DESC LIMIT 2";
+									$result = mysqli_query($conn, $sql);
+									while($row = mysqli_fetch_array($result)) {
+										echo '
+											<option value="'. $row['schoolYear'] .'">'. $row['schoolYear'] .'</option>
+										';
+									}
+							
+							?>
+						</select>
+				</p>
+
+        </div>
+
+        <div class="modal-footer">
+          <input type="submit" name="Submit">
+          </form>
+        </div>
+      </div>
+    </div>
 </div>
 
-<p style="margin-bottom: 9px;">*Prof. Name:
-<select name="profName" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$prof = "";
-		$blank = "";
-		
-		$prof=$_SESSION['FCode'];
-		
-		if($prof <> "")
-		{
-			echo'
-				<option value="'. $prof .'"> '. getName($prof)  .'</option>
-			';
-		}
-		else
-		{
-			echo'
-				<option value="'. $blank .'"></option>
-			';
-		}
-		
-		
-	?>
-</select>
-</p>
-
-<p style="margin-bottom: 9px;">*Semester:
-<select name="sem" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-	<?php
-		$sql = "SELECT * FROM tbl_currentSYandSem";
-		$result = mysqli_query($conn, $sql);
-
-		while($row = mysqli_fetch_array($result)) {
-			echo '
-				<option value="'. $row['sem'] .'">'. $row['sem'] .'</option>
-			';
-		}
-	?>
-</select>
-</p>
-
-<p style="margin-bottom: 9px;">*School Year:
-<select name = "sy" style="width: 470px; margin-top: -28px; margin-left: 15%;">
-			<?php
-					$sql = "SELECT DISTINCT schoolYear FROM tbl_subjectload ORDER BY schoolYear DESC LIMIT 2";
-					$result = mysqli_query($conn, $sql);
-					while($row = mysqli_fetch_array($result)) {
-						echo '
-							<option value="'. $row['schoolYear'] .'">'. $row['schoolYear'] .'</option>
-						';
-					}
-			
-			?>
-		</select>
-</p>
 
 
-<center><p><input type="submit" value="Save" /> <a href="index.php?r=administrator/SubjPrefer" class="btn btn-primarycan">Cancel</a></p></center>
-</form>
+<!-- Table of Preferred Schedules of the Faculty -->
+<table class="table table-bordered table-hover responsive-utilities">
+	<thead>
+		<tr>
+			<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">DAY</td>
+			<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">TIME</td>
+			<td style="background-color: maroon; color: white; font-weight: bold; width: 160px;text-align: center;">ACTION</td>
+		</tr>
+	</thead>
+
+	<tbody>
+		<?php foreach ($timePref as $row): ?>
+			<tr>
+				<td style="text-align: center; background-color: white;"><?php echo $row['sday']?></td>
+
+				<?php if ($row['Whole_Day'] == 1): ?>
+					<td style="text-align: center; background-color: white;">WHOLE DAY</td>
+					<?php else: ?>
+						<td style="text-align: center; background-color: white;"><?php echo to12Hr($row['stimeS'])."/".to12Hr($row['stimeE'])?></td>
+				<?php endif ?>
+
+				
+				<td style="text-align: center;background-color: white;"><a href="index.php?r=administrator/UpdateTimePrefer&sem=<?php echo $row['sem'] ?>&sy=<?php echo $row['schoolYear'] ?>&timeID=<?php echo $row['timeID'] ?>" class="btn btn-primary">UPDATE</a>
+				<a href="index.php?r=administrator/DeletetimePrefer&timeID=<?php echo $row['timeID'] ?>&sem=<?php echo $row['sem'] ?>&sy=<?php echo $row['schoolYear'] ?>" class="btn btn-s">DELETE</a></td>
+			</tr>
+		<?php endforeach ?>
+	</tbody>
+</table>
+
 </section>
 <!-- End - Video -HTML5 -->
 <br/>
@@ -386,8 +458,8 @@ include('config.php');
 </div>
 </section>
 <!-- End - Page body content -->
-<!-- </div>
-</section> -->
+</div>
+</section>
 <!-- End - Page body -->
 
 <!-- Page footer -->
@@ -427,10 +499,15 @@ include('config.php');
 
 <!-- Scripts -->
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script type="text/javascript" src="<?php echo Yii::app()->getBaseUrl() ?>assets/js/bootstrap.min.js"></script>
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>
+	// $('#WD').click(function() {
+ //    	$('select:#Stime,#Etime').attr('disabled',(this.checked))
+	// });
+
 	function yesnoCheck(that) {
 		if ($('#WD').prop('checked')) {
 			
@@ -444,9 +521,6 @@ include('config.php');
 			document.getElementById("Etime").disabled = false;
 		}
 	}
-
-	
-	
 
 	flashdata = $('.flash-data').data('flashdata')
 	if(flashdata==0){
@@ -471,7 +545,7 @@ include('config.php');
 		Swal.fire({
 			icon:'error',
 			title:'Ooops!',
-			text:'Preferred Schedule is Existing',
+			text:'Schedule is Invalid',
 			timer: '4000'
 		})
 	}
@@ -480,7 +554,34 @@ include('config.php');
 		Swal.fire({
 			icon:'error',
 			title:'Ooops!',
+			text:'Schedule is Existing',
+			timer: '4000'
+		})
+	}
+
+	if(flashdata==4){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
 			text:'Classes are only from 7:30 AM to 10:30 PM',
+			timer: '4000'
+		})
+	}
+
+		if(flashdata==5){
+		Swal.fire({
+			icon:'success',
+			title:'Success!',
+			text:'Preferred Schedule Deleted',
+			timer: '4000'
+		})
+	}
+
+	if(flashdata==6){
+		Swal.fire({
+			icon:'success',
+			title:'Success!',
+			text:'Preferred Schedule Updated',
 			timer: '4000'
 		})
 	}

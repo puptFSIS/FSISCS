@@ -46,7 +46,7 @@
 			{
 			echo"
 			<script>
-			window.location.replace('index.php?r=administrator/TimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."&mes=2');
+			window.location.replace('index.php?r=administrator/AddTimePrefer&mes=6');
 			</script>";
 			mysqli_close($conn);
 			}
@@ -73,7 +73,7 @@
 			{
 			echo"
 			<script>
-			window.location.replace('index.php?r=administrator/TimePrefer&sem=".$_GET['sem']."&sy=".$_GET['sy']."&mes=2');
+			window.location.replace('index.php?r=administrator/AddTimePrefer&mes=6');
 			</script>";
 			mysqli_close($conn);
 			}

@@ -1221,9 +1221,16 @@ class AdministratorController extends Controller
 	{
 		$this->render('TimePrefer');
 	}
-	public function actionTagSchedules()
+	public function actionTaggedSubjects()
 	{
-		$this->render('TagSchedules');
+		$sySem = TblCurrentsyandsem::model()->AllData();
+		$year = $sySem[0]['schoolYear'];
+		$sem = $sySem[0]['sem'];
+		$fcode = Yii::app()->session['fcode'];
+
+		$SubPref = TblSubjpreferences::model()->CheckProfSubPref($sem, $year, $fcode);
+
+		$this->render('TaggedSubjects',array('SubPref' => $SubPref, 'sy' => $year, 'sem' => $sem));
 	}
 	public function actionResetTagged()
 	{
@@ -1416,7 +1423,7 @@ class AdministratorController extends Controller
 				  'schoolYear' => $sy
 				];
 				$SubjPreferences->save();
-				header("Location: index.php?r=administrator/tagSubjectspage&sy=".$sy."&sem=".$sem."&mes=1");
+				header("Location: index.php?r=administrator/TaggedSubjects&mes=2");
 				
 			}
 			

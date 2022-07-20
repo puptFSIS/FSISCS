@@ -5,7 +5,7 @@
 	</li>
 
 	<li>
-	<a href='index.php?r=administrator/tagSubjects' >Choose Subjects</a>
+	<a href='index.php?r=administrator/TaggedSubjects' >Choose Subjects</a>
 	</li>
 </ul>
 

@@ -172,6 +172,8 @@ background-repeat:repeat;
 </div>
 </div>
 
+<a href="index.php?r=administrator/TaggedSubjects" style ="left: -560px;top: -77px; position:relative;"><button style="height:35px;">BACK</button></a>
+
 <br />
 <form method="post" action="index.php?r=administrator/TagSubjectADD">
 <?php if (isset($_GET['sem'])): ?>

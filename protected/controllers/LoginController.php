@@ -76,6 +76,7 @@ class LoginController extends Controller
 			$_SESSION['userID'] = $row['userID'];
 			// header("location:index.php?r=administrator/");
 			Yii::app()->session['fcode'] = $row['EmpID'];
+			Yii::app()->session['level'] = 1;
 			$this->redirect('index.php?r=administrator');
 			}
 		} 
@@ -128,6 +129,7 @@ class LoginController extends Controller
 			$_SESSION['userID'] = $row['userID'];
 			// header("location:index.php?r=faculty/");
 			Yii::app()->session['fcode'] = $row['EmpID'];
+			Yii::app()->session['level'] = 0;
 			$this->redirect('index.php?r=faculty');
 			}
 		}
@@ -192,17 +194,18 @@ class LoginController extends Controller
 			// header("location:index.php?r=administrator/");
 
 			Yii::app()->session['fcode'] = $row['EmpID'];
+			Yii::app()->session['level'] = 1;
 			$this->redirect('index.php?r=administrator');
 			}
 		} else {
-			$_SESSION['user'] = 1;
+			$_SESSION['user'] = 0;
 			$_SESSION['CEmpID'] = $row['EmpID'];
 			$_SESSION['FCode'] = $row['FCode'];
 			
 			if($row['EmpID'] == null or $row['EmpID'] == "") {
 				header("location: index.php?r=site/SetEmpID");
 			} else {
-			$_SESSION['user'] = 1;
+			$_SESSION['user'] = 0;
 			Yii::app()->session['user'] = 1;
 			$_SESSION['CEmpID'] = $row['EmpID'];
 			$_SESSION['FCode'] = $row['FCode'];
@@ -243,6 +246,7 @@ class LoginController extends Controller
 			$_SESSION['userID'] = $row['userID'];
 			// header("location:index.php?r=faculty/");
 			Yii::app()->session['fcode'] = $row['EmpID'];
+			Yii::app()->session['level'] = 0;
 			$this->redirect('index.php?r=faculty');
 			}
 		}

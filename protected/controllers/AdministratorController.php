@@ -17,10 +17,18 @@ class AdministratorController extends Controller
 		}
 	}
 
+	private function CheckLevel(){
+		$isAdmin = Yii::app()->session['level'];
+		if ($isAdmin == 0) {
+			$this->redirect('index.php?r=faculty');
+		}
+	}
+
 	public function actionIndex()
 	{
 		session_start();
 		$this->CheckEmpID($_SESSION['CEmpID']);
+		$this->CheckLevel();
 		$this->render('index');
 	}
 	public function actionLogout()

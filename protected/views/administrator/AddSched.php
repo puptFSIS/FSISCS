@@ -27,6 +27,7 @@ if(isset($_SESSION['user'])) {
 <title>Scheduling | Add Sched</title>
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 <!-- Stylesheets -->
 <style media=screen type='text/css'>@import "styles/base.css";
 .cssLT #ut, .cssUT #ut{filter:progid:DXImageTransform.Microsoft.DropShadow(enabled=false);}
@@ -39,7 +40,7 @@ if(isset($_SESSION['user'])) {
 {
     background-color: black;
     padding: 5px 5px 5px;
-    height: 41px;
+    height: 50px;
 }
     
 #menu_strip
@@ -83,9 +84,39 @@ if(isset($_SESSION['user'])) {
     font-family: "Helvetica";
     padding: 5px 5px 5px;
     width: 100%;
-}</style>
+}
+
+
+
+span ul li{
+	background-image: none !important;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    margin-left: 20px;
+    border-radius: 4px;
+}
+
+.select2-container--open .select2-dropdown--below {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-left: 20px;
+    width: 20px;
+}
+
+.select2-search--dropdown {
+    display: block;
+    padding: 4px;
+    width: 345px;
+}
+
+</style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 <meta charset="UTF-8"></head>
@@ -276,7 +307,8 @@ if(isset($_SESSION['user'])) {
 <hr style="margin-top: -10px;" />
 <form id="annc" name="annc" action="index.php?r=administrator/processAddSched&prof=<?php echo $_GET['prof']?>&currID=<?php echo $_GET['CurrID'];?>&courseID=<?php echo $_GET['courseID'];?>&cyear=<?php echo $_GET['cyear'];?>&scode=<?php echo $_GET['scode'];?>&sem=<?php echo $_GET['sem'];?>&sy=<?php echo $_GET['sy'];?>&sec=<?php echo $_GET['sec'];?>&title=<?php echo $_GET['title'];?>&units=<?php echo $_GET['units'];?>&lec=<?php echo $_GET['lec'];?>&lab=<?php echo $_GET['lab'];?>" method="post">
 <p style="margin-bottom: 9px;">*Day:
-<select name="sday" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+	 
+<select name="sday" style="margin-top: -28px; margin-left: 15%;">
 	<?php
 	$blank = "";
 		$d1 = "M";
@@ -356,22 +388,20 @@ if(isset($_SESSION['user'])) {
 </p>
 <?php if ($_GET['prof'] == ""): ?>
 	<p style="margin-bottom: 9px;">*Prof. Name:
-	<select name="profName" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+	<select class="js-example-basic-single" name="profName" style="margin-top: -28px; margin-left: 15%;">
 		<?php
 		$blank = "";
 		if(isset($_GET['profName'])){
 			$name = getName($_GET['profName']);
-				echo'<option value="'. $_GET['profName'] .'">'.$name.'</option>';
+				echo'<option style="list-style-type: none;" value="'. $_GET['profName'] .'">'.$name.'</option>';
 			}
-		echo'
-					<option value="'. $blank .'"></option>
-				';
+		
 			$sql="SELECT * FROM tbl_subjpreferences WHERE scode ='".$_GET['scode']."' AND schoolYear ='".$_GET['sy']."' AND sem = '".$_GET['sem']."'";
 			$result = mysqli_query($conn,$sql);
 			while($row = mysqli_fetch_array($result)) 
 			{
 								echo '
-									<option value="'. $row['sprof'] .'"> '.getName($row['sprof']).'</option>
+									<option style="list-style-type: none;" value="'. $row['sprof'] .'"> '.getName($row['sprof']).'</option>
 								';
 			}
 		?>
@@ -493,10 +523,17 @@ if(isset($_SESSION['user'])) {
 
 <!-- Scripts -->
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>
+	$(document).ready(function() {
+    	$('.js-example-basic-single').select2();
+
+	});
+
 	flashdata = $('.flash-data').data('flashdata')
 	if(flashdata==1){
 		Swal.fire({

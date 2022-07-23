@@ -816,8 +816,8 @@
 					if ($row['Whole_Day']==1) {
 						$check = 1;
 						break 1;
-					}
-					if ($timeS >= $row['stimeS'] && $timeS <= $row['stimeE']) {
+					}     
+					if (($timeS >= $row['stimeS'] && $timeS <= $row['stimeE']) && ($timeE <= $row['stimeE'])) {
 						$check = 1;
 						break 1;
 					}

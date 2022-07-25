@@ -99,6 +99,9 @@ span ul li{
     border-radius: 4px;
 }
 
+select2-dropdown select2-dropdown--below{
+	width: 360px;
+}
 .select2-container--open .select2-dropdown--below {
     border-top: none;
     border-top-left-radius: 0;
@@ -491,7 +494,7 @@ span ul li{
 <div class=container-aligner>
 <!-- Footer left -->
 <section id=footer-left>
-© Copyright 2011 <a href="#" title="Dbooom Themes">vCore Team | PUP Taguig</a> - All Rights Reserved.
+Â© Copyright 2011 <a href="#" title="Dbooom Themes">vCore Team | PUP Taguig</a> - All Rights Reserved.
 </section>
 <!-- End - Footer left -->
 <!-- Footer right -->

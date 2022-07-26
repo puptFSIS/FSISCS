@@ -56,6 +56,10 @@ $count = mysqli_num_rows($result);
      </li>
 
      <li style = "padding-left: 40px;">
+     <a href='index.php?r=administrator/Colleges' title="Manages the Colleges of Courses">Colleges Management</a>
+     </li>
+
+     <li style = "padding-left: 40px;">
      <a href='index.php?r=administrator/CourseManagement' title="Manages courses in the PUPT System">Course Management</a>
      </li>
 

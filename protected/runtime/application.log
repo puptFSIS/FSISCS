@@ -100,3 +100,315 @@ Stack trace:
 REQUEST_URI=/FSISCS/index.php?r=administrator/SetSchedule&schedID=10298&prof=FA0003TG2021&CurrID=5&courseID=19&cyear=1&scode=COMP%2020043&sem=2%20%20&sy=2021-2022&sec=1&title=Discrete%20Structure%201&units=3&lec=0.00&lab=0.00
 HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/SchedulingPage&currID=5&courseID=19&sem=2%20%20&sy=2021-2022&sec=1
 ---
+2022/07/25 12:12:42 [error] [php] Undefined variable: colleges (C:\xampp\htdocs\FSISCS\protected\views\administrator\Colleges.php:170)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1643): AdministratorController->render()
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionColleges()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/Colleges&mes=1
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Colleges.php (170)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1643)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/25 12:13:01 [error] [php] Undefined variable: colleges (C:\xampp\htdocs\FSISCS\protected\views\administrator\Colleges.php:170)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1643): AdministratorController->render()
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionColleges()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/Colleges
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Colleges.php (170)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1643)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/25 12:13:04 [error] [php] Undefined variable: colleges (C:\xampp\htdocs\FSISCS\protected\views\administrator\Colleges.php:170)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(126): require()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CBaseController.php(95): AdministratorController->renderInternal()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(872): AdministratorController->renderFile()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(785): AdministratorController->renderPartial()
+#4 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1643): AdministratorController->render()
+#5 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionColleges()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#8 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#9 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#10 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#11 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#12 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/Colleges
+in C:\xampp\htdocs\FSISCS\protected\views\administrator\Colleges.php (170)
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1643)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 04:31:18 [error] [exception.ParseError] ParseError: syntax error, unexpected 'public' (T_PUBLIC) in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1690
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(276): CWebApplication->createController('')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator')
+#2 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator
+HTTP_REFERER=http://localhost/FSISCS/
+---
+2022/07/26 04:41:57 [error] [exception.ParseError] ParseError: syntax error, unexpected '}' in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1699
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(276): CWebApplication->createController('ViewFacultyColl...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/V...')
+#2 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/ViewFacultyColleges&id=2&CollegeName=College%20of%20Computer%20and%20Information%20Sciences
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/Colleges
+---
+2022/07/26 04:41:57 [error] [exception.ParseError] ParseError: syntax error, unexpected '}' in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1699
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(276): CWebApplication->createController('ViewFacultyColl...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/V...')
+#2 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/ViewFacultyColleges&id=2&CollegeName=College%20of%20Computer%20and%20Information%20Sciences
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/Colleges
+---
+2022/07/26 04:43:06 [error] [exception.ParseError] ParseError: syntax error, unexpected '$sql' (T_VARIABLE) in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1684
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(276): CWebApplication->createController('ViewFacultyColl...')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/V...')
+#2 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#3 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#4 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/ViewFacultyColleges&id=2&CollegeName=College%20of%20Computer%20and%20Information%20Sciences
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/Colleges
+---
+2022/07/26 04:44:40 [error] [php] Undefined index: collegeName (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1682)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionprocessAddFacultyToColleges()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processAddFacultyToColleges
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1682)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 04:45:21 [error] [php] Array to string conversion (C:\xampp\htdocs\FSISCS\framework\db\CDbCommand.php:275)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\db\CDbCommand.php(275): PDOStatement->bindValue()
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(1693): CDbCommand->bindValue()
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionprocessAddFacultyToColleges()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/processAddFacultyToColleges
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1693)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 04:59:13 [error] [php] Undefined index: FCode (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:1703)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionDeleteFacultyCollege()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/DeleteFacultyCollege&fcode=FA0006TG2022&college=2&collegeName=College%20of%20Computer%20and%20Information%20Sciences
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (1703)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 05:41:31 [error] [php] Undefined variable: collges (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:65)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionOther()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/other
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (65)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 06:16:55 [error] [exception.CHttpException.404] CHttpException: The system is unable to find the requested action "SendByGroup". in C:\xampp\htdocs\FSISCS\framework\web\CController.php:486
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\CController.php(270): CController->missingAction('SendByGroup')
+#1 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('SendByGroup')
+#2 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/S...')
+#3 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#4 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#5 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendByGroup
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/other
+---
+2022/07/26 08:48:38 [error] [php] Undefined index: fcode (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:161)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (161)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 08:50:49 [error] [exception.ParseError] ParseError: syntax error, unexpected '$row' (T_VARIABLE) in C:\xampp\htdocs\FSISCS\protected\models\TblEvaluationfaculty.php:282
+Stack trace:
+#0 [internal function]: YiiBase::autoload('TblEvaluationfa...')
+#1 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(161): spl_autoload_call('TblEvaluationfa...')
+#2 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#5 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): CController->run('SendEmailByGrou...')
+#7 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController('administrator/S...')
+#8 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 C:\xampp\htdocs\FSISCS\index.php(13): CApplication->run()
+#10 {main}
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+HTTP_REFERER=http://localhost/FSISCS/index.php?r=administrator/CreateEmailByGroup
+---
+2022/07/26 08:51:06 [error] [php] Undefined variable: ftmpname (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:179)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (179)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 09:08:14 [error] [php] Array to string conversion (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:166)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (166)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 09:09:13 [error] [php] array_combine(): Both parameters should have an equal number of elements (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:165)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(165): array_combine()
+#1 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (165)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 09:10:06 [error] [php] array_combine(): Both parameters should have an equal number of elements (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:166)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(166): array_combine()
+#1 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (166)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 09:10:59 [error] [php] Undefined variable: infos (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:166)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (166)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 09:11:37 [error] [php] Undefined offset: 0 (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:166)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (166)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 09:11:54 [error] [php] array_combine(): Both parameters should have an equal number of elements (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:166)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(166): array_combine()
+#1 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (166)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 09:12:01 [error] [php] array_combine(): Both parameters should have an equal number of elements (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:166)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php(166): array_combine()
+#1 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#6 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (166)
+in C:\xampp\htdocs\FSISCS\index.php (13)
+2022/07/26 09:17:37 [error] [php] Undefined offset: 2 (C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php:167)
+Stack trace:
+#0 C:\xampp\htdocs\FSISCS\framework\web\actions\CInlineAction.php(49): AdministratorController->actionSendEmailByGroup()
+#1 C:\xampp\htdocs\FSISCS\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 C:\xampp\htdocs\FSISCS\framework\web\CController.php(286): AdministratorController->runAction()
+#3 C:\xampp\htdocs\FSISCS\framework\web\CController.php(265): AdministratorController->runActionWithFilters()
+#4 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(282): AdministratorController->run()
+#5 C:\xampp\htdocs\FSISCS\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 C:\xampp\htdocs\FSISCS\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 C:\xampp\htdocs\FSISCS\index.php(13): CWebApplication->run()
+REQUEST_URI=/FSISCS/index.php?r=administrator/SendEmailByGroup
+in C:\xampp\htdocs\FSISCS\protected\controllers\AdministratorController.php (167)
+in C:\xampp\htdocs\FSISCS\index.php (13)

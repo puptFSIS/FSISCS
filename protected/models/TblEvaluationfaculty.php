@@ -256,4 +256,34 @@ class TblEvaluationfaculty extends CActiveRecord
 		return $row;
 	}
 
+	public function GetAllFacultyWithoutColleges(){
+		$sql = "SELECT FCode, LName, FName, MName FROM tbl_evaluationfaculty WHERE status = :status AND int_courseGroup IS NULL";
+
+		$row = Yii::app()->db->createCommand($sql)
+		->bindValue(':status', 'Active')
+		->queryAll();
+
+		return $row;
+	}
+
+	public function GetAllFacultyWithColleges($id){
+		$sql = "SELECT FCode, LName, FName, MName FROM tbl_evaluationfaculty WHERE int_courseGroup = :colleges";
+
+		$row = Yii::app()->db->createCommand($sql)
+		->bindValue(':colleges', $id)
+		->queryAll();
+
+		return $row;
+	}
+
+	public function EmailFacultyGroup($collegeID){
+		$sql = "SELECT b.Email, a.LName, a.FName, a.MName from tbl_evaluationfaculty AS a inner join tbl_personalinformation AS b on a.FCode = b.FCode OR a.FCode = b.EmpID WHERE a.status = :status AND a.int_courseGroup = :college AND b.Email != ''";
+
+		$row = Yii::app()->db->createCommand($sql)
+		->bindValue(':status','Active')
+		->bindValue(':college',$collegeID)
+		->queryAll();
+
+		return $row;
+	}
 }

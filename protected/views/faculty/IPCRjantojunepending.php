@@ -159,6 +159,14 @@ footer {
    text-align: center;
 }
 
+#line 
+{
+    background-color: black;
+    margin: 15px;
+    margin-left: -15%;
+    margin-right: -17%;
+}
+
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -203,13 +211,10 @@ footer {
     $row = mysqli_fetch_array($res);
     $status = $row['status'];
  ?>
+<a href="index.php?r=faculty/IPCRfaculty<?php echo'&m='.$m.'&y='.$y.''?>" style="margin-left:-15%; font-size:16px;">&laquo; Back to dashboard</a>
 
-<h2 class="underlined-header" id="title" >IPCR for: <strong>JANUARY TO JUNE <?php echo '('.$y.')';?></strong><p style="float:right; margin-right: 10px;">Remarks: <strong><?php echo $status; ?></strong></p></h2>
-
-<!-- Deadline -->
-<h2 class="underlined-header" style="width:25%; color: Red; margin-left: -15%;"><strong> Deadline: <input style="display: inline;" placeholder="No Deadline Set" value="<?php echo $dline; ?>" readonly></strong></h2>
-
-<a href="index.php?r=faculty/IPCRevaluationfaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
+<h2 id="title" >IPCR for: <strong>January to June <?php echo '('.$y.')';?> - Deadline: <?php if($dline == NULL) { echo 'not set'; } else { echo $dline; }?></strong><p style="float:right; margin-right: 10px;">Remarks: <strong><?php echo $status; ?></strong></p></h2>
+<hr id="line">
 <section>
 <br>
 <table class=round-3 style="width:132%; margin-left: -15%;" id="shadow">

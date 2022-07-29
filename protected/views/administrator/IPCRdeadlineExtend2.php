@@ -25,9 +25,17 @@ if(isset($_SESSION['user'])) {
 <meta content='vCore Team' name=author />
 <!-- Page title -->
 <title>IPCR | Deadline Extension</title>
+
+<!-- Script for Modal -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+
 <!--Script of Sweet alert-->
-<script src="sweetalert/jquery-3.6.0.min.js"></script>
-<script src="sweetalert/sweetalert2.all.min.js"></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
@@ -42,7 +50,7 @@ if(isset($_SESSION['user'])) {
 {
     background-color: black;
     padding: 5px 5px 5px;
-    height: 41px;
+    height: 50px;
 }
     
 #menu_strip
@@ -125,6 +133,10 @@ footer {
 a.button:hover {
     color: green;
 }
+
+div.modal-body {
+
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -162,10 +174,10 @@ a.button:hover {
 <?php
     
 
-    if(isset($_POST['Month'],$_POST['Year']))
+    if(isset($_GET['m'],$_GET['y']))
     {
-        $m = $_POST['Month'];
-        $y = $_POST['Year'];
+        $m = $_GET['m'];
+        $y = $_GET['y'];
     }
     //$sql="SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = $fcode WHERE tbl_ipcr1.year = $y AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
 
@@ -175,9 +187,9 @@ a.button:hover {
         <div class="scrollingTable">
                 <br>
                 <?php if($m == "JJ") : ?>
-                    <h3><strong>List of Faculty IPCR Reports <?php echo '(January to June, '.$y.')';?></strong></h3>
+                    <h3><strong>List of Faculty IPCR Deadlines <?php echo '(January to June, '.$y.' IPCR)';?></strong></h3>
                 <?php else : ?>
-                    <h3><strong>List of Faculty IPCR Reports <?php echo '(July to December, '.$y.')';?></strong></h3>
+                    <h3><strong>List of Faculty IPCR Deadlines <?php echo '(July to December, '.$y.' IPCR)';?></strong></h3>
                 <?php endif; ?>
                 <br>
                 <!--  Uploaded File list -->
@@ -189,13 +201,13 @@ a.button:hover {
                         <tr>
                             <th width="30%"><h5 align="Left">Name</th></h5>
                             <th width="30%"><h5 align="Left">Faculty Code</th></h5>
-                            <th width="30%"><h5 align="center">Status</th></h5>
+                            <th width="30%"><h5 align="center">Deadline</th></h5>
                             <th width="5%"><h5 align="center">Action</th></h5> 
                         </tr>
                     </thead>
                     <?php
                      //Database
-                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_ipcrstatus.status = 'Approved' AND tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month = '$m' AND tbl_ipcrstatus.status='Approved' ORDER BY tbl_evaluationfaculty.LName ASC";
+                        $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.* FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month = '$m' ORDER BY tbl_evaluationfaculty.LName ASC";
                         $result = mysqli_query($conn,$sql);
                         $count = mysqli_num_rows($result);
 
@@ -209,18 +221,18 @@ a.button:hover {
                                 $status = $row['status'];
                                 $mname = $row['MName'];
                                 $sname = $row['LName'];
-                                $status = $row['status'];
+                                $dlinedt = $row['dline_date'];
                             ?> 
                               
                             <tbody>             
                                 <tr>
                                     <td name="name" style="text-align: left;"><?= $row['LName'],", ", $row['FName']," ",$row['MName']?></td>
                                     <td name="fcode" style="text-align: left;"><?= $row['FCode']?></td>
-                                    <td name="status" style="text-align: center;"><?= $row['status']?></td>
+                                    <td name="status" style="text-align: center;"><?= $row['dline_date']?></td>
                                     <?php if($m == "JJ") : ?>
-                                            <td><a href="index.php?r=administrator/IPCRform1<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
+                                            <td><button data-toggle="modal" data-target="#ModalCenter" style="width: 120px">Extend Deadline</button></td>
                                     <?php else : ?>
-                                            <td><a href="index.php?r=administrator/IPCRform2<?php echo'&fcode='.$fcode.'&m='.$m.'&ye='.$y.'&fname='.$fname.'&mname='.$mname.'&sname='.$sname.''?>"><button type="submit" name="submit" style="width: 120px">Generate Report</button></a></td>
+                                            <td><button data-toggle="modal" data-target="#ModalCenter" style="width: 120px">Extend Deadline</button></td>
                                     <?php endif; ?>
                                 </tr>
                             </tbody>
@@ -231,14 +243,39 @@ a.button:hover {
                                     <td colspan="4" style="font-size: 14px">No Records Found</td> 
                                 </tr>
                             </tfoot>
-                        
                     <?php endif ?>
                 </table> 
-                       
-             
+
+            <!-- Modal for deadline Extension -->
+             <div class="modal fade" id="ModalCenter">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <form action="index.php?r=administrator/IPCRdeadlineExtend" method="post">
+                        <input type="hidden" name="month" value="<?php echo $m; ?>">
+                        <input type="hidden" name="year" value="<?php echo $y; ?>">
+                        <input type="hidden" name="fcode" value="<?php echo $fcode; ?>">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle"><strong>EXTEND FACULTY DEADLINE</strong></h5>
+                      </div>
+                      <div class="modal-body">
+                        <center><input id="date" type="date" name="dlinedatetime" required></center>
+                      </div>
+                      <div class="modal-footer">
+                        <button id="btn-modal" data-dismiss="modal">Close</button>
+                        <button  id="btn-modal" name="submit" type="submit">Extend</button>
+                      </div>
+                      </form>
+                    </div>
+                  </div>
+            </div>
+
             <!-- Sweetalert for can't access -->
-            <?php if(isset($_GET['a'])) : ?>
-                <div class="flash-data" data-flashdata="<?= $_GET['a']; ?>"></div>
+            <?php if(isset($_GET['mess'])) : ?>
+
+                <?php if($_GET['mess'] == 1) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
             <?php endif; ?>
 
 
@@ -267,12 +304,12 @@ a.button:hover {
                         }
                     }
  
-                    const flashdata = $('.flash-data').data('flashdata')
-                    if (flashdata) {
+                    flashdata = $('.flash-data').data('flashdata')
+                    if (flashdata == 1) {
                         Swal.fire(
-                            'IPCR is not yet submitted.',
-                            'You cannot acess right now',
-                            'warning'
+                            'Deadline Extended',
+                            'Press ok to continue',
+                            'success'
                         )
                     }    
                 </script>          

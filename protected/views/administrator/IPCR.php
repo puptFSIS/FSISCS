@@ -61,7 +61,7 @@ if(isset($_SESSION['user'])) {
 #menu_strip a:hover
 {
     background-color: lightgray;
-    color: white;
+    color: black;
     padding: 10px 10px 10px;
     border-radius: 5px;
 }
@@ -97,49 +97,6 @@ if(isset($_SESSION['user'])) {
     text-align: center;
 }
 
-@media only screen and (min-width:150px) and (max-width:600px)
-{
-/* Title right */
-    .title-right {
-        float: left;
-        margin: 0;
-        padding: 0;
-        height: 240px;
-        line-height: 30px;
-		width: 100%;
-    }
-
-        .title-right a {
-            float: left;
-            display: block;
-            margin 0;
-            height: 30px;
-            padding: 0;
-            line-height: 30px;
-            text-align: center;
-			width: 100%;
-        }
-
-        
-	.title-right a:hover {
-            background: url(../images/transparent/05_white.png);
-            background-color: rgba(255,255,255,.05);
-            width: 100%;
-        }
-
-
-	.title-right a:last-child {
-            margin: 0;
-        }
-
-            .title-right a span {
-                display: block;
-                padding-left: 0;
-                background-position: 0 50%;
-                background-repeat: no-repeat;
-            }
-
-}
 
 footer {
     position: relative;
@@ -164,10 +121,11 @@ footer {
     color: lightblue;
 }
 .dropdown-menu {
+    position: absolute;
     margin-right: 20px;
-    height: 450px;
+    height: 480px;
     overflow: auto;
-    width: 350px;
+    width: 375px;
     border-radius: 5px;
     list-style-type: none;
 }
@@ -187,6 +145,15 @@ footer {
     color: #f2d179;
     padding: 4px;
     text-align: center;
+}
+.dash:hover {
+    text-decoration: none;
+}
+.title 
+{
+    margin-left: -25%;
+    font-size: px;
+    font-weight: bold;
 }
 </style>
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -212,7 +179,7 @@ footer {
 <a class="header1" data-category=design href="index.php?r=administrator/profile">Profile</a>
 <a class="header1" data-category=design href="index.php?r=administrator/faculty">Faculty</a>
 <a class="header1" data-category=design href="index.php?r=administrator/SchedulingSystem">Scheduling</a>
-<a class="header1" data-category=design href="index.php?r=administrator/IPCR">IPCR</a>
+<a class="header1" data-category=design href="index.php?r=administrator/IPCRmain">IPCR</a>
 <a class="header1" data-category=design href="index.php?r=administrator/daily_time_record">DTR</a>
 <a class="header1" data-category=design href="index.php?r=administrator/SubjPrefer">Subject Preferences</a>
 <a class="header1" data-category=design href="index.php?r=administrator/TeachingAssignment">Teaching Assignment</a>
@@ -224,7 +191,10 @@ footer {
 <ul class="nav navbar-nav navbar-right"> 
       <li class="dropdown" >
         <a class="dropdown-toggle header1 c" data-toggle="dropdown" data-category=design ><span class="label label-pill label-danger count" style="border-radius:10px;"></span> <span class="glyphicon glyphicon-bell" style="font-size:18px;"></span></a>
-       <ul class="dropdown-menu"></ul>
+       <ul class="dropdown-menu">
+           <!-- <p><center>See All Notification</center></p> -->
+           
+       </ul>
       </li>
      </ul>
 </div>
@@ -239,11 +209,108 @@ footer {
 <div id=page-content>
 <!-- Video - HTML5 -->
 <section>
- 
-<h2 id="slideshow_header">Getting started with <b>Individual Performance Commitment and Review</b></h2>
-<br />
-<iframe width="600" height="375" src="https://www.youtube.com/embed/96pAbS9Lfgg" frameborder="0" allowfullscreen></iframe>
-</section>
+
+<?php 
+    $m = $_GET['m'];
+    $y = $_GET['y']; 
+    if($m == "JJ") {
+        echo '<h4 style="margin-left: -150px;"> January - June, '.$y.'</h4>';    
+    } elseif($m == "JD") {
+        echo '<h4 style="margin-left: -150px;"> July - December, '.$y.'</h4>';
+    } 
+?>
+<?php include('getPersonalInformation.php'); ?>
+<?php include('getRole.php'); ?>
+<h2 style="margin-left: -150px;"><strong><?php echo $firstname." ".$surname." (".$role.")";?></strong></h2>
+<hr style="background-color:black; width: 123%; margin-left: -150px; margin-top: 10px;">
+
+    <div style="margin-bottom:45%;">
+        <div>
+            <div style="margin-left: -150px; width: 40%; float: left;">
+                <div style="background-color: #820001; padding: 13px; height: 90px; border-radius:5px; ">
+                    <div>
+                        <?php 
+                            $m = $_GET['m'];
+                            $y = $_GET['y'];
+                            $sql = "SELECT * FROM tbl_ipcrstatus WHERE month = '$m' AND year = '$y' AND status = 'Submitted'"; 
+                            $res = mysqli_query($conn,$sql);
+                            $count = mysqli_num_rows($res);
+                        ?>
+                        <p style="float: left; display: inline-block; color: whitesmoke; font-weight:bold; font-size: 3em; margin-right: 20px; margin-left: 15px;"><?php echo $count; ?></p>
+                        <a href="#" class="db-text" style="font-size: 1.25em; color: whitesmoke;">FACULTY SUBMITTED IPCR</a>
+                        <br/>
+                        <!-- <small style=" color: whitesmoke;">Month of: </small> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box-3">
+            <div style="margin-left: 10px; width: 40%; float: left; display: inline-block;">
+                <div style="background-color: green; padding: 13px; height: 90px; border-radius:5px; ">
+                    <div>
+                        <?php 
+                            $m = $_GET['m'];
+                            $y = $_GET['y'];
+                            $sql = "SELECT * FROM tbl_ipcrstatus WHERE month = '$m' AND year = '$y' AND status = 'Approved'"; 
+                            $res = mysqli_query($conn,$sql);
+                            $count = mysqli_num_rows($res);
+                        ?>
+                        <p style="float: left; display: inline-block; color: whitesmoke; font-weight:bold; font-size: 3em; margin-right: 20px; margin-left: 15px;"><?php echo $count; ?></p>
+                        <a href="#" class="db-text" style="font-size: 1.25em; color: whitesmoke;">FACULTY APPROVED IPCR </a>
+                        <br/>
+                        <!-- <small style="color: whitesmoke;">Month of: </small> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div style="margin-left: 10px; width: 40%; float: left; display: inline-block;">
+                <div style="background-color: blue; padding: 13px; height: 90px; border-radius:5px; ">
+                    <div>
+                        <?php 
+                            $m = $_GET['m'];
+                            $y = $_GET['y'];
+                            $sql = "SELECT * FROM tbl_ipcrstatus WHERE month = '$m' AND year = '$y' AND status = 'Pending'"; 
+                            $res = mysqli_query($conn,$sql);
+                            $count = mysqli_num_rows($res);
+                        ?>
+                        <p style="float: left; display: inline-block; color: whitesmoke; font-weight:bold; font-size: 3em; margin-right: 20px; margin-left: 15px;"><?php echo $count; ?></p>
+                        <a href="#" style=""><p class="db-text" style="font-size: 1.25em; color: whitesmoke; margin: 0 30px;">PENDING / ON REVIEW IPCR</p></a>
+                        <!-- <small style="color: whitesmoke;">Month of: </small> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div style="margin-left: -150px; width: 40%; float: left; display: inline-block; margin-top: 10px;">
+                <div style="background-color: #d19c15; padding: 13px; height: 90px; border-radius:5px; ">
+                    <div>
+                        <?php 
+                            $m = $_GET['m'];
+                            $y = $_GET['y'];
+                            $sql = "SELECT * FROM tbl_ipcrstatus WHERE month = '$m' AND year = '$y' AND status IS NULL"; 
+                            $res = mysqli_query($conn,$sql);
+                            $count = mysqli_num_rows($res);
+                        ?>
+                        <p style="float: left; display: inline-block; color: whitesmoke; font-weight:bold; font-size: 3em; margin-right: 20px; margin-left: 15px;"><?php echo $count; ?></p>
+                        <a href="#" class="db-text" style="font-size: 1.25em; color: whitesmoke;">FACULTY UNSUBMITTED IPCR</a>
+                        
+                        <!-- <small style="color: whitesmoke;">Month of: </small> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<h2 class="title">HOW TO VIDEO</h2>
+<hr style="background-color:black; width: 123%; margin-left: -150px; margin-top: 10px; margin-bottom: -15px;">
+<!--
+<h2 id="slideshow_header">Getting started with <b>Individual Performance Commitment and Review</b></h2>-->
+<br/>
+<br/>
+<iframe style="margin-left: -150px; border-radius: 5px;" width="740" height="375" src="https://www.youtube.com/embed/GzgxEyQeTDk" frameborder="0" allowfullscreen></iframe>
+</section> 
 <!-- Scripts -->
  <!-- prevent Screen Resize -->
 <script src="js/notification.js"></script> <!-- For notification -->

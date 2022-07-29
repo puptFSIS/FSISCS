@@ -145,6 +145,48 @@ footer {
    color: white;
    text-align: center;
 }
+
+#line 
+{
+    background-color: black;
+    margin: 15px;
+    margin-left: -15%;
+    margin-right: -17%;
+}
+
+#title_head
+{
+    margin-left: -15%;
+}
+
+.underlined-header
+{
+    /*margin-left: 0%;*/
+    width: 100%;
+}
+
+.float-container {
+    height: 70%;
+    border: 3px solid black;
+    padding: 20px;
+    margin-left: -15%;
+    margin-right: -17%;
+    overflow: auto;
+}
+
+.float-child {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    /*border: 2px solid red;*/
+}  
+
+/*#myTable
+{
+    overflow: auto;
+    height: 30px;
+
+}*/
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -152,7 +194,7 @@ footer {
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 
 <meta charset="UTF-8"></head>
-<body class='page-media page-sidebar-right' style="background-color: ghostwhite;">
+<body class='page-media ' style="background-color: ghostwhite;">
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->
@@ -169,7 +211,6 @@ footer {
 <section>
 
  
-<h2 class=underlined-header><strong><center>INDIVIDUAL PERFORMANCE, COMMITMENT AND REVIEW</center></strong></h2>
 
 <?php
     $y = $_GET['y'];
@@ -188,132 +229,131 @@ footer {
      //include('getPersonalInformation.php');
  ?>
 <?php if($m == "JJ"): ?>
-    <a href="index.php?r=faculty/IPCRcreatejantojunefaculty<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>"><button>&laquo; Previous</button></a>
+    <a style="margin-left: -15%; font-size: 16px;" href="index.php?r=faculty/IPCRcreatejantojunefaculty<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>">&laquo; Back to table</a>
 <?php elseif($m =="JD") : ?>
-    <a href="index.php?r=faculty/IPCRcreatejultodecfaculty<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>"><button>&laquo; Previous</button></a>
+    <a style="margin-left: -15%; font-size: 16px;" href="index.php?r=faculty/IPCRcreatejultodecfaculty<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>">&laquo; Back to table</a>
 <?php endif; ?>
+<h2 id="title_head"><strong>IPCR / Add Proof</strong></h2>
+<hr id="line">
 <br>
-<br>
-<hr style="margin-top: 0px; margin-bottom: 5px;" >
-<p style="font-size: 15px;"><strong>ADD PROOF(S) FOR ACCOMPLISHMENT</strong></p>
-
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="id" ><?php echo $id;?></textarea>
 <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="EmpID" ><?php echo $fcode;?></textarea>
 
+<div class="float-container">
+    <div class="float-child">
+        <h4 class="underlined-header">
+            <strong>ACTUAL ACCOMPLISHMENT:</strong>
+            <textarea readonly name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $accomp; ?>
+            </textarea>
+        </h4>
 
-<h4 class="underlined-header" id="shadow">
-    <strong>ACTUAL ACCOMPLISHMENT:</strong>
-    <textarea readonly name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $accomp; ?>
-    </textarea>
-</h4>
-
-<script src="ckeditor4/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('accomplishment');
-</script>
-<br> 
-<?php //Notification
-if (isset($_GET['msg'])) {
-$msg = $_GET['msg'];
-    if($_GET['msgType']=="succ") {
-        echo '<div class="box-info">
-              <div class="box-content">
-              <p>' . $msg . '</p>
-              </div>
-              </div>';
-    }
-    else  {
-        echo '<div class="box-error">
-              <div class="box-content">
-              <p>' . $msg . '</p>
-              </div>
-              </div>';
-    }
-}
-?>
-<br>
-
-
-<form action='index.php?r=faculty/processProofupload<?php echo'&accomp='.$accomp.'&id='.$id.'&fcode='.$fcode.'&y='.$y.'&m='.$m.''?>' method="post" enctype="multipart/form-data">
-
-    <h4 class="underlined-header"><strong>UPLOAD PROOF:</strong>
-    <span><input type="file" name="file">
-    <input type="submit" name="submit" value="Upload"></span></h4>
-</form>
-<table id="myTable">
-    <thead>
-        <tr>              
-            <th width="33%"><h5 align="Center">Proof Name</th></h5>
-            <th width="33%"><h5 align="center">Detail/s</th></h5>
-            <th width="33%"><h5 align="center">Action</th></h5> 
-        </tr>
-    </thead>
-
- <!-- Get images from the database -->
-<?php
-$query = "SELECT * FROM tbl_proof WHERE id_ipcraccomp = '$id' AND deleted_on IS NULL ORDER BY uploaded_on DESC";
-$result = mysqli_query($conn,$query);
-?>
-<?php if($result->num_rows > 0): ?>
-    <?php while($row = mysqli_fetch_assoc($result)): ?>
-        <?php $imageURL = $row["file_name"]; ?>
-        <?php $upload_date = $row["uploaded_on"]; ?>
-        <?php $proofid = $row['id']; ?>
-        <tr>
-            <div>
-                <td>
-                    <div>
-                        <center><p><?php echo $imageURL; ?></p></center>
-                    </div>
-                </td>
-                <td>
-                    <div>
-                        <center>
-                            <strong><p class="upload"><?php echo 'Uploaded on: '.$upload_date;?></p></strong>
-                        </center>
-                    </div>
-                </td>
-                <td>
-                    
-                    <center>
-                        <button data-toggle="modal" data-target="#ModalCenterimage<?php echo $proofid; ?>">Preview</button>  
-                        <a onclick='return confirm(\"Are you sure you want to delete?\")' href="index.php?r=faculty/processDeleteproof<?php echo'&accomp='.$accomp.'&id='.$proofid.'&fcode='.$fcode.''?>"><button>Delete</button></a>
-                    </center>
-
-                    <!-- Modal for Proof Preview -->  
-                    <div class="modal fade" id="ModalCenterimage<?php echo $proofid; ?>">
-                      <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle"><strong><?php echo $imageURL;?></strong></h5>
-                          </div>
-                          <div class="modal-body">
-                            <div class="img-holder">
-                                <center><img src="<?php echo 'IPCRuploads/'.$imageURL;?>"></center>
-                            </div>
-                          </div>
-                          <br>
-                          <br>
-                          <div class="modal-footer">
-                            <button id="btn-modal" data-dismiss="modal">Close</button>
-                          </div>
-                        </div>
+        <script src="ckeditor4/ckeditor.js"></script>
+        <script>
+            CKEDITOR.replace('accomplishment');
+        </script>
+    </div>
+    <div class="float-child">
+        <?php //Notification
+        if (isset($_GET['msg'])) {
+        $msg = $_GET['msg'];
+            if($_GET['msgType']=="succ") {
+                echo '<div class="box-info">
+                      <div class="box-content">
+                      <p>' . $msg . '</p>
                       </div>
-                    </div>
-                    <!-- End of Modal -->
-                </td>
-            </div>
-        </tr>
-    <?php endwhile; ?>
-<?php else: ?>
-    <tfoot>
-        <tr>
-            <td colspan=3><p>No proof(s) uploaded yet...</p></td>
-        </tr>
-    </tfoot>
-<?php endif; ?>
-</table>
+                      </div>';
+            }
+            else  {
+                echo '<div class="box-error">
+                      <div class="box-content">
+                      <p>' . $msg . '</p>
+                      </div>
+                      </div>';
+            }
+        }
+        ?>
+        <form action='index.php?r=faculty/processProofupload<?php echo'&accomp='.$accomp.'&id='.$id.'&fcode='.$fcode.'&y='.$y.'&m='.$m.''?>' method="post" enctype="multipart/form-data">
 
+            <h4 class="underlined-header"><strong>UPLOAD:</strong>
+            <span><input type="file" name="file" style="margin-right: 10px;">
+            <input type="submit" name="submit" value="Upload"></span></h4>
+        </form>
+        <p><strong>Note: Please rename the Proof properly before uploading.</strong></p>
+        <table id="myTable">
+            <thead>
+                <tr>              
+                    <th width="33%"><h5 align="Center">Proof Name</th></h5>
+                    <th width="33%"><h5 align="center">Detail/s</th></h5>
+                    <th width="33%"><h5 align="center">Action</th></h5> 
+                </tr>
+            </thead>
+
+         <!-- Get images from the database -->
+        <?php
+        $query = "SELECT * FROM tbl_proof WHERE id_ipcraccomp = '$id' AND deleted_on IS NULL ORDER BY uploaded_on DESC";
+        $result = mysqli_query($conn,$query);
+        ?>
+        <?php if($result->num_rows > 0): ?>
+            <?php while($row = mysqli_fetch_assoc($result)): ?>
+                <?php $imageURL = $row["file_name"]; ?>
+                <?php $upload_date = $row["uploaded_on"]; ?>
+                <?php $proofid = $row['id']; ?>
+                <tr>
+                    <div>
+                        <td>
+                            <div>
+                                <center><p><?php echo $imageURL; ?></p></center>
+                            </div>
+                        </td>
+                        <td>
+                            <div>
+                                <center>
+                                    <strong><p class="upload"><?php echo 'Uploaded on: '.$upload_date;?></p></strong>
+                                </center>
+                            </div>
+                        </td>
+                        <td>
+                            
+                            <center>
+                                <button data-toggle="modal" data-target="#ModalCenterimage<?php echo $proofid; ?>">View</button>  
+                                <a onclick='return alert("Are you sure you want to delete?")' href="index.php?r=faculty/processDeleteproof<?php echo'&accomp='.$accomp.'&id='.$proofid.'&fcode='.$fcode.''?>"><button>Delete</button></a>
+                            </center>
+
+                            <!-- Modal for Proof Preview -->  
+                            <div class="modal fade" id="ModalCenterimage<?php echo $proofid; ?>">
+                              <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle"><strong><?php echo $imageURL;?></strong></h5>
+                                  </div>
+                                  <div class="modal-body">
+                                    <div class="img-holder">
+                                        <center><img src="<?php echo 'IPCRuploads/'.$imageURL;?>"></center>
+                                    </div>
+                                  </div>
+                                  <br>
+                                  <br>
+                                  <div class="modal-footer">
+                                    <button id="btn-modal" data-dismiss="modal">Close</button>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            <!-- End of Modal -->
+                        </td>
+                    </div>
+                </tr>
+            <?php endwhile; ?>
+        <?php else: ?>
+            <tfoot>
+                <tr>
+                    <td colspan=3><p>No proof(s) uploaded yet...</p></td>
+                </tr>
+            </tfoot>
+        <?php endif; ?>
+        </table>
+    </div>
+</div>
 </section>
         <!-- <script src="js/preventresize.js"></script> -->
 <br/>
@@ -322,16 +362,7 @@ $result = mysqli_query($conn,$query);
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
-<section class='widget-container widget-categories'>
-<h2 class=widget-heading>IPCR</h2>
-<div class=widget-content>
-<ul class='widget-list categories-list'>
-<?php include("IPCRmenufaculty.php");?>
-</ul>
-</div>
-</section>
-</aside>
+
 <!-- End - Page sidebar -->
 </div>
 </section>

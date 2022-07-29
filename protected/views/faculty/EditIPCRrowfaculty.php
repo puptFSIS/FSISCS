@@ -96,6 +96,69 @@ footer {
    text-align: center;
 }
 
+#line 
+{
+    background-color: black;
+    margin: 15px;
+    margin-left: -15%;
+    margin-right: -17%;
+}
+
+#title_head
+{
+    margin-left: -15%;
+}
+
+.float-container {
+    height: 100%;
+    border: 3px solid black;
+    padding: 30px;
+    margin-left: -15%;
+    margin-right: -17%;
+    border-radius: 5px;
+}
+
+.float-child1 {
+    width: 48%;
+    float: left;
+    margin: 10px;
+    /*padding: 20px;*/
+    /*border: 2px solid red;*/
+}  
+.float-child2 {
+    width: 48%;
+    float: left;
+    margin: 10px;
+
+    /*margin-left: 20px;*/
+    /*padding: 20px;*/
+    /*border: 2px solid red;*/
+}
+.float-child3 {
+    width: 48%;
+    float: left;
+    margin: 10px;
+    margin-left: 25%;
+    /*padding: 20px;*/
+    /*border: 2px solid red;*/
+}
+.btnSubmit {
+    float: right;
+    margin-top: 26%;
+    margin-right: 5%;
+}
+
+.sub {
+    background-color: #0275d8;
+}
+
+button.sub:hover {
+    background-color: #5bc0de;
+}
+
+.underlined-header {
+    border-radius: 5px;
+}
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -103,7 +166,7 @@ footer {
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 
 <meta charset="UTF-8"></head>
-<body class='page-media page-sidebar-right' style="background-color: ghostwhite;">
+<body class='page-media' style="background-color: ghostwhite;">
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->
@@ -122,7 +185,7 @@ footer {
 <section>
 
 
-<h2 class=underlined-header><center>Individual Performance, Commitment and Review</center></h2>
+
 <?php
     //Get the passed elements
     if(isset($_GET['outputs'],$_GET['indi'],$_GET['accomp'],$_GET['fcode'],$_GET['m'],$_GET['y'],$_GET['idaccomp']))
@@ -136,21 +199,35 @@ footer {
         $fcode = $_GET['fcode'];    
     }  
  ?>
+<?php if($m == "JJ"): ?>
+    <a style="margin-left: -15%; font-size: 16px;" href="index.php?r=faculty/IPCRcreatejantojunefaculty<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>">&laquo; Back to table</a>
+<?php elseif($m =="JD") : ?>
+    <a style="margin-left: -15%; font-size: 16px;" href="index.php?r=faculty/IPCRcreatejultodecfaculty<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>">&laquo; Back to table</a>
+<?php endif; ?>
 
-<p style="font-size: 17px;"><strong>Edit Row Informations</strong></p>
-<hr style="margin-top: -10px;" />
+<h2 id="title_head"><strong>IPCR / Edit Accomplishment</strong></h2>
+<hr id="line">
+<br/>
+<!-- <p style="font-size: 17px;"><strong>Edit Row Informations</strong></p>
+<hr style="margin-top: -10px;" /> -->
 
 <form action='index.php?r=faculty/processEditIPCRfaculty<?php echo'&m='.$m.'&y='.$y.'';?>' method="post">
     <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="idaccomp" ><?php echo $idaccomp;?></textarea>
     <textarea style="display: none; border: none; background-color: transparent; resize: none; outline: none;" type="hidden" name="fcode" ><?php echo $fcode;?></textarea>
-
-    <h4 class="underlined-header" id="head"><strong>OUTPUT:</strong><textarea readonly name="output" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $outputs; ?></textarea></h4>
-    <br>
-    <br>
-    <h4 class="underlined-header" id="head"><strong>SUCCESS INDICATORS:</strong><textarea readonly name="indicators" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $indi; ?></textarea></h4>
-    <br>
-    <br>
-    <h4 class="underlined-header" id="head"><strong>ACTUAL ACCOMPLISHMENTS:</strong><textarea name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $accomp; ?></textarea></h4>
+    <div class="float-container">
+        <div class="float-child1">
+            <h4 class="underlined-header" id="head"><strong>OUTPUT:</strong><textarea readonly name="output" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $outputs; ?></textarea></h4>
+        </div>
+        <div class="float-child2">
+            <h4 class="underlined-header" id="head"><strong>SUCCESS INDICATORS:</strong><textarea readonly name="indicators" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $indi; ?></textarea></h4>
+        </div>
+        <div class="float-child3">
+            <h4 class="underlined-header" id="head"><strong>ACTUAL ACCOMPLISHMENTS:</strong><textarea name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 33%;"><?php echo $accomp; ?></textarea></h4>
+        </div>
+        <div class="btnSubmit">
+            <button class="sub" style="border-radius: 5px; width: 100px;" type="submit" name="submit">Save</button>
+        </div>
+    </div>
 
 <!-- CKeditor Script to replace <textarea> tag to rich text editor -->
 <script src="ckeditor4/ckeditor.js"></script>
@@ -159,23 +236,13 @@ footer {
     CKEDITOR.replace('indicators');
     CKEDITOR.replace('accomplishment');
 </script>
-<center><button type="submit" name="submit" style="width: 100px;">Save</button>
+
 </form>
 </section>
 <!-- End - Showcase gallery -->
 </div>
 <!-- End - Page content -->
 <!-- Page sidebar -->
-<aside class=page-sidebar>
-<section class='widget-container widget-categories'>
-<h2 class=widget-heading>IPCR</h2>
-<div class=widget-content>
-<ul class='widget-list categories-list'>
-<?php include("IPCRmenufaculty.php");?>
-</ul>
-</div>
-</section>
-</aside>
 <!-- End - Page sidebar -->
 </div>
 </section>

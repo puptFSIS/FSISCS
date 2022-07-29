@@ -5,6 +5,8 @@
 	$m = $_GET['m'];
 	$y = $_GET['y'];
 
+		$query = "UPDATE tbl_ipcrstatus SET dline_date = NULL WHERE month = '$m' AND year = '$y'";
+		$res = mysqli_query($conn, $query);
 
 		$sql = "UPDATE tbl_ipcrvisible SET dline_date = NULL WHERE month = '$m' AND year = '$y'";
 		$result = mysqli_query($conn,$sql);

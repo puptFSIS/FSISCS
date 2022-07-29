@@ -1,3 +1,5 @@
+
+
 <?php
 include("config.php");
 // session_start();
@@ -22,14 +24,15 @@ if(isset($_POST['view']))
           {
                while($row = mysqli_fetch_array($result))
                {
+                    
                     $output.= '
                     <li style="padding-right: 10px; padding-bottom: 5px; padding-left: 15px;">
-                     <a href="index.php?r=administrator/IPCRratingsremarks" style="color:black; padding-right: 20px;">
+                     <a class="notif" href="#" style="color:black; padding-right: 20px;">
                       <strong>'.$row['subject'].'</strong><br/>
-                      <small><em>'.$row['text'].'</em></small><br/>
-                      <strong><small><em>Passed on: </em></small></strong>
-                      <small><em>'.$row['date'].' </em></small>
-                      <small><em>'.$row['time'].'</em></small>
+                      <small>'.$row['text'].'</small><br/>
+                      <strong><small>Passed on: </small></strong>
+                      <small>'.$row['date'].' </small>
+                      <small>'.$row['time'].'</small>
                      </a>
                     </li>
                     <hr style="margin-top: 5px; margin-bottom:5px; background-color: #333;">

@@ -6,8 +6,12 @@
 <a data-category=design href="index.php?r=faculty/">Profile</a>
 
 <a data-category=design href="index.php?r=faculty/TeachingLoad">Schedule</a>
+<?php //include('getPersonalInformation.php'); ?>
+<?php 
+	//$sql = "SELECT * FROM tbl_evaluationfaculty WHERE FCode = '$fcode' AND ";
+?>
 
-<a data-category=design href="index.php?r=faculty/IPCRfaculty">IPCR</a>
+<a data-category=design href="index.php?r=faculty/IPCRmain">IPCR</a>
 
 <a data-category=design href="index.php?r=faculty/daily_time_record">DTR</a>
 

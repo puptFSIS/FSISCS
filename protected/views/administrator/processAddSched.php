@@ -800,22 +800,31 @@
 
 	function checkPrefProfSched($day, $timeS, $timeE, $sy, $profName, $sem){
 		include("config.php");
-		$sql = "SELECT * FROM tbl_timepreferences WHERE sprof = '".$profName."' AND sday = '".$day."' AND schoolYear = '".$sy."' AND sem = '".$sem."'";
-		$result = mysqli_query($conn, $sql);
+		$sql1 = "SELECT * FROM tbl_timepreferences WHERE sprof = '".$profName."' AND sday = '".$day."' AND schoolYear = '".$sy."' AND sem = '".$sem."'";
+		$result = mysqli_query($conn, $sql1);
 		$count = mysqli_num_rows($result);
+
+		$sql2 = "SELECT enu_employmentStat FROM tbl_evaluationfaculty WHERE FCode = '".$profName."'";
+		$stats = mysqli_query($conn, $sql2);
+		$profStats = mysqli_fetch_array($stats);
+		$empStat = $profStats['enu_employmentStat'];
 		$check = 0;
 
-		if ($count >= 0) {
-			while ($row = mysqli_fetch_array($result)) {
-				if ($row['Whole_Day']==1) {
-					$check = 1;
-					break 1;
-				}
-				if ($timeS >= $row['stimeS'] && $timeS <= $row['stimeE']) {
-					$check = 1;
-					break 1;
+		if ($empStat == "Part-time" || $empStat == "Temporary") {
+			if ($count >= 0) {
+				while ($row = mysqli_fetch_array($result)) {
+					if ($row['Whole_Day']==1) {
+						$check = 1;
+						break 1;
+					}     
+					if (($timeS >= $row['stimeS'] && $timeS <= $row['stimeE']) && ($timeE <= $row['stimeE'])) {
+						$check = 1;
+						break 1;
+					}
 				}
 			}
+		} else {
+			$check = 1;
 		}
 		return $check;
 	}

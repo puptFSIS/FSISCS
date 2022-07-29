@@ -28,6 +28,7 @@ if(isset($_SESSION['user'])) {
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 <style media=screen type='text/css'>@import "styles/base.css";
 .cssLT #ut, .cssUT #ut{filter:progid:DXImageTransform.Microsoft.DropShadow(enabled=false);}
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
@@ -39,7 +40,7 @@ if(isset($_SESSION['user'])) {
 {
     background-color: black;
     padding: 5px 5px 5px;
-    height: 41px;
+    height: 50px;
 }
     
 #menu_strip
@@ -83,8 +84,35 @@ if(isset($_SESSION['user'])) {
     font-family: "Helvetica";
     padding: 5px 5px 5px;
     width: 100%;
-}}</style>
+}
 
+span ul li{
+	background-image: none !important;
+}
+
+.select2-container--default .select2-selection--single {
+    background-color: #fff;
+    border: 1px solid #aaa;
+    margin-left: 20px;
+    border-radius: 4px;
+    width: 470px;
+}
+
+.select2-container--open .select2-dropdown--below {
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    margin-left: 20px;
+
+}
+
+.select2-search--dropdown {
+    display: block;
+    padding: 4px;
+
+}
+</style>
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
@@ -515,7 +543,7 @@ if(isset($_SESSION['user'])) {
 </select>
 </p>
 <p style="margin-bottom: 9px;">*Prof. Name:
-<select name="profName" style="width: 470px; margin-top: -28px; margin-left: 15%;">
+<select class="js-example-basic-single" name="profName" style="width: 470px; margin-top: -28px; margin-left: 15%;">
 	<?php
 		$currID = $_GET['CurrID'];
 		$cID = $_GET['courseID'];
@@ -541,9 +569,13 @@ if(isset($_SESSION['user'])) {
 			$result = mysqli_query($conn,$sql);
 			while($row = mysqli_fetch_array($result)) 
 			{
-								echo '
+				
+				if ($_GET['prof'] != $row['sprof']) {
+					echo '
 									<option value="'. $row['sprof'] .'"> '.getName($row['sprof']).'</option>
 								';
+				}
+								
 			}
 	?>
 </select>
@@ -895,9 +927,19 @@ if(isset($_SESSION['user'])) {
 <!-- Scripts -->
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/jquery-3.6.0.min.js'></script>
 <script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script id=js-dispatcher src='scripts/scripts.js'></script>
 
 <script>
+	$(document).ready(function() {
+    	$('.js-example-basic-single').select2({
+    		placeholder: "Select a Faculty Member",
+    	});
+
+
+	});
+
+
 	flashdata = $('.flash-data').data('flashdata')
 	if(flashdata==1){
 		Swal.fire({

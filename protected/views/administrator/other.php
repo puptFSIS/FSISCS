@@ -208,8 +208,8 @@ width: 300px;
 <section>
 <h2 class=underlined-header>Getting Started with Extras</h2>
 
-<!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
+<!-- Modal 1-->
+  <div class="modal fade" id="Faculty1" role="dialog">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <form id="annc" name="annc" action="index.php?r=administrator/SendSpecific" method="post">
@@ -220,7 +220,7 @@ width: 300px;
           <h4 class="modal-title" style="position: absolute; left: 5px;top: 5px;">Add Receipients</h4>
         </div>
         <div class="modal-body">
-        <p id="result" style="position: absolute; top: 30px; left: 650px">Receipient/s Selected: 0</p>
+        <p id="result1" style="position: absolute; top: 30px; left: 650px">Receipient/s Selected: 0</p>
         <table id = "ProfTable" class="table table-bordered table-striped table-hover" style="width:100%;">
             <thead style="display:none;">
                     <tr>
@@ -232,7 +232,7 @@ width: 300px;
                 <?php foreach ($fcode as $row): ?>
                     <?php if ($row['FCode'] != "" || !empty($row['FCode'])): ?>
                     <tr>
-                        <td style="text-align: center;width: 50px;"><input style = "width: 17px; height: 17px;" type="checkbox" id = "checks" name="fcode1[]" value = "<?php echo $row['FCode']?>"></td>
+                        <td style="text-align: center;width: 50px;"><input style = "width: 17px; height: 17px;" type="checkbox" id = "checks1" name="fcode1[]" value = "<?php echo $row['FCode']?>"></td>
                         <td style="text-align: center; text-transform: uppercase;"><input type="hidden" name="fcode2[]" value = "<?php echo $row['FCode']?>"><?php echo $row['LName'].", ".$row['FName']?></td>
                         
                     </tr>
@@ -246,13 +246,60 @@ width: 300px;
         </div>
 
         <div class="modal-footer">
-          <input id = "sub" type="submit" name="Submit">
+          <input id = "sub1" type="submit" name="Submit">
           </form>
         </div>
       </div>
       
     </div>
   </div>
+<!-- End of Modal 1 -->
+
+<!-- Modal 2-->
+  <div class="modal fade" id="colleges2" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form id="annc" name="annc" action="index.php?r=administrator/CreateEmailByGroup" method="post">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color:black;">&times;</span>
+            </button>
+          <h4 class="modal-title" style="position: absolute; left: 5px;top: 5px;">Add Receipients</h4>
+        </div>
+        <div class="modal-body">
+        <p id="result2" style="position: absolute; top: 30px; left: 650px">Receipient/s Selected: 0</p>
+        <table id = "CollegesTable" class="table table-bordered table-striped table-hover" style="width:100%;">
+            <thead style="display:none;">
+                    <tr>
+                        <td style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;"> </td>
+                        <td style="background-color: maroon; color: white; font-weight: bold; width: 50px;text-align: center;">NAME</td>
+                    </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($colleges as $row): ?>
+                    <tr>
+                        <td style="text-align: center;width: 50px;"><input style = "width: 17px; height: 17px;" type="checkbox" id = "checks2" name="college1[]" value = "<?php echo $row['id']?>"></td>
+                        <td style="text-align: center;"><input type="hidden" name="college2[]" value = "<?php echo $row['id']?>">Faculty Members from <?php echo $row['CollegeName']?></td>
+                        
+                    </tr>
+                    
+                    
+                <?php endforeach; ?>                
+                    
+            </tbody>
+        </table>
+
+        </div>
+
+        <div class="modal-footer">
+          <input id = "sub2" type="submit" name="Submit">
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+<!-- End of Modal 2 -->
 </section>
 <!-- End - Showcase gallery -->
 </div>
@@ -282,7 +329,11 @@ width: 300px;
     </li>
 
     <li>
-    <a data-target='#myModal' data-toggle='modal' href='#myModal'>Send to Receipients</a>
+    <a data-target='#colleges2' data-toggle='modal' href='#'>Send by Group Contact</a>
+    </li>
+
+    <li>
+    <a data-target='#Faculty1' data-toggle='modal' href='#'>Send to Receipients</a>
     </li>
 
 </details>
@@ -354,7 +405,7 @@ width: 300px;
       }
     }
 
-    var table = $("#ProfTable").DataTable({
+    var table1 = $("#ProfTable").DataTable({
         "scrollY":        "50vh",
         "scrollCollapse": true,
         "paging":         false,
@@ -370,19 +421,49 @@ width: 300px;
 
     });
 
+    var table2 = $("#CollegesTable").DataTable({
+        "scrollY":        "50vh",
+        "scrollCollapse": true,
+        "paging":         false,
+        "lengthChange": false,
+        language: { 
+        search: "", 
+        searchPlaceholder: "College Name:",
+        emptyTable: "No Matching Results", },
+        columnDefs: [ {
+            orderable: false,
+            targets:   0,
+        } ],
+
+    });
+
 
     var increment2=0; 
-    $('input:checkbox').click(function () { 
+    $("input[id='checks1']").click(function () { 
         if (this.checked) {
             increment2++;                 
         } else {
             increment2--;
         }
-        $('#result').html( 'Receipient/s Selected: ' + increment2 + '');             
+        $('#result1').html( 'Receipient/s Selected: ' + increment2 + '');             
     })
 
-    $("#sub").on('click', function(e){
-        table.destroy();
+    var increment3=0; 
+    $("input[id='checks2']").click(function () { 
+        if (this.checked) {
+            increment3++;                 
+        } else {
+            increment3--;
+        }
+        $('#result2').html( 'Receipient/s Selected: ' + increment3 + '');             
+    })
+
+    $("#sub1").on('click', function(e){
+        table1.destroy();
+    });
+
+    $("#sub2").on('click', function(e){
+        table2.destroy();
     });
 
     flashdata = $('.flash-data').data('flashdata')

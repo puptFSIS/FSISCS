@@ -59,9 +59,136 @@ class AdministratorController extends Controller
 	{
 		session_start();
 		$proflist = TblEvaluationfaculty::model()->GetFcode();
+		$colleges = TblColleges::model()->GetColleges();
+
+		// echo "<pre>";
+		// print_r($colleges);
+		// echo "</pre>";
 		$this->CheckEmpID($_SESSION['CEmpID']);
-		$this->render('other', array('fcode' => $proflist));
+		$this->render('other', array('fcode' => $proflist, 'colleges' => $colleges));
 	}
+
+	public function actionCreateEmailByGroup(){
+		// echo "<pre>";
+		// print_r($_POST);
+		// echo "</pre>";
+
+		$receipients = array();
+    	$i = 0;
+    	
+
+    	if (isset($_POST['college1'])) {
+    		$checked = $_POST['college1'];
+
+    		foreach($_POST['college2'] as $key => $value){
+			if(in_array($_POST['college2'][$key], $checked)){
+				// $recipients[$i] = $_POST['email2'][$key];
+				array_push($receipients, $_POST['college2'][$key]);
+				$i++;
+				}
+			}
+			$colleges = TblColleges::model()->GetColleges();
+			$this->render('messageGroup',array('receivers'=>$receipients, 'colleges' => $colleges));
+    	} else {
+    		header("location: index.php?r=administrator/other&mes=4");
+    	}
+	}
+
+	public function actionSendEmailByGroup(){
+		if (isset($_FILES['filename']) && $_FILES['filename']['name'] != "" && $_FILES['filename']['tmp_name'] != "") {
+    		$fname = $_FILES['filename']['name'];
+	    	$ftmpname = $_FILES['filename']['tmp_name'];
+	    	$subject = $_POST['subject'];
+			$message = $_POST['message'];
+			$message .= '<br><br><br>Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
+
+			$i = 0;
+			$emails = array();
+			foreach ($_POST['college'] as $row => $value) {
+				$email[$i] = TblEvaluationfaculty::model()->EmailFacultyGroup($_POST['college'][$row]);
+				for ($x=0; $x < count($email[$i]); $x++) { 
+					array_push($emails, $email[$i][$x]);
+				}
+				$i++;
+			}
+			$i = 0;
+			// echo "<pre>";
+			// print_r($_POST['college']);
+			// echo "</pre>";
+			
+			$mail = new YiiMailer;
+            //Uncomment this following lines when the project is uploaded on the hostinger
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.gmail.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'puptfsis2022@gmail.com';                
+		    $mail->Password = 'ovagxjsrdqaaesop'; 
+		    $mail->addAttachment($ftmpname,$fname);
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;
+			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT FSIS');
+			$mail->isHTML(true);                                  
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+			foreach ($emails as $row) {
+				$mail->AddAddress($row['Email'], $row['FName']);     
+				$i++;
+			}
+			
+			if(!$mail->send()) {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+			} else {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+			}
+    	} else {
+			$subject = $_POST['subject'];
+			$message = $_POST['message'];
+			$message .= '<br><br><br>Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
+
+			$i = 0;
+			$emails = array();
+			foreach ($_POST['college'] as $row => $value) {
+				$email[$i] = TblEvaluationfaculty::model()->EmailFacultyGroup($_POST['college'][$row]);
+
+				for ($x=0; $x < count($email[$i]); $x++) { 
+					array_push($emails, $email[$i][$x]);
+				}
+				
+				$i++;
+			}
+
+			// echo "<pre>";
+			// print_r($emails);
+			// echo "<pre>";
+            $mail = new YiiMailer;
+        	//Uncomment this following lines when the project is uploaded on the hostinger
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.gmail.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'puptfsis2022@gmail.com';                
+		    $mail->Password = 'ovagxjsrdqaaesop'; 
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;
+			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT FSIS');
+			$mail->isHTML(true);                                  
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+			
+			
+			foreach ($emails as $row) {
+				$mail->AddAddress($row['Email'], $row['FName']);    
+				$i++;
+			}
+			if(!$mail->send()) {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=2')</script>";
+			} else {
+				echo "<script>window.location.assign('index.php?r=administrator/other&mes=1')</script>";
+			}
+    	}
+	}
+
 	public function actionFaculty()
 	{
 		session_start();
@@ -1633,8 +1760,86 @@ class AdministratorController extends Controller
 	}
 	public function actionCourseManagement()
 	{
+
 		$this->render('CourseManagement');
 	}
+
+	public function actionColleges()
+	{
+		$colleges = TblColleges::model()->GetColleges();
+		$this->render('Colleges',array('colleges' => $colleges));
+	}
+
+	public function actionprocessAddColleges(){
+		$collegeName = $_POST['CollegeName'];
+
+		$colleges = new TblColleges();
+    	$colleges->attributes = [
+    		'CollegeName' => $collegeName
+    	];
+
+    	$colleges->save();
+
+    	header("Location: index.php?r=administrator/Colleges&mes=1");
+	}
+
+	public function actionDeleteColleges(){
+		$CollegeID = $_GET['id'];
+
+		$deleteColleges = TblColleges::model()->findByPk($CollegeID);
+		$deleteColleges->delete();
+		header("Location: index.php?r=administrator/Colleges&mes=2");
+	}
+
+	public function actionViewFacultyColleges(){
+		$CollegeName = $_GET['CollegeName'];
+		$CollegeID = $_GET['id'];
+
+		$facNoColleges = TblEvaluationfaculty::model()->GetAllFacultyWithoutColleges();
+		$facWithColleges = TblEvaluationfaculty::model()->GetAllFacultyWithColleges($CollegeID);
+
+		$this->render('ViewFacultyColleges',array('CollegeName' => $CollegeName, 'id' => $CollegeID, 'facNoColleges' => $facNoColleges, 'facWithColleges' => $facWithColleges));
+	}
+
+	public function actionprocessAddFacultyToColleges(){
+		// echo "<pre>";
+		// print_r($_POST);
+		// echo "</pre>";
+		$id = $_POST['college'];
+		$collegeName = $_POST['collegeName'];
+
+		$sql = "UPDATE tbl_evaluationfaculty SET int_courseGroup = :college WHERE FCode = :fcode";
+
+		$checked = $_POST['fcode1'];
+		foreach($_POST['fcode2'] as $key => $value){
+			if(in_array($_POST['fcode2'][$key], $checked)){
+				$fcode = $_POST['fcode2'][$key];
+
+				Yii::app()->db->createCommand($sql)
+				->bindValue(':college',$id)
+				->bindValue(':fcode', $fcode)
+				->query();
+			}
+    	}
+
+    	header("Location: index.php?r=administrator/ViewFacultyColleges&id=".$id."&CollegeName=".$collegeName."&mes=1");
+
+	}
+
+	public function actionDeleteFacultyCollege(){
+		$fcode = $_GET['fcode'];
+		$id = $_GET['college'];
+		$collegeName = $_GET['collegeName'];
+
+		$sql = "UPDATE tbl_evaluationfaculty SET int_courseGroup = NULL WHERE FCode = :fcode";
+
+		Yii::app()->db->createCommand($sql)
+		->bindValue(':fcode',$fcode)
+		->query();
+
+		header("Location: index.php?r=administrator/ViewFacultyColleges&id=".$id."&CollegeName=".$collegeName."&mes=2");
+	}
+
 	public function actionProcessDeleteCurrSubj()
 	{
 		$this->render('processDeleteCurrSubj');
@@ -2893,31 +3098,20 @@ class AdministratorController extends Controller
 			$i = 0;
 			
 			$mail = new YiiMailer;
-			
-			// $mail->isSMTP();   // Uncomment this line on testing server                                  
-			//Uncomment this when testing on the local server such as xampp
-			// $mail->SMTPDebug  = 1;                                  
-			// $mail->Host = "smtp.gmail.com";  
-			// $mail->SMTPAuth = true;                           
-			// $mail->Username = 'puptfsis2022@gmail.com';                
-			// $mail->Password = '@PUPtaguigfsis2022';   
-			// $mail->addAttachment($ftmpname,$fname);                       
-			// $mail->SMTPSecure = 'ssl';                            
-			// $mail->Port = 465;
-			// $mail->setFrom('puptfsis2022@gmail.com', 'PUPT-FSIS');
+	
             
             
             //Uncomment this following lines when the project is uploaded on the hostinger
 			$mail->SMTPDebug  = 1;                                  
-			$mail->Host = "smtp.hostinger.com";  
+			$mail->Host = "smtp.gmail.com";  
 			$mail->SMTPAuth = true;                           
-			$mail->Username = 'fls@puptaguigcs.net';                
-		    $mail->Password = 'FLSEmail@2022'; 
+			$mail->Username = 'puptfsis2022@gmail.com';                
+		    $mail->Password = 'ovagxjsrdqaaesop'; 
 		    $mail->addAttachment($ftmpname,$fname);
 			$mail->SMTPSecure = 'ssl';                            
 			$mail->Port = 465;
-			$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
-            $mail->isHTML(true);
+			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT FSIS');
+			$mail->isHTML(true);                                  
 			$mail->Subject = $subject;
 			$mail->Body    = $message;
 			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
@@ -2963,15 +3157,15 @@ class AdministratorController extends Controller
             $mail = new YiiMailer;
         	//Uncomment this following lines when the project is uploaded on the hostinger
 			$mail->SMTPDebug  = 1;                                  
-			$mail->Host = "smtp.hostinger.com";  
+			$mail->Host = "smtp.gmail.com";  
 			$mail->SMTPAuth = true;                           
-			$mail->Username = 'fls@puptaguigcs.net';                
-		    $mail->Password = 'FLSEmail@2022';                          
+			$mail->Username = 'puptfsis2022@gmail.com';                
+		    $mail->Password = 'ovagxjsrdqaaesop'; 
+		    $mail->addAttachment($ftmpname,$fname);
 			$mail->SMTPSecure = 'ssl';                            
 			$mail->Port = 465;
-			
-			$mail->setFrom('fls@puptaguigcs.net', 'PUPT FSIS');
-			$mail->isHTML(true); 
+			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT FSIS');
+			$mail->isHTML(true);                                  
 			$mail->Subject = $subject;
 			$mail->Body    = $message;
 			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';

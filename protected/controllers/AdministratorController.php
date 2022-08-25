@@ -1478,7 +1478,7 @@ class AdministratorController extends Controller
 		$rows = TblSubjectload::model()->SubjCurriculum($sem, $sy);
 		$subPref = TblSubjpreferences::model()->CheckProfSubPref($sem, $sy, $fcode);
 		$course = TblCourse::model()->GetCourse();
-		$profMaxUnit = TblEvaluationfaculty::model()->CheckSpecProf($fcode);
+		$profMaxUnit = TblFacultyunits::model()->GetAllUnits();
 
 		$v1 = count($rows);
 		$v2 = count($subPref);
@@ -1504,9 +1504,11 @@ class AdministratorController extends Controller
 		//rearranging the element values of the array
 		$subject = array_values($rows);
 
-		$reg = $profMaxUnit['Regular_Load'];
-		$part = $profMaxUnit['PartTime_Load'];
-		$ts = $profMaxUnit['TeachingSub_Load'];
+		foreach ($profMaxUnit as $row) {
+			$reg = $row['RegUnits'];
+			$part = $row['PartTimeUnits'];
+			$ts = $row['TempSubUnits'];
+		}
 
 		$tots = $reg + $part + $ts;
 

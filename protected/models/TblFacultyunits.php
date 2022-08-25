@@ -96,7 +96,7 @@ class TblFacultyunits extends CActiveRecord
 	}
 
 	public static function GetAllUnits(){
-		$sql = "SELECT * FROM tbl_facultyUnits";
+		$sql = "SELECT * FROM tbl_facultyunits";
 
 		$row = Yii::app()->db->createCommand($sql)
 		->queryAll();

@@ -101,4 +101,6 @@ class TblColleges extends CActiveRecord
 		return $row;
 
 	}
+
+	
 }

@@ -3353,9 +3353,13 @@ class AdministratorController extends Controller
 
 
     /////////////////////////////////IPCR CONTROLLERS////////////////////////////////////
-    public function actionIPCRdeadlineExtend1()
+    public function actionIPCRmain()
     {
-    	$this->render('IPCRdeadlineExtend1');
+    	$this->render('IPCRmain');
+    }
+    public function actionIPCRdeadlineExtend()
+    {
+    	$this->render('IPCRdeadlineExtend');
     }
     public function actionIPCRdeadlineExtend2()
     {

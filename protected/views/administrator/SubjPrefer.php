@@ -147,7 +147,7 @@ if(isset($_SESSION['user'])) {
 <div id=page-body-content-inner>
 <!-- Page content -->
 <div id=page-content>
-
+ 
 <h2>Dashboard</h2>
 <!-- School Year -->
 

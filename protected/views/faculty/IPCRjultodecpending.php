@@ -148,6 +148,25 @@ if(isset($_SESSION['user'])) {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
+footer {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: black;
+   color: white;
+   text-align: center;
+}
+
+#line 
+{
+    background-color: black;
+    margin: 15px;
+    margin-left: -15%;
+    margin-right: -17%;
+}
+
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -155,7 +174,7 @@ if(isset($_SESSION['user'])) {
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
 <meta charset="UTF-8"></head>
-<body style="background-color: Black;">
+<body style="background-color: ghostwhite;">
 <!-- JS notice - will be displayed if javascript is disabled -->
 <p id=jsnotice>Javascript is currently disabled. This site requires Javascript to function correctly. Please <a href="http://enable-javascript.com/">enable Javascript in your browser</a>!</p>
 <!-- End - JS notice -->
@@ -194,12 +213,10 @@ if(isset($_SESSION['user'])) {
     
  ?>
 
-<h2 class="underlined-header" id="title" >Create IPCR: <strong>JULY TO DECEMBER <?php echo '('.$y.')';?></strong><p style="float:right; margin-right: 10px;">Remarks: <strong><?php echo $status; ?></strong></p></h2>
+<a href="index.php?r=faculty/IPCRfaculty<?php echo'&m='.$m.'&y='.$y.''?>" style="margin-left:-15%; font-size:16px;">&laquo; Back to dashboard</a>
 
-<!-- Deadline -->
-<h2 class="underlined-header" style="width:25%; color: Red; margin-left: -15%;"><strong> Deadline: <input style="display: inline;" placeholder="Not Set" value="<?php echo $dline; ?>" readonly></strong></h2>
-
-<a href="index.php?r=faculty/IPCRevaluationfaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
+<h2 id="title" >IPCR for: <strong>July to December <?php echo '('.$y.')';?> - Deadline: <?php if($dline == NULL) { echo 'not set'; } else { echo $dline; }?></strong><p style="float:right; margin-right: 10px;">Remarks: <strong><?php echo $status; ?></strong></p></h2>
+<hr id="line">
 <section>
     <br>
 <!-- <div class="w3-code notranslate cssHigh">
@@ -633,40 +650,11 @@ if(isset($_SESSION['user'])) {
 </section>
 
 <footer id=page-footer>
-<div class=container-aligner>
-<!-- Footer left -->
-<section id=footer-left>
-© Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0" title="Dbooom Themes">Apex Dev Team | PUP Taguig</a> - All Rights Reserved.
-</section>
-<!-- End - Footer left -->
-<!-- Footer right -->
-<section id=footer-right>
-<ul class=footer-navigation>
-<li>
-<a href='http://www.pup-taguig.net' title=Home>Home</a>
-</li>
-<li>
-<a href='index.php?r=site/about' title=About>About</a>
-</li>
-<li>
-<a href='index.php?r=site/contact' title=Contacts>Contacts</a>
-</li>
-</ul>
-</section>
-<!-- End - Footer right -->
-</div>
+    <div class=container-aligner>
+        <section id=footer-left>
+            © Copyright 2021 <a href="https://sites.google.com/view/puptfsis/ipcr/fsis2-team-members?authuser=0">Team Apex | PUP Taguig</a> - All Rights Reserved.
+        </section>
+    </div>
 </footer>
-<!-- End - Page footer -->
-<!-- Theme backgrounds -->
-<div id=theme-backgrounds>
-
-<img alt='Asset 4' data-color='#D64333' src='assets/backgrounds/4.jpg.pagespeed.ce.AV4Gchw-qN.jpg' width=1600 height=1064 />
-
-</div>
-<!-- End - Theme backgrounds -->
-<link href='scripts/libs/switcher/switcher.css' rel=stylesheet />
-
-<!-- Scripts -->
-<script id=js-dispatcher src='scripts/scripts.js'></script>
 </body>
 </html>

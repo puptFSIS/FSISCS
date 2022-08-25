@@ -31,7 +31,7 @@
 	$res = mysqli_query($conn,$sql_notif);
 
 	// print_r($res);
-	header('Location: index.php?r=faculty/IPCRfaculty&a=1');
+	header('Location: index.php?r=faculty/IPCRfaculty&m='.$m.'&y='.$y.'&a=1');
 
 
 ?>

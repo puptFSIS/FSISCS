@@ -1553,6 +1553,14 @@ class FacultyController extends Controller
 
 
 ///////////////////////////////////////////////
+	public function actionIPCRvalidate()
+	{
+		$this->render('IPCRvalidate');
+	}
+	public function actionIPCRmain()
+	{
+		$this->render('IPCRmain');
+	}
 	public function actionIPCRInterpolationSheet2JD()
     {
     	$this->render('IPCRInterpolationSheet2JD');

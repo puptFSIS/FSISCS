@@ -16,7 +16,7 @@
 	
 <?php include('getRole.php'); ?>
 <?php if($role == "HAP"): ?>
-	<a class="header1" data-category=design href="index.php?r=administrator/IPCR">IPCR</a>
+	<a class="header1" data-category=design href="index.php?r=administrator/IPCRmain">IPCR</a>
 <?php endif ?>
 
 <a class="header1" data-category=design href="index.php?r=administrator/daily_time_record">DTR</a>

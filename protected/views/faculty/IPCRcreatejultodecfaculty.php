@@ -150,6 +150,31 @@ footer {
    color: white;
    text-align: center;
 }
+
+.select
+{
+    margin-left: -15%;
+    font-size: 16px;
+}
+
+.reminder 
+{
+     background-color:lightgray; 
+     padding: 15px; 
+     font-size: 14px; 
+     border-radius: 5px;
+     margin-left: -15%;
+     margin-right: -17%;
+}
+
+#line 
+{
+    background-color: black;
+    margin: 15px;
+    margin-left: -15%;
+    margin-right: -17%;
+}
+
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -200,18 +225,26 @@ footer {
     
  ?>
 
-<h2 class="underlined-header" id="title" >Create IPCR: <strong>JULY TO DECEMBER <?php echo '('.$y.')';?></strong></h2>
+<a href="index.php?r=faculty/IPCRfaculty<?php echo'&m='.$m.'&y='.$y.''?>" class="select">&laquo; Back to dashboard</a>
+<br/>
+<div id="main">
+    <h2 id="title" >Create IPCR: <strong>July to December <?php echo '('.$y.')';?> - Deadline: <?php if($dline == NULL) { echo 'not set'; } else { echo $dline; }?></strong></h2>
+    <hr id="line">
 
 <!-- Deadline -->
-<h2 class="underlined-header" style="width:25%; color: Red; margin-left: -15%;"><strong> Deadline: <input style="display: inline;" placeholder="Not Set" value="<?php echo $dline; ?>" readonly></strong></h2>
+<!-- <h2 class="underlined-header" style="width:25%; color: Red; margin-left: -15%;"><strong> Deadline: <input style="display: inline;" placeholder="Not Set" value="<?php echo $dline; ?>" readonly></strong></h2> -->
 
-<a href="index.php?r=faculty/IPCRcreatefaculty"><button style="width: 100px; margin-left: -15%;">&laquo; Select IPCR</button></a>
+<div class="reminder">
+        <strong><u>Reminders:</u></strong>
+        <br>
+            <li><b id="asterisk">*</b> - Required Fields.</li>
+            <li>Submit your IPCR before <strong><?php if($dline == NULL) { echo"__________"; } else { echo $dline; } ?></strong>. You can request for the deadline extension, just contact the administrator or Head of Academic Programs (HAP).</li>
+            <li>Once you <strong>submit</strong> the IPCR, you are <strong>not allowed</strong> to edit unless it was returned to you after the review. (you will be notified through email)</li>
+            <!-- <li>All Required Fields is used on Approval so double check before you submit.</li> -->
+            <li>After Review, If you got <strong>Disapproved</strong> on Approval part, you can click it to view the reason/feedback.</li>
+    </div>
 <section>
-<div class="w3-code notranslate cssHigh">
-    <small><strong><b id="asterisk">*</b> - Required Fields.</strong></small>
-    <br>
-    <small><strong>After Review, If you got "Disapprove" on Approval part, you can click it to view the reason/feedback.</strong></small>
-</div>
+<br/>
 <table class=round-3 style="width:132%; margin-left: -15%;" id="shadow">
 <thead>
     <tr align="center">

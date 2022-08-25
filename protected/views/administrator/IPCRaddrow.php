@@ -115,6 +115,11 @@ footer {
    color: white;
    text-align: center;
 }
+/*.wrapper {
+    width:200px;
+padding:20px;
+height: 150px;
+}*/
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -179,15 +184,72 @@ if(isset($_GET['m'],$_GET['y'])) :
     <h4 class="underlined-header" id="head"><strong>SUCCESS INDICATORS:</strong><textarea style="width: 100%; height: 30%;" name="indicators" type=text placeholder='Success Indicators'></textarea></h4>
     <br>
     <br>
-    <!--<p style="margin-bottom: 9px; font-size: 15px;"><strong>Actual Accomplishments:</strong><textarea name="accomplishment" type=text style="width: 400px; height: 150px; margin-top: -28px; margin-left: 30%;"  placeholder='Actual Accomplishments'></textarea></p>-->
-
+    <h4 class="underlined-header" style="border-radius:5px;">
+    <p style="margin-bottom: 9px; font-size: 20px;"><strong>ACTUAL ACCOMPLISHMENT:</strong></p>
+    <div style="font-size:12px; padding: 5px;" >
+    <li>Select Accomplishment which alligned with the output and indicators that you input and this will use to get the accomplishment synchronization of the faculty from <strong>eQAR</strong> to IPCR.</li>
+    </div>
+    <br/>
+    <!-- <div class="wrapper"> -->
+    <center>
+    <select style="height: 40px;">
+        <option>--------SELECT ACCOMPLISHMENT TYPE--------</option>
+        <optgroup label="ACADEMIC PROGRAM DEVELOPMENT" style="font-size:15px;">
+            <option>Course Syllabus</option>
+            <option>Reference/Textbook/Module/Monographs/Instructional Materials</option>
+            <option>Student Awards and Recognition</option>
+            <option>Student Attended Seminars and Trainings</option>
+            <option>• Awards and Recognition Received by the College/Department</option>
+            <option>Viable Demonstration Projects</option>
+        </optgroup>
+        <optgroup label="EXTENSION PROGRAMS AND EXPERT SERVICES" style="font-size:15px;">
+            <option>Expert Service Rendered as Consultant</option>
+            <option>Expert Service Rendered in Conference, Workshops, and/or Training Course for  Professional</option>
+            <option>Expert Service Rendered in Academic Journals/Books/Publication/Newsletter/Creative Works</option>
+            <option>Extension Program/Project/Activity</option>
+            <option>Inter-country Mobility</option>
+            <option>Intra-country Mobility</option>
+            <option>Partnership/Linkages/Network</option>
+            <option>Community Engagement Conducted by College and Department</option>
+            <option>Community Relation and Outreach Program</option>
+            <option>Technical Extension Program/Project/Activity</option>
+        </optgroup>
+        <optgroup label="INVENTIONS, INNOVATION & CREATIVITY" style="font-size:15px;">
+            <option>Inventions, Innovation, and Creative Works</option>
+        </optgroup>
+        <optgroup label="PERSONAL DATA" style="font-size:15px;">
+            <option>Officerships/ Memberships</option>
+            <option>Ongoing Studies</option>
+            <option>Outstanding Awards</option>
+            <option>Seminars and Trainings</option>
+        </optgroup>
+        <optgroup label="RESEARCH & BOOK CHAPTER" style="font-size:15px;">
+            <option>Research Registration</option>
+        </optgroup>
+        <optgroup label="REQUESTS & QUERIES" style="font-size:15px;">
+            <option>Requests and Queries Acted Upon</option>
+        </optgroup>
+        <optgroup label="TASKS & FUNCTIONS" style="font-size:15px;">
+            <option>Academic Special Tasks</option>
+            <option>• Admin Special Tasks</option>
+            <option>Accomplishments Based on OPCR</option>
+            <option>Attendance in College & University Functions</option>
+        </optgroup>
+        <optgroup label="OTHERS" style="font-size:15px;">
+            <option>Other Individual Accomplishments</option>
+            <option>Other Department/College Accomplishments</option>
+        </optgroup>
+    </select>
+    </center>
+    </h4>
+    <!-- </div> -->
     <script src="ckeditor4/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('output');
         CKEDITOR.replace('indicators');
     
     </script>
-
+    <br/>
     <center><button style="width: 100px;" type="submit" name="submit">Save</button></center>
 
     </form>

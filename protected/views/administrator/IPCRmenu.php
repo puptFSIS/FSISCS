@@ -33,26 +33,31 @@
 /*.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
 </style>
 
- <li>
-	<a href='index.php?r=administrator/IPCRcreate' title="Create IPCR of specified month and year">Create IPCR</a>
+<!-- Get montha nd year passed on page -->
+<?php 
+  $m = $_GET['m'];
+  $y = $_GET['y'];
+?>
+<li>
+	<a href='index.php?r=administrator/IPCRcreatejantojune<?php echo'&m='.$m.'&y='.$y.''?>' title="Create IPCR of specified month and year">Create IPCR</a>
 </li>
 
 <li>
-	<a href="index.php?r=administrator/IPCRratingsremarks" title="Evaluate faculty submitted IPCR">Evaluation</a>
+	<a href="index.php?r=administrator/IPCRlist<?php echo'&m='.$m.'&y='.$y.''?>" title="Evaluate faculty submitted IPCR">Evaluation</a>
 </li>
 
 <li>
-  <a href="index.php?r=administrator/IPCRdeadlineExtend1" title="Extend IPCR deadline of faculty">Deadline Extension</a>
+  <a href="index.php?r=administrator/IPCRdeadlineExtend2<?php echo'&m='.$m.'&y='.$y.''?>" title="Extend IPCR deadline of faculty">Deadline Extension</a>
 </li>
 
-<li>
+<!-- <li>
 	<a href='index.php?r=administrator/IPCRemailnotif' title="Send Individual Email For Faculty">Send IPCR Email Notification</a>
-</li>
+</li> -->
 
 <div class="dropdown">
   <li class="dropbtn">Reports</li>
   <div class="dropdown-content">
-    <a href="index.php?r=administrator/IPCRreport1" title="Generate Report (PDF)">Generate IPCR (PDF)</a>
-    <a href="index.php?r=administrator/IPCRinterpolview" title="Generate Report (Excel)">Generate Interpolation (Excel)</a>
+    <a href="index.php?r=administrator/IPCRreport3<?php echo'&m='.$m.'&y='.$y.''?>" title="Generate Report (PDF)">Generate IPCR (PDF)</a>
+    <a href="index.php?r=administrator/IPCRinterpolview2<?php echo'&m='.$m.'&y='.$y.''?>" title="Generate Report (Excel)">Generate Interpolation (Excel)</a>
   </div>
 </div>

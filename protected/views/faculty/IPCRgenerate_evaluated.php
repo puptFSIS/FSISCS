@@ -1,10 +1,9 @@
 <?php 
 	include('config.php');
 	session_start();
-
-	$m = $_POST['Month'];
-    $y = $_POST['Year'];
-    $fcode = $_POST['fcode'];
+	$m = $_GET['m'];
+    $y = $_GET['y'];
+    $fcode = $_GET['fcode'];
  
     //to check the deadline
     $sql3 = "SELECT dline_date FROM tbl_ipcrvisible WHERE month = '$m' AND year = '$y'"; //Querying the deadline date
@@ -27,12 +26,12 @@
         }
             if($count1 == 0)
             {
-                header('Location: index.php?r=faculty/IPCRcreatefaculty&c=1');
+                header('Location: index.php?r=faculty/IPCRfaculty&m='.$m.'&y='.$y.'&mess=7');
             } else if ($count1 > 0) 
             {
                 if($IsAvailable == "Not Available")
                 {
-                    header('Location: index.php?r=faculty/IPCRcreatefaculty&b=1');
+                    header('Location: index.php?r=faculty/IPCRfaculty&m='.$m.'&y='.$y.'&mess=8');
                 } else if ($IsAvailable == "Available") {
                     // if($deadline == NULL) //if Deadline is NULL or Not Set, It must continue
                     // {
@@ -69,7 +68,7 @@
                                 }
                             }
                         } else {
-                            header('Location: index.php?r=faculty/IPCRevaluationfaculty&d=1');
+                            header('Location: index.php?r=faculty/IPCRfaculty&m='.$m.'&y='.$y.'&mess=10');
                         }
                     // } else if($deadline != NULL) //If Dealine is Not null or it was set then continue,
                     // {

@@ -201,10 +201,10 @@ footer {
 <?php
     
 
-    if(isset($_POST['Year']))
+    if(isset($_GET['m'],$_GET['y']))
     {
-        $y = $_POST['Year'];
-        $m = "JJ";
+        $m = $_GET['m'];
+        $y = $_GET['y'];
     }
     //$sql="SELECT tbl_ipcr1.*,tbl_ipcraccomp.* FROM tbl_ipcr1 LEFT JOIN tbl_ipcraccomp ON tbl_ipcraccomp.id_ipcr1 = tbl_ipcr1.id AND tbl_ipcraccomp.FCode = $fcode WHERE tbl_ipcr1.year = $y AND tbl_ipcr1.deleted_on IS NULL ORDER BY tbl_ipcr1.id, tbl_ipcraccomp.id_ipcr1 ASC";
 
@@ -232,8 +232,10 @@ footer {
                      //Database
                         $sql = "SELECT tbl_evaluationfaculty.*,tbl_ipcrstatus.status FROM tbl_evaluationfaculty LEFT JOIN tbl_ipcrstatus ON tbl_ipcrstatus.fcode = tbl_evaluationfaculty.FCode WHERE tbl_evaluationfaculty.Status = 'Active' AND tbl_ipcrstatus.year='$y' AND tbl_ipcrstatus.month='JD' AND tbl_ipcrstatus.status = 'Approved' ORDER BY tbl_evaluationfaculty.LName ASC";
                         $result = mysqli_query($conn,$sql);
+                        $count = mysqli_num_rows($result);
 
                     ?>
+                        <?php if($count > 0) : ?>
                         <?php while($row = mysqli_fetch_array($result)) : ?>
                         
                             <?php
@@ -256,6 +258,13 @@ footer {
                                     <?php endif; ?>
                             </tr>
                         <?php endwhile; ?>
+                        <?php elseif($count == 0) : ?>
+                            <tfoot>
+                                <tr>
+                                    <td colspan="4" style="font-size: 14px">No Records Found</td> 
+                                </tr>
+                            </tfoot>
+                        <?php endif; ?>
                         
                             
             </table> 

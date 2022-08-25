@@ -265,8 +265,17 @@ footer {
    text-align: center;
 }
 
-#page-body-content {
+#page-body-content 
+{
     position: inherit;
+}
+
+#line 
+{
+    background-color: black;
+    margin: 15px;
+    margin-left: -15%;
+    margin-right: -17%;
 }
 </style>
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -297,12 +306,7 @@ footer {
         <div id=page-content>
         <!-- Video - HTML5 -->
         <section>
-
-        <?php
-            
-            
-        ?>
-
+        <a style="margin-left:-15%; font-size: 16px;" href="index.php?r=administrator/IPCRlist<?php echo'&m='.$m.'&y='.$y.'';?>">&laquo; Back to list</a>
         <?php
             $query = "SELECT * FROM tbl_personalinformation WHERE EmpID = '$fcode'";
             $res = mysqli_query($conn,$query);
@@ -319,16 +323,16 @@ footer {
                 {
                     if($m == "JJ")
                     {
-                        echo '<h2 class="underlined-header" style="width:132%; margin-left: -15%;"><strong>IPCR OF: '.$sname.", ".$fname." ".$mname.' (JANUARY TO JUNE - '.$y.')</strong></h2>';
+                        echo '<h2 style="width:132%; margin-left: -15%;"><strong>IPCR of '.$sname.", ".$fname." ".$mname.' (January to June, '.$y.')</strong></h2>';
                     } else if($m == "JD"){
-                        echo '<h2 class="underlined-header" style="width:132%; margin-left: -15%;"><strong>IPCR OF: '.$sname.", ".$fname." ".$mname.' (JULY TO DECEMBER - '.$y.')</strong></h2>';
+                        echo '<h2 class="underlined-header" style="width:132%; margin-left: -15%;"><strong>IPCR OF: '.$sname.", ".$fname." ".$mname.' (July to December, '.$y.')</strong></h2>';
                     }
                 }
             }
         ?>
-        
+        <hr id="line">
         <section>
-        <a href="index.php?r=administrator/IPCRlist<?php echo'&m='.$m.'&y='.$y.'';?>"><button style="width: 80px; margin-left: -15%;">&laquo; Previous</button></a>
+        
 
         <?php 
             

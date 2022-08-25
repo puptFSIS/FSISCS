@@ -123,6 +123,14 @@ footer {
 .modal {
     border-radius: 30px;
 }
+
+/*.edit {
+    background-color: #d19c15;
+}*/
+.del {
+  background-color: red;
+}
+
 </style>
 
 <link href='styles/print.css' media=print rel=stylesheet />
@@ -170,6 +178,8 @@ footer {
     $dline = $row['dline_date'];
  ?>
  
+
+<a style="font-size: 16px;" href="index.php?r=administrator/IPCR<?php echo'&m='.$m.'&y='.$y.''?>">&laquo; Back to Dashboard</a>
 <!-- Title -->
 <h2 class="underlined-header" style="text-align: center;"><strong>Individual Performance, Commitment and Review: JANUARY TO JUNE <?php echo '('.$y.')';?></strong></h2>
 
@@ -177,7 +187,7 @@ footer {
 <h2 class="underlined-header" style="width:25%; color: Red;"><strong> Deadline: <input style="display: inline;" placeholder="yyyy-mm-dd" value="<?php echo $dline; ?>" readonly></strong></h2>
 
 <!-- Previous -->
-<a href="index.php?r=administrator/IPCRcreate"><button style="width: 80px;">&laquo; Previous</button></a>
+
 <br/>
 <br/>
 
@@ -280,8 +290,8 @@ footer {
                 <td name="accomp" style="text-align: left;"></td>
 
                 <td style="text-align: center;">
-                    <a href="index.php?r=administrator/EditIPCRrow<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>"><button style="width:55px">Edit</button></a>
-                    <a href="index.php?r=administrator/processDeleteIPCRinfo<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>" class="btn-del"><button  style="width:55px" name="del" >Delete</button></a>
+                    <a  href="index.php?r=administrator/EditIPCRrow<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>"><button class="edit" style="width:55px">Edit</button></a>
+                    <a  href="index.php?r=administrator/processDeleteIPCRinfo<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>" class="btn-del"><button class="del" style="width:55px" name="del" >Delete</button></a>
                 </td> 
             </tr>
         <?php endwhile; ?> 
@@ -331,8 +341,8 @@ footer {
                 <td name="accomp" style="text-align: left;"></td>
 
                 <td style="text-align: center;">
-                    <a href="index.php?r=administrator/EditIPCRrow<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>"><button style="width:55px">Edit</button></a>
-                    <a href="index.php?r=administrator/processDeleteIPCRinfo<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>" class="btn-del"><button  style="width:55px" name="del" >Delete</button></a>
+                    <a href="index.php?r=administrator/EditIPCRrow<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>"><button class="edit" style="width:55px;">Edit</button></a>
+                    <a href="index.php?r=administrator/processDeleteIPCRinfo<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>" class="btn-del"><button class="del" style="width:55px" name="del" >Delete</button></a>
                 </td> 
             </tr>
         <?php endwhile; ?> 
@@ -380,8 +390,8 @@ footer {
                 <td name="accomp" style="text-align: left;"></td>
 
                 <td style="text-align: center;">
-                    <a href="index.php?r=administrator/EditIPCRrow<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>"><button style="width:55px">Edit</button></a>
-                    <a href="index.php?r=administrator/processDeleteIPCRinfo<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>" class="btn-del"><button  style="width:55px" name="del" >Delete</button></a>
+                    <a href="index.php?r=administrator/EditIPCRrow<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>"><button class="edit" style="width:55px">Edit</button></a>
+                    <a href="index.php?r=administrator/processDeleteIPCRinfo<?php echo'&id='.$id.'&m='.$m.'&y='.$y.'';?>" class="btn-del"><button class="del" style="width:55px" name="del" >Delete</button></a>
                 </td> 
             </tr>
         <?php endwhile; ?> 

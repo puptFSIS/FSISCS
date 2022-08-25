@@ -184,12 +184,107 @@ footer {
 <!-- Video - HTML5 -->
 <section>
  
-<h2 class=underlined-header>Getting started with <b>Individual Performance Commitment and Review</b></h2>
-<br>
-<iframe width="600" height="375" src="//www.youtube.com/embed/4DbzZEG_dKA" frameborder="0" allowfullscreen></iframe>
+ <?php 
+    $m = $_GET['m'];
+    $y = $_GET['y']; 
+    if($m == "JJ") {
+        echo '<h4 style="margin-left: -150px;"> January - June, '.$y.'</h4>';    
+    } elseif($m == "JD") {
+        echo '<h4 style="margin-left: -150px;"> July - December, '.$y.'</h4>';
+    } 
+?>
+<?php include('getPersonalInformation.php'); ?>
+<?php include('getRole.php'); ?>
+<h2 style="margin-left: -150px;"><strong><?php echo $firstname." ".$surname." (".$role.")";?></strong></h2>
+<hr style="background-color:black; width: 123%; margin-left: -150px; margin-top: 10px;">
+<br/>
+<?php 
+    $m = $_GET['m'];
+    $y = $_GET['y']; 
+    $sql = "SELECT * FROM tbl_ipcrstatus WHERE fcode = '$fcode' AND month = '$m' AND year = '$y'";
+    $result = mysqli_query($conn,$sql);
+    $count = mysqli_num_rows($result);
+    $row = mysqli_fetch_array($result);
+    $status = $row['status'];
+?>
+        <div>
+<?php if($count > 0): ?>
+    <?php if($status == "Submitted"): ?>
+            <div>
+                <div style="margin-left: -150px; width: 123%; float: left; display: inline-block; margin-top: -30px;">
+                    <div style="background-color: #820001; padding: 13px; height: 25px; border-radius:5px; ">
+                        <div>
+                            <p class="db-text" style="font-weight: bold; font-size: 1.50em; color: white;">YOUR IPCR IS SUBMITTED</p>
+                            <small style="margin: 0 10px 0 30px; color: whitesmoke;">Month of: </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <?php elseif($status == "Approved"): ?>
+            <div>
+                <div style="margin-left: -150px; width: 123%; float: left; display: inline-block; margin-top: -30px;">
+                    <div style="background-color: green; padding: 13px; height: 25px; border-radius:5px; ">
+                        <div>
+                            <p class="db-text" style="font-weight: bold; font-size: 1.50em; color: white;">YOUR IPCR IS APPROVED</p>
+                            <!-- <small style="margin: 0 10px 0 30px; color: whitesmoke;">Month of: </small> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <?php elseif($status == "Pending"): ?>
+            <div>
+                <div style="margin-left: -150px; width: 123%; float: left; display: inline-block; margin-top: -30px;">
+                    <div style="background-color: blue; padding: 13px; height: 25px; border-radius:5px; ">
+                        <div>
+                            <p class="db-text" style="font-weight: bold; font-size: 1.50em; color: white;">IPCR IS PENDING, PLEASE CHECK.</p>
+                            <small style="margin: 0 10px 0 30px; color: whitesmoke;">Month of: </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <?php elseif($status == NULL): ?>
+            <div>
+                <div style="margin-left: -150px; width: 123%; float: left; display: inline-block; margin-top: -30px;">
+                    <div style="background-color: #d19c15; padding: 13px; height: 25px; border-radius:5px; ">
+                        <div>
+                            <p class="db-text" style="font-weight: bold; font-size: 1.50em; color: black;">UNSUBMITTED, PLEASE SUBMIT YOUR IPCR.</p>
+                            <!-- <small style="margin: 0 10px 0 30px; color: whitesmoke;">Month of: </small> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <?php endif; ?>
+<?php elseif($count == 0): ?>
+            <div>
+                <div style="margin-left: -150px; width: 123%; float: left; display: inline-block; margin-top: -30px;">
+                    <div style="background-color: #c1c2b4; padding: 13px; height: 25px; border-radius:5px; ">
+                        <div>
+                            <?php 
+                                $m = $_GET['m'];
+                                $y = $_GET['y']; 
+                            ?>
+                            <?php if($m == "JJ"): ?>
+                                <p class="db-text" style="font-weight: bold; font-size: 1.50em; color: black;">IPCR FOR JANUARY TO JUNE <?php echo $y; ?> IS AVAILABLE.</p>
+                            <?php elseif($m == "JD"): ?>
+                                <p class="db-text" style="font-weight: bold; font-size: 1.50em; color: black;">IPCR FOR JULY TO DECEMBER <?php echo $y; ?> IS AVAILABLE.</p>
+                            <?php endif; ?>
+                            <!-- <small style="margin: 0 10px 0 30px; color: whitesmoke;">Month of: </small> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+<?php endif; ?>
+        </div>
+
+    
+
+<!-- <h2 class=underlined-header>Getting started with <b>Individual Performance Commitment and Review</b></h2>-->
+<br/>
+<br/>
+<iframe width="740" height="375" style="margin-left: -150px; border-radius: 5px;" src="https://www.youtube.com/embed/p8jK1ou2dZA" frameborder="0" allowfullscreen></iframe>
 
 
-
+            <!-- edit IPCR -->
             <?php if(isset($_GET['a'])) : ?>
                 <div class="flash-data-submit" data-flashdata="<?= $_GET['a']; ?>"></div>
             <?php endif; ?>
@@ -198,6 +293,181 @@ footer {
                 <div class="flash-data-already" data-flashdata1="<?= $_GET['b']; ?>"></div>
             <?php endif; ?>
 
+            <!-- Alert for edit ipcr protocols -->
+            <?php if(isset($_GET['mess'])): ?>
+                <?php if($_GET['mess'] == 1) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 2) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 3) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 4) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 5) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 6) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 7) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 8) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 9) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 10) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 11) : ?> 
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 12) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 13) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+
+                <?php if($_GET['mess'] == 14) : ?>
+                    <div class="flash-data" data-flashdata="<?= $_GET['mess']; ?>"></div>
+                <?php endif; ?>
+            <?php endif; ?>
+
+            
+            <script>
+                flashdata = $('.flash-data').data('flashdata')
+                    if (flashdata == 1) {
+                        Swal.fire(
+                            'Deadline Exceeded!',
+                            "You don't have access on the IPCR",
+                            'error'
+                        )
+                    }  
+
+                    if (flashdata == 2) {
+                        Swal.fire(
+                            'IPCR is not available at the moment!',
+                            "Press ok to continue",
+                            'error'
+                        )
+                    }  
+
+                    if (flashdata == 3) {
+                        Swal.fire(
+                            'No IPCR Created',
+                            "Wait for the moment",
+                            'error'
+                        )
+                    }  
+
+                    if (flashdata == 4) {
+                        Swal.fire(
+                            'You submitted your IPCR',
+                            "Wait for the Review",
+                            'info'
+                        )
+                    } 
+
+                    if (flashdata == 5) {
+                        Swal.fire(
+                            'Your IPCR is Pending',
+                            "Proceed to 'Evaluated IPCR'",
+                            'info'
+                        )
+                    } 
+
+                    if (flashdata == 6) {
+                        Swal.fire(
+                            'Your IPCR is Approved',
+                            "You can Print a copy of your IPCR",
+                            'info'
+                        )
+                    }
+
+                    if (flashdata == 7) {
+                         Swal.fire(
+                            'Deadline Exceeded!',
+                            "You don't have access on the IPCR",
+                            'error'
+                        )
+                    }
+
+                    if (flashdata == 8) {
+                        Swal.fire(
+                            'IPCR is not available at the moment!',
+                            "Press ok to continue",
+                            'error'
+                        )
+                    }
+
+                    if (flashdata == 9) {
+                        Swal.fire(
+                            'No IPCR Created',
+                            "Wait for the moment",
+                            'error'
+                        )
+                    }
+
+                    if (flashdata == 10) {
+                        Swal.fire(
+                            'Please Submit your IPCR first',
+                            "Proceed to 'Edit IPCR'",
+                            'info'
+                        )
+                    }
+
+                    if (flashdata == 11) {
+                        Swal.fire(
+                            'IPCR not Approved',
+                            'Press OK to continue',
+                            'warning'
+                        )
+                    }
+
+                    if (flashdata == 12) {
+                        Swal.fire(
+                            'IPCR not available to Generate',
+                            "You can't download a copy at the moment",
+                            'warning'
+                        )
+                    }
+
+                    if (flashdata == 13) {
+                        Swal.fire(
+                            'No IPCR existing',
+                            'Press OK to Continue',
+                            'warning'
+                        )
+                    }
+
+                    if (flashdata == 14) {
+                        Swal.fire(
+                            'Please make your IPCR first',
+                            "You can't downlaod a copy at the moment",
+                            'warning'
+                        )
+                    }
+
+            </script>
             <!-- <input type="hidden" id="refreshed" value="no">
             <script type="text/javascript">
 
@@ -226,8 +496,6 @@ footer {
                             'warning'
                         )
                     }
-
-
             </script>
 </section>
 <!-- End - Video -HTML5 -->

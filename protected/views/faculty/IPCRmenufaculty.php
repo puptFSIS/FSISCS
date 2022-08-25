@@ -32,13 +32,16 @@
 
 /*.dropdown:hover .dropbtn {background-color: #3e8e41;}*/
 </style>
-
+<?php 
+  $m = $_GET['m'];
+  $y = $_GET['y'];
+?>
 <li>
-	<a href='index.php?r=faculty/IPCRcreatefaculty' title="Edit your copy of Available IPCR">Edit IPCR</a>
+	<a href='index.php?r=faculty/IPCRvalidate<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''; ?>' title="Edit your copy of Available IPCR">Edit IPCR</a>
 </li>
 
 <li>
-	<a href="index.php?r=faculty/IPCRevaluationfaculty" title="See Evaluated IPCR">Evaluated IPCR</a>
+	<a href="index.php?r=faculty/IPCRgenerate_evaluated<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.'';?>" title="See Evaluated IPCR">Evaluated IPCR</a>
 </li>
 
 <!-- <li>
@@ -49,7 +52,7 @@
  <div class="dropdown">
   <li class="dropbtn">Reports</li>
   <div class="dropdown-content">
-    <a href="index.php?r=faculty/IPCRreport" title="Generate Report (PDF)">Generate your IPCR (PDF)</a>
-    <a href="index.php?r=faculty/IPCRinterpolview" title="Generate Report (Excel)">Generate your Interpolation (Excel)</a>
+    <a href="index.php?r=faculty/IPCRreportprocess<?php echo'&m='.$m.'&y='.$y.'&fcode='.$fcode.''?>" title="Generate Report (PDF)">Generate your IPCR (PDF)</a>
+    <!-- <a href="index.php?r=faculty/IPCRinterpolview" title="Generate Report (Excel)">Generate your Interpolation (Excel)</a> -->
   </div>
 </div>

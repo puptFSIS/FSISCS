@@ -282,6 +282,136 @@ class AdministratorController extends Controller
 		$FacultyList = TblEvaluationfaculty::model()->GetAllProf();
 		$this->render('lfa',array('FacultyList'=>$FacultyList));
 	}
+
+	public function actionNewAccount()
+	{
+		session_start();
+		$this->CheckEmpID($_SESSION['CEmpID']);
+
+		$FacultyList = TblSignup::model()->GetAllApplying();
+
+		// echo "<pre>";
+		// print_r($FacultyList);
+		// echo "</pre>";
+		$this->render('NewAccounts',array('List' => $FacultyList));
+	}
+
+	public function actionAcceptFaculty(){
+		$row = TblSignup::model()->findByPk($_POST['user_id']);
+		$units = TblFacultyunits::model()->GetAllUnits();
+		$newpass = sha1($row['Password']);
+
+		foreach ($units as $rows) {
+			$reg = $rows['RegUnits'];
+			$part = $rows['PartTimeUnits'];
+			$ts = $rows['TempSubUnits'];
+			$fd = $rows['FacultyDesignee'];
+		}
+
+
+		if ($row['Employment_type'] == 'Permanent') {
+			$regular = $reg;
+			$parttime = $part;
+			$tempsub = $ts;
+		} else if($row['Employment_type'] == 'Part-time' || $row['Employment_type'] == 'Temporary'){
+			$regular = 0;
+			$parttime = $part;
+			$tempsub = $ts;
+		} else if($row['Position'] == 'Faculty Designee'){
+			$regular = $fd;
+			$parttime = $part;
+			$tempsub = $ts;
+		}
+
+		//insert faculty info to tbl_evaluationfaculty
+		$sqleval = "INSERT INTO tbl_evaluationfaculty (`FCode`, `password`, `enu_employmentStat`, `LName`, `FName`, `MName`, `Mobile`, `Email`, `int_courseGroup`, `evalRoles`,`SecQuestion`,`SecAnswer`, `Title`,`InventoryUser`,`EmpID`,`isAdmin`,`status`,`isIPCReligible`,`userlevelid`,`userimage`,`FAdmin`, `FacultyID`,`yearAdded`, `latestCount`,`empNumber`,`branch_id`,`fpes_id`,`standings`,`category`,`Regular_Load`, `PartTime_Load`, `TeachingSub_Load`) VALUES ('".$row['FCode']."', '".$newpass."','".$row['Employment_type']."','".$row['LName']."','".$row['FName']."','".$row['MidInit']."','','".$row['Email']."','".null."','".$row['Position']."','','','','','".$row['FCode']."',0,'Active',0,'','',0,'','',0,'',0,0,'','',".$regular.",".$parttime.",".$tempsub.")";
+
+		Yii::app()->db->createCommand($sqleval)
+		->query();
+
+		$sqlper="INSERT INTO tbl_personalinformation (FCode, surname, firstname, middlename, nameExtension, birthdate, bday, bmonth, byear, EmpID, userID, password, isAdmin, status, civilStatus,email) VALUES ('".$row['FCode']."','".$row['LName']."','".$row['FName']."','".$row['MidInit']."','', '', '', '', '', '".$row['FCode']."', '".$row['FCode']."','".$newpass."',0,'Active','','".$row['Email']."')";
+
+		Yii::app()->db->createCommand($sqlper)
+		->query();
+
+		// echo "<pre>";
+		// print_r($row);
+		// echo "</pre>";
+
+		// send email to the faculty member
+			$subject = "You are now Added";
+			$message = "Good day!<br><br>Dear Faculty Member,<br><br>Your application for your account is now accepted. You may now login to your FSIS Account.<br>Faculty Code: ".$row['FCode']."<br>Password: ".$row['Password']."<br><br>";
+			$message .= 'Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
+
+
+            $mail = new YiiMailer;
+        	//Uncomment this following lines when the project is uploaded on the hostinger
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.gmail.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'puptfsis2022@gmail.com';                
+		    $mail->Password = 'gfmpjesnguqfugsl'; 
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;
+			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT FSIS');
+			$mail->isHTML(true);                                  
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+			
+			
+			
+			$mail->AddAddress($row['Email'], $row['FName']);    
+				
+			if(!$mail->send()) {
+				echo "Error on Sending Email. Please contact the developers.";
+			} else {
+				Yii::app()->db->createCommand("DELETE FROM tbl_signup WHERE id = :id")
+				->bindValue(':id', $_POST['user_id'])
+				->query();
+				echo "<script>window.location.assign('index.php?r=administrator/NewAccount&mes=0')</script>";
+			}
+	}
+
+	public function actionRejectFaculty(){
+		$id = $_GET['id'];
+		$row = TblSignup::model()->findByPk($_GET['id']);
+		$subject = "Application Failed";
+			$message = "Good day!<br><br>Dear Faculty Member,<br><br>Your application for your account was rejected by the administrator. Sign-up again and provide a more precise information<br><br>";
+
+			$message .= 'Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
+			
+
+
+            $mail = new YiiMailer;
+        	//Uncomment this following lines when the project is uploaded on the hostinger
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.gmail.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'puptfsis2022@gmail.com';                
+		    $mail->Password = 'gfmpjesnguqfugsl'; 
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;
+			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT FSIS');
+			$mail->isHTML(true);                                  
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+			
+			
+			
+			$mail->AddAddress($row['Email'], $row['FName']);    
+				
+			if(!$mail->send()) {
+				echo "Error on Sending Email. Please contact the developers.";
+			} else {
+				Yii::app()->db->createCommand("DELETE FROM tbl_signup WHERE id = :id")
+				->bindValue(':id', $id)
+				->query();
+				echo "<script>window.location.assign('index.php?r=administrator/NewAccount&mes=1')</script>";
+			}
+	}
+
 	public function actionProcessInsertFA()
 	{
 		$sql = "SELECT * FROM tbl_facultyunits";

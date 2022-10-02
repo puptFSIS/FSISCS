@@ -256,6 +256,187 @@ class LoginController extends Controller
 	}
 	}
 
+	public function actionSignUp(){
+		$mimes = array('image/png','image/jpeg');
+
+		/*echo "<pre>";
+		print_r($_FILES);
+		echo "</pre>";*/
+
+		if ($_POST['firstName'] != '' && $_POST['MI'] != '' && $_POST['lastName'] != '' && $_POST['fcode'] != '' && $_POST['email'] != '' && $_POST['password'] != '' && $_POST['confirm_password'] != '' && $_FILES['id_pic']['name'] != '') {
+			if (in_array($_FILES['id_pic']['type'], $mimes)) {
+				$target_dir = "signups/".basename($_FILES['id_pic']['name']);
+				$firstName = $_POST['firstName'];
+				$mid = $_POST['MI'];
+				$lastName = $_POST['lastName'];
+				$fcode = $_POST['fcode'];
+				$email = $_POST['email'];
+				$pass = $_POST['confirm_password'];
+				$emptype = $_POST['emptype'];
+				$pos = $_POST['position'];
+
+				if (move_uploaded_file($_FILES["id_pic"]["tmp_name"], $target_dir)) {
+				    $signup = new TblSignup();
+
+				    $signup->attributes=[
+				    	'id' => '',
+				    	'FCode' => $fcode,
+				    	'Employment_type' => $emptype,
+				    	'Position' => $pos,
+				    	'FName' => $firstName,
+				    	'MidInit' => $mid,
+				    	'LName' => $lastName,
+				    	'Email' => $email,
+				    	'Password' => $pass,
+				    	'id_pic' => $target_dir,
+				    ];
+				    $signup->save();
+				    header("location: index.php?&mes=0");
+				} else {
+				   header("location: index.php?&mes=2");
+				}
+			} else {
+				header("location: index.php?&mes=3");
+			}
+			
+		} else {
+			header("location: index.php?&mes=1");
+		}
+	}
+
+	public function actionForgot(){
+		$FourDigitRandomNumber = rand(1231,7879);
+		$fcode = $_POST['fcode'];
+
+		$prof = TblEvaluationfaculty::model()->CheckSpecProf($fcode);
+
+
+		if (!empty($prof)) {
+			$subject = "Verification Code";
+			$message = "Your verification code is ".$FourDigitRandomNumber."<br><br>";
+
+			$message .= 'Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
+			
+
+
+            $mail = new YiiMailer;
+        	//Uncomment this following lines when the project is uploaded on the hostinger
+			$mail->SMTPDebug  = 1;                                  
+			$mail->Host = "smtp.gmail.com";  
+			$mail->SMTPAuth = true;                           
+			$mail->Username = 'puptfsis2022@gmail.com';                
+		    $mail->Password = 'gfmpjesnguqfugsl'; 
+			$mail->SMTPSecure = 'ssl';                            
+			$mail->Port = 465;
+			$mail->setFrom('puptfsis2022@gmail.com', 'PUPT FSIS');
+			$mail->isHTML(true);                                  
+			$mail->Subject = $subject;
+			$mail->Body    = $message;
+			$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+			
+			
+			
+			$mail->AddAddress($prof['Email'], $prof['FName']);    
+				
+			if(!$mail->send()) {
+				echo "Error on Sending Email. Please contact the developers.";
+			} else {
+				Yii::app()->db->createCommand("INSERT INTO tbl_verification (`FCode`, `Code`) VALUES ('".$fcode."','".$FourDigitRandomNumber."')")
+				->query();
+				echo "<script>window.location.assign('index.php?r=login/FourCode&fcode=".$fcode."')</script>";
+			}
+
+		} else {
+			header("location: index.php?&mes=4");
+		}
+		// echo "<pre>";
+		// print_r($prof);
+		// echo "</pre>";
+	}
+
+	public function actionFourCode(){
+		$fcode = $_GET['fcode'];
+		$prof = TblEvaluationfaculty::model()->CheckSpecProf($fcode);
+
+		$this->render('FourCode',array('fcode' => $fcode,'email' => $prof['Email']));
+	}
+
+	public function actionConfirmCode(){
+		$fcode = $_POST['fcode'];
+		$code = $_POST['code'];
+
+		$info = TblVerification::model()->CheckCode($fcode);
+
+		if ($info['Code'] == $code) {
+			$this->render("ConfCode",array('fcode' => $fcode));
+		} else {
+			echo "<script>window.location.assign('index.php?r=login/FourCode&fcode=".$fcode."&mes=0')</script>";
+		}
+
+		
+
+		// echo "<pre>";
+		// print_r($info);
+		// echo "</pre>";
+	}
+
+	public function actionChangePass(){
+		$fcode = $_POST['fcode'];
+		$pass = sha1($_POST['confirm_password']);
+
+		Yii::app()->db->createCommand("UPDATE tbl_evaluationfaculty SET password = '".$pass."' WHERE FCode = '".$fcode."'")
+		->query();
+
+		Yii::app()->db->createCommand("DELETE FROM tbl_verification WHERE FCode = ".$fcode."")
+		->query();
+
+		header("location: index.php?&mes=5");
+	}
+
+	public function actionSendAgain(){
+		$FourDigitRandomNumber = rand(1231,7879);
+		$fcode = $_GET['fcode'];
+
+		$prof = TblEvaluationfaculty::model()->CheckSpecProf($fcode);
+
+
+		$subject = "Verification Code";
+		$message = "Your verification code is ".$FourDigitRandomNumber."<br><br>";
+
+		$message .= 'Click <a href="http://puptaguigcs.net/FSISCS">http://fsiscs.puptaguigcs.net/</a> to visit our website.<br><br>Please do not reply to this email. This is a system-generated notification.';
+		
+
+
+        $mail = new YiiMailer;
+    	//Uncomment this following lines when the project is uploaded on the hostinger
+		$mail->SMTPDebug  = 1;                                  
+		$mail->Host = "smtp.gmail.com";  
+		$mail->SMTPAuth = true;                           
+		$mail->Username = 'puptfsis2022@gmail.com';                
+	    $mail->Password = 'gfmpjesnguqfugsl'; 
+		$mail->SMTPSecure = 'ssl';                            
+		$mail->Port = 465;
+		$mail->setFrom('puptfsis2022@gmail.com', 'PUPT FSIS');
+		$mail->isHTML(true);                                  
+		$mail->Subject = $subject;
+		$mail->Body    = $message;
+		$mail->AltBody = 'To view the message, please use an HTML compatible email viewer.';
+		
+		
+		
+		$mail->AddAddress($prof['Email'], $prof['FName']);    
+			
+		if(!$mail->send()) {
+			echo "Error on Sending Email. Please contact the developers.";
+		} else {
+			Yii::app()->db->createCommand("UPDATE tbl_verification SET `Code` = '".$FourDigitRandomNumber."' WHERE FCode = '".$fcode."' ")
+				->query();
+			echo "<script>window.location.assign('index.php?r=login/FourCode&fcode=".$fcode."')</script>";
+		}
+
+		
+	}
+
 	// public function actionSubjectPreference(){
 		
 	// }

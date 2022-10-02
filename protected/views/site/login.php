@@ -39,6 +39,7 @@ if(isset($_SESSION['user']))
 <!-- Page icon -->
 <link href='puplogo.ico' rel='shortcut icon'/>
 <!-- Stylesheets -->
+<link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
 <style media=screen type='text/css'>@import "styles/base.css";
 .cssLT #ut, .cssUT #ut{filter:progid:DXImageTransform.Microsoft.DropShadow(enabled=false);}
 .cssWLGradientIMG{BACKGROUND-IMAGE: none;top:0;height:103px;background-color:#ffffff;}
@@ -126,6 +127,11 @@ div.login p
     margin-left: 10px;
 }
 
+.required-field::before {
+    content: "*";
+    color: red;
+}
+
 @media only screen and (min-width:150px) and (max-width:600px)
 {
 	.cssWLGradientIMG{
@@ -185,6 +191,10 @@ footer {
 }
 </style>
 
+
+
+
+
 <link href='styles/print.css' media=print rel=stylesheet />
 <!-- Modernizr library -->
 <script src='scripts/libs/modernizr/modernizr.min.js'></script>
@@ -220,178 +230,129 @@ footer {
 <div id=page-body-content-inner>
 <!-- Page content -->
 <div id=page-content>
+
+<?php if (isset($_GET['mes'])) : ?>
+	<?php if ($_GET['mes']==0): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+
+	<?php if ($_GET['mes']==1): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+
+	<?php if ($_GET['mes']==2): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+
+	<?php if ($_GET['mes']==3): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+
+	<?php if ($_GET['mes']==4): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+
+	<?php if ($_GET['mes']==5): ?>
+	<div class="flash-data" data-flashdata="<?= $_GET['mes']?>"></div>
+	<?php endif;?>
+<?php endif;?>
+
+
 <!-- Video - HTML5 -->
 <section>
 <h2 id="slideshow_header">PUP Taguig Branch Officials</h2>
-<?php 
-$sql = "SELECT * FROM tbl_masterlist";
-$query = mysqli_query($conn, $sql);
-?>
 
-<?php while($row = mysqli_fetch_array($query)): ?>
-	<div class=gallery-fading>
-		<ul>
-			<li>
-				<a class='element-holder media-img' data-rel=prettyPhoto href='assets/fferrer.jpg'>
-				<img alt='<?php echo $row['FName'] ?> - <?php echo $row['Position'] ?>' src='<?php echo $row['image_file'] ?>' width=600 height=250 />
-				</a>
-				<div class=slide-caption-right>
-				<h3><?php echo $row['FName'] ?></h3>
-				<?php echo $row['Position'] ?>
-				</div>
-			</li>
-		</ul>
-	</div>	
-<?php endwhile ?>
-
-
-<!-- <li>
-<a class='element-holder media-img' data-rel=prettyPhoto href='assets/fferrer.jpg'>
-<img alt='Dr. Marissa B. Ferrer - Branch Director and OU Center Coordinator' src='assets/fferrer.jpg' width=600 height=250 />
-</a>
-<div class=slide-caption-right>
-<h3>Dr. Marissa B. Ferrer</h3>
-Branch Director and OU Center Coordinator
-</div>
-</li> -->
-
-<!-- <li>
-<a class='element-holder media-img' data-rel=prettyPhoto href='assets/frabe.jpg'>
-<img alt='Ms. Yolanda F. Rabe - Head of Academic Programs and Research Coordinator' src='assets/frabe.jpg' width=600 height=250 />
-</a>
-<div class=slide-caption-left>
-<h3>Ms. Yolanda F. Rabe</h3>
-Head of Academic Programs and Research Coordinator
-</div>
-</li> -->
-
-<!-- <li>
-<a class='element-holder media-img' data-rel=prettyPhoto href='assets/fzarco.jpg'>
-<img alt='Engr. Michael Zarco - Administrative Officer and Property Custodian' src='assets/fzarco.jpg' width=600 height=250 />
-</a>
-<div class=slide-caption-right>
-<h3>Engr. Michael Zarco</h3>
-Administrative Officer and Property Custodian
-</div>
-</li> -->
-
-<!-- <li>
-<a class='element-holder media-img' data-rel=prettyPhoto href='assets/fsevilla.jpg'>
-<img alt='Prof. Margarita T. Sevilla, Student Services' src='assets/fsevilla.jpg' width=600 height=250 />
-</a>
-<div class=slide-caption-left>
-<h3>Prof. Margarita T. Sevilla</h3>
-Head, Student Services
-</div>
-</li> -->
-
-<!-- <li>
-<a class='element-holder media-img' data-rel=prettyPhoto href='assets/fcanlas.jpg'>
-<img alt='Prof. Bernadette I. Canlas - Head of Admission and Registration Office' src='assets/fcanlas.jpg' width=600 height=250 />
-</a>
-<div class=slide-caption-right>
-<h3>Prof. Bernadette I. Canlas</h3>
-Head of Admission and Registration Office
-</div>
-</li> -->
-
-<!-- <li>
-<a class='element-holder media-img' data-rel=prettyPhoto href='assets/farada.jpg'>
-<img alt='Prof. Marian Arada - Collecting and Disbursing Officer' src='assets/farada.jpg' width=600 height=250 />
-</a>
-<div class=slide-caption-left>
-<h3>Prof. Marian Arada</h3>
-Collecting and Disbursing Officer
-</div>
-</li> -->
-
-<!-- <li>
-<a class='element-holder media-img' data-rel=prettyPhoto href='assets/fmaliksi.jpg'>
-<img alt='Ms. Liwanag L. Maliksi - Guidance Counselor' src='assets/fmaliksi.jpg' width=600 height=250 />
-</a>
-<div class=slide-caption-right>
-<h3>Liwanag L. Maliksi</h3>
-Guidance Counselor III
-</div>
-</li> -->
-
-<!-- <li> -->
-<!-- Item image -->
-<!-- <a class='element-holder media-video' data-rel=prettyPhoto href='https://www.youtube.com/watch?v=DL9uOlxrGlE'>
-<img alt='An overview of the system:' src='assets/last.jpg' width=600 height=250 />
-
-</a> -->
-<!-- End - Item image -->
-<!-- </li> -->
-<!-- End - Gallery item -->
-
-
-<!-- <div class="layout-1-3">
-	<div class="toggle-block">
-		<div class="toggle-trigger">
-			<a href="#">FAQs</a>
-		</div>
-		<div class="toggle-content" style="width: 88.5%;">
-			Click here to go to FAQs page.
-		</div>
-	</div>
-</div>
-
-<div class="layout-1-3">
-	<div class="toggle-block">
-		<div class="toggle-trigger">
-		<a href="#">Suggestions</a>
-		</div>
-
-		<div class="toggle-content" style="width: 88.5%;">
-			<form action="" id="dummy" method="post">
-				<fieldset>
-					<p>
-						<label for="dummy0">E-mail</label>
-						<input id="dummy0" name="dummy0" type="text" style="width: 100%;" />
-					</p>
-					<p>
-						<label for="dummy2">Suggestions</label>
-						<textarea cols="20" id="dummy2" name="dummy2" rows="5" style="width: 100%;"></textarea>
-					</p>
-					<p>
-						<center><input type="submit" value="Suggest" /></center>
-					</p>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-</div>
-
-<div class="layout-1-3 layout-last">
-	<div class="toggle-block">
-		<div class="toggle-trigger">
-			<a href="#">Comments</a>
-		</div>
-
-		<div class="toggle-content" style="width: 88.5%;">
-			<form action="" id="dummy" method="post">
-				<fieldset>
-					<p>
-						<label for="dummy0">E-mail</label>
-						<input id="dummy0" name="dummy0" type="text" style="width: 100%;" />
-					</p>
-					<p>
-						<label for="dummy2">Comments</label>
-						<textarea cols="20" id="dummy2" name="dummy2" rows="5" style="width: 100%;"></textarea>
-					</p>
-					<p>
-						<center><input type="submit" value="Comment" /></center>
-					</p>
-				</fieldset>
-			</form>
-		</div>
-	</div>
-</div> -->
-
-<h5>Presentation: <a href="http://www.youtube.com/watch?v=KIcbabmyK0E" target="_blank" id="presentation_link">Click Me!</a></h5>
-<font color="black">
-
+		<div class="card mb-3" id="unews-card">
+              <div class="row no-gutters">
+                  <div class="col-md-4">
+                      <img src="<?php echo Yii::app()->getBaseUrl() ?>bopics/marissa_b._ferrer(1).jpg" class="img-fluid img-thumbnail mt org-image"alt="...">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title news-title">Dr. Marissa B. Ferrer </h5>
+                          <p>Branch Director</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                            <div class="card mb-3" id="unews-card">
+              <div class="row no-gutters">
+                  <div class="col-md-4">
+                      <img src="<?php echo Yii::app()->getBaseUrl() ?>bopics/nopic.png" class="img-fluid img-thumbnail mt org-image"alt="...">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title news-title">Dr. Cecilia R. Alagon</h5>
+                          <p>Head Of Academic Programs</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                            <div class="card mb-3" id="unews-card">
+              <div class="row no-gutters">
+                  <div class="col-md-4">
+                      <img src="<?php echo Yii::app()->getBaseUrl() ?>bopics/bernadette_i._canlas,_instructor_iii.jpg" class="img-fluid img-thumbnail mt org-image"alt="...">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title news-title">Prof. Bernadette I. Canlas</h5>
+                          <p>Head Of The Student Services</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                            <div class="card mb-3" id="unews-card">
+              <div class="row no-gutters">
+                  <div class="col-md-4">
+                      <img src="<?php echo Yii::app()->getBaseUrl() ?>bopics/mhel_p._garcia,_instructor_i.jpg" class="img-fluid img-thumbnail mt org-image"alt="...">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title news-title">Prof. Mhel P. Garcia</h5>
+                          <p>Head Of Admission And Registration</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                            <div class="card mb-3" id="unews-card">
+              <div class="row no-gutters">
+                  <div class="col-md-4">
+                      <img src="<?php echo Yii::app()->getBaseUrl() ?>bopics/engr._michael_l._zarco,_instructor_i..jpg" class="img-fluid img-thumbnail mt org-image"alt="...">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title news-title">Engr. Michael Zarco</h5>
+                          <p>Administrative Officer</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                            <div class="card mb-3" id="unews-card">
+              <div class="row no-gutters">
+                  <div class="col-md-4">
+                      <img src="<?php echo Yii::app()->getBaseUrl() ?>bopics/liwanag_l._maliksi,_guidance_counselor.jpg" class="img-fluid img-thumbnail mt org-image"alt="...">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title news-title">Prof. Liwanag I. Maliksi</h5>
+                          <p>Guidance Councilor</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+                            <div class="card mb-3" id="unews-card">
+              <div class="row no-gutters">
+                  <div class="col-md-4">
+                      <img src="<?php echo Yii::app()->getBaseUrl() ?>bopics/gina_a._dela_cruz,_instructor_i.jpg" class="img-fluid img-thumbnail mt org-image"alt="...">
+                  </div>
+                  <div class="col-md-8">
+                      <div class="card-body">
+                          <h5 class="card-title news-title">Prof. Gina A. Dela Cruz</h5>
+                          <p>Quality Assurance Coordinator</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
 </section>
 <!-- End - Video -HTML5 -->
 <br/>
@@ -419,7 +380,7 @@ Guidance Counselor III
 <form action="index.php?r=login/login" id=dummy method=POST>
     <div class="login">
 		<p>
-		<label for=dummy0>Username:</label>
+		<label for=dummy0>Faculty Code:</label>
 		<input id=user name=user type=text style="width: 100%;" />
 		</p>
         <p>
@@ -433,7 +394,123 @@ Guidance Counselor III
 </form>
 
 
+<p style="text-align: center;">New Faculty Member? <a data-target='#signUp' data-toggle='modal' href='#signUp' style="color: #FA4202;">Create an account.</a></p>
+
+<p style="text-align: center;"><a data-target='#forgot' data-toggle='modal' href='#forgot' style="color: #FA4202;">Forgot Password?</a></p>
+
+
 </section>
+
+<!-- Modal 1 -->
+  <div class="modal fade" id="signUp" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form id="annc" name="annc" action="index.php?r=login/SignUp" method="post" enctype="multipart/form-data">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color:black;">&times;</span>
+            </button>
+          <h4 class="modal-title" style="position: absolute; left: 5px;top: 5px;">Sign up</h4>
+        </div>
+        <div class="modal-body">
+        	<p style="margin-bottom: 9px;">
+        		<h4 class=underlined-header>Personal Information</h4>
+
+        		<center>
+				<label class="required-field" style="display: inline-block;">First Name: <input style="display: inline-block; width: 150px;" type="text" name="firstName" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');" required></label>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="margin-top: 20px;">Middle Initial: <input style="display: inline-block; width: 50px;" type="text" name="MI" maxlength="2" oninput="this.value = this.value.replace(/[^a-zA-Z.]/g, '').replace(/(\..*?)\..*/g, '$1');"></label>
+
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label style="margin-top: 20px;" class="required-field" style="display: inline-block;">Last Name: <input  style="display:inline-block; width:150px;" type="text" name="lastName" oninput="this.value = this.value.replace(/[^a-zA-Z]/g, '').replace(/(\..*?)\..*/g, '$1');" required></label>
+			</center>
+			</p>
+			<hr>
+
+			<h4 style="margin-bottom:30px" class=underlined-header>Employment Information</h4>
+			<p style="margin-left: 65px; margin-bottom: 20px;" class="required-field">
+				
+				Faculty Code: <input style="display: inline-block;width: 250px;" type="text" name="fcode" maxlength="12" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" required>
+			</p>
+
+			<p style="margin-left: 40px; margin-bottom: 20px;" class="required-field">
+				Employment Type: <select name="emptype" style="display: inline-block;width: 250px;">
+					<option value="Permanent">Full-time</option>
+					<option value="Part-time">Part-time</option>
+					<option value="Temporary">Temporary</option>
+				</select>
+			</p>
+
+			<p style="margin-left: 92px; margin-bottom: 20px;" class="required-field">
+				Position: <select name="position" style="display: inline-block;width: 250px;">
+					<option value="Faculty Designee">Faculty Designee</option>
+					<option value="Professor">Professor</option>
+				</select>
+			</p>
+			<hr>
+
+			<h4 style="margin-bottom:30px" class=underlined-header>Account Information</h4>
+			<p style="margin-left: 106px; margin-bottom: 20px;" class="required-field">
+				Email: <input style="display: inline-block;width: 250px;" type="email" name="email" required>
+			</p>
+
+			<p style="margin-left: 83px;margin-bottom: 20px;" class="required-field">
+				Password: <input style="display: inline-block;width: 250px;" id="password" type="password" name="password" required>
+			</p>
+
+			<p style="margin-left: 39px;margin-bottom: 20px;" class="required-field">
+				Confirm Password: <input style="display: inline-block;width: 250px;" id="confirm_password" type="password" name="confirm_password" required>
+				&nbsp;<span id='message'></span>
+			</p>
+
+            <p style="margin-left: 58px;margin-bottom: 9px;" class="required-field">
+                PUP ID Picture: <input style="display: inline-block;" id="IDPic" type="file" name="id_pic" accept="image/png, image/gif, image/jpeg" required>
+                &nbsp; <span id="warning"></span>
+            </p>
+        </div>
+
+        <div class="modal-footer">
+          <input id="signUpBut" type="submit" name="Submit">
+          </form>
+          <div></div>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
+
+
+  <div class="modal fade" id="forgot" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <form id="annc" name="annc" action="index.php?r=login/Forgot" method="post" enctype="multipart/form-data">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" style="color:black;">&times;</span>
+            </button>
+          <h4 class="modal-title" style="position: absolute; left: 5px;top: 5px;">Find your Account</h4>
+        </div>
+        <div class="modal-body">
+			<p style="margin-left: 65px; margin-bottom: 20px;">
+				
+				<center><b>Please enter your Faculty Code to verify if you are a Faculty Member of PUP-Taguig Branch </b></center>
+				<center><input style="width: 250px;" type="text" name="fcode" maxlength="12" oninput="this.value = this.value.replace(/[^a-zA-Z0-9]/g, '').replace(/(\..*?)\..*/g, '$1');" required></center>
+			</p>
+
+
+			
+        </div>
+
+        <div class="modal-footer">
+          <input id="ForgotBut" type="submit" name="Submit">
+          </form>
+          <div></div>
+        </div>
+      </div>
+      
+    </div>
+
+  </div>
 
 <!-- /Widget categories -->
 
@@ -468,10 +545,102 @@ Guidance Counselor III
 <footer id=page-footer>
     <div class=container-aligner>
         <section id=footer-left>
-            © Copyright 2021 <a href="#">FSIS | PUP Taguig</a> - All Rights Reserved.
+            © Copyright 2022 <a href="#">FSIS | PUP Taguig</a> - All Rights Reserved.
         </section>
     </div>
 </footer>
 <!-- End - Page footer -->
+<script src='assets/jquery-3.6.0.min.js'></script>
+<script src='<?php echo Yii::app()->getBaseUrl() ?>assets/sweetalert2.all.min.js'></script>
+<script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+
+<script>
+	$('#password, #confirm_password').on('keyup', function () {
+		if ($('#password').val() != '') {
+			if ($('#password').val() == $('#confirm_password').val()) {
+				$('#message').html('Matching').css('color', 'green');
+				document.getElementById("signUpBut").disabled = false;
+			} else {
+				$('#message').html('Not Matching').css('color', 'red');
+				document.getElementById("signUpBut").disabled = true;
+			}
+		} else {
+			$('#message').html('')
+			document.getElementById("signUpBut").disabled = true;
+		}		
+	});
+
+	let input = document.getElementById('IDPic');
+
+	input.addEventListener('change', () => {
+		let files = input.files;
+
+		if (files.length > 0) {
+			if(files[0].size > 4097152){
+				$('#warning').html('Image Size Exceeds 4MB').css('color', 'red');
+				document.getElementById("signUpBut").disabled = true;
+			} else {
+				$('#warning').html('');
+				document.getElementById("signUpBut").disabled = false;
+			}
+		}
+	});
+
+	flashdata = $('.flash-data').data('flashdata')
+	if(flashdata==0){
+		Swal.fire({
+			icon:'success',
+			title:'Success!',
+			text:'Thanks for signing up. An email from the PUPT-FSIS will be sent to you after the Admin approves your request. Also, check your Spam/Junk email from time to time'
+			
+		})
+	}
+
+	if(flashdata==1){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
+			text:'Please fill out the given fields!'
+			
+		})
+	}
+
+	if(flashdata==2){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
+			text:'There is an error while uploading. Please try it again after a while.'
+			
+		})
+	}
+
+	if(flashdata==3){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
+			text:'Only .jpg, .jpeg, .gif, .png formats are allowed'
+			
+		})
+	}
+
+	if(flashdata==4){
+		Swal.fire({
+			icon:'error',
+			title:'Ooops!',
+			text:'Employee ID does not exist!'
+			
+		})
+	}
+
+	if(flashdata==5){
+		Swal.fire({
+			icon:'success',
+			title:'Success!',
+			text:'Password Changed!'
+			
+		})
+	}
+
+</script>
 </body>
 </html>
